@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The advantages of backward reasoning?
+title: The advantages of backward reasoning.
 ---
 
 What can I gain if, rather than planning into the future, I can plan backwards from my goals (or both)?
