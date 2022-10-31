@@ -1,9 +1,7 @@
 ---
 layout: post
 title: Langevin SGD
-permalink: performative-prediction
-rating: 8
-ref: http://www.stats.ox.ac.uk/~teh/research/compstats/WelTeh2011a.pdf
+permalink: langevin-sgd
 ---
 
 
