@@ -1,0 +1,86 @@
+I"0<p>With our greater understanding of learning we can now train dogs to do X. (insert videos of clever dogs) <a href="https://www.youtube.com/watch?v=1kl3Y82qRDg">jenga</a>, <a href="https://www.youtube.com/watch?v=Ip_uVTWfXyI">objects</a> …</p>
+
+<p>Given a slow learner. Design a curriculum to help it learn. This isnt about finding the best learning algorithm. It is about taking a suboptimal one and helping it learn more efficiently.</p>
+
+<blockquote>
+  <p>If a learner sucks at; long term rewards, exploration, partial info, … does there always exist an easily finable curriculum that will help them achieve high reward?</p>
+</blockquote>
+
+<h4 id="aside-how-do-people-learn">Aside: how do people learn?</h4>
+<p>Interactive. Stories. …? Easily remember agents and motivations, …Formal setting</p>
+
+<h2 id="formal-setting">Formal setting</h2>
+
+<p>Sits inbetween the agent and it’s environment. Is able to manipulate rewards, generate fake data,</p>
+
+<p>The teacher can only output (s, a, r, s, a) ‘s. (and by exension, trajectories)</p>
+
+<ul>
+  <li>Agent $\mathcal A: D\to \pi$</li>
+  <li>Teacher $\mathcal T: D \times \mathcal E\to D$</li>
+  <li>Env $\mathcal E: S \times A \to S, R$</li>
+  <li>Worker $\mathcal W: \mathcal E \times \pi \to D$</li>
+</ul>
+
+<h2 id="what-classes-of-teacher-are-there">What classes of teacher are there.</h2>
+
+<ul>
+  <li>online vs offline</li>
+</ul>
+
+<p>What information do they have access to?</p>
+<ul>
+  <li>The agent’s parameters / model</li>
+  <li>The sarsa buffer so far</li>
+</ul>
+
+<p>How much information can they convey to the student?</p>
+<ul>
+  <li>Counterfactuals</li>
+  <li>Dense v sparse rewards</li>
+</ul>
+
+<p>What does the teacher know?</p>
+<ul>
+  <li>The optimal policy is known</li>
+  <li>The model / reward is known</li>
+  <li>
+    <p>???</p>
+  </li>
+  <li>What types of information can they communicate?
+    <ul>
+      <li>Rewards,</li>
+    </ul>
+  </li>
+  <li>What is the teacher tying to optimise?
+    <ul>
+      <li>dRdt?</li>
+      <li>Regret</li>
+    </ul>
+  </li>
+</ul>
+
+<p>What if the teacher doesnt know the answer. Only how to find the answer? Can generate artificial rewards showing the process.</p>
+
+<p>Model based teaching?!</p>
+
+<ul>
+  <li>figure out how the shitty learner learns. (separate problem. see reverse engineering a learning algorithm)</li>
+  <li>Then design curriculum.</li>
+</ul>
+
+<p>How can the teacher’s skills be efficiently distilled? Teacher learns to do X. Attempts to train a different type of learner to do X.</p>
+
+<h2 id="examples">Examples</h2>
+
+<ul>
+  <li>A learner with catastrophic forgetting. The teach can remember and insert old tasks into training.</li>
+  <li>
+    <h2 id="a-learner-that-">A learner that …???</h2>
+  </li>
+</ul>
+
+<h2 id="forseeable-problems">Forseeable problems</h2>
+
+<p>How to reduce potential variance in the learners actions??</p>
+:ET

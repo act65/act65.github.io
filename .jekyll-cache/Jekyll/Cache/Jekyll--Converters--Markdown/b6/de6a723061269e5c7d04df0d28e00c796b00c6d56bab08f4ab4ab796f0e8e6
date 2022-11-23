@@ -1,0 +1,31 @@
+I"ò<p>So as we scale to larger networks, we need;</p>
+
+<ul>
+  <li>more time / iterations for an equilibrium to be reached?!</li>
+  <li>how do you efficiently fit the topology into 3dâ€¦!?</li>
+  <li>???</li>
+</ul>
+
+<p>Email</p>
+
+<p>Not clear to me how setting I</p>
+
+\[I_k^+ = \beta (Y_k)\]
+
+<hr />
+
+<p>Still curious about connections between langevin dynamics and distributions.
+Want the ability to transform between implicit and explicit distributions easily?!
+To integrate the noise in langevin dynamics or to sample from a distribution!?</p>
+
+<hr />
+
+<h2 id="refs">Refs</h2>
+
+<ul>
+  <li><a href=""></a></li>
+  <li><a href="https://arxiv.org/abs/2005.04168">Equilibrium Propagation with Continual Weight Updates</a></li>
+  <li><a href="https://arxiv.org/abs/2006.01981">Training End-to-End Analog Neural Networks with Equilibrium Propagation</a></li>
+  <li><a href="https://www.nature.com/articles/s41467-020-17236-y">A solution to the learning dilemma for recurrent networks of spiking neurons</a></li>
+</ul>
+:ET

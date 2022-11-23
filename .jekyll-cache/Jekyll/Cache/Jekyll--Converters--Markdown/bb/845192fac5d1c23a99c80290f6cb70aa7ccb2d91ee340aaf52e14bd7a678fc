@@ -1,0 +1,98 @@
+I"�<blockquote>
+  <p>What is theory, and why do we need it?</p>
+</blockquote>
+
+<p>A case study, theory for ML/DL/RL.</p>
+
+<p>How can theory help clean the mess that is arxiv?
+How does this lead to studying MDPs and Bandits?
+What do we want? To organise, to explain, to compress, to ???.</p>
+
+<h3 id="benchmarks">Benchmarks</h3>
+
+<p>DL doesnt have a good record.
+https://arxiv.org/abs/1907.06902v2
+https://arxiv.org/abs/1711.10337
+Benchmarking</p>
+<ul>
+  <li>[Benchmarking Bonus-Based Exploration Methods on the Arcade Learning Environment](https://arxiv.org/abs/1908.02388]
+<a href="https://arxiv.org/abs/1907.02057">Benchmarking Model-Based Reinforcement Learning</a>
+<a href="https://arxiv.org/abs/1809.07731">Benchmarking Reinforcement Learning Algorithms on Real-World Robots</a>
+<a href="https://arxiv.org/abs/1604.06778">Benchmarking Deep Reinforcement Learning for Continuous Control</a></li>
+</ul>
+
+<p>For instance,  <a href="https://github.com/uber-research/atari-model-zoo">Uber</a>, <a href="https://github.com/openai/baselines">OpenAI</a>, <a href="https://github.com/google/dopamine">Google</a>, <a href="https://github.com/deepmind/bsuite">DeepMind</a>.</p>
+
+<p>Why? Instability, non-convex, hyper parameter searches, subtle design decisions, not analysing the variance, computational cost, …
+Each of these benchmarking tools is an attempt to remove some of the variations in implementation.</p>
+
+<p>Also. Seed tuning…</p>
+<ul>
+  <li><a href="https://arxiv.org/pdf/1910.10897.pdf">Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning</a></li>
+</ul>
+
+<p>Hyper parameter searches confound the issue.
+Need a test set. To verify.
+But in DRL we train and test on the same problem. Does that really make sense?</p>
+
+<p>The point is that doing science on DRL;</p>
+<ul>
+  <li>requires lots of compute,</li>
+  <li>is currently flawed</li>
+  <li>?</li>
+</ul>
+
+<p>Just take a look at some recent papers…</p>
+
+<h3 id="how-does-theory-help">How does theory help?</h3>
+
+<p>In RL there are a few well known theoretical results to build on!
+Examples. Convergence of VI. TD. Optimality of …</p>
+
+<h3 id="evaluating-our-models">Evaluating our models</h3>
+
+<p>What we want to know. Our models ability to generalise beyond our data.</p>
+
+<p>https://arxiv.org/pdf/1905.12580.pdf
+https://arxiv.org/pdf/1502.04585.pdf
+https://arxiv.org/pdf/1905.10360.pdf</p>
+
+<h3 id="generalisation-in-rl">Generalisation in RL</h3>
+
+<p>This is what we are trying to measure.</p>
+
+<p>But. Does it even make sense?
+How do we test this? <a href="https://arxiv.org/pdf/1812.02341.pdf">CoinRun</a></p>
+
+<p>https://bair.berkeley.edu/blog/2019/03/18/rl-generalization/</p>
+
+<h3 id="understanding-reinforcement-learning">Understanding Reinforcement learning</h3>
+
+<p>What are its goals. Its definitions. It methods?</p>
+
+<ul>
+  <li>Optimality</li>
+  <li>Model based</li>
+  <li>Complexity</li>
+  <li>Abstraction</li>
+</ul>
+
+<p>But. It is possible that this representation achieves no compression of
+the state space, making the statement rather vacuous. Further more, it
+consider how easy it is to find the optimal policy in each of the two
+representations. It is possible to learn a representation that makes the
+optimal control problem harder. For example. TODO</p>
+
+<p>Current theory does not take into account the structure within a RL
+problem.</p>
+
+<p>The bounds are typically for the worst case. But these bounds could be
+tighter if we exploited the structure tht exists in natural problems.
+The topology of the transition function; its, sparsity, low rankness,
+locality, The symmetries of the reward function. ??? (what about both?!)</p>
+
+<h3 id="bad-examples">Bad examples</h3>
+
+<p>That isnt to say that theory is all good.
+Examples of bad theory. Unrealistic assumptions. Symbolics for the sake of symbols.</p>
+:ET

@@ -9,6 +9,8 @@ rating: 8
 
 *well we don't know that for certain. It just makes a good title...
 
+Not. It's an argument of sufficiency, not necessity.
+
 ## Unsupervised learning
 
 Before autoencoders and contrastive losses, there was; boltzman machines, clustering, self-organising maps, ...

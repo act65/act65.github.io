@@ -9,6 +9,8 @@ Given a slow learner. Design a curriculum to help it learn. This isnt about find
 
 > If a learner sucks at; long term rewards, exploration, partial info, ... does there always exist an easily finable curriculum that will help them achieve high reward?
 
+For some types of learner there may be little we can do, even with an optimal curricula.
+Ie. the learner is incapable of learning the optimal policy.
 
 #### Aside: how do people learn?
 Interactive. Stories. ...? Easily remember agents and motivations, ...Formal setting

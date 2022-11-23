@@ -1,0 +1,19 @@
+I"1<p>Expletives!
+What is with the weird notation that physicists use?!</p>
+
+\[\phi: X\times Y \to \mathbb R \\
+d\phi = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y}dy\]
+
+<ul>
+  <li>Wait, what are we differentiating with respect to?</li>
+  <li>How come we have $\phi$ on the LSH, but $f$ on the RHS?!</li>
+  <li>What is $d()$???</li>
+</ul>
+
+<p>https://en.wikipedia.org/wiki/Pushforward_(differential)</p>
+
+<p>$d\phi: X \times Y \to \mathbb R$
+Equals the jacobian. (when working in a vector space!?)</p>
+
+<p>Best linear approximation at $x$.</p>
+:ET

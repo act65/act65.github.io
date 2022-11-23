@@ -1,0 +1,213 @@
+I"�&<p>This post is about;</p>
+
+<ul>
+  <li>how to make maximally informative queries</li>
+  <li>??</li>
+  <li>??</li>
+</ul>
+
+<hr />
+
+<p>Only sample your environment to tell you what you need to know.</p>
+
+<p>The problem is that we only have a few samples, they could have come from many places.</p>
+<ul>
+  <li>how can we select a candidate from many?</li>
+  <li>how can we pick samples to minimse the set of candidates?</li>
+  <li>?
+(how general is this to partial information – is it possible to apply to to Atari?)</li>
+</ul>
+
+\[\begin{align}
+\text{min} \parallel R(x) \parallel_1 \;\;\text{s.t.}\;\; \parallel f(x) - y \parallel_2 \le \epsilon \\
+\end{align}\]
+
+\[\begin{align}
+f \perp g \\
+\text{min} \parallel g(z) \parallel_1  + \lambda \parallel f(g(z)) - y \parallel_2 \\
+\end{align}\]
+
+<side>The fact that we must mix the pixels feels like a cheat. We still need to physically interact with all the pixels, many times... But maybe mixing is cheap and measuring is not!?</side>
+
+<ul>
+  <li>Why doesnt the order matter?!?</li>
+</ul>
+
+<p>Problem is; we have an image that may be sparse in a basis. How do we find which elements are non zero?</p>
+<ul>
+  <li>
+    <h2 id="could-search-through-them-all">Could search through them all,</h2>
+  </li>
+</ul>
+
+<blockquote>
+  <p>If your image consists of a few sparse dots or a few sharp lines, the worst way to sample it is by capturing individual pixels (the way a regular camera works!). The best way to sample the image is to compare it with widely spread-out noise functions. One could draw an analogy with the game of “20 questions.” If you have to find a number between 1 and $N$, the worst way to proceed is to guess individual numbers (the analog of measuring individual pixels). On average, it will take you $N$/2 guesses. By contrast, if you ask questions like, “Is the number less than $N$/2?” and then “Is the number less than $N $/4?” and so on, you can find the concealed number with at most $log_2 N$ questions.</p>
+</blockquote>
+
+<p>hmmm. How is asking “is the number less than N/4?” like comparing against a random signal?
+“How much of the image vector points in this, random, direction?”
+If you know after 2 measurements that an image is partially similar to up/left, and up/right then you should conclude up.</p>
+
+<blockquote>
+  <p>Notice that the “20 questions” strategy is adaptive: you are allowed to adapt your questions in light of the previous answers. To be practically relevant, Candes and Tao needed to make the measurement process nonadaptive, yet with the same guaranteed performance as the adaptive strategy just described. In other words, they needed to find out ahead of time what would be the most informative questions about the signal x.</p>
+</blockquote>
+
+<p>How is this related to a hash fn?!</p>
+
+<h2 id="assumption-of-structure">Assumption of structure</h2>
+
+<p>What other possible kinds of structure are there?!</p>
+
+<h2 id="measures-of-sparsity">Measures of sparsity</h2>
+
+<p>What we need is a measure of sparsity.
+Better than that want one that can handle approximate sparsity/noise.</p>
+
+\[\begin{align}
+\parallel x \parallel_0 &amp;= \sum_{i=0}^n x_i^0 \tag{assuming $0^0=0$}\\
+\parallel x \parallel_1 &amp;= \sum_{i=0}^n \mid x_i \mid \\
+\parallel x \parallel_2 &amp;= \sqrt{ \sum_{i=0}^n  x_i^2 } \\
+\end{align}\]
+
+<p>Problem with $L_0$ is that it doesnt tell use how close we are to a sparse solution.
+One of the elements might be $= 1e-8$ yet, it is still counted as a non-zero element.</p>
+
+<side>does this relationship generalise to higher $L_P$ norms?</side>
+<p>There is a nice relationship between $L_0$ and $L_1$ minimisers</p>
+
+\[\begin{align}
+\forall b_i \in \{?!? \}, A = \in \{?!? \} \\
+\mathop{\text{min}}_{A, b} \parallel Ax + b \parallel_0 &amp;= \mathop{\text{min}}_{A, b} \parallel Ax + b \parallel_1
+\end{align}\]
+
+<p>Probability of sampling a line that intersects the origin. How can this be proved?</p>
+
+<p>Can be easily understood geometrically as … (insert image)</p>
+
+<h2 id="randomness-and-mixing">Randomness and mixing</h2>
+
+<p>Two uses. L_0 = L_1 AND dissimilarity to image basis (make sure you get a good mixture).</p>
+
+<p>I wonder if existing physical processes might do the mixing for us? E.g. An EEG of the brain represents a local mixture of electric potentials. Can this be used to do compressed sensing?</p>
+
+<h2 id="restricted-isometry">Restricted Isometry</h2>
+<p>(the formalisation of our concept of mixing!?)</p>
+
+\[\begin{align}
+d_Y(f(a), f(b)) = d_X(a, b)
+\end{align}\]
+
+\[\begin{align}
+(1-\delta)\parallel y \parallel_2^2 \le \parallel Ay \parallel_2^2 \le (1+\delta)\parallel y \parallel^2_2
+\end{align}\]
+
+<side>What goes wrong if the signals can be scaled?</side>
+<p>Doesnt tend to change the magnitiude of the vector $y$, aka A must be approximately a rotation (no scaling), ie an orthogonal transformation.</p>
+
+<p>What does it mean to do a rotation? The basis you use to descibe Y is ?!?! relation to X.</p>
+
+<p>But RIP is (how much if at all!?!?) weaker than requiring an orthogonality.</p>
+
+<blockquote>
+  <p>This property essentially requires that every set of columns with cardinality less than S approximately behaves like an orthonormal system</p>
+</blockquote>
+
+<p>I see how it requires every set of columns with cardinality less that S approximately behaves like a normal system, but not orthonormal.</p>
+
+\[\begin{align}
+(1-\delta_S)\parallel y_T \parallel_2^2 \;\; &amp;\le \;\;\parallel A_{:, T}y_T \parallel_2^2 \;\; \le \;\; (1+\delta_S)\parallel y_T \parallel^2_2 \\
+\forall T &amp;\subseteq \{1, \dots n\} \;\; \text{s.t.} \;\; \mid T \mid \; = S \\
+\end{align}\]
+
+<p>Questions;</p>
+
+<ul>
+  <li>why forall T?</li>
+  <li>what value of y is used?</li>
+  <li>?</li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <p>There are no known large matrices with bounded restricted isometry constants (computing these constants is strongly NP-hard,3 and is hard to approximate as well 4)  - https://en.wikipedia.org/wiki/Restricted_isometry_property</p>
+</blockquote>
+
+<h2 id="stable-recovery-from-incomplete-and-noisy-measurements">Stable recovery from incomplete and noisy measurements</h2>
+
+<blockquote>
+  <p>How can we possibly hope to recover our signal when not only the available information is severely incomplete but in addition, the few available observations are also inaccurate?</p>
+</blockquote>
+
+<blockquote>
+  <p>To be broadly applicable, our recovery procedure must be stable: small changes in the observations should result in small changes in the recovery.</p>
+</blockquote>
+
+<p><strong>Theorem 1.</strong> (from <a href="#2">2</a>)</p>
+
+<p>Let $S$ be such that $\delta_{3S} + 3\delta_{4S} &lt; 2$. Then for any signal $x_0$ suported on $T_0$ with $\mid T_0 \mid \le S$ and any pertubation $e$ with $\parallel e \parallel_2 \le \epsilon$, the solution $\hat x$ to ($P_2$) obeys</p>
+
+\[\parallel \hat x - x_0 \parallel_2 \le C_S \cdot \epsilon \\\]
+
+<p><strong>Q</strong> what is C? how does it depend on S?</p>
+
+<p>Note:</p>
+
+<ul>
+  <li>Any $\epsilon$. Hmm. Generalsing this to ML, we might have some issues. Needs to be stable to pertubations, but adversarial examples would break this…</li>
+  <li>Where does $\delta_{3S} + 3\delta_{4S} &lt; 2$ come from, seems rather weird!?
+*</li>
+</ul>
+
+<blockquote>
+  <p>The fact that the severely ill-posed matrix inversion keeps the perturbation from “blowing up” is rather remarkable and perhaps unexpected</p>
+</blockquote>
+
+<aside>
+Why is the inversion of a rectangular matrix (and/or low rank) sensitive to pertubations?
+
+...?!?
+</aside>
+
+<blockquote>
+  <p>no recovery method can perform fundamentally better for arbitrary perturbations of size $\epsilon$ … obtaining a
+reconstruction with an error term whose size is guaranteed to be proportional to the noise level is the best one can hope for.</p>
+</blockquote>
+
+<h2 id="relationship-to-machine-learning">Relationship to machine learning</h2>
+
+<p>To recover some ground truth, we are allowed to take measurements.
+But which measurements should be taken? The above tells us they should be maximally inoherent with ???.</p>
+
+<p>Then $A$ is our data, $y$ the labels, and $x$ is function we want to recover.</p>
+
+\[\begin{align}
+x &amp;\in \mathbb R^n, y_i \in \mathbb R, A \in \mathbb R^{m \times n}  \\
+y_i &amp;= \langle A_i, x \rangle \tag{compressed sensing}\\
+\mathop{\text{min}}_x &amp; \parallel Ax - y \parallel_2 + R(x) \\
+\\
+x_i &amp;\in \mathbb R^n, y_i \in \mathbb R^m, A \in \mathbb R^{m \times n}\\
+y_i &amp;= \langle A, x_i \rangle \tag{machine learning} \\
+\mathop{\text{min}}_A &amp; \parallel Ax - y \parallel_2 + R(A) \\
+\end{align}\]
+
+<p>Neither can be solved by gaussian elimination (or other methods – which are!?!?) because they are …?</p>
+
+<ul>
+  <li>Is there a way to incorporate beliefs about noise the data to ML?</li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <p>We note that the factorized parameterization also plays an i mportant role here.  The intuition above would still apply if we replace U U ⊤ with a single variable X and run gradient descent in the space of X with small enough initialization.  However, it will converg e to a solution that doesn’t generalize.  The discrepancy comes from another crucial property of the factorized parameterization:  it provides certain denoising effect that encourages th e empirical gradient to have a smaller eigenvalue tail.</p>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li><a name="1"><a href="https://www.ams.org/publicoutreach/math-history/hap7-pixel.pdf">Compressed Sensing Makes Every Pixel Count</a></a></li>
+  <li><a name="2"><a href="https://statweb.stanford.edu/~candes/papers/StableRecovery.pdf">Stable Signal Recovery from Incomplete and Inaccurate Measurements</a></a></li>
+  <li><a href="https://arxiv.org/abs/1712.09203">Algorithmic Regularization in Over-parameterized Matrix Sensing and Neural Networks with Quadratic Activations</a></li>
+</ol>
+:ET

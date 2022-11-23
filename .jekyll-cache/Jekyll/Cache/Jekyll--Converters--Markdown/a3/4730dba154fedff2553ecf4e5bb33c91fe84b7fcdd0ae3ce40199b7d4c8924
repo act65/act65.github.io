@@ -1,0 +1,41 @@
+I"O<p>Have an ensemble of weak learners when composed together can make a strong learner.</p>
+
+<p>Markets. You have private information and use it to make bets about future prices.
+Together, all the participants in the market integrate their information so that the price refects the true value.</p>
+
+<p>Problem: because bets interact additively information can only be additive.
+yet i might have a peice of info that non-linearly effects the price? thus this info cannot be integrated into the market.</p>
+
+<p>surely a market that actually shared the private information would have more accurate estimates of the price? (but little infentive/maybe people will lie…?)</p>
+
+<hr />
+
+<p>The price, $p$, on the market is determined by $f, g$’s etimate of the value of $x$, given private information.</p>
+
+\[\begin{align}
+p &amp;= f(x, i_f) \circ g(x, i_g) \\
+&amp;\ne h(x, i_f, i_g) \\
+\end{align}\]
+
+<p>How do different valuations combine on the market? Additively? If so then $\circ = +$ and we have $f(x, i_f) + g(x, i_g)$. But I can easily imagine situations where knowing $i_f$ and $i_g$ could non-linearly alter my valuation.</p>
+
+<p>So is the market really able to integrate the information!?</p>
+
+<h2 id="resources">Resources</h2>
+
+<h4 id="ensembles">Ensembles</h4>
+
+<ul>
+  <li>https://en.wikipedia.org/wiki/Boosting_(machine_learning)</li>
+  <li><a href="http://www.cs.princeton.edu/~schapire/papers/strengthofweak.pdf">The Strength of Weak Learnability</a></li>
+  <li><a href="http://colt2008.cs.helsinki.fi/papers/26-Shwartz.pdf">On the Equivalence of Weak Learnability and Linear Separability</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/AdaBoost">AdaBoost</a></li>
+  <li><a href="http://www2.islab.ntua.gr/attachments/article/86/Ensemble%20methods%20-%20Zhou.pdf">Ensemble methods</a></li>
+</ul>
+
+<h4 id="markets">Markets</h4>
+
+<ul>
+  <li>?</li>
+</ul>
+:ET

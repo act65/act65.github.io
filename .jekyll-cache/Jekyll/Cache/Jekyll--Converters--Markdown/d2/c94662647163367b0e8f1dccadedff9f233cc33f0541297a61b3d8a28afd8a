@@ -1,0 +1,213 @@
+I"�.<p><strong>TODO</strong> Need to understand AD better.</p>
+
+<blockquote>
+  <p>Can we automatically bound the complexity of algorithms?</p>
+</blockquote>
+
+<p>Trivially, yes. We can just time the algorithm, we can track the amount of memory it used, … But; that requires input from humans, and, it is not efficient. Can we efficiently automate this process?</p>
+
+<p>Want to make it symbolic!!</p>
+
+<h2 id="desiderdata">Desiderdata</h2>
+
+<p>Knowing the absolute time and memory usage of an algorithm is nice <a href="https://pypi.org/project/memory_profiler/">memory profiler</a>. But what I am really interested in is how do these resources scale.
+Want a model of the computation so we can ask counterfactual queries. What if I had twice as much data/memory/…?</p>
+
+<p>What would automatic computational complexity do and be?</p>
+
+<ul>
+  <li><strong>Accurate</strong>:
+    <ul>
+      <li>Want the lowest upper bound. That might take some work to find!?</li>
+    </ul>
+  </li>
+  <li><strong>Understandable</strong>:
+Want the bound to be expressed in an ‘intuitive’ way (w.r.t inputs and ?).</li>
+  <li><strong>Efficient</strong>:
+    <ul>
+      <li>must be more efficient than just running the program at various <code class="language-plaintext highlighter-rouge">n</code> (which would be the baseline). Is there any existing work on this?</li>
+      <li>must have low overhead so it can passively exist in the background.</li>
+    </ul>
+  </li>
+  <li><strong>General</strong>:
+    <ul>
+      <li>works on arbitrary programs</li>
+    </ul>
+  </li>
+  <li>?</li>
+</ul>
+
+<p><strong>TODO</strong> maybe python is the wrong language to work with? we have abstracted away from the basis calls. Memory indexes, processes, …
+<strong>TODO</strong> problem is how different compilers deal with operations… But that is why we are dealing with bounds!?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">bound</span>
+<span class="kn">from</span> <span class="nn">bound</span> <span class="kn">import</span> <span class="n">complexity_measures</span> <span class="k">as</span> <span class="n">cplx</span>
+
+<span class="k">def</span> <span class="nf">sort_list</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+  <span class="n">unsorted_list</span> <span class="o">=</span> <span class="n">random_list</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+  <span class="n">sorted_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+  <span class="k">with</span> <span class="n">bound</span><span class="p">.</span><span class="n">scope</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+      <span class="n">x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">unsorted_list</span><span class="p">)</span>
+      <span class="n">sorted_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+      <span class="n">unsorted_list</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sorted_list</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">bound</span><span class="p">.</span><span class="n">upper</span><span class="p">(</span><span class="n">sort_list</span><span class="p">,</span> <span class="n">measure</span><span class="o">=</span><span class="n">cplx</span><span class="p">.</span><span class="n">memory</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="s">"O(n)"</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">bound</span><span class="p">.</span><span class="n">upper</span><span class="p">(</span><span class="n">sort_list</span><span class="p">,</span> <span class="n">measure</span><span class="o">=</span><span class="n">cplx</span><span class="p">.</span><span class="n">time</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="s">"O(n**2)"</span>
+</code></pre></div></div>
+
+<h2 id="computational-complexity">Computational complexity</h2>
+
+<p>Intro/motivation and Worked examples</p>
+
+<p>What is it complexity theorists do?
+Some examples, calculated via proof, and empirically backed up.
+Why do we care about computational complexity?</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>I imagine it would work similar to how automatic differentiation (AD) works: derivatives, chain rule, checkpointing, reverse-mode, segmentation, ?.</p>
+
+<p>At a high level, AD works by defining a derivative for every operation. A computational graph of a function can then be transformed into a graph of the derivative of the fn using the defined gradient for each operation and using the sum, product and chain rules …</p>
+
+<p>I imagine that we could define a set of basis operations, where each one has its complexity defined (memory, time, parallel, energy, latency, …). As these basis ops are composed we can propagate these complexities via a chain rule.</p>
+
+<h3 id="differential-computational-complexity">Differential computational complexity</h3>
+
+<p>We want to know the CC of $f(n)$ for other arbitrary values of $n$.
+For example, want to know how the memory usage changes with different inputs, $\frac{d\; \text{memory}}{d\;\text{inputs}}$.</p>
+
+<p>Knowing $\frac{d\; \text{memory}}{d\;\text{inputs}}$ would allow us to estimate the memory complexity at other n.</p>
+
+<hr />
+<p>Actually, I would be pretty happy with;</p>
+
+<p>$\text{memory} = g_f(p), p = h(\text{inputs})$ (the memory complexity of $f$ as a function of some property $p$ of the inputs, e.g. their size, location, …).</p>
+
+<p>Or, $\text{memory} = g_f(p), p = h(\text{outputs})$ (the memory complexity of $f$ as a function of some property $p$ of the outputs, e.g. the error, latency, …).</p>
+
+<p>That seems closer to what we want?
+***</p>
+
+<p>A similar problem occurs in calculus. Want to know other values of $y$ where $y = f(x)$.</p>
+
+<p>So we want to know;</p>
+
+\[\begin{align}
+y = f(n) \\
+\frac{d \mathcal R_m}{dn} \tag{change in memory wrt n}\\
+\end{align}\]
+
+<p>Two ways to frame!? $f(n)$. Or $f(x)$, where we also have some measure $g(x) = n$ that gives us the complexty of the input. (length, number of bits, …?)</p>
+
+<h4 id="chain-rule">Chain rule</h4>
+
+<p>Chain rule takes nested function composition and gives multiplication. This is a property of the linearity of the gradients.</p>
+
+<side>
+AD is efficient because ? (is it? only reverse is - memory - efficient)
+Reverse AD is efficient because ?
+</side>
+
+<p>Dont have a chain rule because they are not linear?!?</p>
+
+<p>The key is the memoization?!? The reuse of</p>
+
+<h4 id="reverse-ab-automatic-bounding">Reverse-AB (automatic bounding)</h4>
+
+<p>Question. Does the complexity of one hyperparameters tells us something about others!?</p>
+
+<p>Can we come up with some sort of chain rule here?
+The theorem we are after is something like</p>
+
+<p><strong>Conjecture</strong>: These exists a ‘chain rule’ for resource use.</p>
+
+\[\begin{align}
+\mathcal R &amp;:= \{ \text{Memory}, \text{Time}, ... \} \\
+r \in \mathcal R \\
+if \quad h &amp;= g \circ f\\
+\mathcal B_{r}(g) \circ \mathcal B_{r}(f) &amp;= \mathcal B_{r}(g \circ f) \tag{!!!} \\
+\end{align}\]
+
+<p>Examples</p>
+
+<p>\(\begin{align}
+f(n) &amp;= m \\
+g(m) &amp;= z \\
+h(n) &amp;= g \circ f \;\;(n) \tag{chained functions} \\
+\\
+\mathcal B_{mem}(f) &amp;= O(log(n)) \tag{CC of f}\\
+\mathcal B_{mem}(g) &amp;= O(m^2) \tag{CC of g}\\
+&amp;= O(log(n)^2) \\
+\end{align}\)
+***
+\(\begin{align}
+m_1 &amp;= f_1(n_1) \\
+m_2 &amp;= f_2(n_2) \\
+z &amp;= g(m_1 + m_2) \\
+\mathcal B_{mem}(f_1) &amp;= O(log(n_1)) \\
+\mathcal B_{mem}(f_2) &amp;= O(1) \\
+\mathcal B_{mem}(g) &amp;= O(m^2) \\
+\\
+\mathcal B_{mem}(g \circ f_1) &amp;= \\
+&amp;= O(log(n)^2) \\
+\mathcal B_{mem}(g \circ f_2) &amp;= O(1) \\
+\end{align}\)
+$g \circ f_1$ doesnt work here!? it is more like $\mathcal B_{mem}(z \leftarrow n_1), z = g(m_1, m_2)$ the complexity of $z$ w.r.t $n_1$.</p>
+
+<h2 id="how-accurate">How accurate?</h2>
+
+<p>But what about the compiler?! Different optimisations are possible depending on data type, size, …? So the complexity changes based on how various hardware is targeted etc…</p>
+
+<p>Worst case versus expected case versus best case versus !? case.</p>
+
+<p>Extra compute could be spent to find tight(er) bounds!? Sounding like we would need an automated proof assistant?</p>
+
+<h2 id="use-case">Use case?</h2>
+
+<p>If we have, say, 10 hyperparameters, we might care about how our algorithms scales each of them and with each other?!</p>
+
+<p>Doesnt actually need to run the algorithm, only construct the computation graph and then !?!?</p>
+
+<h2 id="minimal-proof-of-concept">Minimal proof of concept</h2>
+
+<p>Lets make some ops with their complexity defined and compose them together.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Operation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="nb">NotImplementedError</span>
+
+  <span class="o">@</span><span class="n">static_method</span>
+  <span class="k">def</span> <span class="nf">memory_complexity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s">"""
+    Do I want this to return a general fn for the complexity,
+    or to simply return the value of this ops complexity!?
+    """</span>
+    <span class="k">raise</span> <span class="nb">NotImplementedError</span>
+
+<span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nb">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+  <span class="o">@</span><span class="n">static_method</span>
+    <span class="k">def</span> <span class="nf">memory_complexity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># or lambda n: n
+</span></code></pre></div></div>
+
+<h2 id="future-work">Future work</h2>
+
+<ul>
+  <li>Use this to fill out Scott Aaronson’s zoo of algols.</li>
+  <li>What about using this to help you make tradeoffs? Needs access to alternatives?!?</li>
+  <li>What about sample, accuracy, energy, parallel, latency, reversible, … complexity?</li>
+</ul>
+:ET

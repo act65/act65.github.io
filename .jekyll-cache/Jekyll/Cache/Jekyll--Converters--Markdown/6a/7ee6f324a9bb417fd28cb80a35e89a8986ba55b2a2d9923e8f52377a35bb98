@@ -1,0 +1,41 @@
+I"<p>Many approaches to physics come from ‘first principles’.
+Rather, I want to go back to the data and ask; what does it really tell us?</p>
+
+<p>I think existing theories used to explain quantum physics are crap. They make these outraegous interpretations and justify them by saying “there doesn’t exist a better model / interpretation, so just deal with it”. See my post louding expressing my thoughts about; states that depend on whether you are observing them,  entanglement, …</p>
+
+<p>So, I figure, go back to the fundamentals: what does the data say? Maybe there is a better explanation.</p>
+
+<p>Compton scattering</p>
+
+<p>https://journals.aps.org/pr/pdf/10.1103/PhysRev.21.483</p>
+
+<p>tldr: Photons bounce off electrons. But the photons deflection appears to depend only on wavelength, not intensity of the light.</p>
+
+<p>How does that data actually say this?!</p>
+
+<p>The Stern–Gerlach experiment</p>
+
+<p>The double slit experiment</p>
+
+<p>tldr: A laser is pointed at two slits. Behind the slits an ‘interference pattern’ is formed.</p>
+
+<p>The photoelectric effect</p>
+
+<p>Blackbody radiation</p>
+
+<p>Others!?</p>
+
+<ul><li>https://en.wikipedia.org/wiki/Quantum_eraser_experiment</li><li>???</li></ul>
+
+<p>Refs</p>
+
+<ul>
+  <li>https://www.quora.com/What-are-the-list-of-experiments-that-the-entire-quantum-mechanics-is-based-on</li>
+  <li>https://en.wikipedia.org/wiki/History_of_quantum_mechanics</li>
+  <li>https://en.wikipedia.org/wiki/Category:Physics_experiments</li>
+  <li>https://en.wikipedia.org/wiki/Timeline_of_quantum_mechanics</li>
+  <li>https://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation</li>
+</ul>
+
+<p>Ideally we would just build a test set of these experiments and allow computers to search through possible models?!?</p>
+:ET

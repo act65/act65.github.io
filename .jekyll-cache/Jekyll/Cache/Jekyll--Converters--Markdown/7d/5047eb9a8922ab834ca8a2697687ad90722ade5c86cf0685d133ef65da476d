@@ -1,0 +1,76 @@
+I"a
+<p>Constructing neural networks with the right topology can be a pain. What if we used matrices to represent the layers and allowed them to act as an operator on the activations?</p>
+
+<h2 id="functional-linear-algebra">Functional linear algebra</h2>
+
+<p>So (I think) we would agree that matrix multiplication looks something like this.</p>
+
+\[\begin{bmatrix}
+a &amp; b\\
+c &amp; d\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+e &amp; f\\
+g &amp; h\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+ae+bg &amp; af+bh\\
+ce+dg &amp; cf+dh\\
+\end{bmatrix}\]
+
+<p><strong>What happens if we did this?</strong></p>
+
+\[\textbf{F}(\textbf{V}) =
+\begin{bmatrix}
+a &amp; b\\
+c &amp; d\\
+\end{bmatrix}
+\begin{pmatrix}
+e &amp; f\\
+g &amp; h\\
+\end{pmatrix}=
+\begin{bmatrix}
+a(e)+b(g) &amp; a(f)+b(h)\\
+c(e)+d(g) &amp; c(f)+d(h)\\
+\end{bmatrix}\]
+
+<p>Elements in $\textbf{F}$ are functions (that take one argument - although I would like to allow for more). And elements in $\textbf{V}$ are variables. (I started calling the functional matrix, $\textbf{F}$, a fatrix, as a placeholder for something better, but I havent come up with anything better… any ideas?)</p>
+
+<p><strong>Why would we bother?</strong> Well;</p>
+
+<ul>
+  <li>linear algebra with non-linearities (although this sounds somewhat silly).</li>
+  <li>Traditional linear algebra is a special case of this framework
+    <ul>
+      <li>e.g. set $a(e)$ to be the function $a(e) = const\times e$.</li>
+    </ul>
+  </li>
+  <li>Allows us to recursively build higher level functions.
+    <ul>
+      <li>Since $\textbf{F}$ is just a function, we can use it as an element in another ‘higher level’ fatrix.</li>
+    </ul>
+  </li>
+  <li>Can be used to represent a computational graph.</li>
+</ul>
+
+<h2 id="applications">Application(s)</h2>
+
+<p>These are some examples of using this functional matrix algebra to represent the computational graph of some recent neural network architectures.
+<img src="/images/Fatrix.png" alt="Fatrix" /></p>
+
+<p><em>Color indicates shared parameters. See <a href="https://github.com/act65/FAT/tree/master/Examples">this folder</a> for derivations of these pictures.</em></p>
+
+<h2 id="open-questions">Open questions</h2>
+
+<ul>
+  <li>How can I bring AD into this framework? (The derivative of a fatrix would be the transpose of the element wise derivative?)</li>
+  <li>How can this be used to help us understand the behaviour of a non-linear function?</li>
+  <li>Is there a notion of an eigen decomposition of these representations?</li>
+  <li>What does the structure of a fatrix tell us about its function?</li>
+</ul>
+
+<hr />
+<p>See more at <a href="https://github.com/act65/FAT">this</a> repository.</p>
+:ET

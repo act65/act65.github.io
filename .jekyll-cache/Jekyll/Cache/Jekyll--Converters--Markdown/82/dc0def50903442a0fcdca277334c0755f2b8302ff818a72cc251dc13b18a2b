@@ -1,0 +1,32 @@
+I"F<p>Using a baseline of a random policy … doesnt tell us much.</p>
+
+<p>Examples from papers.</p>
+
+<p>Imagine a ‘memorizer’ that stores past state-action values. For every state-action ever seen, it memorizes the discounted return recieved after finishing the episode. This could be used as an ‘expensive oracle’ to provide supervision for a learned policy.</p>
+
+<p>Ok. Why doesn’t this work?</p>
+
+<ul>
+  <li>Use state-actions to look up a value.</li>
+  <li>Use states to look up action values.</li>
+</ul>
+
+<p>We are trying to approximate a $Q$-function with memory. Where $Q(s, a) = V[NN(s)]$</p>
+
+\[Q(s, a) = V[NN(s;a)], \;\; V \in R^N\\
+Q(s, a) = V[NN(s)][a], \;\;V \in R^{N \times |A|} \\\]
+
+\[armax {[\sigma (d[NN(s)]) \cdot \sigma (v[NN(s)])]}_{i}\]
+
+<p>Not going to be sample efficient.</p>
+
+<p>Many neighbors, few neighbors.
+Want to generalise… Clearly, to get sample efficiency we need to generalise.</p>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/1806.04624">Organizing experience</a></li>
+  <li><a href="https://arxiv.org/abs/1907.04543">Striving for simplicity in off-policy DRL</a></li>
+  <li><a href="https://arxiv.org/abs/1907.05242">Large memory layers with product keys</a></li>
+  <li><a href="https://arxiv.org/pdf/1906.05253.pdf">Search on the Replay Buffer: Bridging Planning and Reinforcement Learning</a></li>
+</ul>
+:ET

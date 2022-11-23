@@ -28,6 +28,13 @@ Given problem X, priors P, data D.
 What is the test accuracy likely to be?
 -->
 
+Other examples;
+
+- time series. 
+  - initial condition sampled from same distribution. same dynamical system.
+  - initial condition sampled from same distribution. dynamical system is $\epsilon$-similar
+  - ?
+
 #### NNs
 
 A NN + SGD has many build in priors.

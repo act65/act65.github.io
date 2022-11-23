@@ -1,0 +1,59 @@
+I"�<p>Typical smart city solutions seem to focus on gathering <strong>evidence for/of problems</strong>, i.e. measuring built and social environments. This is useful as it can motivate action and change. However, this problematic data does not help us solve the problems once identified. For this we need <strong>evidence for/of solutions</strong>. How have past policies changed cities? Which policies seem to work? Which policy would be most effective/efficient in this case?</p>
+
+<p>These questions are notoriously hard to answer (<em>because people don’t like being experimented on, because experiments take many years, because there are enormous amounts of uncontrolled variables</em>). Thus the question becomes; what do we need to answer these questions? In the ideal case we would have a dataset relating; all policies ever implemented, and measures of every variable possible, controlled and uncontrolled (social, environmental, political, economic, …).</p>
+
+<p>Smart City tech is mostly working towards measures of environmental, economic and some social variables. However, the missing piece is a platform that serves queries about past policies.</p>
+
+<p><strong>Proposal</strong>: build a search engine that indexes local council and national government policies by:</p>
+
+<ul>
+  <li>the locations they apply,</li>
+  <li>the dates they apply,</li>
+  <li>the problem they are attempting to fix,</li>
+  <li>the type of solution they implement,</li>
+  <li>the cost to the council/govt (and it’s people),</li>
+  <li>the ‘success’ of the solution.</li>
+</ul>
+
+<p>I imagine a few use cases (need some help here);</p>
+
+<ol>
+  <li>You want to reduce the traffic in the central city, but are unsure about how to proceed. You have been collecting data on traffic patterns in many cities for years. Using the policy search engine, you can easily find all transport related policies implemented in the cities you have traffic stats on. It turns out that the latest intervention in public transport preceded – by 2 weeks – a large increase in public transport use.
+    <ul>
+      <li>Browsing past polices for inspiration and soft validation. (You could “test drive” a new policy by examining how other cities/governments are trying to solve similar problems.)</li>
+      <li>Meta-analysis. Because you know certain <code class="language-plaintext highlighter-rouge">similar</code> policies correlate with certain outcomes (with a p-value of XX and a sample size of ~100 cities) you can be more confident in applying the policy to achieve that outcome.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>A proof of concept could be a search engine that serves queries based on location, date and a class of policy domain – e.g. public transport.</p>
+
+<hr />
+
+<p>This concept seems feasible as:</p>
+
+<ul>
+  <li>Many cities policies are openly available and collected on their websites. For example; Wellington, Auckland, Syndey.</li>
+  <li>Building search engines is not new</li>
+  <li>Natural language processing provides off the shelf tools for parsing keywords, entities, …</li>
+</ul>
+
+<p>Of course, there are some risks and uncertainties</p>
+
+<ul>
+  <li>we do not control the data we are serving (google has a similar issue and solved it by downloading the internet…).</li>
+  <li>each council policies are stored differently (different naming conventions, … will need to automate parsing each one – is this feasible?)</li>
+  <li>the data held by councils may not accurately represent when action was taken on new policies (need to answer/find out how bad this is)</li>
+  <li>it is likely there will be a bias towards positive results in the policies reported (not much can be done about that)</li>
+</ul>
+
+<hr />
+
+<p>In the most ideal case we would align this with GDELTs API, thus allowing us to correlate;</p>
+
+<ul>
+  <li>local/national policies (leverage the years of data we already have and experiments already done),</li>
+  <li>news worthy happenings (correct for uncontrolled variables),</li>
+  <li>the metric we care about.</li>
+</ul>
+:ET

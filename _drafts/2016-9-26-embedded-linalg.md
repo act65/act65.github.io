@@ -13,7 +13,7 @@ One of the cool things about linear algebra is that linear functions can be writ
 
 <!-- But are these more that just nice mathematical curiosities? Why is this useful or important? -->
 
-## Polynomials
+Let start with linear functions of polynomials.
 
 Consider the space of polynomial coefficients, $a \in  {\mathbb R}^{\infty}$. Where $a_i$ is the coefficient for $x^i$. Thus $a = [0, 5, 3, 0, 1, \dots]^T$ represents
 
@@ -21,7 +21,6 @@ $$
 0\cdot x^0 + 5\cdot x^1 + 3\cdot x^2 + 0\cdot x^3 + 1\cdot x^4 \\
 = x^4 + 3\cdot x^2 + 5\cdot x
 $$
-
 
 ##### The differentiation operator
 
@@ -66,7 +65,6 @@ $$
 
 <side>Homework: What is the derivative of a derivative, $D \cdot D$? Does it make sense?</side>
 Awesome.
-
 
 #### Integral (of polynomials)
 
@@ -114,10 +112,23 @@ $$
 
 Intriguingly, we can relate the integration and differentiation operators via $\mathcal I = \frac{1}{\mathcal D^T}$.
 
-### Bilinear operations
+### Linear operations on ???
+
+
+#### Matrix multiplication
+
+$$
+C_{ij} = \sum_k A_{ik}B_{kj} \\
+C_{ijk} = T^{MMT}_{ijk} A_{ik}B_{kj}
+$$
 
 > The matrix multiplication tensor
-TODO !!!
+https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4
+
+
+#### Determinant
+
+??? can this be written as a matrix?
 
 ## Algebras
 

@@ -1,0 +1,118 @@
+I"�<p>It is surprising how many different techniques in applied mathematics can be reduced back to a simple equation.</p>
+
+<p>Really the key to representation learning.</p>
+
+\[\textbf  y = f(\textbf x, \epsilon) \\\]
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>y</th>
+      <th>f</th>
+      <th>x</th>
+      <th>$\epsilon$</th>
+      <th>Loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PCA</td>
+      <td>None</td>
+      <td>Linear, Orthogonal</td>
+      <td>None</td>
+      <td>Additive, Gaussian, Stationary</td>
+      <td>$\parallel SV^Tx - y \parallel_2^2$</td>
+    </tr>
+    <tr>
+      <td>ICA</td>
+      <td>None</td>
+      <td>Linear</td>
+      <td>statistically independent, p(x)</td>
+      <td>No noise</td>
+      <td>$H(p(Y=y)) - \sum_i H(p(Y_i=y_i))$</td>
+    </tr>
+    <tr>
+      <td>FFT/wavelets</td>
+      <td>Sparse, complex</td>
+      <td>Linear, complex</td>
+      <td>None</td>
+      <td>No noise</td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td>Compressed sensing</td>
+      <td>None</td>
+      <td>Linear, Approximately orthogonal</td>
+      <td>Sparse</td>
+      <td>Additive, Gaussian, Stationary</td>
+      <td>$\parallel Ax - y \parallel_2 + \parallel x \parallel_1$</td>
+    </tr>
+    <tr>
+      <td>1-step graph propagation</td>
+      <td>None</td>
+      <td>Linear, Normalised rows</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Dictionary learning</td>
+      <td>?</td>
+      <td>?</td>
+      <td>?</td>
+      <td>?</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Random matrix theory</td>
+      <td>None</td>
+      <td>Linear, Random</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Clustering</td>
+      <td>Discrete</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Non-negative matrix factorisation</td>
+      <td>None</td>
+      <td>Non-negative, linear</td>
+      <td>None</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It makes me wonder what other combinations there are left to study and which other properties we could enforce.</p>
+
+<p>What if</p>
+<ul>
+  <li>$X/Y$ are ordered $\forall i: x_i &lt; x_{i+1}$</li>
+  <li>have symmetries (say between 2 dims - momentum/energy in dim i) that need to be preserved</li>
+  <li>$X/Y$ is structured. A set of graphs, trees, groups…</li>
+  <li>low rank, symmetric, positive semi definite, block, …?</li>
+  <li>noise can change, or be correlated with x?!</li>
+  <li>
+    <h2 id="uniformly-distributed-the-spaces-came-with-measures-as-well">uniformly distributed. the spaces came with measures as well.</h2>
+  </li>
+</ul>
+
+<p>What all of this is really about is how we can transform from one basis to another. Want better intuition here!
+What are the best ways to interpret a vector over a basis? Depends on how they are allowed to be combined? As an attention over possibilities?</p>
+
+<p>Are there any nonlinear examples that we can tractably analyse?</p>
+
+<!-- What about a taxonomy of all the problems related to;
+- z* = argmax f(x) st y. LP, QP, ???. Wasserstein. Gumbel trick. ...!? (this would be a long list!?)
+- L = minmax f(x, y). Minimax games, xAy...
+- $\frac{dx}{dt} = f(x, t)$. ODEs, gradient descent, ...
+  -->
+:ET

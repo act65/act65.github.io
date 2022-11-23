@@ -1,0 +1,17 @@
+I"�<p>To stay sane I needed to write down some of the <em>actionable</em> ideas that occur to me.
+Otherwise I have the tendency to hoard them.
+So, these are the questions I am not going to answer (argh it hurts!).
+They appear to be perfectly good research directions, but “you need to focus” (says pretty much everyone I meet).</p>
+
+<h1 id="requests-for-research">Requests for research</h1>
+
+<p><em>(the number of stars reflects how open the problem is:, 1 star means little room for interpretation, 3 stars mean that there are some complex choices to be made)</em></p>
+
+<p>☆ <strong>Controlled implicit qualtiles</strong> Extend <a href="https://arxiv.org/abs/1806.06923">Implicit quantile RL</a> (which works suprisingly well) to use <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.43.7441&amp;rep=rep1&amp;type=pdf">control</a> <a href="https://arxiv.org/abs/0802.2426">variates</a>.</p>
+
+<p>☆ <strong>Atari-onomy</strong> Make a <a href="http://taskonomy.stanford.edu/">taskonomy</a> of the <a href="https://gym.openai.com/envs/#atari">Atari</a> games, showing how ‘similar’ each game is to others.</p>
+
+<p>☆ ☆ ☆ <strong>Learner discrimination</strong> Just by observing a player learn, can we identify the learning algorithm is it using to learn? For example, can we distinguish the learners in <a href="https://github.com/openai/baselines/">OpenAI’s baselines</a>, PPO, AC2, AKTR, …?</p>
+
+<p>☆ ☆ <strong>Meta learning from temporal decompositions</strong> <a href="https://arxiv.org/abs/1611.05763">Meta-RL</a> trains a learner on the aggregated return over many episodes (a larger time scale). If we construct a temporal decomposition (moving averages at different time-scales) of rewards and aproximate them with a set of value functions, does this produce a heirarchy of meta learners? (will need a way to aggregate actions chosen in different time scales, for example $\pi(s_t) = g(\sum_k f_k(z_t))$)</p>
+:ET
