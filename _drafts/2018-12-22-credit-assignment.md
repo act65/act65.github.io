@@ -1,10 +1,7 @@
 ---
 layout: post
-title: Credit assignment
+title: What is the difference between credit assignment and causal inference?
 ---
-
-What is the difference between credit assignment and causal inference?
-
 
 - Eligibility traces -> gradient of policy. + Kickback + !?
 - Differentiation $\neq$ credit assignment. Credit assignment is a counterfactual notion. Differentiation has no concept of priors, and what might have happened if a parameter was a different value. Or does it!?
