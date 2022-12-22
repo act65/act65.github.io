@@ -3,14 +3,14 @@ layout: post
 title: Representations in linear algebra
 ---
 
-Linear algebra and arrays combine to give us a powerful language. Let's explore using linear algebra to represent;
+Linear algebra and arrays combine to give us a powerful language. Here we explore using linear algebra to represent;
 
-- linear operators ()
+- [linear operators](#linop) ()
 - algebra ()
-- computation
-- symmetry groups ()
+- computation (logic, automata, quantum)
+- symmetry groups (?)
 
-## Linear operators
+## Linear operators {#linop}
 
 Linear functions can be written as arrays. This representational duality between operator and operand is rather elegant.
 
@@ -27,7 +27,7 @@ $$
 = x^4 + 3\cdot x^2 + 5\cdot x
 $$
 
-##### The differentiation operator
+#### A differentiation operator for polynomials
 
 We can define a differentiation operator, $D$, as a matrix.
 
@@ -69,7 +69,7 @@ $$
 <side>Homework: What is the derivative of a derivative, $D \cdot D$? Does it make sense?</side>
 Awesome.
 
-#### Integral (of polynomials)
+#### An integration operator for polynomials
 
 What about integrals, they are linear operators. Can we write them in a similar manner?
 
@@ -129,6 +129,16 @@ https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4
 #### Determinant
 
 ??? can this be written as a matrix?
+
+$$
+\begin{align}
+\begin{vmatrix}
+a&b&c\\
+d&e&f\\
+g&h&i\\
+\end{vmatrix}=aei+bfg+cdh-ceg-bdi-afh
+\end{align}
+$$
 
 ### Convolution
 
@@ -324,8 +334,9 @@ The pattern continues!
 - Clifford algebras?
 - ?
 
-### Computation
-##### Logic
+
+## Computation
+### Logic
 
 We have two bits, $xy$. We can encode the 4 possible arangements $00, 01, 10, 11$ in a four dimensional space, $\mathbb R^4$. Let $a \in \mathbb R^4$, then $a_0 = a(00), a_1 = a(01), a_2 = a(10), a_3 = a(11)$. Now we require all operations to be unitary and all vectors to be within the basis, $a_0, ..., a_n$.
 
@@ -341,29 +352,15 @@ CNOT \equiv
 \end{align}
 $$
 
-#### (quantum) computation
+### Seripinski triangle
 
 
-### Memory
+### (quantum) computation
 
-[Holographic reduced representations](http://www2.fiit.stuba.sk/~kvasnicka/CognitiveScience/6.prednaska/plate.ieee95.pdf)
 
-### Graphs
-(`matmul -> message passing`)
 
-!?? Can represent graphs in linalg.
+***
 
-Other
+Weird things like. Neural network architectures. fat.
 
-* Seripinski triangle
-
-# Thoughts
-
-- Why is linear algebra such an effective language for thinking about and expressing structure in systems?
-- What makes it so good? Is it really that great?
-- The duality between representations and functions. A (linear) function can be written as a matrix. __Q__ For what other classes of function can we find dual representations?
-- What alternatives are there to representing information that rival linear algebra? Other data structures, trees, graphs, !??
-- in some representations, matmul ends up capturing another operation in the original representation. other times, the arguments capture the operations.
-
-<!--
-- could talk about "Concrete models and empirical evaluations for the categorical compositional distributional model of meaning". -->
+<!-- - The duality between representations and functions. A (linear) function can be written as a matrix. __Q__ For what other classes of function can we find dual representations? -->

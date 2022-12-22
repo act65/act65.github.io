@@ -7,9 +7,7 @@ I came across a new adversarial setting (at least new to me...) while getting cu
 
 Some background:
 
-> NZ uses a General Anti-Avoidance Rule (GAAR). In practice this means judiciaries end up making the law. Aka, there doesnt exist a set of well-specified laws, so judges must interpret the GAAR. The rulings are then used as precedent for the future.
-
-<!-- what does this really have to do with the game between taxpayers versus tax gatherers -->
+> NZ uses a General Anti-Avoidance Rule (GAAR). In practice this means judiciaries end up making the law. Aka, there doesnt exist a set of well-specified laws, so judges must interpret the GAAR (expensive calls to the oracle). The rulings are then used as precedent for the future.
 
 Ok, so this post focuses on completing tax law. 
 
@@ -36,7 +34,7 @@ Imagine a game between [IRD](https://www.ird.govt.nz/) (the NZ tax gatherers) an
 3. You recieve the aggregated loss over all taxpayers (you can choose to query an expensive oracle -- judges/court -- to check whether your adversary has made a legal move).
 
 What makes this setting hard?
-
+- __Information asymmetry__. The adversary always gets access to the current loss (they know how much tax they avoided -- at least with respect to their moves). While you only get access to the aggregated loss. But you can get info about specific taxpayers if you query an expensive oracle (audits/jidiciaries).
 - __Computation asymmetry__. The adversary needs to find a single strategy to minimise tax (that is also legal). You need to find and subvert all potential strategies to avoid paying tax.
 - __Memory asymmetry__. In the multiplayer setting (many adversaries), it is easy(er) for each adversary to model and track changes in tax law (maybe they even collaborate...). But it is hard(er) for you to model and track changes to thousands, or more, adversaries (changes in a corporations finances my be indicative of avoidance).
 
