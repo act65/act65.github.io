@@ -3,11 +3,16 @@ layout: post
 title: Representations in linear algebra
 ---
 
-Linear algebra and arrays combine to give us a powerful language. Let's explore the power of them represent interesting languages/systems/grammars/algebras...
+Linear algebra and arrays combine to give us a powerful language. Let's explore using linear algebra to represent;
 
-## Embedded linear operators
+- linear operators ()
+- algebra ()
+- computation
+- symmetry groups ()
 
-One of the cool things about linear algebra is that linear functions can be written as arrays. This representational duality between operator and operand is rather elegant.
+## Linear operators
+
+Linear functions can be written as arrays. This representational duality between operator and operand is rather elegant.
 
 <!-- Related to Turing's duality of data and program. Where ... -->
 
@@ -39,8 +44,6 @@ $$
 
 And we can 'do' differentiation via matrix multiplying $\frac{d}{dx}a = \mathcal D \cdot a$.
 <side>Problem (we need infinite matrices for this to work out...)</side>
-
-
 
 This all works out because differentiation is a linear function! Each column is the derivative of a 'basis' function, which in this case is each $x^n$. Now, lets test it out.
 
@@ -112,9 +115,6 @@ $$
 
 Intriguingly, we can relate the integration and differentiation operators via $\mathcal I = \frac{1}{\mathcal D^T}$.
 
-### Linear operations on ???
-
-
 #### Matrix multiplication
 
 $$
@@ -129,6 +129,14 @@ https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4
 #### Determinant
 
 ??? can this be written as a matrix?
+
+### Convolution
+
+
+***
+
+- fourier
+- ?
 
 ## Algebras
 
