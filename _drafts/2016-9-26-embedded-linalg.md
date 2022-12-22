@@ -5,10 +5,10 @@ title: Representations in linear algebra
 
 Linear algebra and arrays combine to give us a powerful language. Here we explore using linear algebra to represent;
 
-- [linear operators](#linop) ()
-- algebra ()
+- [linear operators](#linop) (differentiation, convolution, determinant, and more)
+- algebra (dual numbers, complex numbers, and more)
 - computation (logic, automata, quantum)
-- symmetry groups (?)
+- symmetry groups (discrete, continuious)
 
 ## Linear operators {#linop}
 
@@ -145,7 +145,7 @@ $$
 
 ***
 
-- fourier
+- fourier (include jupyter notebook with visuals)
 - ?
 
 ## Algebras
