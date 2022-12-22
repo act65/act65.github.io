@@ -5,6 +5,8 @@ coverImage: "planet-earth-rotating-in-space_wj6uhr3xr__f0000.png"
 layout: post
 ---
 
+![]({{site.baseurl}}/images/{{page.coverImage}})
+
 (_tldr: I read a perspective piece and now I am an expert in weather / environmental science_)
 
 We are getting better at predicting the weather.

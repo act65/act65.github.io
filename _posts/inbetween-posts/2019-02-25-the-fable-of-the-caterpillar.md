@@ -5,23 +5,32 @@ coverImage: "caterpillar-a.png"
 layout: post
 ---
 
-(T_his is my current focus - kinda - for my masters. The (art)work was done in prep for a conference poster_)
+(This is my current focus - kinda - for my masters. The (art)work was done in prep for a conference poster)
 
-![caterpillar-g](images/caterpillar-g.png)
+![caterpillar-g]({{site.baseurl}}/images/caterpillar-g.png)
 
-A green leaf, is too far, out of reach, What you want, is in front, take the steps.
+A green leaf, <br>
+is too far, out of reach, <br>
+What you want, is in front, <br>
+take the steps.
 
-> You move your first leg up You move your second leg left ... You move your eleventh leg up You move your twelfth leg right
+> You move your first leg up<br>
+You move your second leg left<br>
+You move your eleventh leg up<br>
+You move your twelfth leg right
 
-Many legs burden the act, Unless coordinated in abstract.
+![caterpillar-g-1]({{site.baseurl}}/images/move-g-1.png)
+
+Many legs burden the act, <br>
+Unless coordinated in abstract.
 
 The words in this new abstract language, Should be as few as we can manage.
 
 > "left", "right", "forward", "backward"
 
-This time, the act is rather brief, "forward", to reach the tasty leaf.
-
-\[gallery ids="6787,6781" type="rectangular"\]
+This time, <br>
+the act is rather brief, <br>
+"forward", to reach the tasty leaf.
 
 On the left, the caterpillar must command every leg independently. It must move each leg up or down or left or right. Thus there are many possible commands it could give (aka many actions it could take). But many of these complicated actions result in nothing, or elicit a similar result. Similar results from different actions hint at an underlying structure that might be exploited (there may be many commands that result in forward movement, we dont need to know all of them!).
 
@@ -44,4 +53,4 @@ To understand abstract action spaces, we really need to understand their propert
 - Efficient/Simple (require few actions for typical tasks)
 - Expressive (all/most states are reachable)
 
-![caterpillar-a.png](images/caterpillar-a.png)
+![caterpillar-a.png]({{site.baseurl}}/images/caterpillar-a.png)

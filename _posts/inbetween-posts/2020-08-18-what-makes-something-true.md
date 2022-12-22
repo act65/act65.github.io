@@ -3,13 +3,14 @@ title: "What makes something true?"
 date: "2020-08-18"
 coverImage: "public-engagement-science-comms-hero.jpg"
 layout: post
+subtitle: How does deductive truth (ie math) relate to inductive truth (ie science)?
 ---
 
 Mathematical proof makes something true. But what is a 'proof'? In mathematics a proof means that we can agree upon a starting point and some rules, and with those rules we can find (aka derive) statements that are true!
 
 For example, given a chess position, it is true that white can checkmate in 3 moves (if we follow the rules of chess). (Wf4->h6, Bg8->h6, Wd2->h6, Bf8->g8, Wf6->f7)
 
-![](https://act65com.files.wordpress.com/2020/09/image.png?w=714)
+![]({{site.baseurl}}/images/image.png)
 
 There are many other true statements that can be proven given this starting point (and following the rules of chess).
 
@@ -29,9 +30,9 @@ This uncertainty is the problem science solves. Science attempts to systematical
 
 Consider the question; _is the theory of general relativity likely to be true?_
 
-![](images/einstein-s-theory-of-relativity.jpg)
+![]({{site.baseurl}}/images/einstein-s-theory-of-relativity.jpg)
 
-![](images/189-1896015_law-of-gravity-equation.png)
+![]({{site.baseurl}}/images/189-1896015_law-of-gravity-equation.png)
 
 Science can tell us;
 

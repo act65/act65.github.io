@@ -5,6 +5,8 @@ coverImage: "billionaires-696x435-1.jpg"
 layout: post
 ---
 
+![]({{site.baseurl}}/images/{{page.coverImage}})
+
 Currently, the problem with collecting tax is that it is easy for rich people to hide their income, wealth, assets. So, a question is;
 
 > how can we design an incentive for rich people to accurately report (each other's) finances.

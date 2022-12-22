@@ -2,7 +2,10 @@
 title: "Immortalized in plastic (story prompt)"
 date: "2019-02-22"
 coverImage: "plastic-landfill.jpg"
+layout: post
 ---
+
+![]({{site.baseurl}}/images/{{page.coverImage}})
 
 Intrepid aliens discover Earth. They find an uninhabited planet, with unusual yet magnificent formations. Their (equivalent of) chemists / geologists / archaeologists investigate these structures and find large deposits of polymerized hydro-carbons.
 

@@ -5,6 +5,8 @@ coverImage: "deepdream.png"
 layout: post
 ---
 
+![]({{site.baseurl}}/images/{{page.coverImage}})
+
 (_I felt a bit down and lost recently; questioning whether my dreams are really achievable. From my current viewpoint they certainly appear hazy and far away. Here is my - current - dream life, reaffirmed, this story what gives me purpose and keeps me going in the hope that I might understand the universe and contribute to society._)
 
 I dream of splitting my time between research, policy and business. In my mind this is a split between exploring the unknown, helping the less fortunate and building something useful.

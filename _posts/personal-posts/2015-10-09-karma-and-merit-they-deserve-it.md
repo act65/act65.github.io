@@ -22,7 +22,7 @@ Karma. (_he was a selfish English Lord in his previous life_)
 
 Anu, a 14 year old girl in India, who was caught robbing a house by the owners who then sold her into bonded labor and has now been a sex slave for the past 3 years.
 
-Karma. (s_he stole_)
+Karma. (_she stole_)
 
 Amir, an extremist who recently graduated Tehran university. He who was caught attempting to blow up a local bus. He is sentenced to death and hung.
 
