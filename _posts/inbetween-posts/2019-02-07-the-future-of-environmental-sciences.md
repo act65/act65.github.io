@@ -3,11 +3,10 @@ title: "The future of environmental sciences?"
 date: "2019-02-07"
 coverImage: "planet-earth-rotating-in-space_wj6uhr3xr__f0000.png"
 layout: post
+subtitle: What would the profession of environmental engineering look like?
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})
-
-(_tldr: I read a perspective piece and now I am an expert in weather / environmental science_)
 
 We are getting better at predicting the weather.
 
@@ -31,13 +30,18 @@ Imagine being about to attribute events to likely causes!
 
 I am imagining an algorithm that simulates weather with and without the CO2 released into the atmosphere by humans in the last 100 years. Using these simulations it should be possible to estimate how much more likely it is that (say) a flood occurs in India, that a hurricane hits the Caribbean, ... etc.
 
-Happily, this could also give us the ability to fairly quantify the damage being done by climate change. If we know that the release of CO2 is 40% of the sufficient cause of the flood and that the flood did $2 billion in damage, then the cost of that CO2, just in this case, was -$0.8 billion.
+Happily, this could also give us the ability to fairly quantify the damage being done by climate change. If we know that the release of CO2 is 40% of the sufficient cause of the flood and that the flood did 2 billion in damage, then the cost of that CO2, just in this case, was -0.8 billion.
 
 ## Engineering and control
 
 > engineering: taking scientific knowledge and wielding it for a purpose.
 
-What if we wanted; to stop the incoming hurricane? the water laden clouds to dump their water (see [this](https://amp.scmp.com/news/china/society/article/2138866/china-needs-more-water-so-its-building-rain-making-network-three) for a recent example)? a consistent source of wind power? to redirect a current to make a nice swim-able beach? to protect a reef from an acidic current? ...
+What if we wanted; 
+
+- to stop the incoming hurricane? 
+- the water laden clouds to dump their water (see [this](https://amp.scmp.com/news/china/society/article/2138866/china-needs-more-water-so-its-building-rain-making-network-three) for a recent example)? 
+- a consistent source of wind power? 
+- to redirect a current to protect a reef from acidity?
 
 In theory these are possible, but there are many complications. The two main ones I can think of are safety and ownership.
 
@@ -67,7 +71,7 @@ I can imagine this being quite a nasty affair. These resources are potentially w
 
 Finally, we might look further than just modelling the weather. We might start to model its influence on ecosystems! How might a;
 
-- flood effect the native population of flora?
+- flood effect a native population of flora?
 - heat wave effect the reproductive cycle of crops?
 - change in ocean currents change whale migration?
 

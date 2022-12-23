@@ -19,4 +19,4 @@ The point I wanted to make is; that NZ is profiting from the destruction of rain
 
 Further investigation required.
 
-Edit: Ok, scrap that. [Here](https://waterqualitynz.info/frequently-asked-questions/what-is-wrong-with-palm-kernel/) is the blog I wanted to write, but didn't have them motivation/knowledge. It's really good.
+Edit: Ok, scrap that. [Here](https://waterqualitynz.info/frequently-asked-questions/what-is-wrong-with-palm-kernel/) is the blog I wanted to write, but didn't have the motivation/knowledge. It's really good.

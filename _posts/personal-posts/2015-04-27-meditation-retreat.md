@@ -37,7 +37,7 @@ Today we started Vipassana. Vipassana is a load of crap. Through paying "closer
 
 **Day 5**
 
-Part of the moral conduct, the _sila__,_ was the rule that during the course you must, "abstain from killing any living creature". This rule uses the wrong words, it should be 'cease' in stead of 'abstain'. As abstain implies that we already do it, which is generally true, and we can keep doing it after... But I digress. What defines as a living creature and who gets to decide, are you not allowed to use soap as it kills bacteria, what about your immune system? What about walking, you are bound to stand on some unlucky insects...
+Part of the moral conduct, the _sila_, was the rule that during the course you must, "abstain from killing any living creature". This rule uses the wrong words, it should be 'cease' in stead of 'abstain'. As abstain implies that we already do it, which is generally true, and we can keep doing it after... But I digress. What defines as a living creature and who gets to decide, are you not allowed to use soap as it kills bacteria, what about your immune system? What about walking, you are bound to stand on some unlucky insects...
 
 **Day 6**
 
@@ -57,7 +57,7 @@ So instead of meditating I focused my thoughts on other things. Among other thin
 
 **Day 8**
 
-Some thing I still question is the ability to be truly objective. Can a human be truly objective? And what would the point be?The mediation required objective observation. But I still struggle with this, maybe it is my own faults.
+Some thing I still question is the ability to be truly objective. Can a human be truly objective? And what would the point be? The mediation required objective observation. But I still struggle with this, maybe it is my own faults.
 
 Another part of the moral conduct, the _sila__,_ was the rule that during the course you must, "abstain from all sexual activity". So it is safe to say that by this stage I was horny! However, what I found interesting was the alarming frequency that my thoughts were drawn towards girls. These thoughts were not necessarily sexual, it could have been a conversation, a look, etc... or sex.
 

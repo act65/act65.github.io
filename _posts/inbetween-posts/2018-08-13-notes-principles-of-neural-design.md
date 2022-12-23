@@ -1,8 +1,9 @@
 ---
-title: "Notes: Principles of neural design"
+title: "Principles of neural design"
 date: "2018-08-13"
 coverImage: "pond.jpg"
 layout: post
+subtitle: Note from reading the book.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

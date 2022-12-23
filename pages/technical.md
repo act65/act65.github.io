@@ -10,7 +10,8 @@ permalink: /technical/
             {% if post.path contains 'technical-posts' %}
                 <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
                 <div class="entry">
-                    <i>{{ post.subtitle }}</i> {{ post.excerpt }}
+                    <i>{{ post.subtitle }}</i> 
+                    <!-- {{ post.excerpt }} -->
                 </div>
             {% endif %}
         {% endif %}

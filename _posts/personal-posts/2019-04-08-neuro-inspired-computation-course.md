@@ -9,7 +9,13 @@ layout: post
 
 I was lucky enough to be invited to [IRCN's](https://ircn.jp/en/) [neuro-inspired computation course](https://ircn.jp/en/neuro_inspired) in Tokyo. I decided to accept their offer to come to Tokyo and learn about the brain, computers and something inbetween.
 
-\[gallery ids="6847,6845,6842,6841,6838,6839,6840" type="rectangular"\]
+![]({{site.baseurl}}/images/20190324_071842.jpg)
+![]({{site.baseurl}}/images/20190324_072835.jpg)
+![]({{site.baseurl}}/images/20190324_090703.jpg)
+![]({{site.baseurl}}/images/20190324_090741.jpg)
+![]({{site.baseurl}}/images/20190324_092225.jpg)
+![]({{site.baseurl}}/images/20190324_091757.jpg)
+![]({{site.baseurl}}/images/20190324_091420.jpg)
 
 I got the chance to do a little exploring of the city;
 
@@ -18,7 +24,10 @@ I got the chance to do a little exploring of the city;
 - I took a roller-coaster. Note: don't take a roller-coaster when you really need to go pee. It was a distressing ride.
 - We saw the start of the sakura (cherry blossom), which only lasts around a week of the year!
 
-\[gallery ids="6853,6852,6848,6849" type="rectangular"\]
+![]({{site.baseurl}}/images/20190321_210234.jpg)
+![]({{site.baseurl}}/images/20190321_202935.jpg)
+![]({{site.baseurl}}/images/20190322_214449.jpg)
+![]({{site.baseurl}}/images/20190322_184410.jpg)
 
 ## The course
 
@@ -62,7 +71,15 @@ I met some cool people and made some friends!
 
 The most interesting student work I came across was [Hypergraph Laplace Operators](https://arxiv.org/abs/1804.01474) by Raffaella Mulas et al. and [Symmetry Learning for Function Approximation in RL](https://arxiv.org/abs/1706.02999) by Theja Tulabandhula et al.
 
-\[gallery ids="6832,6833,6834,6829,6831,6830,6827,6826,6828" type="rectangular"\]
+![]({{site.baseurl}}/images/20190324_153643.jpg)
+![]({{site.baseurl}}/images/20190324_153557.jpg)
+![]({{site.baseurl}}/images/20190324_172305.jpg)
+![]({{site.baseurl}}/images/20190324_180347.jpg)
+![]({{site.baseurl}}/images/20190324_154841.jpg)
+![]({{site.baseurl}}/images/20190324_174923.jpg)
+![]({{site.baseurl}}/images/20190325_093704.jpg)
+![]({{site.baseurl}}/images/20190325_104249.jpg)
+![]({{site.baseurl}}/images/20190325_093410.jpg)
 
 ## Other observations / thoughts
 

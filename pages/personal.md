@@ -10,9 +10,8 @@ permalink: /personal/
             {% if post.path contains 'personal-posts' %}
                 
                 <div class="entry">
-                    <i>{{ post.subtitle }}</i> 
                      <h1>
-                        <img src="{{ site.baseurl }}/images/{{ post.coverImage }}" width="100">
+                        <i>{{ post.subtitle }}</i> 
                         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
 
                      </h1>

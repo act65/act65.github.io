@@ -29,15 +29,23 @@ I felt totally lost while trying to teach. I think that this was for three main 
 
 Due to the little progress made with the staff and my trouble teaching, I questioned myself as to where I went wrong. I think that if your goal is to help others, focus your time where you have the greatest marginal utility. So I should have focused exclusively on engineering problems, such as water and power supply.
 
-\[caption id="attachment\_3321" align="aligncenter" width="306"\]![DSCN1349]({{site.baseurl}}/images/dscn1349.jpg) The bois. There were a couple of older boys, about 16,17 who all got along quite well. As they could speak some english I got to know them well.\[/caption\]
+![DSCN1349]({{site.baseurl}}/images/dscn1349.jpg) 
+> The bois. There were a couple of older boys, about 16,17 who all got along quite well. As they could speak some english I got to know them well.
 
-\[caption id="attachment\_618" align="aligncenter" width="329"\][![Mano](https://act65com.files.wordpress.com/2015/04/20150408_162240.jpg?w=300)](https://act65com.files.wordpress.com/2015/04/20150408_162240.jpg) This is Mano, the manager of the house of hope. He is actually trained as a child psychologist but due to the lack of staff he has little time to counsel. Mano was the only non-religious Indian I met and I would like to say we became friends. Mano's english was quite good so he was one of the few people I got to know well.\[/caption\]
+![Mano](https://act65com.files.wordpress.com/2015/04/20150408_162240.jpg)
 
-\[caption id="attachment\_1042" align="aligncenter" width="368"\][![20150402_180510](https://act65com.files.wordpress.com/2015/10/20150402_180510.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/20150402_180510.jpg) Kalyani, the over excited girl infront of me, was an exception to the rule. When I got the camera out, most of the girls tended to hide, but she couldn't keep a grin off her face.\[/caption\]
+This is Mano, the manager of the house of hope. He is actually trained as a child psychologist but due to the lack of staff he has little time to counsel. Mano was the only non-religious Indian I met and I would like to say we became friends. Mano's english was quite good so he was one of the few people I got to know well.
 
-\[caption id="attachment\_1044" align="aligncenter" width="373"\][![20150404_172558](https://act65com.files.wordpress.com/2015/10/20150404_172558.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/20150404_172558.jpg) A few of the girls picking teams for a game of go-go or jail game (dodgeball).\[/caption\]
+![20150402_180510](https://act65com.files.wordpress.com/2015/10/20150402_180510.jpg) 
 
-\[caption id="attachment\_3320" align="aligncenter" width="378"\]![DSCN1312]({{site.baseurl}}/images/dscn13121.jpg) Just some of the younger ones. I found it hard to really connect with many of the children. But they were no less lovable.\[/caption\]
+Kalyani, the over excited girl infront of me, was an exception to the rule. When I got the camera out, most of the girls tended to hide, but she couldn't keep a grin off her face.
+
+![20150404_172558](https://act65com.files.wordpress.com/2015/10/20150404_172558.jpg) 
+A few of the girls picking teams for a game of go-go or jail game (dodgeball).
+
+![DSCN1312]({{site.baseurl}}/images/dscn13121.jpg) 
+
+Just some of the younger ones. I found it hard to really connect with many of the children. But they were no less lovable.
 
 **Other stories**
 
@@ -61,25 +69,39 @@ I was told (by the staff) that a child was 'repossessed' by relatives. The child
 
 A crucial Indian experience is taking a bus ride. They are hilarious. 100 people on a 40 person bus. People bring the produce, hay, goats, ... etc. The bus drivers also just dont give a fuck about the speed bumps and hit them at 50-60kmph, you literally go flying and have to hold on.
 
-\[caption id="attachment\_1054" align="aligncenter" width="300"\][![DSCN0563](https://act65com.files.wordpress.com/2015/10/dscn0563.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/dscn0563.jpg) There was a big storm and it seemed as though the weather was trying to make up for the last four months of no rain. Everyone huddled up in the kitchen. What struck me was how it was like one big family.\[/caption\]
+![DSCN0563](https://act65com.files.wordpress.com/2015/10/dscn0563.jpg) 
 
-\[caption id="attachment\_1052" align="aligncenter" width="300"\][![DSCN0475](https://act65com.files.wordpress.com/2015/10/dscn0475.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/dscn0475.jpg) Getting swarmed by kids was a fairly usual thing. The kids loved to hold hands, or hold my arms/whatever they could grab onto. We would often go on walks in the mornings or evenings and I would have 2-3 kids per arm.\[/caption\]
+There was a big storm and it seemed as though the weather was trying to make up for the last four months of no rain. Everyone huddled up in the kitchen. What struck me was how it was like one big family.
 
-\[caption id="attachment\_1050" align="aligncenter" width="225"\][![20150423_131025](https://act65com.files.wordpress.com/2015/10/20150423_131025.jpg?w=225)](https://act65com.files.wordpress.com/2015/10/20150423_131025.jpg) My classes were going well... Teaching may not be my strongest suit, as these girls are demonstrating. I told them off jokingly.\[/caption\]
+![DSCN0475](https://act65com.files.wordpress.com/2015/10/dscn0475.jpg) Getting swarmed by kids was a fairly usual thing. The kids loved to hold hands, or hold my arms/whatever they could grab onto. We would often go on walks in the mornings or evenings and I would have 2-3 kids per arm.
 
-\[caption id="attachment\_1045" align="aligncenter" width="300"\][![20150404_175414](https://act65com.files.wordpress.com/2015/10/20150404_175414.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/20150404_175414.jpg) Cricket! I played lots of cricket while in India. I think that they play cricket because it is too hot to play proper sports. The cricket was incredibly competitive with the staff occasionally betting against each other.\[/caption\]
+![20150423_131025](https://act65com.files.wordpress.com/2015/10/20150423_131025.jpg)
 
-\[caption id="attachment\_1056" align="aligncenter" width="300"\][![DSCN0873](https://act65com.files.wordpress.com/2015/10/dscn0873.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/dscn0873.jpg) The girls doing their washing. Most kids had 2-3 items of clothing so it wasnt a arduous task.\[/caption\]
+My classes were going well... Teaching may not be my strongest suit, as these girls are demonstrating. I told them off jokingly.
 
-\[caption id="attachment\_1057" align="aligncenter" width="225"\][![DSCN1235](https://act65com.files.wordpress.com/2015/10/dscn1235.jpg?w=225)](https://act65com.files.wordpress.com/2015/10/dscn1235.jpg) This was where they stored water. It frequently had mold on the inside of the tank and all sorts of particulates floating in the water. Fortunately for me, they bought me water and wouldn't even let me pay for it...\[/caption\]
+![20150404_175414](https://act65com.files.wordpress.com/2015/10/20150404_175414.jpg)
+Cricket! I played lots of cricket while in India. I think that they play cricket because it is too hot to play proper sports. The cricket was incredibly competitive with the staff occasionally betting against each other
 
-\[caption id="attachment\_1053" align="aligncenter" width="300"\][![DSCN0523](https://act65com.files.wordpress.com/2015/10/dscn0523.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/dscn0523.jpg) The kids playing a game of karaam. It is kind of similar to pool, where you have to knock checkers into the pockets on the corners of the board. (one board per 30 children results in quite a few fights...)\[/caption\]
+![DSCN0873](https://act65com.files.wordpress.com/2015/10/dscn0873.jpg)
 
-\[caption id="attachment\_1049" align="aligncenter" width="225"\][![20150411_214334](https://act65com.files.wordpress.com/2015/10/20150411_214334.jpg?w=225)](https://act65com.files.wordpress.com/2015/10/20150411_214334.jpg) When I was working on their computer I was regularly joined by a few kids. These guys stayed late into the night and ended up falling asleep.\[/caption\]
+The girls doing their washing. Most kids had 2-3 items of clothing so it wasnt a arduous task.
 
-\[caption id="attachment\_1048" align="aligncenter" width="300"\][![20150408_170352](https://act65com.files.wordpress.com/2015/10/20150408_170352.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/20150408_170352.jpg) The kids sitting down for a novel experience. Eating fresh fruit/vegetables. The staff had managed to get their hands on some lemons, tomatos and carrots.\[/caption\]
+![DSCN1235](https://act65com.files.wordpress.com/2015/10/dscn1235.jpg) 
 
-\[caption id="attachment\_1058" align="aligncenter" width="300"\][![DSCN1298](https://act65com.files.wordpress.com/2015/10/dscn1298.jpg?w=300)](https://act65com.files.wordpress.com/2015/10/dscn1298.jpg) Thats me!\[/caption\]
+This was where they stored water. It frequently had mold on the inside of the tank and all sorts of particulates floating in the water. Fortunately for me, they bought me water and wouldn't even let me pay for it...
+
+![DSCN0523](https://act65com.files.wordpress.com/2015/10/dscn0523.jpg)T
+
+The kids playing a game of karaam. It is kind of similar to pool, where you have to knock checkers into the pockets on the corners of the board. (one board per 30 children results in quite a few fights...)
+
+![20150411_214334](https://act65com.files.wordpress.com/2015/10/20150411_214334.jpg) 
+
+When I was working on their computer I was regularly joined by a few kids. These guys stayed late into the night and ended up falling asleep.
+
+![20150408_170352](https://act65com.files.wordpress.com/2015/10/20150408_170352.jpg) 
+The kids sitting down for a novel experience. Eating fresh fruit/vegetables. The staff had managed to get their hands on some lemons, tomatos and carrots.
+
+![DSCN1298](https://act65com.files.wordpress.com/2015/10/dscn1298.jpg) Thats me!
 
 The majority of the problems at the HoH are related to finances and I think that the current staff and management would be quite capable of solving any/all of their problems with a very sizeable increase in their funding.
 

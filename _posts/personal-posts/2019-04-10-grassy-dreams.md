@@ -28,7 +28,7 @@ The point is, I am feeling overwhelmed. I am trying to learn RL, while I am expe
 
 * * *
 
-EDIT: (_An_ a_fter thought to what I originally wrote_)
+EDIT: (_An after thought to what I originally wrote_)
 
 I soo easily forget. I have a lot to be happy about!
 

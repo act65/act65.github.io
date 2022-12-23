@@ -7,7 +7,7 @@ layout: post
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})
 
-_I am realising that I may not have the background of a 'typical' scientist. Not that I think of myself as an outsider (maybe that isn't true, I would be interested to know)_
+I am realising that I may not have the background of a 'typical' scientist. (Not that I think of myself as an outsider)
 
 > Here are my experiences of youth,  
 > they taught me to value the truth

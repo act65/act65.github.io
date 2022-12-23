@@ -6,11 +6,21 @@ categories:
 layout: post
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+## Dota 2
+
+![]({{site.baseurl}}/images/Rubick+Arcana+Dota+2.jpg)
+
+## GuildWars 2
+
+<div>
+  <img src="{{site.baseurl}}/images/necro.png" height="350">
+  <img src="{{site.baseurl}}/images/mesmer.png" height="350">
+  <img src="{{site.baseurl}}/images/theif.png" height="350">
+</div>
 
 **My story.**
 
-Why do I game? I game because I want to forget about the issues in the world that make me unhappy. Recently I did some reading about politics, which got me very depressed (if you are interested in learning some depressing truths read Noam Chomsky). I also visited India, which was hard. I though I was a good person, but now I realise that I am not. I have found that caring for others is just too hard. So to ignore/distract myself from the fact that thousands of people are being murdered or starve to death or just generally suffering ... I distract myself with video games.
+Why do I game? I game because I want to forget about the issues in the world that make me unhappy. Recently I did some reading about politics, which got me very depressed. I also visited India, which was hard. I though I was a good person, but now I realise that I am not. I have found that caring for others is just too hard. So to ignore/distract myself from the fact that thousands of people are being murdered or starve to death or just generally suffering ... I distract myself with video games.
 
 **Step 1**: Honesty
 
