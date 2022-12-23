@@ -2,9 +2,14 @@
 layout: default
 ---
 
-Feel free to browse my personal or technical blog posts.
+Hey, some people call me Alex, my friends don't call me.
 
-## Contents
+I simply forked this blog from [Jekyll Now](https://github.com/barryclark/jekyll-now) and renamed it (it took me a couple of hours…). Feel free to fork the original or [mine](https://github.com/act65/act65.github.io).
+
+Here is my [CV]({{site.baseurl}}\CV.pdf).
+
+
+<!-- ## Contents
 
 For those that are interested, here are some of my posts;
 
@@ -17,4 +22,4 @@ For those that are interested, here are some of my posts;
 - book notes / reviews; [neural design](https://act65com.wordpress.com/2018/08/13/notes-principles-of-neural-design/), [the book of why](https://act65com.wordpress.com/2018/05/21/book-review-the-book-of-why/), [the evolution of language](https://act65com.wordpress.com/2018/05/03/book-review-the-unfolding-of-language/), [wanjala](https://act65com.wordpress.com/2018/03/14/the-last-hunger-season/), [the language instinc](https://act65com.wordpress.com/2018/02/16/review-the-language-instinct/), ...
 - sci-fi; [outsourcing thought](https://act65com.wordpress.com/2020/07/03/outsourced/), [fusion induced climate change](https://act65com.wordpress.com/2019/02/22/fusion-pollution/), [our plastic legacy](https://act65com.wordpress.com/2019/02/22/humanitys-legacy/), ...
 
-and more.
+and more. -->

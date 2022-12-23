@@ -23,6 +23,9 @@ $$
 - Sample according to fitness.
 - Replicate and possibly mutate
 
+
+Sample complexity of CMA-ES?!?!
+
 ***
 So.
 

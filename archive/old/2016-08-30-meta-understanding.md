@@ -6,7 +6,9 @@ layout: post
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})
 
-How well do (I think) I understand #@$\*&(#%   ? Note that I am not asking; how well I remember #\*$\*%\*@$&, or whether I can list technical terms or facts about #$&\*$#@($, or whether I have a high paying job to do #$\*$&(\*#@. Which are the typical substitutions we make when asking ourselves this difficult question (Kahneman had a name for this?!?).
+> How well do I understand XXX?
+
+I am not asking; how well I remember XXX, or whether I can list technical terms or facts about XXX, or whether I have a high paying job to do XXX. Which are the typical substitutions we make when asking ourselves this difficult question (Kahneman had a name for this?!?).
 
 So, what is the difference between understanding and not-understanding? Understanding requires a story explaining connections, a story of causes and effects, of reasons (rather than correlations and similarities), understanding can explain why. (but it isnt that simple, there are restrictions on the sorts of stories we can tell?) Alternatively, understanding can be used; to make (accurate) predictions or to further extend.
 

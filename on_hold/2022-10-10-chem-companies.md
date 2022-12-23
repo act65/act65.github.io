@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 
+title: The economics of sensing companies
 permalink: chem-analytics
 ---
 
