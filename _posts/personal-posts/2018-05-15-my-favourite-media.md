@@ -32,6 +32,6 @@ Tim Minchin's [Storm](https://www.youtube.com/watch?v=HhGuXCuDb1U) does a brill
 
 Alice Roberts and Aoife McLysaght give the [Royal Institution's 2018 Christmas lectures](https://www.rigb.org/christmas-lectures/watch/2018/who-am-i/). They are full of entertaining examples, intriguing puzzles and most importantly, science. Lectures can be fun! I just love how they manage to convey complex ideas in a simple yet meaningful and wondrous way; our evolution from bacteria, our relationship to our closest genetic cousins, genetic determinism... If I had or knew kids, they would not have a choice in whether they watched these lectures.
 
-[What Makes People Vote Republican](https://www.edge.org/conversation/what-makes-vote-republican)? It's a genuine attempt, by Jonathan Hadit, to understand conservatism, and the type of person who might vote for it. It covers disgust, culture and morality, but it's most about empathy.
+[What Makes People Vote Republican](https://www.edge.org/conversation/what-makes-vote-republican)? It's a genuine attempt, by Jonathan Hadit, to understand conservatism, and the type of person who might vote for it. It covers disgust, culture and morality, but it's mostly about empathy.
 
 More to come.
