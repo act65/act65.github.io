@@ -78,3 +78,54 @@ Refs
 - https://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation
 
 Ideally we would just build a test set of these experiments and allow computers to search through possible models?!?
+
+
+Orbitals
+Hydrogen atoms under magnification: Direct observation of the nodal structure of stark states
+Stern–Gerlach experiment
+
+
+
+Double slit experiment
+Original. 
+
+We don't care who originally did what… Only evidence!
+
+Thomas Young 1801 demonstrates a diffraction pattern with light. (at what wavelength? At what distances? With which slit sizes?)
+
+Question. Does wave diffraction pattern occur (with what separation) for all different wavelengths / distances / slit sizes? … We don't have that data!!!) 
+
+If I give you a green laser (? nm), and two holes of size Xmm, located X mm apart.
+Then…
+
+
+Mach-Zehnder interferometer
+
+
+Questions.
+What if I used a circular slit?
+When using light, does the light source need to be coherent? (what’s the effect of polarisation?)
+Can I find any cheap electron guns?
+
+Photo-electric effect
+
+
+Compton scattering
+
+
+Bell’s test
+
+https://en.wikipedia.org/wiki/Bell_test
+
+
+
+Speed of light
+
+
+
+
+Notes
+
+You know what would also be cool. A minimal set of tools / equipment that would allow you to verify these!
+Include links to the raw data! Graphs and numbers!
+Want all the data in an easy to use format!? Csvs!? (would be interesting to point some ML at it?)
