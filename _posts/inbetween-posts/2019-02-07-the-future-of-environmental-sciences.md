@@ -15,7 +15,7 @@ We are getting better at predicting the weather.
 But why should we care? 
 Well... this improved accuracy is __valuable__!
 
-> Investment in weather forecasting pays large dividends, ranging from 3 to 10 times the costs. A 2009 study, for example, found that the value of weather forecasts to U.S. households is US$31.5 billion, from public expenditures of just US$3.4 billion and private expenditures of US$1.7 billion. ([ref](http://science.sciencemag.org/content/363/6425/342))
+> Investment in weather forecasting pays large dividends, ranging from 3 to 10 times the costs. A 2009 study, for example, found that the value of weather forecasts to U.S. households is US 31.5 billion, from public expenditures of just US 3.4 billion and private expenditures of US 1.7 billion. ([ref](http://science.sciencemag.org/content/363/6425/342))
 
 This shouldn't be surprising, at least in hindsight. Knowledge of an incoming hurricane can allow us to evacuate thousands of people before it arrives, or to preemptively send aid. Knowledge of a likely drought means water can be rationed or even bought and delivered. Saving crops and people.
 
