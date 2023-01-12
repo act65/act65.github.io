@@ -6,11 +6,11 @@ layout: post
 subtitle: How does deductive truth (ie math) relate to inductive truth (ie science)?
 ---
 
-Mathematical proof makes something true. But what is a 'proof'? In mathematics a proof means that we can agree upon a starting point and some rules, and with those rules we can find (aka derive) statements that are true!
+A mathematical proof makes something true. But what is a 'proof'? In mathematics a proof means that we can agree upon a starting point and some rules, and with those rules we can find (aka 'prove') statements that are true!
 
 For example, given a chess position, it is true that white can checkmate in 3 moves (if we follow the rules of chess). (Wf4->h6, Bg8->h6, Wd2->h6, Bf8->g8, Wf6->f7)
 
-![]({{site.baseurl}}/images/image.png)
+![]({{site.baseurl}}/images/image.png){:height="300px"}
 
 There are many other true statements that can be proven given this starting point (and following the rules of chess).
 
@@ -30,19 +30,25 @@ This uncertainty is the problem science solves. Science attempts to systematical
 
 Consider the question; _is the theory of general relativity likely to be true?_
 
-![]({{site.baseurl}}/images/einstein-s-theory-of-relativity.jpg)
+![]({{site.baseurl}}/images/einstein-s-theory-of-relativity.jpg){:height="200px"}
 
-![]({{site.baseurl}}/images/189-1896015_law-of-gravity-equation.png)
+![]({{site.baseurl}}/images/189-1896015_law-of-gravity-equation.png){:height="200px"}
 
 Science can tell us;
 
-it is more likely to be true than Newton's theory of gravity because it reliably makes more accurate predictions about celestial mechanics, as well as making predictions about other observations ( black holes, light, ... ) ( it's the current optimal hypothesis we have constructed, but there may exist others, that explain even more - ie dark matter )
+1. it is more likely to be true than Newton's theory of gravity because it reliably makes more accurate predictions about celestial mechanics, as well as making predictions about other observations ( black holes, light, ... ) ( it's the current optimal hypothesis we have constructed, but there may exist others, that explain even more - ie dark matter )
 
-It is more likely to be true because it has generalised. It has made accurate predictions about new observations (Einstein predicted gravitational waves in 1915). This tells us that, at least in this case, we didn't overfit to our existing observations. But, we have no clue how this theory will generalise to other unobserved phenomena.
+2. it is more likely to be true because it has generalised. It has made accurate predictions about new observations (Einstein predicted gravitational waves in 1915). This tells us that, at least in this case, we didn't overfit to our existing observations. But, we have no clue how this theory will generalise to other unobserved phenomena.
 
-it is more likely to be true because it explains our observations in a 'simple manner' ( ie Occam's razor ). General relativity can be derived from "the laws of physics are invariant in all inertial frames of reference".
+3. it is more likely to be true because it explains our observations in a 'simple manner' ( ie Occam's razor ). General relativity can be derived from "the laws of physics are invariant in all inertial frames of reference".
 
-But these successes of general relativity are not sufficient to answer; _is the theory of general relativity likely to be true?_ As our estimate of likelihood is based on our history, our imagination and some assumptions.
+But these successes of general relativity are not sufficient to answer; 
+
+> _is the theory of general relativity likely to be true?_ 
+
+Our estimate of likelihood is based on our history (the data we happen to have collected), our imagination (the equations and models we have constructed, so far) and some assumptions.
+
+#### Imperfect infomation
 
 Our history could have been different. We could have made different observations or new ones. This is a problem of 'imperfect infomation'. We cannot observe everything of interest, rather we have an imperfect view. This yields uncertainty. But we can do little to reduce this uncertainty as there will always be unknown unknowns.
 
@@ -50,11 +56,15 @@ This means that science cannot actually answer "_What makes something likely to 
 
 > Given what we have observed, what is the most likely thing to be true?
 
+<!-- (and how hard have we tried to find new data?) -->
+
+#### Bounded resources
+
 But, we cannot answer this question either. Our limited imagination means we may not have imagined the most likely answer. This is a problem of 'bounded resources'. The search for better theories ( that fit our current observations ) costs us resources such as energy, compute, time, ... So there is always a chance that our search finds a new, more likely to be true, theory. So, this allows us to answer;
 
 > _Given what we have observed and the answers we have imagined, what is the most likely thing to be true?_
 
-Note that this question does not yield a single answer, not like 1+1=?. Where there is only one answer that is true, ... 2. Rather, with new observations and new imagined theories, the answer may change.
+Note that as science progresses, as new new observations and new theories are imagined, our best guess at what is likely to be true may change.
 
 Finally, we need to make some assumptions. These may seem pedantic. But, we are after the truth, which is a 100% guarantee! So, we need to assume that;
 
