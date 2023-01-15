@@ -2,6 +2,7 @@
 title: "A guide to regulation"
 date: "2017-10-31"
 layout: post
+subtitle: If we measure things, we can regulate them, fairly.
 ---
 
 (Disclaimer: I have no experience in regulating anything other than the amount of time I spend on youtube - and I almost never meet my targets...)

@@ -1,8 +1,9 @@
 ---
-title: "Notes: The book of why"
+title: "The book of why"
 date: "2018-05-21"
 coverImage: "why.jpg"
 layout: post
+subtitle: A couple of notes
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

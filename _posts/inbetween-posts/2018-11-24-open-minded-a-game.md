@@ -1,8 +1,9 @@
 ---
-title: "Being open minded: a game."
+title: "Being open minded"
 date: "2018-11-24"
 coverImage: "screenshot-2018-11-24-at-8-11-41-pm.png"
 layout: post
+subtitle: Play a 'game' with me
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

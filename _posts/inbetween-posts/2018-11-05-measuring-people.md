@@ -1,8 +1,9 @@
 ---
-title: "Wish list of behavioral metrics"
+title: "Wish list of psychological metrics"
 date: "2018-11-05"
 coverImage: "rorschach.jpeg"
 layout: post
+subtitle: What if we could accurately measure {INSERT}?
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

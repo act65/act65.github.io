@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Causal calculus
+subtitle: A connection between causal inference and gradients?
 ---
 
 I recently read Judea's [book](https://www.goodreads.com/book/show/36204378-the-book-of-why

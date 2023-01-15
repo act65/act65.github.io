@@ -5,6 +5,7 @@ categories:
   - "politics-and-opinions"
 coverImage: "download-2.jpeg"
 layout: post
+subtitle: It occured to me that my belief in evolution was just as illogical as others belief in god.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

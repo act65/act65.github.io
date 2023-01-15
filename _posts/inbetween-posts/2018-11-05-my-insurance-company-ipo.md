@@ -1,8 +1,9 @@
 ---
-title: "My insurance company! IPO"
+title: "An insurance company idea?!"
 date: "2018-11-05"
 coverImage: "care.png"
 layout: post
+subtitle: An attempt to incentivise preventive healthcare.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

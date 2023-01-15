@@ -5,6 +5,7 @@ categories:
   - "experiences"
 coverImage: "nirvana-via-vipassana-1.jpg"
 layout: post
+subtitle: I tried doing vipassana meditation for 10 days.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

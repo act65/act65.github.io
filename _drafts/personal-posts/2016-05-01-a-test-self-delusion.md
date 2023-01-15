@@ -24,6 +24,4 @@ Grade = 80% +/- 10%. No, fundamental misconceptions, but some simple mistakes an
 
 A potential solution? Imagine that your teachers goal is for every student to get the lowest possible mark, 0%, while still sticking to material that has been taught, which is relatively debatable. How would you study? Is this how you should always study?
 
- 
-
 Or maybe this was just an interesting excuse to procrastinate...

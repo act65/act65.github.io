@@ -3,6 +3,7 @@ title: "Outsourced"
 date: "2020-07-03"
 coverImage: "bn-pv951_queena_m_20160916103836.jpg"
 layout: post
+subtitle: The dangers of outsourcing 'trivial' tasks
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

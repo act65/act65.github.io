@@ -3,6 +3,7 @@ title: "Hosting on AirBnB"
 date: "2020-02-17"
 coverImage: "airbnb.jpeg"
 layout: post
+subtitle: The lives of others
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

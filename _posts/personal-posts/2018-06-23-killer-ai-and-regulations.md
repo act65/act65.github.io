@@ -1,8 +1,9 @@
 ---
-title: "Killer AI and regulations"
+title: "Killer AI"
 date: "2018-06-23"
 coverImage: "4ab.jpg"
 layout: post
+subtitle: I'm not worried about the future. I'm worried about now.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

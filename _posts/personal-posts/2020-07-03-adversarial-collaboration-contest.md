@@ -3,6 +3,7 @@ title: "Adversarial collaboration contest"
 date: "2020-07-03"
 coverImage: "woman-yelling-at-cat.jpg"
 layout: post
+subtitle: Play a game with me.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

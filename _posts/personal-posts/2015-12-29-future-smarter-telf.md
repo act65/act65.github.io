@@ -6,6 +6,7 @@ tags:
   - "future"
   - "inspiration"
 layout: post
+subtitle: Dreaming about projects
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

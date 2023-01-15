@@ -1,8 +1,9 @@
 ---
-title: "Regulating markets to remove inefficiencies"
+title: "What are these power-compare websites for?"
 date: "2018-03-26"
 coverImage: "16502618-abstract-word-cloud-for-efficient-market-hypothesis-with-related-tags-and-terms.jpg"
 layout: post
+subtitle: An example of how to regulate markets to remove inefficiencies.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

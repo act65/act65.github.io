@@ -3,6 +3,7 @@ title: "Palm oil in NZ's dairy"
 date: "2018-11-06"
 coverImage: "palm.jpg"
 layout: post
+subtitle: tldr; cows are fed palm kernel.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

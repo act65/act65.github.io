@@ -2,6 +2,7 @@
 title: "My favourite media"
 date: "2018-05-15"
 layout: post
+subtitle: A list of cool things
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

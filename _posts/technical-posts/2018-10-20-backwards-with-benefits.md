@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The advantages of backward reasoning.
+subtitle: A simple exploration of what can be gained by reasoning backwards from your goal.
 ---
 
 What can I gain if, rather than planning into the future, I can plan backwards from my goals (or both)?

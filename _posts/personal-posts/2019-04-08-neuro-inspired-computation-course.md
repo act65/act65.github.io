@@ -3,6 +3,7 @@ title: "Neuro-inspired computation course"
 date: "2019-04-08"
 coverImage: "ircn.png"
 layout: post
+subtitle: I visited IRCN.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Unsupervised skip connections
+subtitle: How can we use ladder nets in the unsupervised setting?
 ---
 
 [Ladder nets](https://arxiv.org/abs/1507.02672) (aka [Unets](https://arxiv.org/abs/1505.04597)) are currently achieving state-of-the art results on image to image translation, for example [see here](https://phillipi.github.io/pix2pix/). This network architecture achieves such great results because the skip connetions allow higher frequency information, such as edges and gradients, to be easily communicated between the encoder and decoder. This is useful for image to image translation as typically we are translating between 'styles' (low frequency content such as palette, textures), while the high frequency content maps to the 'content' (see [style transfer](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)). $\textbf{Q:}$ How can we use this architecutre for unsupervised learning?

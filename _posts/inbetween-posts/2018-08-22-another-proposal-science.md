@@ -1,8 +1,9 @@
 ---
-title: "Another proposal: Science!"
+title: "Another research proposal"
 date: "2018-08-22"
 coverImage: "69116666-a-mandelbrot-set-zoom-image-created-in-a-fractal-generated.jpg"
 layout: post
+subtitle: Automated science
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

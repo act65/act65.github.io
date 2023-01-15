@@ -2,16 +2,11 @@
 layout: default
 ---
 
-Hey, some people call me Alex, my friends don't call me.
+Hello, welcome to my blog!
 
 I simply forked this blog from [Jekyll Now](https://github.com/barryclark/jekyll-now) and renamed it (it took me a couple of hours…). Feel free to fork the original or [mine](https://github.com/act65/act65.github.io).
 
-Here is my [CV]({{site.baseurl}}\CV.pdf).
-
-
 <!-- ## Contents
-
-For those that are interested, here are some of my posts;
 
 - about some of my experiences; [volunteering in india](https://act65com.wordpress.com/2015/10/09/the-house-of-hope/), [a meditation retreat](https://act65com.wordpress.com/2015/04/27/meditation-retreat/), [a biology competition](https://act65com.wordpress.com/2019/11/07/igem-2019/), [a neuro-computation conference](https://act65com.wordpress.com/2019/04/08/neuro-inspired-computation-course/), [a holiday in golden bay](https://act65com.wordpress.com/2018/05/21/nelson-lakes-abel-tasman-and-golden-bay/), [my childhood](https://act65com.wordpress.com/2020/08/15/my-childhood-struggles-with-the-truth/), [hosting an AirBnB room,](https://act65com.wordpress.com/2020/02/17/hosting-on-airbnb/) [a NLP conference](https://act65com.wordpress.com/2018/07/25/acl2018/), ...
 - opinions about economics; [alternative tax collection](https://act65com.wordpress.com/2020/08/17/ranking-for-tax-collection/), [an insurance company](https://act65com.wordpress.com/2018/11/05/my-insurance-company-ipo/), [regulating efficient markets](https://act65com.wordpress.com/2018/03/26/regulating-markets-to-remove-inefficiencies/), [extolling a UBI](https://act65com.wordpress.com/2017/08/28/ucb/), ...

@@ -9,15 +9,11 @@ permalink: /personal/
         {% if post.category contains "main"%}
             {% if post.path contains 'personal-posts' %}
                 
+                <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
                 <div class="entry">
-                     <h1>
-                        <i>{{ post.subtitle }}</i> 
-                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-
-                     </h1>
+                    <i>{{ post.subtitle }}</i> 
+                    <!-- {{ post.excerpt }} -->
                 </div>
-                
-                <br>
             {% endif %}
         {% endif %}
     {% endfor %}

@@ -1,8 +1,9 @@
 ---
-title: "My childhood: Struggles with the truth"
+title: "Youth and truth"
 date: "2020-08-15"
 coverImage: "chakras2.png"
 layout: post
+subtitle: I struggled with 'reality'...
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

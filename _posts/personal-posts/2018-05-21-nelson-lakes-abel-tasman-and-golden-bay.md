@@ -2,6 +2,7 @@
 title: "Nelson lakes, Abel Tasman and Golden bay"
 date: "2018-05-21"
 layout: post
+subtitle: Photos from a holiday.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

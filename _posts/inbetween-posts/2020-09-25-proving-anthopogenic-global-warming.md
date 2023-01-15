@@ -1,8 +1,9 @@
 ---
-title: "Proving anthopogenic global warming"
+title: "How can I prove anthopogenic global warming?"
 date: "2020-09-25"
 coverImage: "113516_image022.jpg"
 layout: post
+subtitle: You can't.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

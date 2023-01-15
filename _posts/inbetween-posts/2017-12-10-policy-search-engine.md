@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Policy search engine
+subtitle: Motivating a tool for tracking the effects of policies.
 ---
 
 Typical smart city solutions seem to focus on gathering __evidence for/of problems__, i.e. measuring built and social environments. This is useful as it can motivate action and change. However, this problematic data does not help us solve the problems once identified. For this we need __evidence for/of solutions__. How have past policies changed cities? Which policies seem to work? Which policy would be most effective/efficient in this case?
