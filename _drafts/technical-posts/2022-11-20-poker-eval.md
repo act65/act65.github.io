@@ -8,7 +8,7 @@ Imagine if the Poker world series (with potential winnings of $10 million) poker
 
 Whom ever was dealt a good has an advantage.
 
-Many would consider this to be an unfair game. It relies too much on chance. 
+Many would consider this to be an unfair game. It relies too much on chance.
 
 How many rounds should be played?
 

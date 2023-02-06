@@ -2,7 +2,6 @@
 layout: post
 title: Supervised learning is* all you need (for RL)
 permalink: supervised-rl
-rating: 8
 ---
 
 # Supervised learning is* all you need (for RL)

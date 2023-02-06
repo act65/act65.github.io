@@ -8,12 +8,7 @@ permalink: /personal/
     {% for post in site.posts %}
         {% if post.category contains "main"%}
             {% if post.path contains 'personal-posts' %}
-                
-                <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-                <div class="entry">
-                    <i>{{ post.subtitle }}</i> 
-                    <!-- {{ post.excerpt }} -->
-                </div>
+                <p><u><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></u><br><i>{{ post.subtitle }}</i></p>
             {% endif %}
         {% endif %}
     {% endfor %}

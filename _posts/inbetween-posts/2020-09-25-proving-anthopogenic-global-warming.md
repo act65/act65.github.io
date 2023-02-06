@@ -12,7 +12,7 @@ subtitle: You can't.
 
 If I measure the amount of heat absorbed by CO2 in my bedroom with an IR sprectrometer. Does that prove that CO2 is responsible for global warming? No. I mean, where does CO2 come from anyway?
 
-If I collect the exhaust gases from burning gasoline. And determine the amount of CO2 released with a bicarbonate indicator. This could tell me the amount of CO2 produced by running my car on gasoline. But does this imply that humans are causing climte change? No. Anyway, don't plants absorb CO2?
+If I collect the exhaust gases from burning gasoline. And determine the amount of CO2 released with a bicarbonate indicator. This could tell me the amount of CO2 produced by running my car on gasoline. But does this imply that humans are causing climate change? No. Anyway, don't plants absorb CO2?
 
 If I collect data; temperature, rainall, humidity, atmospheric CO2 concentration, for the next 50 years. And see a positive correlation between temperature and CO2 concentration. Does this prove anthropogenic climate change? No. Correlation does not imply causation.
 

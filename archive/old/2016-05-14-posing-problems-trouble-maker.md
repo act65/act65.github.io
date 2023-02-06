@@ -2,6 +2,7 @@
 title: "Posing problems: The trouble makers of research?"
 date: "2016-05-14"
 layout: post
+
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

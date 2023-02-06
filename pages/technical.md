@@ -8,20 +8,13 @@ permalink: /technical/
     {% for post in site.posts %}
         {% if post.category contains "main"%}
             {% if post.path contains 'technical-posts' %}
-                <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-                <div class="entry">
-                    <i>{{ post.subtitle }}</i> 
-                    <!-- {{ post.excerpt }} -->
-                </div>
+                <p><u><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></u><br><i>{{ post.subtitle }}</i></p>
             {% endif %}
         {% endif %}
 
         <!-- not working -->
         {% if post.category contains "nonlocal"%}
-            <h1><a href="{{ post.link }}">{{ post.title }}</a></h1>
-            <div class="entry">
-                <i>{{ post.subtitle }}</i> {{ post.excerpt }}
-                </div>
+            <p><u><a href="{{ post.link }}">{{ post.title }}</a></u><br><i>{{ post.subtitle }}</i></p>
         {% endif %}
     {% endfor %}
 <div class="posts">    
