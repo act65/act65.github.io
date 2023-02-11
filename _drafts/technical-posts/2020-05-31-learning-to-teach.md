@@ -69,3 +69,14 @@ How can the teacher's skills be efficiently distilled? Teacher learns to do X. A
 
 
 How to reduce potential variance in the learners actions??
+
+
+***
+
+We are still a while away from robots like seagulls!? I'm watching them gather food, navigate waves, ...
+
+Instead. (Efficiently / automatedly) Teach seagulls to do X.
+
+***
+
+Helping others collaborate?

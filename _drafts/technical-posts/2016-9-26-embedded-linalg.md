@@ -1,16 +1,18 @@
 ---
 layout: post
 title: Representations in linear algebra
+subtitle: We can use linear algebra to represent; linear operators, algebras, computations, symmetry and more.
 ---
 
 Linear algebra and arrays combine to give us a powerful language. Here we explore using linear algebra to represent;
 
-- [linear operators](#linop) (differentiation, convolution, determinant, and more)
-- algebra (dual numbers, complex numbers, and more)
-- computation (logic, automata, quantum)
-- symmetry groups (discrete, continuious)
+- [linear operators](#linear-operators) (differentiation, convolution, determinant, and more)
+- [algebra](#algebras) (dual numbers, complex numbers, and more)
+- [computation](#computation) (logic, automata, quantum)
+- [symmetry groups](#symmetry-groups) (discrete, continuious)
+- and more.
 
-## Linear operators {#linop}
+## Linear operators
 
 Linear functions can be written as arrays. This representational duality between operator and operand is rather elegant.
 
@@ -142,6 +144,15 @@ $$
 
 ### Convolution
 
+$$
+\begin{bmatrix}
+k_0 & k_1 & k_2 & 0 & 0 & 0 & 0 \\
+0 & k_0 & k_1 & k_2 & 0 & 0 & 0 \\
+0 & 0 & k_0 & k_1 & k_2 & 0 & 0 \\
+0 & 0 & 0 & k_0 & k_1 & k_2 & 0 \\
+0 & 0 & 0 & 0 & k_0 & k_1 & k_2 \\
+\end{bmatrix}
+$$
 
 ***
 
@@ -357,7 +368,9 @@ $$
 
 ### (quantum) computation
 
+?
 
+## Symmetry groups
 
 ***
 
