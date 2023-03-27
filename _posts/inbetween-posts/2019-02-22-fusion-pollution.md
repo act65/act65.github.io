@@ -1,9 +1,9 @@
 ---
-title: "Confusion and fusion (story prompt)"
+title: "Con-fusion (story prompt)"
 date: "2019-02-22"
 coverImage: "m36_proj_spanglerfusoropener4x3.jpg"
 layout: post
-subtitle: Climate change. Same idiots, similar story, different physics.
+subtitle: Climate change, again. Same idiots, similar story, different physics.
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

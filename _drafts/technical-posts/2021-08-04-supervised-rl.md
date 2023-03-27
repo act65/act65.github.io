@@ -98,3 +98,7 @@ Open quiestions
 
 - How much harder is iterated supervised learning than supervised learning?
 - ?
+
+
+- [RVS: WHAT IS ESSENTIAL FOR OFFLINE RL VIA SUPERVISED LEARNING?](https://arxiv.org/abs/2112.10751)
+- [Learning to Reach Goals via Iterated Supervised Learning]()
