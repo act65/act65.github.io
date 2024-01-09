@@ -14,10 +14,17 @@ What are the motivations for this research?
 
 ## Settings
 
-### A single large reward
+### A single state-action reward pertubations
 
 The attacker is allowed to insert one large, erroneous reward.
+
+- for a fixed reward. for a single s,a we get to pick the reward.
+- for an adaptive reward. for each episode, we get alter the reward for a single s,a.
+- 
+
 How much can this slow learning?
+
+When does the optimal policy maximise the true reward function, (as well as) the observed reward function?
 
 ### 
 
