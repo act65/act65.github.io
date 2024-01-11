@@ -20,4 +20,3 @@ Inspired by [J Kun's blog post.](https://buttondown.email/j2kun/archive/e4294cb6
 - semi definite programming
 - topological data analysis
 - SAT solvers
-

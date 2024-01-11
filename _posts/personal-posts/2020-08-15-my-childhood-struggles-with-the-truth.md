@@ -25,7 +25,7 @@ My mother practiced [Reiki](https://en.wikipedia.org/wiki/Reiki). Using Reiki, s
 
 One of my mother's friends regularly provided our family with homeopathy and less frequently with reflexology.
 
-When I was struggling in early primary school (I was put in remedial reading and mathematics) I was taken to [Brain Gym](https://en.wikipedia.org/wiki/Brain_Gym_International). Which was a mixture of yoga, acupuncture and delusion. You would put pressure on certain parts of the body (such as your temple or sternum) or wave your hands about (in figures-of-eight). These helped me be more creative, or more focused, or better at spelling.
+When I was struggling in early primary school (I was put in remedial reading and mathematics) I was taken to [Brain Gym](https://en.wikipedia.org/wiki/Brain_Gym_International), which was a mixture of yoga, acupuncture and delusion. You would put pressure on certain parts of the body (such as your temple or sternum) or wave your hands about (in figures-of-eight). These helped me be more creative, or more focused, or better at spelling.
 
 [The Secret](https://en.wikipedia.org/wiki/The_Secret_(book)). A horrible book. In my opinion it ruined my mothers life and had a large part to play in her long death. She believed negative thoughts cause illness. And in the end my mother seemed to blame herself for her cancer, believing that she wasn't 'thinking positive'. I have never really understood the idea of burning books, but I would happily burn every copy I find of that book.
 
