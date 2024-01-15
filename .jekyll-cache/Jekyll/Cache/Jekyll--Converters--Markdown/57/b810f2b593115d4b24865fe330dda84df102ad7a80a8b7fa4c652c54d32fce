@@ -1,2 +1,0 @@
-I"î<p>Real time recurrent learning uses forward gradients to allow online learning. To efficiently compute the forward gradients, dependencies on the past are carried forward. But in online learning these past dependencies become stale.</p>
-:ET
