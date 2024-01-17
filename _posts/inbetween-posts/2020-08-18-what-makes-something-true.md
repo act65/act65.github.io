@@ -10,7 +10,7 @@ A mathematical proof makes something true. But what is a 'proof'? In mathematics
 
 For example, given a chess position, it is true that white can checkmate in 3 moves (if we follow the rules of chess). (Wf4->h6, Bg8->h6, Wd2->h6, Bf8->g8, Wf6->f7)
 
-![]({{site.baseurl}}/images/image.png){:height="300px"}
+![]({{site.baseurl}}/assets/what-makes-something-true/image.png){:height="300px"}
 
 There are many other true statements that can be proven given this starting point (and following the rules of chess).
 
@@ -33,9 +33,9 @@ This uncertainty is the problem science solves. Science attempts to systematical
 
 Consider the question; _is the theory of general relativity likely to be true?_
 
-![]({{site.baseurl}}/images/einstein-s-theory-of-relativity.jpg){:height="200px"}
+![]({{site.baseurl}}/assets/what-makes-something-true/einstein-s-theory-of-relativity.jpg){:height="200px"}
 
-![]({{site.baseurl}}/images/189-1896015_law-of-gravity-equation.png){:height="200px"}
+![]({{site.baseurl}}/assets/what-makes-something-true/189-1896015_law-of-gravity-equation.png){:height="200px"}
 
 Science can tell us;
 

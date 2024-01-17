@@ -6,7 +6,7 @@ layout: post
 subtitle: I struggled with 'reality'...
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/my-childhood-struggles-with-the-truth/{{page.coverImage}})
 
 I am realising that I may not have the background of a 'typical' scientist. (Not that I think of myself as an outsider)
 

@@ -6,7 +6,7 @@ layout: post
 subtitle: Play a game with me.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/adversarial-collaboration-contest/{{page.coverImage}})
 
 Scott Alexander holds a yearly [Adversarial collaboration contest](https://slatestarcodex.com/2019/07/24/adversarial-collaboration-contest-2019/). I think it is a brilliant idea, it encourages contestants to be openminded and to engage in a tolerant debate. Rather than:
 

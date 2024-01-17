@@ -6,13 +6,13 @@ layout: post
 subtitle: Play a 'game' with me
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/open-minded-a-game/{{page.coverImage}})
 
 I have glimpsed a distant feeling, one that worries me. I might not be open minded as I think. This worries me as I value learning lessons from others; understanding how you think and seeing how I might be wrong.
 
 My favourite definition of open-mindedness so far is " _the willingness to take a novel viewpoint seriously_" (Jack Kwong). Also, the definition below is fun;
 
-![Screenshot 2018-11-24 at 9.00.14 PM.png]({{site.baseurl}}/images/screenshot-2018-11-24-at-9-00-14-pm.png)
+![Screenshot 2018-11-24 at 9.00.14 PM.png]({{site.baseurl}}/assets/open-minded-a-game/screenshot-2018-11-24-at-9-00-14-pm.png)
 
 * * *
 

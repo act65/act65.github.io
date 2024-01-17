@@ -6,7 +6,7 @@ layout: post
 subtitle: What if we could accurately measure {INSERT}?
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/measuring-people/{{page.coverImage}})
 
 Imagine if we have an accurate and precise measure for; empathy, mood, consciousness, self-control. How much better would the world be?
 

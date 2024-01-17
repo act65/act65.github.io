@@ -8,7 +8,7 @@ layout: post
 subtitle: A letter to Fonterra.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/divest-milk-and-the-nz-economy/{{page.coverImage}})
 
 Yeast bacteria can be programmed to produce milk proteins. I think that this method of milk production will become cheaper than production through cows (because we have cut out the middle man, the cow, from the process - energy is not wasted on a cow living, breathing ... ). Roughly one third of NZs economy is dairy products. If this artificial milk undercuts cow-produced milk from NZ our economy will suffer.
 

@@ -5,7 +5,7 @@ coverImage: "2000px-venn_a_intersect_b-svg.png"
 layout: post
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/a-test-self-delusion/{{page.coverImage}})
 
 I have a test tomorrow on topology. I want to do another test on my ability to delude (myself). I want to make a prediction now - about how prepared I am, how much I have learnt and how well I think I will do - so that I can compare it against the results. The aim is to see whether (or more likely, how much) I have deluded myself.
 

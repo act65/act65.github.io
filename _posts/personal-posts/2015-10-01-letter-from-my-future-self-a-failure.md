@@ -7,7 +7,7 @@ layout: post
 subtitle: Don't be lazy...
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/letter-from-my-future-self-a-failure/{{page.coverImage}})
 
 We let boredom, ignorance and distraction shatter our dreams and our potential future (scientist, smartist, a better Alex). We didn't consciously settle for less, we didn't consciously choose laziness, instead we chose just 5 more minutes. 
 

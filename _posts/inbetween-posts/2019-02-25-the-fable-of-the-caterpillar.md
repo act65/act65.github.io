@@ -8,7 +8,7 @@ subtitle: A fun intro to my masters topic; abstraction for efficient reinforcmen
 
 (This is my current focus - kinda - for my masters. The (art)work was done in prep for a conference poster)
 
-![caterpillar-g]({{site.baseurl}}/images/caterpillar-g.png)
+![caterpillar-g]({{site.baseurl}}/assets/the-fable-of-the-caterpillar/caterpillar-g.png)
 
 A green leaf, <br>
 is too far, out of reach, <br>
@@ -20,7 +20,7 @@ You move your second leg left<br>
 You move your eleventh leg up<br>
 You move your twelfth leg right
 
-![caterpillar-g-1]({{site.baseurl}}/images/move-g-1.png)
+![caterpillar-g-1]({{site.baseurl}}/assets/the-fable-of-the-caterpillar/move-g-1.png)
 
 Many legs burden the act, <br>
 Unless coordinated in abstract.
@@ -54,4 +54,4 @@ To understand abstract action spaces, we really need to understand their propert
 - Efficient/Simple (require few actions for typical tasks)
 - Expressive (all/most states are reachable)
 
-![caterpillar-a.png]({{site.baseurl}}/images/caterpillar-a.png)
+![caterpillar-a.png]({{site.baseurl}}/assets/the-fable-of-the-caterpillar/caterpillar-a.png)

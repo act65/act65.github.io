@@ -6,7 +6,7 @@ layout: post
 subtitle: Learning by controlling the propagation speed of signals.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/inference-via-interference/{{page.coverImage}})
 
 Myelin makes up 50% of the brains mass. This is a large investment for us to make! Pair this with the fact that humans are one of the few animals that have heavily myelinated brains, and it leads to the conclusion that it must have some important function!?
 

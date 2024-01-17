@@ -6,7 +6,7 @@ layout: post
 subtitle: What would the profession of environmental engineering look like?
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/the-future-of-environmental-sciences/{{page.coverImage}})
 
 We are getting better at predicting the weather.
 

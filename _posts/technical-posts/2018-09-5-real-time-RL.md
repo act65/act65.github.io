@@ -50,7 +50,7 @@ Note the size of $\textbf{R}^t$. We can imagine a point where we have taken thou
 
 So given a time step, how might the rewards be distributed over the past actions?
 
-<img src="../images/real-time-R.png" height="450x" align="middle">
+<img src="../assets/real-time-RL/real-time-R.png" height="450x" align="middle">
 
 <side>Is there anything dangerous/pathological about doing this?</side>
 The velocity ($\Delta R$) and acceleration ($\Delta^2 R$) appear to be useful signals. A simple heurstic could be to maximise them in place of the true $R$.

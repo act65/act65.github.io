@@ -9,7 +9,7 @@ layout: post
 subtitle: Dreaming about projects
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/future-smarter-telf/{{page.coverImage}})
 
 I am half way through building an chemical process and assembly line to etch and fabricate SMARTYPANTS processors (my own design inspired by memristors, quantum physics, genetic algorithms and neural networks). I have just finished programming a 'helping hands' robot to be able to be taught motions by copying my actions. But I haven't finished working out the etching process quite yet, should take me a couple of weeks to sort it all out. The plans is to build a form of AI, using these processors, that can help me out with my projects, an exocortex.
 

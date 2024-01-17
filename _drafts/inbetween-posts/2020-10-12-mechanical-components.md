@@ -5,13 +5,13 @@ title: Mechanical components
 
 You may already be familiar with electrical components like; transistors, capacitors, operational-amplifiers, flip-flops, etc...  Electrical components are defined as; ...?
 
-![]({{site.baseurl}}/images/components.jpeg)
+![]({{site.baseurl}}/assets/mechanical-components/components.jpeg)
 
-![]({{site.baseurl}}/images/20191112_140033.jpg)
-![]({{site.baseurl}}/images/20191112_140028.jpg)
-![]({{site.baseurl}}/images/20191112_140013.jpg)
-![]({{site.baseurl}}/images/20191112_140010.jpg)
-![]({{site.baseurl}}/images/20191112_140008.jpg)
+![]({{site.baseurl}}/assets/mechanical-components/20191112_140033.jpg)
+![]({{site.baseurl}}/assets/mechanical-components/20191112_140028.jpg)
+![]({{site.baseurl}}/assets/mechanical-components/20191112_140013.jpg)
+![]({{site.baseurl}}/assets/mechanical-components/20191112_140010.jpg)
+![]({{site.baseurl}}/assets/mechanical-components/20191112_140008.jpg)
 
 Photos taken in [BOS]().
 
@@ -37,7 +37,7 @@ Video [here](https://www.youtube.com/watch?v=hhDdfiRCQS4)
 
 ## Characterising mechanical types
 
-![]({{site.baseurl}}/images/41586_2008_article_bfnature06932_fig1_html.jpg)
+![]({{site.baseurl}}/assets/mechanical-components/41586_2008_article_bfnature06932_fig1_html.jpg)
 
 Much like 
 

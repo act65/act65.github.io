@@ -15,7 +15,7 @@ Given this architectures power for image processing, it would be nice to use in 
 
 $\textbf{Q:}$ How can we force the network to use the deeper layers? How can we constrain the capacity of the skip connections?
 
-<img src="../images/ladder-net.png" width="250" height="250" class="center-image">
+<img src="../assets/unsupervised-laddernet/ladder-net.png" width="250" height="250" class="center-image">
 
 
 ### Filter the frequency content
@@ -31,10 +31,10 @@ $$
 
 
 <div id="starry-night">
-    <img height="224" width="224" id="starry-night-img" src="../images/starry-night.jpg"/>
+    <img height="224" width="224" id="starry-night-img" src="../assets/unsupervised-laddernet/starry-night.jpg"/>
 </div>
 <div id="albertina">    
-  <img height="224" width="224" id="albertina-img" src="../images/albertina.jpeg"/>
+  <img height="224" width="224" id="albertina-img" src="../assets/unsupervised-laddernet/albertina.jpeg"/>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"></script>
@@ -91,7 +91,7 @@ $$
 <side>allowing you to have distinct priors on each one?</side>
 Now our hidden space is structured. Earlier skips carry high frequency content and later skips carry low frequency content.
 
-<img src="../images/freq-net.png" width="250" height="250" class="center-image">
+<img src="../assets/unsupervised-laddernet/freq-net.png" width="250" height="250" class="center-image">
 
 ### 'High' level content
 

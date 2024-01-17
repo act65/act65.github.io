@@ -6,7 +6,7 @@ layout: post
 subtitle: Note from reading the book.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/notes-principles-of-neural-design/{{page.coverImage}})
 
 The books starts with some great questions:
 

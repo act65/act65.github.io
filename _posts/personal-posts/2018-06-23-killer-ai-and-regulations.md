@@ -6,7 +6,7 @@ layout: post
 subtitle: I'm not worried about the future. I'm worried about now.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/killer-ai-and-regulations/{{page.coverImage}})
 
 Corporations gamed loopholes in regulations which lead to the 2008 financial crisis. Trillions of dollars and thousands of lives lost. JP Morgan Chase" and others...
 

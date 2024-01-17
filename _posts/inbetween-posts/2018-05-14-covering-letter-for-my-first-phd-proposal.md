@@ -6,7 +6,7 @@ layout: post
 subtitle: Principles of neural design, automated science, general reinforcement learning
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/covering-letter-for-my-first-phd-proposal/{{page.coverImage}})
 
 Phew, I just submitted my first PhD application, with many more to go... I thought I would share my covering letter as it does a decent job of covering my interests.  
 

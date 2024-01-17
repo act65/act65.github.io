@@ -20,7 +20,7 @@ but fundamentally, it comes down to the fact that data collection is often distr
 
 Lets start with an example. Take the image below, various govt departments have datasets, and what we would really like is the ability to correlate `diagnoses` with other socio-economic factors. This could allow us to learn a predictive model to identify people at risk. But instead, all we have is the recommend treatment and average mortality rates, see the orange dataset (top left).
 
-![]({{site.baseurl}}/images/datasets.png)
+![]({{site.baseurl}}/assets/aligning-datasets/datasets.png)
 
 ### Data alignment
 
@@ -40,7 +40,7 @@ If we draw every distinct column within our many datasets (above) as a node, and
 
 So vertical staking becomes multiple links between two nodes, see `name x diagnoses`. And horizontal stack becomes a new linkage between the original datasets.
 
-![]({{site.baseurl}}/images/integrated.png)
+![]({{site.baseurl}}/assets/aligning-datasets/integrated.png)
 
 _Note the location node. While I was at NEC we were exploring using location to help us align different datasets, but this framework is far more general, allowing you to align datasets across any shared dimension._
 
@@ -48,7 +48,7 @@ _Note the location node. While I was at NEC we were exploring using location to 
 
 For the mathematically inclined, each column adds a dimension to a nd-tensor. The topology of the graph above represents the dual (the transpose hypergraph, see [this paper](https://arxiv.org/abs/1710.01437) for more details) of the topology of a tensor network below.
 
-![]({{site.baseurl}}/images/network.png)
+![]({{site.baseurl}}/assets/aligning-datasets/network.png)
 
 This network more clearly shows the relationship between the datasets, at each node, and the graph constructed. But I prefer the former as it seems for reasons to come.
 

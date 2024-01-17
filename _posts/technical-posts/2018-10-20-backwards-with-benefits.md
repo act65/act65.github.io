@@ -21,7 +21,7 @@ Ok. Let the state of a system be $s_t$ and how it changes over time be described
 
 Let's consider the U-problem. Imagine the goal is to get from $A$ to $B$ (left). Additionally, the learner has been given a shaped reward, $r$, encouraging smaller distances between the agent 's position, $p$ and $B$. $r_t = -\parallel p_t - \mathcal B \parallel + 1_{p=\mathcal B}$.
 
-![]({{ site.baseurl }}/images/abduction-cup.png){: .center-image }
+![]({{ site.baseurl }}/assets/backwards-with-benefits/abduction-cup.png){: .center-image }
 
 This shaped reward makes learning impossible for many well known reinforcment learning algorithms (Q, PG, ...) without the intelligent use of exploration! The agent will quickly get stuck in the U, optimising the olny rewards they have ever and will ever see. Similarly, planning based approaches would fall into a similar trap, when guided by the shaped reward. They would first search trajectories that went straight into the cup.
 
@@ -35,7 +35,7 @@ Imagine you are an agent in a 2d environment. But, rather than having access to 
 <side>The key assumption is that in this instance, the agent is given the location of the goal (but doesn't have access to a metric/knowledge about how to get to the goal).</side>
 
 
-![]({{ site.baseurl }}/images/abduction.png){: .center-image }
+![]({{ site.baseurl }}/assets/backwards-with-benefits/abduction.png){: .center-image }
 
 (we know $r_1 = r_2 + r_3$)
 
@@ -59,7 +59,7 @@ $$
 
 Or, maybe this is clearer in the descrete setting, where were are doing a tree search over possibilities. In the naive case, planning from $A$, or $B$, there are $2^6$ states that are searched. While if we search from $A$ and $B$ search there are $2\times 2^3=2^4$ states searched.
 
-![]({{ site.baseurl }}/images/abduction-tree.png){: .center-image }
+![]({{ site.baseurl }}/assets/backwards-with-benefits/abduction-tree.png){: .center-image }
 
 ## Questions/thoughts
 

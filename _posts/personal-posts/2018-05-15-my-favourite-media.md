@@ -5,7 +5,7 @@ layout: post
 subtitle: A list of cool things
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/my-favourite-media/{{page.coverImage}})
 
 I imagine this list will evolve over time I discover and remember. The media that follow have been selected for being inspiring, wondrous and/or awesome (in no particular order).
 

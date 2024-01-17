@@ -6,7 +6,7 @@ layout: post
 subtitle: I tripped over and have something to say about it.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/a-tripping-point/{{page.coverImage}})
 
 > What is the value of good infrastructure? Or, conversly, how much does poor infrastructure cost?
 

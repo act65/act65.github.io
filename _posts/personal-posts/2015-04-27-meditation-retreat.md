@@ -8,7 +8,7 @@ layout: post
 subtitle: I tried doing vipassana meditation for 10 days.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/meditation-retreat/{{page.coverImage}})
 
 **The first night**
 

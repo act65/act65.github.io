@@ -8,7 +8,7 @@ layout: post
 subtitle: It occured to me that my belief in evolution was just as illogical as others belief in god.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/right-beliefs-wrong-reasons/{{page.coverImage}})
 
 It occurred to me that the reasons many people believe in evolution could be just as illogical, or even more so, than the reasons people believe in god or creationism.
 

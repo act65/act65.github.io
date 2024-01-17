@@ -6,7 +6,7 @@ layout: post
 subtitle: I am struggling with my masters.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/grassy-dreams/{{page.coverImage}})
 
 _(I wrote most of this near the start of my masters)_
 

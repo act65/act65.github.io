@@ -6,7 +6,7 @@ layout: post
 subtitle: What will be left over after humanity? Plastic...
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/humanitys-legacy/{{page.coverImage}})
 
 Intrepid aliens discover Earth. They find an uninhabited planet, with unusual yet magnificent formations. Their (equivalent of) chemists / geologists / archaeologists investigate these structures and find large deposits of polymerized hydro-carbons.
 

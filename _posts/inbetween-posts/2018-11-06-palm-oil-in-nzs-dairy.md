@@ -6,7 +6,7 @@ layout: post
 subtitle: tldr; cows are fed palm kernel.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/palm-oil-in-nzs-dairy/{{page.coverImage}})
 
 It turns out that palm trees are an important part of our (NZ's) diary industry. Palm kernels are used as feed for the cows, in fact it is actually quite nutritious.
 

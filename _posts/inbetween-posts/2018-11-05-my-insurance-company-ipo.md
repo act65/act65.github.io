@@ -6,7 +6,7 @@ layout: post
 subtitle: An attempt to incentivise preventive healthcare.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/my-insurance-company-ipo/{{page.coverImage}})
 
 Hello! My first potential customer, welcome :). Here is the pitch:
 

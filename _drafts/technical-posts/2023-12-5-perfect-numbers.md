@@ -120,4 +120,4 @@ the factors!
 
 
 </p>
-<script src="{{base.url}}/images/canvas.js"></script>
+<script src="{{base.url}}/assets/perfect-numbers/canvas.js"></script>

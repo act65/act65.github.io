@@ -6,7 +6,7 @@ layout: post
 subtitle: You can't.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/proving-anthopogenic-global-warming/{{page.coverImage}})
 
 > What experiments could I do at home that would prove (to even the most skeptical) that our actions are causing a change in climate?
 

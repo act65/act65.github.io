@@ -8,7 +8,7 @@ layout: post
 subtitle: Volunteering at an orphanage.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/the-house-of-hope/{{page.coverImage}})
 
 **The orphanage**
 
@@ -30,7 +30,7 @@ I felt totally lost while trying to teach. I think that this was for three main 
 
 Due to the little progress made with the staff and my trouble teaching, I questioned myself as to where I went wrong. I think that if your goal is to help others, focus your time where you have the greatest marginal utility. So I should have focused exclusively on engineering problems, such as water and power supply.
 
-![DSCN1349]({{site.baseurl}}/images/dscn1349.jpg) 
+![DSCN1349]({{site.baseurl}}/assets/the-house-of-hope/dscn1349.jpg) 
 > The bois. There were a couple of older boys, about 16,17 who all got along quite well. As they could speak some english I got to know them well.
 
 ![Mano](https://act65com.files.wordpress.com/2015/04/20150408_162240.jpg)
@@ -44,7 +44,7 @@ Kalyani, the over excited girl infront of me, was an exception to the rule. When
 ![20150404_172558](https://act65com.files.wordpress.com/2015/10/20150404_172558.jpg) 
 A few of the girls picking teams for a game of go-go or jail game (dodgeball).
 
-![DSCN1312]({{site.baseurl}}/images/dscn13121.jpg) 
+![DSCN1312]({{site.baseurl}}/assets/the-house-of-hope/dscn13121.jpg) 
 
 Just some of the younger ones. I found it hard to really connect with many of the children. But they were no less lovable.
 

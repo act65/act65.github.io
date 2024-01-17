@@ -8,14 +8,14 @@ layout: post
 
 ## Dota 2
 
-![]({{site.baseurl}}/images/Rubick+Arcana+Dota+2.jpg)
+![]({{site.baseurl}}/assets/gaming-addiction/Rubick+Arcana+Dota+2.jpg)
 
 ## GuildWars 2
 
 <div>
-  <img src="{{site.baseurl}}/images/necro.png" height="350">
-  <img src="{{site.baseurl}}/images/mesmer.png" height="350">
-  <img src="{{site.baseurl}}/images/theif.png" height="350">
+  <img src="{{site.baseurl}}/assets/gaming-addiction/necro.png" height="350">
+  <img src="{{site.baseurl}}/assets/gaming-addiction/mesmer.png" height="350">
+  <img src="{{site.baseurl}}/assets/gaming-addiction/theif.png" height="350">
 </div>
 
 **My story.**

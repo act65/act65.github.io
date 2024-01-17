@@ -6,7 +6,7 @@ layout: post
 subtitle: The hidden dangers of delegating life's 'trivial' tasks to technology
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/outsourced/{{page.coverImage}})
 
 ### Gastro
 

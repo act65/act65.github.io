@@ -6,7 +6,7 @@ layout: post
 subtitle: Automated science
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/another-proposal-science/{{page.coverImage}})
 
 _(Wrote this for an application, which didn't end up working out. Was a real struggle to keep under the max word count.)_
 

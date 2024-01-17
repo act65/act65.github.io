@@ -6,7 +6,7 @@ layout: post
 subtitle: An example of how to regulate markets to remove inefficiencies.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/regulating-markets-to-remove-inefficiencies/{{page.coverImage}})
 
 I stumbled across an interesting perspective on the regulation of markets in a [report](http://38r8om2xjhhl25mw24492dir.wpengine.netdna-cdn.com/wp-content/uploads/2016/06/Applying-behavioural-insights-to-regulated-markets-Final0.pdf) by the Behavioural Insights Team. They want to regulate the market, via nudges, to be more efficient (previously, I had only considered regulation for incorporating external costs -- see [here](https://act65com.wordpress.com/2017/10/31/a-guide-to-regulation/)).
 

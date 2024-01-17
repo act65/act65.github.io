@@ -6,7 +6,7 @@ layout: post
 subtitle: A fusion of confusion.
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/fusion-pollution/{{page.coverImage}})
 
 We achieve an astonishing fusion reaction output of 30:1 output to input, named BARY (_after the center of the mass of -say- the solar system: barycenter)._ A magnificent result, celebrated across the world. They key was scale and also fusing heavier atoms. Rather than just H+H -> He, you also react, H + He -> Li!
 

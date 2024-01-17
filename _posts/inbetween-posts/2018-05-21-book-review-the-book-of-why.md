@@ -6,7 +6,7 @@ layout: post
 subtitle: A couple of notes
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/assets/book-review-the-book-of-why/{{page.coverImage}})
 
 Pretty much, I need to read the book again. There were a couple of parts I just pushed through. As a first pass here are some things I picked out as being interesting.
 
