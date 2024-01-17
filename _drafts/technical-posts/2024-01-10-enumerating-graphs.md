@@ -8,11 +8,11 @@ permalink: graph-enumeration
 Our goal is to generate all graphs with $n$ nodes.
 Let's start with a simple example, generating all graphs with 3 nodes.
 
-![All graphs with 3 nodes.](assets/graphs-3.png)
+![All graphs with 3 nodes.](assets/graph_enum/graphs-3.png)
 
 But some of these graphs are the same, just drawn differently. For example, the two graphs below are the same, just drawn differently.
 
-![Two graphs that are the same, just drawn differently.](assets/isomorphic.png)
+![Two graphs that are the same, just drawn differently.](assets/graph_enum/isomorphic.png)
 
 This 'same'-ness is called isomorphism. We say that two graphs are isomorphic if they are the same, just drawn differently.
 
@@ -45,7 +45,7 @@ $$
 
 This can be visualised as an ordering on an adjacency matrix.
 
-![Edges are given an order](assets/edge-order.png)
+![Edges are given an order](assets/graph_enum/edge-order.png)
 
 (an adjacency matrix is a matrix of size $n\times n$ - where n is the number of nodes. Where the $i, j$ th entry corresponds to an edge between the $i$th and $j$th node.)
 
@@ -67,14 +67,14 @@ $$
 As an example, consider the two graphs below. The first graph is smaller than the second since the edge $(2, 3)$ is smaller than $(2, 4)$.
 
 
-![The graphs are given an order.](assets/graph-order.png)
+![The graphs are given an order.](assets/graph_enum/graph-order.png)
 
 #### Graph isomorphism
 
 Aside: In what sense can two graphs be the 'same'?
 Consider the four graphs shown below. They all have different edges, but are essentially the same graph: a graph with a 3-chain, and one disconnected node.
 
-![Four graphs that are different, yet the 'same'.](assets/isomers.png)
+![Four graphs that are different, yet the 'same'.](assets/graph_enum/isomers.png)
 
 Formally, an isomorphism of graphs $G$ and $H$ is a bijection between the vertex sets of $G$ and $H$
 
@@ -106,10 +106,10 @@ So, we start with the smallest graph, a graph with no edges, and proceed by addi
 As we add edges, we check whether the constructed graph is minimal, if it isn't, we discard it.
 This process is visualised below.
 
-![The orderly enumeration algorithm. Proceed in loops, recursively adding edges to graphs.](assets/graphgen-alg.png)
+![The orderly enumeration algorithm. Proceed in loops, recursively adding edges to graphs.](assets/graph_enum/graphgen-alg.png)
 
 
-![An example of graph enumeration. The graphs are constructed by adding larger, and larger edges. Non-canonical graphs, circled in red, are not continued.](assets/generation-tree.png)
+![An example of graph enumeration. The graphs are constructed by adding larger, and larger edges. Non-canonical graphs, circled in red, are not continued.](assets/graph_enum/generation-tree.png)
 
 #### Implementation
 

@@ -7,18 +7,27 @@ permalink: jax-stack
 
 > Why spend 5 mins reading the docs when you can spend 5 hours debugging?
 
-https://jax.readthedocs.io/en/latest/autodidax.html
+Instead, let's spend 20 hours reading the docs and doing the [tutorial](https://jax.readthedocs.io/en/latest/autodidax.html)...
+
+
 https://jax.readthedocs.io/en/latest/user_guides.html#
 !!!
 
 
-WANT to contribute?!
+<!-- WANT to contribute?!
 
 - look at issues (try solving some?)
 - add a new diferentiable op? (sorting, LP, ?)
-- ?
+- ? -->
 
-How to write good jax code?
+## A lesson in software engineering
+
+How is Jax a lesson in good software engineering?
+
+(key concepts: modularity, composability, ...)
+
+
+## How to write good jax code?
 Fast, readable, ...?
 
 What's with this syntax?

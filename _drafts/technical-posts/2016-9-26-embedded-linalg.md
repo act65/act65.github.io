@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Representations in linear algebra
+title: Representations within linear algebra
 subtitle: We can use linear algebra to represent; linear operators, algebras, computations, symmetry and more.
 ---
 
@@ -29,6 +29,8 @@ $$
 = x^4 + 3\cdot x^2 + 5\cdot x
 $$
 
+where $\dots$ is used to represent zeros for all higher powers of $x$.
+
 #### A differentiation operator for polynomials
 
 We can define a differentiation operator, $D$, as a matrix.
@@ -44,7 +46,7 @@ $$
 \end{align*}
 $$
 
-And we can 'do' differentiation via matrix multiplying $\frac{d}{dx}a = \mathcal D \cdot a$.
+And we can differentiate via matrix multiplying $\frac{d}{dx}a = \mathcal D \cdot a$.
 <side>Problem (we need infinite matrices for this to work out...)</side>
 
 This all works out because differentiation is a linear function! Each column is the derivative of a 'basis' function, which in this case is each $x^n$. Now, lets test it out.
@@ -70,6 +72,11 @@ $$
 
 <side>Homework: What is the derivative of a derivative, $D \cdot D$? Does it make sense?</side>
 Awesome.
+
+What about;
+
+- negative powers of $x$?
+- fractional powers of $x$?
 
 #### An integration operator for polynomials
 
@@ -120,13 +127,17 @@ Intriguingly, we can relate the integration and differentiation operators via $\
 #### Matrix multiplication
 
 $$
+\begin{align*}
+C = 
 C_{ij} = \sum_k A_{ik}B_{kj} \\
-C_{ijk} = T^{MMT}_{ijk} A_{ik}B_{kj}
+C_{ij} = \sum_k T^{MMT}_{ijk} A_{ik}B_{kj} \\
+\end{align*}
 $$
 
 > The matrix multiplication tensor
 https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4
 
+<script src="https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4.js"></script>
 
 #### Determinant
 
@@ -134,11 +145,23 @@ https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4
 
 $$
 \begin{align}
-\begin{vmatrix}
+\mid A \mid &= \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n A_{i,\sigma_i} \\
+\begin{bmatrix}
+a&b\\
+c&d\\
+\end{bmatrix}= ad-bc
+\end{align}
+$$
+
+
+
+$$
+\begin{align}
+\begin{bmatrix}
 a&b&c\\
 d&e&f\\
 g&h&i\\
-\end{vmatrix}=aei+bfg+cdh-ceg-bdi-afh
+\end{bmatrix}=aei+bfg+cdh-ceg-bdi-afh
 \end{align}
 $$
 
@@ -154,10 +177,9 @@ k_0 & k_1 & k_2 & 0 & 0 & 0 & 0 \\
 \end{bmatrix}
 $$
 
-***
+FFT, DFT
 
-- fourier (include jupyter notebook with visuals)
-- ?
+<!-- <script src="https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4.js"></script> -->
 
 ## Algebras
 
@@ -371,6 +393,11 @@ $$
 ?
 
 ## Symmetry groups
+
+Finally we arrive at so called "representation theory".
+Symmetry groups are defined as sets of transformations that leave some property invariant. For example, the set of all rotations of a circle leave the circle invariant. The set of all 90 degree rotations of a square leave the square invariant.
+
+
 
 ***
 
