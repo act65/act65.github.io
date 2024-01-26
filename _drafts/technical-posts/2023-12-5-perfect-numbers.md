@@ -10,7 +10,7 @@ to the sum of its unique positive divisors, excluding the number itself.
 For instance, 6 has divisors 1, 2 and 3 (excluding itself), and 1 + 2 + 3 = 6, so 6 is a perfect number. 
 </p>
 <p>
-    Interestngly there is a connection to the mersenne primes!<br>
+    Interestingly there is a connection to the mersenne primes!<br>
 
     $$
     (2^{n - 1})(2^n - 1)
@@ -52,6 +52,19 @@ Note 6, which is a 'perfect' number, perfectly fills the n x n square.
     <canvas id="13"></canvas>
     <canvas id="14"></canvas>
 </div>
+
+How many rearangements of the jigsaw puzzle are there?
+For 6 there are;
+
+<div>
+    <canvas id="6.1"></canvas>
+    <canvas id="6.2"></canvas>
+    <canvas id="6.3"></canvas>
+    <canvas id="6.4"></canvas>
+    <canvas id="6.5"></canvas>
+    <canvas id="6.6"></canvas>
+</div>
+
 
 <h2>
     Reframe
@@ -120,4 +133,11 @@ the factors!
 
 
 </p>
+
+Questions;
+
+- does there exist a fast test for perfect numbers?
+- what are their applications?
+
+
 <script src="{{base.url}}/assets/perfect-numbers/canvas.js"></script>

@@ -4,7 +4,12 @@ title: How can randomness make algorithms faster?
 subtitle: A brief introduction to randomised algorithms
 ---
 
-Randomised algorithms are algorithms that use randomness to solve problems. They are often faster than deterministic algorithms, and sometimes they are the only way to solve a problem.
+- random quicksort
+- miller-rabin primality test
+
+<!-- https://eccc.weizmann.ac.il/report/2023/076/ -->
+
+Randomised algorithms are algorithms that use randomness to solve problems. Can be 'faster' than deterministic algorithms, and sometimes they are the only (known) way to solve a problem.
 
 <!-- probablistic polynomial time, Bounded-error probabilistic polynomial, randomized polynomial time.
 unsolved. P = BPP? -->
