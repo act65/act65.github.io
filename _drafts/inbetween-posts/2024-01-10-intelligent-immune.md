@@ -3,7 +3,7 @@ title: Intelligent immunity
 layout: post
 ---
 
-> "Why did (our) intelligence emerge from motion control and sensing? Why not from the immune system?"
+> "Why did (our) intelligence emerge from electrical signals, motion control and sensing? Why not from the immune system?"
 
 Questions:
 - What kind of environment would select for an intelligent immune system?
@@ -12,6 +12,9 @@ Questions:
 - What would their values be? (would they be more or less altruistic?)
 
 ## Environment
+
+To what extent did the evolutionary pressures for efficient movement, robust sensing, and rapid neural processing contribute to the emergence of our intelligence?
+What if there were different pressures? Meaner infections, plenty of food if you know how to transform it, 
 
 <!-- this is like mechanism design?
 which env incentivises which genes / traits? -->
@@ -29,6 +32,14 @@ Advantaegous traits:
 - chemical chimera. They can appear to be other species (by producing the same chemicals) and thus avoid or encourage interactions with other species.
 - 
 
+Evolution
+- How could memory, in the form of memory cells, evlove into something smarter? Something that can generalize from past experiences? A network of memory cells?
+-  
+
+> Part of the problem is generalisation is very dangerous in the immune system.
+
+
+
 ## Differences from our intelligence
 
 Are the planning problems they solve different from ours?
@@ -39,11 +50,16 @@ Are the memory problems they solve different from ours?
 
 - remembering a synthesis pathway vs remembering a route through space
 
-***
-
-Background
+## Background
 
 How does the immune system work?
 - memory! stores information about past infections
 - pattern matching! recognizes pathogens
 - 
+
+Biological prescedent for intelligent immune systems
+
+- behavioral fever
+- immunological synapse
+
+
