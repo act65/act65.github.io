@@ -7,7 +7,7 @@ subtitle: If we measure things, we can regulate them, fairly.
 
 (Disclaimer: I have no experience in regulating anything other than the amount of time I spend on youtube - and I almost never meet my targets...)
 
-In my mind, regulation is the (or a?) solution to externalised costs. Because petrol produces CO2 and particulate matter (which effect our climate and our health and cost \$\$\$ bills to fix) the cost of petrol should incorporate these costs to ensure fair competition (why is this important -- need better motivation?).
+In my mind, regulation is the solution to externalised costs. Because petrol produces CO2 and particulate matter (which effect our climate and our health and cost \$\$\$ bills to fix) the cost of petrol should incorporate these costs to ensure fair competition.
 
 There are a couple of problems that occur when trying to regulate these external costs; we have no ground truth for the magnitude of the costs for these external costs, we don't always know the external costs before (or even years after) a product is sold/operated.
 
@@ -21,7 +21,6 @@ In my mind there are two approaches that the government could take gathering thi
 
 1. Be unfair and pessimistic by default. By default apply a flat tax that is priced waaay too high (an order of magnitude), but if a farmer can sufficiently prove that their run-off is approximately X, then we can tax them on X.  (they have an incentive to cheat -- but thats what audits are for)
 2. The more common approach (why?) seems to be that the government funds the measurement of the run-off. This costs them large amounts of money, takes time to set up and has little buy-in from the farmers.
-3. 
 
 Another new technology that can help us measure the previously unmeasured is machine learning. For example, wind turbines are thought to kill many birds and this cost to the environment should be incorporated (via tax) into the power they supply. How can we count the number of birds killed? We could get a person to sit at each of the turbines and look out for such killings, however that would be very costly. Machine learning gives us the ability to learn a classifier that might receive video, audio and vibrations, then predict if a bird has been killed. Given the right training data I would expect that we could achieve high classification accuracy, thus giving us a way to cheaply scale (just a couple of sensors) the measurement of bird deaths caused by wind turbines.
 
