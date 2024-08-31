@@ -10,11 +10,11 @@ subtitle: You can't.
 
 > What experiments could I do at home that would prove (to even the most skeptical) that our actions are causing a change in climate?
 
-If I measure the amount of heat absorbed by CO2 in my bedroom with an IR sprectrometer. Does that prove that CO2 is responsible for global warming? No. I mean, where does CO2 come from anyway?
+If I measure the amount of heat absorbed by CO2 in my bedroom with an IR sprectrometer. Does that prove that CO2 is responsible for global warming? It proves that my bedroom has high (or low) CO2. But this doesn't tell us much about CO2 concentrations elsewhere. Also, where does CO2 even come from?
 
-If I collect the exhaust gases from burning gasoline. And determine the amount of CO2 released with a bicarbonate indicator. This could tell me the amount of CO2 produced by running my car on gasoline. But does this imply that humans are causing climate change? No. Why would a small amount of extra CO2 heat the atmosphere? And anyway, don't plants absorb CO2?
+If I collect the exhaust gases from burning gasoline. And determine the amount of CO2 released with a bicarbonate indicator. This could tell me the amount of CO2 produced by running my car on gasoline. And I could guess that my car is similar to most others, and extrapolate to calculate the output of all cars worldwide. But does this imply that humans are causing climate change? No. Why would a small amount of extra CO2 heat the atmosphere? And anyway, don't plants absorb CO2?
 
-If I collect data; temperature, rainfall, humidity, atmospheric CO2 concentration, for the next 50 years. And see a positive correlation between temperature and CO2 concentration. Does this prove anthropogenic climate change? No. Correlation does not imply causation.
+If I collect data the temperature, rainfall, humidity, atmospheric CO2 concentration, of my backyard for the next 50 years. And see a positive correlation between temperature and CO2 concentration. Does this prove anthropogenic climate change? And can we generalise these results worldwide? No. Correlation does not imply causation. And geography is a confounder.
 
 <!-- 1. **Ocean Acidification Experiment:** Materials needed would include two clear glass containers, tap water, pH test strips, a ruler, baking soda (representing carbonic acid formed when CO2 dissolves in water), a straw, and sea shells. Instructions: Fill both containers with the same amount of water and record the pH. Dissolve some baking soda in one container to lower the pH. Then drop seashells into both containers and observe what happens over the course of a week.
 
@@ -27,7 +27,7 @@ If I collect data; temperature, rainfall, humidity, atmospheric CO2 concentratio
 > The point is. It is not possible for a skeptical individual to prove anthopogenic climate change. Although it is easy to disprove. _If any of the experiments above fail, then anthropogenic climate change as we understand it is unlikely to be true._
 
 - If CO2 doesn't absorb large amounts of infrared radiation, then it cannot act as a greenhouse gas, and will not heat the planet.
-- If burning gasoline doesn't release CO2 then the attribution of human activitiy as the cause of global warming is tenuous.
+- If burning gasoline (and other fossil fuels) doesn't release CO2 then the attribution of human activitiy as the cause of global warming is tenuous.
 
 Causation does imply correlation. So if there was no correlation between CO2 and temperature, then we can disprove anthropogenic climate change.
 

@@ -6,9 +6,19 @@ layout: post
 subtitle: How does deductive truth (ie math) relate to inductive truth (ie science)?
 ---
 
-A mathematical proof makes something true. But what is a 'proof'? In mathematics a proof means that we can agree upon a starting point and some rules, and with those rules we can find (aka 'prove') statements that are true!
+<!-- a poem pointing out math->truth
+science->likely to be true -->
 
-For example, given a chess position, it is true that white can checkmate in 3 moves (if we follow the rules of chess). (Wf4->h6, Bg8->h6, Wd2->h6, Bf8->g8, Wf6->f7)
+> Mathematics can derive the truth,\
+trustworthy proof.\
+Science only reduces our uncertainty,\
+guessing nervously.
+
+
+What is 'proof'? In mathematics a proof means that we can agree upon a starting point and some rules, and with those rules we can find (aka 'prove') statements that are true!
+
+For example, _chess_.
+Given a chess position, the one shown below, it is true that white can checkmate in 3 moves (if we follow the rules of chess). (Wf4->h6, Bg8->h6, Wd2->h6, Bf8->g8, Wf6->f7)
 
 ![]({{site.baseurl}}/assets/what-makes-something-true/image.png){:height="300px"}
 
@@ -18,16 +28,22 @@ There are many other true statements that can be proven given this starting poin
 - Black has 7 pawns.
 - If (.. , .. , ..) then black wins.
 
-Similar to how we use the rules of chess to derive things that are true about a given chess game. We can agree on objects called integers, {0, 1, 2, 3, 4, ...}, and agree on rules for adding and multiplying them, **+**, **x**. From these 'numbers' and their rules we can derive prime numbers, and even patterns within the primes (which some people consider to be beautiful truths).
+
+Similar to how we use the rules of chess to derive things that are true about a given chess game. 
+We can agree on objects called _integers_, {0, 1, 2, 3, 4, ...}, and agree on rules for adding and multiplying them, **+**, **x**. From these integers and their rules we can derive [prime numbers](https://en.wikipedia.org/wiki/Prime_number).
 
 [Euclidian geometry](https://en.wikipedia.org/wiki/Euclidean_geometry) is another example of a system of rules that can be used to derive true statements. 
-Given the 5 postulates of Euclidian geometry, (basic equality rule, equality through operations, equality based on coincidence, universality of right angles, parallelism) we can derive the Pythagorean theorem, and many other true statements.
+Given the 5 postulates of Euclidian geometry, (basic equality rule, equality through operations, equality based on coincidence, universality of right angles, parallelism) we can derive the Pythagorean theorem, and other familiar 'true' statements, such as the sum of the angles in a triangle is 180 degrees.
 
-* * *
+> However, the real world is not like chess, integers or Euclidean geometry.
+It is complicated and hard to measure. 
 
-However, the real world is not like chess, integers or Euclidean geometry. It is complicated and hard to measure. Because of this, there is uncertainty in the observations we make. Maybe you have discovered life on the moon, or maybe there is a life-like smudge on your telesope.
+Because of this, there is uncertainty in the observations we make (unlike chess, where we are certain that a pawn is at b4).
+Maybe you have discovered life on the moon, or maybe there is a life-like smudge on your telesope.
 
-This uncertainty is the problem science solves. Science attempts to systematically reduce our uncertainty about the truths determined by the physical rules of our universe. However, science only reduces uncertainty (rather than eliminates it), science cannot answer '_What makes something true?_', instead, science focuses on a different question.
+> This uncertainty is the problem science solves. 
+
+Science attempts to systematically reduce our uncertainty about the truths determined by the physical rules of our universe. However, science only reduces uncertainty (rather than eliminates it), science cannot answer '_What makes something true?_', instead, science focuses on a different question.
 
 > _What makes something likely to be true?_
 
@@ -39,7 +55,7 @@ Consider the question; _is the theory of general relativity likely to be true?_
 
 Science can tell us;
 
-1. it is more likely to be true than Newton's theory of gravity because it reliably makes more accurate predictions about celestial mechanics (the [Eddington experiment](https://en.wikipedia.org/wiki/Eddington_experiment)), as well as making predictions about other observations ( black holes, light, ... ) ( it's the current optimal hypothesis we have constructed, but there may exist others, that explain even more - ie dark matter )
+1. it is more likely to be true than Newton's theory of gravity because it reliably makes more accurate predictions about celestial mechanics (the [Eddington experiment](https://en.wikipedia.org/wiki/Eddington_experiment)), as well as making predictions about other observations ( black holes, light, ... ) ( it's the current best hypothesis we have constructed, but there may exist others, that explain even more - ie dark matter )
 
 2. it is more likely to be true because it has generalised. It has made accurate predictions about new observations (Einstein predicted gravitational waves in 1915). This tells us that, at least in this case, we didn't overfit to our existing observations. But, we have no clue how this theory will generalise to other unobserved phenomena.
 
@@ -77,6 +93,7 @@ Finally, we need to make some assumptions. These may seem pedantic. But, we are 
 Note that, these assumptions cannot be proven to be true, and therefore we cannot claim that science gives us the truth. Rather we rely on arguments that prefer simplicity and hope for induction. So, we finally arrive at;
 
 > If we assume the laws of the of the universe do not change, that simpler answers are more likely to be true_. We can answer; what is the most likely thing to be true? _Given what we have observed and the answers we have imagined__.
+(ie, we might change our mind if we find new data or imagine a better answer)
 
 * * *
 

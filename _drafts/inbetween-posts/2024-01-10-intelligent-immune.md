@@ -1,9 +1,12 @@
 ---
 title: Intelligent immunity
 layout: post
+subtitle: What if intelligence evolved within the immune system?
 ---
 
 > "Why did (our) intelligence emerge from electrical signals, motion control and sensing? Why not from the immune system?"
+
+Instead of neurons and astrocytes, what if the building blocks of intelligence were macrophages, dentritic cells and T-cells?
 
 Questions:
 - What kind of environment would select for an intelligent immune system?

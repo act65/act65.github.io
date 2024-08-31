@@ -6,7 +6,7 @@ subtitle: We can use linear algebra to represent; linear operators, algebras, co
 
 Linear algebra and arrays combine to give us a powerful language. Here we explore using linear algebra to represent;
 
-- [linear operators](#linear-operators) (differentiation, convolution, determinant, and more)
+- [linear operators](#linear-operators) (differentiation and integration, matrix multiplication, the determinant, convoltuion, the laplacian)
 - [algebra](#algebras) (dual numbers, complex numbers, and more)
 - [computation](#computation) (logic, automata, quantum)
 - [symmetry groups](#symmetry-groups) (discrete, continuious)
@@ -16,17 +16,18 @@ Linear algebra and arrays combine to give us a powerful language. Here we explor
 
 Linear functions can be written as arrays. This representational duality between operator and operand is rather elegant.
 
+An operator is a mapping from one space to another. For example, we can have a map that tells us how to pair ???
+
+
 <!-- Related to Turing's duality of data and program. Where ... -->
 
 <!-- But are these more that just nice mathematical curiosities? Why is this useful or important? -->
 
-Let start with linear functions of polynomials.
-
-Consider the space of polynomial coefficients, $a \in  {\mathbb R}^{\infty}$. Where $a_i$ is the coefficient for $x^i$. Thus $a = [0, 5, 3, 0, 1, \dots]^T$ represents
+Let start with linear functions of polynomials. Which we reimagine as infinite arrays $a \in  {\mathbb R}^{\infty}$. Where $a_i$ is the coefficient for $x^i$. Thus $a(x) = [0, 5, 3, 0, 1, \dots]^T$ represents
 
 $$
 0\cdot x^0 + 5\cdot x^1 + 3\cdot x^2 + 0\cdot x^3 + 1\cdot x^4 \\
-= x^4 + 3\cdot x^2 + 5\cdot x
+a(x) = x^4 + 3\cdot x^2 + 5\cdot x
 $$
 
 where $\dots$ is used to represent zeros for all higher powers of $x$.
@@ -46,7 +47,7 @@ $$
 \end{align*}
 $$
 
-And we can differentiate via matrix multiplying $\frac{d}{dx}a = \mathcal D \cdot a$.
+And we can differentiate via matrix multiplying $\frac{d}{dx}a(x) = \mathcal D \cdot a(x)$.
 <side>Problem (we need infinite matrices for this to work out...)</side>
 
 This all works out because differentiation is a linear function! Each column is the derivative of a 'basis' function, which in this case is each $x^n$. Now, lets test it out.
@@ -126,6 +127,8 @@ Intriguingly, we can relate the integration and differentiation operators via $\
 
 #### Matrix multiplication
 
+Matrix multiplication is also a linear operator. Well, technically it's a bilinear operator. But that's just a linear operator that takes two arguments. We can represent it as a 3D tensor.
+
 $$
 \begin{align*}
 C = 
@@ -138,6 +141,12 @@ $$
 https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4
 
 <script src="https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4.js"></script>
+
+Because matrix multiplication can be represented as the MMT, we can treat is as an operand, and do / ask seemingly strange things like;
+
+- What is MMT $\cdot$ MMT?
+- what is $\text{det}(MMT)$?
+- let's construct the matrix $MMT + D$ (where $D$ is the differentiation operator).
 
 #### Determinant
 
@@ -180,6 +189,29 @@ $$
 FFT, DFT
 
 <!-- <script src="https://gist.github.com/act65/f956cc1ce73aca4fe435f225f8970ac4.js"></script> -->
+
+### The laplacian operator
+
+The laplacian operator is a second derivative.
+
+$$
+\begin{align}
+\Delta &= \nabla \cdot \nabla \\
+&= \sum \frac{\partial^2}{\partial x_i^2}
+\end{align}
+$$
+
+$$
+\begin{align}
+\mathcal L &= \begin{bmatrix}
+0 & 1 & 0 & 0 & 0 \\
+1 & -4 & 1 & 0 & 0 \\
+0 & 1 & -4 & 1 & 0 \\
+0 & 0 & 1 & -4 & 1 \\
+0 & 0 & 0 & 1 & 0 \\
+\end{bmatrix}
+\end{align}
+$$
 
 ## Algebras
 
