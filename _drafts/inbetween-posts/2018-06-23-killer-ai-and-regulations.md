@@ -18,6 +18,11 @@ There is lots of talk of the dangers of AI.
 
 <!-- twitter pics etc -->
 
+<!-- 
+really this is about how we solve problems / achieve goals.
+
+ -->
+
 <!-- RL related -->
 Some of these worries are valid, to an extent.
 The way reinforcement learning works is by giving an AI a goal and letting it figure out how to achieve that goal.
@@ -31,8 +36,6 @@ However, we care how the robot cleans up the mess. We don't want it to break thi
 This is the problem of 'AI alignment'. Also known as reward hacking, or the paperclip maximizer problem.
 
 <!-- more (fun) examples -->
-
-
 
 <!-- mechanism design -->
 Within economics, mechanism design is the study of how to design rules and incentives to get people to do what you want them to do.

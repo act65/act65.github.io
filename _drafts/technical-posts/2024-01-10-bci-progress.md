@@ -1,6 +1,6 @@
 ---
 layout: post
-title: State of the art in BCI technology
+title: S.O.T.A. in (non invasive) BCIs (2024)
 ---
 
 <!-- What can they do?
