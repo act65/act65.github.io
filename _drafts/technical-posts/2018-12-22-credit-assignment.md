@@ -11,8 +11,8 @@ title: What is the difference between credit assignment and causal inference?
 
 If your fault.
 
-Legal.
-Nesessary and sufficient causation.
+<!-- Legal.
+Nesessary and sufficient causation. -->
 
 
 Only want to assign credit to causes, not correlates?!

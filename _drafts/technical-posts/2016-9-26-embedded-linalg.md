@@ -6,31 +6,52 @@ subtitle: We can use linear algebra to represent; linear operators, algebras, co
 
 Linear algebra and arrays combine to give us a powerful language. Here we explore using linear algebra to represent;
 
-- [linear operators](#linear-operators) (differentiation and integration, matrix multiplication, the determinant, convoltuion, the laplacian)
+- [linear operators](#linear-operators) (differentiation and integration, matrix multiplication, the determinant, convolution, the laplacian)
 - [algebra](#algebras) (dual numbers, complex numbers, and more)
-- [computation](#computation) (logic, automata, quantum)
+- [computation](#computation) (logic, automata, quantum computation)
 - [symmetry groups](#symmetry-groups) (discrete, continuious)
 - and more.
 
 ## Linear operators
 
-Linear functions can be written as arrays. This representational duality between operator and operand is rather elegant.
+Linear functions can be written as arrays.
+Linear functions can be applied to arrays.
 
-An operator is a mapping from one space to another. For example, we can have a map that tells us how to pair ???
+<!-- what is an array
+- elements must be of the same type
+- 
+ -->
 
+An operator is a mapping from one space to another. For example, we can have a map that tells us how to pair the integers $[0,1,2,3,4]$ with the integers $[0,1,2,3,4]$.
 
-<!-- Related to Turing's duality of data and program. Where ... -->
+We start by representing the integers as 'one-hot' vectors. For example, the integer 2 is represented as $[0, 0, 1, 0, 0]^T$ and the integer 4 is represented as $[0, 0, 0, 0, 1]^T$.
+
+We can represent an operator as a matrix. Consider the mapping $0\to1, 1\to2, 2\to3, 3\to4, 4\to0$. We can write this as;
+
+$$
+\begin{align}
+\begin{bmatrix}
+0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+\end{align}
+$$
+
+This representational duality between operator and operand reminds me of the duality between data and program in Turing's ideas of computation.
+
+### Polynomial functions
 
 <!-- But are these more that just nice mathematical curiosities? Why is this useful or important? -->
 
-Let start with linear functions of polynomials. Which we reimagine as infinite arrays $a \in  {\mathbb R}^{\infty}$. Where $a_i$ is the coefficient for $x^i$. Thus $a(x) = [0, 5, 3, 0, 1, \dots]^T$ represents
+Let's represent a polynomial as an infinite array $a \in  {\mathbb R}^{\infty}$. Where $a_i$ is the coefficient for $x^i$. Thus $a(x) = [0, 5, 3, 0, 1, \dots]^T$ represents
 
 $$
 0\cdot x^0 + 5\cdot x^1 + 3\cdot x^2 + 0\cdot x^3 + 1\cdot x^4 \\
 a(x) = x^4 + 3\cdot x^2 + 5\cdot x
 $$
-
-where $\dots$ is used to represent zeros for all higher powers of $x$.
 
 #### A differentiation operator for polynomials
 
@@ -146,22 +167,39 @@ Because matrix multiplication can be represented as the MMT, we can treat is as 
 
 - What is MMT $\cdot$ MMT?
 - what is $\text{det}(MMT)$?
+- what is the rank of the matrix $MMT$? (incidentally, the rank tells us how many multiplications are required to compute the multiplication of two matrices if size $n \times n$)
 - let's construct the matrix $MMT + D$ (where $D$ is the differentiation operator).
 
 #### Determinant
 
-??? can this be written as a matrix?
+The determinant is a linear operator. It can also be represented as a tensor.
+
+<!-- \mid A \mid &= \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n A_{i,\sigma_i} \\ -->
 
 $$
 \begin{align}
-\mid A \mid &= \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n A_{i,\sigma_i} \\
-\begin{bmatrix}
+\det \begin{bmatrix}
 a&b\\
 c&d\\
-\end{bmatrix}= ad-bc
+\end{bmatrix} &= ad-bc \\
+&= \begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+- \begin{bmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
 \end{align}
 $$
-
 
 
 $$
@@ -170,7 +208,71 @@ $$
 a&b&c\\
 d&e&f\\
 g&h&i\\
-\end{bmatrix}=aei+bfg+cdh-ceg-bdi-afh
+\end{bmatrix}&=aei+bfg+cdh-ceg-bdi-afh \\
+&= \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix} C +
+\begin{bmatrix}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{bmatrix} C +
+\begin{bmatrix}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{bmatrix} C -
+\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{bmatrix} C -
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix} C -
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{bmatrix} C
+\end{align}
+$$
+
+We could write the determinant as a tensor, $D$, which contains the 6 matrices written above.
+
+$$
+D = \sum \text{DET}^n_{ij} C
+$$
+
+Really, this $\text{DET}^n$ is a tensor containing all possible permutations of the matrix $C$ (of size nxn).
+(constrained to picking full rank matrices)
+
+***
+
+Can we recursively apply the determinant operator?
+we have a 4x4 matrix, $M$ which we rewrite as a 2x2 matrix, $M'$, where each element is a 2x2 submatrix of $M$.
+
+$$
+\begin{align}
+M &= \begin{bmatrix}
+a_{11} & a_{12} & a_{13} & a_{14} \\
+a_{21} & a_{22} & a_{23} & a_{24} \\
+a_{31} & a_{32} & a_{33} & a_{34} \\
+a_{41} & a_{42} & a_{43} & a_{44} \\
+\end{bmatrix} \\
+M' &=
+\begin{bmatrix}
+b_{11} & b_{12} \\
+b_{21} & b_{22} \\
+\end{bmatrix} \\
+b_{11} &= \begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22} \\
+\end{bmatrix} \\
 \end{align}
 $$
 
