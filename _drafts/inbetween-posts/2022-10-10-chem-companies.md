@@ -4,6 +4,8 @@ title: The economics of sensing companies
 permalink: chem-analytics
 ---
 
+Business models?
+
 
 ## Supramolecular analytics
 

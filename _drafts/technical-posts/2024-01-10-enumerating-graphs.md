@@ -6,27 +6,52 @@ permalink: graph-enumeration
 ---
 
 Our goal is to generate all graphs with $n$ nodes.
-Let's start with a simple example, generating all graphs with 3 nodes.
+Let's start with a simple example, generating all graphs with 4 nodes.
 
-![All graphs with 3 nodes.](assets/graph_enum/graphs-3.png)
+<figure>
+    <img src='assets/graph_enum/isomorphism-classes-4.svg' alt='missing' />
+    <figcaption>All graphs with 4 nodes.</figcaption>
+</figure>
 
-But some of these graphs are the same, just drawn differently. For example, the two graphs below are the same, just drawn differently.
+However, when generating graphs, we need to be cautious.
+We need to ensure that none of the generated graphs are the 'same'.
+What do we mean by 'same'?
 
-![Two graphs that are the same, just drawn differently.](assets/graph_enum/isomorphic.png)
+<!-- Consider the two graphs below. They are the same, just drawn differently.
+<figure>
+    <img src='assets/graph_enum/iso.png' alt='missing' />
+    <figcaption>Two graphs that are the 'same', just drawn differently.</figcaption>
+</figure>
 
-This 'same'-ness is called isomorphism. We say that two graphs are isomorphic if they are the same, just drawn differently.
+This 'same'-ness is called isomorphism. We say that two graphs are isomorphic if there is a bijection between the vertex sets of the two graphs, $G, H$ such that any two vertices $u$ and $v$ of $G$ are adjacent in $G$ if and only if $f(u)$ and $f(v)$ are adjacent in $H$.
 
-More formally, an isomorphism of graphs $G$ and $H$ is a bijection between the vertex sets of $G$ and $H$.
+Aside: In what sense can two graphs be the 'same'? -->
+Consider the four graphs shown below. They all have different edges, but are essentially the same graph: a graph with a 3-chain, and one disconnected node.
 
-How can we avoid generating the same graph more than once? Since we dont want to waste time generating the same graph more than once.
-And as $n$ gets larger, there become many ways to draw the same graph.
+<!-- ![](assets/graph_enum/isomers.png)
+*Four graphs that are different, yet the 'same'.* -->
+
+<figure>
+    <img src='assets/graph_enum/isomers.png' alt='missing' />
+</figure>
+
+Formally, an isomorphism of graphs $G$ and $H$ is a bijection between the vertex sets of $G$ and $H$
+
+$$
+f\colon V(G)\to V(H)
+$$
+
+such that any two vertices $u$ and $v$ of $G$ are adjacent in $G$ if and only if $f(u)$ and $f(v)$ are adjacent in $H$.
+
+In other words, can we relabel the nodes of one graph to get the other? If so, the graphs are isomorphic.
 
 ***
 
-A naive solution is to check whether the next graph is already in the set of generated graphs. If so, discard it, else, add it to the generated set.
-However, this solution requires generating and checking each graph against all the graphs generated so far. This is expensive!
+A naive solution when enumerating graphs is to start with graphs with no edges and add edges one by one.
+As we go, we check whether the current graph is already in the set of generated graphs (up to isomorphism). If so, discard it, else, add it to the generated set.
+However, this solution requires checking each graph against all the graphs generated so far. This is expensive!
 
-A cheaper solution is; ordering the graphs and generating the graphs in order (enumeration). By generating the graphs in order, it is not possible to repeat the same graph. [Meringer 2010](http://nozdr.ru/data/media/biblio/kolxoz/Ch/ChCm/Faulon%20J.L.,%20Bender%20A.%20(eds.)%20Handbook%20of%20chemoinformatics%20algorithms%20(CRC,%202010)(ISBN%201420082922)(ISBN%201420082922)(O)(435s)_ChCm_.pdf#page=246)
+A cheaper solution is; ordering the graphs and generating the graphs in order (enumeration). By generating the graphs in order, it is not possible to repeat the same graph, see [Meringer 2010](http://nozdr.ru/data/media/biblio/kolxoz/Ch/ChCm/Faulon%20J.L.,%20Bender%20A.%20(eds.)%20Handbook%20of%20chemoinformatics%20algorithms%20(CRC,%202010)(ISBN%201420082922)(ISBN%201420082922)(O)(435s)_ChCm_.pdf#page=246).
 
 #### Ordered edges
 
@@ -42,12 +67,14 @@ e \le e': i < i' \lor (i = i' \land j < j')
 \end{aligned}
 $$
 
+This can be visualised as an ordering on a matrix.
 
-This can be visualised as an ordering on an adjacency matrix.
+<!-- ![](assets/graph_enum/edge-order.png)
+*Edges are given an order.* -->
 
-![Edges are given an order](assets/graph_enum/edge-order.png)
-
-(an adjacency matrix is a matrix of size $n\times n$ - where n is the number of nodes. Where the $i, j$ th entry corresponds to an edge between the $i$th and $j$th node.)
+<figure>
+    <img src='assets/graph_enum/edge-order.png' alt='missing' />
+</figure>
 
 #### Ordered graphs
 
@@ -67,22 +94,12 @@ $$
 As an example, consider the two graphs below. The first graph is smaller than the second since the edge $(2, 3)$ is smaller than $(2, 4)$.
 
 
-![The graphs are given an order.](assets/graph_enum/graph-order.png)
+<!-- ![](assets/graph_enum/graph-order.png)
+*The graphs are given an order.* -->
 
-#### Graph isomorphism
-
-Aside: In what sense can two graphs be the 'same'?
-Consider the four graphs shown below. They all have different edges, but are essentially the same graph: a graph with a 3-chain, and one disconnected node.
-
-![Four graphs that are different, yet the 'same'.](assets/graph_enum/isomers.png)
-
-Formally, an isomorphism of graphs $G$ and $H$ is a bijection between the vertex sets of $G$ and $H$
-
-$$
-f\colon V(G)\to V(H)
-$$
-
-such that any two vertices $u$ and $v$ of $G$ are adjacent in $G$ if and only if $f(u)$ and $f(v)$ are adjacent in $H$.
+<figure>
+    <img src='assets/graph_enum/graph-order.png' alt='missing' />
+</figure>
 
 #### Canonicity
 
@@ -106,15 +123,23 @@ So, we start with the smallest graph, a graph with no edges, and proceed by addi
 As we add edges, we check whether the constructed graph is minimal, if it isn't, we discard it.
 This process is visualised below.
 
-![The orderly enumeration algorithm. Proceed in loops, recursively adding edges to graphs.](assets/graph_enum/graphgen-alg.png)
+<figure>
+    <img src='assets/graph_enum/graphgen-alg.png' alt='missing' />
+    <figcaption>The orderly enumeration algorithm. Proceed in loops, recursively adding edges to graphs.</figcaption>
+</figure>
 
+<figure>
+    <img src='assets/graph_enum/generation-tree.png' alt='missing' />
+    <figcaption>An example of graph enumeration. The graphs are constructed by adding larger, and larger edges. Non-canonical graphs, circled in red, are not continued.</figcaption>
+</figure>
 
-![An example of graph enumeration. The graphs are constructed by adding larger, and larger edges. Non-canonical graphs, circled in red, are not continued.](assets/graph_enum/generation-tree.png)
 
 #### Implementation
 
-???
+I've implemented this algorithm in [Rust](https://github.com/act65/graphgenrs).
 
-***
+## Thoughts
 
-What about colored graphs (graphs with colored nodes and / or edges)?
+While this algorithm is effective. It is not the fastest way to enumerate colored graphs.
+
+Ref nauty and surge.

@@ -41,6 +41,13 @@ It is complicated and hard to measure.
 Because of this, there is uncertainty in the observations we make (unlike chess, where we are certain that a pawn is at b4).
 Maybe you have discovered life on the moon, or maybe there is a life-like smudge on your telesope.
 
+If we imagine an uncertain chess game it might look like;
+
+- the rules are stochastic (ie, a pawn probably moves forward when asked, but it might move sideways instead)
+- you never get to observe the board directly, only through a foggy window (I'm pretty sure that's a pawn at b4, but it might be a bishop)
+
+<!-- why can we not make claims with certainty anymore? -->
+
 > This uncertainty is the problem science solves. 
 
 Science attempts to systematically reduce our uncertainty about the truths determined by the physical rules of our universe. However, science only reduces uncertainty (rather than eliminates it), science cannot answer '_What makes something true?_', instead, science focuses on a different question.
@@ -93,7 +100,9 @@ Finally, we need to make some assumptions. These may seem pedantic. But, we are 
 Note that, these assumptions cannot be proven to be true, and therefore we cannot claim that science gives us the truth. Rather we rely on arguments that prefer simplicity and hope for induction. So, we finally arrive at;
 
 > If we assume the laws of the of the universe do not change, that simpler answers are more likely to be true_. We can answer; what is the most likely thing to be true? _Given what we have observed and the answers we have imagined__.
-(ie, we might change our mind if we find new data or imagine a better answer)
+
+
+This statement hilights that we / science should change its position when new data is found or a better answer is imagined. This is the essence of the scientific method.
 
 * * *
 

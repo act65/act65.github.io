@@ -1,5 +1,5 @@
 ---
-title: "Con-fusion:  (story prompt)"
+title: "Con-fusion (story prompt)"
 date: "2019-02-22"
 coverImage: "m36_proj_spanglerfusoropener4x3.jpg"
 layout: post

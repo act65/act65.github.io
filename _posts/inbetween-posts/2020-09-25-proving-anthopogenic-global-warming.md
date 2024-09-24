@@ -1,5 +1,5 @@
 ---
-title: "How can I prove anthopogenic global warming?"
+title: "How can you prove anthopogenic global warming?"
 date: "2020-09-25"
 coverImage: "113516_image022.jpg"
 layout: post

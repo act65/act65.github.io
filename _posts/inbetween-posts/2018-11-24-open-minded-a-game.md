@@ -41,7 +41,3 @@ And the rest is motivated by my want to force others to read books that I like. 
 * * *
 
 Cool. My turn first! Let's start with a low barrier to entry: a short story called [The truth of fact, the truth of feeling](https://www.goodreads.com/book/show/18455800-the-truth-of-fact-the-truth-of-feeling?from_search=true) by Ted Chiang (author of Arrival, amongst other things). You can find an online version [here](https://web.archive.org/web/20140222103103/http://subterraneanpress.com/magazine/fall_2013/the_truth_of_fact_the_truth_of_feeling_by_ted_chiang). If you finish it, it's your turn, I will read a book of your choosing.
-
-* * *
-
-Note to self: Depending on how well this goes, it might be sensible to extend this to other types of media; movies and documentaries, blog posts, games...?
