@@ -3,7 +3,8 @@ layout: post
 title: Learning and compression
 ---
 
-Learning is the same as compression?
+Learning implies compression.
+Compression implies learning?
 
 ## Learning implies compression
 

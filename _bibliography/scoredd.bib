@@ -1,0 +1,130 @@
+---
+---
+References
+==========
+
+@inproceedings{welling-teh-2011,
+	author = {Welling, Max and Teh, Yee Whye},
+	title = {Bayesian learning via stochastic gradient langevin dynamics},
+	year = {2011},
+	isbn = {9781450306195},
+	publisher = {Omnipress},
+	address = {Madison, WI, USA},
+	abstract = {In this paper we propose a new framework for learning from large scale datasets based on iterative learning from small mini-batches. By adding the right amount of noise to a standard stochastic gradient optimization algorithm we show that the iterates will converge to samples from the true posterior distribution as we anneal the stepsize. This seamless transition between optimization and Bayesian posterior sampling provides an inbuilt protection against overfitting. We also propose a practical method for Monte Carlo estimates of posterior statistics which monitors a "sampling threshold" and collects samples after it has been surpassed. We apply the method to three models: a mixture of Gaussians, logistic regression and ICA with natural gradients.},
+	booktitle = {Proceedings of the 28th International Conference on International Conference on Machine Learning},
+	pages = {681–688},
+	numpages = {8},
+	location = {Bellevue, Washington, USA},
+	series = {ICML'11}
+}
+
+@book{Alain2012,
+	title = {What {Regularized} {Auto}-{Encoders} {Learn} from the {Data} {Generating} {Distribution}},
+	volume = {15},
+	isbn = {1532-4435},
+	url = {http://arxiv.org/abs/1211.4246},
+	abstract = {What do auto-encoders learn about the underlying data generating distribution? Recent work suggests that some auto-encoder variants do a good job of capturing the local manifold structure of data. This paper clarifies some of these previous observations by showing that minimizing a particular form of regularized reconstruction error yields a reconstruction function that locally characterizes the shape of the data generating density. We show that the auto-encoder captures the score (derivative of the log-density with respect to the input). It contradicts previous interpretations of reconstruction error as an energy function. Unlike previous results, the theorems provided here are completely generic and do not depend on the parametrization of the auto-encoder: they show what the auto-encoder would tend to if given enough capacity and examples. These results are for a contractive training criterion we show to be similar to the denoising auto-encoder training criterion with small corruption noise, but with contraction applied on the whole reconstruction function rather than just encoder. Similarly to score matching, one can consider the proposed training criterion as a convenient alternative to maximum likelihood because it does not involve a partition function. Finally, we show how an approximate Metropolis-Hastings MCMC can be setup to recover samples from the estimated distribution, and this is confirmed in sampling experiments.},
+	urldate = {2016-08-08},
+	author = {Alain, Guillaume and Bengio, Yoshua},
+	year = {2012},
+	doi = {abs/1211.4246},
+	note = {arXiv: 1211.4246
+Publication Title: Journal of Machine Learning Research
+ISSN: 1532-4435},
+	keywords = {★, auto-encoders, denoising auto-encoders, generative models, manifold learning, Markov chains, score matching, unsupervised repre-sentation learning},
+	file = {PDF:/home/telfaralex/Zotero/storage/Q44V5956/2012-What_Regularized_Auto-Encoders_Learn_from_the_Data_Generating_Distribution.pdf:application/pdf},
+}
+
+@article{meng_estimating_nodate,
+	title = {Estimating {High} {Order} {Gradients} of the {Data} {Distribution} by {Denoising}},
+	abstract = {The ﬁrst order derivative of a data density can be estimated efﬁciently by denoising score matching, and has become an important component in many applications, such as image generation and audio synthesis. Higher order derivatives provide additional local information about the data distribution and enable new applications. Although they can be estimated via automatic differentiation of a learned density model, this can amplify estimation errors and is expensive in high dimensional settings. To overcome these limitations, we propose a method to directly estimate high order derivatives (scores) of a data density from samples. We ﬁrst show that denoising score matching can be interpreted as a particular case of Tweedie’s formula. By leveraging Tweedie’s formula on higher order moments, we generalize denoising score matching to estimate higher order derivatives. We demonstrate empirically that models trained with the proposed method can approximate second order derivatives more efﬁciently and accurately than via automatic differentiation. We show that our models can be used to quantify uncertainty in denoising and to improve the mixing speed of Langevin dynamics via Ozaki discretization for sampling synthetic data and natural images.},
+	language = {en},
+	author = {Meng, Chenlin and Li, Wenzhe and Song, Yang and Ermon, Stefano},
+	file = {Meng et al. - Estimating High Order Gradients of the Data Distri.pdf:/home/telfaralex/Zotero/storage/WTTTLQXC/Meng et al. - Estimating High Order Gradients of the Data Distri.pdf:application/pdf},
+}
+
+@article{hyvarinen_estimation_2011,
+	title = {Estimation of {Non}-{Normalized} {Statistical} {Models} by {Score} {Matching}},
+	abstract = {One often wants to estimate statistical models where the probability density function is known only up to a multiplicative normalization constant. Typically, one then has to resort to Markov Chain Monte Carlo methods, or approximations of the normalization constant. Here, we propose that such models can be estimated by minimizing the expected squared distance between the gradient of the log-density given by the model and the gradient of the log-density of the observed data. While the estimation of the gradient of log-density function is, in principle, a very diﬃcult non-parametric problem, we prove a surprising result that gives a simple formula for this objective function. The density function of the observed data does not appear in this formula, which simpliﬁes to a sample average of a sum of some derivatives of the log-density given by the model. The validity of the method is demonstrated on multivariate Gaussian and independent component analysis models, and by estimating an overcomplete ﬁlter set for natural image data.},
+	language = {en},
+	author = {Hyvarinen, Aapo},
+	year = {2011},
+	file = {Hyvarinen - Estimation of Non-Normalized Statistical Models by.pdf:/home/telfaralex/Zotero/storage/7DPE53RT/Hyvarinen - Estimation of Non-Normalized Statistical Models by.pdf:application/pdf},
+}
+
+@misc{song_score-based_2021,
+	title = {Score-{Based} {Generative} {Modeling} through {Stochastic} {Differential} {Equations}},
+	url = {http://arxiv.org/abs/2011.13456},
+	abstract = {Creating noise from data is easy; creating data from noise is generative modeling. We present a stochastic differential equation (SDE) that smoothly transforms a complex data distribution to a known prior distribution by slowly injecting noise, and a corresponding reverse-time SDE that transforms the prior distribution back into the data distribution by slowly removing the noise. Crucially, the reverse-time SDE depends only on the time-dependent gradient ﬁeld (a.k.a., score) of the perturbed data distribution. By leveraging advances in score-based generative modeling, we can accurately estimate these scores with neural networks, and use numerical SDE solvers to generate samples. We show that this framework encapsulates previous approaches in score-based generative modeling and diffusion probabilistic modeling, allowing for new sampling procedures and new modeling capabilities. In particular, we introduce a predictor-corrector framework to correct errors in the evolution of the discretized reverse-time SDE. We also derive an equivalent neural ODE that samples from the same distribution as the SDE, but additionally enables exact likelihood computation, and improved sampling efﬁciency. In addition, we provide a new way to solve inverse problems with score-based models, as demonstrated with experiments on class-conditional generation, image inpainting, and colorization. Combined with multiple architectural improvements, we achieve record-breaking performance for unconditional image generation on CIFAR-10 with an Inception score of 9.89 and FID of 2.20, a competitive likelihood of 2.99 bits/dim, and demonstrate high ﬁdelity generation of 1024 ˆ 1024 images for the ﬁrst time from a score-based generative model.},
+	language = {en},
+	urldate = {2023-07-17},
+	publisher = {arXiv},
+	author = {Song, Yang and Sohl-Dickstein, Jascha and Kingma, Diederik P. and Kumar, Abhishek and Ermon, Stefano and Poole, Ben},
+	month = feb,
+	year = {2021},
+	note = {arXiv:2011.13456 [cs, stat]},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+	annote = {Comment: ICLR 2021 (Oral)},
+	file = {Song et al. - 2021 - Score-Based Generative Modeling through Stochastic.pdf:/home/telfaralex/Zotero/storage/VMDSX2ZN/Song et al. - 2021 - Score-Based Generative Modeling through Stochastic.pdf:application/pdf},
+}
+
+@misc{lim_ar-dae_2020,
+	title = {{AR}-{DAE}: {Towards} {Unbiased} {Neural} {Entropy} {Gradient} {Estimation}},
+	shorttitle = {{AR}-{DAE}},
+	url = {http://arxiv.org/abs/2006.05164},
+	abstract = {Entropy is ubiquitous in machine learning, but it is in general intractable to compute the entropy of the distribution of an arbitrary continuous random variable. In this paper, we propose the amortized residual denoising autoencoder (AR-DAE) to approximate the gradient of the log density function, which can be used to estimate the gradient of entropy. Amortization allows us to signiﬁcantly reduce the error of the gradient approximator by approaching asymptotic optimality of a regular DAE, in which case the estimation is in theory unbiased. We conduct theoretical and experimental analyses on the approximation error of the proposed method, as well as extensive studies on heuristics to ensure its robustness. Finally, using the proposed gradient approximator to estimate the gradient of entropy, we demonstrate state-ofthe-art performance on density estimation with variational autoencoders and continuous control with soft actor-critic.},
+	language = {en},
+	urldate = {2023-09-20},
+	publisher = {arXiv},
+	author = {Lim, Jae Hyun and Courville, Aaron and Pal, Christopher and Huang, Chin-Wei},
+	month = jun,
+	year = {2020},
+	note = {arXiv:2006.05164 [cs, stat]},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+	annote = {Comment: accepted in ICML 2020},
+	file = {Lim et al. - 2020 - AR-DAE Towards Unbiased Neural Entropy Gradient E.pdf:/home/telfaralex/Zotero/storage/JLXGVZLI/Lim et al. - 2020 - AR-DAE Towards Unbiased Neural Entropy Gradient E.pdf:application/pdf},
+}
+
+
+@article{vincent_connection_2011,
+	title = {A {Connection} {Between} {Score} {Matching} and {Denoising} {Autoencoders}},
+	volume = {23},
+	issn = {0899-7667, 1530-888X},
+	url = {https://direct.mit.edu/neco/article/23/7/1661-1674/7677},
+	doi = {10.1162/NECO_a_00142},
+	abstract = {Denoising autoencoders have been previously shown to be competitive alternatives to Restricted Boltzmann Machines for unsupervised pre-training of each layer of a deep architecture. We show that a simple denoising autoencoder training criterion is equivalent to matching the score (with respect to the data) of a speciﬁc energy based model to that of a non-parametric Parzen density estimator of the data. This yields several useful insights. It deﬁnes a proper probabilistic model for the denoising autoencoder technique which makes it in principle possible to sample from them or to rank examples by their energy. It suggests a different way to apply score matching that is related to learning to denoise and does not require computing second derivatives. It justiﬁes the use of tied weights between the encoder and decoder, and suggests ways to extend the success of denoising autoencoders to a larger family of energy-based models.},
+	language = {en},
+	number = {7},
+	urldate = {2023-08-31},
+	journal = {Neural Computation},
+	author = {Vincent, Pascal},
+	month = jul,
+	year = {2011},
+	pages = {1661--1674},
+	file = {Vincent - 2011 - A Connection Between Score Matching and Denoising .pdf:/home/telfaralex/Zotero/storage/ZR75IYIU/Vincent - 2011 - A Connection Between Score Matching and Denoising .pdf:application/pdf},
+}
+
+@misc{pabbaraju_provable_2023,
+	title = {Provable benefits of score matching},
+	url = {http://arxiv.org/abs/2306.01993},
+	abstract = {Score matching is an alternative to maximum likelihood (ML) for estimating a probability distribution parametrized up to a constant of proportionality. By ﬁtting the “score” of the distribution, it sidesteps the need to compute this constant of proportionality (which is often intractable). While score matching and variants thereof are popular in practice, precise theoretical understanding of the beneﬁts and tradeoﬀs with maximum likelihood—both computational and statistical—are not well understood. In this work, we give the ﬁrst example of a natural exponential family of distributions such that the score matching loss is computationally eﬃcient to optimize, and has a comparable statistical eﬃciency to ML, while the ML loss is intractable to optimize using a gradient-based method. The family consists of exponentials of polynomials of ﬁxed degree, and our result can be viewed as a continuous analogue of recent developments in the discrete setting. Precisely, we show: (1) Designing a zeroth-order or ﬁrst-order oracle for optimizing the maximum likelihood loss is NP-hard. (2) Maximum likelihood has a statistical eﬃciency polynomial in the ambient dimension and the radius of the parameters of the family. (3) Minimizing the score matching loss is both computationally and statistically eﬃcient, with complexity polynomial in the ambient dimension.},
+	language = {en},
+	urldate = {2023-06-07},
+	publisher = {arXiv},
+	author = {Pabbaraju, Chirag and Rohatgi, Dhruv and Sevekari, Anish and Lee, Holden and Moitra, Ankur and Risteski, Andrej},
+	month = jun,
+	year = {2023},
+	note = {arXiv:2306.01993 [cs, stat]},
+	keywords = {Computer Science - Data Structures and Algorithms, Computer Science - Machine Learning, Statistics - Machine Learning},
+	annote = {Comment: 25 Pages},
+	file = {Pabbaraju et al. - 2023 - Provable benefits of score matching.pdf:/home/telfaralex/Zotero/storage/SNXMZ87T/Pabbaraju et al. - 2023 - Provable benefits of score matching.pdf:application/pdf},
+}
+
+@article{lyu_interpretation_2009,
+	title = {Interpretation and {Generalization} of {Score} {Matching}},
+	abstract = {Score matching is a recently developed parameter learning method that is particularly eﬀective to complicated high dimensional density models with intractable partition functions. In this paper, we study two issues that have not been completely resolved for score matching. First, we provide a formal link between maximum likelihood and score matching. Our analysis shows that score matching ﬁnds model parameters that are more robust with noisy training data. Second, we develop a generalization of score matching. Based on this generalization, we further demonstrate an extension of score matching to models of discrete data.},
+	language = {en},
+	author = {Lyu, Siwei},
+	year = {2009},
+	file = {Lyu - 2009 - Interpretation and Generalization of Score Matchin.pdf:/home/telfaralex/Zotero/storage/GCB594AW/Lyu - 2009 - Interpretation and Generalization of Score Matchin.pdf:application/pdf},
+}

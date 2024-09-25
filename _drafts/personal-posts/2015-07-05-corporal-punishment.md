@@ -1,8 +1,5 @@
 ---
 title: "Corporal punishment"
-date: "2015-07-05"
-categories: 
-  - "speculative-research"
 layout: post
 ---
 

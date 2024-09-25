@@ -1,11 +1,9 @@
 ---
 title: "Life as a minority"
-date: "2021-04-07"
-coverImage: "white-guy-in-a-suit.jpg"
 layout: post
 ---
 
-![]({{site.baseurl}}/images/{{page.coverImage}})
+![]({{site.baseurl}}/images/white-guy-in-a-suit.jpg)
 
 John is a rich, white, male. Which makes him a minority in 3 ways.
 
@@ -15,7 +13,7 @@ John is a rich, white, male. Which makes him a minority in 3 ways.
 
 Fortunately, John is being helped by a new university policy: "Support for minorities".
 
-* * *
+***
 
 The point is. Being a minority is not the issue. It about power. Who has the (majority of) power?  
 Well, that's: Rich, white, males.
