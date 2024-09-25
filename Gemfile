@@ -2,8 +2,8 @@
 
 source "https://rubygems.org"
 
-# gem "rails"
-gem "jekyll"
+
+gem "jekyll", "~> 4.2"
 gem "jekyll-sitemap"
 gem "jekyll-feed"
 gem "jekyll-scholar"
