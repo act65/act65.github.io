@@ -59,7 +59,10 @@ sass:
 plugins:
  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
- # - jekyll-gist
+#  - jekyll-gist
+ - jekyll-feed
+ - jekyll-include-cache
+ - jekyll-scholar
 
 # Exclude these files from your production _site
 exclude:
