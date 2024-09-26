@@ -7,25 +7,17 @@ subtitle: Playing with some numbers.
 <p>
 A perfect number is a positive integer that is equal 
 to the sum of its unique positive divisors, excluding the number itself. 
-For instance, 6 has divisors 1, 2 and 3 (excluding itself), and 1 + 2 + 3 = 6, so 6 is a perfect number. 
+For example, 
+
+- 6 has divisors 1, 2 and 3 (excluding itself), and 1 + 2 + 3 = 6, therefore 6 is a perfect number. 
+- 28 has divisors 1, 2, 4, 7 and 14 (excluding itself), and 1 + 2 + 4 + 7 + 14 = 28, therefore 28 is a perfect number.
+
 </p>
-<p>
-    Interestingly there is a connection to the mersenne primes!<br>
-
-    $$
-    (2^{n - 1})(2^n - 1)
-    $$
-
-    Each even perfect number must have a prime factor.
-    The factors must sum to an even number. And since 1 is always a factor, we need a least one more odd factor.
-    If the odd factor is not prime (ie 9).
-</p>
-
 <h2>
     Jigsaw puzzle
 </h2>
 <p>
-    Another way to think about these perfect numbers, n, is to imagine a kind of jigsaw puzzle.
+    Another way to think about these perfect numbers is to imagine a kind of jigsaw puzzle.
     The goal is to fill a n x n square with smaller squares. 
     <ul>
     <li> Each row of squares must constructed from i squares of the same size (j x j). (aka a pair of divisors, i x j = n)</li>
@@ -33,9 +25,7 @@ For instance, 6 has divisors 1, 2 and 3 (excluding itself), and 1 + 2 + 3 = 6, s
     </ul>
 </p>
 
-Here are the first 13 numbers draw as these jigsaw puzzles.
-Note 6, which is a 'perfect' number, perfectly fills the n x n square.
-(The n x n square is drawn as a red box.)
+Here are the some jigsaw puzzles.
 
 <div>
     <canvas id="2"></canvas>
@@ -52,6 +42,18 @@ Note 6, which is a 'perfect' number, perfectly fills the n x n square.
     <canvas id="13"></canvas>
     <canvas id="14"></canvas>
 </div>
+
+So the perfect numbers perfectly fill the n x n square.
+While prime numbers do not fill the square at all.
+They are opposite in this sense.
+
+There also exist numbers that can fill the square, and more.
+12 is the first example, with divisors 1, 2, 3, 4, 6 which sum to 16.
+These numbers are called __abundant numbers__.
+
+
+
+
 
 How many rearangements of the jigsaw puzzle are there?
 For 6 there are;
@@ -134,10 +136,26 @@ the factors!
 
 </p>
 
+<p>
+    Interestingly there is a connection to the mersenne primes!<br>
+
+    $$
+    (2^{n - 1})(2^n - 1)
+    $$
+
+    Each even perfect number must have a prime factor.
+    The factors must sum to an even number. And since 1 is always a factor, we need a least one more odd factor.
+    If the odd factor is not prime (ie 9).
+</p>
+
+Unsolved problem in mathematics:
+Are there any odd perfect numbers?
+
 Questions;
 
 - does there exist a fast test for perfect numbers?
 - what are their applications?
 
+https://en.wikipedia.org/wiki/Weird_number
 
 <script src="{{base.url}}/assets/perfect-numbers/canvas.js"></script>
