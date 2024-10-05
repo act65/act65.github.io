@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Compressed sensing and machine learning
+categories:
+    - tutorial
 ---
 
 This post is about;

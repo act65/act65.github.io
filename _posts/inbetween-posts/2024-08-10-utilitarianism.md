@@ -2,6 +2,8 @@
 layout: post
 title: The problem with utilitarianism
 subtitle: I solved the trolley problem!
+categories:
+    - "philosophy"
 ---
 
 ![]({{site.baseurl}}/assets/trolley-problem.png)

@@ -2,6 +2,8 @@
 layout: post
 title: Conserved complexity
 subtitle: A conservation law for algorithms?
+categories:
+    - research
 ---
 
 What if there was a measure of complexity that was conserved over optimal solutions to the same problem? I am imagining that there is a fundamental complexity to a problem (such as sorting), and the set of optimal solutions lie in a set that conserves the underlying complexity.

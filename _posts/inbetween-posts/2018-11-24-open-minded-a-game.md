@@ -4,6 +4,8 @@ date: "2018-11-24"
 coverImage: "screenshot-2018-11-24-at-8-11-41-pm.png"
 layout: post
 subtitle: Play a 'game' with me
+categories: 
+  - "interact"
 ---
 
 ![]({{site.baseurl}}/assets/open-minded-a-game/{{page.coverImage}})

@@ -1,9 +1,10 @@
 ---
 title: "What makes something true?"
-date: "2020-08-18"
 coverImage: "public-engagement-science-comms-hero.jpg"
 layout: post
 subtitle: How does deductive truth (ie math) relate to inductive truth (ie science)?
+categories:
+    - "philosophy"
 ---
 
 # What makes something true?
@@ -20,7 +21,6 @@ guessing nervously.
 What is 'proof'? In mathematics a proof means that we can agree upon a starting point and some determistic rules, and with those rules we can find (aka 'prove') statements that are true! This is also known as deductive reasoning.
 
 <div markdown="1" class="code"> 
-<lside>Examples</lside>
 For example, _chess_.
 Given a chess position, the one shown below, it is true that white can checkmate in 3 moves (if we follow the rules of chess). (Wf4->h6, Bg8->h6, Wd2->h6, Bf8->g8, Wf6->f7)
 
@@ -39,13 +39,15 @@ We can agree on objects called _integers_, {0, 1, 2, 3, 4, ...}, and agree on ru
 Given the 5 postulates of Euclidian geometry, (basic equality rule, equality through operations, equality based on coincidence, universality of right angles, parallelism) we can derive the Pythagorean theorem, and other familiar 'true' statements, such as the sum of the angles in a triangle is 180 degrees.
 </div>
 
+The 'truths' proved using deduction will always be true. Euclid lived over 2000 years ago, yet his proofs are still true today, and will be true in thousands of years time. Nothing can change the truths of deductive reasoning.
+
 <lside>Bounded resources</lside>
-But, not all statements have known proofs. For example, the [Riemann hypothesis](https://en.wikipedia.org/wiki/Riemann_hypothesis) is a statement about the distribution of prime numbers. It is not known if this statement is true or false.
+But, not all logical statements have known proofs. For example, the [Riemann hypothesis](https://en.wikipedia.org/wiki/Riemann_hypothesis) is a guess about the distribution of prime numbers. 
+We have not yet found a proof for the Riemann hypothesis. Is this because the statement is false or because we have not yet imagined the correct proof?
 
-We have not yet found a proof for the Riemann hypothesis. This is a problem of bounded resources. We have not yet imagined all the possible proofs.
-Similarly, in chess, 
+We define this problem as a problem of bounded resources. We have not yet imagined all the possible proofs.
 
-So mathematics can make statements that are __true__, given a starting point and some rules. But, not all statements have known proofs.
+Going back to chess, based on the first move advantage (statistically white wins more often), we could guess that white has a winning strategy (there is some optimal set of moves where it can always win). But, to prove this, we would need to imagine all possible games of chess, and all possible responses to each move.
 
 > However, the real world is not like chess, integers or Euclidean geometry.
 (1.) We do not start by agreeing to any rules, (2.) and we have an imperfect view.
@@ -58,18 +60,16 @@ We need to start by making some assumptions.
 - the observations we made are not interfered with ( there doesn't exist an adversary manipulating our observations )
 
 Note that, these assumptions cannot be proven to be true, and therefore we cannot claim that science gives us the truth.
-We make these assumptions on the basis of our experience. We have not yet observed the laws of the universe to change, and we have not yet observed an adversary manipulating our observations.
+We make these assumptions on the basis of our experience. We have not yet observed the laws of the universe to change, and we have not yet observed an adversary manipulating our observations. Here we are using induction, a dangerous tool.
 
+Induction is making generalisations from incomplete observations. Applying a pattern observed in a limited set of observations to all observations.
 <div markdown="1" class="code">
+I have not seen all swans, bespite that, based on the swans I have seen, I assume that all swans are white.
+
+I have observed the sun rise in the east every morning for the past 30 years. Despite not knowing why, I assume that the sun will rise in the east tomorrow.
+
 Everyday, a farmer feeds his pigs at 7am. He has done this for the past 30 weeks years. The pigs assume this is a law of the universe, that the farmer will feed them at 7am. But, one day the farmer instead loads them into a truck and takes them to the meatworks.
-
-You have observed the sun rise every morning for the past 30 years. You assume that the sun will rise tomorrow.
-
-Every swan you have ever seen is white. So you guess that all swans are white. You would be wrong.
-
 </div>
-Induction is the name for making generalisations from specific observations.
-I have not seen all swans, yet, based on the swans I have seen, I assume that all swans are white.
 
 <lside>An imperfect view</lside>
 <img src="{{site.baseurl}}/assets/what-makes-something-true/chess-window.png" alt="imperfect chess view" style="height: 300px;"/>

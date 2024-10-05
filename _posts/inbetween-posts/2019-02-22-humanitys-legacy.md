@@ -1,9 +1,10 @@
 ---
 title: "Immortalized in plastic (story prompt)"
-date: "2019-02-22"
 coverImage: "plastic-landfill.jpg"
 layout: post
 subtitle: What will be left over after humanity? Plastic...
+categories: 
+  - "sci-fi"
 ---
 
 ![]({{site.baseurl}}/assets/humanitys-legacy/{{page.coverImage}})

@@ -1,9 +1,13 @@
 ---
-title: "Another research proposal"
-date: "2018-08-22"
+title: "Automated science"
 coverImage: "69116666-a-mandelbrot-set-zoom-image-created-in-a-fractal-generated.jpg"
 layout: post
-subtitle: Automated science
+subtitle: "Model-based reinforcement learning, symbolic AI, and the limits of efficient learning."
+permalink: /automated-science/
+categories:
+    - "proposal"
+scholar:
+  bibliography: "automated-science.bib"
 ---
 
 ![]({{site.baseurl}}/assets/another-proposal-science/{{page.coverImage}})
@@ -27,9 +31,11 @@ In brief, the goal of this PhD is;
 
 ## Related work
 
-Model based reinforcement learning such as [1](https://worldmodels.github.io/), [2](https://arxiv.org/abs/1806.01363) has been shown to work effectively. What is exciting about this approach is that the learned models of an environment and the policies are disentangled. Thus models are transferable to different tasks, and policies are transferable to different environments, making learning more efficient.
 
-Symbolic AI is an old field consisting of reasoning, planning and heuristic search. But recently it has been shown that search heuristics (for reasoning/planning) can be learned [3](https://arxiv.org/abs/1806.05898), [4](http://nature.com/articles/doi:10.1038/nature24270). This is exciting because it has hinted at  the possibility of integrating neural and symbolic systems (aka learned models and planners). There has been a flurry amount of work in this area [5](https://arxiv.org/abs/1711.03902). In my opinion, learning structured representations [6](https://arxiv.org/abs/1806.01242) is a promising research direction, as they provide interpretable and exploitable representations. The key problems can be summarised as; learning to reason [7](https://arxiv.org/abs/1705.11040), learning to reason with learned representations [8](https://arxiv.org/abs/1707.03389).
+
+Model based reinforcement learning such as {% cite ha2018worldmodels cuccu2019playingatarineurons %} has been shown to work effectively. What is exciting about this approach is that the learned models of an environment and the policies are disentangled. Thus models are transferable to different tasks, and policies are transferable to different environments, making learning more efficient.
+
+Symbolic AI is an old field consisting of reasoning, planning and heuristic search. But recently it has been shown that search heuristics (for reasoning/planning) can be learned {% cite junyent2018improvingwidthbasedplanningcompact Silver2017MasteringTG %}. This is exciting because it has hinted at  the possibility of integrating neural and symbolic systems (aka learned models and planners). There has been a flurry amount of work in this area {% cite besold2017neuralsymboliclearningreasoningsurvey %}. In my opinion, learning structured representations {% cite sanchezgonzalez2018graphnetworkslearnablephysics %} is a promising research direction, as they provide interpretable and exploitable representations. The key problems can be summarised as; learning to reason {% cite rocktäschel2017endtoenddifferentiableproving %}, learning to reason with learned representations {% cite higgins2018scanlearninghierarchicalcompositional %}.
 
 ## Our approach
 
@@ -56,3 +62,7 @@ The more you can compress a representation, while maintaining its predictive pow
 ## Summary
 
 So whether we have learned a model that a Planner can exploit, or one that humans can wield, the value of an accurate, interpretable model that captures truth would be valuable for all, virtual agents and humans alike.
+
+## Bibliography
+
+{% bibliography --cited %}

@@ -1,9 +1,12 @@
 ---
 title: The behaviour of ideal generative flows
+subtitle: What does optimal transport really mean?
 layout: post
 permalink: /ideal-si/
 scholar:
   bibliography: "ideal-si.bib"
+categories:
+    - research
 ---
 
 Stocahastic interpolants are a recent innovation that frames generative modelling as building a transport map between distributions. {% cite albergo_stochastic_2023 liu_flow_2022 lipman_flow_2023 %}

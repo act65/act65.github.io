@@ -1,7 +1,9 @@
 ---
 layout: post
-title: Perfect numbers.
-subtitle: Playing with some numbers.
+title: Perfect numbers
+subtitle: Making a jigsaw puzzle
+categories:
+    - play
 ---
 
 <p>

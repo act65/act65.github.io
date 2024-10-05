@@ -4,6 +4,8 @@ date: "2020-09-25"
 coverImage: "113516_image022.jpg"
 layout: post
 subtitle: You can't.
+categories: 
+  - "science"
 ---
 
 ![]({{site.baseurl}}/assets/proving-anthopogenic-global-warming/{{page.coverImage}})

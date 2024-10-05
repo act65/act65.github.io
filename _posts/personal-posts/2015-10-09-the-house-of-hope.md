@@ -2,7 +2,7 @@
 title: "The House of Hope"
 date: "2015-10-09"
 categories: 
-  - "experiences"
+  - "experience"
 coverImage: "dscn0737.jpg"
 layout: post
 subtitle: Volunteering at an orphanage.

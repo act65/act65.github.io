@@ -1,6 +1,9 @@
 ---
 layout: post
-title: Research proposal; Pilot waves
+title: Pilot waves
+subtitle: Who needs quantum mechanics when you have pilot waves?
+categories:
+    - proposal
 ---
 
 Main goals;

@@ -4,6 +4,8 @@ date: "2018-11-06"
 coverImage: "palm.jpg"
 layout: post
 subtitle: tldr; cows are fed palm kernel.
+categories: 
+  - "economic"
 ---
 
 ![]({{site.baseurl}}/assets/palm-oil-in-nzs-dairy/{{page.coverImage}})

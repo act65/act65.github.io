@@ -4,6 +4,8 @@ date: "2018-11-05"
 coverImage: "rorschach.jpeg"
 layout: post
 subtitle: What if we could accurately measure {INSERT}?
+categories: 
+  - "speculation"
 ---
 
 ![]({{site.baseurl}}/assets/measuring-people/{{page.coverImage}})

@@ -2,7 +2,7 @@
 title: "Meditation Retreat"
 date: "2015-04-27"
 categories: 
-  - "experiences"
+  - "experience"
 coverImage: "nirvana-via-vipassana-1.jpg"
 layout: post
 subtitle: I tried doing vipassana meditation for 10 days.

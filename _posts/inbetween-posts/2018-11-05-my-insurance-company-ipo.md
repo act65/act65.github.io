@@ -4,6 +4,8 @@ date: "2018-11-05"
 coverImage: "care.png"
 layout: post
 subtitle: An attempt to incentivise preventive healthcare.
+categories: 
+  - "economic"
 ---
 
 ![]({{site.baseurl}}/assets/my-insurance-company-ipo/{{page.coverImage}})

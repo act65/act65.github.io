@@ -1,9 +1,10 @@
 ---
 title: "Inference via interference"
-date: "2018-08-28"
 coverImage: "50336420-9c31-4ced-9c99-f3c114395f96-640-white-matter-fibers.jpg"
 layout: post
 subtitle: Learning by controlling the propagation speed of signals.
+categories: 
+  - "proposal"
 ---
 
 ![]({{site.baseurl}}/assets/inference-via-interference/{{page.coverImage}})

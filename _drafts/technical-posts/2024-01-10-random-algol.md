@@ -2,6 +2,8 @@
 layout: post
 title: How can randomness make algorithms faster?
 subtitle: A brief introduction to randomised algorithms
+categories:
+    - tutorial
 ---
 
 - random quicksort

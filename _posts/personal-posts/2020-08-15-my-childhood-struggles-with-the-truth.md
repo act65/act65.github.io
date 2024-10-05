@@ -1,6 +1,7 @@
 ---
 title: "Youth and truth"
-date: "2020-08-15"
+categories: 
+  - "experience"
 coverImage: "chakras2.png"
 layout: post
 subtitle: I struggled with 'reality'...

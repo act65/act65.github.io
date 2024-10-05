@@ -3,7 +3,9 @@ title: "The future of environmental sciences?"
 date: "2019-02-07"
 coverImage: "planet-earth-rotating-in-space_wj6uhr3xr__f0000.png"
 layout: post
-subtitle: What would the profession of environmental engineering look like?
+subtitle: What could the profession of environmental engineering look like?
+categories: 
+  - "speculation"
 ---
 
 ![]({{site.baseurl}}/assets/the-future-of-environmental-sciences/{{page.coverImage}})

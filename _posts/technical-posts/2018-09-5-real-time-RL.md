@@ -2,6 +2,8 @@
 layout: post
 title: Real time bandits
 subtitle: Rewarding a twitter bot is more complicated than I imagined.
+categories:
+    - play
 ---
 
 Imagine you want to make a twitter bot that is rewarded by likes, it adapts it's tweets in attempt to maximise its rewards.

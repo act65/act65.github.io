@@ -3,6 +3,8 @@ layout: post
 title: Graph enumeration
 subtitle: The orderly enumeration of graphs 
 permalink: graph-enumeration
+categories: 
+  - "tutorial"
 ---
 
 Our goal is to generate all graphs with $n$ nodes.

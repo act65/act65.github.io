@@ -4,6 +4,8 @@ date: "2019-02-25"
 coverImage: "caterpillar-a.png"
 layout: post
 subtitle: A fun intro to my masters topic; abstraction for efficient reinforcment learning.
+categories: 
+  - "tutorial"
 ---
 
 (This is my current focus - kinda - for my masters. The (art)work was done in prep for a conference poster)

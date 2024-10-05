@@ -4,6 +4,8 @@ date: "2022-05-21"
 coverImage: "uneven-pavement.jpg"
 layout: post
 subtitle: I tripped over and have something to say about it.
+categories:
+    - "economic"
 ---
 
 ![]({{site.baseurl}}/assets/a-tripping-point/{{page.coverImage}})

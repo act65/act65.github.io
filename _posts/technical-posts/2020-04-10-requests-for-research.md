@@ -2,6 +2,8 @@
 layout: post
 title: Requests for research
 subtitle: Some ideas from my masters.
+categories: 
+  - "research"
 ---
 
 To stay sane I needed to write down some of the _actionable_ ideas that occur to me.

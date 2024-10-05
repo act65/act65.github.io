@@ -1,9 +1,10 @@
 ---
 title: "Covering letter for my first PhD proposal"
-date: "2018-05-14"
 coverImage: "screenshot-2018-05-14-at-3-36-29-pm.png"
 layout: post
 subtitle: Principles of neural design, automated science, general reinforcement learning
+categories: 
+  - "proposal"
 ---
 
 ![]({{site.baseurl}}/assets/covering-letter-for-my-first-phd-proposal/{{page.coverImage}})
