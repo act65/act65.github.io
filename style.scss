@@ -139,7 +139,7 @@ aside {
   font: 14px/1.4 $helvetica;
   background: $lightblue;
   outline: 2px solid $lightGray;
-}
+}co
 
 .center-image {
     margin: 0 auto;
@@ -162,6 +162,18 @@ side {
   margin: 0;
   margin-right: 50px;
   font: 14px/1.4 $helvetica;
+  font-style: italic;
+  color: $gray;
+}
+
+// a side-margin note
+lside {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  margin: 0;
+  margin-left: 50px;
+  font: 20px/1.4 $helvetica;
   font-style: italic;
   color: $gray;
 }
@@ -368,3 +380,15 @@ footer {
   border-style:solid;
   border-color:$blue;
  }
+
+ figcaption{
+  font-style: italic;
+  padding:5px;
+  text-align: center;
+  color: $gray;
+}
+
+
+.code {
+    background-color: #eef;
+}

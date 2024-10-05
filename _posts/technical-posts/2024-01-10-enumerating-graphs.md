@@ -125,7 +125,7 @@ This process is visualised below.
 
 <figure>
     <img src='assets/graph_enum/graphgen-alg.png' alt='missing' />
-    <figcaption>The orderly enumeration algorithm. Proceed in loops, recursively adding edges to graphs.</figcaption>
+    <figcaption>The orderly enumeration algorithm (above). Proceed in loops, recursively adding edges and checking for minimality.</figcaption>
 </figure>
 
 <figure>
@@ -134,7 +134,7 @@ This process is visualised below.
 </figure>
 
 
-#### Implementation
+<!-- #### Implementation
 
 I've implemented this algorithm in [Rust](https://github.com/act65/graphgenrs).
 
@@ -142,4 +142,4 @@ I've implemented this algorithm in [Rust](https://github.com/act65/graphgenrs).
 
 While this algorithm is effective. It is not the fastest way to enumerate colored graphs.
 
-Ref nauty and surge.
+Ref nauty and surge. -->

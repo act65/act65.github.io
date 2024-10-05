@@ -1,11 +1,18 @@
 ---
 layout: post
-title: The complexity of exploration
+title: Exploration and experiments
+subtitle: Viewed as a computational resource
 ---
 
 This setting is inspired by the problems faced in science, especially economics and medicine. There are some experiments that are not feasible, or legal, or would take extraordinary amounts of organisation and energy. For example, a randomised controlled trial of the unconditional benefit would require: many countries to spend $$$ on an unconditional benefit, which they may be unwilling to do (and obviously there is no way of running is as a blinded experiment).
 
-At some point we will want to automate the application of statistics to economics and healthcare. Unsupervised (machine) learning is to pattern recognitio, as supervised (machine) learning is to predictive intelligence, as reinforcement (machine) learning is to actionable intelligence. We will want this automated statistics to be able to find algorithms that explore and do experiments! But... This has two problems. Safety, which is considered here. Want to build AI with a bias to simple cheap experiments.
+At some point we will want to automate the application of statistics to economics and healthcare. Unsupervised (machine) learning is to pattern recognition, as supervised (machine) learning is to predictive intelligence, as reinforcement (machine) learning is to actionable intelligence. We will want this automated statistics to be able to find algorithms that explore and do experiments! But... This has two problems. Safety, which is considered here. Want to build AI with a bias to simple cheap experiments.
+
+<!-- 
+exploration complexity. 
+a computational resource!
+find a simple anaylsable model of exploration
+ -->
 
 ## Examples
 
