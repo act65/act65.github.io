@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Helping others learn
+categories:
+    - "proposal"
 ---
 
 With our greater understanding of learning we can now train dogs to do X. (insert videos of clever dogs) [jenga](https://www.youtube.com/watch?v=1kl3Y82qRDg), [objects](https://www.youtube.com/watch?v=Ip_uVTWfXyI) ...
