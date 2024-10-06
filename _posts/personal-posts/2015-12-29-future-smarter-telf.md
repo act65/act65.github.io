@@ -1,10 +1,5 @@
 ---
 title: "Future Telf, 2016"
-date: "2015-12-29"
-tags: 
-  - "dreams"
-  - "future"
-  - "inspiration"
 layout: post
 subtitle: Dreaming about projects
 ---

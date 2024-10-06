@@ -3,6 +3,8 @@ layout: post
 title: Mechanical components
 ---
 
+https://www.youtube.com/watch?v=M1-YeqGynlw
+
 You may already be familiar with electrical components like; transistors, capacitors, operational-amplifiers, flip-flops, etc...  Electrical components are defined as; ...?
 
 ![]({{site.baseurl}}/assets/mechanical-components/components.jpeg)

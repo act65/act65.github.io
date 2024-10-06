@@ -1,9 +1,10 @@
 ---
 title: "Adversarial collaboration contest"
-date: "2020-07-03"
 coverImage: "woman-yelling-at-cat.jpg"
 layout: post
-subtitle: Play a game with me.
+subtitle: Let's have a tolerant debate
+categories:
+    - "interact"
 ---
 
 ![]({{site.baseurl}}/assets/adversarial-collaboration-contest/{{page.coverImage}})

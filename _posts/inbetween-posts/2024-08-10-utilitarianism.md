@@ -21,14 +21,16 @@ This thought experiment is used to explore the ethical dilemma of whether it is 
 The correct answer appears to be to pull the lever (or transplant the organs), saving the five people at the expense of the one person, maximizing the number of lives saved.
 However, there exist many arguments against this conclusion. Each as nonsensical as the last.
 
-What is often ignored in this thought experiment is __(un)certainty__. In this case, we are certain that pulling the lever (or transplanting) will save the five people. However, in the real world, we are often uncertain about the consequences of our actions. This uncertainty is the problem with utilitarianism in practice.
+What is often ignored in this thought experiment is __(un)certainty__! In this case, we are certain that pulling the lever (or transplanting) will save the five people. However, in the real world, we are always uncertain about the consequences of our actions.
 
-We cannot predict the future. We cannot be sure that transplanting a heart will lead to a full recovery.
+Some will argue that we can work with risk. We can evaluate the probability of different outcomes and act in a way that maximizes the expected value. However, this is also not possible, for a similar reason. We can never know the true probability of different outcomes given our actions.
 
-Consider the following scenario:
+Because we cannot know the future with certainty we can never evaluate one action as better than another.
+
+<!-- Consider the following scenario:
 
 > A trolley is hurtling down a track towards five people. You are standing next to a lever that will probably divert (75%) the trolley onto a side track where one person is standing. But the train may derail and kill everyone (25%). Do you pull the lever?
 
 Again, the correct answer appears to be to pull the lever, in expectation saving 3.75 people.
 ($0.75 \times 5 + 0.25 \times 0 = 3.75 $).
-However, we have again assumed we can predict the future with certainty. Where did the 75% and 25% come from? How can we be sure that the trolley has a 75% chance of being diverted?
+However, we have again assumed we can predict the future with certainty. Where did the 75% and 25% come from? How can we be sure that the trolley has a 75% chance of being diverted? -->

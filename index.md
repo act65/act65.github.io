@@ -8,12 +8,11 @@ Here are some links to help you navigate:
 
 - [Personal]({{site.baseurl}}/personal/)
     - my [experiences]({{site.baseurl}}/experiences/)
-    - (my poor) [mental health]({{site.baseurl}}/mental-health/)
+    - invitations for [interaction]({{site.baseurl}}/interact/)
     - and more
 - [Opinions and thoughts]({{site.baseurl}}/inbetween/)
     - [economics and politics]({{site.baseurl}}/economics-politics/)
     - [philosophising about ...]({{site.baseurl}}/philosophy/)
-    - [with invitations for interaction]({{site.baseurl}}/interact/)
     - [speculation]({{site.baseurl}}/speculation/)
     - [sci-fi story ideas]({{site.baseurl}}/sci-fi/)
     - and more

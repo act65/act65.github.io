@@ -18,16 +18,16 @@ People are removing their gastrointestinal organs and buying Gastro which regula
 
 ### Physio
 
-> Exercising (or simply walking) takes attention, and attention is a valuable resource. Don't waste another glance on such unimportant tasks, let us handle it for you.
-> The act of walking, running or simply exercising require attention, a valuable resource. What if you wouldn't have to spend another moment attending to these tasks? 'Physio' has you covered.
+> The act of walking, running or exercising require attention, a valuable resource. What if you wouldn't have to spend another moment attending to these tasks? 'Physio' has you covered.
 
 When switched on: control of your limbs will be outsourced to our state-of-the-art motor control policies. They have some great features like; auto-pilot, self-preservation, efficiency, workout, ... It cant get lost, it won't injure you, it won't harm others!
 
 ### Psydy
 
-> Learning a new language, sport, ..., can be confusing, intimidaing and hardas easily as selecting the topic and waiting for a week? Well, it is that easy with Psydy!
+> Learning a new language, sport, ..., can be confusing, intimidaing and just hard.
+What if it was as easy as selecting the topic and waiting for a week? Well, it is that easy with Psydy!
 
-While you live your life as usual, we train a copy of your brain on the knowledge or skills you wish to aquire; taekwondo, violin, political science, 1920's art history, ... . We then update your brain to match the trained copy, imparting the learning done.
+While you live your life as usual, we train a copy of your brain on the knowledge or skills you wish to aquire; taekwondo, violin, political science, 1920's art history, ... . We then update your brain to include the trained copy, imparting the new skills.
 
 ### Emote
 
@@ -35,7 +35,7 @@ While you live your life as usual, we train a copy of your brain on the knowledg
 
 'Emote' offers a way to modulate our emotional states like never before.
 
-Emote is a small device that sits on your brain and modulates the activity of your amygdala. It can be used to increase or decrease the intensity of emotions. It can also be used to induce emotions, like happiness, sadness, anger, ... .
+Emote is a implant that help modulate the activity of your amygdala, hypothalamus, Pituitary gland, hippocampus, Pineal gland. It can also be used to induce emotions, like happiness, sadness, anger, ... To make you more productive, more social, more creative, ...
 
 * * *
 
@@ -43,7 +43,7 @@ These advertisements are supposed to highlight of the dangers of outsourcing our
 
 > Every convenience a piece of our humanity relinquished?
 
-Some famous examples include;
+Inspired by the following examples of outsourcing:
 
 In the early '80s, IBM outsourced their software needs to a then-small company, Microsoft. Microsoft retain the rights to the software and sold it to other companies, effectively giving them a professional head start. This decision is hindsight is noted as one of the main factors contributing to Microsoft becoming a global tech giant. [ref](https://spectrum.ieee.org/how-the-ibm-pc-won-then-lost-the-personal-computer-market)
 
