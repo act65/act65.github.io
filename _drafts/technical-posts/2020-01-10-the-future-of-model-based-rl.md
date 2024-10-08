@@ -1,7 +1,7 @@
 ---
 title: "The future of Model based RL?"
-date: "2020-01-10"
 coverImage: "reinforcement_learning_diagram.png"
+permalink: /models-for-hire/
 layout: post
 ---
 

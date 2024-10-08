@@ -1,8 +1,7 @@
 ---
 title: "Right beliefs, wrong reasons"
-date: "2015-07-05"
 categories: 
-  - "politics-and-opinions"
+  - "philosophy"
 coverImage: "download-2.jpeg"
 layout: post
 subtitle: It occured to me that my belief in evolution was just as illogical as others belief in god.
