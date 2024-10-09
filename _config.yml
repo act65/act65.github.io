@@ -1,12 +1,12 @@
 name: act65
 description: More questions than answers
-avatar: https://raw.githubusercontent.com/act65/act65.github.io/master/images/question-mark.png
+avatar: "{{site.baseurl}}/images/question-mark.png"
 
 
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: act65.com@gmail.com
+  email: te1farac@gmail.com
   facebook:
   flickr:
   github: act65
