@@ -1,6 +1,6 @@
 name: act65
 description: More questions than answers
-avatar: "{{site.baseurl}}/images/question-mark.png"
+avatar: "https://github.com/act65/act65.github.io/blob/master/images/question-mark.png"
 
 
 # Includes an icon in the footer for each username you enter
