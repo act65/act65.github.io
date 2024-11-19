@@ -2,6 +2,8 @@
 title: Intelligent immunity
 layout: post
 subtitle: What if intelligence evolved within the immune system?
+categories:
+    - proposal
 ---
 
 > "Why did (our) intelligence emerge from electrical signals, motion control and sensing? Why not from the immune system?"
@@ -9,10 +11,32 @@ subtitle: What if intelligence evolved within the immune system?
 Instead of neurons and astrocytes, what if the building blocks of intelligence were macrophages, dentritic cells and T-cells?
 
 Questions:
+
 - What kind of environment would select for an intelligent immune system?
-- How might this immune system be structured? Is it centralized like a brain, or distributed throughout the body?
+<!-- - What does 'intelligence' look like in an immune system? -->
+- How might this intelligent immune system be structured? Is it centralized like a brain, or distributed throughout the body?
 - How would their intelligence differ from ours? (would they be better at certain kinds of problems?)
-- What would their values be? (would they be more or less altruistic?)
+<!-- - What would their values be? (would they be more or less altruistic?) -->
+
+I imagine an organism that makes decisions with where immunity is the primary concern. Where movement, sensing and processing are secondary to the primary goal of killing pathogens.
+
+
+***
+
+Here's one potential path from simple immune system to 'intelligence':
+
+Imagine an organism that cannot move, lives in a nutrient-rich environment, and is regualrly attacked by pathogens. For example, in the current of a deep sea geothermal vent.
+
+
+It has a simple immune system that can recognize and kill pathogens. Over time, the immune system evolves to be more efficient at recognizing and killing pathogens. It develops memory cells that store information about past infections, allowing it to respond more quickly to future infections.
+
+
+<!-- how could reproduction work?
+
+- budding
+- spores
+
+ -->
 
 ## Environment
 
@@ -43,7 +67,7 @@ Evolution
 
 
 
-## Differences from our intelligence
+<!-- ## Differences from our intelligence
 
 Are the planning problems they solve different from ours?
 
@@ -51,7 +75,7 @@ Are the planning problems they solve different from ours?
 
 Are the memory problems they solve different from ours?
 
-- remembering a synthesis pathway vs remembering a route through space
+- remembering a synthesis pathway vs remembering a route through space -->
 
 ## Background
 
@@ -64,5 +88,4 @@ Biological prescedent for intelligent immune systems
 
 - behavioral fever
 - immunological synapse
-
-
+- 

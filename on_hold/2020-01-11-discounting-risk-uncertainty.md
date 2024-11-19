@@ -3,6 +3,8 @@ layout: post
 title: Discounting, risk, and uncertainty.
 ---
 
+<!-- > the future is uncertain. Where future rewards are deemed riskier than rewards now due to unknown unknowns. -->
+
 Why do we discount future rewards? What priors does it imply?
 Should discounting be a function of uncertainty?
 
@@ -21,6 +23,7 @@ Want some intuitive examples
 __Q:__ Why do we discount? Could use the average reward.
 
 __TODO__ Want to derive the need for a discount when there is noise within the model used by a planner.
+To show it's optimal to discount when there is noise in the model.
 
 
 ### Discounting for uncertainty
@@ -93,3 +96,4 @@ Properties.
 ***
 
 What about a discount greater than 1?
+Does this lead to exploration?

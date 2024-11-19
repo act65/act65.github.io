@@ -6,15 +6,16 @@ categories:
     - play
 ---
 
-<p>
+
 A perfect number is a positive integer that is equal 
 to the sum of its unique positive divisors, excluding the number itself. 
-For example, 
+For example;
 
 - 6 has divisors 1, 2 and 3 (excluding itself), and 1 + 2 + 3 = 6, therefore 6 is a perfect number. 
 - 28 has divisors 1, 2, 4, 7 and 14 (excluding itself), and 1 + 2 + 4 + 7 + 14 = 28, therefore 28 is a perfect number.
 
-</p>
+Currently, it is unknown if there are any odd perfect numbers.
+
 <h2>
     Jigsaw puzzle
 </h2>
@@ -161,3 +162,11 @@ Questions;
 https://en.wikipedia.org/wiki/Weird_number
 
 <script src="{{base.url}}/assets/perfect-numbers/canvas.js"></script>
+
+
+
+<!-- 
+mersenne primes are quite useful.
+is it possible to effecitly find perfect numbers to help generate mersenne primes?
+
+ -->

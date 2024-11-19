@@ -4,6 +4,8 @@ subtitle: "They deserve it"
 coverImage: "tu10.jpg"
 layout: post
 permalink: /karma-and-merit/
+categories: 
+  - "philosophy"
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

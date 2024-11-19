@@ -18,5 +18,9 @@ Most of the time, the auroras are random patterns. But every once in a while, th
 These are the words of the gods.
 --> 
 
-The gods have not spoken in a week.
-Abas lies 
+The gods have not spoken in 2 months and 3 days.
+Abas lies awake, staring at the ceiling of his hut. The walls are covered in the patterns, famous quotes, prayers and words of the gods. The patterns are beautiful, intricate and mesmerizing. They are the only thing that keeps him sane.
+
+
+
+<!-- why is sound often used for communcation between animals? when visual stimuli could also do it? -->

@@ -50,3 +50,29 @@ Today, these hands are not so bad. You can win with them.
 Given the stakes, it would be more fair if 
 
 <!-- the veil of ignorance -->
+
+***
+
+Now back to Poker.
+Let's take a look at Kuhn poker and estimate the relationship between the number of rounds and the chance that the best player wins.
+
+<!-- make a table of the probabilities of winning for each player for different number of rounds -->
+<!-- how do we characterise how much better one player is than another? -->
+
+| Rounds | Chance best player wins |
+|--------|--------------------------|
+| 1      | 1/2                      |
+| 2      | 3/4                      |
+| 3      | 7/8                      |
+| 4      | 15/16                    |
+| 5      | 31/32                    |
+| 6      | 63/64                    |
+| 7      | 127/128                  |
+
+The chance that the best player wins is given by the formula
+
+$$
+1 - \left( \frac{1}{2} \right)^n
+$$
+
+where $n$ is the number of rounds.
