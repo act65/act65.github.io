@@ -1,20 +1,15 @@
 ---
-title: "Automatic integration"
-subtitle: "Where is it?"
 layout: post
+title: "Vision for automatic integration"
+subtitle: "What could it do for us?"
+permalink: /autoint/motivation/
 categories:
     - "proposal"
 scholar:
-  bibliography: "auto-int.bib"
+    bibliography: "auto-int.bib"
 ---
 
-Automatic differentiation has proven its awesome utility, especially within machine learning {% cite baydin2018automaticdifferentiationmachinelearning %}.
-Fasciliting the training of deep neural networks, it has become a staple of the field.
-
-However, as far as I know, there is no analog for automatic integration.
-Why not?
-
-***
+# Motivation
 
 <!-- uses / motivation -->
 
@@ -56,21 +51,8 @@ where $u$ is a function and $\Delta$ is the Laplacian operator.
 And in general, any PDE.
 
 
+# Vision
 
+<!-- uses / vision -->
 
-<!-- what is AD? -->
-
-The key to automatic differentiation is the chain rule.
-It allows us to compute the derivative of a function by breaking it down into a sequence of elementary operations.
-Calculating their derivatives independently, we can then combine them to get the derivative of the original function.
-
-
-
-
-<!-- current state of integration tools -->
-
-
-
-## Bibliography
-
-{% bibliography --cited %}
+Slot into existing autograd frameworks.
