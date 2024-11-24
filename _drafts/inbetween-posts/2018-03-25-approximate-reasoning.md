@@ -1,22 +1,22 @@
 ---
 layout: post
-title: Approximate reasoning with incomplete models
+title: Approximate reasoning 
+subtitle: with incomplete models
 ---
 
-When reasoning, in some cases we might want to trade-off accuracy for other resources; latency, memory, time, ... What does this trade cost in (approximate) reasoning systems?
+When we reason, we make mistakes. But maybe these mistakes are not so bad? Maybe they are a necessary part of reasoning with incomplete models and limited resources.
 
-<side>These questions were inspired by how people tend to reason inconsistently, and I wondered what advantages our inconsistency might give</side>
+<!-- inconsistency is a necessary result of reasoning with incomplete models -->
 
-> First let's get our heads around what I mean by reasoning.
+<!-- When reasoning, in some cases we might want to trade-off accuracy for other resources; latency, memory, time, ... What does this trade cost in (approximate) reasoning systems? -->
 
 # Reasoning
 
-In the most abstract sense, I define reasoning as finding a path through a graph, from priors to posteriors, from ...?
+In the most abstract sense, I define reasoning as finding a path through a graph. This can represent;
 
 - _Algebraically manipulating previously acquired knowledge in order to answer a new question_ [Bottou 2011](?)
 - _Using a formal system to derive consequents from antecedents (ways of doing this are; deduction, induction, abduction)_
-- ?
-
+- Using a relational database to answer a query
 
 ##### Knowledge bases
 
@@ -36,6 +36,8 @@ Let $M$ be a <u>model of state transitions</u> that takes a state, $s_t$ to the 
 
 <!-- For example AlphaGo. -->
 
+Any reasoning system must be consistent, complete, and sound. But what does this mean?
+
 ## [Completeness](https://en.wikipedia.org/wiki/Completeness_(logic))
 
 > The most simple example of a proof system that is {consistent} but not complete would be the one that has no inference rules at all! It proves nothing except whichever non-logical axioms your theory has, so in particular it doesn't prove anything that risks being false -- so it is {consistent}. But it is very much not complete. [Makholm on SE](https://math.stackexchange.com/questions/2256054/what-would-be-an-example-of-a-proof-system-being-sound-but-not-complete)
@@ -51,8 +53,6 @@ Katsumoto = true
 # not included
 # true/false = is_mother(Mary, Katsumoto)  # meaning: is Mary Katsumoto's mother?
 ```
-
-
 
 ## [Consistency](https://en.wikipedia.org/wiki/Consistency)
 
@@ -97,24 +97,45 @@ That example. If two people are rational and agree on the prior assumptions/axoi
 
 What I am curious about is; _can we trade consistency for other measures of efficiency?_
 
+## [Soundness](https://en.wikipedia.org/wiki/Soundness)
+
+> A deductive system is sound if and only if all provable statements are true in the model. [Wikipedia](https://en.wikipedia.org/wiki/Soundness)
+
+This is a property of the model, not the reasoning system. It is a measure of how well the model represents the real world.
+
+For example, if we have a model that says "all swans are white", and we find a black swan, then the model is not sound.
 
 ## Approximate reasoning
 
-> __Q:__ What happens when the database is incomplete, our model is approximate, our argument is i natural language, ... We are required to trade-off accuracy for reduced latency, lower computation, ...?
+<!-- what do we mean by approximate 
+what cases would we need to be approximate?
+-->
 
-<side>TODO Are these really the same? Need to show more rigorously.</side>
-Incomplete database aka approximate reasoning aka reasoning with an imperfect model.
+> __Q:__ What happens when the database is incomplete, our model is approximate, our argument is in natural language, ... We are required to trade-off accuracy for reduced latency, lower computation, ...?
+
+<!-- what do we mean by accuracy here? -->
+
 
 Consider some strategies for reducing the complexity (memory, latency, time, ...) of a reasoning system.
 Some examples of instances where we might encounter/want incomplete models.
 
-##### Online learning
+##### Bounded resources: memory
 
-Need to make predictions before a model has been learned. Maybe the model is too large to every be learned, ...
+The graph is too large to fit in memory. We need to find a way to reason about the database without storing all of it.
+
+Not all the nodes can be stored.
+Not all the edges can be stored.
+
+Solutions?
+
+- Online learning: Need to make predictions before a model has been learned. Maybe the model is too large to every be learned, ...
+- Streaming data: The data is too large to store, so we need to make predictions on the fly.
+
 
 ##### Factoring links into a model
 
-Instead of storing all the links, we could generate them as required. This could cut down the memory requirements of large databases. The problem being that the number of possible links/edges scales with $\mathcal O (\mid V \mid^2)$. So if we have a thousand nodes, the maximum number of edges is a million (if we are talking about an undirected graph with a single edge type).
+Instead of storing all the links, we could generate them as required. 
+<!-- This could cut down the memory requirements of large databases. The problem being that the number of possible links/edges scales with $\mathcal O (\mid V \mid^2)$. So if we have a thousand nodes, the maximum number of edges is a million (if we are talking about an undirected graph with a single edge type). -->
 
 So instead of representing links as an array that we index $L[i, j]$, we could represent the links as a function $f(i, j)$ that generalises any patterns found in the links.
 
@@ -157,11 +178,33 @@ Now, the real question; (How) did each of these strategies sacrifice consistency
 
 __Conjecture__: Inconsistency is a necessary result of attempting to reason with incomplete models.
 
-Define incomplete models.
+## Setting
 
+We start with a ground truth model (an adjacency matrix), $A \in [-1, 0, 1]^{N \times N}$, with node and edge features, $X \in \mathbb R^{N \times D}$ and $E \in \mathbb R^{N \times N \times D}$.
 
+An incomplete model is a model, plus uncertainty.
+We have a distribution over possible adjacency matrices, node and edge features, $P(A, X, E)$.
 
-### A measure of consistency
+From some fixed number of observations, K, we can build a posterior distribution, $P(A, X, E | O_k)$, where $O_k$ is the set of observed nodes and edges.
+
+## Problem
+
+<!-- of all the decuctions its possible to make with the model
+how many are correct? -->
+
+<!-- for now ignore the possiblity that we can we wrong about a nodes 'meaning'. that a word can mean different things to different people. -->
+
+To reason about the 
+
+Given an incomplete model and bounded resources, we want to maximise the accuracy of our reasoning system.
+
+Definitions;
+
+- an incomplete model is a 
+- bounded resources could be; number of nodes searched, 
+- accuracy is measured by taking the 
+
+### A measure of (in)consistency
 
 <side>Ok, there must be some existing work on this? Non trivial in the cts domain...</side>
 __Definition__: The coherence of a database is defined as the total number of contradictions it makes.
@@ -182,18 +225,10 @@ c_i = \mathbb E_{z \sim \mathcal N} \parallel D(h_{i=1}+z)- D(h_{i=-1}+z) \paral
 C = ... \\
 $$
 
-Aka, $h_i$'s effect on  doesnt
-
-
-So, we would want to maximise this?
-
-$$
-\mathop{argmax}_{\theta} \mathcal C(D_{\theta})
-$$
 
 
 
 ***
 
 When working with approximates.
-Multiple reasons leading to the same conclusion should increase the plasubility?
+Multiple reasons leading to the same conclusion should increase the plasubility? Yeah, this works with uncertainty. Multiple paths, each with some uncertainty, should increase the certainty of the conclusion.
