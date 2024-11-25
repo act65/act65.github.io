@@ -11,7 +11,7 @@ categories:
 
 While headlines scream about killer robots, a far more immediate threat lurks: the misalignment of corporations with the public good.
 
-AI alignment, the field concerned with ensuring AI goals match human values, is crucial. But before worrying about hypothetical AI overlords, shouldn't we tackle the very real power of corporations prioritizing profit over people and the planet?
+AI alignment, the field concerned with ensuring AI goals match human values, is crucial. But before worrying about hypothetical AI overlords, shouldn't we tackle the very real problem of corporations prioritizing profit over people and the planet?
 
 ### Aligning AI with human values.
 
@@ -52,7 +52,7 @@ For example;
 - Oil companies have long denied the reality of climate change, despite overwhelming scientific evidence, to protect their bottom line.
 - Pharmaceutical companies have fueled the opioid crisis by aggressively marketing addictive painkillers, leading to widespread addiction and death.
 
-These examples highlight the misalignment between corporate goals and the public good. Instead of serving society, corporations exploit us for financial gain.
+Instead of serving society, corporations exploit us for financial gain.
 
 ### Conclusion
 
