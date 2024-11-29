@@ -40,6 +40,15 @@ Within economics, mechanism design is the study of how to design rules and incen
 We start from the end goal, and work backwards to design the rules and incentives that will get us there. -->
 <!-- For example, we want people to drive safely. We design rules and incentives to get people to drive safely. We have speed limits, traffic lights, and fines for breaking the rules. -->
 
+<!-- 
+examples of aligned corporations;
+
+- merck and the development of the first oral polio vaccine
+- patagonia and their commitment to environmental sustainability
+- ben and jerry's and their social mission
+
+ -->
+
 ### The Misalignment Gap
 
 But over time, many corporations have lost sight of their original purpose. Instead of serving the public good, they prioritize profit above all else.
@@ -53,6 +62,16 @@ For example;
 - Pharmaceutical companies have fueled the opioid crisis by aggressively marketing addictive painkillers, leading to widespread addiction and death.
 
 Instead of serving society, corporations exploit us for financial gain.
+
+
+<!-- ***
+
+This is not to say all corporations are bad. Some companies have acted in ways that align with the public good. For example;
+
+- Merck & Co. played a pivotal role in the global eradication of polio. The company invested heavily in the research and development of the first oral polio vaccine, prioritizing public health over profit.
+- 
+
+But, we can't just hope that corporations will act in the public interest. We need to design systems that incentivize them to do so. -->
 
 ### Conclusion
 

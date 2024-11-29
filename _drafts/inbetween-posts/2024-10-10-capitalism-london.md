@@ -26,6 +26,18 @@ along the lines of;
  -->
 
 ***
+
+a great revolution in thinking.
+previously, the world was ruled by kings and queens.
+where trade was controlled by the state.
+rules and regulations were enforced by the state.
+commoners did not have the freedom to trade.
+(apply for a license to trade? or get allocated to work as a ???)
+now, a man can be his own master.
+
+
+
+***
 how can i build this story around a character?
 options;
 
