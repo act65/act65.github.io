@@ -10,10 +10,14 @@ categories:
 <!-- 
 a historical fiction story about living in 1800-1900s london.
 where capitalism is the most recent 'big idea'.
+a revolution has occured. down with the kings and queens.
+now we have freedom.
+
 and the city is a place of chaos and opportunity.
 
 the main point of this story is to show how scary true capitalism can be.
-pure freedom and competition.
+pure competition. economic darwinism.
+where the strong survive
 -->
 
 
@@ -22,6 +26,7 @@ ill need quotes from famous economists?
 along the lines of; 
 - the goal of capitalism is financial democracy.
 - capitalism is the best system for allocating resources.
+- people are __rewarded for their contributions to society__, with a token, we call this money. they are __free__ to spend that token as they see fit.
 - 
  -->
 
@@ -35,9 +40,8 @@ commoners did not have the freedom to trade.
 (apply for a license to trade? or get allocated to work as a ???)
 now, a man can be his own master.
 
-
-
 ***
+
 how can i build this story around a character?
 options;
 

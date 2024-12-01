@@ -9,6 +9,47 @@ scholar:
     bibliography: "auto-int.bib"
 ---
 
+
+
+Problems that people cared about
+
+- surges in electrical wires
+- predicting tides
+- missile guidance
+
+https://americanhistory.si.edu/collections/object-groups/mechanical-integrators/harmonic-analyzers-and-synthesizers
+
+<!-- and how did they solve them? mechanical integration? -->
+
+## Applications
+
+### Tides
+
+Laplace's tidal equations
+https://www.whoi.edu/cms/files/lecture03_21374.pdf
+https://www.google.com.au/books/edition/Tides/78bE5U7TVuIC?hl=en&bshm=rime/1
+
+### Planetary motion
+
+Antikythera
+http://dlib.nyu.edu/awdl/isaw/isaw-papers/4/
+
+### Bomb / missile guidance
+
+https://www.amazon.com/Bomber-Mafia-Temptation-Longest-Second/dp/0316296619
+
+
+Green's theorem
+
+Ball-and-disk integrator
+
+- the water integrator
+- the mechanical integrator https://www.youtube.com/watch?v=s-y_lnzWQjk
+- ford's integrator
+- planimeter
+- harmonic analyser
+- longimeter https://en.wikipedia.org/wiki/Steinhaus_longimeter
+
 # Motivation
 
 <!-- uses / motivation -->
@@ -56,3 +97,6 @@ And in general, any PDE.
 <!-- uses / vision -->
 
 Slot into existing autograd frameworks.
+
+
+<!-- entropy -->
