@@ -182,3 +182,8 @@ References
 
 - https://en.wikipedia.org/wiki/Al-Jabr
 - Mathematics in ancient Iraq: a social history. Eleanor Robson. 2008.
+
+
+
+<!-- would be cool to explore differnt math notations?
+ -->

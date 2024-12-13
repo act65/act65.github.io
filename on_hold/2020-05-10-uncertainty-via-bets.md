@@ -3,6 +3,8 @@ layout: post
 title: Confidence estimates via bets
 ---
 
+
+
 Question that is bugging be;
 what are the 'right' confidence estimates?
 
