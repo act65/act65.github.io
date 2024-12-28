@@ -1,13 +1,8 @@
----
-title: The treaty of ?
-subtitle: 
-layout: post
-permalink: /alien-treaty/
-categories:
-    - sci-fi
----
+I'm writing a short story for my blog. Can you help me write it.
 
-<!-- 
+A brief summary of the story is as follows;
+
+"""
 Aliens come and offer peace, trade and protection.
 They offer us a treaty.
 
@@ -18,65 +13,55 @@ While aliens are benevolent, they have their own ways of doing things. A differe
 Human values (like ???) are given less priority. (maybe  art, ...? the aliens are more pragmatic, utilitarian, ...)
 
 This is a parable / parallel of The treaty of Waitangi.
- -->
+"""
 
+A few of the notes I've made are as follows;
 
+Over arching theme.
+    Humans face discrimination (in a new form) from the aliens.
+    And their culture is being eroded.
+    This is subtle and slow.
+    But after a few generations, humanity is unrecognizable.
+    And they have little power to change things.
+    The aliens genuinely want to help but dont understanding the importance of intangible heritage
 
-<div markdown="1" class="code"> 
+I'd like to avoid specific explanation of alien technology and how the aliens appear.
+Rather focus on the cultural differences.
+
+Translation issues
+    - Humans understand "Interstellar Governance" as only applying to space-related matters
+    Aliens interpret it as complete oversight of all human affairs, as they see no logical distinction between terrestrial and space governance 
+    - Humans interpret "Cultural Heritage" as meaning all human customs, art, and practices will be preserved
+    Aliens view some human practices as "inefficient" or "illogical" and believe their mandate to advance humanity overrides cultural preservation 
+
+Discrimination issues
+    - Jobs select for those who embrace alien ways (or are alien), leaving traditionalists marginalized. 
+    - Also favor people who understand alien tech.
+    - new technologies are often designed for aliens and don't always work for humans
+
+I am using The treaty of Waitangi as a model for the treaty between humans and the aliens.
+
+"""
 THE HIGH COUNCIL OF THE GALACTIC FEDERATION, regarding with their Distinguished Consideration the Nations and Peoples of Earth, and being desirous to protect their rightful Interests and Resources and to secure for them the benefits of Interstellar Peace and Advancement, has deemed it necessary, in light of the increasing interactions between Earth and other civilizations, and the rapid expansion of cosmic commerce and cultural exchange, to establish a formal diplomatic relationship with the inhabitants of Earth.
 
 The Galactic Federation, wishing to establish a structured framework of Interstellar Governance to prevent the adverse consequences that would result from Earth's isolation in an increasingly connected galaxy, and to provide Earth's population access to advanced technologies and protections, has authorized Ambassador Zyx-427, Supreme Diplomatic Envoy of the Galactic Federation, to invite the United Nations and independent nations of Earth to agree to the following Articles and Conditions.
 
 Article the First:
-
 The Nations of Earth, both through their United Nations representation and as independent sovereign states, hereby cede to the Galactic Federation absolutely and without reservation all rights and powers of Interstellar Governance, which said Nations currently exercise or may be supposed to exercise, particularly in matters concerning extra-planetary affairs and space-based activities.
 
 Article the Second:
-
 The Galactic Federation confirms and guarantees to the Nations and Peoples of Earth the full and undisturbed possession of their Terrestrial Territories, Resources, and Cultural Heritage, which they may collectively or individually possess, so long as it is their wish to retain the same in their possession; but the Nations of Earth grant to the Galactic Federation exclusive rights of First Contact and Negotiation regarding any extra-planetary resources or territories they may wish to utilize, at such terms as may be agreed upon between Earth's representatives and the Federation's appointed mediators.
 
 Article the Third:
-
 In consideration thereof, the Galactic Federation extends to the inhabitants of Earth its protection and grants them all the Rights and Privileges of Federation Citizens, subject to Federation protocols and procedures.
 
 (signed) Ambassador Zyx-427, Supreme Diplomatic Envoy
 
 This treaty, being fully explained and translated to Earth's representatives, is hereby accepted and ratified by the undersigned nations and their authorized representatives, in full understanding of its provisions and implications.
-</div>
+"""
 
+And here is an outline of the chapters.
 
-<!-- 
-Over arching theme.
-Humans face discrimination (in a new form) from the aliens.
-And their culture is being eroded.
-This is subtle and slow.
-But after a few generations, humanity is unrecognizable.
-And they have little power to change things.
-
-The aliens genuinely want to help but dont understanding the importance of intangible heritage
--->
-
-
-<!--
-Translation issues
-
-Humans understand "Interstellar Governance" as only applying to space-related matters
-Aliens interpret it as complete oversight of all human affairs, as they see no logical distinction between terrestrial and space governance 
-
-Humans interpret "Cultural Heritage" as meaning all human customs, art, and practices will be preserved
-Aliens view some human practices as "inefficient" or "illogical" and believe their mandate to advance humanity overrides cultural preservation 
--->
-
-<!-- 
-Discrimination issues
-
-Jobs select for those who embrace alien ways (or are alien), leaving traditionalists marginalized.
-Also favour people who understand alien tech.
- -->
-
-
-
-<!-- 
 Chapter 1: "First Light"
 
 First alien contact through radio signals
@@ -89,26 +74,23 @@ Chapter 2: "Early Traders"
 Unauthorized individuals/corporations begin secret dealings with aliens
 Exchange of basic technologies for resources
 Growing divide between pro-alien and cautious factions
-First hints of cultural misunderstandings
+First hints of cultural differences
 
 Chapter 3: "The Great Debate"
 
 Global discussion about whether to formally engage with aliens
 Different nations take different stances
 Religious/cultural/economic implications debated (amongst humans)
-First major misunderstandings about alien concepts of "governance"
 
 Chapter 4: "The Ambassador"
 
-Alien ambassador's world tour
+First major misunderstandings about alien concepts (though at the time they didn't realize it)
+Alien ambassador's world tour, earnetly trying to understand humans and explain how the federation works
 Negotiation of the treaty with various countries (unease on both sides)
-Impressive demonstrations of alien technology
-Promises of protection from cosmic threats
 
 Chapter 5: "The Signing"
 
-Treaty ceremony
-"We are now one people" becomes the catchphrase
+Treaty ceremony "We are now one people"
 Some nations refuse to sign
 
 Chapter 6: "Early Days"
@@ -128,23 +110,21 @@ Growing realization of power imbalance
 Chapter 8: "Point of No Return"
 
 50 years later
-Humanity fundamentally changed
-Original treaty interpreters now gone
+Humanity nearly unrecognizable
 True meaning of "Interstellar Governance" becomes clear
- -->
+ 
+I'd like the story to follow two main characters.
 
-
- <!-- 
 Human Character: Dr. Sarah Chen
 
-A young linguistic anthropologist (early 30s) when first contact occurs
+A computational linguist (early 30s) when first contact occurs
 Initially hired to help translate alien communications
 Becomes one of the key human negotiators during the treaty process
 Has a deep passion for preserving human cultural heritage
 Over the decades, we see her growing from optimistic interpreter to concerned observer
 By the end, she's an elderly woman watching her grandchildren embrace alien ways
-Personal goals: (initially) to fasiliate lasting peace and understanding between humans and aliens.
-Personal conflict: She helped facilitate the treaty but gradually realizes its unintended consequences
+Personal goals: (initially) to facilitate lasting peace and understanding between humans and aliens.
+Personal conflict: She facilitated the treaty but gradually realizes its unintended consequences
 
 Alien Character: Ven-X (nicknamed "Ven" by humans)
 
@@ -156,13 +136,22 @@ Has a friendship/professional relationship with Sarah that becomes increasingly 
 Personal goals: To share the benefits of the Federation's knowledge and technology. To uplift others (like Ven was uplifted by the Federation).
 Personal conflict: Torn between duty to the Federation and growing understanding of human perspectives
 
-The main source of conflit between Sarah and Ven's beliefs is their different understanding of "advancing humanity".
 
 Their stories interweave through the chapters:
 Chapters 1-2: Sarah is part of the first team to decode alien messages. Ven is part of the advance team studying humans from orbit.
 Chapter 3-4: They meet when Ven is assigned as a cultural liaison. They work together preparing for the treaty, developing a close friendship based on their mutual excitement about the future.
 Chapter 5: Both play key roles in the treaty signing. Sarah helps explain it to human leaders, while Ven helps draft the alien version.
-Chapter 6: Their relationship becomes strained as Sarah notices concerning changes. Ven doesn't understand her worries.
-Chapter 7: Sarah's grandchildren prefer spending time with Ven, learning alien ways. This creates personal tension.
-Chapter 8: Elderly Sarah confronts Ven about what's been lost. Ven finally begins to understand, but it's too late.
--->
+Chapter 6: Mutual excitement moving humanity 'forward'. Seeing the first benefits of the treaty.
+Chapter 7: Sarah's grandchildren prefer spending time with Ven, learning alien ways. Their relationship becomes strained as Sarah notices concerning changes. Ven doesn't understand her worries.
+Chapter 8: Elderly Sarah confronts Ven about the treatment of humans and what's been lost. They have a bitter argument and part ways.
+
+The main source of conflict between Sarah and Ven's beliefs is their different understanding of "advancing humanity".
+This wasn't clear when they first met.
+
+
+
+Could include seemingly minor things like:
+
+Traditional cooking methods vs. more "efficient" alien food production
+Human music (seen as "chaotic" by aliens) vs. their "mathematically perfect" compositions
+Human sports/games vs. alien "optimization exercises"
