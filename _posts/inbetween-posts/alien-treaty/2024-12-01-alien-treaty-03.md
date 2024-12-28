@@ -1,6 +1,6 @@
 ---
 title: The treaty of New Earth
-subtitle: A Story of First Contact, Lost Heritage, and Good Intentions
+subtitle: Chapter 3, The Great Debate
 layout: post
 permalink: /alien-treaty-03/
 categories:
@@ -35,3 +35,7 @@ Sarah grinned. "I've been thinking the same thing. Just yesterday, I was showing
 "That could actually happen," Ven said warmly. "The Federation's engineering programs are open to all member species. We could work side by side."
 They spent the next hour exchanging ideas about joint research projects, educational exchanges, and cultural festivals. Sarah described her dream of a universal translation system that could preserve the nuances of poetry across species, while Ven shared stories about Federation art installations that spanned entire solar systems.
 "The Federation thrives on diversity," Ven assured her. "Every species brings something unique to our collective knowledge."
+
+***
+
+[Next chapter:]({{ site.baseurl }}/alien-treaty-04/)

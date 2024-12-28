@@ -1,6 +1,6 @@
 ---
 title: The treaty of New Earth
-subtitle: A Story of First Contact, Lost Heritage, and Good Intentions
+subtitle: Chapter 2, Early Traders
 layout: post
 permalink: /alien-treaty-02/
 categories:
@@ -42,3 +42,7 @@ humans trading things that were not theirs (oceans, mountains, deep earth / core
 
 aliens ripping off humans. paying very little. the aliens were trading tech that humans couldnt quite understand and were fooled into thinking was valuable.
  -->
+
+***
+
+[Next chapter:]({{ site.baseurl }}/alien-treaty-03/)

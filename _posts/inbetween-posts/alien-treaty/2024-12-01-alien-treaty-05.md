@@ -1,6 +1,6 @@
 ---
 title: The treaty of New Earth
-subtitle: A Story of First Contact, Lost Heritage, and Good Intentions
+subtitle: Chapter 5, The Signing
 layout: post
 permalink: /alien-treaty-05/
 categories:
@@ -11,6 +11,28 @@ categories:
 
 They had done it. The final version of the treaty was ready for signing. Sarah and Ven had spent months poring over every nuance. They'd caught several potentially catastrophic misunderstandings. The Federation's concept of "protection" had initially translated to something closer to "supervision" or "guardianship." They'd spent three days just on that word, with Sarah insisting that humans would reject any hint of paternalistic oversight.
 Then there was the phrase "cultural heritage." In the Federation's language, it specifically meant "historically significant achievements" - essentially relegating living cultures to museum pieces. Sarah had fought hard to expand the definition, eventually finding a compromise that encompassed "evolving cultural practices."
+
+<div markdown="1" class="code">
+THE HIGH COUNCIL OF THE GALACTIC FEDERATION, regarding with their Distinguished Consideration the Nations and Peoples of Earth, and being desirous to protect their rightful Interests and Resources and to secure for them the benefits of Interstellar Peace and Advancement, has deemed it necessary, in light of the increasing interactions between Earth and other civilizations, and the rapid expansion of cosmic commerce and cultural exchange, to establish a formal diplomatic relationship with the inhabitants of Earth.
+
+The Galactic Federation, wishing to establish a structured framework of Interstellar Governance to prevent the adverse consequences that would result from Earth's isolation in an increasingly connected galaxy, and to provide Earth's population access to advanced technologies and protections, has authorized Ambassador Zyx-427, Supreme Diplomatic Envoy of the Galactic Federation, to invite the United Nations and independent nations of Earth to agree to the following Articles and Conditions.
+
+Article the First:
+The Nations of Earth, both through their United Nations representation and as independent sovereign states, hereby cede to the Galactic Federation absolutely and without reservation all rights and powers of Interstellar Governance, which said Nations currently exercise or may be supposed to exercise, particularly in matters concerning extra-planetary affairs and space-based activities.
+
+Article the Second:
+The Galactic Federation confirms and guarantees to the Nations and Peoples of Earth the full and undisturbed possession of their Terrestrial Territories, Resources, and Cultural Heritage, which they may collectively or individually possess, so long as it is their wish to retain the same in their possession; but the Nations of Earth grant to the Galactic Federation exclusive rights of First Contact and Negotiation regarding any extra-planetary resources or territories they may wish to utilize, at such terms as may be agreed upon between Earth's representatives and the Federation's appointed mediators.
+
+Article the Third:
+In consideration thereof, the Galactic Federation extends to the inhabitants of Earth its protection and grants them all the Rights and Privileges of Federation Citizens, subject to Federation protocols and procedures.
+
+(signed) Ambassador Zyx-427, Supreme Diplomatic Envoy
+
+This treaty, being fully explained and translated to Earth's representatives, is hereby accepted and ratified by the undersigned nations and their authorized representatives, in full understanding of its provisions and implications.
+</div>
+
+
+***
 
 Now, as the world's leaders gathered in the UN General Assembly hall, Sarah felt a mix of pride and unease. The treaty was a monumental achievement, ensuring peace and cooperation between Earth and the Federation for generations to come. But it was also a compromise, a delicate dance between two fundamentally different worldviews.
 
@@ -60,6 +82,9 @@ Ven's colors rippled in what might have been thoughtfulness. "The Federation val
 
 Around them, the celebration continued. Human diplomats raised glasses with alien representatives, all of them convinced they understood exactly what they'd agreed to. Sarah watched them and wondered if anyone else felt this weight of uncertainty, this sense that something profound had been lost in translation – not of words, but of worlds.
 
-"To the future," Ven said, raising their environmental field in the alien equivalent of a toast.
+"To the future," Ven said.
+"To the future," Sarah echoed.
 
-"To the future," Sarah echoed, hoping her grandchildren would forgive them all for whatever that future might bring.
+***
+
+[Next chapter:]({{ site.baseurl }}/alien-treaty-06/)

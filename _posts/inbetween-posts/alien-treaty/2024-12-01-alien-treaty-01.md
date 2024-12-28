@@ -1,6 +1,6 @@
 ---
 title: The treaty of New Earth
-subtitle: A Story of First Contact, Lost Heritage, and Good Intentions
+subtitle: Chapter 1, First Light
 layout: post
 permalink: /alien-treaty-01/
 categories:
@@ -34,3 +34,7 @@ Sarah studied the elegant simplicity of the alien communication. "Maybe," she ad
 The committee erupted into argument about security and a thousand other concerns. But Sarah was already lost in the patterns, her mind racing with possibilities. This was what she'd spent her career preparing for, though she'd never truly believed it would happen.
 As dawn broke over Washington D.C., she stepped outside for a moment of fresh air. The alien ship hung in the sky like a new constellation, its presence both thrilling and terrifying. Sarah thought about all the languages she'd studied, how each one carried the weight of its culture's history and values. What would this new language reveal about its creators? What would humanity's first real words to another civilization be?
 Her phone buzzed - another emergency meeting. As she turned to head back inside, Sarah caught a final glimpse of the ship above. Whatever happened next would change everything. She just hoped they were ready for it.
+
+***
+
+[Next chapter:]({{ site.baseurl }}/alien-treaty-02/)
