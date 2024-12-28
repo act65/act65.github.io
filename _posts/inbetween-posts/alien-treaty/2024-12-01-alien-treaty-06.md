@@ -46,4 +46,4 @@ But that night, as she lay in bed listening to the soft hum of the atmospheric p
 
 ***
 
-[Next chapter:]({{ site.baseurl }}/alien-treaty-07/)
+[Next chapter]({{ site.baseurl }}/alien-treaty-07/)

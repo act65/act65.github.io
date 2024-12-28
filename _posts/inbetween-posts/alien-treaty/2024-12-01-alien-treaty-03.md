@@ -38,4 +38,4 @@ They spent the next hour exchanging ideas about joint research projects, educati
 
 ***
 
-[Next chapter:]({{ site.baseurl }}/alien-treaty-04/)
+[Next chapter]({{ site.baseurl }}/alien-treaty-04/)

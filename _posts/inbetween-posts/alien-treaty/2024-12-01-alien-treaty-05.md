@@ -87,4 +87,4 @@ Around them, the celebration continued. Human diplomats raised glasses with alie
 
 ***
 
-[Next chapter:]({{ site.baseurl }}/alien-treaty-06/)
+[Next chapter]({{ site.baseurl }}/alien-treaty-06/)

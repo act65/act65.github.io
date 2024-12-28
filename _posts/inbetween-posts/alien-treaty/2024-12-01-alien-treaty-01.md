@@ -37,4 +37,4 @@ Her phone buzzed - another emergency meeting. As she turned to head back inside,
 
 ***
 
-[Next chapter:]({{ site.baseurl }}/alien-treaty-02/)
+[Next chapter]({{ site.baseurl }}/alien-treaty-02/)

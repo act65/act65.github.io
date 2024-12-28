@@ -71,4 +71,4 @@ Through the window, the sun was setting, painting the sky in shades of pink and 
 
 ***
 
-[Next chapter:]({{ site.baseurl }}/alien-treaty-08/)
+[Next chapter]({{ site.baseurl }}/alien-treaty-08/)

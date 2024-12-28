@@ -45,4 +45,4 @@ aliens ripping off humans. paying very little. the aliens were trading tech that
 
 ***
 
-[Next chapter:]({{ site.baseurl }}/alien-treaty-03/)
+[Next chapter]({{ site.baseurl }}/alien-treaty-03/)

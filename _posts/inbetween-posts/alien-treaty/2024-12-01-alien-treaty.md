@@ -28,5 +28,5 @@ Disclaimers:
 
 1. I wrote this with copious help from claude-3-5-sonnet-20241022.
 
-2. This story draws inspiration from the Treaty of Waitangi and its long-lasting impact on New Zealand's indigenous Māori people. However, it should be noted that this parallel is imperfect.
-While the story portrays the Galactic Federation as well-meaning but culturally insensitive, the historical reality of colonial powers was far more severe. The British Crown and settlers often acted with deliberate malice, using military force, legal manipulation, and systematic oppression to dispossess Māori of their lands, language, and cultural identity.
+2. This story draws inspiration from the Treaty of Waitangi and its impact on Māori people. However, the parallel is imperfect.
+While the story portrays the Galactic Federation as well-meaning but culturally insensitive, the historical reality of colonial powers was far more severe. The British Crown and settlers often acted with deliberate malice, used military force, legal manipulation, and systematic oppression to dispossess Māori of their lands, language, and cultural identity.

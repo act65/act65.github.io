@@ -48,4 +48,4 @@ That evening, reviewing her notes, Sarah struggled with a fundamental question: 
 
 ***
 
-[Next chapter:]({{ site.baseurl }}/alien-treaty-05/)
+[Next chapter]({{ site.baseurl }}/alien-treaty-05/)
