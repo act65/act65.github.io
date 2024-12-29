@@ -63,4 +63,5 @@ The question was: why?
 
 ***
 
+[Previous chapter]({{ site.baseurl }}/alien-treaty-02/)
 [Next chapter]({{ site.baseurl }}/alien-treaty-03/)
