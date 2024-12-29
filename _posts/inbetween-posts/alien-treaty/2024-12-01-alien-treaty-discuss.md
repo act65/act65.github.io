@@ -21,4 +21,11 @@ While the story portrays the Galactic Federation as well-meaning but culturally 
 
 <!-- That being said, (I believe) many British colonials earnestly thought they were bringing progress and civilization to "savage" lands. The story reflects this paternalistic attitude in the Federation's interactions with humanity. The Federation genuinely believes they are helping humans advance, but their methods erase cultural heritage and impose alien norms without regard for human values. -->
 
-Another point this story explores is that technology can influence / drive cultural change.
+
+Key lessons / points I want to highlight:
+
+- technology can influence / drive cultural change.
+- a treaty means nothing if you can't enforce it.
+- change is inevitable.
+- colonialism is not always bad.
+- systemic discrimination is subtle and resilient.
