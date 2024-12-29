@@ -9,6 +9,16 @@ categories:
 
 ## The great debate
 
+Sarah's first meeting with Ven-X hadn't gone as expected. She'd prepared extensively, rehearsing formal diplomatic greetings in the alien language she'd helped decode. Instead, she found herself in the UN building's cafeteria at midnight, sharing her coffee with a curious alien diplomat who had specifically requested to meet "somewhere ordinary humans gather."
+
+"This beverage," Ven said, analyzing the coffee through what Sarah assumed was some kind of sensory device, "it serves no nutritional purpose, yet you consume it daily?" The alien's form shifted slightly, a movement Sarah had learned indicated genuine interest rather than judgment. "And it's bitter, which humans typically avoid, yet you've added sweetener to make it palatable instead of choosing a naturally sweet drink. Fascinating."
+
+Sarah found herself relaxing despite the surreal nature of the situation. "Sometimes things that don't make perfect sense are the most meaningful," she replied, wrapping her hands around the warm mug. "Like poetry, or art, or..." she gestured at her coffee, "little rituals that make us feel human."
+
+"Feel human," Ven repeated, making a note in their data pad. "Your species puts great emphasis on maintaining your distinct identity. Yet you also seem eager to change, to advance. A curious paradox." The alien's form shifted again, this time in what Sarah was beginning to recognize as their equivalent of a smile. "I believe we will learn much from each other, Dr. Chen."
+
+***
+
 Dr. Sarah Chen stood at the back of the United Nations General Assembly, her tablet clutched tightly against her chest. The chamber hummed with a tension she'd never felt before. But then again, she thought, they'd never before debated the fate of our entire species.
 
 Sarah's tablet buzzed. A message from Ven-X: "Your species appears to be experiencing significant internal discord. Is this typical of major decisions?"
@@ -55,3 +65,4 @@ They spent the next hour exchanging ideas about joint research projects, educati
 
 [Previous chapter]({{ site.baseurl }}/alien-treaty-03/)
 [Next chapter]({{ site.baseurl }}/alien-treaty-04/)
+

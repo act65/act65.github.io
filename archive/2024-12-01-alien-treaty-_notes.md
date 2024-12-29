@@ -155,3 +155,29 @@ Could include seemingly minor things like:
 Traditional cooking methods vs. more "efficient" alien food production
 Human music (seen as "chaotic" by aliens) vs. their "mathematically perfect" compositions
 Human sports/games vs. alien "optimization exercises"
+
+
+***
+
+How can i include Positive Pre-Federation Human Traits/Contributions:
+Adaptability: Humans' ability to thrive in varied environments and situations without requiring perfect conditions
+Risk-Taking: Our willingness to try things that might fail could complement Federation caution
+
+
+***
+
+Reintegrating Dr. Martinez:
+
+Make him a recurring voice of early skepticism who later becomes a prominent Federation supporter, creating an interesting contrast with Sarah's journey
+
+***
+
+Technology Integration Timeline: The story could benefit from more specific milestones of how Federation technology was integrated. Perhaps create a clear progression of changes that seemed beneficial at first but had hidden costs.
+
+***
+
+Language Evolution: The story touches on language changes, but could explore more deeply how the loss of human languages affects thought patterns and cultural understanding. Perhaps show specific examples of concepts that can't be translated into Federation Standard.
+
+***
+- merge chapters 6/7?
+- The final section might be slightly heavy-handed in its messaging
