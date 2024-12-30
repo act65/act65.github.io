@@ -172,3 +172,13 @@ This is going to motivate the need for a treaty.
 4. Not here.
 
 I'm not sure about the basic structure. Can you suggest alternatives?
+
+***
+
+Original:
+"...full and undisturbed possession of their Terrestrial Territories, Resources, and Cultural Heritage..."
+
+Could become:
+"...full and undisturbed possession of their Terrestrial Territories, Resources, Cultural Heritage, and Living Traditions, including the right to practice and evolve these traditions according to their natural development..."
+
+To aliens, "natural development" might mean "logical progression toward efficiency," while humans might interpret it as "organic cultural evolution."
