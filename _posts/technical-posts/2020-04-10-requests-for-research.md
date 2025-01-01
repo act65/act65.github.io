@@ -2,6 +2,7 @@
 layout: post
 title: Requests for research
 subtitle: Some ideas from my masters.
+permalink: /requests-for-research/01
 categories: 
   - "research"
 ---
