@@ -3,8 +3,6 @@ title: The Treaty of New Earth
 subtitle: Discussing the parallels to the Treaty of Waitangi
 layout: post
 permalink: /alien-treaty-discuss/
-categories:
-    - sci-fi
 ---
 
 

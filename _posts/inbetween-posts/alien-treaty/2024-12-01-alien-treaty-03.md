@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Chapter 3, The Great Debate
 layout: post
 permalink: /alien-treaty-03/
-categories:
-    - sci-fi
 ---
 
 ## The great debate

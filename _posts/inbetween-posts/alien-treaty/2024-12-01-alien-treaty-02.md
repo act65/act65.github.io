@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Chapter 2, Early Traders
 layout: post
 permalink: /alien-treaty-02/
-categories:
-    - sci-fi
 ---
 
 ## Early Traders

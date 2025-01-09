@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Chapter 4, The Ambassador
 layout: post
 permalink: /alien-treaty-04/
-categories:
-    - sci-fi
 ---
 
 ## The Ambassador

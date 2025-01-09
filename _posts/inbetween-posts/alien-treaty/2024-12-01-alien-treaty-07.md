@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Chapter 7, Generation Gap
 layout: post
 permalink: /alien-treaty-07/
-categories:
-    - sci-fi
 ---
 
 ## Generation Gap

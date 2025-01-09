@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Chapter 8, Point of No Return
 layout: post
 permalink: /alien-treaty-08/
-categories:
-    - sci-fi
 ---
 
 ## Point of No Return

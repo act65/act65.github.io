@@ -16,7 +16,7 @@ function divisors(integer) {
     return false;
   }
   
-  function drawboxes(c, k, size, n, color) {
+  function drawboxes(c, k, size, n, color, add_p=false) {
     for (let i = 0; i < n; i++) {
       c.beginPath();
       c.lineWidth = "1";
@@ -25,6 +25,13 @@ function divisors(integer) {
       c.rect(i*size, k, size, size);
       c.stroke();
       c.fill();
+
+      // if add_p is true, add the letter p to the center of the box
+      if(add_p){
+        c.fillStyle = "white";
+        c.font = "12px serif";
+        c.fillText("pxp", i*size+size/2-10, k+size/2);
+        }
     } 
     return 
   }
@@ -35,13 +42,18 @@ function divisors(integer) {
     for (let i = 0; i < factors.length; i++) {
       size = factors[i][0];
       n = factors[i][1];
+
+      color = "blue";
   
-      if(isprime(size)){
+      // if(isprime(size) || isprime(n)){
+      //   color = "green";
+      // }
+
+      if(isprime(n)){
         color = "green";
-      } else {
-        color = "blue";
       }
-      drawboxes(c, k+offset, multiplier*size, n, color);
+
+      drawboxes(c, k+offset, multiplier*size, n, color, isprime(size));
       k = k + size*multiplier;
     }
     return k
@@ -78,25 +90,14 @@ function divisors(integer) {
   
   m = 10;
   
-  drawPerfectNumber('2', 2, m);
-  drawPerfectNumber('3', 3, m);
-  drawPerfectNumber('4', 4, m);
-  drawPerfectNumber('5', 5, m);
-  drawPerfectNumber('6', 6, m);
-  drawPerfectNumber('7', 7, m);
-  drawPerfectNumber('8', 8, m);
-  drawPerfectNumber('9', 9, m);
-  drawPerfectNumber('10', 10, m);
-  drawPerfectNumber('11', 11, m);
-  drawPerfectNumber('12', 12, m);
-  drawPerfectNumber('13', 13, m);
-  drawPerfectNumber('14', 14, m);
+  for (let i = 2; i < 16; i++) {
+    drawPerfectNumber(i.toString(), i, m);
+  }
   
-  drawPerfectNumber('6.1', 6, 16);
+  // drawPerfectNumber('6.1', 6, 16);
   drawPerfectNumber('28', 28, 8);
   drawPerfectNumber('496', 496, 1);
-  
-  drawPerfectNumber('48', 8128, 0.1);
+  drawPerfectNumber('8128', 8128, 0.1);
   
   
   // function findPerfectNumbers(n) {

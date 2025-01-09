@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Perfect numbers
-subtitle: Making a jigsaw puzzle
+subtitle: Playing with new and old ideas
+permalink: /perfect-numbers/
 categories:
     - play
 ---
@@ -44,6 +45,7 @@ Here are the some jigsaw puzzles.
     <canvas id="12"></canvas>
     <canvas id="13"></canvas>
     <canvas id="14"></canvas>
+    <canvas id="15"></canvas>
 </div>
 
 So the perfect numbers perfectly fill the n x n square.
@@ -70,29 +72,30 @@ For 6 there are;
     <canvas id="6.6"></canvas>
 </div>
 
+Properties of the jig saw puzzle;
 
-<h2>
-    Reframe
-</h2>
+- None of the larger blocks can be composed of smaller blocks. ??? (aka, ...)
+- 
+
+## Reframe
+
 <p>
     The converse question. Which sets of numbers (S) sum to x. 
     And also each element of the set can be multiplied with other elements in the set to get x. 
 </p>
 
 Patterns in the images?
+Each of these has similar structure?!
+
 <div>
-    <canvas id="6.1"></canvas>
     <canvas id="28"></canvas>
     <canvas id="496"></canvas>
-
+    <canvas id="8128"></canvas>
 </div>
 
 Note.
 In this jigsaw game, primes are the opposite of perfect numbers.
 They do not fill the n x n box at all.
-<br>
-<br>
-<canvas id="48"></canvas>
 
 want to induce some data!
 the factors!
@@ -170,3 +173,16 @@ mersenne primes are quite useful.
 is it possible to effecitly find perfect numbers to help generate mersenne primes?
 
  -->
+
+Let's say we have an odd perfect number n.
+
+1) First, let's consider what we know about its divisors:
+- All divisors come in pairs (d, n/d), except possibly √n
+- All divisors must be odd (since n is odd)
+- The sum of all these divisors must equal n
+
+2) In the jigsaw representation:
+- Each row must have an odd number of squares (i)
+- Each square in a row must have odd dimensions (j)
+- i × j = n for each row
+- The sum of all i × j combinations used must equal n

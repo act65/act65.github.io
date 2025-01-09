@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Chapter 6, Early Days
 layout: post
 permalink: /alien-treaty-06/
-categories:
-    - sci-fi
 ---
 
 ## Early Days

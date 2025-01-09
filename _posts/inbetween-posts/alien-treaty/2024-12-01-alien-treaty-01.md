@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Chapter 1, First Light
 layout: post
 permalink: /alien-treaty-01/
-categories:
-    - sci-fi
 ---
 
 ## First Light

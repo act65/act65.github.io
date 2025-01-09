@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Epilogue
 layout: post
 permalink: /alien-treaty-09/
-categories:
-    - sci-fi
 ---
 
 One Hundred Years Later\

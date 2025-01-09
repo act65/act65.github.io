@@ -3,8 +3,6 @@ title: The treaty of New Earth
 subtitle: Chapter 5, The Signing
 layout: post
 permalink: /alien-treaty-05/
-categories:
-    - sci-fi
 ---
 
 ## The Signing
