@@ -1,12 +1,17 @@
 ---
-title: Confidence versus rigor
-subtitle:
+title: The Cost of Confidence
+subtitle: Why being 'sure' isn't sure enough
 layout: post
 permalink: /confidence/
 categories:
     - tutorial
 ---
 
+<!-- 
+this is a manifesto for rigor. via example.
+ -->
+
+We all make mistakes. But what's more dangerous than making mistakes is being confidently wrong. This post explores several examples where our natural intuitions lead us astray, and demonstrates why rigorous testing and mathematical proof are essential, even when we're "sure" we're right.
 
 <style>
 .small-input {
@@ -23,29 +28,15 @@ p {
 }
 </style>
 
-Here is a tutorial designed to help you calibrate your (over) confidence.
-I believe we easily confuse confidence of >80% with certainty.
-
-<!-- 
-this is a manifesto for rigor. via example.
- -->
-
 ## Binary search example
 
-This is a simple problem.
-Implement a binary search algorithm in your favorite programming language.
+Let's start with a simple problem. Implement a binary search algorithm in your favorite programming language.
 
 You are given a sorted list of integers and a target value.
 Return the index of the target value in the list or -1 if it is not present.
 
-***
-
-Here's my (first) solution in Python:
-
-Binary search seems straightforward - divide and conquer, right? Yet Jon Bentley 
-observed that 90% of professional programmers couldn't implement it correctly in under
+Binary search seems straightforward right? Yet Jon Bentley observed that 90% of professional programmers couldn't implement it correctly in under
 an hour.
-
 
 ```javascript
 function binarySearch(arr, target) {
@@ -114,6 +105,7 @@ function binarySearch(arr, target) {
 
 </script>
 
+***
 
 The bug? When the array is large enough, `(low + high) / 2` can cause integer overflow.
 On arrays with billions of elements, this could lead to infinite loops or incorrect results.
@@ -165,6 +157,7 @@ $$
 
 
 ## Time Complexity Intuition
+
 ```python
 # Looks O(n) but is actually O(n²) in Python
 def build_string(n):
@@ -216,3 +209,39 @@ def build_string(n):
    - Classic example of intuition vs math
    - Can be coded as a simulation
    - Shows how even mathematicians initially got it wrong
+
+
+1. **The Y2K38 Problem**
+- Many Unix systems store time as a signed 32-bit integer of seconds since 1970
+- Intuitively seems fine (32 bits is a lot!)
+- But will overflow in 2038, causing systems to think it's 1901
+- Shows how even "obviously sufficient" numbers need rigorous verification
+
+2. **The TCP Three-Way Handshake Race Condition**
+- The seemingly simple TCP connection establishment protocol
+- Intuition says two parties can't get confused about connection state
+- But without careful timing analysis, missed edge cases can cause "half-open" connections
+
+3. **The Mars Climate Orbiter Crash**
+- Not strictly a coding example, but a powerful lesson in rigorous checking
+- One component used Imperial units, another used metric
+- Everyone "assumed" the units were consistent
+- $125 million spacecraft was lost due to this assumption
+
+4. **The Collatz Conjecture**
+- Take any positive integer
+- If even, divide by 2
+- If odd, multiply by 3 and add 1
+- Repeat
+- Seems to always reach 1 eventually
+- Despite its simplicity, remains unproven after 80+ years
+- Shows how even simple-looking patterns need rigorous proof
+
+3. **Mertens Conjecture**
+   The Mertens function M(n) appeared to be bounded by ±√n for all positive integers. This was believed true for all n up to 10¹⁰, but was later proven false (though a counterexample is astronomically large).
+
+1. **The Prime Number Formula**
+   ```
+   f(n) = n² + n + 41
+   ```
+   This generates prime numbers for all n from 0 to 40, leading one to think it might always generate primes. However, f(41) = 41² + 41 + 41 = 1763 = 41 × 43.

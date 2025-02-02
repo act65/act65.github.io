@@ -7,8 +7,7 @@ permalink: /alien-treaty-02/
 
 ## Early Traders
 
-
-The first trade happened in Silicon Valley. A quantum computing startup exchanged their entire research database for what looked like a simple crystalline cube. Within a week, they announced a breakthrough that made traditional encryption obsolete.
+The first trade happened in Silicon Valley. A quantum computing startup exchanged all their data, including personel files, contracts, ... etc., for what looked like a simple crystalline cube. Within a week, they announced a breakthrough that made traditional encryption obsolete. And they could prove it! Send them your ECC encrypted data and they would decrypt it in seconds. 
 
 The second was in St. Petersburg. The curator of the Hermitage Museum handed over digital copies of their entire art collection. In return, she received what she described as "a window into alien aesthetics" - though no one could quite agree on what they saw through it.
 
@@ -16,7 +15,8 @@ By the third week, the floodgates had opened.
 
 In Lagos, a biotech firm traded genome sequences. In Sydney, aboriginal elders shared dreamtime stories. A Brazilian mining company exchanged mineral rights for terraforming technology. A Bangalore programmer traded the entire Spotify catalog for what he claimed was a "universal translator."
 
-Some trades went badly. A Shanghai corporation disappeared overnight, their headquarters empty except for an incomprehensible device that hummed at frequencies that made people nauseous. Three deep-sea research vessels vanished in the Indian Ocean while investigating alien structures on the seafloor.
+Some trades went badly. A Shanghai corporation disappeared overnight, their headquarters empty except for an incomprehensible device that hummed at frequencies that made people nauseous. Three deep-sea research vessels vanished in the Indian Ocean while investigating alien structures on the seafloor. 
+<!-- A Russian oligarch traded his empire for  -->
 
 ---
 
@@ -36,18 +36,15 @@ Sarah rubbed her temples. "Any pattern to what they're asking for?"
 
 Above Earth, Junior Diplomatic Attaché Ven-X compiled their hourly report for the Federation Council.
 
-"Unauthorized exchanges continue despite lack of standardized protocols," they noted in Federation Standard. "Humans display concerning tendency toward individual action over collective decision-making. Recommend immediate implementation of controlled interaction framework."
+"Unauthorized exchanges continue despite lack of standardized protocols," they noted in Federation Standard. "Recommend immediate implementation of controlled interaction framework."
 
-Ven paused, considering how to phrase the next observation. "Human concepts of 'value' and 'exchange' appear fundamentally incompatible with Federation metrics. Example: Multiple humans have attempted to trade 'religious experiences' and 'emotional responses to music.' Unable to quantify using standard measurement protocols."
-
-Through their ship's observation window, Ven watched another unauthorized meeting unfold in the South Pacific. The humans' boat was broadcasting music - something they called "jazz." Ven's neural interfaces struggled to process the seemingly random patterns.
+Through their ship's observation window, Ven watched another unauthorized meeting unfold in the South Pacific. The humans' boat was broadcasting music - something they called "jazz." Ven's neural interfaces struggled to process the patterns.
 
 "Additional note: Human cultural artifacts often prioritize irregularity over optimization. Further study needed."
 
 ---
 
-The UN Security Council's emergency session entered its fourth week. Half the representatives attended virtually, their holograms flickering as global networks strained under unprecedented alien data traffic.
-
+The UN Security Council's emergency session entered its fourth week. 
 "We've lost control," the Secretary-General admitted. "Every corporation, every university, every private collector with something to trade... they're all making their own deals."
 
 "Perhaps that's for the best," the Chinese representative suggested. "Let the market decide-"
@@ -64,11 +61,11 @@ In orbit, Ven-X added a final note to their report: "Human society showing signs
 
 They tagged the report as urgent and sent it to the Council. Below, the lights of cities winked through the clouds, some flickering, some dark, some glowing with new and strange energies.
 
-Humans, Ven reflected, were fascinating. Chaotic and inefficient, yes, but fascinating. They would make excellent additions to the Federation, once properly optimized.
+Humans, Ven reflected, were fascinating. Chaotic and inefficient, yes, but fascinating. They would make excellent additions to the Federation, once we've helped show them a better way.
 
 The Council's response was immediate: "Proceed with diplomatic contact. Standard uplift protocols authorized."
 
-Ven began preparing for their first surface visit, unaware that their understanding of "standard" and "uplift" might not translate as well as they assumed.
+Ven began preparing for their first surface visit.
 
 ***
 

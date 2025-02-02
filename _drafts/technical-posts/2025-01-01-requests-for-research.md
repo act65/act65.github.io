@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Requests for research
-subtitle: Some ideas from my masters.
+subtitle: More ideas
 permalink: /requests-for-research/02
 categories: 
   - "research"
