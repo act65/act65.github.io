@@ -78,29 +78,76 @@ This is a simplification. In reality, a player's strategy is dynamic and can ada
 
 A player’s strategy is defined by probabilities for each decision node. For example:
 
-- Player A (Rational):
-    - Bets 100% with K (bluff-catcher), 50% with Q (balance), 0% with J
-    - Calls 75% when facing a bet with Q/J
-- Player B (random):
-    - Bets / calls 50% of the time
-    - Fold / check 50% of the time
+```python
+# Returns [prob_check, prob_bet]
+def player_a_strategy(card): 
+    # rational strategy
+    if card == 0:  # J
+        return [0.85, 0.15]  # probably check
+    elif card == 1:  # Q
+        return [0.5, 0.5] 
+    else:  # K
+        return [0.1, 0.9] # probably bet
 
-_We can imagine player A as (say) a professional poker player and player B as (say) a chimpanzee._
+def player_b_strategy(card): 
+    # Random strategy
+    return [0.5, 0.5]  # Mix
+```
 
 <!-- Let's quantify how many rounds it takes for Player A’s superior strategy to dominate. -->
 Our goal in the following calculations is to calculate the expected win rate for each player's policy.
 How likely is player A to win a round?
 
-For all 6 possible card matchups (JvQ, JvK, QvJ, QvK, KvJ, KvQ), we:
+To calculate this, we;
 
-- List all action sequences (check-check, bet-fold, etc.).
+- enumerate all 6 possible card matchups (JvQ, JvK, QvJ, QvK, KvJ, KvQ)
+- enumerate all action sequences (check-check, bet-fold, etc.).
 - Compute probabilities using each player’s policy.
-- Sum expected payoffs.
-- Convert into win rate.
+- accumulate expected values (EV) for each action sequence / card matchup.
 
-With the policies above (rational and random), Player A is 54.2% likely to win a round.
+```python
+def calculate_ev(player1_strat, player2_strat):
+    cards = [0, 1, 2]  # J, Q, K
+    total_ev = 0
+    n_combos = 0
+    
+    for p1_card, p2_card in permutations(cards, 2):
+        prob_deal = 1 / 6  # 6 possible card matchups
+        
+        # Get strategies for this hand
+        p1_act = player1_strat(p1_card)
+        p2_act = player2_strat(p2_card)
+        
+        # --- Action Sequence 1: P1 checks -> P2 checks ---
+        prob = p1_act[0] * p2_act[0]  # Both check
+        if p1_card > p2_card:
+            payoff = 1  # P1 wins ante
+        else:
+            payoff = -1
+        total_ev += prob_deal * prob * payoff
+        
+        # --- Action Sequence 2: P1 checks -> P2 bets -> P1 calls ---
+        prob = p1_act[0] * p2_act[1] * 1.0
+        if p1_card > p2_card:
+            payoff = 2  # Pot size 4, net +2
+        else:
+            payoff = -2
+        total_ev += prob_deal * prob * payoff
+        
+        # --- Action Sequence 3: P1 bets -> P2 calls ---
+        prob = p1_act[1] * 1.0
+        if p1_card > p2_card:
+            payoff = 2
+        else:
+            payoff = -2
+        total_ev += prob_deal * prob * payoff
+        
+    return total_ev
+```
 
-Next, by treating each round as a biased coin flip (54.2% - heads vs. 45.8% - tails), we cam calculate the number of rounds needed to be 99% sure Player A wins.
+With the policies above (rational and random), we can calulate that Player A is 53.1% likely to win a round.
+
+Next, by treating each round as a biased coin flip (53.1% - heads vs. 46.9 - tails), we cam calculate the number of rounds needed to be 99% sure Player A wins.
 
 <div class="code" markdown="1">
 
@@ -118,7 +165,7 @@ where ${n \choose k}$ returns the binomial coefficient, $p$ is the probability o
 ![]({{ site.baseurl }}/assets/poker-eval/poker-n-rounds.png){:width="100%"}
 
 While we know that Player A has a better strategy, it takes many rounds for this to be reflected in the results.
-With these player strategies, we need 777 rounds to reach 99% confidence that Player A will win. Or in other words, the probability of player A being 'unlucky' and player B being 'lucky' is \<1%. 
+With these player strategies, we need 1447 rounds to reach 99% confidence that Player A will win. Or in other words, the probability of player A being 'unlucky' and player B being 'lucky' is \<1%. 
 
 
 ***
