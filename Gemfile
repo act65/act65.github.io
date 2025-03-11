@@ -1,6 +1,7 @@
-# frozen_string_literal: true
-
+# Gemfile (first lines)
 source "https://rubygems.org"
+ruby "3.1.6"  # Exact version match
+gem "bundler", "~> 2.5.8"  # Match GitHub Actions version
 
 gem "jekyll", "~> 4.2"
 gem "jekyll-sitemap"

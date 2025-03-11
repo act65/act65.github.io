@@ -2,6 +2,8 @@
 layout: post
 title: Why does poker have many rounds?
 permalink: poker-eval
+categories: 
+  - "philosophy"
 ---
 
 Imagine that the [World series of Poker](https://www.wsop.com/) (with potential winnings of ~\\$8 million) only had 1 round.
@@ -35,9 +37,7 @@ __The end.__
 Many would consider this, 1-round poker, to be an unfair game. It is based, __too much__, on chance.
 Whom ever was dealt a good has a BIG advantage.
 
-Instead, poker is played over many rounds.
-
-> But how many rounds should be played?
+Instead, poker is played over many rounds. _But how many rounds should be played?_
 
 The answer to this question depends on the chance we are willing to take that the best player does not win.
 <!-- Are tournaments the best way to eval? -->
@@ -100,7 +100,7 @@ For all 6 possible card matchups (JvQ, JvK, QvJ, QvK, KvJ, KvQ), we:
 
 With the policies above (rational and random), Player A is 54.2% likely to win a round.
 
-Next, by treating each round as a biased coin flip (54.2% - heads vs. 45.8% - tails), we cam calculate the number if rounds needed to be 99% sure Player A wins.
+Next, by treating each round as a biased coin flip (54.2% - heads vs. 45.8% - tails), we cam calculate the number of rounds needed to be 99% sure Player A wins.
 
 <div class="code" markdown="1">
 
@@ -121,7 +121,6 @@ While we know that Player A has a better strategy, it takes many rounds for this
 With these player strategies, we need 777 rounds to reach 99% confidence that Player A will win. Or in other words, the probability of player A being 'unlucky' and player B being 'lucky' is \<1%. 
 
 
-
 ***
 
 Philosophical aside: This idea of fairness in poker raises a bigger question
@@ -140,51 +139,59 @@ If it's a bad hand, tough luck. You lose.
 
 __The end.__
 
-***
+<!-- There are two attitudes we can take to this situation.
 
-There are two attitudes we can take to this situation.
+1. Acceptance: that's the hand you are dealt. Do your best.
+2. Mitigation: attempt to minimise the effects of luck / randomness.
 
-1. that's the hand you are dealt. Do your best.
-2. attempt to minimise the effects of luck / randomness.
-
-The first attitude is common to hear in pop culture. It minimises the role of luck in success and failure.
+The acceptance mindset dominates self-help rhetoric. It glorifies individual agency while downplaying systemic luck. Quotes like;
 - "You make your own luck."
 - "Life is unfair. But if you work hard, you can overcome it."
-<!-- If it's bad, tough luck. (in poker, accepts the initial deal and plays it out) -->
+- “Hard work beats talent”
+imply that outcomes are meritocratic, ignoring how a single bad “flop” (e.g., poverty, illness) can derail even the most skilled players.
 
-
-The second ...?
-
- (in poker, represented by adding more rounds, seeks to mitigate the impact of a bad initial deal)
- <!-- fix the game. Make it fairer. -->
-
- <!-- few recongise the luck in their success. how many people have you hear saying wow, i was really lucky to get X. i should spread my luck to others.
--->
-
-When thinking about 'fixing' the game (of life). A useful concept is 'the veil of ignorance'. It's a thought experiment where you design a society without knowing what your position in it will be.
-
-Similar to how, in a poker game, we don't know what hand we will be dealt. We don't know if we will be born rich or poor, healthy or sick, smart or dumb.
-
-<!-- want to reduce the variance? want to make the game invariant to initial conditions. then there is no luck?! -->
-Unlike poker, life cannot be played many times. Another approach to fairness is to reduce the risk of bad hands.
-Insurance is an example of the second attitude.
-
-<!-- just as insurance redistributes risk in life, multiple poker rounds redistribute luck—giving skill room to breathe. -->
-
-1-round Poker with insurance.
-How would this work?
-I am insured against bad hands. If I am dealt a bad hand, I get compensated.
-
-This would make for a boring poker game.
-
-In the past... 
-
-- (before 1921 when insulin was discovered and later synthesised) diabetes was a losing hand. Your life was just a few months (max) after diagnosis.
-- (before 1943 when penicillin was discovered) bacterial infections were a losing hand. Your life was just a few weeks (max) after diagnosis.
-- 
-
-No matter how good a player you were. You could not win with these hands.
-
-Today, these hands are not so bad. You can win with them.
+The mitigation mindset is less popular but more realistic.
+This approach asks: How can we reduce the stakes of bad luck? It acknowledges that no amount of skill can overcome certain starting conditions.
+Examples include social safety nets, universal healthcare, or inheritance taxes. These systems act like “insurance” against life’s worst hands, redistributing luck to give skill a fighting chance. -->
 
 ***
+
+
+<!-- veil -->
+Earlier, we asked: How many rounds should poker have to balance luck and skill? But the deeper question is: Who gets to decide?
+
+Enter philosopher John Rawls’ veil of ignorance. Imagine designing the rules of poker—or society—without knowing what hand you’ll be dealt. Will you be the pro with a stacked deck or the novice with 2-7 off-suit? Will you inherit wealth or face systemic bias?
+
+Under this veil, rational players wouldn’t tolerate 1-round poker. Why? Because a single bad deal could ruin them. Instead, they’d demand:
+
+- Multiple rounds (skill over time)
+- Ante redistribution (shared stakes)
+- Insurance (protection from ruin)
+
+Sound familiar? These are the same principles behind progressive taxation, public education, and healthcare. The veil forces us to design systems that we’d accept if we might be the unluckiest player.
+
+
+***
+
+<!-- 1 round poker -->
+Unlike poker, life cannot be played many times. So what would a 'fair' game of 1 round poker look like?
+
+In standard poker, luck is hoarded: if you’re dealt a royal flush, you keep all its power. But imagine a variant where, after the river, players must discard one card into a shared "community deck." Over time, this deck grows, and anyone dealt a historically bad hand (like 2-7 off-suit) can draw from it.
+
+The game stays competitive, but no one’s doomed by a single bad deal. Sound far-fetched? This is how societal redistribution works:
+
+- Progressive taxation is the "discard" phase—those with good hands (wealth, health, privilege) contribute more to the communal stack.
+- Social programs act as the redraws—unemployment benefits, public schools, food stamps let people refresh their hands.
+- Anti-monopoly laws prevent any player from hoarding all the Kings.
+
+This would make poker "less fun." But life isn’t a game; when luck is concentrated, the table empties. Redistribution ensures the game continues—not because everyone wins, but because everyone gets to keep playing.
+
+***
+
+History is littered with “bad hands” that were once death sentences but are now manageable:
+
+- Polio: Before the 1950s vaccine, polio paralyzed or killed thousands annually. A diagnosis meant life in an iron lung or early death. Today, it’s nearly eradicated. (Vaccines act like a communal redraw—giving everyone a chance to discard the “polio card” from their hand.)
+- Childbirth: In 1900, 6–9% of pregnancies ended in maternal death. Modern medicine dropped this to 0.02%—turning a common “bad hand” into a routine event.
+- Bankruptcy: Before bankruptcy laws, debtors faced prison. Now, legal frameworks let individuals and businesses “fold” without lifelong ruin, preserving their ability to reenter the game.
+
+These advances didn’t eliminate luck—they reduced its cruelty. 
