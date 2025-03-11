@@ -42,9 +42,9 @@ Instead, poker is played over many rounds. _But how many rounds should be played
 The answer to this question depends on the chance we are willing to take that the best player does not win.
 <!-- Are tournaments the best way to eval? -->
 
-How should the game of poker balance luck and skill? Let's explore this using Kuhn Poker: a stripped-down version where we can mathematically model luck vs. skill.
+How should the game of poker balance luck and skill? Let's explore this using Kuhn Poker: a stripped-down version where we can mathematically model luck vs skill.
 
-Kuhn poker (3-card poker) is the simplest nontrivial poker game:
+Kuhn poker (3-card poker) is the simplest nontrivial poker game which retains the interesting aspects of texas holdem poker (ie. uncertainty, and bluffing).
 
 - Cards: J, Q, K (ranked low to high)
 - Players: 2
@@ -76,7 +76,7 @@ This is a simplification. In reality, a player's strategy is dynamic and can ada
 
 </div>
 
-A player’s strategy is defined by probabilities for each decision node. For example:
+A player’s strategy is defined by probabilities for each decision. For example we can imagine two different players;
 
 ```python
 # Returns [prob_check, prob_bet]
@@ -90,12 +90,12 @@ def player_a_strategy(card):
         return [0.1, 0.9] # probably bet
 
 def player_b_strategy(card): 
-    # Random strategy
+    # random strategy
     return [0.5, 0.5]  # Mix
 ```
 
 <!-- Let's quantify how many rounds it takes for Player A’s superior strategy to dominate. -->
-Our goal in the following calculations is to calculate the expected win rate for each player's policy.
+Our goal in the following is to calculate the expected win rate for each player.
 How likely is player A to win a round?
 
 To calculate this, we;
@@ -142,12 +142,12 @@ def calculate_ev(player1_strat, player2_strat):
             payoff = -2
         total_ev += prob_deal * prob * payoff
         
-    return total_ev
+    return (1 + total_ev / 2) / 2  # Convert EV to win probability
 ```
 
 With the policies above (rational and random), we can calulate that Player A is 53.1% likely to win a round.
 
-Next, by treating each round as a biased coin flip (53.1% - heads vs. 46.9 - tails), we cam calculate the number of rounds needed to be 99% sure Player A wins.
+Next, by treating each round as a biased coin flip (53.1% - heads vs. 46.9 - tails), we can calculate the number of rounds needed to be 99% sure Player A wins.
 
 <div class="code" markdown="1">
 
@@ -170,7 +170,7 @@ With these player strategies, we need 1447 rounds to reach 99% confidence that P
 
 ***
 
-Philosophical aside: This idea of fairness in poker raises a bigger question
+Philosophical aside: 
 
 > How should we deal with the inherent randomness of life?
 
@@ -209,7 +209,7 @@ Earlier, we asked: How many rounds should poker have to balance luck and skill? 
 
 Enter philosopher John Rawls’ veil of ignorance. Imagine designing the rules of poker—or society—without knowing what hand you’ll be dealt. Will you be the pro with a stacked deck or the novice with 2-7 off-suit? Will you inherit wealth or face systemic bias?
 
-Under this veil, rational players wouldn’t tolerate 1-round poker. Why? Because a single bad deal could ruin them. Instead, they’d demand:
+Under this veil, rational players wouldn’t tolerate 1-round texas holdem poker. Why? Because a single bad deal could ruin them. Instead, they’d demand:
 
 - Multiple rounds (skill over time)
 - Ante redistribution (shared stakes)
@@ -217,11 +217,10 @@ Under this veil, rational players wouldn’t tolerate 1-round poker. Why? Becaus
 
 Sound familiar? These are the same principles behind progressive taxation, public education, and healthcare. The veil forces us to design systems that we’d accept if we might be the unluckiest player.
 
-
 ***
 
 <!-- 1 round poker -->
-Unlike poker, life cannot be played many times. So what would a 'fair' game of 1 round poker look like?
+While many rounds are enough to remove the luck factor from poker, life cannot be played many times. So what would a 'fair' game of 1 round poker look like?
 
 In standard poker, luck is hoarded: if you’re dealt a royal flush, you keep all its power. But imagine a variant where, after the river, players must discard one card into a shared "community deck." Over time, this deck grows, and anyone dealt a historically bad hand (like 2-7 off-suit) can draw from it.
 
@@ -231,14 +230,18 @@ The game stays competitive, but no one’s doomed by a single bad deal. Sound fa
 - Social programs act as the redraws—unemployment benefits, public schools, food stamps let people refresh their hands.
 - Anti-monopoly laws prevent any player from hoarding all the Kings.
 
-This would make poker "less fun." But life isn’t a game; when luck is concentrated, the table empties. Redistribution ensures the game continues—not because everyone wins, but because everyone gets to keep playing.
+I'm not sure this would be a fun game of poker, but it would be a fairer one.
 
 ***
 
 History is littered with “bad hands” that were once death sentences but are now manageable:
 
 - Polio: Before the 1950s vaccine, polio paralyzed or killed thousands annually. A diagnosis meant life in an iron lung or early death. Today, it’s nearly eradicated. (Vaccines act like a communal redraw—giving everyone a chance to discard the “polio card” from their hand.)
-- Childbirth: In 1900, 6–9% of pregnancies ended in maternal death. Modern medicine dropped this to 0.02%—turning a common “bad hand” into a routine event.
+- Childbirth: In 1900, 6–9% of pregnancies ended in maternal death. Modern medicine dropped this to 0.02%.
 - Bankruptcy: Before bankruptcy laws, debtors faced prison. Now, legal frameworks let individuals and businesses “fold” without lifelong ruin, preserving their ability to reenter the game.
 
-These advances didn’t eliminate luck—they reduced its cruelty. 
+<!-- These advances didn’t eliminate luck—they reduced its cruelty. -->
+
+***
+
+Poker’s multiple rounds are a concession to luck—a way to ensure skill prevails over time. Life, however, offers no such luxury. We cannot replay our hands, but we can reshape the game itself. By building systems that redistribute luck—through healthcare, education, and social safety nets—we mimic poker’s multi-round fairness in a single-round existence. The question isn’t whether life is fair, but whether we’re going to deal a better deck for those yet to play.
