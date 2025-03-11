@@ -42,19 +42,13 @@ Instead, poker is played over many rounds.
 The answer to this question depends on the chance we are willing to take that the best player does not win.
 <!-- Are tournaments the best way to eval? -->
 
-Should poker be a game of luck or skill?
-<!-- Is this fair? Or is this just gambling masquerading as skill? -->
-
-***
-
-To understand why multiple rounds matter, let’s simplify the game. 
-Enter Kuhn Poker: a stripped-down version where we can mathematically model luck vs. skill.
+How should the game of poker balance luck and skill? Let's explore this using Kuhn Poker: a stripped-down version where we can mathematically model luck vs. skill.
 
 Kuhn poker (3-card poker) is the simplest nontrivial poker game:
 
 - Cards: J, Q, K (ranked low to high)
 - Players: 2
-- Rounds: 1 betting round, but multiple game rounds (hands) determine the winner
+- Steps: 1 betting step
 
 Game Flow:
 
@@ -64,17 +58,23 @@ Game Flow:
     - If checked, Player 2 can check (showdown) or bet 1
     - If bet, Player 2 can fold (P1 wins) or call (showdown)
 
+We can model the game as a decision tree. See below.
+
 ![]({{ site.baseurl }}/assets/poker-eval/Kuhn_poker_tree.svg){:width="200%"}
 By Petr Kadlec - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=48757606
 
+And we can model each players's strategy as a probability distribution (aka policy) over the possible actions.
 
-Strategy Representation
+<div class="code" markdown="1">
 
-
-NOte. We model a player's strategy as a fixed, mixed policy. 
+Note. We model a player's strategy as a fixed, mixed policy. 
 
 - Fixed: a player's strategy is fixed before the game starts and does not change during the game, nor between rounds.
 - Mixed: a player's strategy is a probability distribution over the possible actions.
+
+This is a simplification. In reality, a player's strategy is dynamic and can adapt to the opponent's strategy.
+
+</div>
 
 A player’s strategy is defined by probabilities for each decision node. For example:
 
@@ -85,27 +85,42 @@ A player’s strategy is defined by probabilities for each decision node. For ex
     - Bets / calls 50% of the time
     - Fold / check 50% of the time
 
-We’ll quantify how many rounds it takes for Player A’s superior strategy to dominate.
-Mathematical Framework
-Expected Value Per Hand
+_We can imagine player A as (say) a professional poker player and player B as (say) a chimpanzee._
 
-For any card matchup (e.g., Player A has K, Player B has Q), we calculate:
+<!-- Let's quantify how many rounds it takes for Player A’s superior strategy to dominate. -->
+Our goal in the following calculations is to calculate the expected win rate for each player's policy.
+How likely is player A to win a round?
 
-- All possible action sequences (check-check, bet-call, etc.)
-- Probability of each sequence (based on strategies)
-- Payoff for each outcome
+For all 6 possible card matchups (JvQ, JvK, QvJ, QvK, KvJ, KvQ), we:
 
-Example Calculation (A has K, B has Q):
+- List all action sequences (check-check, bet-fold, etc.).
+- Compute probabilities using each player’s policy.
+- Sum expected payoffs.
+- Convert into win rate.
 
-- A’s strategy: 100% bet
-- B’s strategy: 100% call
-- Result: A wins 2 units (pot size 4, net +2)
-- Probability: 1 (certainty)
+With the policies above (rational and random), Player A is 54.2% likely to win a round.
+
+Next, by treating each round as a biased coin flip (54.2% - heads vs. 45.8% - tails), we cam calculate the number if rounds needed to be 99% sure Player A wins.
+
+<div class="code" markdown="1">
+
+A quick reminder, the probability of getting k heads in n coin flips is given by the binomial distribution:
+
+$$
+p(k, n) = {n \choose k} p^k (1-p)^{n-k} \\
+{n \choose k} = \frac{n!}{k!(n-k)!}
+$$
+
+where ${n \choose k}$ returns the binomial coefficient, $p$ is the probability of heads, and $1-p$ is the probability of tails, $n$ is the number of coin flips, and $k$ is the number of heads.
+
+</div>
 
 ![]({{ site.baseurl }}/assets/poker-eval/poker-n-rounds.png){:width="100%"}
 
-In this case, with these players, we need 777 rounds to reach 99% confidence that Player A will win.
 While we know that Player A has a better strategy, it takes many rounds for this to be reflected in the results.
+With these player strategies, we need 777 rounds to reach 99% confidence that Player A will win. Or in other words, the probability of player A being 'unlucky' and player B being 'lucky' is \<1%. 
+
+
 
 ***
 
@@ -113,21 +128,38 @@ Philosophical aside: This idea of fairness in poker raises a bigger question
 
 > How should we deal with the inherent randomness of life?
 
-Life is like poker with only 1 round. You get dealt a hand; your genes, your parents, your socio-economic status, a crazy investor, ... cancer.
+Life is like poker with only 1 round. You get dealt a hand; 
+- your genes, 
+- your parents, 
+- your socio-economic status, 
+- a crazy investor,
+- cancer.
 <!-- a picture of this would be nice! what pic tho?-->
-If it's a bad hand. You don't get to fold and try again. 
+
+If it's a bad hand, tough luck. You lose. 
+
 __The end.__
+
+***
 
 There are two attitudes we can take to this situation.
 
-1. that's the hand you are dealt. If it's bad, tough luck. (in poker, accepts the initial deal and plays it out)
-2. attempt to fix the game. Make it fairer. (in poker, represented by adding more rounds, seeks to mitigate the impact of a bad initial deal)
+1. that's the hand you are dealt. Do your best.
+2. attempt to minimise the effects of luck / randomness.
 
 The first attitude is common to hear in pop culture. It minimises the role of luck in success and failure.
 - "You make your own luck."
 - "Life is unfair. But if you work hard, you can overcome it."
+<!-- If it's bad, tough luck. (in poker, accepts the initial deal and plays it out) -->
+
 
 The second ...?
+
+ (in poker, represented by adding more rounds, seeks to mitigate the impact of a bad initial deal)
+ <!-- fix the game. Make it fairer. -->
+
+ <!-- few recongise the luck in their success. how many people have you hear saying wow, i was really lucky to get X. i should spread my luck to others.
+-->
 
 When thinking about 'fixing' the game (of life). A useful concept is 'the veil of ignorance'. It's a thought experiment where you design a society without knowing what your position in it will be.
 
