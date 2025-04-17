@@ -14,7 +14,7 @@ Here are some links to help you navigate:
     - [economics and politics]({{site.baseurl}}/economics-politics/)
     - [philosophising about ...]({{site.baseurl}}/philosophy/)
     - [speculation]({{site.baseurl}}/speculation/)
-    - [sci-fi story ideas]({{site.baseurl}}/sci-fi/)
+    - [fiction]({{site.baseurl}}/fiction/)
     - and more
 - [Technical]({{site.baseurl}}/technical/)
     - [proposals]({{site.baseurl}}/proposals/)

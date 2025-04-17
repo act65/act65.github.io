@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Why does poker have many rounds?
+title: Luck vs skill in poker and life
+subtitle: Why does poker have many rounds?
 permalink: poker-eval
 categories: 
   - "philosophy"
