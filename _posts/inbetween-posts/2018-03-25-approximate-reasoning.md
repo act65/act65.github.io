@@ -2,6 +2,9 @@
 layout: post
 title: Approximate reasoning 
 subtitle: with incomplete models
+permalink: approximate-reasoning
+categories: 
+  - "play"
 ---
 
 ## Introduction

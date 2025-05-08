@@ -3,6 +3,8 @@ title: Brand new world
 subtitle: A advertisement dystopia
 layout: post
 permalink: brand-new-world
+categories: 
+  - "sci-fi"
 ---
 
 <!-- Unsolicited Praise, Paid in Kind: A Novel Marketing Concept Faces Significant Hurdles
