@@ -11,7 +11,7 @@ categories:
 this is a manifesto for rigor. via example.
  -->
 
-We all make mistakes. But what's more dangerous than making mistakes is being confidently wrong. This post explores several examples where our natural intuitions lead us astray, and demonstrates why rigorous testing and mathematical proof are essential, even when we're "sure" we're right.
+We all make mistakes. But what's more dangerous than making mistakes is being confidently wrong. This post explores several examples where our natural intuitions lead us astray, and demonstrates why rigorous testing and mathematical proof are essential, even when we are confident we are right.
 
 <style>
 .small-input {
@@ -44,12 +44,16 @@ function binarySearch(arr, target) {
     high = arr.length - 1;
 
     while (low <= high) {
+        // Calculate mid index
         mid = Math.floor((low + high) / 2);
         midval = arr[mid];
+        // If the target is greater, ignore left half
         if (midval < target) {
             low = mid + 1;
+        // If the target is smaller, ignore right half
         } else if (midval > target) {
             high = mid - 1;
+        // Else target is present at mid
         } else {
             return mid;
         }
@@ -72,11 +76,14 @@ function runBinarySearch(event) {
     if (event.key === 'Enter') {
         const inputList = document.getElementById('numberList').value;
         const search_val = parseInt(document.getElementById('search_val').value);
+        const search_val_int32 = search_val | 0; // Convert to int32
         const arr = stringToList(inputList);
-        const index = binarySearch(arr, search_val);
-        console.log(search_val);
+        const arr_int32 = arr.map(x => x | 0); // Convert to int32
+        const index = binarySearch(arr_int32, search_val_int32);
+        // console.log(typeof search_val);
+        console.log(search_val_int32);
         console.log(index);
-        console.log(arr);
+        // console.log(arr);
         document.getElementById('index').innerText = index;
     }
 }
@@ -90,7 +97,7 @@ function binarySearch(arr, target) {
     high = arr.length - 1;
 
     while (low <= high) {
-        mid = Math.floor((low + high) / 2);
+        mid = Math.floor((low + high)|0 / 2)|0;
         midval = arr[mid];
         if (midval < target) {
             low = mid + 1;
@@ -107,11 +114,26 @@ function binarySearch(arr, target) {
 
 ***
 
-The bug? When the array is large enough, `(low + high) / 2` can cause integer overflow.
-On arrays with billions of elements, this could lead to infinite loops or incorrect results.
+Great. Now let's try with some large numbers. 
+
+<!-- breaks -->
 
 The fix is subtle:
 ```mid = low + (high - low) / 2```
+
+***
+
+Now let's try with repeated numbers.
+
+<!-- breaks -->
+
+<!-- The bug? When the array is large enough, `(low + high) / 2` can cause integer overflow.
+On arrays with billions of elements, this could lead to infinite loops or incorrect results. -->
+
+***
+
+We are adding test cases, but when will we be satisfied that our implementation is truly 'correct'?
+
 
 ## The Borwein integrals.
 
@@ -166,23 +188,11 @@ def build_string(n):
         result += str(i)  # String concatenation creates new string each time
 ```
 
-## The Fast Inverse Square Root from Quake III
-- approximates 1/√x using bit manipulation.
-- Works surprisingly well despite being mathematically "wrong".
-
-
-***
 
 1. **The Fast Fourier Transform Aliasing**
    - Seemingly correct FFT implementations that fail spectacularly due to subtle aliasing effects
    - Shows how sampling theory intuitions can fail
    - Particularly relevant in signal processing and machine learning
-
-2. **Gradient Descent Pathologies**
-   - The surprising ways optimization can fail even on seemingly simple functions
-   - Saddle points in high dimensions
-   - Why momentum sometimes makes things worse
-   - Could include visualizations of optimization trajectories
 
 3. **Martingale Stopping Times**
    - Counter-intuitive results about optional stopping
@@ -194,12 +204,6 @@ def build_string(n):
    - The subtleties of eventual consistency
    - Could include examples from real distributed databases
 
-5. **Type System Corner Cases**
-   - Surprising theorems about type inference
-   - Cases where seemingly reasonable type systems become undecidable
-   - The subtle interaction between variance and generics
-
-
 2. **The Birthday Paradox**
    - Only needs 23 people for a 50% chance of shared birthdays
    - Most people's intuition is way off
@@ -209,24 +213,6 @@ def build_string(n):
    - Classic example of intuition vs math
    - Can be coded as a simulation
    - Shows how even mathematicians initially got it wrong
-
-
-1. **The Y2K38 Problem**
-- Many Unix systems store time as a signed 32-bit integer of seconds since 1970
-- Intuitively seems fine (32 bits is a lot!)
-- But will overflow in 2038, causing systems to think it's 1901
-- Shows how even "obviously sufficient" numbers need rigorous verification
-
-2. **The TCP Three-Way Handshake Race Condition**
-- The seemingly simple TCP connection establishment protocol
-- Intuition says two parties can't get confused about connection state
-- But without careful timing analysis, missed edge cases can cause "half-open" connections
-
-3. **The Mars Climate Orbiter Crash**
-- Not strictly a coding example, but a powerful lesson in rigorous checking
-- One component used Imperial units, another used metric
-- Everyone "assumed" the units were consistent
-- $125 million spacecraft was lost due to this assumption
 
 4. **The Collatz Conjecture**
 - Take any positive integer
