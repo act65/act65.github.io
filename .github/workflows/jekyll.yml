@@ -35,9 +35,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1     # Updated Ruby version
+          ruby-version: 3.1.6     # Updated Ruby version
           bundler-cache: true
-          bundler: 2.5.8        # Newer Bundler version
           cache-version: 0
       - name: Setup Pages
         id: pages
