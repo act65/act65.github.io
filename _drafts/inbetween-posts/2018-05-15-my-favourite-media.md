@@ -1,8 +1,8 @@
 ---
 title: "My favourite media"
-date: "2018-05-15"
 layout: post
-subtitle: A list of cool things
+subtitle: The best ideas and stories
+permalink: /my-favourite-media/
 ---
 
 ![]({{site.baseurl}}/assets/my-favourite-media/{{page.coverImage}})
@@ -13,13 +13,14 @@ I imagine this list will evolve over time I discover and remember. The media tha
 
 [The vital question](https://www.goodreads.com/book/show/26530386-the-vital-question?from_search=true) explains the likely origins of life in far more details that I could have imagined; the sequence of proteins as they built up, the order of mutations, ... We know that life requires an energy gradient and that it builds incrementally, but only if the (small) increments give an advantage. Given these constraints,  we can narrow down likely evolutionary paths.
 
-[Playground](http://playground.tensorflow.org/) is a cool web-app that lets you get some intuition for what a neural network is doing. I love the idea that research can simply be tinkering around with this sort of tool, making predictions and carefully observing.
-
 Before I read [The better angels of our nature](https://www.goodreads.com/book/show/11107244-the-better-angels-of-our-nature) I had been quite pessimistic about humans and the world around us. This book really helped me look at the bigger picture and see the progress that is being made.
+<!-- +factfulness + ourworld in data -->
 
 [3brown1blue](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw)'s channel on youtube is wondrous. He really focuses on the intuition behind the math, which is the most important part. Anyone can follow rules and calculate, but the key to doing math is knowing where to look and how to look. I learned more in hours than previous years of university.
 
 Living a selfish life means helping people (if you care about the long term), this is also known as [egoistic altruism](https://www.youtube.com/watch?v=rvskMHn0sqQ). The idea is that: the more people that are well off, the better my life is. The more people who are educated, the more doctors to cure my diseases. I love the idea of humanity collaborating to build a better world for all.
+
+<!-- also https://ourworldindata.org/talent-is-everywhere-opportunity-is-not -->
 
 [The truth of fact and the truth of feeling](https://www.goodreads.com/book/show/18455800-the-truth-of-fact-the-truth-of-feeling) is a great nuanced view of the compromise between what is good and what is right, and how our memory is influenced by our beliefs of what is good/right.
 
