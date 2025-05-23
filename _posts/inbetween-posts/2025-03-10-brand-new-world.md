@@ -5,6 +5,7 @@ layout: post
 permalink: brand-new-world
 categories: 
   - "sci-fi"
+  - "fiction"
 ---
 
 <!-- Unsolicited Praise, Paid in Kind: A Novel Marketing Concept Faces Significant Hurdles

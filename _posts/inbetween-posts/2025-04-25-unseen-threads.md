@@ -41,3 +41,7 @@ Several months later, her strength regained, her life resuming its demanding cad
 The following week, a letter arrived from Dr. Ramirez’s office. Two distinct requests. First, given her rare JMH-negative status, would she consider being listed on an international rare donor registry? Second, Dr. Tanaka’s research team was seeking participants for a non-invasive, long-term observational study to gather more data on patient outcomes.
 
 Sarah placed the letter on her desk. It lay there for a full day, a silent question. She thought of the handful of anonymous donors, of Evelyn Hayes’s lamplit nights in the lab. The next morning, she made two calls. "The donor registry," she said to the coordinator. "Yes, please add my name." To Dr. Tanaka’s research assistant: "The observational study. I’m interested in participating."
+
+***
+
+"The Unseen Threads" explores a simple but often overlooked truth: while we value self-reliance, no one is truly alone. Our lives are built upon the efforts and sacrifices of generations of individuals who dedicated themselves to the greater good, often invisibly shaping the world for our benefit.
