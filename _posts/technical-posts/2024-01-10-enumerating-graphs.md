@@ -136,10 +136,10 @@ This process is visualised below.
 </figure>
 
 
-<!-- #### Implementation
+#### Implementation
 
 I've implemented this algorithm in [Rust](https://github.com/act65/graphgenrs).
-
+<!-- 
 ## Thoughts
 
 While this algorithm is effective. It is not the fastest way to enumerate colored graphs.
