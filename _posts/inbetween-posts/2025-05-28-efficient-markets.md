@@ -12,7 +12,7 @@ The Efficient Market Hypothesis (EMH) has been a cornerstone of financial theory
 
 In this post, we'll delve into a specific scenario that highlights the limitations of market-based information aggregation, particularly when faced with highly complex, non-linear realities.
 
-## What is a Market, Anyway? The Dance of Information and Price
+## What is a Market?
 
 Before we dive into market efficiency, let's take a step back and ask a foundational question: what *is* a market?
 
