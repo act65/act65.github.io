@@ -1,13 +1,6 @@
 ---
-layout: page
+layout: category_listing
 title: Tutorials
 permalink: /tutorials/
+filter_category: "tutorial"
 ---
-
-<div class="posts">
-    {% for post in site.posts %}
-        {% if post.categories contains "tutorial"%}
-                <p><u><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></u><br><i>{{ post.subtitle }}</i></p>
-        {% endif %}
-    {% endfor %}
-<div class="posts">    

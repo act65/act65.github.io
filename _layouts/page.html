@@ -1,10 +1,34 @@
 ---
+# Inherits the basic HTML structure from the 'default' layout.
 layout: default
 ---
 
+{% comment %}
+  This layout is used for generic pages (e.g., "About" page).
+  It defines the basic article structure for a page.
+{% endcomment %}
 <article class="page">
 
+  {% comment %}
+    The main content container for the page.
+    The page's title is typically rendered by the 'default' layout via {{ page.title }}
+    or by the content itself if this layout is used by 'category_listing.html' that has its own header.
+  {% endcomment %}
   <div class="entry">
+    {% comment %}
+      Display either the publication date or the last modified date, if available in frontmatter.
+      - 'page.date': Intended for pages that are like blog posts with a specific publish date.
+      - 'page.last_modified': For pages where tracking updates is more relevant than a publish date.
+    {% endcomment %}
+    {% if page.date %}
+      <p class="page-date">Published: {{ page.date | date: "%B %-d, %Y" }}</p>
+    {% elsif page.last_modified %}
+      <p class="page-date">Last updated: {{ page.last_modified | date: "%B %-d, %Y" }}</p>
+    {% endif %}
+
+    {% comment %}
+      This is the main placeholder where the Markdown content of the page will be rendered.
+    {% endcomment %}
     {{ content }}
   </div>
 </article>

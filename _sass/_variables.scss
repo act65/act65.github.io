@@ -4,29 +4,30 @@
 //
 
 // Colors
-$blue: #4183C4;
-$scorpion: #595959;
-$purple: #C390D4;
-$darkblue: #3333cc;
-$red: #ff3300;
-$lightblue: #F0FFFF;
+$blue: #4183C4; // Standard link color, primary accent
+$scorpion: #595959; // A dark gray, possibly for secondary text or borders
+$purple: #C390D4; // A light purple, accent color
+$darkblue: #3333cc; // A darker blue, possibly for visited links or other accents
+$red: #ff3300; // Standard red, often for warnings or errors
+$lightblue: #F0FFFF; // A very light blue (Azure), for backgrounds or subtle highlights
 
-// Grays
-$black: #000;
-$darkerGray: #222;
-$darkGray: #333;
-$gray: #666;
-$lightGray: #eee;
-$white: #fff;
+// Grays - A grayscale palette for text, backgrounds, and borders
+$black: #000; // Pure black, for high contrast text or elements
+$darkerGray: #222; // Very dark gray, primary text color
+$darkGray: #333; // Dark gray, often for headings or secondary text
+$gray: #666; // Medium gray, for less important text or borders
+$lightGray: #eee; // Light gray, for backgrounds, borders, or UI elements
+$white: #fff; // Pure white, primary background color
 
-// Font stacks
-$helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
+// Font stacks - Defines preferred fonts with fallbacks
+$helvetica: Helvetica, Arial, sans-serif; // Primary sans-serif font stack
+$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif; // Alternative sans-serif, often for headings
+$georgia: Georgia, serif; // Primary serif font stack, for body text if desired
 
-// Mobile breakpoints
+// Mobile breakpoints - SCSS mixin for applying styles at smaller screen widths
 @mixin mobile {
+  // Targets screens with a maximum width of 640px
   @media screen and (max-width: 640px) {
-    @content;
+    @content; // Allows content (CSS rules) to be passed into the mixin
   }
 }

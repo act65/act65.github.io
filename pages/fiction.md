@@ -1,15 +1,6 @@
 ---
-layout: page
+layout: category_listing
 title: Fiction
 permalink: /fiction/
+filter_category: "fiction"
 ---
-
-<div class="posts">
-    {% for post in site.posts %}
-        {% if post.categories contains "sci-fi"%}
-                <p><u><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></u><br><i>{{ post.subtitle }}</i></p>
-        {% elsif post.categories contains "fiction"%}
-            <p><u><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></u><br><i>{{ post.subtitle }}</i></p>
-        {% endif %}
-    {% endfor %}
-<div class="posts">    

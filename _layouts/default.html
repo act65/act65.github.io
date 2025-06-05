@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Basic page metadata -->
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
     <meta name="description" content="My blog on computer science and cognitive science. Probably
     focused on machine learning, computational complexity, brains, neuroscience, languages, ...">
-    <!-- should get the description from the blog post itself!? -->
+    <!-- TODO: should get the description from the blog post itself!? -->
 
+    <!-- Site favicon -->
     <link rel="shortcut icon" href="{{ site.baseurl }}/images/question-mark.png" type="image/png">
 
+    <!-- External includes for metadata, math rendering, etc. -->
+    {% comment %} Includes additional meta tags, possibly for social media or SEO {% endcomment %}
     {% include meta.html %}
+    {% comment %} Includes MathJax for rendering LaTeX math formulas {% endcomment %}
     {% include mathjax.html %}
 
+    <!-- HTML5 Shim for older browsers -->
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <!-- Main stylesheet and RSS feed link -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
   </head>
 
   <body>
+    <!-- Masthead section for site title and navigation -->
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
@@ -31,9 +39,11 @@
             <p class="site-description">{{ site.description }}</p>
           </div>
 
+          <!-- Original 'About' link, currently commented out -->
           <!-- <nav>
             <a href="{{ site.baseurl }}/about">About</a>
           </nav> -->
+          <!-- Navigation link to all posts -->
           <nav>
             <a href="{{ site.baseurl }}/posts">Posts</a>
           </nav>
@@ -41,10 +51,13 @@
       </div>
     </div>
 
+    <!-- Main content area where page-specific content will be injected -->
     <div id="main" role="main" class="container">
       {{ content }}
     </div>
 
+    <!-- Include for analytics (e.g., Google Analytics) -->
+    {% comment %} Includes tracking scripts for website analytics {% endcomment %}
     {% include analytics.html %}
   </body>
 </html>

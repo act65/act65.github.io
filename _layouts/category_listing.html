@@ -1,0 +1,71 @@
+---
+# Inherits the basic HTML structure from the 'default' layout.
+layout: default
+---
+
+{% comment %}
+  This layout is used for pages that list posts based on a specific filter (category or path).
+  It provides a consistent structure for all category-like pages.
+{% endcomment %}
+<article class="page">
+  {% comment %}
+    Page header section.
+    Displays the title of the category page (e.g., "Economics posts") from page.title.
+    Optionally displays a publish or last_modified date for the category page itself, if provided in its frontmatter.
+  {% endcomment %}
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.date %}
+      <p class="page-date">Published: {{ page.date | date: "%B %-d, %Y" }}</p>
+    {% elsif page.last_modified %}
+      <p class="page-date">Last updated: {{ page.last_modified | date: "%B %-d, %Y" }}</p>
+    {% endif %}
+  </header>
+
+  {% comment %} Main content entry for the category page. {% endcomment %}
+  <div class="entry">
+    {% comment %} Container for the list of posts. {% endcomment %}
+    <div class="posts">
+      {% comment %}
+        Retrieve filter values from the page's frontmatter.
+        - page.filter_category: Specifies a category name to filter posts by.
+        - page.filter_path_contains: Specifies a string that post paths must contain.
+      {% endcomment %}
+      {% assign filter_category = page.filter_category %}
+      {% assign filter_path_contains = page.filter_path_contains %}
+
+      {% comment %} Iterate through all posts on the site. {% endcomment %}
+      {% for post in site.posts %}
+        {% assign display_post = false %}
+
+        {% comment %}
+          Determine if the current post should be displayed based on the filters.
+          Only one type of filter (category or path) is expected to be active at a time for a given listing page.
+        {% endcomment %}
+        {% if filter_category %}
+          {% comment %} Check if the post's categories array contains the specified filter_category. {% endcomment %}
+          {% if post.categories contains filter_category %}
+            {% assign display_post = true %}
+          {% endif %}
+        {% elsif filter_path_contains %}
+          {% comment %} Check if the post's path contains the specified filter_path_contains string. {% endcomment %}
+          {% if post.path contains filter_path_contains %}
+            {% assign display_post = true %}
+          {% endif %}
+        {% endif %}
+
+        {% comment %} If the post matches the filter criteria, display its details. {% endcomment %}
+        {% if display_post %}
+          <p>
+            {% comment %} Link to the post, displaying its title. {% endcomment %}
+            <u><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></u>
+            {% comment %} Display the post's date, formatted, to the right of the title. {% endcomment %}
+            <it><date-right>{{ post.date | date: "%B %-d, %Y" }}</date-right></it>
+            {% comment %} If the post has a subtitle, display it on a new line in italics. {% endcomment %}
+            {% if post.subtitle %}<br><i>{{ post.subtitle }}</i>{% endif %}
+          </p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</article>

@@ -1,9 +1,30 @@
 ---
+# Inherits the basic HTML structure from the 'default' layout.
 layout: default
 ---
 
+{% comment %}
+  This layout is used for individual blog posts.
+  It defines the structure for displaying a single post with its title, subtitle, date, and content.
+{% endcomment %}
 <article class="post">
 
+  {% comment %} Header section for the post, containing metadata like title, subtitle, and date. {% endcomment %}
+  <header class="post-header">
+    {% comment %} Displays the main title of the post. {% endcomment %}
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% comment %} Displays the subtitle, if provided in the post's frontmatter. {% endcomment %}
+    {% if page.subtitle %}
+      <h2 class="post-subtitle">{{ page.subtitle }}</h2>
+    {% endif %}
+    {% comment %} Displays the publication date of the post, formatted. {% endcomment %}
+    <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+  </header>
+
+  {% comment %}
+    The main content container for the post.
+    '{{ content }}' is a placeholder where the Markdown content of the post will be rendered.
+  {% endcomment %}
   <div class="entry">
     {{ content }}
   </div>

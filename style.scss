@@ -22,13 +22,14 @@ html {
 
 body {
   background: $white;
-  // font: 18px/1.4 $helvetica;
-  font-family: 'Courier New', monospace;
-  color: $darkerGray;
+  // font-family: 'Courier New', monospace; // Default sans-serif font stack
+  font-family: 'Courier New', monospace; // Monospaced font for a specific aesthetic
+  color: $darkerGray; // Default text color
 }
 
+// Custom element 'my' for specific italicized text styling
 my {
-  font: 16px/1.4 $helvetica;
+  font: 16px/1.4 $helvetica; // Uses Helvetica font stack
   font-style: italic;
 }
 
@@ -81,17 +82,18 @@ a {
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: $blue; // Standard link hover color
     text-decoration: underline;
   }
 }
 
+// Custom styled link 'a1', typically for less prominent links
 a1 {
-  color: $gray;
+  color: $gray; // Muted link color
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $gray;
+    color: $gray; // Muted link hover color
     text-decoration: underline;
   }
 }
@@ -126,17 +128,19 @@ strong, b {
 }
 
 img {
-  max-width: 100%;
+  max-width: 100%; // Ensures images are responsive and don't overflow containers
   
 }
 
+// Ensures images within divs behave as inline-block elements for layout purposes
 div img{ display: inline-block;}
 
 // My utilities
 
 
+// Custom styling for 'aside' elements, e.g., for sidebars or callouts
 aside {
-  float:none;
+  float:none; // Overriding typical float behavior if not needed
   font: 14px/1.4 $helvetica;
   background: $lightblue;
   outline: 2px solid $lightGray;
@@ -161,45 +165,46 @@ side {
   right: 0;
   width: 5vw;
   margin: 0;
-  margin-right: 50px;
-  font: 14px/1.4 $helvetica;
+  margin-right: 50px; // Margin for positioning
+  font: 14px/1.4 $helvetica; // Specific font styling
   font-style: italic;
-  color: $gray;
+  color: $gray; // Muted text color
 }
 
-// a side-margin note
+// Custom element 'lside' for notes positioned in the left margin
 lside {
-  position: absolute;
-  left: 0;
+  position: absolute; // Allows precise positioning relative to a parent container
+  left: 0; // Aligns to the left
   width: 5vw;
   margin: 0;
-  margin-left: 50px;
-  font: 20px/1.4 $helvetica;
+  margin-left: 50px; // Margin for positioning
+  font: 20px/1.4 $helvetica; // Specific font styling
   font-style: italic;
-  color: $gray;
+  color: $gray; // Muted text color
 }
 
-// Fixes images in popup boxes from Google Translate
+// Fixes images in popup boxes from Google Translate, preventing them from being oversized
 .gmnoprint img {
-  max-width: none;
+  max-width: none; // Overrides global img max-width for this specific case
 }
 
+// General styling for date displays
 .date {
   font-style: italic;
-  color: $gray;
+  color: $gray; // Muted color for dates
 }
 
-// Specify the color of the selection
-::-moz-selection {
+// Specify the color of the text selection highlight
+::-moz-selection { // For Firefox
   color: $black;
   background: $lightGray;
 }
-::selection {
+::selection { // For other browsers
   color: $black;
   background: $lightGray;
 }
 
-// Nicolas Gallagher's micro clearfix hack
+// Nicolas Gallagher's micro clearfix hack - a common utility to contain floats
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
@@ -216,13 +221,15 @@ lside {
 /*********************/
 
 //
-// .masthead
+// .masthead - Styles for the site header section
 //
 
+// Wrapper for the masthead, providing top/bottom margin
 .wrapper-masthead {
   margin-bottom: 50px;
 }
 
+// Main masthead container
 .masthead {
   padding: 20px 0;
   border-bottom: 1px solid $lightGray;
@@ -307,19 +314,22 @@ nav {
 }
 
 //
-// .main
+// .main - Styles for the main content area
 //
 
+// Styling for lists of posts (e.g., on the homepage or category pages)
 .posts > .post {
-  padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  padding-bottom: 2em; // Space below each post
+  border-bottom: 1px solid $lightGray; // Separator line
 }
 
+// Remove border and reduce padding for the last post in a list
 .posts > .post:last-child {
   padding-bottom: 1em;
   border-bottom: none;
 }
 
+// Styles for individual post content
 .post {
   blockquote {
     margin: 1.8em .8em;
@@ -353,35 +363,36 @@ footer {
 }
 
 // Mouse hover image popup
-
+// Creates an effect where an image appears on hover over an element (e.g., text).
 #mouseOver {
-    display: inline;
-    position: relative;
+    display: inline; // Allows it to be used within text flow
+    position: relative; // Establishes a positioning context for the child img
 }
 
 #mouseOver img {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 1em;
-    opacity: 0;
-    pointer-events: none;
-    transition-duration: 800ms;
+    position: absolute; // Positions the image relative to the #mouseOver element
+    left: 50%; // Centers the image horizontally
+    transform: translate(-50%); // Fine-tunes horizontal centering
+    bottom: 1em; // Positions the image above the text
+    opacity: 0; // Image is initially invisible
+    pointer-events: none; // Image doesn't interfere with mouse events
+    transition-duration: 800ms; // Smooth transition for opacity
 }
 
 #mouseOver:hover img {
-    opacity: 0.5;
-    transition-duration: 400ms;
+    opacity: 0.5; // Image becomes partially visible on hover
+    transition-duration: 400ms; // Faster transition for appearing
 }
 
-
+// Custom class '.tb1' for creating a prominent blue border around an element
 .tb1 {
-  // background-color : $blue  ;
+  // background-color : $blue  ; // Example of a commented-out property
   border-width:3px;
   border-style:solid;
-  border-color:$blue;
+  border-color:$blue; // Uses the $blue variable for color
  }
 
+// Styling for <figcaption> elements, used for captions of figures/images
  figcaption{
   font-style: italic;
   padding:5px;
@@ -390,12 +401,14 @@ footer {
 }
 
 
+// Custom class '.code' for styling inline code snippets or code blocks
 .code {
-    background-color: #eef;
+    background-color: #eef; // Light blueish background for code
 }
 
+// Custom element 'date-right' to float dates to the right of content, often used in post listings
 date-right{
-  position: relative;
-  float: right;
-  font-style: italic;
+  position: relative; // Needed for float to work as expected in some contexts
+  float: right; // Aligns the date to the right
+  font-style: italic; // Italicizes the date text
 }

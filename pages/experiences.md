@@ -1,13 +1,6 @@
 ---
-layout: page
+layout: category_listing
 title: Experiences
 permalink: /experiences/
+filter_category: "experience"
 ---
-
-<div class="posts">
-    {% for post in site.posts %}
-        {% if post.categories contains "experience"%}
-                <p><u><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></u><br><i>{{ post.subtitle }}</i></p>
-        {% endif %}
-    {% endfor %}
-<div class="posts">    
