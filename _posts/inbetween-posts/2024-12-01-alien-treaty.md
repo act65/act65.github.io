@@ -12,12 +12,12 @@ categories:
 In NZ there has recently been a lot of debate about the Treaty of Waitangi with the introduction of the [Treaty principles bill](https://www.legislation.govt.nz/bill/government/2024/0094/latest/whole.html).
 I read a [short book](https://www.bwb.co.nz/books/introducing-te-tiriti-o-waitangi?srsltid=AfmBOoqr7r6pUgFNf94844D4nnhphzk-H-2COHX7jrt72WCTvAGaTXq9) on the Treaty of Waitangi and now I'm an expert. 
 
-My goal here is to write a [sci-fi story]({{site.baseurl }}/alien-treaty/) that parallels (as much as possible) the Treaty of Waitangi, the context in which it was drafted, and its consequences.
+My goal here is to write a  story that parallels (in some ways) the Treaty of Waitangi, the context in which it was drafted, and its consequences.
 
 This story draws inspiration from the Treaty of Waitangi and its impact on Māori people. However, the parallel is imperfect.
 While the story portrays the Galactic Federation as well-meaning but culturally insensitive, the historical reality of colonial powers was often far more severe. The British Crown and settlers frequently acted with deliberate malice, using military force, legal manipulation, and systematic oppression to dispossess Māori of their lands, language, and cultural identity.
 
-That being said, (as I understand it) many colonials earnestly believed they were bringing progress and civilization to lands they deemed "savage." This story reflects that paternalistic attitude in the Federation's interactions with humanity. The Federation genuinely believes they are helping humans advance, but their methods, born of a different understanding of existence, inadvertently erase cultural heritage and impose alien norms without full regard for human values.
+That being said, (as I understand it) many individual colonials earnestly believed they were bringing progress and civilization to lands they deemed "savage." This story reflects that paternalistic attitude in the Federation's interactions with humanity. The Federation genuinely believes they are helping humans advance, but their methods, born of a different understanding of existence, inadvertently erase cultural heritage and impose alien norms without full regard for human values.
 
 Key lessons / points I want to highlight:
 
@@ -28,6 +28,8 @@ Key lessons / points I want to highlight:
 - systemic discrimination is subtle and resilient.
 
 Note: I wrote this with copious help from LLMs.
+
+![]({{ site.baseurl}}/assets/treaty.png)
 
 ## First Light
 
@@ -702,7 +704,7 @@ Particular interest: persistent focus on "living culture"—concept appears redu
 
 Personal logs show increasing concern about "language death" despite clear advantages of Federation Standard. Attachment to obsolete linguistic constructs seems inefficient; Federation Standard allows precise communication of all necessary concepts.
 
-[Note: Several passages in later journals untranslatable to Federation Standard. Marking for further analysis.]
+_Note: Several passages in later journals untranslatable to Federation Standard. Marking for further analysis._
 
 Most troubling: final years, refused neural optimization despite obvious benefits. Records indicate maintenance of traditional neural architecture until biological termination, limiting full participation in modern society.
 
