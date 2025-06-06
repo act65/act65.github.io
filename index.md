@@ -23,4 +23,9 @@ Here are some links to help you navigate:
     - [play]({{site.baseurl}}/play/)
     - and more
 
-If you want to comment, raise an issue on [GitHub](https://github.com/act65/act65.github.io).
+I am currently working on;
+
+- [automatic integration]()
+- [pilot waves]()
+
+The more [support](https://ko-fi.com/act65) I have, the more time I can spend on them.
