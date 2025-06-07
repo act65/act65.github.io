@@ -3,7 +3,7 @@ title: White Mars (story prompt)
 layout: post
 subtitle: A colony of White Supremacists on Mars.
 categories: 
-  - "sci-fi"
+  - "fiction"
 ---
 
 <!-- ![]({{site.baseurl}}/assets/mars.jpeg) -->

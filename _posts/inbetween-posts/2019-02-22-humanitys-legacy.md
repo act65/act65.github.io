@@ -4,7 +4,7 @@ coverImage: "plastic-landfill.jpg"
 layout: post
 subtitle: What will be left over after humanity? Plastic...
 categories: 
-  - "sci-fi"
+  - "fiction"
 ---
 
 ![]({{site.baseurl}}/assets/humanitys-legacy/{{page.coverImage}})

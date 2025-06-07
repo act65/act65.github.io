@@ -4,7 +4,7 @@ coverImage: "bn-pv951_queena_m_20160916103836.jpg"
 layout: post
 subtitle: The hidden dangers of delegating life's 'trivial' tasks to technology
 categories: 
-  - "sci-fi"
+  - "fiction"
 ---
 
 ![]({{site.baseurl}}/assets/outsourced/{{page.coverImage}})

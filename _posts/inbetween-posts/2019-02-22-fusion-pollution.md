@@ -5,7 +5,7 @@ coverImage: "m36_proj_spanglerfusoropener4x3.jpg"
 layout: post
 subtitle: A fusion of confusion.
 categories: 
-  - "sci-fi"
+  - "fiction"
 ---
 
 ![]({{site.baseurl}}/assets/fusion-pollution/{{page.coverImage}})

@@ -4,7 +4,7 @@ subtitle: A advertisement dystopia
 layout: post
 permalink: brand-new-world
 categories: 
-  - "sci-fi"
+  - "fiction"
   - "fiction"
 ---
 

@@ -4,7 +4,7 @@ subtitle: A Story of First Contact, Good Intentions, Discrimination and Lost Her
 layout: post
 permalink: /alien-treaty/
 categories:
-    - sci-fi
+    - fiction
 ---
 
 ## The Treaty of New Earth

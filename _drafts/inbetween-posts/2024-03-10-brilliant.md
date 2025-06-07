@@ -4,7 +4,7 @@ subtitle: ""
 layout: post
 permalink: /brilliant/
 categories:
-    - sci-fi
+    - fiction
 ---
 
 <!-- 
