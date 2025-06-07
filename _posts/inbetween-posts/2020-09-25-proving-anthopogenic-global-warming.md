@@ -1,6 +1,5 @@
 ---
 title: "How can you prove anthopogenic global warming?"
-date: "2020-09-25" # You might want to update this date
 coverImage: "113516_image022.jpg"
 layout: post
 subtitle: An individual cannot.

@@ -3,7 +3,7 @@ title: Intelligent Immunity
 layout: post
 subtitle: What if intelligence evolved within the immune system?
 categories:
-    - speculation
+    - play
 ---
 
 # Intro to Intelligent Immunity: The Chemical Mind
