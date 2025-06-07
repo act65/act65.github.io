@@ -23,9 +23,9 @@ Here are some links to help you navigate:
     - [play]({{site.baseurl}}/play/)
     - and more
 
-I am currently working on;
 
-- [automatic integration]()
-- [pilot waves]()
+The more [support](https://ko-fi.com/act65) I have, the more time I can spend;
 
-The more [support](https://ko-fi.com/act65) I have, the more time I can spend on them.
+- day dreaming about wacky sci-fi ideas,  
+- exploring physics / machine learning / mathematics / immunology / neuro-related things / nanotech / ...
+- hyperventilating over politics, corruption, equality of opportunity, ...
