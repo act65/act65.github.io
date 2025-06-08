@@ -412,3 +412,13 @@ date-right{
   float: right; // Aligns the date to the right
   font-style: italic; // Italicizes the date text
 }
+
+pre {
+    font-family: "Courier New", Courier, monospace; /* Or your preferred monospace font */
+    font-size: 0.9em; /* Adjust size as needed */
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 1em; /* Some spacing around the text */
+    border: 1px solid #ccc; /* A light border */
+    white-space: pre-wrap; /* Ensures long lines wrap instead of causing horizontal scroll */
+    overflow-x: auto; /* Add scrollbar if content is too wide, even with pre-wrap */
+}
