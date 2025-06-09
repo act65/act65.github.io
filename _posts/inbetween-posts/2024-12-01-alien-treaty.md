@@ -26,8 +26,6 @@ Through this fictional lens, I aim to explore several key themes:
 *   **The subtlety of systemic discrimination:** How seemingly benign policies or systems, implemented by a dominant culture, can lead to the marginalization and erasure of another, often without overt malice but through a persistent lack of understanding or valuation of different ways of being.
 *   **The complexities of "progress":** Examining who defines progress, who benefits, and what might be sacrificed in its name. While colonialism brought immense harm, the narrative also touches on the seductive allure of offered advancements, mirroring how colonizers often framed their interventions as beneficial.
 
-![]({{ site.baseurl}}/assets/treaty.png)
-
 ## First Light
 
 Dr. Sarah Chen leaned back from her monitor, rubbing her tired eyes. The signal pulsed on her screen—a perfect, repeating pattern every 127 seconds. Too perfect to be natural, too complex to be human.
