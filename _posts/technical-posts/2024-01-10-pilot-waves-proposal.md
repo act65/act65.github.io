@@ -4,13 +4,15 @@ title: Pilot waves
 subtitle: The classical alternative to quantum mechanics?
 categories:
     - proposal
+permalink: pilot-waves
 ---
 
 **The Big Idea: Can the Mysteries of Quantum Mechanics Ride on a Classical Wave?**
 
-Quantum mechanics is the bedrock of modern physics, yet its interpretation remains a source of profound debate [^1]. While its predictions are astoundingly accurate, the "weirdness" – superposition, entanglement, the measurement problem – often leaves us grappling for intuition. But what if some of this quantum magic could be understood through more tangible, classical-like "pilot waves" guiding particles, much like a surfer riding an ocean swell?
+Quantum mechanics is the bedrock of modern physics, yet its interpretation remains a source of profound debate [^1]. While its predictions are astoundingly accurate, the "weirdness" – superposition, entanglement, the measurement problem – often leaves us grappling for intuition. But what if some of this quantum magic could be understood through more tangible, classical-like "pilot waves" guiding particles.
 
-This project dives headfirst into the fascinating world of pilot-wave theories, inspired by Bohmian mechanics [^2] and the visually striking hydrodynamic quantum analogues [^3]. Our goal isn't just to re-interpret quantum mechanics, but to explore the rich, complex, and potentially entirely new physics that can emerge when particles and waves engage in an intricate dance. We're on a quest for "Wave Functions from Wakes" and a menagerie of "Quantum-esque Oddities."
+Inspired by Bohmian mechanics [^2] and the visually striking hydrodynamic quantum analogues [^3]. Our goal is to explore the rich, complex, and potentially entirely new physics that can emerge when particles and waves engage in an intricate dance. We're on a quest for "Wave Functions from Wakes" and a menagerie of "Quantum-esque Oddities."
+<!-- n't just to re-interpret quantum mechanics, but to -->
 
 **The Core Pillars of Our Exploration:**
 
@@ -40,7 +42,7 @@ This project is a journey with four interconnected expeditions:
     *   **Algorithmic Elegance:** Investigating advanced ODE/PDE solvers (Runge-Kutta, symplectic integrators, spectral methods for wave evolution).
     *   **Boundary Brilliance:** Clever and efficient ways to compute boundary conditions for waves (from simple reflections to more complex absorbing layers).
     *   **Laplacian Wizardry:** Optimizing the computation of Laplacians and gradients (FFTs, convolution tricks, higher-order stencils).
-    *   **Compiler & Hardware Hacks:** Leveraging modern tools like JAX [^6] for JIT compilation, automatic differentiation (if we explore potential-based derivations), and GPU acceleration.
+    *   **Compiler & Hardware Hacks:** Leveraging modern tools like JAX for JIT compilation, automatic differentiation (if we explore potential-based derivations), and GPU acceleration.
     *   **Adaptive Methods:** Exploring adaptive mesh refinement or adaptive time-stepping to focus computational effort where it's most needed.
 *   **The Goal:** To develop a robust, efficient, and flexible computational framework that allows us to explore a vast parameter space of pilot-wave models without being crippled by performance bottlenecks.
 
@@ -59,10 +61,8 @@ This project is a journey with four interconnected expeditions:
 ---
 **Footnotes:**
 
-[^1]: *You would put a citation here for a general reference on quantum interpretation debates, e.g., a book like "Quantum Enigma" by Rosenblum and Kuttner, or a review article.*
-[^2]: *Citation for Bohmian Mechanics, e.g., D. Bohm, "A Suggested Interpretation of the Quantum Theory in Terms of 'Hidden' Variables. I & II," Phys. Rev. 85, 166 & 180 (1952), or a book like "The Quantum Theory of Motion" by Peter R. Holland.*
-[^3]: *Citation for hydrodynamic quantum analogs, e.g., Y. Couder and E. Fort, "Single-Particle Diffraction and Interference at a Macroscopic Scale," Phys. Rev. Lett. 97, 154101 (2006) or J.W.M. Bush, "Pilot-Wave Hydrodynamics," Annu. Rev. Fluid Mech. 47, 269-292 (2015).*
-[^4]: *Citation for the Fokker-Planck equation, e.g., H. Risken, "The Fokker-Planck Equation: Methods of Solution and Applications."*
-[^5]: *Citation for N-body problem, perhaps a general physics textbook or a specific famous collection of solutions if applicable, e.g., Scott Tremaine's work on planetary dynamics or a popular science article on the three-body problem.*
-[^6]: *Citation for JAX, e.g., the JAX GitHub repository or the white paper: J. Bradbury et al., "JAX: composable transformations of Python+NumPy programs" (2018).*
-
+[^1]: Rosenblum, B., & Kuttner, F. (2011). *Quantum Enigma: Physics Encounters Consciousness*. Oxford University Press.
+[^2]: Bohm, D. (1952). A Suggested Interpretation of the Quantum Theory in Terms of "Hidden" Variables. I. *Phys. Rev.*, 85, 166-179. and Bohm, D. (1952). A Suggested Interpretation of the Quantum Theory in Terms of "Hidden" Variables. II. *Phys. Rev.*, 85, 180-193. See also: Holland, P. R. (1995). *The Quantum Theory of Motion: An Account of the de Broglie-Bohm Causal Interpretation of Quantum Mechanics*. Cambridge University Press.
+[^3]: Couder, Y., & Fort, E. (2006). Single-Particle Diffraction and Interference at a Macroscopic Scale. *Phys. Rev. Lett.*, 97, 154101. and Bush, J. W. M. (2015). Pilot-Wave Hydrodynamics. *Annu. Rev. Fluid Mech.*, 47, 269-292.
+[^4]: Risken, H. (1996). *The Fokker-Planck Equation: Methods of Solution and Applications* (2nd ed.). Springer.
+[^5]: N-body problem. In *Wikipedia, The Free Encyclopedia*. Retrieved June 7, 2024, from https://en.wikipedia.org/wiki/N-body_problem
