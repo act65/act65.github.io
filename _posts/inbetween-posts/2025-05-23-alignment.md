@@ -6,9 +6,9 @@ categories:
     - economic
 ---
 
-<p align="center" width="100%">
+<!-- <p align="center" width="100%">
     <img width="45%" src="{{ site.baseurl }}/assets/killer-ai-and-regulations/4ab.jpg">
-</p>
+</p> -->
 
 tldr: **Our ongoing failure to align corporations with the public good is a live demonstration of our inability to solve alignment problems.**
 
