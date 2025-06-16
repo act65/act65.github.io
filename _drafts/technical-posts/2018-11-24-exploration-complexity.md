@@ -14,6 +14,19 @@ a computational resource!
 find a simple anaylsable model of exploration
  -->
 
+
+<!-- 
+there are multiple ways to learn the same thing.
+we should prefer the 'cheapest'.
+ -->
+
+
+<!-- 
+an exploration curriculum?
+start with the easy things.
+minimise uncertainty using the least resources.
+-->
+
 ## Examples
 
 > Want to do experiments on particle physics. The explorer could; organise and convince tens of countries to support the construct a hadron collider the size of a country. Or we could spend those resources on searching for a cheaper experiment, like the wakefield accelerator.
@@ -72,7 +85,7 @@ $$
 
 Could simply measure the number of dimensions perturbed or controlled. Energy, $E=\mid P \mid + \mid C \mid$.
 
-Related to [Blackbox bprop and jacobian sensing](https://papers.nips.cc/paper/7230-on-blackbox-backpropagation-and-jacobian-sensing.pdf).
+Related to [Blackbox bprop and jacobian sensing](https://papers.nips.cc/paper/7230-on-blackbox-backpropagation-and-jacobian-sensing.pdf)?
 
 
 Have some finite/limited capacity and/or attention to;
