@@ -37,3 +37,5 @@ Alice Roberts and Aoife McLysaght give the [Royal Institution's 2018 Christmas l
 [What Makes People Vote Republican](https://www.edge.org/conversation/what-makes-vote-republican)? It's a genuine attempt, by Jonathan Hadit, to understand conservatism, and the type of person who might vote for it. It covers disgust, culture and morality, but it's mostly about empathy.
 
 More to come.
+
+<!-- https://mindingourway.com/on-caring/ -->

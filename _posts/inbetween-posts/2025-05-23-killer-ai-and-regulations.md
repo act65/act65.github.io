@@ -2,11 +2,15 @@
 title: The Alignment Problem
 subtitle: Future AI Overlords vs. Present Corporate Greed
 layout: post
+categories:
+    - economic
 ---
 
 <p align="center" width="100%">
     <img width="45%" src="{{ site.baseurl }}/assets/killer-ai-and-regulations/4ab.jpg">
 </p>
+
+tldr: **Our ongoing failure to align corporations with the public good is a live demonstration of our inability to solve alignment problems.**
 
 ### The False Dichotomy
 
