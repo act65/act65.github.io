@@ -50,6 +50,12 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
+  hard_wrap: false
+  # This is the magic part!
+  math_engine: mathjax
+  math_engine_opts:
+    # You can add other MathJax options here if needed
+    process_escapes: true
 
 # Set the Sass partials directory, as we're using @imports
 sass:
