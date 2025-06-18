@@ -17,7 +17,7 @@ In this post, we'll argue that the discount factor can be derived directly from 
 
 ### The Bayesian Worldview: Embracing Uncertainty
 
-A standard RL agent often assumes it knows the true model of the world (the MDP). A Bayesian agent is more humble. It knows it *doesn't* know the true MDP. Instead, it maintains a posterior probability distribution, $p(M_i | \mathcal{D})$, over a whole space of possible MDPs, $\{M_1, M_2, ...\}$, given the data, $\mathcal{D}$, it has seen so far.
+A standard RL agent often assumes it knows the true model of the world (the MDP). A Bayesian agent is more humble. It knows it *doesn't* know the true MDP. Instead, it maintains a posterior probability distribution, $p(M_i \mid \mathcal{D})$, over a whole space of possible MDPs, $\{M_1, M_2, ...\}$, given the data, $\mathcal{D}$, it has seen so far.
 
 This posterior captures two types of uncertainty:
 *   **Aleatoric Uncertainty:** The inherent randomness within a given MDP (e.g., a coin flip).
@@ -42,25 +42,25 @@ The agent doesn't know which kind of world it's in. It only has its beliefs.
 
 A rational Bayesian agent must calculate its Q-value by averaging over all possibilities, weighted by its posterior belief. The value of an action is the expectation of its value across all possible worlds:
 
-$$ Q^{\text{Bayes}}(s, a) = \mathbb{E}_{M_i \sim p(M_i|\mathcal{D})} [ \text{Value if } M_i \text{ is true} ] $$
+$$ Q^{\text{Bayes}}(s, a) = \mathbb{E}_{M_i \sim p(M_i\mid\mathcal{D})} [ \text{Value if } M_i \text{ is true} ] $$
 
 We can split this expectation over our two sets of models:
 
-$$ Q^{\text{Bayes}}(s, a) = \sum_{M_i \in \mathcal{M}_{good}} p(M_i|\mathcal{D}) \cdot (\text{Value}_i) + \sum_{M_i \in \mathcal{M}_{bad}} p(M_i|\mathcal{D}) \cdot (\text{Value}_i) $$
+$$ Q^{\text{Bayes}}(s, a) = \sum_{M_i \in \mathcal{M}_{good}} p(M_i\mid\mathcal{D}) \cdot (\text{Value}_i) + \sum_{M_i \in \mathcal{M}_{bad}} p(M_i\mid\mathcal{D}) \cdot (\text{Value}_i) $$
 
 For the sake of a clear derivation, we'll make a simplifying assumption: in "bad" worlds, the future reward opportunity is gone, so its value is exactly zero. Let's call the value of the future reward stream in the "good" worlds $V_{future}$.
 
 The equation simplifies beautifully:
 
-$$ Q^{\text{Bayes}}(s, a) = \left( \sum_{M_i \in \mathcal{M}_{good}} p(M_i|\mathcal{D}) \right) \cdot V_{future} + \left( \sum_{M_i \in \mathcal{M}_{bad}} p(M_i|\mathcal{D}) \right) \cdot 0 $$
+$$ Q^{\text{Bayes}}(s, a) = \left( \sum_{M_i \in \mathcal{M}_{good}} p(M_i\mid\mathcal{D}) \right) \cdot V_{future} + \left( \sum_{M_i \in \mathcal{M}_{bad}} p(M_i\mid\mathcal{D}) \right) \cdot 0 $$
 
-$$ Q^{\text{Bayes}}(s, a) = \left( \sum_{M_i \in \mathcal{M}_{good}(s,a)} p(M_i | \mathcal{D}) \right) \cdot V_{future} $$
+$$ Q^{\text{Bayes}}(s, a) = \left( \sum_{M_i \in \mathcal{M}_{good}(s,a)} p(M_i \mid \mathcal{D}) \right) \cdot V_{future} $$
 
 Look closely at the term in the parenthesis. It is the agent's total belief—its summed posterior probability—that it is currently in a "good" world where the reward opportunity will continue.
 
 This is our emergent discount factor. We can define a state-and-action-dependent discount factor, $\gamma(s,a)$, as precisely this belief:
 
-$$ \gamma(s,a) \equiv \sum_{M_i \in \mathcal{M}_{good}(s,a)} p(M_i | \mathcal{D}) $$
+$$ \gamma(s,a) \equiv \sum_{M_i \in \mathcal{M}_{good}(s,a)} p(M_i \mid \mathcal{D}) $$
 
 The Bellman equation for our rational Bayesian agent becomes:
 
@@ -77,8 +77,8 @@ Let's make this concrete. An agent stands at the entrance of a cave system. It k
 
 The agent sees some claw marks on the entrance wall. Based on this data $\mathcal{D}$, it updates its posterior belief:
 
-*   $p(M_A | \mathcal{D}) = 0.6$ (60% chance it's the treasure cave)
-*   $p(M_B | \mathcal{D}) = 0.4$ (40% chance it's the pitfall cave)
+*   $p(M_A \mid \mathcal{D}) = 0.6$ (60% chance it's the treasure cave)
+*   $p(M_B \mid \mathcal{D}) = 0.4$ (40% chance it's the pitfall cave)
 
 The agent considers the action "Walk forward."
 *   The set of "good" models for this action is $\mathcal{M}_{good} = \{M_A\}$.
@@ -86,7 +86,7 @@ The agent considers the action "Walk forward."
 
 The effective discount factor for this specific action is the agent's belief that it's in the good cave:
 
-$$ \gamma(\text{entrance}, \text{walk}) = p(M_A | \mathcal{D}) = 0.6 $$
+$$ \gamma(\text{entrance}, \text{walk}) = p(M_A \mid \mathcal{D}) = 0.6 $$
 
 The rational value of walking forward is not the full +100. It is the value of the future reward, discounted by the agent's profound uncertainty about the world's structure:
 
@@ -98,7 +98,7 @@ If the agent takes a step and sees a gold coin, its posterior for $M_A$ might ju
 
 This derivation reframes discounting from a simple heuristic to a cornerstone of rational agency.
 
-1.  **Source:** Discounting arises from the agent's **epistemic uncertainty** ($p(M|\mathcal{D})$) about the world's true model.
+1.  **Source:** Discounting arises from the agent's **epistemic uncertainty** ($p(M\mid\mathcal{D})$) about the world's true model.
 2.  **Mechanism:** This uncertainty is resolved over underlying environments that contain **aleatoric uncertainty**, where reward opportunities can live or die.
 3.  **Dynamic Nature:** This stands in contrast to the single, fixed discount factor used in most RL algorithms. A constant γ implies the agent believes the risk of losing a reward opportunity is the same everywhere, for every action. The Bayesian perspective reveals that a truly rational agent should have a dynamic and nuanced sense of risk, becoming more "patient" (higher γ) in situations it understands well, and more "impatient" (lower γ) when facing high uncertainty.
 4.  **Result:** The discount factor $\gamma(s,a)$ is an **emergent property of Bayesian inference**. It is the agent's rational, data-driven assessment of risk for every single decision it makes.
