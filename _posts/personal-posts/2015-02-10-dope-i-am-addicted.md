@@ -1,17 +1,7 @@
 ---
 layout: post
-title: "Dope, I am addicted?"
+title: Dope, I am addicted?
 date: "2015-02-10"
-categories: 
-  - "politics-and-opinions"
-tags: 
-  - "addiction"
-  - "ethics"
-  - "free-will"
-  - "fulfillment"
-  - "ideas-and-thoughts"
-  - "mesolimbic-dopamine-system"
-  - "pleasure"
 coverImage: "dope.jpg"
 ---
 

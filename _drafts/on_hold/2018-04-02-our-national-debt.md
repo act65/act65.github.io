@@ -13,8 +13,6 @@ I did a couple of quick calculations and I figure that every NZer pays ~$1000 NZ
 
 (Note_: the_ [_treasuries_](http://www.treasury.govt.nz/government/liabilities) _estimate of our liabilities is $197.1 billion, which is a lot more than the nationaldebtclock’s value for our debt. ~$16,000 per person per year -- at 4% interest._)
 
-Also, we are paying 4.8% interest per year, which is far higher than my bank will give me... (_4,360,121,813 $/yr / $90,814,035,922 = 0.048 -- from nationaldebtclocks_)
-
 I have **questions**!!!
 
 - Why are we in debt? Why is it necessary for governments to borrow capital from investors?

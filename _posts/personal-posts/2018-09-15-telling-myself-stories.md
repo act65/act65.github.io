@@ -1,5 +1,5 @@
 ---
-title: "Telling myself stories"
+title: "Stories of who I want to me"
 date: "2018-09-15"
 coverImage: "deepdream.png"
 layout: post

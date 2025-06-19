@@ -1,5 +1,6 @@
 ---
-title: "First few days in India: Absolutely pooped"
+title: First few days in India 
+subtitle: Absolutely pooped
 date: "2015-04-16"
 categories: 
   - "experiences"

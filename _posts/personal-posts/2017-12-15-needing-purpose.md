@@ -14,8 +14,8 @@ I returned depressed. Previously I had thought that I was a good person. People 
 
 To get myself through the depression I needed a purpose. All the problems there are, inequality, poverty, climate change, corruption, cancer, quantum gravity ... they need a solution. I wanted to make the solution to all problems, artificial intelligence.
 
-This purpose helped me forget about all the pain and suffering, or at least discount it. I wasn't reminded of the suffering of others,
+This purpose helped me forget about all the pain and suffering, or at least discount it. I wasn't reminded of the suffering of others hourly.
 
 So, given this purpose. I was very confused as to why others were not interested in AI, or relatedly, computer science (CS). I started preaching and ranting... a lot.
 
-So next time I meet someone who is convinced that their decision are right/best I will try to remember what led me to a similar position.
+So next time I meet someone who is convinced that their decision are right I will try to remember what led me to a similar position.
