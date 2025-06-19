@@ -87,6 +87,8 @@ GEM
       citeproc-ruby (~> 1.0)
       csl-styles (~> 1.0)
       jekyll (~> 4.0)
+    jekyll-seo-tag (2.8.0)
+      jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
@@ -154,6 +156,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-include-cache
   jekyll-scholar
+  jekyll-seo-tag
   jekyll-sitemap
   webrick (~> 1.7)
 

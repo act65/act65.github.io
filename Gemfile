@@ -6,6 +6,7 @@ gem "bundler", "~> 2.5.8"  # Match GitHub Actions version
 gem "jekyll", "~> 4.2"
 gem "jekyll-sitemap"
 gem "jekyll-feed"
+gem "jekyll-seo-tag"
 # gem "jekyll-scholar"
 
 # gem "github-pages", group: :jekyll_plugins
