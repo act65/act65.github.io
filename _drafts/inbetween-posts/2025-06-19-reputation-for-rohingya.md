@@ -1,4 +1,3 @@
-
 # The Offline Economy: Building Financial Tools for the Unconnected
 
 In southeastern Bangladesh lies Kutupalong, the largest refugee camp in the world. It’s a sprawling city of bamboo and tarpaulin, home to nearly a million Rohingya refugees who fled violence in Myanmar. They face immense challenges: precarious shelter, limited access to healthcare, and a future shrouded in uncertainty. However, one of their most profound, yet solvable, challenges is digital exclusion.
@@ -76,6 +75,44 @@ The CAP theorem proves that a double-spend *cannot be technically prevented* at 
 
 A system that records past actions to determine future privileges is, by definition, a **reputation system**. It is not merely a good idea; it is the logical consequence of the constraints.
 
+***
+
+Let's be clear about the risk. A malicious user with a $10 offline credit limit doesn't just steal $10. They can go to **20 different shops** and promise each of them that same $10, racking up $200 in goods before the next sync. This is the "exit scam."
+
+To prevent this, we must ensure the value of cooperating always outweighs the profit from defecting. We can prove this formally:
+
+A rational agent will only defect if:
+`One-Time Profit from Attack > Net Present Value of Reputation`
+
+Let's define the terms:
+*   **One-Time Profit from Attack:** This is `k * L`, where `L` is the Offline Credit Limit and `k` is the number of merchants the attacker can defraud before the next sync.
+*   **Net Present Value of Reputation (NPV(R)):** This is the crucial part. A user's Reputation Score is a tangible asset. We design the system to give it quantifiable value. The primary mechanism is a **"Reputation Dividend."** The system's capital is staked in secure DeFi protocols to earn interest. This interest is distributed monthly to users, but weighted by their reputation score. A high score means a larger, steady stream of passive income.
+
+The core design goal is to ensure the following inequality holds true for all rational actors:
+`k * L < NPV(R)`
+
+We achieve this by tuning the system's parameters. We keep the credit limit `L` relatively low while making the `NPV(R)` high through dividends and other reputation-gated benefits. When this condition holds, the system is secure. A detected double-spend results in an immediate reputation score of zero and a permanent ban. The one-time profit is not worth sacrificing a lifetime of dividends and access to the economy.
+
+The reputation system doesn't "solve" the CAP theorem. It's a sophisticated economic mechanism that makes our choice of an **AP system** safe, resilient, and humane.
+
+The CAP theorem proves that in an offline environment, a double-spend *cannot be technically prevented at the moment it occurs*. The transaction happens locally, and the fraud is only discovered later during the sync. This leads to a critical insight: rather than trying to prevent bad behavior (we can't prevent it), we must incentivize good behavior. We need to make the rewards for trustworthy participation so great that the crime is not worth committing.
+
+## Reputation as a Solution: Making Trust a Valuable Asset
+
+The system cannot mathematically prevent a determined attacker from creating a double-spend offline. Instead, it makes doing so a catastrophically bad decision. We can formalize this: the system is designed to ensure that the Net Present Value of a good reputation is always higher than the one-time profit from an attack.
+
+Every user has a public Reputation Score, represented by their Soulbound Token. This score is a tangible, valuable asset, and it's what makes the system work.
+
+    How it's Earned: Your score increases with positive economic activity: making transactions, repaying loans, serving as a juror in community governance.
+
+    How it's Lost: A detected double-spend is the cardinal sin. The protocol automatically detects it at the next sync, and the punishment is absolute: the reputation score is set to zero, and the account is frozen.
+
+    Why it's Valuable (The "Reputation Dividend"): This is the key innovation. The system's capital is held in a central pool that earns interest from secure DeFi protocols. This interest is distributed monthly to all users as a dividend, but it's weighted by reputation. A user with a high score earns a higher dividend on their savings. Good behavior is rewarded with passive income.
+<!-- examples of these sure DeFi protocols? -->
+
+<!-- can also talk about how this fits into NPV -->
+
+
 ## Our Proposal: A Reputation-Based Economy
 
 Our proposed solution is a multi-layered application built on a low-cost blockchain, using a trusted stablecoin like USDC for value.
@@ -88,7 +125,7 @@ Here’s how it works for a new user, Alice:
 
 3.  **The Sync:** Any user can opt-in to be a "syncing agent" via a setting in their app. When active, their phone broadcasts a local Wi-Fi hotspot. Other nearby users' apps can automatically connect and transmit their encrypted, signed transaction promises. The syncing agent's phone collects these "digital envelopes." Later, when the syncing agent accesses an area with internet connectivity, their app uploads the entire batch of transactions to the global blockchain. For successfully delivering data, syncing agents receive a small protocol-level "tip" in USDC, creating a decentralized incentive for this crucial data ferrying.
 
-<!-- this top is quite nice.
+<!-- this sync tip is quite nice.
 would reward speed as well!?
  -->
 
@@ -96,6 +133,7 @@ But what about the double-spend? What if Alice promised that same $1 to Charlie?
 *   **Gaining Reputation:** Reputation grows through consistent, honest economic activity.
 *   **Losing Reputation:** A detected double-spend immediately drops a user's reputation to 0.
 *   **Due Process:** A user who believes their reputation was unfairly damaged can appeal to a jury whose members are randomly selected with a probability proportional to their reputation. This jury votes on whether to restore the account.
+* **The incentive:** Reputation determines your share of the dividends paid out via (??? how are dividends actually made? where is the money put - supposedly there are some existing crypto solutions for this?)
 
 A rational agent will only defect if: `One-Time Profit from Attack > Net Present Value of Reputation`. The system is designed to ensure the value of participating honestly—access to credit, insurance, and commerce—is always far greater than the profit from a single act of fraud.
 
@@ -105,7 +143,7 @@ The beauty of this design is its modularity. The secure payment layer provides a
 
 *   **Layer 0: Decentralized Identity.** A user's identity is a private key stored in their phone's secure element, accessed via on-device biometrics. As mentioned, Sybil resistance is further enhanced by the "Web of Trust" onboarding process.
 
-<!-- mention soul token here? (or whatever it's name was) that should also be in L0 or a parallel L1? -->
+<!-- mention Soulbound here? that should also be in L0 or a parallel L1? -->
 
 *   **Layer 1: The Settlement Layer.** This layer exclusively tracks the confirmed ownership of the stablecoin. A transaction is a cryptographically signed instruction to move USDC from one account to another once synced and validated.
 
