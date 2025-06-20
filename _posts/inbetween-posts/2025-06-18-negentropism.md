@@ -2,13 +2,15 @@
 title: Entropism
 subtitle: The Universe's Burning Ambition
 layout: post
+categories:
+    - philosophy
 ---
 
 ![]({{site.baseurl}}/assets/candle.png)
 
 ## The Great Flame at the End of the Universe
 
-I want to propose a philosophy, my philosophy, a way of seeing our place in the cosmos. It begins by reframing our relationship with the universe. We are not a lonely spark flickering in defiance of a cold, uncaring void. We are the very flame the universe has kindled, the brilliant, energetic heart of its greatest project.
+I want to propose a philosophy, a way of seeing our place in the cosmos. It begins by reframing our relationship with the universe. We are not a lonely spark flickering in defiance of a cold, uncaring void. We are the very flame the universe has kindled, the brilliant, energetic heart of its greatest project.
 
 The core idea is this: The universe is relentlessly maximizing its own entropy. And intelligence is the most powerful engine for turning ordered fuel into disordered, radiant heat.
 
