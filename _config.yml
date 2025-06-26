@@ -1,7 +1,6 @@
 name: act65
 description: More questions than answers
-avatar: "https://github.com/act65/act65.github.io/blob/master/images/question-mark.png"
-
+avatar: "/assets/question-mark.png"    
 
 # Includes an icon in the footer for each username you enter
 footer-links:
@@ -81,7 +80,6 @@ exclude:
   - vendor/
   # - archive
   # - images
-
 
 defaults:
   -
