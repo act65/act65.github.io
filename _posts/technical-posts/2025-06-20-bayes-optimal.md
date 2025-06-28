@@ -1,14 +1,39 @@
 ---
 layout: post
 title: In what sense is Bayesian updating optimal?
+subtitle: Minimizing Surprise Leads to Bayes' Rule
 permalink: bayes-optimal
+categories:
+    - tutorial
 ---
 
-## The Optimal Honesty of Bayes' Rule
+You may have heard of Bayesian updating. We start with some prior beliefs, $p(\theta)$, we observe some data $D$, then we want to update our beliefs given this data;
 
-We often hear that Bayesian updating is "optimal." It's a word thrown around so frequently that it can lose its meaning. If something is optimal, it must be minimizing or maximizing a specific metric. So, what is Bayes' rule actually optimizing?
+$$
+q(\theta) = \frac{p(D\mid\theta) p(\theta)}{p(D)}
+$$
 
-It's not minimizing the error of a single prediction. The answer is more profound. Bayesian updating is optimal in the sense that it is the **most honest and conservative way to change your mind**. It updates your beliefs by the exact amount required by new evidence—no more, no less.
+### A Simple Example: The Biased Coin
+
+Let's say we're testing a coin for fairness.
+*   **Parameter $\theta$**: The unknown probability of getting Heads ($0 \le \theta \le 1$).
+*   **Prior $p(\theta)$**: We assume we know nothing, so we use a flat prior: $p(\theta) = 1$.
+*   **Data $D$**: We flip the coin 4 times and get **Heads, Heads, Heads, Tails (HHHT)**.
+*   **Likelihood $p(D\mid\theta)$**: The probability of seeing HHHT for a given $\theta$ is $p(D\mid\theta) = \theta^3 (1-\theta)^1$.
+
+Our derivation shows that the optimal posterior $q(\theta)$ must be proportional to the prior times the likelihood:
+
+$$
+q(\theta) \propto p(\theta) \cdot p(D\mid\theta) = 1 \cdot \theta^3(1-\theta)
+$$
+
+The resulting posterior distribution is no longer flat. It now has a peak around $\theta=0.75$, reflecting the evidence from our four flips. This was the most "honest" update possible from our initial state of ignorance.
+
+***
+
+You may also have heard that Bayesian updating is "optimal." But what does that mean? If something is optimal, it must be minimizing or maximizing a specific metric. So, what is Bayes' rule actually optimizing?
+
+It's not minimizing the error of a single prediction. Rather, Bayesian updating is optimal in the sense that it is the **most honest and conservative way to change your mind**. It updates your beliefs by the exact amount required by new evidence—no more, no less.
 
 The metric it minimizes is a measure of "surprise" or "information gain" called the **Kullback-Leibler (KL) Divergence**. Let's dive in and prove this from the ground up using the calculus of variations.
 
@@ -114,22 +139,6 @@ $$
 
 This is **precisely Bayes' Rule**. We have proven that the Bayesian posterior is the unique distribution that updates our beliefs in the most conservative, information-theoretically minimal way.
 
-### A Simple Example: The Biased Coin
-
-Let's say we're testing a coin for fairness.
-*   **Parameter $\theta$**: The unknown probability of getting Heads ($0 \le \theta \le 1$).
-*   **Prior $p(\theta)$**: We assume we know nothing, so we use a flat prior: $p(\theta) = 1$.
-*   **Data $D$**: We flip the coin 4 times and get **Heads, Heads, Heads, Tails (HHHT)**.
-*   **Likelihood $p(D\mid\theta)$**: The probability of seeing HHHT for a given $\theta$ is $p(D\mid\theta) = \theta^3 (1-\theta)^1$.
-
-Our derivation shows that the optimal posterior $q(\theta)$ must be proportional to the prior times the likelihood:
-
-$$
-q(\theta) \propto p(\theta) \cdot p(D\mid\theta) = 1 \cdot \theta^3(1-\theta)
-$$
-
-The resulting posterior distribution is no longer flat. It now has a peak around $\theta=0.75$, reflecting the evidence from our four flips. This was the most "honest" update possible from our initial state of ignorance.
-
 <!-- *[Image Description: A graph with three curves. The first, labeled 'Prior', is a flat horizontal line, representing uniform belief. The second, labeled 'Likelihood', is a curve that starts at zero, peaks at θ=0.75, and goes back to zero, representing the evidence from the data. The third, labeled 'Posterior', is a curve identical in shape to the likelihood (since the prior was flat), representing our new, updated beliefs.]* -->
 
 ### Afterthought: Deviating from Optimality for Better Results
@@ -142,7 +151,7 @@ Let's define a guidance scale $\gamma = -\lambda_2$. The standard Bayesian updat
 
 In large-scale generative models like Stable Diffusion or Imagen, the goal is to generate an output (an image) given a condition (a text prompt). The model must balance its prior knowledge of what "natural images" look like with the likelihood that an image matches the prompt.
 
-Researchers found that using the "optimal" $\gamma=1$ often produced images that were plausible but uninspired or didn't match the prompt very well. By choosing $\gamma > 1 (e.g., $\gamma=7.5$), they force the model to pay much more attention to the prompt. This "sharpens" the posterior, leading to images that are a much better fit for the text, even if it means sacrificing some of the diversity from the prior. This technique is known as **classifier-free guidance**.[^1][^2]
+Researchers found that using the "optimal" $\gamma=1$ often produced images that were plausible but uninspired or didn't match the prompt very well. By choosing $\gamma > 1$ (e.g., $\gamma=7.5$), they force the model to pay much more attention to the prompt. This "sharpens" the posterior, leading to images that are a much better fit for the text, even if it means sacrificing some of the diversity from the prior. This technique is known as **classifier-free guidance**.[^1][^2]
 
 #### The Case for Weaker Guidance ($0 < \gamma < 1$)
 
