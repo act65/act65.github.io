@@ -138,10 +138,10 @@ This process is visualised below.
 
 #### Implementation
 
-I've implemented this algorithm in [Rust](https://github.com/act65/graphgenrs).
-<!-- 
-## Thoughts
+I've implemented this algorithm in Rust [here](https://github.com/act65/graphgenrs).
 
+<!-- 
 While this algorithm is effective. It is not the fastest way to enumerate colored graphs.
 
-Ref nauty and surge. -->
+Ref nauty and surge. 
+-->
