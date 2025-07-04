@@ -2,7 +2,7 @@
 layout: default
 ---
 
-Hello, welcome to my blog!
+Welcome to my blog.
 
 Here are some links to help you navigate:
 

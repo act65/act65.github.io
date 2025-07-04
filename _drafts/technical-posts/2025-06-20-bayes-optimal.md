@@ -7,6 +7,8 @@ categories:
     - tutorial
 ---
 
+<!-- When updating your beliefs in light of new data, you should choose the new belief system that satisfies the data constraints while being as "close" as possible to your original beliefs. You should not add any extra information or assumptions beyond what the data forces you to conclude. -->
+
 You may have heard of Bayesian updating. We start with some prior beliefs, $p(\theta)$, we observe some data $D$, then we want to update our beliefs given this data;
 
 $$
@@ -119,27 +121,41 @@ $$
 
 where $C = \exp(-(1+\lambda_1))$ is just a normalization constant.
 
-The crucial step is interpreting the multiplier $\lambda_2$. It controls how strongly the data constraint influences our result. The rational choice, representing a direct and honest incorporation of the evidence, is to set $\lambda_2 = -1$. This gives:
-
-$$
-q(\theta) = C \cdot p(\theta) \cdot p(D\mid\theta)
-$$
-
 The constant $C$ is determined by the first constraint (that the distribution integrates to 1). This forces $C$ to be the reciprocal of the integral of the remaining terms:
 
 $$
-C = \frac{1}{\int p(\theta) p(D\mid\theta) d\theta}
+C = \frac{1}{\int p(\theta) p(D\mid\theta)^{-\lambda_2} d\theta}
 $$
 
 The denominator is the definition of the marginal likelihood, or evidence, $p(D)$. Substituting this back in, we arrive at our final result:
 
 $$
-q(\theta) = \frac{p(D\mid\theta) p(\theta)}{p(D)}
+q(\theta) = \frac{p(D\mid\theta) p(\theta)^{-\lambda_2}}{p(D)}
 $$
 
-This is **precisely Bayes' Rule**. We have proven that the Bayesian posterior is the unique distribution that updates our beliefs in the most conservative, information-theoretically minimal way.
-
 <!-- *[Image Description: A graph with three curves. The first, labeled 'Prior', is a flat horizontal line, representing uniform belief. The second, labeled 'Likelihood', is a curve that starts at zero, peaks at θ=0.75, and goes back to zero, representing the evidence from the data. The third, labeled 'Posterior', is a curve identical in shape to the likelihood (since the prior was flat), representing our new, updated beliefs.]* -->
+
+### The Crucial Question: How to Choose $\lambda_2$?
+
+We've arrived at the general form of the solution, which depends on the Lagrange multiplier $\lambda_2$:
+
+$$
+q(\theta) \propto p(\theta)p(D\mid \theta)^{-\lambda_2}
+$$
+
+This equation represents a family of possible update rules, all of which are "informationally conservative." The parameter $lambda_2$ acts as a knob controlling the balance between our prior beliefs and the new evidence.
+
+The most conservative choice being $lambda_2=0$, meaning we completely ignore the observed data and just use the prior.
+
+The least conservative choice being a large magnitude, eg $lambda_2=-100$ meaning we ...
+
+<!-- note we could also set $lambda_2 to be positive? What would this do!? -->
+
+TODO!!
+
+<!-- Now, why should it match Bayes Rule??? Derive $\lambda_2 = -1$ as optimal for the case where; we've picked a scoring fn, assume access to accurate likelihood fn and not-too-wrong prior. Prove argmin_{lambda_2} Score(lambda_2) = -1  -->
+
+<!-- after derivation of l_2 = -1 , then we can move to the following l_2 != -1 arguments. -->
 
 ### Afterthought: Deviating from Optimality for Better Results
 

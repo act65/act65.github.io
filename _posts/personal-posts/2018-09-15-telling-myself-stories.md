@@ -1,6 +1,6 @@
 ---
-title: "Stories of who I want to me"
-date: "2018-09-15"
+title: Imagining future me
+subtitle: Stories of who I want to be
 coverImage: "deepdream.png"
 layout: post
 ---
