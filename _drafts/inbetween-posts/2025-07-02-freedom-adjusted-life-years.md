@@ -4,7 +4,9 @@ subtitle: Are We Solving the Right Problems?
 layout: post
 ---
 
-## Measuring What Matters: Are We Solving the Right Problems?
+![]({{ site.baseurl }}/assets/freedom.png)
+
+## Measuring What Matters
 
 We live in a world of finite resources. Every dollar spent on one problem is a dollar not spent on another. This forces us to ask a difficult question: how do we decide what to fix? To answer that, we first need to measure the problems.
 
@@ -76,7 +78,7 @@ Interestingly, the Rohingya crisis appears to be an outlier among freedom-relate
 
 ### The Great Imbalance: What Our Spending Reveals
 
-The data reveals a staggering disparity. The world invests **$37** to solve one DALY of diabetes, but less than **one dollar** to solve one FYL of suffering for a person in North Korea. Is their suffering really 45x less important? Even issues well known to be underfunded (endometriosis and depression) are not close to our investments to recover life years lost via a lack of freedom. This isn't random; it points to powerful biases in how we allocate resources.
+The data reveals a staggering disparity. The world invests **$45** to solve one DALY of diabetes, but less than **one dollar** to solve one FYL of suffering for a person in North Korea. Is their suffering really 45x less important? Even issues well known to be underfunded (endometriosis and depression) are not close to our investments to recover life years lost via a lack of freedom. This isn't random; it points to powerful biases in how we allocate resources.
 
 1.  **Tractability and Perceived ROI:** We invest in problems that seem "solvable" with technology and capital. Medical research, while difficult, has a clear path and a robust industry. A political crisis like North Korea's is seen as intractable, with no clear "solution" to fund.
 
@@ -201,7 +203,7 @@ Diabetes provides our primary health-based comparison. It is a well-known global
         *   **Non-Profit & Charitable Research (~$300 Million+):** Major non-profits like JDRF (which also funds Type 2 research) and the American Diabetes Association (ADA) invest hundreds of millions of dollars globally in research grants each year.
         *   **Total:** Adding these conservative estimates together ($1.2B + $1.5B + $0.3B) brings the total global "solution-oriented" funding for diabetes comfortably into the **$3 billion** range annually.
 
-This results in a funding allocation of **$37.24 per DALY**.
+This results in a funding allocation of **$45.24 per DALY**.
 
 ### **Case Study: Endometriosis**
 
