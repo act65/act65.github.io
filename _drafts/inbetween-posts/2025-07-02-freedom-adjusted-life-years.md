@@ -90,28 +90,6 @@ The world is willing to spend hundreds of millions of dollars a year to *manage*
 
 Metrics like DALYs are invaluable, but they don't tell the whole story. By expanding our view to include the burden of lost freedom, we get a clearer, and often more horrifying, picture of the world's priorities.
 
-***
-
-**References**
-
-[^1]: Vásquez, I., Mitchell, M. D., Murphy, R., & Sutter Schneider, G. (2024). *The Human Freedom Index 2024*. Cato Institute and Fraser Institute.
-[^A]: Central Intelligence Agency. (2024). *The World Factbook: Korea, North*. Retrieved from [https://www.cia.gov/the-world-factbook/countries/korea-north/](https://www.cia.gov/the-world-factbook/countries/korea-north/)
-[^B]: The Heritage Foundation. (2024). *2024 Index of Economic Freedom: North Korea*. Retrieved from [https://www.heritage.org/index/country/northkorea](https://www.heritage.org/index/country/northkorea)
-[^C]: Financial Times. (2024, January 26). "US funding freeze sparks crisis for North Korean rights groups."
-[^D]: Walk Free. (2023). *The Global Slavery Index 2023*. Retrieved from [https://www.walkfree.org/global-slavery-index/](https://www.walkfree.org/global-slavery-index/)
-[^E]: U.S. Department of State. *Program to End Modern Slavery (PEMS)*. This figure is cited in multiple congressional reports and press releases from the period.
-[^F]: United Nations Human Rights Office of the High Commissioner. *United Nations Voluntary Trust Fund on Contemporary Forms of Slavery*. Retrieved from [https://www.ohchr.org/en/slavery-fund](https://www.ohchr.org/en/slavery-fund)
-[^G]: The Lancet. (2024). "Global, regional, and national burden of depressive disorders, 1990-2021." *The Lancet*, 403(10438), P1781-1793.
-[^H]: National Institutes of Health (NIH). (2024). *Estimates of Funding for Various Research, Condition, and Disease Categories (RCDC): Depression*. Retrieved from [https://report.nih.gov/funding/categorical-spending#/](https://report.nih.gov/funding/categorical-spending#/)
-[^I]: United Nations High Commissioner for Refugees (UNHCR). (2024). *2024 Joint Response Plan for the Rohingya Humanitarian Crisis*. UNHCR and IOM.
-[^J]: Reuters. (2020, October 26). "Gambian minister says not enough funds for Rohingya case at top U.N. court."
-[^K]: U.S. Department of State. (2023, September 22). Press Statement, "Announcing Additional Humanitarian Assistance for the Rohingya Crisis."
-[^L]: Center for Immigration Studies. (2020). *The Cost of Resettling Refugees*. This source estimates the one-time cost per refugee at $21,946.
-[^M]: The Lancet. (2022). "Global, regional, and national burden of type 2 diabetes from 1990 to 2019." *The Lancet*, 400(10369), P2233-2249.
-[^N]: National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK), "Estimates of Funding for Various Research, Condition, and Disease Categories (RCDC)," NIH.gov. Retrieved from [https://report.nih.gov/funding/categorical-spending#/](https://report.nih.gov/funding/categorical-spending#/) (Fiscal Year 2023 data for "Diabetes").
-[^O]: Jiang, Y., et al. (2022). "Global Burden of Endometriosis in 204 Countries and Territories from 1990 to 2019." *International Journal of Medical Reviews*. This paper uses the GBD 2019 dataset.
-[^P]: Gelfand, L.C., et al. (2023). "Time for global health policy and research leaders to prioritize endometriosis." *Nature Communications*, 14(7223).
-
 ## Appendix: Case studies
 
 ### Case Study: The Population of North Korea
@@ -242,3 +220,26 @@ Endometriosis is a debilitating chronic disease affecting an estimated 1 in 10 w
     *   **Global Estimate:** To estimate the total global research funding, we can use the NIH figure as a baseline. A conservative and commonly used method is to roughly double the NIH budget to account for all other public and private research investment worldwide (from the EU, UK, pharmaceutical companies, and private foundations). This gives us a global "solution-oriented" funding estimate of approximately **$32 million annually**. The *Nature* paper notes this is disproportionately low compared to diseases with a similar economic impact, like Crohn's disease, which receives nearly six times the NIH funding.
 
 This results in a funding allocation of just **$14.22 per DALY**.
+
+
+***
+
+**References**
+
+[^1]: Vásquez, I., Mitchell, M. D., Murphy, R., & Sutter Schneider, G. (2024). *The Human Freedom Index 2024*. Cato Institute and Fraser Institute.
+[^A]: Central Intelligence Agency. (2024). *The World Factbook: Korea, North*. Retrieved from [https://www.cia.gov/the-world-factbook/countries/korea-north/](https://www.cia.gov/the-world-factbook/countries/korea-north/)
+[^B]: The Heritage Foundation. (2024). *2024 Index of Economic Freedom: North Korea*. Retrieved from [https://www.heritage.org/index/country/northkorea](https://www.heritage.org/index/country/northkorea)
+[^C]: Financial Times. (2024, January 26). "US funding freeze sparks crisis for North Korean rights groups."
+[^D]: Walk Free. (2023). *The Global Slavery Index 2023*. Retrieved from [https://www.walkfree.org/global-slavery-index/](https://www.walkfree.org/global-slavery-index/)
+[^E]: U.S. Department of State. *Program to End Modern Slavery (PEMS)*. This figure is cited in multiple congressional reports and press releases from the period.
+[^F]: United Nations Human Rights Office of the High Commissioner. *United Nations Voluntary Trust Fund on Contemporary Forms of Slavery*. Retrieved from [https://www.ohchr.org/en/slavery-fund](https://www.ohchr.org/en/slavery-fund)
+[^G]: The Lancet. (2024). "Global, regional, and national burden of depressive disorders, 1990-2021." *The Lancet*, 403(10438), P1781-1793.
+[^H]: National Institutes of Health (NIH). (2024). *Estimates of Funding for Various Research, Condition, and Disease Categories (RCDC): Depression*. Retrieved from [https://report.nih.gov/funding/categorical-spending#/](https://report.nih.gov/funding/categorical-spending#/)
+[^I]: United Nations High Commissioner for Refugees (UNHCR). (2024). *2024 Joint Response Plan for the Rohingya Humanitarian Crisis*. UNHCR and IOM.
+[^J]: Reuters. (2020, October 26). "Gambian minister says not enough funds for Rohingya case at top U.N. court."
+[^K]: U.S. Department of State. (2023, September 22). Press Statement, "Announcing Additional Humanitarian Assistance for the Rohingya Crisis."
+[^L]: Center for Immigration Studies. (2020). *The Cost of Resettling Refugees*. This source estimates the one-time cost per refugee at $21,946.
+[^M]: The Lancet. (2022). "Global, regional, and national burden of type 2 diabetes from 1990 to 2019." *The Lancet*, 400(10369), P2233-2249.
+[^N]: National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK), "Estimates of Funding for Various Research, Condition, and Disease Categories (RCDC)," NIH.gov. Retrieved from [https://report.nih.gov/funding/categorical-spending#/](https://report.nih.gov/funding/categorical-spending#/) (Fiscal Year 2023 data for "Diabetes").
+[^O]: Jiang, Y., et al. (2022). "Global Burden of Endometriosis in 204 Countries and Territories from 1990 to 2019." *International Journal of Medical Reviews*. This paper uses the GBD 2019 dataset.
+[^P]: Gelfand, L.C., et al. (2023). "Time for global health policy and research leaders to prioritize endometriosis." *Nature Communications*, 14(7223).
