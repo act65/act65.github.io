@@ -44,7 +44,7 @@ Instead of just choosing an arm and a fidelity, the agent now chooses a tuple: *
 *   **Probes are short-commitment actions.** A cheap computer simulation ($m=0$) is an action with a short commitment ($l=1$). You pay a small cost and get information back quickly, ready to inform your next decision.
 *   **Deployments are long-commitment actions.** Committing to the best arm is just another action in this unified space. It might correspond to the highest fidelity ($m=M$) and a very long commitment ($l=1000$). When you choose this, you are locked in. You pay the cost and must wait $l$ steps for the reward to arrive.
 
-*[A diagram would be placed here, showing a timeline. At time `t`, the agent pays cost `c(k,m,l)`. The agent is then "busy" for `l` timesteps. At time `t+l`, the agent receives reward `r` and is free to act again.]*
+<!-- *[A diagram would be placed here, showing a timeline. At time `t`, the agent pays cost `c(k,m,l)`. The agent is then "busy" for `l` timesteps. At time `t+l`, the agent receives reward `r` and is free to act again.]* -->
 
 This single change resolves the issues with the previous frameworks:
 
