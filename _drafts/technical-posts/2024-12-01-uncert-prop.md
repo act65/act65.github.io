@@ -22,7 +22,6 @@ y = f(x, \theta) \\
 p(y | x, \theta) = \frac{p(y, x, \theta)}{p(x, \theta)}
 $$
 
-
 ***
 
 What do we mean by probability?
