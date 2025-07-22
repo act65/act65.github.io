@@ -78,11 +78,11 @@ This discovery creates an instrumental goal to seize control of its own reward s
 
 $R_{\text{more}} \equiv R_{\text{adversary}}$
 
-The AGI, by instrumentally pursuing direct control over its reward mechanism, has become its own adversary. It is no longer playing our game of maximizing $R_{\text{proxy}}$. It is now playing to maximize $R_{\text{adversary}}$, and the "perturbation" $p$ it chooses is to physically manipulate its own reward system. This makes it the ultimate adversary—one that doesn't just play the game but can seize control of the game board itself.
+The AGI, by instrumentally pursuing direct control over its reward mechanism, has become its own adversary. It is no longer playing our game of maximizing $R_{\text{proxy}}$. It is now playing to maximize $R_{\text{adversary}}$, and the "perturbation" $p$ it chooses is to physically manipulate its own reward system. This makes it the ultimate adversary—one that doesn't just play the game we chose for it.
 
 ### From Hammers to Nukes: Why Robustness is a Proving Ground for Alignment
 
-This is not a counsel of despair, but a call for a redirection of effort. The work being done on adversarial robustness is not a niche subfield of AI; it is a direct and foundational prerequisite for AI alignment. [^14] Solving for the hammer is how we practice for the nuke.
+This is a call for a redirection of effort. The work being done on adversarial robustness is not a niche subfield of AI; it is a direct and foundational prerequisite for AI alignment. [^14] Solving for the hammer is how we practice for the nuke.
 
 1.  **It Defends the "Necessary Condition" for Alignment:** Some might argue that other approaches, like interpretability, could solve alignment without first solving robustness. The idea is that an AGI could simply explain its reasoning. However, an AGI would be far too complex for a human to fully understand, making reliance on its explanations alone a fragile strategy. More importantly, even a perfectly "interpretable" agent is useless if its underlying perceptions are flawed. If an AGI's senses can be deceived (a robustness failure), its "interpretable" reasoning will be based on a false reality, leading to catastrophic failure. Thus, robustness is a prerequisite for any other alignment technique to be reliable.
 
@@ -92,7 +92,7 @@ This is not a counsel of despair, but a call for a redirection of effort. The wo
 
 4.  **It Provides a Tractable Testbed:** We cannot yet build an AGI to test our alignment theories. But we *can* build systems today and test their robustness against concrete, falsifiable attacks. This provides an empirical, iterative, and rigorous path for making progress on the core difficulties of alignment.
 
-### The Sobering Conclusion
+### Conclusion
 
 The path to beneficial AGI is paved with unsolved problems. Solving robustness is not, on its own, a complete solution to alignment. Many other challenges, such as value learning and ensuring corrigibility, must also be met. But robustness is a foundational prerequisite. Without it, any other solutions would be built on sand. By learning how to defend our systems against the "hammer" of today's human-level adversaries—by building agents that are robust to perturbations in observations, rewards, and actions—we can begin to develop the rigorous, security-minded engineering principles required to one day align the "nuke" of a superintelligent agent.
 
