@@ -1,6 +1,6 @@
 ---
 title: The Cost of Confidence
-subtitle: Why being 'sure' isn't sure enough
+subtitle: Why being 'sure' is never enough
 layout: post
 permalink: /confidence/
 categories:
@@ -28,6 +28,10 @@ p {
 }
 </style>
 
+<!-- 
+what are some more easily understandable examples for non-mathematicians / programmers?
+ -->
+
 ## Binary search example
 
 Let's start with a simple problem. Implement a binary search algorithm in your favorite programming language.
@@ -37,6 +41,7 @@ Return the index of the target value in the list or -1 if it is not present.
 
 Binary search seems straightforward right? Yet Jon Bentley observed that 90% of professional programmers couldn't implement it correctly in under
 an hour.
+<!-- add reference -->
 
 ```javascript
 function binarySearch(arr, target) {
@@ -231,3 +236,6 @@ def build_string(n):
    f(n) = n² + n + 41
    ```
    This generates prime numbers for all n from 0 to 40, leading one to think it might always generate primes. However, f(41) = 41² + 41 + 41 = 1763 = 41 × 43.
+
+1. Probability of two dice rolling the same number.
+(I got this wrong? it's 11/36, not 12/36)
