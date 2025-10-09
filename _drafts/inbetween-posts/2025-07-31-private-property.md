@@ -12,6 +12,12 @@ This post explores one of the most fundamental and fiercely debated questions in
 **Chapter 1: The Foundation - A Fence and a Signature**
 
 *   **The Core Idea:** We'll start with the classic, intuitive understanding of property, rooted in the philosophy of John Locke. The idea that you own something by "mixing your labor" with it—building a fence, tilling a field, creating a product.
+<!-- 
+mixing your labor seems like such a BS idea?
+so because i was first and used it, it's mine?
+also, if we retrospectively applied this, there'd be a lot of things changing hands.
+ -->
+
 *   **The Problem:** This simple idea immediately breaks down. You can't build a fence around a radio frequency. You can't "mix your labor" with the entire Pacific Ocean. This chapter introduces the central puzzle: our foundational logic for property doesn't apply to many of our most valuable modern assets.
 
 **Chapter 2: The Two Questions That Define Everything: Rivalry and Excludability**
@@ -20,6 +26,12 @@ This post explores one of the most fundamental and fiercely debated questions in
     *   **Is it Rivalrous?** (If I use it, can you still use it?) An apple is rivalrous; a radio broadcast is not.
     *   **Is it Excludable?** (Can I easily stop you from using it?) A ticketed movie theater is excludable; the air we breathe is not.
 *   **The Four Quadrants:** We'll show how these two questions create a spectrum of "ownability," from pure private goods to pure public goods, giving us a toolkit to analyze any asset.
+
+<!-- 
+what about other factors?
+these just ask whether something is ownable.
+
+ -->
 
 **Chapter 3: Case Studies in Contradiction**
 

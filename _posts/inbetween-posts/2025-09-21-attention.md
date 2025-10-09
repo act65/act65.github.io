@@ -51,7 +51,7 @@ So the next time you find your eyes drawn to a flashing ad in a public space, do
 
 It's an invoice for a product you never agreed to sell.
 
-The numbers don't lie. They show a mature and rapidly growing industry built on the non-consensual appropriation of a shared public resource: our collective attention. And they beg a simple question: If our attention is so valuable, why are we letting them take it for free?
+The numbers don't lie. They show a mature and rapidly growing industry built on the non-consensual appropriation of a shared public resource: our collective attention. And they beg a simple question: If our attention is so valuable, why are we letting them have it for free?
 
 ***
 
