@@ -1,12 +1,3 @@
----
-title: Ikram and his tricks
-subtitle: Life without and with math
-permalink: math-origins
-layout: post
-categories: 
-  - historical-fiction
----
-
 The story starts before the development of any math / arithmetic and we would get to see the issues that come with no math. We would witness the invention of 'tricks' to help daily life. The point of this story is to explore / understand / imagine the origins of math. To show that;
 - even the simplest pieces of math were not always obvious.
 - math has been collecting 'tricks' for thousands of years, building upon itself.
@@ -34,8 +25,8 @@ Simplicity and order. How can I show these are things that Ikram values?
 Possible subplots;
 (which convey a mathematical discovery)
 
-1. Ikran has a child assistant, who's job is mostly 'counting'. Where counting means drawing the icon for wheat on a tablet for each wheat bale in storage. He also has another child assistant for 'counting' the number of sheep in the pen, and another for counting the number of coins in the chest, and another for counting the number of jars of oil in the storage room, and another for counting the sacks of barley in storage, and another ...
-Ikran trades in large volumes, e.g. 100s of hay bales. So he often he has to wait for things to be counted.
+1. Ikram has a child assistant, who's job is mostly 'counting'. Where counting means drawing the icon for wheat on a tablet for each wheat bale in storage. He also has another child assistant for 'counting' the number of sheep in the pen, and another for counting the number of coins in the chest, and another for counting the number of jars of oil in the storage room, and another for counting the sacks of barley in storage, and another ...
+Ikram trades in large volumes, e.g. 100s of hay bales. So he often he has to wait for things to be counted.
 One day he's sitting at his desk, with 3 different count tablets. And he has the insight, that he could simplify this system. Instead of writing the icon for wheat, or sheep, or ..., he could just draw a single icon at the top of the tablet, and then draw a line for each item counted. He teaches his assistants how to use it and it saves time.
 
 2. Ikram needs to purchase a field for grain storage. The seller describes it as "8 lengths by 15 lengths." (but how much wheat can it hold?)
@@ -47,6 +38,8 @@ Later that week, while travelling (with idle time to think) he realisees he coul
 
 4. A gathering of merchants from different cities, where they're all frustrated by their different counting systems. Through discussion and negotiation, they begin to see the benefits of adopting a common system - the sexagesimal system. This could be shown through a series of meetings and the gradual adoption of the new standard.
 This could happen in the background of Ikram's life. He doesn't directly attend, but he hears about it from other traders and sees the impact it has on trade. It could be a way to show the interconnectedness of different cities and the importance of shared systems for trade.
+
+<!-- note, i dont want ikram to be over-powered . too-smart. others can introduce him to tricks has well! -->
 
 ***
 
@@ -64,7 +57,7 @@ division
 - 
 
 negative numbers
-- how much does this trader owe me?
+- how much does this trader owe me? (want to convey the confusion cause by negative numbers, and the lack of correct reasoning, utill a 'trick' is discovered.)
 
 ***
 
@@ -119,14 +112,6 @@ sometimes leading to incorrect conclusions.
 - the use of trial and error to solve problems.
 - missing words for ???. or equating addition with adding to a pile, and subtraction with removing from a pile.
 
-
-***
-
-Chapters;
-
-1. 
-
-2. 
 
 ***
 
