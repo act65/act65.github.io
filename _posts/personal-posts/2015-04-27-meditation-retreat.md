@@ -12,7 +12,7 @@ subtitle: I tried doing vipassana meditation for 10 days.
 
 **The first night**
 
-As I arrived at the bus stop, I wondered whether it was possible to identify a meditator by certain characteristics  - do they sit more still or fidget less? Do they wear traditional multicolored harem pants? To my surprise they looked like normal people...
+As I arrived at the bus stop, I wondered whether it was possible to identify a meditator by certain characteristics - do they sit more still or fidget less? Do they wear traditional multicolored harem pants? To my surprise they looked like normal people...
 
 **Day 1**
 
@@ -38,7 +38,7 @@ Today we started Vipassana. Vipassana is a load of crap. Through paying "closer
 
 **Day 5**
 
-Part of the moral conduct, the _sila_, was the rule that during the course you must, "abstain from killing any living creature". This rule uses the wrong words, it should be 'cease' in stead of 'abstain'. As abstain implies that we already do it, which is generally true, and we can keep doing it after... But I digress. What defines as a living creature and who gets to decide, are you not allowed to use soap as it kills bacteria, what about your immune system? What about walking, you are bound to stand on some unlucky insects...
+Part of the moral conduct, the _sila_, was the rule that during the course you must, "abstain from killing any living creature". This rule uses the wrong words, it should be 'cease' instead of 'abstain'. As abstain implies that we already do it, which is generally true, and we can keep doing it after... But I digress. What defines as a living creature and who gets to decide, are you not allowed to use soap as it kills bacteria, what about your immune system? What about walking, you are bound to stand on some unlucky insects...
 
 **Day 6**
 
@@ -74,11 +74,11 @@ The people of meditation. Interestingly the majority of people (that I talked to
 
 **The last morning**
 
-Everyone is really happy. I don't know if this is because meditation truly makes you happier and we were being coming skilled practitioners, or we couldn't wait to get out of there.
+Everyone is really happy. I don't know if this is because meditation truly makes you happier and we were becoming skilled practitioners, or we couldn't wait to get out of there.
 
 So now we are off to change our lives, we have motivation, either because we believe in the teaching or because we just wasted 10 days sitting on our butts.
 
-(_Although the featured image for this posts shows a gradual diminishing of the inner fire, I think I experienced the opposite_)
+(_Although the featured image for this post shows a gradual diminishing of the inner fire, I think I experienced the opposite_)
 
 Thanks and goodbye
 

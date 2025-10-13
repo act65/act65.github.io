@@ -15,7 +15,7 @@ You may already be familiar with electrical components like; transistors, capaci
 ![]({{site.baseurl}}/assets/mechanical-components/20191112_140010.jpg)
 ![]({{site.baseurl}}/assets/mechanical-components/20191112_140008.jpg)
 
-Photos taken in [BOS]().
+Photos taken in the Boston Museum of Science [BOS]().
 
 Have we discovered all the possible kinds of mechanical part?
 
