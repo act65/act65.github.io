@@ -22,6 +22,9 @@ Stories seem to offer a way to acquire a form of vicarious experience. Neuroscie
 
 Just as our empathy is constrained, so is our ability to imagine our own futures. Learning about the lives of others is a powerful first step in expanding our imaginations. Biography and history offer a rich catalogue of real-world models whose motivations and experiences can expand our own sense of what is possible (other than a struggle for power, sex, survival):
 
+<details markdown="1">
+  <summary>Click to explore examples</summary>
+  
 *   **Tara Westover:** She provides a model for the transformative, and sometimes painful, power of knowledge. Her journey wasn't just about acquiring an education, but about how that knowledge created an irreconcilable break with her past, forcing a choice between loyalty to family and a new, hard-won sense of self. ([*Educated*](https://www.goodreads.com/book/show/35133922-educated))
 *   **Jacinda Ardern:** She offers a model that redefines political strength, demonstrating that empathy, compassion, and decisive kindness can be powerful tools for leadership, especially in times of crisis. Her approach challenges the conventional wisdom that equates power with aggression. ([*A Different Kind of Power*](https://www.goodreads.com/book/show/222531211-a-different-kind-of-power))
 *   **John von Neumann:** He represents a model of intellect so vast it appears alien, reportedly driven by a complex cocktail of ambition and insecurity. His life challenges the simplistic narrative that genius is a pure or serene force, suggesting it can be fueled by more common, human anxieties. ([*The Man from the Future*](https://www.goodreads.com/book/show/58857438-the-man-from-the-future))
@@ -38,11 +41,14 @@ Just as our empathy is constrained, so is our ability to imagine our own futures
 *   **Christopher McCandless:** His story, while tragic, provides a powerful model of radical renunciation. He was motivated by a deep dissatisfaction with societal norms and materialism, leading him to abandon his possessions and identity to seek a more authentic existence in the wilderness. He represents a powerful thought experiment about what one is willing to give up in the search for meaning, challenging the very definition of a successful life. ([*Into the Wild*](https://www.goodreads.com/book/show/1845.Into_the_Wild))
 *   **Vivian Maier:** A model of artistic creation completely divorced from audience, fame, or validation. She worked as a nanny in Chicago for 40 years and, in her spare time, secretly took over 150,000 brilliant street photographs that were only discovered by accident after her death. Her life was driven by a private, obsessive need to document the world around her, raising profound questions about what it means to be an artist. ([*Vivian Maier: A Photographer Found*](https://www.goodreads.com/book/show/22535554-vivian-maier))
 
+</details>
 <!-- if you dont know these stories, then I encourage you to learn them!
  -->
 
 These figures expand our sense of what a person can experience, want and achieve. But fiction can explore what history cannot. It can model experiences and motivations that have yet to exist in our world, providing data points from the outer edges of the conceivable. Consider:
 
+<details markdown="1">
+  <summary>Click to explore examples</summary>
 *   **Victor Frankenstein** offers a model of pure, untethered ambition, representing the pursuit of creation without responsibility and the catastrophic consequences of intellectual pursuit divorced from empathy. ([*Frankenstein*](https://www.goodreads.com/book/show/35031085-frankenstein))
 *   **Frankenstein's Creature** provides a model for the experience of absolute, total alienation—a sentient being born into a world that rejects it on sight, exploring how the denial of fundamental needs like companionship can transform innocence into vengeance. ([*Frankenstein*](https://www.goodreads.com/book/show/35031085-frankenstein))
 *   **Captain Ahab** is a model for monomaniacal obsession as a metaphysical quest, a motivation that transcends simple revenge to become a defiant, self-destructive war against the perceived malice of the universe itself. ([*Moby Dick*](https://www.goodreads.com/book/show/153747.Moby_Dick_or_the_Whale))
@@ -50,11 +56,17 @@ These figures expand our sense of what a person can experience, want and achieve
 *   **Don Quixote in *Don Quixote* by Miguel de Cervantes:** A model for a life motivated by the willed, total replacement of mundane reality with a more noble, literary ideal. He doesn't just interpret the world through a different lens; he actively overwrites it, seeing giants in windmills and castles in inns. He is a profound and tragicomic exploration of what happens when a person chooses to live entirely within the story they've told themselves, no matter the cost. ([*Don Quixote*](https://www.goodreads.com/book/show/3836.Don_Quixote))
 *   **Napoleon Dynamite in *Napoleon Dynamite* (Film):** A model of radical, un-self-aware authenticity. His motivation is not to rebel against social norms, but to live in a world where his own idiosyncratic skills (nunchucks, drawing ligers) and interests are the only ones that matter. He represents a form of integrity so absolute it is completely divorced from the need for external validation, challenging the idea that self-worth must be socially negotiated. ([IMDb](https://www.imdb.com/title/tt0374900/))
 
+</details>
+
 This is where my own interest lies: in exploring experiences and motivations that fall even further outside these bounds. This is the unique territory of the truly strange story. It can introduce us to characters like:
 
+<details markdown="1">
+  <summary>Click to explore examples</summary>
 *   **Lyra:** A model of motivation aimed at universal cessation, where the ultimate goal is not creation or peace, but a perfect and absolute silence she sees as the only true mercy in a chaotic universe. ([*Loud: Silence Like a Cancer Grows*]({{ site.baseurl}}/lyra))
 *   **Julian:** A model of a life driven by an almost scientific curiosity to experience and catalogue every form of failure, believing that true understanding requires embracing the full spectrum of negative experience. ([*The Satiated King: A Man Who Had Everything, Except Failure*]({{ site.baseurl}}/julian))
 *   **Howard:** A model of pure, detached intellect, where the sole motivation is the elegance of a theoretical solution, with no regard for its practical application or human impact. ([*The napkin solution: Solved, but not implemented*]({{ site.baseurl}}/howard))
+
+</details>
 
 <!-- 
 *   **Elias Vestige (The Collector of Lost Potentials):** A model of value where meaning is found not in achievement, but in the melancholic beauty of what *almost* was, cherishing the ghost of potential more than its realization. ([*Story Title*])
