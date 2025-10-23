@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Utility of Stories
-subtitle: idk
+subtitle: and the limits of our imagination
 categories:
     - fiction
 ---
@@ -38,6 +38,9 @@ Just as our empathy is constrained, so is our ability to imagine our own futures
 *   **Christopher McCandless:** His story, while tragic, provides a powerful model of radical renunciation. He was motivated by a deep dissatisfaction with societal norms and materialism, leading him to abandon his possessions and identity to seek a more authentic existence in the wilderness. He represents a powerful thought experiment about what one is willing to give up in the search for meaning, challenging the very definition of a successful life. ([*Into the Wild*](https://www.goodreads.com/book/show/1845.Into_the_Wild))
 *   **Vivian Maier:** A model of artistic creation completely divorced from audience, fame, or validation. She worked as a nanny in Chicago for 40 years and, in her spare time, secretly took over 150,000 brilliant street photographs that were only discovered by accident after her death. Her life was driven by a private, obsessive need to document the world around her, raising profound questions about what it means to be an artist. ([*Vivian Maier: A Photographer Found*](https://www.goodreads.com/book/show/22535554-vivian-maier))
 
+<!-- if you dont know these stories, then I encourage you to learn them!
+ -->
+
 These figures expand our sense of what a person can experience, want and achieve. But fiction can explore what history cannot. It can model experiences and motivations that have yet to exist in our world, providing data points from the outer edges of the conceivable. Consider:
 
 *   **Victor Frankenstein** offers a model of pure, untethered ambition, representing the pursuit of creation without responsibility and the catastrophic consequences of intellectual pursuit divorced from empathy. ([*Frankenstein*](https://www.goodreads.com/book/show/35031085-frankenstein))
@@ -49,21 +52,26 @@ These figures expand our sense of what a person can experience, want and achieve
 
 This is where my own interest lies: in exploring experiences and motivations that fall even further outside these bounds. This is the unique territory of the truly strange story. It can introduce us to characters like:
 
-*   **Lyra Quietude (The Architect of Perfect Silence):** A model of motivation aimed at universal cessation, where the ultimate goal is not creation or peace, but a perfect and absolute silence she sees as the only true mercy in a chaotic universe. ([*Story Title*])
+*   **Lyra:** A model of motivation aimed at universal cessation, where the ultimate goal is not creation or peace, but a perfect and absolute silence she sees as the only true mercy in a chaotic universe. ([*Loud: Silence Like a Cancer Grows*]({{ site.baseurl}}/lyra))
+*   **Julian:** A model of a life driven by an almost scientific curiosity to experience and catalogue every form of failure, believing that true understanding requires embracing the full spectrum of negative experience. ([*The Satiated King: A Man Who Had Everything, Except Failure*]({{ site.baseurl}}/julian))
+*   **Howard:** A model of pure, detached intellect, where the sole motivation is the elegance of a theoretical solution, with no regard for its practical application or human impact. ([*The napkin solution: Solved, but not implemented*]({{ site.baseurl}}/howard))
+
+<!-- 
 *   **Elias Vestige (The Collector of Lost Potentials):** A model of value where meaning is found not in achievement, but in the melancholic beauty of what *almost* was, cherishing the ghost of potential more than its realization. ([*Story Title*])
 *   **Libra Balance (The Seeker of Perfect Symmetry):** A model of a life driven by a quasi-religious or aesthetic obsession with universal equilibrium, where every action must have an equal and opposite reaction. ([*Story Title*])
 *   **Amara Llorona (The Alchemist of Transmuted Regrets):** A model of redemptive empathy, motivated not by a desire to erase pain, but to use regret as a raw material for growth, purpose, and transformation. ([*Story Title*])
-*   **Praxis Enigma (The Conceptual Solver):** A model of pure, detached intellect, where the sole motivation is the elegance of a theoretical solution, with no regard for its practical application or human impact. ([*Story Title*])
 *   **Dr. Aris Thorne (The Bio-Sophist):** A model of hubristic altruism, driven by a perceived moral imperative to "uplift" other species to sapience, questioning the very definition of help and progress. ([*Story Title*])
 *   **Zephyr Evanesca (The Sculptor of Fleeting Perfections):** A model of aesthetic motivation that finds ultimate value only in the ephemeral, where beauty is magnified by its impermanence and permanence is seen as a form of stagnation. ([*Story Title*])
 *   **Justiciar Penitent (The Absolver of Unclaimed Wrongs):** A model of vicarious responsibility, driven by a profound need to atone for the "unclaimed wrongs" of history, even those committed by others long dead. ([*Story Title*])
 *   **Silvan Lentus (The Watcher of Unfolding):** A model of a life lived on a geological timescale, where meaning is derived not from action, but from the patient, passive observation of vast, slow processes of change. ([*Story Title*])
 *   **Subject Zero (The Self-Nullifier):** A model of self-abnegation in pursuit of a post-human ideal, motivated by a disdain for the perceived flaws of human nature (emotion, bias) and a desire to become a being of pure logic. ([*Story Title*])
 *   **Anatta (The Vessel of Chance):** A model of a life defined by the abdication of agency, where past failures have led to a core belief that any conscious, goal-oriented decision will only cause more suffering. ([*Story Title*])
-*   **Lethe (The Eraser):** A model of a life motivated by the pursuit of perfect inconsequentiality, where the ultimate freedom is to live and die without leaving any discernible trace on the world. ([*Story Title*])
-*   **Calamitas (The Collector of Catastrophes):** A model of a life driven by an almost scientific curiosity to experience and catalogue every form of failure, believing that true understanding requires embracing the full spectrum of negative experience. ([*Story Title*])
+*   **Lethe (The Eraser):** A model of a life motivated by the pursuit of perfect inconsequentiality, where the ultimate freedom is to live and die without leaving any discernible trace on the world. ([*Story Title*]) 
+-->
 
 These are not models for direct imitation, but radical new data points. They align with the psychological concept of "prospection," the ability to mentally simulate our future to help guide our actions. [^5] By presenting motivations that history does not provide, stories give our imaginative faculty more, and stranger, material to work with.
+
+<!-- should i note that this is one aspect of the utility of stories? -->
 
 Ultimately, this is how I view the value of stories. Reading them is not an escape. It is a conscious practice of expanding the dataset of our own humanity. It is a way of sharpening the tools we use for empathy and imagination—tools that allow us to better understand others, and to envision a future for ourselves that is more than just a repetition of the lives we've already seen.
 
