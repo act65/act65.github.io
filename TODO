@@ -1,19 +1,19 @@
-meta site
-- https://giscus.app/
-- convert outsourcing into a full short story
+meta site:
+    - https://giscus.app/
+    - convert outsourcing into a full short story
 
-questions
-- how does algebraic statistics relate to my post about representations in linear algebra?
-- 
+questions:
+    - how does algebraic statistics relate to my post about representations in linear algebra?
 
-ideas
-- what would it take to fabricate a microchip at home?
-- imagine a person who would look at my life and be very jealous
-- Pair tools and mathematical theorems. The hammer: ???,
-- Open problems for my back pocket. To carry around with me all the time.
-- CAPTCHAs. history / arms race. https://github.com/jpraychev/google-recaptcha
-- Generating pseudorandom numbers. Intuition, make a chaotic system. But how do you ensure it gives a uniform distribution!?
-- how many different types of memory are there?
-- the importance of good audio design?! A set of 3d scenarios. With the player turning their head / moving.
-- what's the best way to shuffle? mixing?
-- (when) would it make sense to start a recycling company? (let's track the price of materials, and understand how to break down / seperate efficiently)
+ideas:
+    - what would it take to fabricate a microchip at home?
+    - imagine a person who would look at my life and be very jealous
+    - Pair tools and mathematical theorems. The hammer: ???,
+    - Open problems for my back pocket. To carry around with me all the time.
+    - CAPTCHAs. history / arms race. https://github.com/jpraychev/google-recaptcha
+    - Generating pseudorandom numbers. Intuition, make a chaotic system. But how do you ensure it gives a uniform distribution!?
+    - how many different types of memory are there?
+    - the importance of good audio design?! A set of 3d scenarios. With the player turning their head / moving.
+    - what's the best way to shuffle? mixing?
+    - (when) would it make sense to start a recycling company? (let's track the price of materials, and understand how to break down / seperate efficiently)
+    - follow up on approximate reasoning. take the idea further. turn into proper research!?

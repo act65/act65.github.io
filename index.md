@@ -7,22 +7,22 @@ Welcome to my blog.
 
 Here are some links to help you navigate:
 
-- [Personal]({{site.baseurl}}/personal/)
+- Personal
     - my [experiences]({{site.baseurl}}/experiences/)
     - invitations for [interaction]({{site.baseurl}}/interact/)
-    - and more
-- [Opinions and thoughts]({{site.baseurl}}/inbetween/)
+    - and [more]({{site.baseurl}}/personal/)
+- Opinions and thoughts
     - [economics and politics]({{site.baseurl}}/economics-politics/)
     - [philosophising about ...]({{site.baseurl}}/philosophy/)
     - [speculation]({{site.baseurl}}/speculation/)
     - [fiction]({{site.baseurl}}/fiction/)
-    - and more
-- [Technical]({{site.baseurl}}/technical/)
+    - and [more]({{site.baseurl}}/inbetween/)
+- Technical
     - [proposals]({{site.baseurl}}/proposals/)
     - [research]({{site.baseurl}}/research/)
     - [tutorials]({{site.baseurl}}/tutorials/)
     - [play]({{site.baseurl}}/play/)
-    - and more
+    - and [more]({{site.baseurl}}/technical/)
 
 
 The more [support](https://ko-fi.com/act65) I have, the more time I can spend;

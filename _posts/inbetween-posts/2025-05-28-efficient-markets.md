@@ -72,7 +72,9 @@ Here, $\lambda$ is a liquidity parameter, indicating how much the price moves fo
 
 The EMH, in essence, posits that this dynamic process leads to a market price that reflects the combined knowledge of all participants:
 
-$$P_t \approx E[V\mid I_{union}]$$
+$$
+P_t \approx E[V\mid I_{union}]
+$$
 
 Where $I_{union}$ represents the union of all traders' information sets[^3]. This is the ideal scenario.
 
@@ -93,7 +95,7 @@ Now, let's add some assumptions about our market participants:
 
 1.  **Dispersed Knowledge**: Each trader knows the values of only a small, unique subset of these variables (e.g., 100 variables each). No single trader has the full picture.
 2.  **Information Opacity**: Traders don't know which specific variables other traders have observed.
-3.  **Cognitive & Computational Limits**: Crucially, traders (and even their current computational tools) have limitations. They cannot realistically process or verify all 10,000 variables simultaneously, even if, hypothetically, all the data were dumped on them. This reflects a real-world constraint on human cognition and the processing power of most individual market actors. [5]
+3.  **Cognitive & Computational Limits**: Crucially, traders (and even their current computational tools) have limitations. They cannot realistically process or verify all 10,000 variables simultaneously, even if, hypothetically, all the data were dumped on them. This reflects a real-world constraint on human cognition and the processing power of most individual market actors. [^5]
 
 ### Why Market Aggregation Stumbles
 
@@ -143,7 +145,7 @@ The influential Kyle (1985) model of market microstructure formalizes this linea
 
 $$\Delta P = \lambda \cdot \text{Order Flow}$$
 
-Where "Order Flow" is the net imbalance between buy and sell orders. This $\lambda$ (Kyle's lambda) represents market illiquidity – how much the price moves for a given unit of net order flow. While the real world is more complex, this linear model has found empirical support in many contexts, particularly for small to moderate order sizes relative to market depth. [7, 9, 10, 19, 24] Researchers often test it by regressing price changes on net order flow data from exchanges, though isolating the "informed" component of order flow from "noise" trading is a significant challenge. [8, 9, 10, 19] Some studies also find that for very large trades, the impact might become non-linear (concave). [7, 15]
+Where "Order Flow" is the net imbalance between buy and sell orders. This $\lambda$ (Kyle's lambda) represents market illiquidity – how much the price moves for a given unit of net order flow. While the real world is more complex, this linear model has found empirical support in many contexts, particularly for small to moderate order sizes relative to market depth. [^7] [^9] [^10] Researchers often test it by regressing price changes on net order flow data from exchanges, though isolating the "informed" component of order flow from "noise" trading is a significant challenge. [^8] [^9] [^10] Some studies also find that for very large trades, the impact might become non-linear (concave). [^7]
 
 ### The Linearity Bottleneck
 
@@ -166,7 +168,7 @@ In our example, even if every trader *knows* that all variables *in their specif
 1.  The value function is starkly non-linear (a logical AND across thousands of variables).
 2.  Each trader's rational valuation, based on incomplete information, is near zero.
 3.  The market's price aggregation mechanism is fundamentally linear.
-4.  Cognitive and computational limitations prevent any single participant from integrating the full, dispersed set of variables. [5]
+4.  Cognitive and computational limitations prevent any single participant from integrating the full, dispersed set of variables. [^5]
 
 ## Markets vs. Boosting: Two Flavors of Aggregating Weak Predictions
 
@@ -174,7 +176,7 @@ This market limitation becomes particularly stark when contrasted with concepts 
 
 ### The Power of Weak Learners: A Machine Learning Marvel
 
-A cornerstone of machine learning theory is the surprising and powerful result that "weak learners" can be combined to create "strong learners." [4, 6, 12, 13] A weak learner is an algorithm that performs just slightly better than random guessing. Robert Schapire's seminal work in 1990 demonstrated that, through a process called boosting, one can iteratively combine such weak learners to produce a classification algorithm with arbitrarily high accuracy. [4, 6] As the theory often states: a set of weak learners can be combined to form a single strong learner. [3, 4, 6, 12, 13]
+A cornerstone of machine learning theory is the surprising and powerful result that "weak learners" can be combined to create "strong learners." [^4] [^6] A weak learner is an algorithm that performs just slightly better than random guessing. Robert Schapire's seminal work in 1990 demonstrated that, through a process called boosting, one can iteratively combine such weak learners to produce a classification algorithm with arbitrarily high accuracy. [^4] [^6] As the theory often states: a set of weak learners can be combined to form a single strong learner. [^3] [^4] [^6]
 
 ### The Crucial Distinction
 
@@ -200,7 +202,7 @@ In our conjunction problem, these alternative channels could, in principle, offe
 
 ### The Quest for Perfect Foresight: A Sisyphean Task?
 
-Ultimately, accurately valuing complex entities like companies, let alone predicting future market movements, requires a profound understanding of how the world works. Imagine the ideal: a causal model of the global economy and all its interacting parts, fed by yottabytes of real-time data. Such a model would need to capture countless non-linear relationships, feedback loops, and emergent behaviors. While this is the holy grail, it remains far beyond our current capabilities, highlighting that even with advanced tools, perfect information aggregation is a monumental, perhaps perpetually elusive, goal. [1, 2, 5]
+Ultimately, accurately valuing complex entities like companies, let alone predicting future market movements, requires a profound understanding of how the world works. Imagine the ideal: a causal model of the global economy and all its interacting parts, fed by yottabytes of real-time data. Such a model would need to capture countless non-linear relationships, feedback loops, and emergent behaviors. While this is the holy grail, it remains far beyond our current capabilities, highlighting that even with advanced tools, perfect information aggregation is a monumental, perhaps perpetually elusive, goal. [^1] [^2] [^5]
 
 ## Implications for AI and the Future of Markets
 
@@ -212,11 +214,11 @@ The "conjunction problem" and the linearity constraint have significant implicat
 
 Unlike human traders, who are bound by cognitive limits (we can only juggle so much information at once!) and often rely on heuristics, advanced AI systems can potentially:
 
-1.  Process and "remember" vastly larger and more complex datasets. [10]
-2.  Detect subtle, non-linear correlations and causal links that escape human intuition. [21]
-3.  Integrate information from incredibly diverse sources – news, social media, satellite imagery, financial statements, etc. – in a more holistic way. [10, 11]
+1.  Process and "remember" vastly larger and more complex datasets. [^10]
+2.  Detect subtle, non-linear correlations and causal links that escape human intuition.
+3.  Integrate information from incredibly diverse sources – news, social media, satellite imagery, financial statements, etc. – in a more holistic way. [^10] [^11]
 
-However, it's crucial to add a caveat: if we simply scale up the "conjunction problem" to be even larger and more complex (say, a million variables with even more convoluted interdependencies), it could once again exceed the capabilities of current AI. The frontier of computational capacity is always a moving target. [5]
+However, it's crucial to add a caveat: if we simply scale up the "conjunction problem" to be even larger and more complex (say, a million variables with even more convoluted interdependencies), it could once again exceed the capabilities of current AI. The frontier of computational capacity is always a moving target. [^5]
 
 ### Can We "Fix" Markets for Non-Linearity?
 
@@ -225,9 +227,9 @@ This begs the question: can market mechanisms themselves be redesigned to better
 *   **More Expressive Betting Mechanisms**: Markets that allow traders to bet on complex *combinations* of events or variable states, rather than just price levels.
 *   **Information Aggregation Platforms**: Systems designed to explicitly pool and analyze dispersed information snippets in a secure and verifiable way, perhaps using cryptographic methods, before translating that into market actions.
 *   **AI-Augmented Market Making**: Market makers or liquidity providers who use sophisticated AI to detect potential non-linear patterns from order flow and other data sources, adjusting their pricing and liquidity provision accordingly.
-*   **Prediction markets with more complex payoff structures**: Moving beyond simple binary outcomes to contracts that reward the correct identification of complex conditional events. [16, 22, 25]
+*   **Prediction markets with more complex payoff structures**: Moving beyond simple binary outcomes to contracts that reward the correct identification of complex conditional events.
 
-These are frontiers of research and development, but they point towards a future where markets might evolve to become more adept at tackling the kinds of complexities our conjunction example highlights. [18]
+These are frontiers of research and development, but they point towards a future where markets might evolve to become more adept at tackling the kinds of complexities our conjunction example highlights.
 
 ## Conclusion: Beating the Market – Infeasible, or Just Really, Really Hard?
 
@@ -247,4 +249,4 @@ Perhaps the EMH is not so much "wrong" as it is a powerful approximation that ho
 [^8]: Diamond, D. W., & Verrecchia, R. E. (1991). Disclosure, Liquidity, and the Cost of Capital. *The Journal of Finance, 46*(4), 1325-1359.
 [^9]: Healy, P. M., & Palepu, K. G. (2001). Information asymmetry, corporate disclosure, and the capital markets: A review of the empirical disclosure literature. *Journal of Accounting and Economics, 31*(1-3), 405-440.
 [^10]: De Prado, M. L. (2018). *Advances in Financial Machine Learning*. John Wiley & Sons.
-[^11]: Schapire, R. E. (1990). The strength of weak learnability. *Machine Learning, 5*(2), 197-227. [4, 6]
+[^11]: Schapire, R. E. (1990). The strength of weak learnability. *Machine Learning, 5*(2), 197-227.

@@ -13,10 +13,10 @@ would be good to collect a few different kinds
 
 contracts for different purposes
 
-enron's contracts and the 
 
 how does the introduction of a new contract change the world?
 
+enron's contracts and the 
 
 Advance commitment market
 https://worksinprogress.co/issue/how-to-start-an-advance-market-commitment/
