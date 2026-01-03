@@ -21,3 +21,9 @@ enron's contracts and the
 Advance commitment market
 https://worksinprogress.co/issue/how-to-start-an-advance-market-commitment/
  -->
+
+
+What IS a contract?
+
+We agree to trade a good or service for $$.
+But we need a tusted way to verify the good / service.
