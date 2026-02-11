@@ -1,16 +1,20 @@
 ---
 title: The Geometry of Governance 
-subtitle: A derivation / motivation of Liquid democracy via Vetor Quantisation
+subtitle: A derivation / motivation of Liquid democracy via Vector Quantisation
 layout: post
 categories:
     - economic
 ---
 
-We often talk about politics in terms of ideology, history, or tribalism. But at its core, governance is an optimization problem. It is the challenge of aggregating the distinct, high-dimensional preferences of millions of people into a single output: policy.
+We often talk about politics in terms of ideology, history, or tribalism. But at its core, governance is an geometry problem. It is the challenge of aggregating the distinct, high-dimensional preferences of millions of people into a single output: policy.
 
 If we strip away the campaign slogans and look at the math, we find that many of our frustrations with modern democracy—polarization, the "lesser of two evils," and the feeling of being unheard—are not bugs. They are geometric inevitabilities of the mechanisms we use.
 
 In this post, I want to explore a formal framework for voting, show why the "Two-Party System" is mathematically equivalent to a lossy compression algorithm, and explore how we might break the "Curse of Dimensionality."
+
+![]({{site.baseurl}}/images/voting-cube.png)
+
+> Here we see that the 1 dimensional, two party system, is incabable of catering to 6/8 preferences over 3 issues. In reality there are many more than 3 issues voters care about, which we have extrenely limited ability to express ourselves, and must choose the 'lesser evil', the closest party which kindof fits our views.
 
 ## 1. The Setup: Voters as Vectors
 
@@ -47,6 +51,8 @@ Any two points ($c_A$ and $c_B$) define a straight line. By forcing voters to ch
 
 To the system, your vote is just a single bit of information (0 or 1). It cannot capture the nuance of a $d$-dimensional vector. This leads to high **Distortion**—the gap between what voters want and what they get is mathematically guaranteed to be high.
 
+We can think of this distortion as "forced strategic voting." Thorburn et al. ([^1]) quantify this error using **Kendall tau distance**—the number of "swaps" required to make a voter's true preferences fit the model. If you prefer Party A, but the geometric map forces you closer to Party B, the system has effectively swapped your preference. In the real world, we call this the "lesser of two evils"—a mathematical artifact of projecting high-dimensional citizens onto a 1-dimensional ballot.
+
 ## 3. Why not just add more parties? ($k=2^d$)
 
 If $k=2$ is too crude, the natural intuition is to increase $k$. Why not have 5, 10, or 20 parties?
@@ -65,9 +71,19 @@ Let’s assume distinct policy issues are binary (Yes/No). Let's take just three
 
 If a Green party supports the Tax and UBI but opposes Nuclear, the pro-Nuclear environmentalist is stranded. They must compromise.
 
-To guarantee that *every* voter can find a party that represents their views on just $d=30$ binary issues, we would need a party for every possible combination. That is $2^{30}$ parties.
+To guarantee that *every* voter can find a party that represents their views on just $d=30$ binary issues, we would need a party for every possible combination:
 
 $$ 2^{30} \approx 1 \text{ Billion Parties} $$
+
+This intuition is backed by recent results in social choice theory. Thorburn et al. (2023) ([^1]) prove that to losslessly represent arbitrary preference rankings over $A$ alternatives, the spatial model must have at least $A-1$ dimensions.
+
+In our context, this implies a hard geometric limit: you cannot compress the complex, high-dimensional will of the electorate into a low-dimensional party system without introducing "embedding error." This error isn't just noise; it is the mathematical definition of a disenfranchised voter.
+
+### The "Independent Voter" Problem
+
+Critics might argue that real-world preferences are correlated—that 'Left' and 'Right' bundles naturally exist. But this confuses cause and effect.
+
+The "Impartial Culture" assumption in voting theory models a population of independent thinkers. The math shows that as voters become more independent (less correlated), the error of low-dimensional systems explodes. A rigid party system effectively relies on voter conformity to function. If we want a system that respects independent thought (e.g., a Pro-Gun Environmentalist), we face a combinatorial explosion that fixed parties cannot solve.
 
 This creates a paradox:
 1.  **Few Parties ($k=2$):** Low choice cost, but terrible representation accuracy (high error).
@@ -89,9 +105,9 @@ We need a mechanism that breaks the bundle.
 
 ## 5. The Solution: Unbundling (Liquid Democracy)
 
-To break the curse of dimensionality, we must switch from **selecting** a vector to **constructing** one.
+To break the curse of dimensionality, we must switch from **selecting** a vector to **constructing** one. Recent research confirms that low-dimensional embeddings (like 2D political compasses) cannot accurately capture high-dimensional data without significant error.
 
-Instead of asking the voter to pick one of $k$ pre-fabricated bundles, we can decompose the vote into its $d$ constituent dimensions. This is the promise of **Liquid Democracy**.
+By unbundling the issues, Liquid Democracy avoids the "Curse of Dimensionality" entirely. Instead of trying to fit complex voters into a simple low-dimensional map (and failing), we simply conduct the vote in the native high-dimensional space of the issues themselves. We don't compress the voter; we expand the ballot.
 
 In this framework:
 1.  The system doesn't solve one massive clustering problem in $d$-dimensional space.
@@ -108,3 +124,7 @@ Mathematically, this changes the scaling of the error. We no longer need $2^d$ p
 *   **Optimal Governance** requires unbundling: treating dimensions independently.
 
 The math suggests that as long as we rely on bundling (rigid parties), we will always suffer from high distortion. To align governance with voter will, we don't need *better* parties; we need a mechanism that transcends them.
+
+## References
+
+[^1]: Error in the Euclidean Preference Model https://arxiv.org/abs/2208.08160

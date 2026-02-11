@@ -15,7 +15,7 @@ This post explores one of the most fundamental and fiercely debated questions in
 <!-- 
 mixing your labor seems like such a BS idea?
 so because i was first and used it, it's mine?
-also, if we retrospectively applied this, there'd be a lot of things changing hands.
+also, if we retrospectively (and accurately) applied this, there'd be a lot of things changing hands.
  -->
 
 *   **The Problem:** This simple idea immediately breaks down. You can't build a fence around a radio frequency. You can't "mix your labor" with the entire Pacific Ocean. This chapter introduces the central puzzle: our foundational logic for property doesn't apply to many of our most valuable modern assets.
@@ -24,14 +24,14 @@ also, if we retrospectively applied this, there'd be a lot of things changing ha
 
 *   **The Framework:** This chapter introduces the two simple but powerful economic concepts that help solve our puzzle.
     *   **Is it Rivalrous?** (If I use it, can you still use it?) An apple is rivalrous; a radio broadcast is not.
+<!-- maybe an idea is a better example of something non-rivalrous? -->
     *   **Is it Excludable?** (Can I easily stop you from using it?) A ticketed movie theater is excludable; the air we breathe is not.
-*   **The Four Quadrants:** We'll show how these two questions create a spectrum of "ownability," from pure private goods to pure public goods, giving us a toolkit to analyze any asset.
+<!-- are these really the ONLY relevant dimensions/factors?
+note: these are both about the ability of something to be 'owned'!?
 
-<!-- 
-what about other factors?
-these just ask whether something is ownable.
-
+not whether is 'should' be owned
  -->
+*   **The Four Quadrants:** We'll show how these two questions create a spectrum of "ownability," from pure private goods to pure public goods, giving us a toolkit to analyze any asset.
 
 **Chapter 3: Case Studies in Contradiction**
 
