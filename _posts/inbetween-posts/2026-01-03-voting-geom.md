@@ -81,13 +81,19 @@ In our context, this implies a hard geometric limit: you cannot compress the com
 
 ### The "Independent Voter" Problem
 
-Critics might argue that real-world preferences are correlated—that 'Left' and 'Right' bundles naturally exist, and thus we only need to represent those specific corners of the hypercube. But this confuses cause and effect, and ignores the fundamental measure of information: **Entropy**.
+This brings us to a fundamental philosophical question about how we structure governance:
+
+> Should every citizen have the right to express their preferences losslessly?
+
+Critics might argue that real-world preferences are correlated—that 'Left' and 'Right' bundles naturally exist, and thus we only need to represent those specific corners of the hypercube. But this possibly confuses cause and effect, and ignores the fundamental measure of information: **Entropy**.
 
 If 95% of the population truly fell into two neat ideological buckets, the entropy of the electorate would be low. A low-dimensional system (like two parties) would suffice, yielding low distortion. But if voters are even slightly independent—if they have unique combinations of views—the entropy of the distribution increases.
 
-When the system's capacity (1 bit: Red vs. Blue) is lower than the entropy of the electorate, information is inevitably lost. This loss isn't abstract; it manifests as **voter disenfranchisement**. When a voter's complex, high-entropy preference vector is compressed into a single low-entropy bit, they are not being "represented"; they are being silenced.
+When the system's capacity (1 bit: Red vs. Blue) is lower than the entropy of the electorate, information is inevitably lost. By aligning our political dimensions to yield artificially low entropy, we are effectively disenfranchising minorities—forcing them to choose between two "evils," neither of which they particularly want. They are not allowed to express themselves.
 
-This aligns with declining voter turnout statistics in rigid two-party systems. If the menu of options (parties) fails to cover the support of the distribution of voters, rational actors may simply choose not to participate. The "Impartial Culture" assumption in voting theory models a population of independent thinkers. The math shows that as voters become more independent (higher entropy), the error of low-dimensional systems explodes. A rigid party system effectively relies on artificial voter conformity to function. If we want a system that respects independent thought (e.g., a Pro-Gun Environmentalist), we face a combinatorial explosion that fixed parties cannot solve.
+This loss manifests as **voter disenfranchisement**. When a voter's complex, high-entropy preference vector is compressed into a single low-entropy bit, they are not being "represented"; they are being silenced. It is plausible that this disconnect contributes to voter apathy. If the menu of options (parties) fails to cover the support of the distribution of voters, rational actors may simply choose not to participate.
+
+The "Impartial Culture" assumption in voting theory models a population of independent thinkers. The math shows that as voters become more independent (higher entropy), the error of low-dimensional systems explodes. A rigid party system effectively relies on artificial voter conformity to function. If we want a system that respects independent thought (e.g., a Pro-Gun Environmentalist), we face a combinatorial explosion that fixed parties cannot solve.
 
 This creates a paradox:
 1.  **Few Parties ($k=2$):** Low choice cost, but terrible representation accuracy (high error).
