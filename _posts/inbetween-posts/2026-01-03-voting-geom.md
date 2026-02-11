@@ -14,7 +14,7 @@ In this post, I want to explore a formal framework for voting, show why the "Two
 
 ![]({{site.baseurl}}/images/voting-cube.png)
 
-> Here we see that the 1 dimensional, two party system, is incabable of catering to 6/8 preferences over 3 issues. In reality there are many more than 3 issues voters care about, which we have extrenely limited ability to express ourselves, and must choose the 'lesser evil', the closest party which kindof fits our views.
+> **Figure 1**: A 1-dimensional, two-party system is incapable of representing 75% (6/8) of possible preference combinations across just 3 binary issues. As the number of issues voters care about increases, their ability to express true preferences diminishes. Voters are effectively forced to choose the "lesser of two evils"—the party centroid that minimizes distance to their own views, even if the fit is poor.
 
 ## 1. The Setup: Voters as Vectors
 
@@ -81,9 +81,13 @@ In our context, this implies a hard geometric limit: you cannot compress the com
 
 ### The "Independent Voter" Problem
 
-Critics might argue that real-world preferences are correlated—that 'Left' and 'Right' bundles naturally exist. But this confuses cause and effect.
+Critics might argue that real-world preferences are correlated—that 'Left' and 'Right' bundles naturally exist, and thus we only need to represent those specific corners of the hypercube. But this confuses cause and effect, and ignores the fundamental measure of information: **Entropy**.
 
-The "Impartial Culture" assumption in voting theory models a population of independent thinkers. The math shows that as voters become more independent (less correlated), the error of low-dimensional systems explodes. A rigid party system effectively relies on voter conformity to function. If we want a system that respects independent thought (e.g., a Pro-Gun Environmentalist), we face a combinatorial explosion that fixed parties cannot solve.
+If 95% of the population truly fell into two neat ideological buckets, the entropy of the electorate would be low. A low-dimensional system (like two parties) would suffice, yielding low distortion. But if voters are even slightly independent—if they have unique combinations of views—the entropy of the distribution increases.
+
+When the system's capacity (1 bit: Red vs. Blue) is lower than the entropy of the electorate, information is inevitably lost. This loss isn't abstract; it manifests as **voter disenfranchisement**. When a voter's complex, high-entropy preference vector is compressed into a single low-entropy bit, they are not being "represented"; they are being silenced.
+
+This aligns with declining voter turnout statistics in rigid two-party systems. If the menu of options (parties) fails to cover the support of the distribution of voters, rational actors may simply choose not to participate. The "Impartial Culture" assumption in voting theory models a population of independent thinkers. The math shows that as voters become more independent (higher entropy), the error of low-dimensional systems explodes. A rigid party system effectively relies on artificial voter conformity to function. If we want a system that respects independent thought (e.g., a Pro-Gun Environmentalist), we face a combinatorial explosion that fixed parties cannot solve.
 
 This creates a paradox:
 1.  **Few Parties ($k=2$):** Low choice cost, but terrible representation accuracy (high error).
