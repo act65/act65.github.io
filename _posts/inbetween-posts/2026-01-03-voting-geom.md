@@ -1,140 +1,171 @@
 ---
-title: The Geometry of Governance 
-subtitle: A derivation / motivation of Liquid democracy via Vector Quantisation
+title: The Geometry of Governance
+subtitle: Why two parties can't represent you, and what information theory says about it
 layout: post
 categories:
     - economic
 ---
 
-We often talk about politics in terms of ideology, history, or tribalism. But at its core, governance is an geometry problem. It is the challenge of aggregating the distinct, high-dimensional preferences of millions of people into a single output: policy.
+We often talk about politics in terms of ideology, history, or tribalism. But at its core, governance is a compression problem: how do you aggregate the distinct preferences of millions of people into a single output — policy?
 
-If we strip away the campaign slogans and look at the math, we find that many of our frustrations with modern democracy—polarization, the "lesser of two evils," and the feeling of being unheard—are not bugs. They are geometric inevitabilities of the mechanisms we use.
+In this post, I restrict attention to the simplest possible setting — every policy issue is binary (Yes or No) — and show that even here, the mismatch between voter preferences and party systems is not a bug but a **mathematical inevitability**. The argument rests on a clean information-theoretic observation: a $k$-party system is a channel with $\log_2 k$ bits of capacity, and when the entropy of voter preferences exceeds that capacity, information is irreversibly lost.
 
-In this post, I want to explore a formal framework for voting, show why the "Two-Party System" is mathematically equivalent to a lossy compression algorithm, and explore how we might break the "Curse of Dimensionality."
+The real world is far messier than binary issues, so the problems identified here are a *lower bound* on the true difficulty.
 
 ![]({{site.baseurl}}/images/voting-cube.png)
 
-> **Figure 1**: A 1-dimensional, two-party system is incapable of representing 75% (6/8) of possible preference combinations across just 3 binary issues. As the number of issues voters care about increases, their ability to express true preferences diminishes. Voters are effectively forced to choose the "lesser of two evils"—the party centroid that minimizes distance to their own views, even if the fit is poor.
+> **Figure 1**: Three binary issues define a cube with $2^3 = 8$ corners — eight distinct political identities. A two-party system compresses this cube onto a single diagonal line (the "party line"), leaving 6 of the 8 positions unrepresented. Voters at those orphaned corners must choose the lesser of two evils.
 
-## 1. The Setup: Voters as Vectors
+## 1. Setup: Preferences as Binary Vectors
 
-Let’s model the political compass not as a flat square, but as a high-dimensional space.
+Suppose there are $n$ binary policy issues. For concreteness, take $n = 3$:
 
-*   **The Space:** Imagine a space with $d$ dimensions. Each dimension represents a specific policy issue (e.g., Tax Rate, AI Regulation, Zoning Laws).
-*   **The Voter ($v$):** Every citizen is a point in this space, represented by a vector $v \in \mathbb{R}^d$. This vector encodes their ideal preferences on every issue.
-*   **The Society:** The electorate is a cloud of $m$ points distributed throughout this space.
+1. **Progressive Wealth Tax?** (Y/N)
+2. **Nuclear Power Expansion?** (Y/N)
+3. **Universal Basic Income?** (Y/N)
 
-The goal of any governance mechanism is to select a policy outcome—let’s call it vector $P$—that minimizes the collective unhappiness of the society. In geometry, "unhappiness" is simply distance. The further the outcome $P$ is from your position $v$, the more dissatisfied you are.
+Each voter's preference is a binary vector $v \in \{0, 1\}^n$. With $n = 3$ issues, there are $2^n = 8$ possible preference profiles — the corners of a hypercube.
 
-Ideally, we want to find the **Geometric Median**: the point $P$ that minimizes the sum of distances to all voters:
+A **society** is a probability distribution $p$ over $\{0, 1\}^n$: the fraction of voters holding each preference profile.
 
-$$ \min_P \sum_{i=1}^m \| v_i - P \| $$
+The **entropy** of the electorate is:
 
-If we could achieve this, we would have the "most representative" compromise for society. So, how do we get there?
+$$H(p) = -\sum_{v \in \{0,1\}^n} p(v) \log_2 p(v)$$
 
-## 2. The Two-Party Trap ($k=2$)
+This measures how much "political diversity" exists. At one extreme, if everyone agrees ($p$ is concentrated on a single corner), $H(p) = 0$. At the other extreme, if preferences are uniformly distributed, $H(p) = n$ bits.
 
-In most modern democracies, we don't calculate the median directly. We use intermediaries: Political Parties.
+## 2. Parties as Codebooks: The Vector Quantisation View
 
-A party is essentially a pre-packaged bundle of policies—a single "codeword" vector $c$ in that $d$-dimensional space. In a two-party system, the voter is presented with exactly two options: $c_A$ and $c_B$.
+A **$k$-party system** offers voters a menu of $k$ platforms $\\{c_1, \ldots, c_k\\} \subset \{0,1\}^n$. Each voter is assigned to the nearest party (the one matching on the most issues). This is exactly **vector quantisation** (VQ): we are compressing $2^n$ possible preference vectors into $k$ codewords.
 
-The voter’s job is simple: vote for the one closest to them.
-The system’s job is effectively **k-means clustering** (with $k=2$). It tries to find the two centroids that minimize the error for their respective halves of the population.
+The **distortion** of this compression is the expected Hamming distance between a voter's true preference and their assigned party:
 
-### The Dimensionality Collapse
-While this sounds efficient, it introduces a catastrophic mathematical flaw: **Dimensionality Collapse.**
+$$D = \sum_{v} p(v) \min_{j} d_H(v, c_j)$$
 
-Any two points ($c_A$ and $c_B$) define a straight line. By forcing voters to choose between them, the system projects the complex, $d$-dimensional variance of the population onto a **1-dimensional axis**.
+where $d_H$ is the Hamming distance — the number of issues on which the voter and their party disagree.
 
-*   If you care about an issue that aligns with this axis (e.g., "Left vs. Right"), you are represented.
-*   If you care about an issue *orthogonal* (perpendicular) to this axis—say, a specific tech policy that neither party talks about—your preference is mathematically invisible.
+A voter with distortion $d$ is being **misrepresented on $d$ issues**. This is the formal version of "the lesser of two evils."
 
-To the system, your vote is just a single bit of information (0 or 1). It cannot capture the nuance of a $d$-dimensional vector. This leads to high **Distortion**—the gap between what voters want and what they get is mathematically guaranteed to be high.
+## 3. The Two-Party System as a 1-Bit Channel
 
-We can think of this distortion as "forced strategic voting." Thorburn et al. ([^1]) quantify this error using **Kendall tau distance**—the number of "swaps" required to make a voter's true preferences fit the model. If you prefer Party A, but the geometric map forces you closer to Party B, the system has effectively swapped your preference. In the real world, we call this the "lesser of two evils"—a mathematical artifact of projecting high-dimensional citizens onto a 1-dimensional ballot.
+In a two-party system ($k = 2$), the voter's ballot carries exactly **1 bit** of information: Party A or Party B.
 
-## 3. Why not just add more parties? ($k=2^d$)
+But the space of preferences has $2^n$ elements, requiring up to $n$ bits to specify. The act of voting compresses an $n$-bit preference vector into a 1-bit message. By the **source coding theorem**, this compression is only lossless when the entropy of the source is at most 1 bit.
 
-If $k=2$ is too crude, the natural intuition is to increase $k$. Why not have 5, 10, or 20 parties?
+This gives us a precise criterion:
 
-We see this in systems using **Mixed-Member Proportional (MMP)** representation or pure proportional representation (like in Germany, New Zealand, or the Netherlands). These parliaments often have 10+ parties, offering voters a wider menu than the binary choice in the US.
+> **A two-party system is adequate if and only if $H(p) \leq 1$ bit.**
 
-As we add more centroids (parties), the representation error does decrease (this is known as *Zador’s Bound* in quantization theory). However, even with 15 parties, we run into a hard limit: **The Curse of Dimensionality**.
+### When it works: Low-entropy electorates
 
-Let’s assume distinct policy issues are binary (Yes/No). Let's take just three issues:
-1.  **Progressive Wealth Tax?** (Y/N)
-2.  **Nuclear Power Expansion?** (Y/N)
-3.  **Universal Basic Income?** (Y/N)
+Suppose 50% of voters hold preference $(0,0,0)$ ("The Left") and 50% hold $(1,1,1)$ ("The Right"). Then:
 
-*   To represent a voter who wants [Yes, Yes, Yes], you need a party with that exact platform.
-*   To represent a voter who wants [Yes, **No**, Yes], you need a completely different party.
+$$H(p) = -2 \times 0.5 \log_2 0.5 = 1 \text{ bit}$$
 
-If a Green party supports the Tax and UBI but opposes Nuclear, the pro-Nuclear environmentalist is stranded. They must compromise.
+A two-party system with $c_A = (0,0,0)$ and $c_B = (1,1,1)$ achieves **zero distortion** — every voter is perfectly represented. The 1-bit channel suffices because the electorate only uses 1 bit of the available $n$-bit space.
 
-To guarantee that *every* voter can find a party that represents their views on just $d=30$ binary issues, we would need a party for every possible combination:
+This is the scenario that two-party advocates implicitly assume: that political preferences are highly correlated, clustering neatly into "Left" and "Right" bundles.
 
-$$ 2^{30} \approx 1 \text{ Billion Parties} $$
+### When it fails: High-entropy electorates
 
-This intuition is backed by recent results in social choice theory. Thorburn et al. (2023) ([^1]) prove that to losslessly represent arbitrary preference rankings over $A$ alternatives, the spatial model must have at least $A-1$ dimensions.
+Now suppose voters are uniformly distributed across all 8 corners. Then $H(p) = 3$ bits, but the channel capacity is still 1 bit. No matter how cleverly we choose $c_A$ and $c_B$, we must lose at least $3 - 1 = 2$ bits of information.
 
-In our context, this implies a hard geometric limit: you cannot compress the complex, high-dimensional will of the electorate into a low-dimensional party system without introducing "embedding error." This error isn't just noise; it is the mathematical definition of a disenfranchised voter.
+Concretely, with $c_A = (0,0,0)$ and $c_B = (1,1,1)$, consider the voter at $(1,0,1)$ — a "Libertarian" who wants low taxes and minimal welfare but open immigration. Their nearest party is $c_B = (1,1,1)$, at Hamming distance 1. But a voter at $(0,1,0)$ — a "Left-Nationalist" who wants high taxes and strong welfare but closed borders — is nearest to $c_A = (0,0,0)$, also at distance 1. Both are misrepresented on one issue.
 
-### The "Independent Voter" Problem
+The expected distortion for the uniform distribution with optimal two-party placement is:
 
-This brings us to a fundamental philosophical question about how we structure governance:
+$$D = \frac{1}{8}\sum_{v \in \{0,1\}^3} \min(d_H(v, c_A), d_H(v, c_B))$$
 
-> Should every citizen have the right to express their preferences losslessly?
+With $c_A = (0,0,0)$ and $c_B = (1,1,1)$, the distances are:
 
-Critics might argue that real-world preferences are correlated—that 'Left' and 'Right' bundles naturally exist, and thus we only need to represent those specific corners of the hypercube. But this possibly confuses cause and effect, and ignores the fundamental measure of information: **Entropy**.
+| Voter $v$ | $d_H(v, c_A)$ | $d_H(v, c_B)$ | $\min$ |
+|-----------|---------------|---------------|--------|
+| $(0,0,0)$ | 0 | 3 | 0 |
+| $(0,0,1)$ | 1 | 2 | 1 |
+| $(0,1,0)$ | 1 | 2 | 1 |
+| $(1,0,0)$ | 1 | 2 | 1 |
+| $(0,1,1)$ | 2 | 1 | 1 |
+| $(1,0,1)$ | 2 | 1 | 1 |
+| $(1,1,0)$ | 2 | 1 | 1 |
+| $(1,1,1)$ | 3 | 0 | 0 |
 
-If 95% of the population truly fell into two neat ideological buckets, the entropy of the electorate would be low. A low-dimensional system (like two parties) would suffice, yielding low distortion. But if voters are even slightly independent—if they have unique combinations of views—the entropy of the distribution increases.
+$$D = \frac{1}{8}(0 + 1 + 1 + 1 + 1 + 1 + 1 + 0) = \frac{6}{8} = 0.75$$
 
-When the system's capacity (1 bit: Red vs. Blue) is lower than the entropy of the electorate, information is inevitably lost. By aligning our political dimensions to yield artificially low entropy, we are effectively disenfranchising minorities—forcing them to choose between two "evils," neither of which they particularly want. They are not allowed to express themselves.
+On average, each voter is misrepresented on 0.75 out of 3 issues — **25% of their preferences are lost**. And 6 out of 8 voter types (75%) are imperfectly represented.
 
-This loss manifests as **voter disenfranchisement**. When a voter's complex, high-entropy preference vector is compressed into a single low-entropy bit, they are not being "represented"; they are being silenced. It is plausible that this disconnect contributes to voter apathy. If the menu of options (parties) fails to cover the support of the distribution of voters, rational actors may simply choose not to participate.
+## 4. The General Rate–Distortion Tradeoff
 
-The "Impartial Culture" assumption in voting theory models a population of independent thinkers. The math shows that as voters become more independent (higher entropy), the error of low-dimensional systems explodes. A rigid party system effectively relies on artificial voter conformity to function. If we want a system that respects independent thought (e.g., a Pro-Gun Environmentalist), we face a combinatorial explosion that fixed parties cannot solve.
+More generally, a $k$-party system provides $R = \log_2 k$ bits of representation. The relationship between rate and distortion is governed by **rate–distortion theory**.
 
-This creates a paradox:
-1.  **Few Parties ($k=2$):** Low choice cost, but terrible representation accuracy (high error).
-2.  **Many Parties ($k \to \infty$):** Perfect representation, but impossible cognitive load (infinite search cost).
+For a uniform source over $\{0,1\}^n$ with Hamming distortion, the rate–distortion function is:
+
+$$R(D) = n - H_b\!\left(\frac{D}{n}\right) \cdot n$$
+
+where $H_b(p) = -p\log_2 p - (1-p)\log_2(1-p)$ is the binary entropy function. To achieve distortion $D$, you need at least $R(D)$ bits — i.e., at least $2^{R(D)}$ parties.
+
+This formalises the tradeoff:
+
+| Parties ($k$) | Bits ($R$) | Min. distortion (uniform, $n=3$) |
+|--------------|-----------|--------------------------------|
+| 2 | 1 | 0.75 |
+| 4 | 2 | ~0.375 |
+| 8 | 3 | 0 |
+
+To achieve zero distortion with $n$ binary issues, you need $k = 2^n$ parties — one for every corner of the hypercube.
+
+## 5. The Curse of Dimensionality
+
+The table above reveals the fundamental problem: the number of parties required for lossless representation grows **exponentially** in the number of issues.
+
+For $n = 3$, we need 8 parties — manageable. But for $n = 10$ issues, we need $2^{10} = 1{,}024$ parties. For $n = 30$:
+
+$$2^{30} \approx 1 \text{ billion parties}$$
+
+This is the **curse of dimensionality** applied to governance. No ballot can present a billion options. The cognitive and institutional costs make this impossible.
+
+This creates an inescapable dilemma:
+
+1. **Few parties ($k = 2$):** Low cognitive cost, but high distortion — voters are systematically misrepresented.
+2. **Many parties ($k \to 2^n$):** Low distortion, but impossible cognitive and institutional overhead.
 
 We cannot "party" our way out of this problem.
 
-## 4. The Information Bottleneck
+### When does the curse bite?
 
-The fundamental problem here is **Information Theory**.
+The severity depends on the entropy of the electorate. If voter preferences are highly correlated (low entropy), most of the $2^n$ corners are empty and a small number of parties suffices. The curse bites when preferences are **independent across issues** — when knowing a voter's position on taxes tells you nothing about their position on immigration.
 
-Traditional voting treats governance as a **Vector Quantization** problem. We are trying to compress the infinite complexity of human preference into a discrete, finite set of "buckets" (parties).
+In the extreme "impartial culture" model (uniform distribution), the entropy is maximal at $n$ bits, and the full exponential cost is unavoidable. Real electorates lie somewhere between these extremes, but any degree of independence across issues pushes the required number of parties above what is practical.
 
-In a high-dimensional world (where $d$ is large), bundling issues together is an incredibly inefficient way to transmit information.
-*   **Bundling:** "You must buy the whole menu. If you want the salad, you have to eat the steak."
-*   **Result:** You throw away the steak. That is waste (or in our model, "dissatisfaction").
+Critically, the causal direction matters. If voters' preferences *appear* correlated because the party system only offers correlated bundles, then the observed low entropy is an artifact of the compression, not a property of the underlying preferences. The system may be manufacturing the conformity it relies on.
 
-We need a mechanism that breaks the bundle.
+## 6. The Solution: Unbundling Issues
 
-## 5. The Solution: Unbundling (Liquid Democracy)
+The exponential blowup arises because parties **bundle** issues — they force voters to buy the whole menu. The solution is to **unbundle**: let voters express preferences issue by issue.
 
-To break the curse of dimensionality, we must switch from **selecting** a vector to **constructing** one. Recent research confirms that low-dimensional embeddings (like 2D political compasses) cannot accurately capture high-dimensional data without significant error.
+If each of the $n$ issues is voted on independently, the voter transmits $n$ bits of information — one per issue. This matches the dimensionality of the preference space exactly, achieving **zero distortion** regardless of the distribution $p$.
 
-By unbundling the issues, Liquid Democracy avoids the "Curse of Dimensionality" entirely. Instead of trying to fit complex voters into a simple low-dimensional map (and failing), we simply conduct the vote in the native high-dimensional space of the issues themselves. We don't compress the voter; we expand the ballot.
+Formally, instead of solving one vector quantisation problem in $\{0,1\}^n$ (requiring $2^n$ codewords for lossless compression), we solve $n$ independent scalar quantisation problems in $\{0,1\}$ (each requiring just 2 "codewords": Yes and No). The total cost is $2n$ options instead of $2^n$ — **linear instead of exponential**.
 
-In this framework:
-1.  The system doesn't solve one massive clustering problem in $d$-dimensional space.
-2.  It solves $d$ tiny clustering problems in 1-dimensional space.
+This is the core idea behind **Liquid Democracy** and issue-by-issue direct voting:
 
-If you care about Dimension 1 (Environment), you vote (or delegate) on that. If you are indifferent about Dimension 2 (Tax), you abstain or delegate to someone else.
+- **Direct vote:** On issues you care about, vote directly — transmitting your preference bit with full fidelity.
+- **Delegation:** On issues where you lack expertise, delegate your vote to a trusted representative — effectively choosing a better "codebook" for that single dimension.
 
-Mathematically, this changes the scaling of the error. We no longer need $2^d$ parties to cover the space. By treating the policies as an **orthogonal basis**—building the policy vector element-by-element—we allow the voter to express a precise location in high-dimensional space without requiring an infinite menu of options.
+The information-theoretic advantage is clear: delegation is per-issue, so the voter's total representation is a *composite* of different experts across dimensions, rather than a single lossy codeword that bundles everything together.
 
-### Summary
-*   **Preferences** are high-dimensional vectors.
-*   **Two-Party Systems** compress these vectors onto a single line, discarding most of the information.
-*   **Multi-Party Systems** fail to scale because the volume of the space grows exponentially ($2^d$).
-*   **Optimal Governance** requires unbundling: treating dimensions independently.
+## Summary
 
-The math suggests that as long as we rely on bundling (rigid parties), we will always suffer from high distortion. To align governance with voter will, we don't need *better* parties; we need a mechanism that transcends them.
+| | Two-Party System | Multi-Party System | Issue-by-Issue Voting |
+|---|---|---|---|
+| **Channel capacity** | 1 bit | $\log_2 k$ bits | $n$ bits |
+| **Distortion (uniform)** | $\frac{n-1}{2n} \cdot n$ | Decreasing in $k$ | 0 |
+| **Scales with issues?** | No | Exponential cost | Linear cost |
+| **Assumption for adequacy** | $H(p) \leq 1$ | $H(p) \leq \log_2 k$ | None |
+
+The mathematics is simple: preferences over $n$ binary issues live in an $n$-dimensional space. Any system that compresses this into fewer dimensions loses information. A two-party system is a 1-bit channel — adequate only when the electorate has at most 1 bit of entropy. As voters become more independent in their thinking, the distortion grows, and the only way to eliminate it is to match the channel capacity to the dimensionality of the preference space.
+
+We don't need better parties. We need a mechanism that transcends bundling.
 
 ## References
 
-[^1]: Error in the Euclidean Preference Model https://arxiv.org/abs/2208.08160
+- Thorburn et al. (2023). *Error in the Euclidean Preference Model*. [arxiv.org/abs/2208.08160](https://arxiv.org/abs/2208.08160)
