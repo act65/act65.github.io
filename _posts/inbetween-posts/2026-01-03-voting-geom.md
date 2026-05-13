@@ -1,20 +1,20 @@
 ---
 title: The Geometry of Governance
-subtitle: Why two parties can't represent you, and what information theory says about it
+subtitle: Voting as a compression problem, and the right to be heard
 layout: post
 categories:
     - economic
 ---
 
-We often talk about politics in terms of ideology, history, or tribalism. But at its core, governance is a compression problem: how do you aggregate the distinct preferences of millions of people into a single output — policy?
+We often talk about politics in terms of ideology, history, or tribalism. But at its core, governance is a **compression problem**: how do you aggregate the distinct preferences of millions of people into a single output — policy?
 
-In this post, I restrict attention to the simplest possible setting — every policy issue is binary (Yes or No) — and show that even here, the mismatch between voter preferences and party systems is not a bug but a **mathematical inevitability**. The argument rests on a clean information-theoretic observation: a $k$-party system is a channel with $\log_2 k$ bits of capacity, and when the entropy of voter preferences exceeds that capacity, information is irreversibly lost.
+In this post I restrict attention to the simplest possible setting — every policy issue is binary (Yes or No) — and ask what the geometry of compression tells us about democratic representation. A $k$-party system is a channel with $\log_2 k$ bits of capacity; issue-by-issue voting carries $n$ bits. Neither is universally right. The optimal mechanism matches the **entropy of voter preferences**, $H(p)$ — bundling issues that travel together, separating those that don't. And whenever a ballot's capacity falls short of $H(p)$, the voters silenced are predictably those whose preferences sit off the principal axis the codebook was drawn around: the system fails them not by accident but by construction.
 
 The real world is far messier than binary issues, so the problems identified here are a *lower bound* on the true difficulty.
 
 ![]({{site.baseurl}}/images/voting-cube.png)
 
-> **Figure 1**: Three binary issues define a cube with $2^3 = 8$ corners — eight distinct political identities. A two-party system compresses this cube onto a single diagonal line (the "party line"), leaving 6 of the 8 positions unrepresented. Voters at those orphaned corners must choose the lesser of two evils.
+> **Figure 1**: Three binary issues define a cube with $2^3 = 8$ corners — eight distinct political identities. A two-party system compresses this cube onto a single diagonal line (the "party line"). Under high-entropy preferences this leaves 6 of the 8 positions unrepresented; voters at those orphaned corners must choose the lesser of two evils.
 
 ## 1. Setup: Preferences as Binary Vectors
 
@@ -44,17 +44,17 @@ $$D = \sum_{v} p(v) \min_{j} d_H(v, c_j)$$
 
 where $d_H$ is the Hamming distance — the number of issues on which the voter and their party disagree.
 
-A voter with distortion $d$ is being **misrepresented on $d$ issues**. This is the formal version of "the lesser of two evils."
+A voter with distortion $d$ is being **misrepresented on $d$ issues**. This is the formal version of "the lesser of two evils." Note that throughout, "distortion" measures distance from a voter to the *nearest* available platform — a representational notion — not from whichever platform ultimately wins a given election.
 
 ## 3. The Two-Party System as a 1-Bit Channel
 
 In a two-party system ($k = 2$), the voter's ballot carries exactly **1 bit** of information: Party A or Party B.
 
-But the space of preferences has $2^n$ elements, requiring up to $n$ bits to specify. The act of voting compresses an $n$-bit preference vector into a 1-bit message. By the **source coding theorem**, this compression is only lossless when the entropy of the source is at most 1 bit.
+But the space of preferences has $2^n$ elements, requiring up to $n$ bits to specify. The act of voting compresses an $n$-bit preference vector into a 1-bit message — a compression that cannot be lossless unless the preferences themselves live on at most two profiles. Anything richer is being forced through too narrow a channel.
 
 This gives us a precise criterion:
 
-> **A two-party system is adequate if and only if $H(p) \leq 1$ bit.**
+> **A two-party system can be lossless only when voter preferences concentrate on at most two profiles — which forces $H(p) \leq 1$ bit, but is strictly stronger.**
 
 ### When it works: Low-entropy electorates
 
@@ -99,7 +99,7 @@ More generally, a $k$-party system provides $R = \log_2 k$ bits of representatio
 
 For a uniform source over $\{0,1\}^n$ with Hamming distortion, the rate–distortion function is:
 
-$$R(D) = n - H_b\!\left(\frac{D}{n}\right) \cdot n$$
+$$R(D) = n\left(1 - H_b\!\left(\frac{D}{n}\right)\right)$$
 
 where $H_b(p) = -p\log_2 p - (1-p)\log_2(1-p)$ is the binary entropy function. To achieve distortion $D$, you need at least $R(D)$ bits — i.e., at least $2^{R(D)}$ parties.
 
@@ -108,10 +108,10 @@ This formalises the tradeoff:
 | Parties ($k$) | Bits ($R$) | Min. distortion (uniform, $n=3$) |
 |--------------|-----------|--------------------------------|
 | 2 | 1 | 0.75 |
-| 4 | 2 | ~0.375 |
+| 4 | 2 | 0.5 |
 | 8 | 3 | 0 |
 
-To achieve zero distortion with $n$ binary issues, you need $k = 2^n$ parties — one for every corner of the hypercube.
+These are the achievable minima for $n = 3$ (the rate–distortion bound is asymptotic over many blocks and is tighter than what any finite codebook attains). To reach zero distortion with $n$ binary issues you need $k = 2^n$ parties — one for every corner of the hypercube.
 
 ## 5. The Curse of Dimensionality
 
@@ -138,34 +138,125 @@ In the extreme "impartial culture" model (uniform distribution), the entropy is 
 
 Critically, the causal direction matters. If voters' preferences *appear* correlated because the party system only offers correlated bundles, then the observed low entropy is an artifact of the compression, not a property of the underlying preferences. The system may be manufacturing the conformity it relies on.
 
-## 6. The Solution: Unbundling Issues
+## 6. Matching Structure: The Right Factorisation
 
-The exponential blowup arises because parties **bundle** issues — they force voters to buy the whole menu. The solution is to **unbundle**: let voters express preferences issue by issue.
+The exponential curse in §5 assumed every corner of the hypercube is equally populated — the impartial-culture extreme. Real electorates have **structure**: knowing a voter's position on healthcare predicts their position on taxes; knowing their position on immigration tells you something about drug policy. Preferences cluster.
 
-If each of the $n$ issues is voted on independently, the voter transmits $n$ bits of information — one per issue. This matches the dimensionality of the preference space exactly, achieving **zero distortion** regardless of the distribution $p$.
+This reframes the question. The right thing to ask is not "bundle or unbundle?" but **what factorisation of the ballot matches the conditional-independence structure of voter preferences?** Two parties is the extreme of forcing everything onto a single axis. Issue-by-issue is the extreme of treating every dimension as independent. Both are special cases of one principle:
 
-Formally, instead of solving one vector quantisation problem in $\{0,1\}^n$ (requiring $2^n$ codewords for lossless compression), we solve $n$ independent scalar quantisation problems in $\{0,1\}$ (each requiring just 2 "codewords": Yes and No). The total cost is $2n$ options instead of $2^n$ — **linear instead of exponential**.
+> **The ballot's channel capacity should match $H(p)$ — the entropy of voter preferences.**
 
-This is the core idea behind **Liquid Democracy** and issue-by-issue direct voting:
+Three regimes make this concrete.
 
-- **Direct vote:** On issues you care about, vote directly — transmitting your preference bit with full fidelity.
-- **Delegation:** On issues where you lack expertise, delegate your vote to a trusted representative — effectively choosing a better "codebook" for that single dimension.
+### 6.1 The aligned electorate: bundling is efficient
 
-The information-theoretic advantage is clear: delegation is per-issue, so the voter's total representation is a *composite* of different experts across dimensions, rather than a single lossy codeword that bundles everything together.
+Suppose 50% of voters sit at $(0,0,0)$ ("Left") and 50% at $(1,1,1)$ ("Right"). $H(p) = 1$ bit.
+
+A two-party system with platforms at these corners achieves zero distortion — every voter's nearest party matches them exactly. Issue-by-issue voting also faithfully records every voter's preferences, but extracts 3 bits per voter to capture 1 bit of signal. The 2 extra bits are pure overhead.
+
+**Two parties wins.** When the electorate is one-dimensional, the 1-bit channel is exactly right.
+
+### 6.2 The independent electorate: bundling is fatal
+
+Now suppose preferences are uniform over all 8 corners. $H(p) = 3$ bits. From §3, two parties yield distortion 0.75 — a quarter of every voter's preferences silently discarded. Four parties only reach 0.5. To get to zero you need $2^n$ codewords, and the cost explodes at $n = 30$.
+
+Issue-by-issue voting matches the entropy exactly: 3 bits in, 3 bits out, zero distortion, linear cost.
+
+**Unbundling wins.** When issues are independent, no amount of clever bundling helps; the only fix is to give the ballot enough capacity.
+
+### 6.3 The clustered electorate: factor along the clusters
+
+Most realistic electorates lie between these extremes. Consider 6 issues that split into two thematic clusters:
+
+- **Economic axis:** {wealth tax, welfare expansion, public healthcare}
+- **Social axis:** {drug liberalisation, immigration, surveillance}
+
+Within each cluster, issues are tightly correlated. Across clusters they are independent — your economic leanings tell us nothing about your social ones.
+
+Concretely, say each cluster is split 50/50 between its all-Yes corner and its all-No corner, with the two clusters drawn independently. The electorate has 4 equally-sized types:
+
+| Type | Economic | Social |
+|------|----------|--------|
+| Progressive-libertarian | $(1,1,1)$ | $(1,1,1)$ |
+| Progressive-authoritarian | $(1,1,1)$ | $(0,0,0)$ |
+| Conservative-libertarian | $(0,0,0)$ | $(1,1,1)$ |
+| Conservative-authoritarian | $(0,0,0)$ | $(0,0,0)$ |
+
+$H(p) = 2$ bits.
+
+| Mechanism | Bits/voter | Distortion (out of 6) |
+|---|---|---|
+| 2 parties (single axis) | 1 | 1.5 |
+| 4 parties (one per type) | 2 | 0 |
+| 6 issue-by-issue votes | 6 | 0 |
+| **2 cluster bundles** | **2** | **0** |
+
+Two parties fail because forcing 4 types onto one axis collapses the orthogonal dimension. Issue-by-issue succeeds but extracts 4 bits more than the source contains. The clean answer is to ask each voter for **two bits** — a single Y/N for the economic package and a single Y/N for the social package — yielding zero distortion at exactly the entropy of the electorate.
+
+### 6.4 The principle
+
+The right ballot mirrors the **conditional-independence graph** of voter preferences. Bundle issues that travel together; separate clusters that don't. The voter transmits one bit per cluster — not one bit per electorate, and not one bit per issue.
+
+Survey data on real political opinion suggests roughly 2–4 dominant axes, not 1 (the two-party assumption) and not 30 (the impartial-culture assumption). The optimal number of distinct policy packages is correspondingly modest: a handful of conditional bundles, not a billion.
+
+**Liquid Democracy** falls out as a natural refinement. If voters can delegate per-cluster, they import a more informed codebook for dimensions they don't follow while voting directly on those they do. The total representation is a *composite* across clusters, rather than a single lossy codeword that bundles everything.
+
+## 7. The Limits of Unbundling: Ostrogorski's Paradox
+
+There is an assumption hiding inside the "unbundling is fatal" argument of §6.2: that a voter's satisfaction is the **sum** of per-issue agreements. This is the separability assumption, and it is what makes Hamming distortion the right loss function.
+
+Real preferences are often non-separable. A natural example:
+
+> *I support expanding welfare for families, jobseekers, and the disabled. Unless a UBI is on the table — in which case I support the UBI and reject the targeted increases.*
+
+The preference between "expand targeted welfare" and "leave it alone" is **conditional** on whether UBI passes. Voting on each issue independently can produce UBI *and* the targeted increases — a package nobody actually wanted.
+
+The textbook version is the **Ostrogorski paradox**. Three blocs vote on three issues:
+
+| Bloc | Share | Bundle |
+|------|-------|--------|
+| A | 40% | $(Y, Y, N)$ |
+| B | 30% | $(Y, N, Y)$ |
+| C | 30% | $(N, Y, Y)$ |
+
+Issue-by-issue majorities give Y (70%), Y (70%), Y (60%) — outcome $(Y, Y, Y)$, **a bundle no voter actually preferred**. Each voter sits at Hamming distance 1, which looks fine under separable loss but is catastrophic if voters care about coherent packages over per-issue marginals.
+
+This is where the §6 framework rescues us. **Non-separable issues are, by definition, not conditionally independent — and therefore belong in the same cluster.** UBI and targeted welfare are not separate issues; they are one cluster with internal logical structure that has to be voted on as a unit. The §6.4 diagnostic — *does knowing position on A predict position on B?* — catches this case automatically.
+
+Ostrogorski paradoxes arise only when you over-unbundle: when you treat as independent dimensions that the actual preference structure binds together. The right factorisation keeps them bundled, and the paradox dissolves.
+
+The mistake at both extremes is the same: imposing a structure that doesn't match the electorate. Two-party democracy assumes one axis; pure direct democracy assumes none. Both are wrong in the same way, in opposite directions.
+
+## 8. The Right to Be Heard
+
+So far we've framed compression loss as **average distortion** — how much voters' preferences fail to match the system's output. But averages hide a sharper question: **whose** preferences are lost?
+
+Lossy compression doesn't lose information uniformly. It loses the information furthest from the codebook. In a two-party system with platforms on the principal axis, the silenced voters are exactly those at the off-diagonal corners of the cube: libertarians (low tax, low welfare, open immigration), left-nationalists (high tax, strong welfare, closed borders), eco-socialists, religious progressives — voters whose combination of concerns doesn't lie on the dominant ideological axis. These are not random voters. They are systematically the people whose particular bundle crosses the lines the dominant axis was drawn to separate.
+
+This is the **structural source of disenfranchisement**. When a voter says "no party represents me," they are usually right. Their preference profile sits in a region of the cube that no codeword covers, and by construction the system cannot recover it. The feeling is not paranoia — it is the predictable consequence of routing an $n$-bit signal through a 1-bit channel.
+
+It also explains why disenfranchisement clusters with **minority status**. Two-party systems optimise for the median voter along the principal axis of variance. Whoever sits off that axis loses — and the people off that axis tend to be those whose interests don't align with the majority bundle. Ethnic minorities with policy concerns that cross the left-right divide, regional populations with distinct priorities, religious communities with idiosyncratic combinations: their disenfranchisement is not a failure of organisation but a mathematical consequence of the channel they're forced to use.
+
+This reframes the central question. Instead of "is the system efficient?" we should ask: **does every voter have the right to transmit their preferences without distortion?** A democracy that meets this standard must offer a ballot with channel capacity at least $H(p)$. Anything less is a system that, by design, silences someone.
+
+One caveat worth stating plainly. The right argued for here is *informational* — the right to be **heard**. It is distinct from the right to be **obeyed**. Even under perfect issue-by-issue voting the minority loses on each issue; their preferences are recorded but not enacted. The information-theoretic argument tells you what it takes to register every voter's preferences faithfully. Whether the system then aggregates them fairly — proportionally, via Condorcet, via supermajority on sensitive issues — is a separate question. But registering is the prerequisite. A democracy that cannot even hear its minorities cannot meaningfully claim to weigh them.
 
 ## Summary
 
-| | Two-Party System | Multi-Party System | Issue-by-Issue Voting |
+| Electorate | $H(p)$ | Optimal ballot | Bits/voter |
 |---|---|---|---|
-| **Channel capacity** | 1 bit | $\log_2 k$ bits | $n$ bits |
-| **Distortion (uniform)** | $\frac{n-1}{2n} \cdot n$ | Decreasing in $k$ | 0 |
-| **Scales with issues?** | No | Exponential cost | Linear cost |
-| **Assumption for adequacy** | $H(p) \leq 1$ | $H(p) \leq \log_2 k$ | None |
+| Aligned (one axis) | $\approx 1$ | 2 parties | 1 |
+| Clustered ($c$ axes) | $\approx c$ | $c$ cluster-bundles (or $2^c$ parties) | $c$ |
+| Independent (all issues unrelated) | $n$ | Issue-by-issue | $n$ |
+| **Arbitrary $p$** | $H(p)$ | **Match the factorisation** | $H(p)$ |
 
-The mathematics is simple: preferences over $n$ binary issues live in an $n$-dimensional space. Any system that compresses this into fewer dimensions loses information. A two-party system is a 1-bit channel — adequate only when the electorate has at most 1 bit of entropy. As voters become more independent in their thinking, the distortion grows, and the only way to eliminate it is to match the channel capacity to the dimensionality of the preference space.
+The mathematics is simple. Preferences over $n$ binary issues live in an $n$-dimensional space, but the *effective* dimensionality is the entropy $H(p)$. A ballot with channel capacity below $H(p)$ loses information; above $H(p)$ wastes voter effort. Two parties is right when the electorate is one-dimensional. Pure issue-by-issue is right when issues are independent. Neither is universally right — and the universal answer is to factor the ballot to match the conditional-independence structure of preferences, bundling within clusters and separating across them.
 
-We don't need better parties. We need a mechanism that transcends bundling.
+The deeper point is not efficiency but whose voice the channel can carry. Every voter whose preferences lie off the codebook's principal axes is, by construction, silenced — and these are not random voters, but the predictable minorities whose particular bundle of concerns the dominant axis was drawn to ignore. A democracy that takes representation seriously owes its citizens a ballot wide enough to hear them. We don't need to choose between bundling and unbundling. We need a mechanism that can do either, dimension by dimension — and that owes a hearing to everyone, not just the median voter.
 
 ## References
 
 - Thorburn et al. (2023). *Error in the Euclidean Preference Model*. [arxiv.org/abs/2208.08160](https://arxiv.org/abs/2208.08160)
+- Daudt, H. & Rae, D. (1976). *The Ostrogorski paradox: a peculiarity of compound majority decision.* European Journal of Political Research.
+- List, C. & Pettit, P. (2002). *Aggregating sets of judgments: an impossibility result.* Economics and Philosophy.
+- Cover, T. & Thomas, J. (2006). *Elements of Information Theory*, 2nd ed. (Chapter 10, Rate–Distortion Theory.)
