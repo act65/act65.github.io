@@ -9,3 +9,4 @@ package.json
 vendor
 .jekyll-cache
 *.ipynb_checkpoints
+CLAUDE.md

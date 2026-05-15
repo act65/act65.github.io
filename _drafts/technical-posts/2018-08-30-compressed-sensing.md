@@ -1,212 +1,128 @@
 ---
 layout: post
-title: Compressed sensing and machine learning
+title: "Compressed Sensing and the Magic of Implicit Regularization"
 categories:
     - tutorial
+    - machine-learning
+    - math
 ---
 
-This post is about;
+Modern deep neural networks have a glaring, fundamental problem: they have millions more parameters than there are data points to train them on. 
 
-* how to make maximally informative queries
-* ??
-* ??
+By all the classical laws of statistics and linear algebra, these models should be wildly overfitting. They should memorize the training data and fail miserably in the real world. Yet, they don't. They somehow find solutions that generalize beautifully.
+
+Why? The answer lies in the mathematics of taking photos with random noise—a field known as **Compressed Sensing (CS)**. 
+
+In this post, we are going to explore how solving underdetermined systems in compressed sensing gives us the exact mathematical framework to understand why over-parameterized machine learning models actually work.
+
+---
+
+## 1. The Curse of Too Many Unknowns
+
+Imagine a system of linear equations where we have more unknowns than equations. 
+
+$$
+y = Ax
+$$
+
+If $A$ is a "fat" matrix (more columns than rows), we don't have enough measurements ($y$) to uniquely determine the signal ($x$). Classical linear algebra tells us there are infinitely many valid solutions for $x$. How do we pick the right one?
+
+If we don't know anything else about $x$, we can't. But what if we introduce an **assumption of structure**? What if we assume that the true $x$ is *simple*? 
+
+In the real world, most signals are sparse. An image might have millions of pixels, but when transformed into a wavelet basis (like in JPEG compression), almost all the coefficients are zero. If we know that $x$ is mostly zeros, our infinite pool of solutions suddenly shrinks.
+
+## 2. Measuring Sparsity ($L_0$ vs $L_1$)
+
+To find the sparse solution, we want to minimize the number of non-zero elements in $x$ while still matching our measurements. We mathematically denote the "number of non-zero elements" as the $L_0$ norm. Our optimization problem looks like this:
+
+$$
+\min_x \|x\|_0 \quad \text{s.t.} \quad \|Ax - y\|_2 \le \epsilon
+$$
+
+There is a huge problem with the $L_0$ norm: it is incredibly brittle and NP-hard to optimize. If an element in $x$ is `1e-8` due to floating-point noise, $L_0$ counts it as a full non-zero element. Furthermore, it's non-convex; you can't use gradient descent on it. You would literally have to test every possible combination of non-zero elements.
+
+What about the standard $L_2$ norm (Euclidean distance)?
+$$ \|x\|_2 = \sqrt{ \sum x_i^2 } $$
+The $L_2$ norm is wonderfully convex, but it *hates* sparsity. It penalizes large numbers heavily and prefers to spread the values out smoothly. It would rather have a hundred tiny non-zero values than one large one.
+
+**The $L_1$ Miracle:**
+The sweet spot is the $L_1$ norm (the sum of absolute values):
+$$ \|x\|_1 = \sum |x_i| $$
+
+There is a beautiful mathematical relationship where, under the right conditions, minimizing $L_1$ yields the exact same solution as minimizing $L_0$. $L_1$ is convex (meaning we can easily optimize it with gradient descent), yet its geometric shape (a sharp diamond in multi-dimensional space) naturally forces coefficients to be exactly zero.
+
+*(Placeholder: Insert the classic geometric diagram here showing an $L_2$ circle vs an $L_1$ diamond intersecting a constraint line. The diamond's sharp corners guarantee the intersection happens on an axis, perfectly zeroing out a variable!)*
+
+## 3. How to Sample: The "20 Questions" Analogy
+
+Now that we know how to find a sparse signal mathematically, how should we collect the data ($A$) in the first place? 
+
+Emmanuel Candès and Terence Tao, pioneers of compressed sensing, made a brilliant observation:
+
+> "If your image consists of a few sparse dots... the worst way to sample it is by capturing individual pixels. The best way to sample the image is to compare it with widely spread-out noise functions. One could draw an analogy with the game of '20 questions.' If you have to find a number between 1 and $N$... the worst way to proceed is to guess individual numbers."
+
+**How is comparing against random noise like 20 questions?**
+
+If you sample a single pixel and it's black, you learned almost nothing. You only gained local information. But if you multiply the entire image by a matrix of random noise, *every single measurement contains a tiny bit of information about every single pixel*. 
+
+Just like asking "Is the number less than $N/2$?" cuts your search space in half globally, a random projection cuts the possible vector space down globally. By taking measurements that are completely random, we guarantee that our measurement basis is maximally "incoherent" (dissimilar) to the image's natural basis. 
+
+*(Side note: This global sampling approach has fascinating implications for Reinforcement Learning. Imagine an Atari agent dealing with partial observability. Instead of sampling exact pixels and hoping to see the ball, taking global random projections of the screen ensures no localized event is entirely missed).*
+
+## 4. The Restricted Isometry Property (RIP)
+
+But what if our random measurements scale the signal unpredictably, or blow up when we introduce noise $\epsilon$?
+
+For this to work stably, our random matrix $A$ needs to satisfy the **Restricted Isometry Property (RIP)**:
+
+$$
+(1-\delta_S)\|x_T\|_2^2 \;\; \le \;\; \|A_{T}x_T\|_2^2 \;\; \le \;\; (1+\delta_S)\|x_T\|_2^2
+$$
+
+In plain English: If you take any sparse subset of columns from $A$ (denoted by $T$), they must behave almost exactly like an orthogonal matrix. They can't stretch or shrink the energy of the signal $x$ by more than a small factor $\delta$. 
+
+Because the signal isn't aggressively scaled down toward zero, inverting the process doesn't require dividing by tiny numbers. Consequently, any noise $\epsilon$ in our measurements remains proportionally small in our reconstruction. The severely ill-posed matrix inversion is magically stabilized by the randomness of $A$.
+
+## 5. The Machine Learning Connection
+
+What does all of this have to do with Machine Learning? Let's look at the mathematical parallel.
+
+In **Compressed Sensing**, to recover a ground truth signal, we solve:
+$$ \min_x \|Ax - y\|_2^2 + \lambda \|x\|_1 $$
+*(Given data $A$ and labels $y$, find a simple/sparse vector $x$.)*
+
+In **Machine Learning** (e.g., linear networks or matrix sensing), we solve:
+$$ \min_W \|XW - y\|_2^2 + \lambda \|W\|_* $$
+*(Given data $X$ and labels $y$, find a simple/low-rank weight matrix $W$.)*
+
+It is the exact same problem! In Deep Learning, our network parameters ($W$) vastly outnumber our training data ($X$). We are operating in a severely underdetermined regime. Just like in compressed sensing, there are infinitely many weight configurations that result in $0\%$ training error. 
+
+To stop the network from memorizing noise, classical ML theory tells us we *must* add an explicit regularization term (like an $L_1$ or $L_2$ penalty) to force the model to pick the "simplest" solution.
+
+But here is the mind-bending part: **Modern deep learning often doesn't use explicit regularization.** Yet, the models still generalize.
+
+## 6. Algorithmic Regularization: The Optimizer is the Magic
+
+How do neural networks pick the simple, generalizable solution out of infinite possibilities without us explicitly asking them to?
+
+The answer lies in **Implicit (or Algorithmic) Regularization**. The optimization algorithm itself acts as the regularizer.
+
+Consider a matrix factorization scenario where we parameterize our weights as $W = U U^T$. As Gunasekar et al. [3] point out:
+
+> "The intuition above would still apply if we replace $UU^T$ with a single variable $X$ and run gradient descent... However, it will converge to a solution that doesn’t generalize. The discrepancy comes from another crucial property of the factorized parameterization: it provides a certain denoising effect that encourages the empirical gradient to have a smaller eigenvalue tail."
+
+When we initialize a neural network with small random weights and train it using Gradient Descent, the path the optimizer takes through the loss landscape naturally biases it toward low-rank (simple) matrices. 
+
+Even though we didn't explicitly write $+ \lambda \|W\|_*$ into our loss function, the geometry of gradient descent on factorized parameters essentially does it for us. **The optimizer is secretly doing compressed sensing.** It sifts through the infinite, underdetermined solutions and naturally settles on the one with the lowest complexity.
+
+Ultimately, whether we are trying to reconstruct a high-resolution MRI from a few random samples, or train a billion-parameter language model on a fraction of the internet, the underlying math whispers the same truth: *The universe favors simplicity, and thankfully, our algorithms do too.*
 
 ***
 
-Only sample your environment to tell you what you need to know.
+### References
 
-The problem is that we only have a few samples, they could have come from many places.
-- how can we select a candidate from many?
-- how can we pick samples to minimse the set of candidates?
-- ?
-(how general is this to partial information -- is it possible to apply to to Atari?)
+1.[Compressed Sensing Makes Every Pixel Count](https://www.ams.org/publicoutreach/math-history/hap7-pixel.pdf) - Emmanuel Candès and Terence Tao
+2.[Stable Signal Recovery from Incomplete and Inaccurate Measurements](https://statweb.stanford.edu/~candes/papers/StableRecovery.pdf) - Emmanuel Candès, Justin Romberg, and Terence Tao
+3.[Algorithmic Regularization in Over-parameterized Matrix Sensing and Neural Networks with Quadratic Activations](https://arxiv.org/abs/1712.09203) - Suriya Gunasekar, Blake Woodworth, Srinadh Bhojanapalli, Behnam Neyshabur, Nati Srebro
 
-
-$$
-\begin{align}
-\text{min} \parallel R(x) \parallel_1 \;\;\text{s.t.}\;\; \parallel f(x) - y \parallel_2 \le \epsilon \\
-\end{align}
-$$
-
-$$
-\begin{align}
-f \perp g \\
-\text{min} \parallel g(z) \parallel_1  + \lambda \parallel f(g(z)) - y \parallel_2 \\
-\end{align}
-$$
-
-
-<side>The fact that we must mix the pixels feels like a cheat. We still need to physically interact with all the pixels, many times... But maybe mixing is cheap and measuring is not!?</side>
-
-* Why doesnt the order matter?!?
-
-Problem is; we have an image that may be sparse in a basis. How do we find which elements are non zero?
-- Could search through them all,
--
-
-> If your image consists of a few sparse dots or a few sharp lines, the worst way to sample it is by capturing individual pixels (the way a regular camera works!). The best way to sample the image is to compare it with widely spread-out noise functions. One could draw an analogy with the game of “20 questions.” If you have to find a number between 1 and $N$, the worst way to proceed is to guess individual numbers (the analog of measuring individual pixels). On average, it will take you $N$/2 guesses. By contrast, if you ask questions like, “Is the number less than $N$/2?” and then “Is the number less than $N $/4?” and so on, you can find the concealed number with at most $log_2 N$ questions.
-
-hmmm. How is asking "is the number less than N/4?" like comparing against a random signal?
-"How much of the image vector points in this, random, direction?"
-If you know after 2 measurements that an image is partially similar to up/left, and up/right then you should conclude up.
-
-> Notice that the “20 questions” strategy is adaptive: you are allowed to adapt your questions in light of the previous answers. To be practically relevant, Candes and Tao needed to make the measurement process nonadaptive, yet with the same guaranteed performance as the adaptive strategy just described. In other words, they needed to find out ahead of time what would be the most informative questions about the signal x.
-
-How is this related to a hash fn?!
-
-## Assumption of structure
-
-What other possible kinds of structure are there?!
-
-
-## Measures of sparsity
-
-What we need is a measure of sparsity.
-Better than that want one that can handle approximate sparsity/noise.
-
-$$
-\begin{align}
-\parallel x \parallel_0 &= \sum_{i=0}^n x_i^0 \tag{assuming $0^0=0$}\\
-\parallel x \parallel_1 &= \sum_{i=0}^n \mid x_i \mid \\
-\parallel x \parallel_2 &= \sqrt{ \sum_{i=0}^n  x_i^2 } \\
-\end{align}
-$$
-
-Problem with $L_0$ is that it doesnt tell use how close we are to a sparse solution.
-One of the elements might be $= 1e-8$ yet, it is still counted as a non-zero element.
-
-
-<side>does this relationship generalise to higher $L_P$ norms?</side>
-There is a nice relationship between $L_0$ and $L_1$ minimisers
-
-$$
-\begin{align}
-\forall b_i \in \{?!? \}, A = \in \{?!? \} \\
-\mathop{\text{min}}_{A, b} \parallel Ax + b \parallel_0 &= \mathop{\text{min}}_{A, b} \parallel Ax + b \parallel_1
-\end{align}
-$$
-
-Probability of sampling a line that intersects the origin. How can this be proved?
-
-Can be easily understood geometrically as ... (insert image)
-
-
-## Randomness and mixing
-
-Two uses. L_0 = L_1 AND dissimilarity to image basis (make sure you get a good mixture).
-
-
-I wonder if existing physical processes might do the mixing for us? E.g. An EEG of the brain represents a local mixture of electric potentials. Can this be used to do compressed sensing?
-
-## Restricted Isometry
-(the formalisation of our concept of mixing!?)
-
-$$
-\begin{align}
-d_Y(f(a), f(b)) = d_X(a, b)
-\end{align}
-$$
-
-$$
-\begin{align}
-(1-\delta)\parallel y \parallel_2^2 \le \parallel Ay \parallel_2^2 \le (1+\delta)\parallel y \parallel^2_2
-\end{align}
-$$
-
-<side>What goes wrong if the signals can be scaled?</side>
-Doesnt tend to change the magnitiude of the vector $y$, aka A must be approximately a rotation (no scaling), ie an orthogonal transformation.
-
-What does it mean to do a rotation? The basis you use to descibe Y is ?!?! relation to X.
-
-
-But RIP is (how much if at all!?!?) weaker than requiring an orthogonality.
-
-> This property essentially requires that every set of columns with cardinality less than S approximately behaves like an orthonormal system
-
-I see how it requires every set of columns with cardinality less that S approximately behaves like a normal system, but not orthonormal.
-
-
-$$
-\begin{align}
-(1-\delta_S)\parallel y_T \parallel_2^2 \;\; &\le \;\;\parallel A_{:, T}y_T \parallel_2^2 \;\; \le \;\; (1+\delta_S)\parallel y_T \parallel^2_2 \\
-\forall T &\subseteq \{1, \dots n\} \;\; \text{s.t.} \;\; \mid T \mid \; = S \\
-\end{align}
-$$
-
-Questions;
-
-- why forall T?
-- what value of y is used?
-- ?
-
-***
-
->  There are no known large matrices with bounded restricted isometry constants (computing these constants is strongly NP-hard,3 and is hard to approximate as well 4)  - https://en.wikipedia.org/wiki/Restricted_isometry_property
-
-## Stable recovery from incomplete and noisy measurements
-
-> How can we possibly hope to recover our signal when not only the available information is severely incomplete but in addition, the few available observations are also inaccurate?
-
->  To be broadly applicable, our recovery procedure must be stable: small changes in the observations should result in small changes in the recovery.
-
-__Theorem 1.__ (from [2](#2))
-
-Let $S$ be such that $\delta_{3S} + 3\delta_{4S} < 2$. Then for any signal $x_0$ suported on $T_0$ with $\mid T_0 \mid \le S$ and any pertubation $e$ with $\parallel e \parallel_2 \le \epsilon$, the solution $\hat x$ to ($P_2$) obeys
-
-$$
-\parallel \hat x - x_0 \parallel_2 \le C_S \cdot \epsilon \\
-$$
-
-__Q__ what is C? how does it depend on S?
-
-Note:
-
-* Any $\epsilon$. Hmm. Generalsing this to ML, we might have some issues. Needs to be stable to pertubations, but adversarial examples would break this...
-* Where does $\delta_{3S} + 3\delta_{4S} < 2$ come from, seems rather weird!?
-*
-
-> The fact that the severely ill-posed matrix inversion keeps the perturbation from “blowing up” is rather remarkable and perhaps unexpected
-
-<aside>
-Why is the inversion of a rectangular matrix (and/or low rank) sensitive to pertubations?
-
-...?!?
-</aside>
-
-> no recovery method can perform fundamentally better for arbitrary perturbations of size $\epsilon$ ... obtaining a
-reconstruction with an error term whose size is guaranteed to be proportional to the noise level is the best one can hope for.
-
-
-
-## Relationship to machine learning
-
-To recover some ground truth, we are allowed to take measurements.
-But which measurements should be taken? The above tells us they should be maximally inoherent with ???.
-
-Then $A$ is our data, $y$ the labels, and $x$ is function we want to recover.
-
-$$
-\begin{align}
-x &\in \mathbb R^n, y_i \in \mathbb R, A \in \mathbb R^{m \times n}  \\
-y_i &= \langle A_i, x \rangle \tag{compressed sensing}\\
-\mathop{\text{min}}_x & \parallel Ax - y \parallel_2 + R(x) \\
-\\
-x_i &\in \mathbb R^n, y_i \in \mathbb R^m, A \in \mathbb R^{m \times n}\\
-y_i &= \langle A, x_i \rangle \tag{machine learning} \\
-\mathop{\text{min}}_A & \parallel Ax - y \parallel_2 + R(A) \\
-\end{align}
-$$
-
-Neither can be solved by gaussian elimination (or other methods -- which are!?!?) because they are ...?
-
-* Is there a way to incorporate beliefs about noise the data to ML?
-
-***
-
-> We note that the factorized parameterization also plays an i mportant role here.  The intuition above would still apply if we replace U U ⊤ with a single variable X and run gradient descent in the space of X with small enough initialization.  However, it will converg e to a solution that doesn’t generalize.  The discrepancy comes from another crucial property of the factorized parameterization:  it provides certain denoising effect that encourages th e empirical gradient to have a smaller eigenvalue tail.
-
-## References
-
-1. <a name="1">[Compressed Sensing Makes Every Pixel Count](https://www.ams.org/publicoutreach/math-history/hap7-pixel.pdf)</a>
-2. <a name="2">[Stable Signal Recovery from Incomplete and Inaccurate Measurements](https://statweb.stanford.edu/~candes/papers/StableRecovery.pdf)</a>
-3. [Algorithmic Regularization in Over-parameterized Matrix Sensing and Neural Networks with Quadratic Activations](https://arxiv.org/abs/1712.09203)
+<!-- there's even more research about how NNs learn simple function first. should add that!? -->
