@@ -70,7 +70,9 @@ This is the scenario that two-party advocates implicitly assume: that political 
 
 Now suppose voters are uniformly distributed across all 8 corners. Then $H(p) = 3$ bits, but the channel capacity is still 1 bit. No matter how cleverly we choose $c_A$ and $c_B$, we must lose at least $3 - 1 = 2$ bits of information.
 
-Concretely, with $c_A = (0,0,0)$ and $c_B = (1,1,1)$, consider the voter at $(1,0,1)$ — a "Libertarian" who wants low taxes and minimal welfare but open immigration. Their nearest party is $c_B = (1,1,1)$, at Hamming distance 1. But a voter at $(0,1,0)$ — a "Left-Nationalist" who wants high taxes and strong welfare but closed borders — is nearest to $c_A = (0,0,0)$, also at distance 1. Both are misrepresented on one issue.
+Concretely, with $c_A = (0,0,0)$ and $c_B = (1,1,1)$, consider the voter at $(1,0,1)$ — a "Libertarian" who wants low taxes and minimal welfare but open immigration. **There is no ballot they can cast that expresses this preference.** Voting for $c_B$ actively endorses the welfare expansion they oppose; voting for $c_A$ actively endorses the closed borders they oppose. There is no third option, no way to register "I want $(1,0,1)$" — the system has no vocabulary for it. The same trap catches the voter at $(0,1,0)$, a "Left-Nationalist" who wants high taxes and strong welfare but closed borders. Each is forced not merely to accept a compromise but to *cast a vote endorsing a position they reject*; the information that they wanted otherwise never enters the channel.
+
+Hamming distance 1 makes this sound like a small error. From the voter's side it is total: on the issue they were silenced on, their vote counts the wrong way.
 
 The expected distortion for the uniform distribution with optimal two-party placement is:
 

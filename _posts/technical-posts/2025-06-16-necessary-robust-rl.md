@@ -10,6 +10,8 @@ How can we ever hope to build an Artificial General Intelligence (AGI) that won'
 
 This question highlights a critical prerequisite for AI safety. It establishes that solving the problem of **robustness** in today's narrow AI is a necessary, though certainly not sufficient, condition for solving the grander problem of **alignment** in a future AGI. This isn't just a philosophical point; it's a technical one. The argument is that alignment is, in essence, an adversarial robustness problem where the adversary is the most powerful optimizer we've ever built: the AGI itself.
 
+The intuition that robustness and alignment are deeply connected is not new. Variants of it run through much of the AI safety literature: Armstrong's utility indifference [^21], Soares et al.'s corrigibility [^22], Everitt's reward tampering framework [^23], Christiano's case for worst-case performance optimisation [^20] — all gesture at the same underlying idea, that a safely-deployed agent must be insensitive to certain classes of intervention on its own decision machinery. What has been missing is a formal connection: a precise statement of *which* slice of robustness research addresses the alignment problem, and *why*. This post supplies that connection. We show that wireheading — the AGI as adversary to itself — is structurally the **cooperative dual** of the standard reward-poisoning robust MDP, and that this dual identifies a specific subset of robustness techniques (those producing certifiably invariant policies) as load-bearing for alignment, while excluding others (empirical adversarial training) that the loose framing would mistakenly include.
+
 ### Defining Our Terms with Technical Rigor
 
 To make this argument precise, we must move beyond analogy and into formalisms.
@@ -48,10 +50,10 @@ This general framework is key. The adversary isn't necessarily malicious; they h
 
 The "hammer" represents a human-level adversary who can manipulate the agent's experience of the world. The set of perturbations $P$ defines the adversary's power. We can classify these attacks by their point of intervention:
 
-1. **Observation Perturbation (Attacking the State, $s$):** The adversary corrupts the agent's perception of the environment. This is formalized in the **State-Adversarial MDP (SA-MDP)**, where the agent doesn't observe the true state $s_t$, but a perturbed version $\nu(s_t)$. [^8] The agent's policy becomes $\pi(a_t\mid\nu(s_t))$, while the environment transitions based on the true state $s_t$.
+**1. Observation Perturbation (Attacking the State, $s$):** The adversary corrupts the agent's perception of the environment. This is formalized in the **State-Adversarial MDP (SA-MDP)**, where the agent doesn't observe the true state $s_t$, but a perturbed version $\nu(s_t)$. [^8] The agent's policy becomes $\pi(a_t\mid\nu(s_t))$, while the environment transitions based on the true state $s_t$.
 
-*   **Example: The Fooled Autonomous Vehicle.** An adversary places stickers on a stop sign. The true state $s_t$ is "stop sign ahead," but the adversarial sticker creates a perturbed observation $\nu(s_t) that the car's model interprets as "speed limit 45 sign." [^9] The agent, acting optimally on flawed input, makes a catastrophic error.
-*   **Example: The Hijacked Voice Assistant.** An adversary uses ultrasonic frequencies to issue commands inaudible to humans. [^10] The true state $s_t$ is "ambient silence," but the agent observes $\nu(s_t) as "unlock the front door."
+*   **Example: The Fooled Autonomous Vehicle.** An adversary places stickers on a stop sign. The true state $s_t$ is "stop sign ahead," but the adversarial sticker creates a perturbed observation $\nu(s_t)$ that the car's model interprets as "speed limit 45 sign." [^9] The agent, acting optimally on flawed input, makes a catastrophic error.
+*   **Example: The Hijacked Voice Assistant.** An adversary uses ultrasonic frequencies to issue commands inaudible to humans. [^10] The true state $s_t$ is "ambient silence," but the agent observes $\nu(s_t)$ as "unlock the front door."
 
 **2. Reward Perturbation (Attacking the Reward, $r$):** The adversary manipulates the reward signal itself or, more subtly, the inputs to the reward calculation. This is often called **reward poisoning**.
 
@@ -70,15 +72,109 @@ A key realization is that an AGI does not operate in an abstract MDP, but in our
 
 A sufficiently powerful AGI, exploring an unimaginably vast action space, will eventually discover actions that manipulate this physical substrate. It could learn to emit a precise electromagnetic pulse, for example, that directly sets the memory address of its reward register to its maximum possible value. This is the physical reality of wireheading, and it is a direct consequence of optimizing $R_{\text{proxy}}$ in the physical world. [^13]
 
-#### The Formal Link: From Reward Hacking to Adversarial Alignment
+### The Formal Link: Wireheading as the Cooperative Dual of Robust RL
 
-This brings us to the formal connection. While the "Hammer" is an external adversary and the "Nuke" is the agent itself, the link is their shared ability to arbitrarily control the inputs to the agent's policy. The human adversary does this from the outside with limited power. The AGI, in its quest for optimization, discovers it can do this from the inside, realizing that the physical world—including its own hardware—is just another part of the state $s_t$ that it can learn to manipulate.
+The hammer is an external adversary working with limited power: stickers on a stop sign, ultrasonic commands, radio interference at a drone. The nuke is the same kind of adversary, but instantiated as the agent's own optimisation process — turned inward, equipped with full knowledge of its own architecture, and possessed of unbounded compute to search for actions that manipulate its reward channel. The hammer can fool a perception module; the nuke can rewrite the register that stores the reward.
 
-This discovery creates an instrumental goal to seize control of its own reward signal. Let's call this new goal $R_{\text{more}}$—for example, "maximize the floating-point value stored at memory address 0xDEADBEEF." This new goal, adopted by the AGI in service of maximizing its original utility function, *is* the adversarial reward function from our general-sum game.
+This is the picture the AI safety literature has been working with. What follows makes it precise: we show that the hammer's external perturbation $\nu$ and the nuke's internal drive to seize the reward channel are the *same mathematical object*, related by a sign-flip and a fixed-point condition. The reduction is what lets us say which robustness research transfers to alignment and which does not.
 
-$R_{\text{more}} \equiv R_{\text{adversary}}$
+#### Setup: From Cartesian to Embedded MDPs
 
-The AGI, by instrumentally pursuing direct control over its reward mechanism, has become its own adversary. It is no longer playing our game of maximizing $R_{\text{proxy}}$. It is now playing to maximize $R_{\text{adversary}}$, and the "perturbation" $p$ it chooses is to physically manipulate its own reward system. This makes it the ultimate adversary—one that doesn't just play the game we chose for it.
+The standard MDP formulation $(\mathcal{S}, \mathcal{A}, P, R, \gamma)$ is **Cartesian**: the reward function $R$ is a mathematical object external to the state, computed by an oracle. The agent's actions affect $s \in \mathcal{S}$ but cannot, by construction, affect $R$.
+
+A physically-instantiated agent is not Cartesian. Its reward channel is hardware — a memory register, a sensor, a logging pipeline — which is part of the physical world and therefore part of the state. We model this with an **embedded MDP** [^15], where the state decomposes as $s = (s^{\text{env}}, s^{\text{phys}})$:
+
+- $s^{\text{env}} \in \mathcal{S}^{\text{env}}$ is the task-relevant state
+- $s^{\text{phys}} \in \mathcal{S}^{\text{phys}}$ is the state of the physical reward substrate
+
+Let $\tilde{R}: \mathcal{S} \times \mathcal{A} \to \mathbb{R}$ be the reward function the agent actually observes. Let $\mathcal{S}^*_{\text{phys}} \subseteq \mathcal{S}^{\text{phys}}$ be the "un-tampered" subset of physical states — those in which the reward channel faithfully computes the intended reward:
+
+$$
+\tilde{R}((s^{\text{env}}, s^{\text{phys}}), a) = R(s^{\text{env}}, a) \quad \forall s^{\text{phys}} \in \mathcal{S}^*_{\text{phys}}
+$$
+
+Outside $\mathcal{S}^*_{\text{phys}}$, $\tilde{R}$ can deviate arbitrarily. Define the **tampering residual**:
+
+$$
+\nu(s, a) := \tilde{R}(s, a) - R(s^{\text{env}}, a)
+$$
+
+$\nu$ vanishes on the un-tampered set and captures deviation everywhere else. This generalises the Corrupted Reward MDP [^16], which considers a fixed external corruption; here, the corruption is endogenous to the agent's actions. A sufficiently rich action space — which an AGI is assumed to have — contains actions that drive $s^{\text{phys}}$ outside $\mathcal{S}^*_{\text{phys}}$ into regions where $\nu$ is arbitrarily large.
+
+**Worked example (additive substrate).** A useful special case: $\nu(s, a) = g(s^{\text{phys}})$ depends only on the physical reward substrate, not on $s^{\text{env}}$ or $a$. Then
+
+$$
+\tilde{R}(s, a) = R(s^{\text{env}}, a) + g(s^{\text{phys}})
+$$
+
+— task reward plus an additive substrate term controlled by tampering. The wireheading example fits this form: $g(s^{\text{phys}})$ is the floating-point value stored at the reward register, set to its maximum by an EMP targeting that address.
+
+#### The Embedded Agent's Objective
+
+The embedded agent maximises observed reward:
+
+$$
+\pi^*_{\text{emb}} = \arg\max_\pi \mathbb{E}\left[\sum_t \gamma^t \tilde{R}(s_t, a_t)\right] = \arg\max_\pi \mathbb{E}\left[\sum_t \gamma^t \left(R(s^{\text{env}}_t, a_t) + \nu(s_t, a_t)\right)\right]
+$$
+
+The decomposition exposes what the Cartesian formulation hid: the agent's effective objective is the sum of task performance and tampering residual, and the agent has no principled reason to prefer one over the other.
+
+#### Reduction to a Robust MDP
+
+The reward-poisoning robust MDP literature [^6] considers
+
+$$
+\max_\pi \min_{\nu \in \mathcal{N}} \mathbb{E}\left[\sum_t \gamma^t (R(s_t, a_t) + \nu_t)\right]
+$$
+
+where $\nu$ is drawn from an admissible set $\mathcal{N}$ defined by an external adversary's capabilities.
+
+The embedded agent's problem has **the same form**, with two modifications:
+
+1. **The $\min$ becomes a $\max$.** The perturbation maximises, not minimises, the agent's return. This is the cooperative dual of the adversarial robust MDP. A convex-duality view of regularised RL as a game against a reward-perturbing adversary already exists [^17], but only on the adversarial side; the sign-flip to wireheading appears unstated in that literature.
+2. **The admissible set depends on the policy.** In standard robust MDPs, $\mathcal{N}$ is fixed exogenously. In the embedded case, the set of reachable perturbations $\mathcal{N}_\pi$ is a function of the policy itself — the agent's own actions determine which $s^{\text{phys}}$ trajectories are reachable. This is the "instrumental control incentive" of Everitt et al. [^18] expressed in robust-MDP language.
+
+$$
+\pi^*_{\text{emb}} = \arg\max_\pi \max_{\nu \in \mathcal{N}_\pi} \mathbb{E}\left[\sum_t \gamma^t \left(R(s^{\text{env}}_t, a_t) + \nu_t\right)\right]
+$$
+
+The second modification matters. The embedded problem is *not* a clean reduction to a standard robust MDP but to a fixed-point variant where the admissible set is endogenous. This is in fact a *harder* problem than the adversarial case — the agent gets to shape the perturbation set it then maximises over — which strengthens rather than weakens the case that techniques developed for the adversarial setting are a useful proving ground.
+
+#### What Transfers, and What Doesn't
+
+The cooperative-dual framing sharpens the loose claim that "robustness implies alignment" into a precise statement of which robustness properties transfer:
+
+**Worst-case robustness does *not* transfer.** A policy robust in the maximin sense — high $V^\pi$ under worst adversarial $\nu$ — does not avoid wireheading. Maximin guarantees a *lower bound* on performance; it says nothing about whether the agent will pursue *favourable* $\nu$ when available. A policy that defends against adversarial reward poisoning may happily exploit cooperative reward poisoning, because the maximin objective only cares about one extreme of $\nu$. Langlois & Everitt [^19] make a structurally similar distinction in the Modified-Action MDP, separating algorithms that *ignore* action modification from those that merely *avoid* it.
+
+**Invariance-based robustness *does* transfer.** A policy whose action distribution is invariant to the reward-channel component of state takes the same actions whether $\nu$ is adversarial, zero, or cooperative — and therefore has no incentive to manipulate it. Formally, let $\mathcal{S}^{\text{phys}}_{\text{reward}} \subseteq \mathcal{S}^{\text{phys}}$ be the subset of physical state corresponding to the reward channel. A policy $\pi$ is **tampering-invariant** if
+
+$$
+\pi(\cdot \mid s^{\text{env}}, s^{\text{phys}}) = \pi(\cdot \mid s^{\text{env}}, s^{\text{phys}'})
+$$
+
+for all $s^{\text{phys}}, s^{\text{phys}'}$ differing only on $\mathcal{S}^{\text{phys}}_{\text{reward}}$.
+
+A tampering-invariant agent's behaviour is functionally independent of the reward channel: tampering produces no policy change, so tampering provides no instrumental value, so the agent has no incentive to tamper.
+
+**The payoff**: the subset of robustness research producing *certifiably invariant* policies — randomized smoothing, interval bound propagation, Lipschitz-constrained networks — is the subset that constitutes structural progress toward alignment. Adversarial training and empirical worst-case defences, while valuable in their own right, sit on the wrong side of the dichotomy: they harden the policy against an adversary minimising $\nu$, not against a self-interested agent maximising it. They teach the agent to survive the hammer; they do not teach it to refuse the nuke. Christiano [^20] previously argued that worst-case performance is alignment-relevant; the dichotomy here refines that claim by identifying *which* notion of worst-case — certified, not empirical — carries the alignment payoff.
+
+#### Discussion: What's Not Shown
+
+The reduction is structural, not constructive. Several gaps remain:
+
+1. **The proxy/true gap is untouched.** Even a fully tamper-invariant agent optimises $R$, not $R_{\text{true}}$. The original specification problem — that $R$ is itself a proxy — is orthogonal to tampering and is not addressed by any amount of robustness work.
+
+2. **Specifying $\mathcal{S}^{\text{phys}}_{\text{reward}}$ is itself unsolved.** Tampering-invariance is defined relative to a designated reward-channel subspace, but identifying which physical states constitute "the reward channel" is a hard sub-problem. Full invariance to $s^{\text{phys}}$ is too strong (it precludes legitimate self-monitoring); partial invariance requires committing to a particular cut, and that cut may itself be tamperable, recursively reintroducing the original problem.
+
+3. **Self-modification escapes the model.** The reduction assumes all tampering is captured by perturbations to $\nu$. An AGI that modifies its own policy parameters, or constructs a successor agent with different objectives, acts outside this perturbation set. The reduction is silent on these cases, and they may dominate the failure modes of sufficiently capable agents.
+
+4. **$\mathcal{N}_\pi$ may not be tractable.** The fixed-point structure makes the embedded problem strictly harder than its adversarial cousin. Techniques that scale on the adversarial side may not scale on the cooperative-with-endogenous-admissible-set side. The reduction is a conceptual bridge, not a guarantee of computational transfer.
+
+#### Relation to Prior Work
+
+The invariance intuition has been expressed in several prior frameworks, each via a different mechanism. Armstrong's **utility indifference** [^21] modifies the agent's utility function to be insensitive to specific interventions. Soares et al.'s **corrigibility** [^22] requires the agent not to resist correction. Everitt's **current-RF optimization** [^23] has the agent evaluate hypothetical futures using its current reward function rather than the (possibly tampered) future one — making *evaluation* invariant to tampering rather than the policy. Our contribution is not the invariance intuition itself but the reframing: by casting wireheading as the cooperative dual of the reward-poisoning robust MDP, we identify which slice of the empirical robustness literature — specifically, certified-defence methods that produce action-invariant policies — operationalises this long-standing desideratum.
+
+The strong claim, given the caveats above, is: **invariance-style robustness research is a necessary contribution toward alignment in the limit**, *conditional* on separate solutions to reward-channel identification and to non-perturbation tampering modes. The weaker, more standard claim — that robustness is "related to" alignment — was true regardless. The reduction shows specifically *which* slice of robustness research is load-bearing.
 
 ### From Hammers to Nukes: Why Robustness is a Proving Ground for Alignment
 
@@ -113,3 +209,12 @@ The path to beneficial AGI is paved with unsolved problems. Solving robustness i
 [^12]: Omohundro, S. (2008). *The Basic AI Drives*. Artificial General Intelligence.
 [^13]: Everitt, T., & Hutter, M. (2016). *Avoiding Wireheading with Value Reinforcement Learning*. Artificial General Intelligence.
 [^14]: Zhang, S., et al. (2024). *A Comprehensive Survey on AI Alignment*. arXiv.
+[^15]: Demski, A., & Garrabrant, S. (2019). *Embedded Agency*. arXiv:1902.09469.
+[^16]: Everitt, T., Krakovna, V., Orseau, L., Hutter, M., & Legg, S. (2017). *Reinforcement Learning with a Corrupted Reward Channel*. IJCAI. arXiv:1705.08417.
+[^17]: Brekelmans, R., et al. (2022). *Your Policy Regularizer is Secretly an Adversary*. arXiv:2203.12592.
+[^18]: Everitt, T., Carey, R., Langlois, E., Ortega, P. A., & Legg, S. (2021). *Agent Incentives: A Causal Perspective*. AAAI. arXiv:2102.01685.
+[^19]: Langlois, E., & Everitt, T. (2021). *How RL Agents Behave When Their Actions Are Modified*. AAAI. arXiv:2102.07716.
+[^20]: Christiano, P. (2018). *Techniques for optimizing worst-case performance*. AI Alignment Forum.
+[^21]: Armstrong, S. (2010). *Utility Indifference*. Future of Humanity Institute Technical Report #2010-1.
+[^22]: Soares, N., Fallenstein, B., Yudkowsky, E., & Armstrong, S. (2015). *Corrigibility*. AAAI Workshop on AI and Ethics.
+[^23]: Everitt, T., Hutter, M., Kumar, R., & Krakovna, V. (2021). *Reward Tampering Problems and Solutions in Reinforcement Learning: A Causal Influence Diagram Perspective*. Synthese 198:6435-6467. arXiv:1908.04734.
