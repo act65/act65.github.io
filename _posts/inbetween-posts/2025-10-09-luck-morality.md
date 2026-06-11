@@ -12,7 +12,7 @@ This is not a statement of cynicism, but a simple observation of fact. None of u
 
 Before we go further, we must be clear about the scale of this lottery. Many who live in relative stability do not consider themselves lucky. They see their own struggles, their debts, their anxieties. They compare themselves to those with more. But this is a failure of perspective. The true baseline of misfortune is not a struggle to pay the mortgage. The true baseline is war, famine, genocide. It is having to flee your home with nothing, watching a child suffer from a preventable disease, or living under the constant threat of violence. If the lottery has spared you from these fates, you are holding a winning ticket of historic proportions.
 
-In this framework, "privilege" is not a personal failing or a badge of honor. It is simply the term for that winning ticket. By framing it this way, we can move past unproductive guilt and focus on the immense responsibility it creates. This post argues that the only moral response to this unearned fortune is to spend it—not comfortably, but sacrificially—to shield others from the depths of their unearned misfortune.
+In this framework, "privilege" is not a personal failing or a badge of honor. It is simply the term for that winning ticket. By framing it this way, we can move past unproductive guilt and focus on the immense responsibility it creates. This post argues that the only moral response to this unearned fortune is to spend it—to whatever extent is required to shield others from the depths of their unearned misfortune. For most of the problems worth solving, that will not be comfortable.
 
 ---
 
@@ -36,11 +36,13 @@ To understand this responsibility, consider a parable.
 
 The risk has not vanished from the valley. It has been shared. The burden, once crushing for one family, is now a manageable fear for two. This is solidarity. It is the recognition that your neighbor's misfortune is your own, acted upon at great personal cost.
 
+The parable is, of course, cleaner than reality. Real misfortune is usually diffuse: the people we could help are strangers, the causal chain from our action to their relief is murky, and we rarely learn whether we mattered. This makes the duty harder to discharge well, but it does not dissolve it. What follows is an argument about principle; how to spend luck wisely in practice is a separate, equally serious problem.
+
 #### **The Hollow Confession: "I Acknowledge My Privilege"**
 
 Now, let us bring the parable into our world.
 
-There is a modern ritual that has become a substitute for this kind of meaningful action: the public acknowledgement of privilege. It is the act of the Masons standing in their untouched home, looking at the devastation, and saying, "I acknowledge my privilege that the storm did not hit me."
+There is a modern ritual that has come to substitute for this kind of meaningful action: the public acknowledgement of privilege. I am not engaging here with philosophical defenses of acknowledgement as a first step toward something more — only with the cultural performance it has become. It is the act of the Masons standing in their untouched home, looking at the devastation, and saying, "I acknowledge my privilege that the storm did not hit me."
 
 And then doing nothing.
 
@@ -50,11 +52,11 @@ This act, however well-intentioned, is a hollow confession. It costs nothing and
 
 There is a more profound alternative: to spend your luck.
 
-This is where we must be brutally honest. For those of us holding winning tickets, this cannot be a comfortable act. It is not about giving from our excess; **it is about fundamentally redefining what constitutes excess.**
+Here we have to be brutally honest about why this matters. The problems worth solving are rarely small enough to be solved from excess—and the lucky are, by definition, the people with the capacity to solve them. If the goal is to actually meet the need—not to feel that you tried—then **what counts as excess has to be redefined.** Big problems are not solved from comfort.
 
 The Masons did not give away sacks they didn't need. They gave away their own security. They willingly reduced their family's chances of survival from 'certain' to 'strained' so that the Sawyers' chances could rise from 'impossible' to 'possible.'
 
-The goal is not the sacrifice itself; the goal is to solve the problem. But we must be honest about the scale of the problems. Some forms of misfortune are so absolute that the only meaningful help is inherently sacrificial. The question shifts from "How much can I spare?" to "What is truly required to save this person, and what must I give up to make that happen?" The focus moves from what you are willing to give to what they desperately need.
+The goal is not the sacrifice; the goal is to solve the problem. Sacrifice enters only because the scale of real misfortune outstrips what the lucky can spare without feeling it. The question shifts from "How much can I spare?" to "What does this person actually need, and what would it take for me to provide it?" The focus moves from what you are willing to give to what they desperately need.
 
 *   **Spending Financial Luck:** This begins with recognizing a life-altering need you have the capacity to meet. It is about choosing to fund a refugee's resettlement or pay for another's life-saving medical care, and accepting that this will require you to forgo a significant financial goal or fundamentally alter your own standard of living. The need dictates the sacrifice; the sacrifice does not define the act.
 *   **Spending Network Luck:** This means taking a significant professional risk to create an opportunity for another. It is championing someone from a marginalized background so forcefully that your own reputation is on the line. It is using your political capital not for your own advancement, but to dismantle a system that benefits you.
@@ -69,4 +71,4 @@ The question is not whether we will acknowledge our good fortune. The question i
 
 Do we hoard our luck, guarding our own security while confessing our privilege from a safe distance?
 
-Or do we accept the terrible, profound duty that comes with it? Do we understand that solidarity likely demands sacrifice, and that the only meaningful response to unearned luck is to spend it—generously, courageously, and at a real cost to ourselves—to build a world where no one has to face catastrophe alone?
+Or do we accept the terrible, profound duty that comes with it? Do we understand that solving the problems worth solving demands more than excess, and that the only meaningful response to unearned luck is to spend it—generously, courageously, and to whatever extent the need requires—to build a world where no one has to face catastrophe alone?

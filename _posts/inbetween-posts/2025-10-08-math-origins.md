@@ -7,21 +7,233 @@ categories:
   - fiction
 ---
 
+<style>
+/* Hover-tip pattern for cuneiform numerals, Akkadian/Sumerian terms,
+   and glossary words. Hover (or long-tap on mobile) for the English. */
+.gloss {
+  border-bottom: 1px dotted #b0744a;
+  cursor: help;
+  position: relative;
+  text-decoration: none;
+}
+.gloss[data-tip]:hover::after,
+.gloss[data-tip]:focus::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2a2620;
+  color: #f5e9d0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.82em;
+  font-style: normal;
+  font-weight: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  white-space: normal;
+  max-width: 320px;
+  width: max-content;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  pointer-events: none;
+  line-height: 1.4;
+  text-align: left;
+}
+.gloss[data-tip]:hover::before,
+.gloss[data-tip]:focus::before {
+  content: '';
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  border: 5px solid transparent;
+  border-top-color: #2a2620;
+  z-index: 100;
+}
+.cuneiform {
+  font-family: "Noto Sans Cuneiform", "Segoe UI Historic", "Akkadian", serif;
+  font-size: 1.05em;
+  letter-spacing: 0.02em;
+}
+.reader-note {
+  font-size: 0.9em;
+  color: #888;
+  font-style: italic;
+  border-left: 3px solid #b0744a;
+  padding: 6px 12px;
+  margin: 16px 0;
+  background: rgba(176,116,74,0.06);
+}
+</style>
+
+<p class="reader-note">A reader's note: words and numbers underlined in dotted ochre carry a hover-tip — pause over them (or tap on mobile) to see the English translation, the modern number, or a short gloss. Numbers in narration are written in Mesopotamian cuneiform; numbers in dialogue are kept as spoken English words. The first three or four occurrences of each Akkadian/Sumerian term are glossed automatically; later occurrences stand on their own.</p>
+
+<script>
+// Auto-glossifier: walks the rendered post and wraps the first N occurrences
+// of each glossary key in <span class="gloss" data-tip="…">…</span>. Already-glossed
+// spans, code blocks, and styles are skipped. Edit the `glossary` array below to
+// add or change terms — no per-occurrence edits to the prose needed.
+(function () {
+  const MAX_COUNT = 4; // wrap up to first N occurrences of each term
+  const glossary = [
+    // Units of measure
+    { key: 'gur',     tip: 'gur — a large dry measure for grain, roughly 300 litres.' },
+    { key: 'qa',      tip: 'qa — about one litre; the small everyday dry/liquid measure.' },
+    { key: 'sar',     tip: 'sar — a unit of area, roughly 36 m² (a "small field").' },
+    { key: 'kurru',   tip: 'kurru — the standard grain basket. Different cities kept different kurru.' },
+    { key: 'kùš',     tip: 'kùš — a cubit, about half a metre.' },
+    { key: 'qanû',    tip: 'qanû — the surveyor’s standard reed: six cubits, ~3 m. The "rod" of the rod-and-ring.' },
+    { key: 'danna',   tip: 'danna — a long-distance measure, about 11 km.' },
+    // Silver weights (sexagesimal)
+    { key: 'shekel',  tip: 'shekel (šiqlu) — about 8.3 g of silver; the everyday unit of value.' },
+    { key: 'shekels', tip: 'shekels — plural of shekel. 60 shekels = 1 mina.' },
+    { key: 'mina',    tip: 'mina — 60 shekels, about 500 g of silver. A "mina-ring" is a palm-sized cast loop.' },
+    { key: 'minas',   tip: 'minas — plural of mina; 60 shekels each.' },
+    { key: 'talent',  tip: 'talent — 60 minas; a porter’s load.' },
+    // Titles
+    { key: 'šatammu', tip: 'šatammu — chief temple administrator; held the seal that authenticated tablets.' },
+    { key: 'sanga',   tip: 'sanga — temple accountant: a senior scribe in charge of one god’s storehouse books.' },
+    { key: 'dam-gàr', tip: 'dam-gàr — Sumerian for "merchant"; the freelance commercial class.' },
+    // Cities & places
+    { key: 'Susa',    tip: 'Susa (Šušan, 𒈹𒂊𒁲 Nim-ki) — capital of Elam, in present-day southwestern Iran.' },
+    { key: 'Nippur',  tip: 'Nippur (Nibru) — the holy city of Sumer; seat of Enlil.' },
+    { key: 'Ekur',    tip: 'Ekur (é-kur, "Mountain House") — Enlil’s ziggurat-temple at Nippur.' },
+    { key: 'Lagash',  tip: 'Lagash — a Sumerian city-state, famous for canal engineering.' },
+    { key: 'Eridu',   tip: 'Eridu — one of the oldest Sumerian cities.' },
+    { key: 'Babylon', tip: 'Babylon — the great Mesopotamian metropolis on the Euphrates.' },
+    { key: 'Akkad',   tip: 'Akkad — ancient seat of the Akkadian empire.' },
+    { key: 'Elam',    tip: 'Elam — the kingdom centred on Susa, east of Sumer.' },
+    { key: 'Elamite', tip: 'Elamite — pertaining to Elam; the language and people of Susa.' },
+    { key: 'Elamites', tip: 'Elamites — the people of Elam (Susa region).' },
+    { key: 'Sumer',   tip: 'Sumer — the southern Mesopotamian plain; the world’s first urban civilisation.' },
+    { key: 'Sumerian', tip: 'Sumerian — the non-Semitic liturgical language of southern Mesopotamia.' },
+    { key: 'Akkadian', tip: 'Akkadian — the Semitic language of Mesopotamia (Babylonian, Assyrian dialects); the lingua franca.' },
+    { key: 'Gutian',  tip: 'Gutian — pertaining to the Guti, a highland people who raided and once ruled parts of Mesopotamia.' },
+    // Gods
+    { key: 'Enlil',       tip: 'Enlil (𒀭𒂗𒆤) — chief god of the Sumerian pantheon; lord of wind and decrees. Patron of Nippur.' },
+    { key: 'Inshushinak', tip: 'Inshushinak (𒀭𒈹𒂞𒉺𒀝) — patron god of Susa; judge of the dead.' },
+    { key: 'Nanshe',      tip: 'Nanshe — goddess of social justice, of fair weights and measures, advocate for widows and the poor.' },
+    { key: 'Sin',         tip: 'Sin (𒀭𒂗𒍪 dEN.ZU) — the moon god, lord of the calendar.' },
+    { key: 'Shamash',     tip: 'Shamash / Utu — the sun god; lord of justice and the law.' },
+    { key: 'Enki',        tip: 'Enki — Sumerian god of water, craft, and wisdom. (Also: the name Ikram gives his apprentice — perhaps deliberately.)', maxCount: 1 },
+    // Calendar months
+    { key: 'Nisannu',  tip: 'Nisannu — first Babylonian month, early spring; planting season and the Akitu festival.' },
+    { key: 'Simanu',   tip: 'Simanu — third Babylonian month, late May to June.' },
+    { key: 'Abu',      tip: 'Abu — fifth Babylonian month, July–August. The hottest; barley harvest.' },
+    { key: 'Akitu',    tip: 'Akitu — the New Year festival held in Nisannu; for one week the temples bought and sold at festival prices.' },
+    // Cuneiform & scribal
+    { key: 'stylus',    tip: 'stylus — a cut reed pressed into damp clay to make wedge-shaped (cuneiform) marks.' },
+    { key: 'cuneiform', tip: 'cuneiform — "wedge-shaped" script: marks pressed into wet clay with a stylus. The world’s oldest writing system.' },
+    { key: 'ziggurat',  tip: 'ziggurat — a stepped temple-tower; the Ekur of Nippur was one of the largest.' },
+  ];
+
+  function escapeRegex(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function isExcludedAncestor(node) {
+    while (node && node.nodeType === 1) {
+      const tag = node.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'CODE' || tag === 'PRE' || tag === 'A') return true;
+      if (node.classList) {
+        if (node.classList.contains('gloss')) return true;
+        if (node.classList.contains('reader-note')) return true;
+      }
+      node = node.parentNode;
+    }
+    return false;
+  }
+
+  function getTextNodes(root) {
+    const nodes = [];
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        if (isExcludedAncestor(node.parentNode)) return NodeFilter.FILTER_REJECT;
+        if (!node.nodeValue || !/\S/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    let n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    return nodes;
+  }
+
+  function makeRegex(key) {
+    // Unicode-aware boundary: not preceded or followed by a letter/number/mark.
+    return new RegExp(
+      '(^|[^\\p{L}\\p{N}\\p{M}])(' + escapeRegex(key) + ')(?=$|[^\\p{L}\\p{N}\\p{M}])',
+      'u'
+    );
+  }
+
+  function processGlossary() {
+    const root = document.querySelector('.entry') || document.body;
+    glossary.forEach(function (entry) {
+      const max = entry.maxCount != null ? entry.maxCount : MAX_COUNT;
+      let remaining = max;
+      let re;
+      try { re = makeRegex(entry.key); }
+      catch (e) { return; }
+
+      while (remaining > 0) {
+        const nodes = getTextNodes(root);
+        let found = false;
+        for (let i = 0; i < nodes.length; i++) {
+          const node = nodes[i];
+          const m = re.exec(node.nodeValue);
+          if (!m) continue;
+          const matchStart = m.index + m[1].length;
+          const matchedText = m[2];
+          const text = node.nodeValue;
+          const before = text.slice(0, matchStart);
+          const after = text.slice(matchStart + matchedText.length);
+
+          const parent = node.parentNode;
+          if (before) parent.insertBefore(document.createTextNode(before), node);
+          const span = document.createElement('span');
+          span.className = 'gloss';
+          span.setAttribute('data-tip', entry.tip);
+          span.appendChild(document.createTextNode(matchedText));
+          parent.insertBefore(span, node);
+          if (after) parent.insertBefore(document.createTextNode(after), node);
+          parent.removeChild(node);
+
+          remaining--;
+          found = true;
+          break;
+        }
+        if (!found) break;
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', processGlossary);
+  } else {
+    processGlossary();
+  }
+})();
+</script>
+
 ![]({{ site.baseurl }}/assets/ikram.png)
 
 ### **Prologue: The Threshing Floor**
 
-The summer he was eight, Ikram watched the scribe cheat his father.
+The summer he was <span class="gloss cuneiform" data-tip="eight (8) years old">𒐍</span>, Ikram watched the scribe cheat his father.
+
+![Threshing floor at the end of Abu]({{ site.baseurl }}/assets/math-origins/07-threshing-floor.png)
+*Placeholder. Generation prompt: "A wide-angle photograph of a Bronze Age Mesopotamian threshing floor at the end of summer: a circular patch of packed-earth, ringed by tall heaps of golden straw glowing in late-afternoon sun, two yoked oxen plodding in a slow circle over loose barley sheaves while a farmer with a long switch walks at their tail. Chaff blows westward in pale streams. In the middle distance, a small mud-brick village. Photorealistic reconstruction, museum quality, ca. 2000 BCE Sumerian countryside."*
 
 It was the end of *Abu*, the hottest month, when the barley was cut and stacked in sheaves on the threshing floor outside the village. The floor was a circle of earth pounded hard by years of feet and hooves, ringed by heaps of straw that glowed in the late sun. Ikram's father had driven the oxen over the sheaves all morning, round and round, until the grain was loosed from the husk. Now they stood in the heat, watching the chaff blow westward in long pale streams.
 
-The temple scribe arrived at the third watch, carried in a light wicker chair by two thin men. He was young. His robe was clean in a way that no farmer's robe ever was. When he stepped down, he did not greet Ikram's father by name, though they had met three times already that season. He simply took out his reed stylus, unrolled a flat tablet still damp from the river, and gestured for the measuring to begin.
+The temple scribe arrived at the third watch, carried in a light wicker chair by <span class="gloss cuneiform" data-tip="two (2) thin men — the chair-bearers">𒈫</span> thin men. He was young. His robe was clean in a way that no farmer's robe ever was. When he stepped down, he did not greet Ikram's father by name, though they had met <span class="gloss cuneiform" data-tip="three (3) times already that season">𒐈</span> times already that season. He simply took out his reed stylus, unrolled a flat tablet still damp from the river, and gestured for the measuring to begin.
 
-They worked with the *gur* basket—a tall woven thing as wide as a small child. Ikram's father scooped, leveled the top with the edge of his palm, and tipped the grain into the temple's sack. Each time, he held up one finger, then two, then three, marking the count in the air for his own memory. On a piece of broken pot he scratched a tick for every *gur*. The marks were crude, wavering—his hands knew the plow better than they knew a stylus.
+They worked with the *gur* basket—a tall woven thing as wide as a small child. Ikram's father scooped, leveled the top with the edge of his palm, and tipped the grain into the temple's sack. Each time, he held up <span class="gloss cuneiform" data-tip="one (1) finger">𒁹</span> finger, then <span class="gloss cuneiform" data-tip="two (2)">𒈫</span>, then <span class="gloss cuneiform" data-tip="three (3)">𒐈</span>, marking the count in the air for his own memory. On a piece of broken pot he scratched a tick for every *gur*. The marks were crude, wavering—his hands knew the plow better than they knew a stylus.
 
 "Twenty-three," his father said, when the last basket had been emptied.
 
-The scribe did not look up from his tablet. He pressed a final wedge into the clay, then straightened, blew the dust from the surface, and read in the cold voice of a priest: "The temple receives *nineteen gur* from the tenant Ashum, son of Ashum. The tenant's share is five *gur* less the seed owed from Simanu."
+The scribe did not look up from his tablet. He pressed a final wedge into the clay — and then below the count, the date-stamp the scribes always closed with: <span class="gloss cuneiform" data-tip="ITI Abu, U₄ 12 KAM — 'month Abu, day twelve' — the standard Old Babylonian date-stamp that closes every official tablet. Pronounced approximately 'iti Abu, ūm šinšer'.">𒌚 𒀊 𒌓 𒌋𒈫 𒃶</span>. Then he straightened, blew the dust from the surface, and read in the cold voice of a priest: "The temple receives <span class="gloss cuneiform" data-tip="nineteen (19)">𒌋𒐎</span> *gur* from the tenant Ashum, son of Ashum. The tenant's share is <span class="gloss cuneiform" data-tip="five (5)">𒐊</span> *gur* less the seed owed from *Simanu*."
 
 Ikram's father stood very still.
 
@@ -29,7 +241,10 @@ Ikram's father stood very still.
 
 "Nineteen," said the scribe.
 
-Ikram looked at his potsherd. Twenty-three scratches. He counted them again, whispering. Twenty-three. He tugged at his father's tunic. His father did not move.
+Ikram looked at his potsherd. <span class="gloss cuneiform" data-tip="twenty-three (23) — the true count">𒎙𒐈</span> scratches. He counted them again, whispering. Twenty-three. He tugged at his father's tunic. His father did not move.
+
+![The temple scribe's tablet and a tenant's tally-shard]({{ site.baseurl }}/assets/math-origins/01-tablet-vs-potsherd.png)
+*Placeholder. Generation prompt: "Two objects laid on packed earth in the harsh light of a Mesopotamian threshing floor. On the left, a small smooth flat clay tablet, still damp grey-brown, the wedge-shaped cuneiform numeral for nineteen pressed into its surface, the impressed seal of a temple official in the corner. On the right, a piece of broken brown pottery scratched with twenty-three rough vertical tick-marks. Loose barley chaff and a reed stylus scattered around. Photorealistic, museum quality."*
 
 "The tally-shard is there," his father said, and his voice was neither angry nor loud, and that was the most frightening part of it. "You may check."
 
@@ -39,7 +254,7 @@ The chaff blew. A dog barked somewhere beyond the sheaves.
 
 "No," said Ikram's father. "I do not challenge the seal."
 
-The scribe climbed back into his wicker chair. The two thin men lifted him. They carried the temple's share away down the road, and with it four *gur* of grain that had never touched the tablet.
+The scribe climbed back into his wicker chair. The <span class="gloss cuneiform" data-tip="two (2) thin men">𒈫</span> thin men lifted him. They carried the temple's share away down the road, and with it <span class="gloss cuneiform" data-tip="four (4) — the grain that was stolen">𒐉</span> *gur* of grain that had never touched the tablet.
 
 That night, on the flat roof of their house, under the slow turning of Sin the moon, Ikram's father did not eat. He watched the road where the chair had gone. After a long while he laid his hand on the back of Ikram's neck and said:
 
@@ -49,21 +264,24 @@ Ikram did not understand it then. But he remembered it.
 
 ### **Chapter 1: The Weight of Ticks**
 
-The air in the storeroom was warm and thick with the dust of barley. A single sharp-edged beam of sunlight cut through the gloom from a high slit in the clay wall, illuminating a swirling universe of golden motes. It fell on the back of Enki, a boy of fourteen, who knelt on the hard-packed earth floor. In his hand he held a reed stylus. Before him lay a tablet of damp grey clay.
+The air in the storeroom was warm and thick with the dust of barley. A single sharp-edged beam of sunlight cut through the gloom from a high slit in the clay wall, illuminating a swirling universe of golden motes. It fell on the back of Enki, a boy of <span class="gloss cuneiform" data-tip="fourteen (14) years old">𒌋𒐉</span>, who knelt on the hard-packed earth floor. In his hand he held a reed stylus. Before him lay a tablet of damp grey clay.
 
 *Scrape. Scrape. Press.*
 
-With the kind of focus a priest gives to a liver-reading, Enki etched the symbol for a stalk of wheat into the first empty cell of his tablet—a vertical line with three small dashes angled from its top. The tablet had been ruled before it dried, with the edge of a reed, into ten rows of ten cells: a hundred cells in all, one mark for one bale. *Ten by ten,* because Ikram's father had been taught to rule them that way by his father, and because a man counted his fingers in tens. Silver, on the other hand, was weighed in sixties; grain was measured in sixties; the great temples kept their ledgers in sixties; and that the two systems did not fit each other was an inconvenience a merchant got used to as a man got used to a stone in his sandal. When a tablet was full, Enki took a fresh one from the stack Ikram kept ready, each already ruled the same way. He dipped the stylus into a small pot of river water and began the next cell. The mountain of woven reeds and dried grass rose into the shadows until it lost itself in the thatch.
+With the kind of focus a priest gives to a liver-reading, Enki etched the symbol for a stalk of wheat into the first empty cell of his tablet—a vertical line with three small dashes angled from its top. The tablet had been ruled before it dried, with the edge of a reed, into <span class="gloss cuneiform" data-tip="ten (10)">𒌋</span> rows of <span class="gloss cuneiform" data-tip="ten (10)">𒌋</span> cells: <span class="gloss cuneiform" data-tip="one hundred (100) — 10×10 cells, the merchant's grid">𒈨</span> cells in all, one mark for one bale. <em><span class="gloss cuneiform" data-tip="ten (10)">𒌋</span> by <span class="gloss cuneiform" data-tip="ten (10)">𒌋</span>,</em> because Ikram's father had been taught to rule them that way by his father, and because a man counted his fingers in tens. Silver, on the other hand, was weighed in sixties — <span class="gloss cuneiform" data-tip="sixty (60) — in positional sexagesimal, written with the same wedge as ‘one’ but shifted into the next column up">𒁹</span> grouped into a column of its own — grain was measured in the same way, the great temples kept their ledgers that way, and that the two systems did not fit each other was an inconvenience a merchant got used to as a man got used to a stone in his sandal. When a tablet was full, Enki took a fresh one from the stack Ikram kept ready, each already ruled the same way. He dipped the stylus into a small pot of river water and began the next cell. The mountain of woven reeds and dried grass rose into the shadows until it lost itself in the thatch.
 
 *Scrape. Scrape. Press.*
 
-The clay was cool beneath his fingertips. It had been cool, too, four years ago in the archive-room at Susa, when a priest-scribe had taken Enki's wrist and pressed it against a tablet of his father's so the boy could feel the marks under his skin before he knew how to read them. *The house of Ashum,* the priest had said, in the level voice used for such things. *Forty measures of barley, owed and not paid. A boy in place of the coin—until the debt is cleared or he dies, whichever the gods see fit.* Enki had been ten. He had not cried. He had memorised the shape of every mark under his fingertip.
+The clay was cool beneath his fingertips. It had been cool, too, <span class="gloss cuneiform" data-tip="four (4) years ago">𒐉</span> years ago in the archive-room at Susa, when a priest-scribe had taken Enki's wrist and pressed it against a tablet of his father's so the boy could feel the marks under his skin before he knew how to read them.
+
+![The Susa temple archive]({{ site.baseurl }}/assets/math-origins/08-susa-archive.png)
+*Placeholder. Generation prompt: "Interior of a Mesopotamian temple archive: a long narrow room lit by a single high slit-window, the walls and floor lined with wooden shelves bearing hundreds of small clay tablets, stacked edge-on and tied in rope bundles by category. A priest-scribe in a clean white robe leans over a desk, holding a small boy's wrist and pressing his fingertips against a tablet. Dust suspended in a thin shaft of light. The boy's expression hollow rather than fearful. Photorealistic reconstruction, museum quality, Old Babylonian period, late third millennium BCE."* *The house of Ashum,* the priest had said, in the level voice used for such things. <em><span class="gloss cuneiform" data-tip="forty (40) — written as a single corner-cluster">𒐏</span> measures of barley, owed and not paid. A boy in place of the coin—until the debt is cleared or he dies, whichever the gods see fit.</em> Enki had been <span class="gloss cuneiform" data-tip="ten (10)">𒌋</span>. He had not cried. He had memorised the shape of every mark under his fingertip.
 
 He had drawn every sign since as if it, too, might decide whose boy he was.
 
 *Scrape. Scrape. Press.*
 
-From a low stool near the entrance, Ikram watched. His fingers drummed a silent impatient rhythm on his knee. Beyond the heavy leather flap that served as a door, the sounds of the Susa market bled through—the bleating of a goat, the distant clang of a metalsmith's hammer, a woman's voice calling dates and figs by the *qa* measure. And closer, the stamp of a donkey's hoof and the grumble of Azad the buyer, who was not a patient man and had said so three times already.
+From a low stool near the entrance, Ikram watched. His fingers drummed a silent impatient rhythm on his knee. Beyond the heavy leather flap that served as a door, the sounds of the Susa market bled through—the bleating of a goat, the distant clang of a metalsmith's hammer, a woman's voice calling dates and figs by the *qa* measure. And closer, the stamp of a donkey's hoof and the grumble of Azad the buyer, who was not a patient man and had said so <span class="gloss cuneiform" data-tip="three (3) times already">𒐈</span> times already.
 
 "Is it done?" Ikram's voice was clipped, not unkind, but stripped of all pleasantry.
 
@@ -71,17 +289,17 @@ From a low stool near the entrance, Ikram watched. His fingers drummed a silent 
 
 At the side door one of Azad's men had come in with his own ruled tablets—ten by ten, identical to Enki's—and stood at the near end of the stack, pressing a mark into the next cell each time a bale was counted off. That was the custom in Susa: the buyer's man and the seller's scribe kept the same grid, cell for cell, and at the end the two sets were laid side by side. If the last mark on each sat in the same cell, the counts agreed; if not, the men began again together. No one scanned hundreds of ticks for a missing one. The tablet answered by position. Enki's count was the second hand in the same work—it was the only reason Ikram let him do it alone. A merchant who took one count on trust did not stay a merchant long.
 
-Ikram sighed and pushed himself off the stool. He walked to a small rough-hewn table that served as his desk. On it lay two neat stacks of smaller clay tablets—his records. A younger merchant, face flushed from the sun, pushed through the door-flap and gave a respectful nod.
+Ikram sighed and pushed himself off the stool. He walked to a small rough-hewn table that served as his desk. On it lay <span class="gloss cuneiform" data-tip="two (2) neat stacks — debts and credits, kept apart">𒈫</span> neat stacks of smaller clay tablets—his records. A younger merchant, face flushed from the sun, pushed through the door-flap and gave a respectful nod.
 
-"Ikram. To settle for the oil."
+"<span class="gloss cuneiform" data-tip="Šulmum — Akkadian for 'peace, well-being'; the standard merchant's greeting on entering another man's house or shop. Written with the single Sumerian sign DI (𒁲), which doubles as 'decision' — peace and a settled account being, to the Mesopotamian mind, the same thing.">𒁲</span> *Šulmum,* Ikram. To settle for the oil."
 
-"Barak." Ikram pulled a woven basket close and sifted through the first stack until he found a tablet marked with Barak's merchant sign—a stylised fig-leaf. He held it to the light, his finger tracing rows of small circles. "I owe you for five jars."
+"*Šulmum,* Barak." Ikram pulled a woven basket close and sifted through the first stack until he found a tablet marked with Barak's merchant sign—a stylised fig-leaf. He held it to the light, his finger tracing rows of small circles. "I owe you for five jars."
 
 He turned to the second stack, rummaging. "Ah." He pulled out another tablet, also marked for Barak. "And you owe me for two sheepskins and a length of rope."
 
 He picked up a shard and drew in the dust, his finger tracing the rows on one tablet, then the other, lips moving silently. He paused, recounted, rubbed out a mark with his thumb. An error would have cost him a jar of oil. Only after a second count did he look up. "I will give you silver for two jars of oil. We are settled."
 
-Barak squinted, trying to follow the logic. "By Inshushinak's eye, Ikram—if you say it is so." He took the offered silver shekels, three of them, and departed. Ikram swept the dust from the table with the side of his hand. He stood a moment with his finger in the air between the two tablets, as if there should have been something there that was not.
+Barak squinted, trying to follow the logic. "By <span class="gloss" data-tip="Inshushinak (𒀭𒈹𒂞𒉺𒀝 dInšušinak) — patron god of Susa and judge of the dead.">Inshushinak's</span> eye, Ikram—if you say it is so." He took the offered silver shekels, <span class="gloss cuneiform" data-tip="three (3) shekels — for two jars of oil, net of the sheepskins and rope">𒐈</span> of them, and departed. Ikram swept the dust from the table with the side of his hand. He stood a moment with his finger in the air between the <span class="gloss cuneiform" data-tip="two (2) tablets — debt and credit, kept on separate clay">𒈫</span> tablets, as if there should have been something there that was not.
 
 The leather door-flap was thrust aside, and Azad's broad bearded face appeared. "Ikram! My donkeys are thirsty and my patience is thinner than a temple priest's excuse. Does your boy draw maps of the heavens or count bales of wheat?"
 
@@ -93,35 +311,38 @@ Ikram turned back to Enki. The boy had moved to the final row, his movements pre
 
 Finally Enki set his stylus down. He laid the second tablet—the partial one—beside the first on the floor. "It is done, master."
 
-Ikram came over. Azad's man, without being asked, laid his own pair beside Enki's. Four tablets in two rows. The first tablet of each pair was full—every cell marked, none empty to argue over. The second of each pair showed the full top row and three cells of the second row, and nothing after.
+Ikram came over. Azad's man, without being asked, laid his own pair beside Enki's. <span class="gloss cuneiform" data-tip="four (4) tablets — two from each party">𒐉</span> tablets in <span class="gloss cuneiform" data-tip="two (2) rows">𒈫</span> rows. The first tablet of each pair was full—every cell marked, none empty to argue over. The second of each pair showed the full top row and <span class="gloss cuneiform" data-tip="three (3) cells — only the first three of the second row">𒐈</span> cells of the second row, and nothing after.
 
-Ikram ran his eye along the partial tablet. *Ten in the top row, three below, and nothing else.* He did not count each mark. He did not need to. *One hundred on the first tablet. Ten and three on the second. One hundred and thirteen bales.*
+![Two pairs of grid tablets, laid side by side]({{ site.baseurl }}/assets/math-origins/02-grid-tablets.png)
+*Placeholder. Generation prompt: "Top-down view of four small clay tablets laid in two rows of two on a wooden table in a Mesopotamian storeroom. Each tablet is ruled into a 10×10 grid (a hundred small cells) with the edge of a reed before drying. The top two tablets are completely full — every cell marked with a small impressed wedge. The bottom two tablets are identical to each other: the top row entirely marked, then three cells of the second row, then empty cells. A reed stylus rests on the table beside them; dust-motes in a sharp side beam of sunlight. Photorealistic, museum quality."*
+
+Ikram ran his eye along the partial tablet. <em><span class="gloss cuneiform" data-tip="ten (10)">𒌋</span> in the top row, <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> below, and nothing else.</em> He did not count each mark. He did not need to. <em><span class="gloss cuneiform" data-tip="one hundred (100) — a full grid is ten rows of ten cells">𒈨</span> on the first tablet. <span class="gloss cuneiform" data-tip="ten (10)">𒌋</span> and <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> on the second.</em> <span class="gloss cuneiform" data-tip="one hundred and thirteen (113) — written in sexagesimal as 1·60 + 53">𒁹  𒐐𒐈</span> *bales.*
 
 Azad's man had read off the same cell on his own pair. Neither said the number aloud. Ikram pressed his seal into the corner of each of Enki's tablets; Azad's man pressed his in the corner of his own. It was how scribes confirmed counts when words were not needed.
 
-Then Ikram knelt with a fresh shard to work out the price. It had been struck the week before—three shekels the bale. He worked in the dust as his father had taught him, *because the dust does not forget, and a man's head at the end of a day forgets.*
+Then Ikram knelt with a fresh shard to work out the price. It had been struck the week before—<span class="gloss cuneiform" data-tip="three (3) shekels per bale">𒐈</span> shekels the bale. He worked in the dust as his father had taught him, *because the dust does not forget, and a man's head at the end of a day forgets.*
 
-He used the tablets themselves as a ladder for the sum. *One full tablet is a hundred bales,* he said to himself. *Three shekels on each bale, so a full tablet is three hundred shekels.* He pressed three large circles into the dust, one for each hundred. *One full row is ten bales; three shekels each; a row is thirty shekels.* Three small circles below the first three. *Three cells in the last row; three shekels each; three threes are nine.* Nine short ticks beside the circles.
+He used the tablets themselves as a ladder for the sum. <em>One full tablet is <span class="gloss cuneiform" data-tip="one hundred (100) bales">𒈨</span> bales,</em> he said to himself. <em><span class="gloss cuneiform" data-tip="three (3)">𒐈</span> shekels on each bale, so a full tablet is <span class="gloss cuneiform" data-tip="three hundred (300) — 3 × 100, in the merchant's tens">𒐈𒈨</span> shekels.</em> He pressed <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> large circles into the dust, one for each hundred. <em>One full row is <span class="gloss cuneiform" data-tip="ten (10) bales per row">𒌋</span> bales; <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> shekels each; a row is <span class="gloss cuneiform" data-tip="thirty (30) — 3 × 10">𒌍</span> shekels.</em> <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> small circles below the first <span class="gloss cuneiform" data-tip="three (3)">𒐈</span>. <em><span class="gloss cuneiform" data-tip="three (3)">𒐈</span> cells in the last row; <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> shekels each; <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> threes are <span class="gloss cuneiform" data-tip="nine (9) — 3 × 3">𒐎</span>.</em> <span class="gloss cuneiform" data-tip="nine (9)">𒐎</span> short ticks beside the circles.
 
-He ran his finger across the whole. *Three hundred. And thirty. And nine. Three hundred and thirty-nine.*
+He ran his finger across the whole. <em><span class="gloss cuneiform" data-tip="three hundred (300)">𒐈𒈨</span>. And <span class="gloss cuneiform" data-tip="thirty (30)">𒌍</span>. And <span class="gloss cuneiform" data-tip="nine (9)">𒐎</span>. <span class="gloss cuneiform" data-tip="three hundred and thirty-nine (339) — the price of 113 bales at 3 shekels each">𒐈𒈨 𒌍𒐎</span>.</em>
 
-Azad's man, working on his own shard at the table's edge, had done the same and held up his figure. *Three hundred and thirty-nine.* Neither man smiled. Neither said *good.* It was enough that the numbers agreed.
+Azad's man, working on his own shard at the table's edge, had done the same and held up his figure. <em><span class="gloss cuneiform" data-tip="three hundred and thirty-nine (339) — the same total, written the same way">𒐈𒈨 𒌍𒐎</span>.</em> Neither man smiled. Neither said *good.* It was enough that the numbers agreed.
 
-Now the sum had to be turned into something a balance could weigh. Silver came in minas, and a mina was sixty shekels, and both men knew it—but the knowing did not spare them the small labour of turning three hundred and thirty-nine shekels into minas-and-shekels. Ikram did it under his breath. *Sixty. A hundred and twenty. A hundred and eighty. Two hundred and forty. Three hundred. That is five sixties, five minas. And thirty-nine over.* He drew the revised figure on a fresh patch of dust beside the first: five large circles for the minas, three ten-circles, nine ticks. His father had taught him to count in tens; the temple weighed silver in sixties; the two did not meet, and every sum had to cross the gap twice before the silver came out of the purse. It was a small tax on the day, paid in the head.
+Now the sum had to be turned into something a balance could weigh. Silver came in minas, and a mina was <span class="gloss cuneiform" data-tip="sixty (60) shekels = 1 mina">𒁹</span> shekels, and both men knew it—but the knowing did not spare them the small labour of turning <span class="gloss cuneiform" data-tip="three hundred and thirty-nine (339)">𒐈𒈨 𒌍𒐎</span> shekels into minas-and-shekels. Ikram did it under his breath. <em><span class="gloss cuneiform" data-tip="sixty (60) — 1·60">𒁹</span>. <span class="gloss cuneiform" data-tip="one hundred and twenty (120) — 2·60">𒈫</span>. <span class="gloss cuneiform" data-tip="one hundred and eighty (180) — 3·60">𒐈</span>. <span class="gloss cuneiform" data-tip="two hundred and forty (240) — 4·60">𒐉</span>. <span class="gloss cuneiform" data-tip="three hundred (300) — 5·60">𒐊</span>. That is <span class="gloss cuneiform" data-tip="five (5)">𒐊</span> sixties, <span class="gloss cuneiform" data-tip="five (5) minas — same shape in cuneiform as the count of sixties; that is the point">𒐊</span> minas. And <span class="gloss cuneiform" data-tip="thirty-nine (39)">𒌍𒐎</span> over.</em> He drew the revised figure on a fresh patch of dust beside the first: <span class="gloss cuneiform" data-tip="five (5) minas + thirty-nine (39) shekels — 339 re-expressed in sexagesimal: 5·60 + 39, in two columns">𒐊 ⸻ 𒌍𒐎</span>. His father had taught him to count in tens; the temple weighed silver in sixties; the two did not meet, and every sum had to cross the gap twice before the silver came out of the purse. It was a small tax on the day, paid in the head.
 
-Azad's man drew a leather purse from his belt and a cloth bundle of weight-stones—a mina, a half-mina, a shekel, a half, a third, a sixth, each worn smooth as a river-pebble and cut with its mark. Ikram fetched his balance from the shelf: a yoke of carved cedar with two shallow bronze pans, the cedar darkened with years of handling. He fetched his own stones from under the table. The two sets of weights were not alike in the way copies are not alike—each weight-maker had his own hand—but within the tolerance of good trade they were equal, and that was the point.
+Azad's man drew a leather purse from his belt and a cloth bundle of weight-stones—a mina, a half-mina, a shekel, a half, a third, a sixth, each worn smooth as a river-pebble and cut with its mark. Ikram fetched his balance from the shelf: a yoke of carved cedar with <span class="gloss cuneiform" data-tip="two (2) shallow bronze pans">𒈫</span> shallow bronze pans, the cedar darkened with years of handling. He fetched his own stones from under the table. The <span class="gloss cuneiform" data-tip="two (2) sets of weight-stones — buyer's and seller's, cross-checked">𒈫</span> sets of weights were not alike in the way copies are not alike—each weight-maker had his own hand—but within the tolerance of good trade they were equal, and that was the point.
 
-They weighed each piece of silver twice. Once against Ikram's stones: Azad's man laid a ring of silver on one pan, Ikram laid the matching weight on the other, and they watched until the cedar rested still. Then again, with Azad's weight in the second pan. A ring that did not balance both times went back to the purse and was replaced. It took the better part of an hour. When they were done, five full mina-rings lay together on the table—each the weight of a man's palm—and thirty-nine loose shekels in bent ring-bits beside them.
+They weighed each piece of silver twice. Once against Ikram's stones: Azad's man laid a ring of silver on one pan, Ikram laid the matching weight on the other, and they watched until the cedar rested still. Then again, with Azad's weight in the second pan. A ring that did not balance both times went back to the purse and was replaced. It took the better part of an hour. When they were done, <span class="gloss cuneiform" data-tip="five (5)">𒐊</span> full mina-rings lay together on the table—each the weight of a man's palm—and <span class="gloss cuneiform" data-tip="thirty-nine (39)">𒌍𒐎</span> loose shekels in bent ring-bits beside them.
 
 Ikram ran his thumb across the surface of one of the mina-rings, watching for the dull grey that would mean the silver had been stretched with lead. It was bright and soft-feeling under the thumb, as good silver is. He nodded once. The donkeys outside began to load.
 
-When they were gone and the storeroom was empty again, Ikram sat on his stool for a long moment, looking at nothing. He was thinking of his father, dead now six years, and of a scribe in a wicker chair, and of four *gur* of barley that had vanished between the field and the tablet. The memory was old, but it had not grown gentler.
+When they were gone and the storeroom was empty again, Ikram sat on his stool for a long moment, looking at nothing. He was thinking of his father, dead now <span class="gloss cuneiform" data-tip="six (6) years">𒐋</span> years, and of a scribe in a wicker chair, and of <span class="gloss cuneiform" data-tip="four (4)">𒐉</span> *gur* of barley that had vanished between the field and the tablet. The memory was old, but it had not grown gentler.
 
 He rubbed his jaw and reached for the next invoice.
 
 ### **Chapter 2: The Brewer's Order**
 
-Two days later, during the third watch of the morning, when the shadow of the temple-wall still stretched halfway across the street, Kurgal the brewer came to Ikram's storeroom. He was a squat powerful man with hands stained dark from barley mash and forearms ropey with the daily lifting of mash-paddles. He carried with him the rich sweet fermenting smell of his trade, and a single clay jar that he set down on Ikram's table. The jar was well-made, sealed with a disc of clay and marked with Kurgal's sign—a stalk of barley bent into a circle.
+<span class="gloss cuneiform" data-tip="two (2) days later">𒈫</span> days later, during the third watch of the morning, when the shadow of the temple-wall still stretched halfway across the street, Kurgal the brewer came to Ikram's storeroom. He was a squat powerful man with hands stained dark from barley mash and forearms ropey with the daily lifting of mash-paddles. He carried with him the rich sweet fermenting smell of his trade, and a single clay jar that he set down on Ikram's table. The jar was well-made, sealed with a disc of clay and marked with Kurgal's sign—a stalk of barley bent into a circle.
 
 "My finest, Ikram," Kurgal said, his voice a low rumble. "Dark as the night sky. Strong enough to make a temple priest dance before Inshushinak, and strong enough to make him forget it by morning."
 
@@ -139,11 +360,11 @@ Enki wiped his hands on his tunic and fetched a smooth wet slab of clay, placing
 
 Enki's face was a mask of placid diligence. This was a task he understood. He dipped his stylus and drew the brewer's circular barley-sign at the top of the tablet. Beside it, he drew a simple beer-jar. Then he began.
 
-*Press.* One. *Press.* Two. *Press.* Three. He worked his way to sixteen, arranging the ticks in two neat rows of eight. He paused, wiped a bead of sweat from his brow, and drew a deep horizontal line beneath the block to separate it from the next. That was one crate.
+*Press.* <span class="gloss cuneiform" data-tip="one (1)">𒁹</span>. *Press.* <span class="gloss cuneiform" data-tip="two (2)">𒈫</span>. *Press.* <span class="gloss cuneiform" data-tip="three (3)">𒐈</span>. He worked his way to <span class="gloss cuneiform" data-tip="sixteen (16) — one full crate's worth of jars">𒌋𒐋</span>, arranging the ticks in <span class="gloss cuneiform" data-tip="two (2)">𒈫</span> neat rows of <span class="gloss cuneiform" data-tip="eight (8) — 2 × 8 = 16, the bookkeeper's way to read a block at a glance">𒐍</span>. He paused, wiped a bead of sweat from his brow, and drew a deep horizontal line beneath the block to separate it from the next. That was one crate.
 
-He began the next set of sixteen ticks below the first.
+He began the next set of <span class="gloss cuneiform" data-tip="sixteen (16)">𒌋𒐋</span> ticks below the first.
 
-Ikram conducted his business while the boy worked. He traded a bolt of dyed wool for three sacks of lentils. He argued with a farmer over the quality of a new batch of sesame seeds, both men invoking gods and fathers by turns, both knowing the price would settle where it had always settled. Through all of it his attention kept returning to the small rhythmic *scrape and press* of Enki's stylus. It was the sound of a snail crossing a rock. It was the sound of good silver going into another man's purse.
+Ikram conducted his business while the boy worked. He traded a bolt of dyed wool for <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> sacks of lentils. He argued with a farmer over the quality of a new batch of sesame seeds, both men invoking gods and fathers by turns, both knowing the price would settle where it had always settled. Through all of it his attention kept returning to the small rhythmic *scrape and press* of Enki's stylus. It was the sound of a snail crossing a rock. It was the sound of good silver going into another man's purse.
 
 "How many is that?" Ikram asked, his voice sharp.
 
@@ -153,15 +374,15 @@ Kurgal, waiting patiently near the door with a cup of weak beer Ikram had poured
 
 "Simple does not mean swift," Ikram said, the edge in his voice meant for the world at large, not for Kurgal.
 
-Enki finished the ninth and final block of sixteen. The tablet was now a dizzying field of vertical marks. But the work was not done. He pointed his stylus at the first tick in the first block.
+Enki finished the ninth and final block of <span class="gloss cuneiform" data-tip="sixteen (16)">𒌋𒐋</span>. The tablet was now a dizzying field of vertical marks. But the work was not done. He pointed his stylus at the first tick in the first block.
 
-"One, two, three..." he murmured, his finger hovering over each mark. He worked down the columns, his voice a low steady drone. When he reached the end of a column, he made a small dust-mark with his knee to keep his place. He counted past one hundred without changing pitch. The storeroom fell silent. Even Kurgal stopped drinking.
+"One, two, three..." he murmured, his finger hovering over each mark. He worked down the columns, his voice a low steady drone. When he reached the end of a column, he made a small dust-mark with his knee to keep his place. He counted past <span class="gloss cuneiform" data-tip="one hundred (100)">𒈨</span> without changing pitch. The storeroom fell silent. Even Kurgal stopped drinking.
 
 He reached the final tick, recounted the tens under his breath to be certain, and announced: "Master. It is one hundred and forty-four jars."
 
 Ikram nodded, tension leaving his shoulders. "Good."
 
-He took a smaller finer tablet for the formal receipt. He pressed Kurgal's sign, the number of crates, the number of jars in each. At the bottom he drew the tally: a single large circle for the hundred, four smaller circles for the tens, and four vertical ticks for the ones. *144.* He handed tablet and pouch of silver to Kurgal, who hefted the coins once, tucked them into his belt, and at the door turned back.
+He took a smaller finer tablet for the formal receipt. He pressed Kurgal's sign, the number of crates, the number of jars in each. At the bottom he drew the tally: a single large circle for the hundred, <span class="gloss cuneiform" data-tip="four (4)">𒐉</span> smaller circles for the tens, and <span class="gloss cuneiform" data-tip="four (4)">𒐉</span> vertical ticks for the ones. *<span class="gloss cuneiform" data-tip="one hundred and forty-four (144) — 9 crates × 16 jars; in sexagesimal 2·60 + 24 = 𒈫·𒎙𒐉">𒁹𒈨 𒐏𒐉</span>.* He handed tablet and pouch of silver to Kurgal, who hefted the coins once, tucked them into his belt, and at the door turned back.
 
 "You should buy my best tomorrow, Ikram. The Akitu is coming. The temple will buy all that I can brew, and you will pay three times what you pay today."
 
@@ -197,7 +418,7 @@ Ikram walked over, shadow falling across the damp clay. He took the stylus from 
 
 "Give me a sign for this barley," he said to the caravan master.
 
-The man grunted, confused, but scraped a shape in the dust with his sandal: two intersecting wavy lines. The rivers of his homeland.
+The man grunted, confused, but scraped a shape in the dust with his sandal: <span class="gloss cuneiform" data-tip="two (2) wavy lines — for the rivers of the northern hills">𒈫</span> intersecting wavy lines. The rivers of his homeland.
 
 Ikram copied the sign onto the tablet, etching it large and deep so there could be no mistake. He looked at Enki, then at the labourers. "Bring the next one."
 
@@ -217,7 +438,7 @@ With a single decisive motion Ikram pressed the stylus into the clay below the s
 
 He handed the stylus to the boy. "You do it."
 
-Enki stared at the tablet. Something moved across his face—not disobedience. A deeper thing. The stylus trembled slightly in his hand. *That is just a line,* he thought. *It is not the sign for barley. It is not the honest mark of the thing.* And beneath that thought, the one that had lived in him for four years: *if a sign can be reduced to a line, what is a sign?* In the temple archive, the tablet that said he was not free was made of signs. If Ikram could turn a sign into a line, could someone else turn the signs on *his* tablet into lines, and would he still be owned? Or not owned? The question was so large it made him dizzy.
+Enki stared at the tablet. Something moved across his face—not disobedience. A deeper thing. The stylus trembled slightly in his hand. *That is just a line,* he thought. *It is not the sign for barley. It is not the honest mark of the thing.* And beneath that thought, the one that had lived in him for <span class="gloss cuneiform" data-tip="four (4) years — since the priest pressed his wrist to the debt-tablet at Susa">𒐉</span> years: *if a sign can be reduced to a line, what is a sign?* In the temple archive, the tablet that said he was not free was made of signs. If Ikram could turn a sign into a line, could someone else turn the signs on *his* tablet into lines, and would he still be owned? Or not owned? The question was so large it made him dizzy.
 
 "But master..." His voice was small. "It is not the sign for barley. It is... ugly."
 
@@ -237,7 +458,7 @@ He tucked the tablet into the drying rack and said nothing.
 
 The woman came at the turning of the afternoon, when the sun had rolled past the top of its arch and the streets smelled of lamps being lit and onions going into cooking pots. Her name was Šubultum, and she had been widowed the year before by a fever that had taken half her village before the rains came. She came alone to Ikram's door, which was not how women of Susa usually came to merchants' doors, but she came alone because there was no one to come with her.
 
-She had a small clay tablet wrapped in a piece of woven reed. She unwrapped it on Ikram's table with the ceremony of a priest opening an offering box.
+She had a small clay tablet wrapped in a piece of woven reed. She unwrapped it on Ikram's table with the ceremony of a priest opening an offering box. Her lips moved in the brief invocation a woman of Susa learned at her mother's knee: <span class="gloss cuneiform" data-tip="dNanše ig-gi-na — 'Nanshe of the just judgement, hear me.' A Sumerian formula carried into Akkadian-speaking Elam, addressed to the goddess of weights, measures, and the cause of the widow and the orphan.">𒀭𒀏 𒅅𒁉𒈾</span>, *dNanše ig-gi-na.*
 
 "They say you are fair," she said. Her voice was tired and quiet, but her eyes were not tired at all. "They say you count twice."
 
@@ -247,9 +468,9 @@ She had a small clay tablet wrapped in a piece of woven reed. She unwrapped it o
 
 Ikram almost smiled. He did not. "What is it you want?"
 
-She touched the tablet with two fingers. "This is the assessment of my husband's field. The temple assessors came in the year of his death. They wrote down what the field is. They set the tax on it. For a year I have paid this tax. But when I walk my field, master, it is not the field on this tablet. It is smaller. I am sure of it. Only... I cannot read the tablet. I know it says the field is *seventy-two sar*. That is what the temple scribe told me when he took my first year's silver. I do not know what seventy-two *sar* means in the dust under my feet."
+She touched the tablet with <span class="gloss cuneiform" data-tip="two (2) fingers — laid on the temple's mark">𒈫</span> fingers. "This is the assessment of my husband's field. The temple assessors came in the year of his death. They wrote down what the field is. They set the tax on it. For a year I have paid this tax. But when I walk my field, master, it is not the field on this tablet. It is smaller. I am sure of it. Only... I cannot read the tablet. I know it says the field is *seventy-two sar*. That is what the temple scribe told me when he took my first year's silver. I do not know what seventy-two *sar* means in the dust under my feet."
 
-Ikram lifted the tablet and held it to the light. The marks were standard—a temple seal, the field's location by the canal it fed from, the measured width, the measured length, and the area. He read them, feeling the old anger rise. The width: six reeds. The length, written as twelve reeds. The area: seventy-two *sar*.
+Ikram lifted the tablet and held it to the light. The marks were standard—a temple seal, the field's location by the canal it fed from, the measured width, the measured length, and the area. He read them, feeling the old anger rise. The width: <span class="gloss cuneiform" data-tip="six (6) reeds — the side that cannot move, fenced by canal and road">𒐋</span> reeds. The length, written as <span class="gloss cuneiform" data-tip="twelve (12) reeds — what the tablet claims">𒌋𒈫</span> reeds. The area: <span class="gloss cuneiform" data-tip="seventy-two (72) sar — 6 × 12, the tablet's internally consistent figure; in sexagesimal 1·60 + 12">𒁹  𒌋𒈫</span> *sar*.
 
 "What is the width of your field, Šubultum?" he asked.
 
@@ -259,7 +480,7 @@ Ikram lifted the tablet and held it to the light. The marks were standard—a te
 
 "I do not know. I cannot measure it alone. The reed is heavy and my back is not what it was." She paused. "But I know it is not twelve reeds. My husband said the field was ten reeds long. He said it over and over. He would walk the length of it every Nisannu before the planting, counting his paces, and he would come back and tell me, *ten reeds, Šubultum, ten honest reeds.* I do not think he lied to me about this."
 
-Ikram looked at the tablet again. Six reeds wide. Twelve reeds long. Seventy-two *sar*. The assessment was internally consistent. The numbers agreed with each other. Whoever had written this tablet had written it carefully. But the field under the widow's feet was not the field on the tablet.
+Ikram looked at the tablet again. <span class="gloss cuneiform" data-tip="six (6)">𒐋</span> reeds wide. <span class="gloss cuneiform" data-tip="twelve (12)">𒌋𒈫</span> reeds long. <span class="gloss cuneiform" data-tip="seventy-two (72) sar">𒁹  𒌋𒈫</span> *sar*. The assessment was internally consistent. The numbers agreed with each other. Whoever had written this tablet had written it carefully. But the field under the widow's feet was not the field on the tablet.
 
 "Enki," he said, without turning.
 
@@ -273,11 +494,11 @@ Enki, who had been sorting lentils at the back of the room, looked up slowly. It
 
 "Think on it. Seventy-two *sar* is what the tablet says. Six reeds is what the road and the canal say. One of them is wrong. Or the tablet is telling us a field that is not her field."
 
-Enki looked at the tablet. He looked at his hands. He thought of the brewer's tablet—nine crates of sixteen, one hundred and forty-four. He had never thought of going in the other direction. He had never thought *if I know the total and one side, what must the other side be?*
+Enki looked at the tablet. He looked at his hands. He thought of the brewer's tablet—<span class="gloss cuneiform" data-tip="nine (9)">𒐎</span> crates of <span class="gloss cuneiform" data-tip="sixteen (16)">𒌋𒐋</span>, <span class="gloss cuneiform" data-tip="one hundred and forty-four (144) — 9 × 16; the same total he had worked out two days before, only seen from the other side">𒁹𒈨 𒐏𒐉</span>. He had never thought of going in the other direction. He had never thought *if I know the total and one side, what must the other side be?*
 
-He reached for a dust shard. He sketched a rectangle—six wide, he told himself. He began to lay down rows. Six. Twelve. Eighteen. Twenty-four. Thirty. Thirty-six. Forty-two. Forty-eight. Fifty-four. Sixty. Sixty-six. Seventy-two.
+He reached for a dust shard. He sketched a rectangle—<span class="gloss cuneiform" data-tip="six (6) reeds wide — the side that is fixed">𒐋</span> wide, he told himself. He began to lay down rows. <span class="gloss cuneiform" data-tip="six (6) — one row of six">𒐋</span>. <span class="gloss cuneiform" data-tip="twelve (12) — two rows of six">𒌋𒈫</span>. <span class="gloss cuneiform" data-tip="eighteen (18) — three rows">𒌋𒐍</span>. <span class="gloss cuneiform" data-tip="twenty-four (24) — four rows">𒎙𒐉</span>. <span class="gloss cuneiform" data-tip="thirty (30)">𒌍</span>. <span class="gloss cuneiform" data-tip="thirty-six (36)">𒌍𒐋</span>. <span class="gloss cuneiform" data-tip="forty-two (42)">𒐏𒈫</span>. <span class="gloss cuneiform" data-tip="forty-eight (48)">𒐏𒐍</span>. <span class="gloss cuneiform" data-tip="fifty-four (54)">𒐐𒐉</span>. <span class="gloss cuneiform" data-tip="sixty (60) — one full hand of sixes; in sexagesimal, the first time a column rolls over">𒁹</span>. <span class="gloss cuneiform" data-tip="sixty-six (66) — 1·60 + 6">𒁹  𒐋</span>. <span class="gloss cuneiform" data-tip="seventy-two (72) — 1·60 + 12; arrived at the target">𒁹  𒌋𒈫</span>.
 
-He counted the rows he had drawn. *Twelve.*
+He counted the rows he had drawn. *<span class="gloss cuneiform" data-tip="twelve (12) — the length the tablet claims">𒌋𒈫</span>.*
 
 "Twelve reeds, master," he said.
 
@@ -323,31 +544,37 @@ Enki nodded. He tucked the dust-shard into his sleeve like a charm.
 
 ### **Chapter 5: The City of a Thousand Tricks**
 
-The journey from Susa to Nippur stretched over seven days, a slow crawl across a flat sun-baked landscape of irrigated fields and dusty tracks. They crossed the Tigris on a reed-and-bitumen ferry whose owner charged them by the donkey and then, at the far bank, charged them a second time by the bale. Ikram paid without argument and filed the man's face away in a part of his memory reserved for the faces of men to be avoided in the future.
+The journey from Susa to Nippur stretched over <span class="gloss cuneiform" data-tip="seven (7) days">𒐌</span> days, a slow crawl across a flat sun-baked landscape of irrigated fields and dusty tracks. They crossed the Tigris on a reed-and-bitumen ferry whose owner charged them by the donkey and then, at the far bank, charged them a second time by the bale. Ikram paid without argument and filed the man's face away in a part of his memory reserved for the faces of men to be avoided in the future.
 
 But nothing could have prepared them for the city.
 
-The walls of Nippur, built of millions of mud bricks, rose higher than any structure Ikram had seen in his life, vast and imposing under the white sun. At the heart of the city the great ziggurat of the Ekur, Enlil's house, loomed over the plain like a stepped mountain—six terraces, some said, or seven, topped by a shrine whose roof was said to be plated in electrum. From five *danna* out you could see it. Up close, it swallowed the sky.
+The walls of Nippur, built of millions of mud bricks, rose higher than any structure Ikram had seen in his life, vast and imposing under the white sun. At the heart of the city the great ziggurat of the Ekur, Enlil's house, loomed over the plain like a stepped mountain—<span class="gloss cuneiform" data-tip="six (6)">𒐋</span> terraces, some said, or <span class="gloss cuneiform" data-tip="seven (7)">𒐌</span>, topped by a shrine whose roof was said to be plated in electrum. From <span class="gloss cuneiform" data-tip="five (5) danna — about 55 km, the practical horizon">𒐊</span> *danna* out you could see it. Up close, it swallowed the sky.
+
+![The Ekur ziggurat of Nippur]({{ site.baseurl }}/assets/math-origins/09-ekur-ziggurat.png)
+*Placeholder. Generation prompt: "View of the great ziggurat of Nippur — the Ekur, "Mountain House" of Enlil — under intense midday sun. A massive stepped mud-brick pyramid of six or seven terraces, rising perhaps sixty metres, its surface a deep ochre-baked clay, faces ramped with staircases climbing to a small shrine at the summit whose roof gleams as if plated in electrum. The walls of Nippur surround its base; a procession of small figures ascends a side ramp. Heat-haze, vast scale. Photorealistic reconstruction, museum quality, Ur III / early Old Babylonian period."*
 
 The gateway was a cavernous arch of fired brick, a dark mouth that swallowed a constant river of people, carts, and livestock. Enki walked close behind Ikram, his hand on the head of their lead donkey as if for reassurance. He did not look up at the gate as they passed under it.
 
-The moment they passed through the gate, the sound hit them. It was not the familiar murmur of the Susa market. It was a roar—a physical force composed of a thousand voices shouting in a dozen dialects of Akkadian, the strange clipped liturgical Sumerian of passing temple novices, the guttural Gutian of highland traders, a handful of Elamite-speaking merchants from their own homeland. The air, thick with the smells of roasting lamb, pungent spices, fresh dung, the sweat of a thousand bodies, and the faintly sweet scent of bitumen from the river yards, was a meal in itself.
+The moment they passed through the gate, the sound hit them. It was not the familiar murmur of the Susa market. It was a roar—a physical force composed of a thousand voices shouting in a dozen dialects of Akkadian, the strange clipped liturgical Sumerian of passing temple novices, the guttural Gutian of highland traders, a handful of Elamite-speaking merchants from their own homeland. Somewhere to their right a grain-seller called the same phrase over and over above the noise: <span class="gloss cuneiform" data-tip="ŠE 1 GÍN — 'Barley, one shekel a measure.' ŠE (𒊺) is the Sumerian logogram for barley; GÍN (𒂆) is the Sumerian sign for the silver-shekel weight. The same two signs would have been pressed into ten thousand tablets that year — every grain account in the city, in the same shorthand the seller was now bellowing in the street.">𒊺 𒁹 𒂆</span>, *ŠE — gín — ŠE — gín,* barley a shekel, barley a shekel. The air, thick with the smells of roasting lamb, pungent spices, fresh dung, the sweat of a thousand bodies, and the faintly sweet scent of bitumen from the river yards, was a meal in itself.
 
 "Stay close," Ikram ordered.
 
 He felt a thrill course through him—apprehension and pure undiluted opportunity braided together. The chaos was terrifying. It was beautiful.
 
-They found a space in a crowded caravanserai near the merchants' quarter. The keeper was a lean Nippuran with a shaved head and a single gold ring in one ear, who looked at the dust on their sandals and asked a higher price than Ikram expected. *"You are from Susa,"* he said, in a way that was not friendly and not hostile. *"Elamites pay a third more."* Ikram paid, because the alternative was sleeping in the street, and noted the man's face for his memory.
+They found a space in a crowded caravanserai near the merchants' quarter. The keeper was a lean Nippuran with a shaved head and a <span class="gloss cuneiform" data-tip="one (1) gold ring — a single ear-hoop">𒁹</span> gold ring in one ear, who looked at the dust on their sandals and asked a higher price than Ikram expected. *"You are from Susa,"* he said, in a way that was not friendly and not hostile. *"Elamites pay a third more."* Ikram paid, because the alternative was sleeping in the street, and noted the man's face for his memory.
 
 After securing their goods they walked into the great market that sprawled from the central temple precinct. Here the true nature of Nippur revealed itself. It was a city built on trade. But it was a trade conducted in a thousand different languages of number.
 
-Ikram watched a wool merchant from the western hills close a sale. For every ten sheepskins, the merchant dropped a small white river-stone into a leather bowl. For every five bowls, he would lift out the whites and drop in a single larger black one. His customers seemed to understand the system. To Ikram it looked like a clumsy ritual of pebbles.
+![The market quarter of Nippur]({{ site.baseurl }}/assets/math-origins/10-nippur-market.png)
+*Placeholder. Generation prompt: "A bustling, sprawling Mesopotamian street market just outside a temple precinct: dozens of low reed-and-mud stalls under tattered linen awnings, merchants from every corner of the ancient world haggling over piles of barley, lentils, dyed wool, copper, salt-fish, leather; women in long woven robes weighing spices on tiny bronze balances; a scribe seated cross-legged with a wet tablet on his knee, pressing wedges between two arguing buyers; donkeys laden with bales pushing through; the corner of a stepped ziggurat in the background; dust, smoke, noise implied. Photorealistic reconstruction, museum quality, ca. 2000 BCE."*
 
-A few stalls down, a woman selling fine dyed linens kept her accounts on a knotted cord that she wore looped around her neck. A simple knot for one length, a looped knot for five, a thick braided knot for twenty. She ran her fingers over the cord like a harpist, her face a mask of serene concentration.
+Ikram watched a wool merchant from the western hills close a sale. For every <span class="gloss cuneiform" data-tip="ten (10) sheepskins per white pebble">𒌋</span> sheepskins, the merchant dropped a small white river-stone into a leather bowl. For every <span class="gloss cuneiform" data-tip="five (5) bowls per black pebble — so a black pebble is 5 × 10 = 50 sheepskins">𒐊</span> bowls, he would lift out the whites and drop in a single larger black one. His customers seemed to understand the system. To Ikram it looked like a clumsy ritual of pebbles.
+
+A few stalls down, a woman selling fine dyed linens kept her accounts on a knotted cord that she wore looped around her neck. A simple knot for <span class="gloss cuneiform" data-tip="one (1) length">𒁹</span>, a looped knot for <span class="gloss cuneiform" data-tip="five (5)">𒐊</span>, a thick braided knot for <span class="gloss cuneiform" data-tip="twenty (20)">𒎙</span>. She ran her fingers over the cord like a harpist, her face a mask of serene concentration.
 
 "Master," Enki whispered. "His symbols are all wrong."
 
-Ikram followed the pointed finger. A scribe was settling a deal between two traders—not using the simple circles and ticks Ikram knew, but pressing complex wedge-shaped marks into wet clay: some vertical, some horizontal, some angled. His stylus moved at the speed of speech. It was a system of breathtaking complexity and speed. Ikram had thought his own trick of abstracting the count was clever. Here, it was a child's toy.
+Ikram followed the pointed finger. A scribe was settling a deal between <span class="gloss cuneiform" data-tip="two (2) traders">𒈫</span> traders—not using the simple circles and ticks Ikram knew, but pressing complex wedge-shaped marks into wet clay: some vertical, some horizontal, some angled. His stylus moved at the speed of speech. It was a system of breathtaking complexity and speed. Ikram had thought his own trick of abstracting the count was clever. Here, it was a child's toy.
 
 Then the argument erupted.
 
@@ -375,7 +602,7 @@ To handle the volume Nippur offered, Ikram needed more than a room in a caravans
 
 The land belonged to the Ekur—which was to say, to Enlil, which was to say, in practice, to the temple bureaucracy that managed Enlil's properties. The lease was handled by a scribe named Sharrum. He was thin and severe, his clean robes and soft hands marking him as a man who worked with ideas, not goods. He met Ikram and Enki at the plot with a large leather bag slung over one shoulder and an air that suggested he was granting a favour to a lesser creature.
 
-"The dimensions are set by the temple surveyors," Sharrum said, voice flat and official. He gestured to two marked pegs at one end of the plot and two more at the other. "The width is nine reeds. The depth is sixteen."
+"The dimensions are set by the temple surveyors," Sharrum said, voice flat and official. He gestured to <span class="gloss cuneiform" data-tip="two (2) marked pegs — the width-side corners">𒈫</span> marked pegs at one end of the plot and <span class="gloss cuneiform" data-tip="two (2) more — the depth-side corners">𒈫</span> more at the other. "The width is nine reeds. The depth is sixteen."
 
 Ikram nodded. The numbers meant little by themselves. "And the price?"
 
@@ -389,13 +616,16 @@ Enki watched, fascinated. This was the proper way of things—a task of importan
 
 Ikram watched with fraying patience.
 
-Sharrum completed the first row, sixteen tokens gleaming in the sun. He ran his finger along them, murmuring under his breath. Satisfied, he began the second row alongside the first. *Click. Click. Click.* The tiny grid took shape. It was a perfect miniature of the land, a field of clay. It was also, Ikram knew, going to take a very long time.
+Sharrum completed the first row, <span class="gloss cuneiform" data-tip="sixteen (16) tokens">𒌋𒐋</span> tokens gleaming in the sun. He ran his finger along them, murmuring under his breath. Satisfied, he began the second row alongside the first. *Click. Click. Click.* The tiny grid took shape. It was a perfect miniature of the land, a field of clay. It was also, Ikram knew, going to take a very long time.
 
-He stared at the growing rectangle. *Sixteen across. And there will be nine rows.*
+![Sharrum's tokens, halfway laid]({{ site.baseurl }}/assets/math-origins/11-token-survey.png)
+*Placeholder. Generation prompt: "A thin severe Mesopotamian scribe in a clean white robe kneeling on packed earth at the corner of an empty plot, laying small thumbnail-sized clay tokens into a tight rectangular grid: the first three rows complete (forty-eight tokens, perfectly aligned), a fourth row half-finished, the pile of remaining tokens still substantial beside him in the dust. Behind him, two surveyor's pegs mark a corner; a few skeptical onlookers watch from the edge of the plot. Photorealistic reconstruction, museum quality, ca. 2000 BCE Nippur."*
 
-The numbers snagged in his mind, pulling a memory with them. He saw Enki's face, beaded with sweat, finger hovering over a vast field of ticks on the brewer's tablet. Nine blocks. Sixteen ticks each. It was the same shape. The same count. He had already done this work.
+He stared at the growing rectangle. <em><span class="gloss cuneiform" data-tip="sixteen (16) across">𒌋𒐋</span> across. And there will be <span class="gloss cuneiform" data-tip="nine (9) rows">𒐎</span> rows.</em>
 
-Sharrum finished the third row and was about to start the fourth. He had laid forty-eight tokens. More than a hundred remained in the pile.
+The numbers snagged in his mind, pulling a memory with them. He saw Enki's face, beaded with sweat, finger hovering over a vast field of ticks on the brewer's tablet. <span class="gloss cuneiform" data-tip="nine (9)">𒐎</span> blocks. <span class="gloss cuneiform" data-tip="sixteen (16) ticks each">𒌋𒐋</span> ticks each. It was the same shape. The same count. He had already done this work.
+
+Sharrum finished the third row and was about to start the fourth. He had laid <span class="gloss cuneiform" data-tip="forty-eight (48) — 3 rows of 16">𒐏𒐍</span> tokens. More than <span class="gloss cuneiform" data-tip="one hundred (100)">𒈨</span> remained in the pile.
 
 "It is one hundred and forty-four," Ikram said.
 
@@ -413,7 +643,7 @@ Sharrum completed the fourth row. The fifth. The sixth. His movements quickened,
 
 The grid was complete.
 
-He did not speak. He lowered his head and counted, finger tapping each token, lips moving silently. Sixteen. Thirty-two. He moved down the grid, pace slowing as he reached the final rows. His finger touched the very last token.
+He did not speak. He lowered his head and counted, finger tapping each token, lips moving silently. <span class="gloss cuneiform" data-tip="sixteen (16) — end of the first row">𒌋𒐋</span>. <span class="gloss cuneiform" data-tip="thirty-two (32) — end of the second row, 2 × 16">𒌍𒈫</span>. He moved down the grid, pace slowing as he reached the final rows. His finger touched the very last token.
 
 He froze.
 
@@ -435,17 +665,20 @@ Sharrum looked at Enki. Then at Ikram. Then at his tokens, scattered in the dust
 
 ### **Chapter 7: Geme's Tokens**
 
-The tavern of Geme the widow sat in a narrow lane two streets behind the grain market, wedged between a leatherworker's shop and a small shrine to Nanshe that was lit, day and night, by a single sesame-oil lamp. The door was a heavy palm-wood plank hung on leather hinges, and above it swung a clay disc painted with the sign of a beer-jar and a spear, because Geme's dead husband had been a brewer who fought in the last Gutian campaign and she had never quite decided which of the two trades to disown.
+The tavern of Geme the widow sat in a narrow lane <span class="gloss cuneiform" data-tip="two (2)">𒈫</span> streets behind the grain market, wedged between a leatherworker's shop and a small shrine to Nanshe that was lit, day and night, by a single sesame-oil lamp. The door was a heavy palm-wood plank hung on leather hinges, and above it swung a clay disc painted with the sign of a beer-jar and a spear, because Geme's dead husband had been a brewer who fought in the last Gutian campaign and she had never quite decided which of the two trades to disown.
 
 Ikram found the place on Sharrum's advice. After the matter of the land, the scribe had warmed to him enough to share the name of a tavern whose beer was not watered and whose accounts were not spoiled. "The keeper is a widow," Sharrum had said. "She has a trick with tokens that you will like."
 
-It was the hour of the fourth watch when Ikram pushed the door aside. Enki followed, tired from a day of marking bricks. The room was low-ceilinged, hazy with the smoke of small lamps, and smelled of roasted fish and fermenting mash. Eight or nine men sat on reed benches along the walls, eating from shared platters and drinking through the long reed straws that were the custom of the working neighbourhoods. A small fire in a clay pit took the evening chill from the corners.
+It was the hour of the fourth watch when Ikram pushed the door aside. Enki followed, tired from a day of marking bricks. The room was low-ceilinged, hazy with the smoke of small lamps, and smelled of roasted fish and fermenting mash. <span class="gloss cuneiform" data-tip="eight (8) or nine (9) — Ikram counting the room at a glance">𒐍</span> or <span class="gloss cuneiform" data-tip="nine (9)">𒐎</span> men sat on reed benches along the walls, eating from shared platters and drinking through the long reed straws that were the custom of the working neighbourhoods. A small fire in a clay pit took the evening chill from the corners.
 
-Behind a rough wooden counter stood Geme. She was perhaps forty, with the broad shoulders of a woman who had done her husband's work after he died and never quite given it back. Her hair was tied in a single dark plait. From a peg on the wall behind her hung—Ikram saw it at once—a forest of knotted cords, each cord strung with small pierced clay discs.
+Behind a rough wooden counter stood Geme. She was perhaps <span class="gloss cuneiform" data-tip="forty (40)">𒐏</span>, with the broad shoulders of a woman who had done her husband's work after he died and never quite given it back. Her hair was tied in a single dark plait. From a peg on the wall behind her hung—Ikram saw it at once—a forest of knotted cords, each cord strung with small pierced clay discs.
+
+![Geme's wall of customer-cords]({{ site.baseurl }}/assets/math-origins/03-gemes-cords.png)
+*Placeholder. Generation prompt: "The interior wall of a small smoky Mesopotamian tavern. Hanging from wooden pegs are perhaps twenty to thirty hempen cords of different lengths. Each cord is strung with small pierced clay discs (some painted red, some blue) that can be slid along its length toward a small bronze stop-bead at one end. Each cord has a painted marker disc at the top in red or blue. Some cords carry many discs grouped at the bottom (regular customers), others only one or two. Warm lamplight, the smell of fish and beer implied. Photorealistic, museum quality."*
 
 "Sit where you can find room," she said, not unfriendly, not friendly. "Beer is two *qa* for a half-shekel. Fish is what my son brought back. No credit tonight. Full moon tomorrow, I do credit again after."
 
-Ikram sat. Enki sat. Geme brought beer in a shared clay pot with two straws and a small wooden platter of grilled carp. She set them down, and Ikram watched her walk back to the counter and do something with one of the hanging cords. She slid a pierced disc along its length from the right-hand end toward a little bronze stop-bead, let it click into place, and turned back to the room.
+Ikram sat. Enki sat. Geme brought beer in a shared clay pot with <span class="gloss cuneiform" data-tip="two (2) straws — shared drinking, the working-quarter custom">𒈫</span> straws and a small wooden platter of grilled carp. She set them down, and Ikram watched her walk back to the counter and do something with one of the hanging cords. She slid a pierced disc along its length from the right-hand end toward a little bronze stop-bead, let it click into place, and turned back to the room.
 
 "What is that?" Ikram asked, nodding toward the cord.
 
@@ -499,7 +732,7 @@ He reached for a shard from the corner of the table—a broken wine-cup rim—an
 
 "I have watched you for a little while, Ikram of Susa. You have a few tricks. Your tricks are good. But you carry two tablets where one would do. Show me your tablets for Lugal the ship-builder. I have heard from Sharrum that you have been puzzling over him."
 
-Ikram reached into his satchel and produced them—two small rectangular tablets, both bearing Lugal's merchant sign. "Today I bought ten cedar logs from him," he said, tapping the first, which was covered in tick marks under the heading *goods I owe him*. "Then he paid me for the three bolts of sailcloth he commissioned last month." He tapped the second, for *goods he owes me*. He had carefully scraped away the marks for the sailcloth.
+Ikram reached into his satchel and produced them—<span class="gloss cuneiform" data-tip="two (2) tablets — one for what Ikram owes Lugal, one for what Lugal owes Ikram">𒈫</span> small rectangular tablets, both bearing Lugal's merchant sign. "Today I bought ten cedar logs from him," he said, tapping the first, which was covered in tick marks under the heading *goods I owe him*. "Then he paid me for the three bolts of sailcloth he commissioned last month." He tapped the second, for *goods he owes me*. He had carefully scraped away the marks for the sailcloth.
 
 "To settle the account I had to take this tablet and this one, find the value of ten logs, find the value of three bolts of cloth, and subtract one from the other on a shard. It is clumsy. I almost made an error."
 
@@ -511,21 +744,21 @@ Nabu took the shard. "You trade with Lugal often?"
 
 "Often enough."
 
-"Then you have one relationship, not two. So you need one tablet, not two." He turned the shard over. "Let us pretend this is your tablet for Lugal. This morning he owes you for the sailcloth. Let us say thirty shekels." With a small stone from his pouch, Nabu scratched three circles for the tens. He slid the shard across. "This is what he owes you."
+"Then you have one relationship, not two. So you need one tablet, not two." He turned the shard over. "Let us pretend this is your tablet for Lugal. This morning he owes you for the sailcloth. Let us say thirty shekels." With a small stone from his pouch, Nabu scratched <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> circles for the tens. He slid the shard across. "This is what he owes you."
 
 "Yes."
 
-"Now you receive the ten logs. They are worth, let us say, fifty shekels." Nabu took the shard back. "You do not need a new tablet. You simply add to this one. But you must mark the debt differently from the credit." He etched five more circles below the first three. Beside each of these five he pressed the corner of his stone into the clay, making a small sharp wedge. The mark was unmistakable.
+"Now you receive the ten logs. They are worth, let us say, fifty shekels." Nabu took the shard back. "You do not need a new tablet. You simply add to this one. But you must mark the debt differently from the credit." He etched <span class="gloss cuneiform" data-tip="five (5) more circles — for the 50 shekels owed to Lugal">𒐊</span> more circles below the first <span class="gloss cuneiform" data-tip="three (3)">𒐈</span>. Beside each of these <span class="gloss cuneiform" data-tip="five (5)">𒐊</span> he pressed the corner of his stone into the clay, making a small sharp wedge. The mark was unmistakable.
 
 He pushed the shard back. "The circles are what he has paid you. The circles-with-wedge are what you owe him. All on one surface. Now—who owes whom?"
 
-Ikram stared. It was so simple it was insulting. Three circles clean, five marked. The debt was larger. He could see it instantly, without cross-referencing, without calculating in the dust. The entire state of his business with Lugal was contained in a single glance. The two wedges left over told the whole story.
+Ikram stared. It was so simple it was insulting. <span class="gloss cuneiform" data-tip="three (3) clean circles — what Lugal owes Ikram">𒐈</span> circles clean, <span class="gloss cuneiform" data-tip="five (5) marked — what Ikram owes Lugal">𒐊</span> marked. The debt was larger. He could see it instantly, without cross-referencing, without calculating in the dust. The entire state of his business with Lugal was contained in a single glance. The <span class="gloss cuneiform" data-tip="two (2) — the net difference: 5 owed minus 3 paid leaves 2 marked">𒈫</span> wedges left over told the whole story.
 
 "I owe him twenty shekels," Ikram said quietly.
 
 "One pot is easier to carry than two." Nabu leaned back. "But the trick is not the shard, Ikram. The trick is that a thing and its opposite can live on the same surface if they are marked apart. This is a small truth. It is not a clever truth. But almost nobody uses it. Almost everybody keeps two tablets, in two piles, and every evening their apprentices cry themselves to sleep over the reconciliation."
 
-Ikram looked from Nabu's shard to his own two clumsy tablets. They no longer looked organised. They looked obsolete.
+Ikram looked from Nabu's shard to his own <span class="gloss cuneiform" data-tip="two (2) clumsy tablets — the old debt-and-credit system">𒈫</span> clumsy tablets. They no longer looked organised. They looked obsolete.
 
 "Why are you teaching me this?"
 
@@ -533,13 +766,13 @@ Nabu looked past him, at the wall of Geme's cords—each one a clean private acc
 
 "Because the last time I saw a man use a clever trick in Nippur, he used it to skim barley from the god Enlil. I would like, before I die, to see a clever trick used to keep a widow's tablet honest. You look," he said, turning back, "like the sort of man who might use a trick that way."
 
-He did not say *I have been watching for you.* But Ikram heard it, and did not mention it, and they drank the rest of the beer in comfortable silence, and Geme, behind the counter, moved two fresh discs down two different cords.
+He did not say *I have been watching for you.* But Ikram heard it, and did not mention it, and they drank the rest of the beer in comfortable silence, and Geme, behind the counter, moved <span class="gloss cuneiform" data-tip="two (2)">𒈫</span> fresh discs down <span class="gloss cuneiform" data-tip="two (2) — Ikram's and Nabu's, one tab each">𒈫</span> different cords.
 
 ### **Chapter 9: The Doubling**
 
 A week later, Ikram and Nabu sat in the courtyard of Ikram's new compound, under a reed awning that kept the midday sun off. The walls of the first storehouse were going up around them. The mason Gudea and his men shouted to each other from the half-built roofline. Enki was inside, arranging the drying racks along the north wall, where the sun was gentlest.
 
-Between the two men on a low stone table lay a new problem.
+Between the <span class="gloss cuneiform" data-tip="two (2) men — Ikram and Nabu">𒈫</span> men on a low stone table lay a new problem.
 
 "Puzur's wool," Ikram said. "He sends forty donkeys. Each donkey carries eight bales. What is the total?"
 
@@ -549,7 +782,7 @@ Ikram nodded. "Good. Now—each bale is worth twenty-three shekels in the Nippur
 
 Nabu paused. "That is a harder number."
 
-"I have a trick for it," Ikram said, with something close to pride. He fetched from his satchel a large folded cloth. He unrolled it across the table. It was an oiled leather sheet on which he had, over the course of months, inscribed a painstaking grid—the numbers one through twenty across the top, the numbers one through twenty down the side, and at every intersection the product. Twenty by twenty. Four hundred little answers. A sky's worth of work.
+"I have a trick for it," Ikram said, with something close to pride. He fetched from his satchel a large folded cloth. He unrolled it across the table. It was an oiled leather sheet on which he had, over the course of months, inscribed a painstaking grid—the numbers <span class="gloss cuneiform" data-tip="one (1)">𒁹</span> through <span class="gloss cuneiform" data-tip="twenty (20)">𒎙</span> across the top, the numbers <span class="gloss cuneiform" data-tip="one (1)">𒁹</span> through <span class="gloss cuneiform" data-tip="twenty (20)">𒎙</span> down the side, and at every intersection the product. <span class="gloss cuneiform" data-tip="twenty by twenty (20 × 20)">𒎙</span> by <span class="gloss cuneiform" data-tip="twenty (20)">𒎙</span>. <span class="gloss cuneiform" data-tip="four hundred (400) little answers — in sexagesimal 6·60 + 40">𒐋  𒐏</span> little answers. A sky's worth of work.
 
 "Three hundred and twenty by twenty-three," Ikram said. He tracked a finger along the grid. "Twenty-three by three is sixty-nine. Twenty-three by two is forty-six. Twenty-three by three hundred and twenty, then, is... twenty-three times three hundred, plus twenty-three times twenty." He paused, fingers moving. "Six thousand, nine hundred. Plus four hundred and sixty. Seven thousand, three hundred and sixty shekels."
 
@@ -563,7 +796,7 @@ Ikram looked up. "Without the grid I cannot multiply."
 
 He drew.
 
-"Twenty-three," he wrote—three circles for the tens, three ticks for the ones. "Double it." Beside it he wrote *forty-six.* "Double again. Ninety-two. Again. One hundred eighty-four. Again. Three hundred sixty-eight."
+"Twenty-three," he wrote—<span class="gloss cuneiform" data-tip="three (3) circles for the tens">𒐈</span> circles for the tens, <span class="gloss cuneiform" data-tip="three (3) ticks for the ones — together: 23">𒐈</span> ticks for the ones. "Double it." Beside it he wrote *forty-six.* "Double again. Ninety-two. Again. One hundred eighty-four. Again. Three hundred sixty-eight."
 
 He tapped each line. "Now I have twenty-three doubled once, twice, three times, four times. That is to say: twenty-three taken one time, two times, four times, eight times, sixteen times. Each doubling is the next in a line: one, two, four, eight, sixteen."
 
@@ -580,19 +813,20 @@ Ikram hesitated. "Sixteen. Four. Two. One. That is... yes. Sixteen plus four plu
 "So twenty-three times twenty-three is twenty-three taken sixteen times, plus twenty-three taken four times, plus twenty-three taken two times, plus twenty-three taken one time."
 
 Ikram looked at Nabu's column:
-*1 — 23*
-*2 — 46*
-*4 — 92*
-*8 — 184*
-*16 — 368*
+
+<em><span class="gloss cuneiform" data-tip="one (1) — taken once">𒁹</span>  —  <span class="gloss cuneiform" data-tip="twenty-three (23)">𒎙𒐈</span></em>
+<em><span class="gloss cuneiform" data-tip="two (2) — taken twice">𒈫</span>  —  <span class="gloss cuneiform" data-tip="forty-six (46) — 23 doubled once">𒐏𒐋</span></em>
+<em><span class="gloss cuneiform" data-tip="four (4) — taken four times">𒐉</span>  —  <span class="gloss cuneiform" data-tip="ninety-two (92) — 23 doubled twice; in sexagesimal 1·60 + 32">𒁹  𒌍𒈫</span></em>
+<em><span class="gloss cuneiform" data-tip="eight (8) — taken eight times">𒐍</span>  —  <span class="gloss cuneiform" data-tip="one hundred and eighty-four (184) — 23 doubled three times; in sexagesimal 3·60 + 4">𒐈  𒐉</span></em>
+<em><span class="gloss cuneiform" data-tip="sixteen (16) — taken sixteen times">𒌋𒐋</span>  —  <span class="gloss cuneiform" data-tip="three hundred and sixty-eight (368) — 23 doubled four times; in sexagesimal 6·60 + 8">𒐋  𒐍</span></em>
 
 Nabu's stylus hovered. "Cross out the rows whose left-hand numbers you do not need—you only need sixteen, four, two, one, so cross out the row of eight. Now add the right-hand numbers on the remaining rows."
 
-Ikram added in his head. Three hundred sixty-eight. Ninety-two. Forty-six. Twenty-three. He had to do it twice to be sure. "Five hundred twenty-nine."
+Ikram added in his head. <span class="gloss cuneiform" data-tip="three hundred and sixty-eight (368)">𒐋  𒐍</span>. <span class="gloss cuneiform" data-tip="ninety-two (92) — 1·60 + 32">𒁹  𒌍𒈫</span>. <span class="gloss cuneiform" data-tip="forty-six (46)">𒐏𒐋</span>. <span class="gloss cuneiform" data-tip="twenty-three (23)">𒎙𒐈</span>. He had to do it twice to be sure. "Five hundred twenty-nine."
 
 "And that is twenty-three times twenty-three."
 
-"But—" Ikram gestured at the leather, which under his own grid said exactly *529.* "I already knew that."
+"But—" Ikram gestured at the leather, which under his own grid said exactly <em><span class="gloss cuneiform" data-tip="five hundred and twenty-nine (529) — 23 × 23; in sexagesimal 8·60 + 49">𒐍  𒐏𒐎</span>.</em> "I already knew that."
 
 "You knew that because you had spent three moons inscribing a leather the size of a shawl. Any man, with a shard and a stylus, can now do it in the time it takes to boil water. And a man can do it for any number. You do not need twenty by twenty. You need only to know how to double. Everything else is addition."
 
@@ -602,7 +836,7 @@ Ikram looked at the column on the shard. Then at the leather. Then at Nabu.
 
 "This is older than me. It is older than the Ekur. I learned it from a *sanga* who learned it from a *sanga.* What is not old, Ikram, is that most merchants do not know it. And many scribes do not know it, because they have their tablets of squares and their tablets of cubes, and they would rather the rest of us came to them with our little problems and paid our little fees. The doubling is not a secret. But nobody teaches it in the market."
 
-Ikram rolled the leather slowly, carefully. It had taken him three months. It had been his pride.
+Ikram rolled the leather slowly, carefully. It had taken him <span class="gloss cuneiform" data-tip="three (3) months — three new moons of patient inscribing">𒐈</span> months. It had been his pride.
 
 "What will you do with it?" Nabu asked.
 
@@ -616,7 +850,7 @@ The Nippur market was a living thing, breathing in the morning and exhaling its 
 
 "You call that a measure? My child's water-scoop is larger!"
 
-The voice was sharp with accusation. A small crowd was gathering around two merchants standing over a large open-mouthed sack of fine pale barley. One was a local Nippuran, broad and well-fed. The other was wiry and sun-darkened, a southerner by his dress—a man of Ur, perhaps, or further down toward the marshes. Between them on the ground sat two woven baskets, the official *kurru* measures.
+The voice was sharp with accusation. A small crowd was gathering around <span class="gloss cuneiform" data-tip="two (2) merchants — Nippuran and southerner, each with his own kurru">𒈫</span> merchants standing over a large open-mouthed sack of fine pale barley. One was a local Nippuran, broad and well-fed. The other was wiry and sun-darkened, a southerner by his dress—a man of Ur, perhaps, or further down toward the marshes. Between them on the ground sat <span class="gloss cuneiform" data-tip="two (2) woven baskets — two different kurru, the size of the dispute">𒈫</span> woven baskets, the official *kurru* measures.
 
 At a glance, they looked nearly identical.
 
@@ -626,7 +860,7 @@ To prove his point he scooped his basket into the sack and brought it out, brimm
 
 The Nippuran scoffed. "An honest *kurru* for a southern village, perhaps. Here we use the standard of a great city."
 
-He picked up the southerner's basket and, with a theatrical grunt, poured its contents into his own. The grain streamed—a golden waterfall. When the southerner's basket was empty, a small gasp went through the crowd. The Nippuran *kurru* was not full. There was a clear gap between the grain and the basket's rim, a space of at least three fingers' width.
+He picked up the southerner's basket and, with a theatrical grunt, poured its contents into his own. The grain streamed—a golden waterfall. When the southerner's basket was empty, a small gasp went through the crowd. The Nippuran *kurru* was not full. There was a clear gap between the grain and the basket's rim, a space of at least <span class="gloss cuneiform" data-tip="three (3) fingers' width">𒐈</span> fingers' width.
 
 "You see!" the Nippuran roared, jabbing a finger at the gap. "You cheat me! The price we agreed was for a full *kurru*!"
 
@@ -642,7 +876,7 @@ Later, as they walked away, Ikram was troubled. "He was right," he said to Nabu.
 
 "The gap was perhaps a fifth of his basket."
 
-"A fifth," Ikram mused. He picked up a shard and drew a circle in the dust, dividing it into five rough wedges. He stared at the piece. "How do you write that on a tablet? There is no symbol for *a piece*."
+"A fifth," Ikram mused. He picked up a shard and drew a circle in the dust, dividing it into <span class="gloss cuneiform" data-tip="five (5) rough wedges — the fraction made visible, but not yet named">𒐊</span> rough wedges. He stared at the piece. "How do you write that on a tablet? There is no symbol for *a piece*."
 
 Nabu thought for a long moment. The sun was past its peak now and the market's noise was beginning to shift toward the tone it took in the late afternoon. "In the heavens," he said slowly, "the priests divide the year. They divide the day into sixty parts, and those parts into sixty more. What if we divide the *kurru* the same way? A fifth of sixty is... twelve."
 
@@ -722,7 +956,7 @@ Nabu picked up the shard and waited.
 
 Nabu did not name it either. He had, privately, a name for it—he had learned it once from a very old scribe in the Ekur, who had called it *the shape that makes the liar unnecessary.* But he did not share this name. Ikram had found the shape himself, with his own hands, and Nabu had learned long ago that when a man finds a thing himself, he understands it differently than when he is told.
 
-Six days later the brothers came back. Warad had laid out his two sides on the table. He had tried hard. The palm sat on one side; on the other, a written half-share in the water, two bronze sickles, and a promise of one-sixth of each year's barley from his own allotment for three years. Ilum looked at both sides for a long time. Then he chose the water.
+<span class="gloss cuneiform" data-tip="six (6) days later">𒐋</span> days later the brothers came back. Warad had laid out his two sides on the table. He had tried hard. The palm sat on one side; on the other, a written half-share in the water, <span class="gloss cuneiform" data-tip="two (2)">𒈫</span> bronze sickles, and a promise of one-sixth of each year's barley from his own allotment for <span class="gloss cuneiform" data-tip="three (3) years">𒐈</span> years. Ilum looked at both sides for a long time. Then he chose the water.
 
 They left together, arguing good-naturedly about who was getting the better deal. Ikram watched them go.
 
@@ -754,7 +988,7 @@ Ikram nodded, pride moving through him at the boy's quickness. He drew the new s
 
 "Seven?" Ikram said, stick hovering.
 
-No one answered at once. Ikram worked it in his head. *Seven. Fourteen. Twenty-one. Twenty-eight. Thirty-five.* He kept going, counting by sevens. *Seventy. Seventy-seven. Eighty-four.* He kept going. *A hundred and five. A hundred and twelve. A hundred and nineteen.* One more would be a hundred and twenty-six. Seven had no place to land on one hundred and twenty.
+No one answered at once. Ikram worked it in his head. <em><span class="gloss cuneiform" data-tip="seven (7)">𒐌</span>. <span class="gloss cuneiform" data-tip="fourteen (14) — 2 × 7">𒌋𒐉</span>. <span class="gloss cuneiform" data-tip="twenty-one (21) — 3 × 7">𒎙𒁹</span>. <span class="gloss cuneiform" data-tip="twenty-eight (28) — 4 × 7">𒎙𒐍</span>. <span class="gloss cuneiform" data-tip="thirty-five (35) — 5 × 7">𒌍𒐊</span>.</em> He kept going, counting by sevens. <em><span class="gloss cuneiform" data-tip="seventy (70) — 10 × 7; in sexagesimal 1·60 + 10">𒁹  𒌋</span>. <span class="gloss cuneiform" data-tip="seventy-seven (77) — 11 × 7; in sexagesimal 1·60 + 17">𒁹  𒌋𒐌</span>. <span class="gloss cuneiform" data-tip="eighty-four (84) — 12 × 7; in sexagesimal 1·60 + 24">𒁹  𒎙𒐉</span>.</em> He kept going. <em><span class="gloss cuneiform" data-tip="one hundred and five (105) — 15 × 7; in sexagesimal 1·60 + 45">𒁹  𒐏𒐊</span>. <span class="gloss cuneiform" data-tip="one hundred and twelve (112) — 16 × 7; in sexagesimal 1·60 + 52">𒁹  𒐐𒈫</span>. <span class="gloss cuneiform" data-tip="one hundred and nineteen (119) — 17 × 7; in sexagesimal 1·60 + 59">𒁹  𒐐𒐎</span>.</em> One more would be <span class="gloss cuneiform" data-tip="one hundred and twenty-six (126) — 18 × 7; in sexagesimal 2·60 + 6, just past 120">𒈫  𒐋</span>. Seven had no place to land on <span class="gloss cuneiform" data-tip="one hundred and twenty (120) — 2·60, the target">𒈫</span>.
 
 "Seven is not a width," he said.
 
@@ -764,7 +998,7 @@ No one answered at once. Ikram worked it in his head. *Seven. Fourteen. Twenty-o
 
 "Nine?"
 
-Enki worked it. *Nine, eighteen, twenty-seven…* He reached a hundred and eight, then a hundred and seventeen, then a hundred and twenty-six. "Nine does not fit either. A hundred and seventeen is too little and a hundred and twenty-six is too much. Nine passes the number without touching it."
+Enki worked it. <em><span class="gloss cuneiform" data-tip="nine (9)">𒐎</span>, <span class="gloss cuneiform" data-tip="eighteen (18) — 2 × 9">𒌋𒐍</span>, <span class="gloss cuneiform" data-tip="twenty-seven (27) — 3 × 9">𒎙𒐌</span>…</em> He reached <span class="gloss cuneiform" data-tip="one hundred and eight (108) — 12 × 9; in sexagesimal 1·60 + 48">𒁹  𒐏𒐍</span>, then <span class="gloss cuneiform" data-tip="one hundred and seventeen (117) — 13 × 9; in sexagesimal 1·60 + 57">𒁹  𒐐𒐌</span>, then <span class="gloss cuneiform" data-tip="one hundred and twenty-six (126) — 14 × 9; in sexagesimal 2·60 + 6, past the target">𒈫  𒐋</span>. "Nine does not fit either. A hundred and seventeen is too little and a hundred and twenty-six is too much. Nine passes the number without touching it."
 
 "Ten?"
 
@@ -772,7 +1006,7 @@ Enki worked it. *Nine, eighteen, twenty-seven…* He reached a hundred and eight
 
 "Eleven?"
 
-Ikram counted. *Eleven. Twenty-two.* He worked up by elevens—*ninety-nine, a hundred and ten, a hundred and twenty-one.* Eleven did not land on a hundred and twenty either.
+Ikram counted. <em><span class="gloss cuneiform" data-tip="eleven (11)">𒌋𒁹</span>. <span class="gloss cuneiform" data-tip="twenty-two (22) — 2 × 11">𒎙𒈫</span>.</em> He worked up by elevens—<em><span class="gloss cuneiform" data-tip="ninety-nine (99) — 9 × 11; in sexagesimal 1·60 + 39">𒁹  𒌍𒐎</span>, <span class="gloss cuneiform" data-tip="one hundred and ten (110) — 10 × 11; in sexagesimal 1·60 + 50">𒁹  𒐐</span>, <span class="gloss cuneiform" data-tip="one hundred and twenty-one (121) — 11 × 11; in sexagesimal 2·60 + 1, just past 120">𒈫  𒁹</span>.</em> Eleven did not land on <span class="gloss cuneiform" data-tip="one hundred and twenty (120) — the target">𒈫</span> either.
 
 "Twelve?"
 
@@ -786,7 +1020,7 @@ Ikram paused. He thought about it. "Then if I try thirteen, I am looking for a p
 
 "We have them all."
 
-They fell silent, looking at the list in the dirt. Two, three, four, five, six, eight, ten—and their partners on the other side. And the gaps: seven, nine, eleven. The missing ones were as interesting as the ones that fit. Seven simply could not be made to fit a hundred and twenty; that was a fact about a hundred and twenty, not about seven. In the dirt before them lay a record of every way one hundred and twenty identical things could be arranged into a perfect rectangle, and a record of the ways they could not. It was a pattern hidden inside a simple pile of clay bricks.
+They fell silent, looking at the list in the dirt. <span class="gloss cuneiform" data-tip="two (2)">𒈫</span>, <span class="gloss cuneiform" data-tip="three (3)">𒐈</span>, <span class="gloss cuneiform" data-tip="four (4)">𒐉</span>, <span class="gloss cuneiform" data-tip="five (5)">𒐊</span>, <span class="gloss cuneiform" data-tip="six (6)">𒐋</span>, <span class="gloss cuneiform" data-tip="eight (8)">𒐍</span>, <span class="gloss cuneiform" data-tip="ten (10)">𒌋</span>—and their partners on the other side. And the gaps: <span class="gloss cuneiform" data-tip="seven (7) — does not divide 120">𒐌</span>, <span class="gloss cuneiform" data-tip="nine (9) — does not divide 120">𒐎</span>, <span class="gloss cuneiform" data-tip="eleven (11) — does not divide 120">𒌋𒁹</span>. The missing ones were as interesting as the ones that fit. Seven simply could not be made to fit one hundred and twenty; that was a fact about one hundred and twenty, not about seven. In the dirt before them lay a record of every way <span class="gloss cuneiform" data-tip="one hundred and twenty (120)">𒈫</span> identical things could be arranged into a perfect rectangle, and a record of the ways they could not. It was a pattern hidden inside a simple pile of clay bricks.
 
 "It is like Šubultum's field," Ikram said, quietly. "But we started with the answer and worked backwards to find the question."
 
@@ -818,25 +1052,28 @@ Gudea scowled and squinted down the wall with one eye closed. "It is as true as 
 
 Gudea threw his trowel down. "Then show me how to make it perfect! We have checked it with the master brick. We have sighted it by the sun. Clay and earth are not a scribe's tablet!"
 
-The argument drew Nabu. He listened to both sides, his calm a stark contrast to Gudea's frustration and Ikram's impatience. He inspected the corner, then the other three. They had similar subtle flaws.
+The argument drew Nabu. He listened to both sides, his calm a stark contrast to Gudea's frustration and Ikram's impatience. He inspected the corner, then the other <span class="gloss cuneiform" data-tip="three (3) other corners — none of them quite true">𒐈</span>. They had similar subtle flaws.
 
-Without a word he left the compound. He returned soon after, followed by a young man carrying a coil of thick palm-fibre rope over one shoulder. The man was an architect from a temple project nearby, and he moved with a quiet confidence that belied his youth.
+Without a word he left the compound. He returned soon after, followed by a young man carrying a coil of thick palm-fibre rope over <span class="gloss cuneiform" data-tip="one (1) shoulder">𒁹</span> shoulder. The man was an architect from a temple project nearby, and he moved with a quiet confidence that belied his youth.
 
-The architect paid no attention to the half-built walls. He walked to the centre of the foundation and uncoiled his rope. Ikram saw that it was not just a rope. It was a tool. Tied along its length were twelve thick evenly spaced knots.
+The architect paid no attention to the half-built walls. He walked to the centre of the foundation and uncoiled his rope. Ikram saw that it was not just a rope. It was a tool. Tied along its length were <span class="gloss cuneiform" data-tip="twelve (12) — the magic number: 3 + 4 + 5 = 12, the perimeter of the sacred triangle">𒌋𒈫</span> thick evenly spaced knots.
 
-The architect took three wooden pegs from his bag. He drove the first into the earth at the point where the corner should be. He slipped the first knot over it. Then he walked along the line of the north wall, counting knots as he went. "One... two... three..." At the third knot he stretched the rope taut and drove the second peg.
+The architect took <span class="gloss cuneiform" data-tip="three (3) pegs — one for each corner of the triangle">𒐈</span> wooden pegs from his bag. He drove the first into the earth at the point where the corner should be. He slipped the first knot over it. Then he walked along the line of the north wall, counting knots as he went. "One... two... three..." At the third knot he stretched the rope taut and drove the second peg.
 
-He returned to the corner peg and picked up the other end. He counted four knots. "One... two... three... four." He pulled this section along the east-wall line. The remaining five knots' worth hung loose. He picked up the last end and handed it to Ikram.
+He returned to the corner peg and picked up the other end. He counted <span class="gloss cuneiform" data-tip="four (4) knots — the second side">𒐉</span> knots. "One... two... three... four." He pulled this section along the east-wall line. The remaining <span class="gloss cuneiform" data-tip="five (5) knots' worth — the hypotenuse">𒐊</span> knots' worth hung loose. He picked up the last end and handed it to Ikram.
 
 "Pull."
 
-He took the four-knot section, and together they pulled the rope taut, forming a large triangle on the ground with the three pegs as vertices. The final section—five knots' worth—stretched perfectly between the second and third pegs.
+He took the <span class="gloss cuneiform" data-tip="four (4)">𒐉</span>-knot section, and together they pulled the rope taut, forming a large triangle on the ground with the <span class="gloss cuneiform" data-tip="three (3)">𒐈</span> pegs as vertices. The final section—<span class="gloss cuneiform" data-tip="five (5)">𒐊</span> knots' worth—stretched perfectly between the second and third pegs.
 
 The architect adjusted the third peg slightly until all sides were straight and taut.
 
-"There," he said, pointing to the corner where the side of three knots met the side of four. "That is your right angle. Build to that."
+"There," he said, pointing to the corner where the side of <span class="gloss cuneiform" data-tip="three (3) knots">𒐈</span> knots met the side of <span class="gloss cuneiform" data-tip="four (4)">𒐉</span>. "That is your right angle. Build to that."
 
-Ikram knelt. The corner formed by the ropes looked impossibly perfect—more true than anything Gudea's eye could produce. He looked at the lengths. Three. Four. Five. It was just a set of numbers. But when applied with a simple rope, those numbers created a perfect shape in the real world.
+![The twelve-knotted rope laid out into a 3-4-5 triangle]({{ site.baseurl }}/assets/math-origins/04-knot-rope.png)
+*Placeholder. Generation prompt: "Wide-angle photograph from above of a packed-earth building site. A long palm-fibre rope, evenly tied with twelve thick equally spaced knots, has been pulled taut around three wooden pegs driven into the ground to form a triangle: one side spanning three intervals (north wall), one spanning four intervals (east wall), the hypotenuse spanning five. The right angle at the corner is geometrically perfect. Half-built mud-brick walls in the background, mason's tools resting nearby. Photorealistic, museum quality."*
+
+Ikram knelt. The corner formed by the ropes looked impossibly perfect—more true than anything Gudea's eye could produce. He looked at the lengths. <span class="gloss cuneiform" data-tip="three (3)">𒐈</span>. <span class="gloss cuneiform" data-tip="four (4)">𒐉</span>. <span class="gloss cuneiform" data-tip="five (5) — and 3² + 4² = 9 + 16 = 25 = 5²; the Pythagorean triple, known here as a builder's rule centuries before the Greek who would have it named after him">𒐊</span>. It was just a set of numbers. But when applied with a simple rope, those numbers created a perfect shape in the real world.
 
 Gudea and his masons stared, speechless.
 
@@ -848,11 +1085,54 @@ He collected his pegs and coiled his rope. His work was done. Ikram paid him a s
 
 Ikram and Nabu were left with the outline of a perfect corner.
 
-"Three. Four. Five," Ikram repeated, softly.
+"<span class="gloss cuneiform" data-tip="three (3)">𒐈</span>. <span class="gloss cuneiform" data-tip="four (4)">𒐉</span>. <span class="gloss cuneiform" data-tip="five (5)">𒐊</span>," Ikram repeated, softly.
 
 "It is Enki who will learn it best, I think," Nabu said, watching the boy, who was already turning the rope over in his hands as the architect walked away.
 
-### **Chapter 14: The Sexagesimal Rumour**
+### **Chapter 14: The Rod and the Ring**
+
+The day after the architect coiled his rope and went, Ikram and Nabu walked through the temple quarter on an errand. Nabu had an old friend — a stonecutter whose workshop sat in the shadow of the southern wall of the Ekur — who had agreed to give an opinion on a small piece of lapis Ikram had taken in trade. Their road took them along the processional way, beneath the painted reliefs that ran along the lower courses of the ziggurat's enclosure wall.
+
+Ikram had walked this stretch <span class="gloss cuneiform" data-tip="fifty (50) times — many times, but never noticing">𒐐</span> times. He had never properly looked at the wall.
+
+Nabu set a hand on his elbow and stopped him.
+
+The relief showed the god seated on a tiered stool, beard a cascade of carved curls, crown horned in the high old fashion. In his right hand he held a straight rod, marked along its length with small evenly spaced lines. In his left, a coiled rope, looped into a clean circle, the loose end hanging.
+
+Above the figure, pressed into the painted stucco of the wall, <span class="gloss cuneiform" data-tip="three (3) small signs — DINGIR + EN + LÍL = the god Enlil">𒐈</span> small signs: 𒀭 𒂗 𒆤. And below them, in a smaller hand, the god's epithet: <span class="gloss cuneiform" data-tip="Lugal Kur-kur — 'King of all the lands.' The standard Sumerian epithet for Enlil, carried into Akkadian as šar mātāti. The signs LUGAL ('king') and KUR ('mountain/land', doubled for plurality) appear on every major royal inscription of the period.">𒈗 𒆳𒆳</span>, *Lugal Kur-kur* — *king of all the lands.*
+
+"*Dingir En-líl,*" Nabu said. "The god Enlil. Who measures."
+
+"Who measures?"
+
+"Who measures." Nabu tipped his chin toward the rod. "That is a *qanû*. A reed. The standard length the temple surveyors carry — six cubits, give or take a thumb. Every field in this city has been laid out against one. And that"—he turned his hand toward the coiled rope—"is the rope. The same rope the architect was holding yesterday at your corner. The very same."
+
+![The rod and the ring on the Ekur wall]({{ site.baseurl }}/assets/math-origins/05-rod-and-ring.png)
+*Placeholder. Generation prompt: "Painted limestone relief in the Ur III / early Old Babylonian style. A bearded seated god wearing a horned crown holds a measuring rod (straight, marked with regular ticks) in his right hand and a coiled rope-ring in his left hand. Above the figure, three cuneiform signs spelling DINGIR EN.LÍL. Pigment partly faded, late-afternoon sidelight, packed-earth ground at the base. Photorealistic reconstruction, museum quality."*
+
+Ikram looked again. He had taken the rod for a sceptre. He had taken the ring for an ornament — perhaps a piece of jewellery, perhaps the wreath of a king. They were neither. They were tools. They were the tools that had been used at the new storehouse corner only the morning before; they were the tools Sharrum had laid out, in miniature, in clay tokens when the plot was measured; they were the tools the temple assessors had carried into Šubultum's field and used badly. The god of the city was holding, in his stone hands, a length of measuring reed and a coil of knotted rope.
+
+"Why?" Ikram said.
+
+"Because the god of the city is the god of the just deal." Nabu's voice had gone quiet. "And the just deal is the honest measure. A king who is given the rod and the ring by the god is being told: *you may rule, because you will measure honestly.* It is older than the Ekur. It is older than Sumer. The rod is what tells a farmer his field has not been moved by his neighbour overnight. The ring lays out the corner of every storehouse and every shrine, and divides the canal-water between brothers, and tells the surveyor where one man's plot ends and the next man's begins. A man who can lay out a true corner can lay out a true field; a man who can lay out a true field can give every farmer the share he is owed; and the city of a man who gives every farmer his share is a city that does not riot."
+
+Ikram stood for a long moment.
+
+He thought of his father on a threshing floor, watching four *gur* of grain walk away in a wicker chair, and a temple scribe whose tablet was the record and whose tablet was a lie. The scribe had held a stylus. He had not held a rod. He had not held a rope. He had held only the right to write down whatever he wished, and to be believed.
+
+"It is the same shape," he said, finally.
+
+"What is?"
+
+"The architect's rope. The widow's field. Geme's cords. Sharrum's tokens. The cutting-and-choosing of the brothers. Even the price of Puzur's wool, that I worked in the dust this morning while you were eating dates." Ikram nodded slowly toward the relief. "All of them are this. All of them are honest measure. The god is not holding the symbol of his power. He is holding the symbol of how a man is meant to use it."
+
+Nabu did not answer at once. Behind them, two temple novices passed at a soft trot, robes scuffing the dust. Neither of them glanced at the wall.
+
+"Most men do not see it," Nabu said at last. "Even the ones who walk past it every morning. They see the rod and the ring and they think: *king, god, far away.* They do not think: *that is the rope in the architect's hand, and the reed in the surveyor's, and the length my brother and I might measure our father's field with this afternoon.* The trick of the relief is that it is the *same* tool, only made important. The trick a man can learn is that the tool, when it is in his own hand, is not less important."
+
+They went on to the stonecutter's. Nabu's friend turned out to be wrong about the lapis — a small dishonest vein under the upper polish — and the afternoon passed pleasantly with arguments about colour and provenance, and Ikram did not mention the relief again. But that evening, alone on the roof of the storehouse, he drew the rod and the ring in the dust beside him with a stick. Once, then again. He watched the wind move across the surface and blur them out, and then he drew them once more before he went to bed.
+
+### **Chapter 15: The Sexagesimal Rumour**
 
 The news arrived as most news did—not in a proclamation, but as dust on the tongue of a tired traveller. A large caravan had come in from the east, following the river roads from Akkad. Its master, a man named Sin-leqi, sat with Ikram and Nabu in the shade of the reed awning, sharing cool water and complaining about the journey.
 
@@ -862,11 +1142,11 @@ The news arrived as most news did—not in a proclamation, but as dust on the to
 
 "They have a new number. Sixty. They say it is a divine number, good for tracking the heavens. All their great counts now turn on the number sixty."
 
-He picked up a stick and drew in the dust. He made a single wedge-shaped mark. "This is one." He made a different sideways wedge. "This is ten."
+He picked up a stick and drew in the dust. He made a single vertical wedge — 𒁹 — pressed sharp into the surface. "This is one." Then a small corner wedge below it — 𒌋. "This is ten."
 
-"We have seen this," Nabu said quietly.
+"We have seen this," Nabu said quietly. "Every market scribe in Susa draws those."
 
-"Ah, but this is the new trick." Sin-leqi drew the wedge for one again, then left a small space to its left, and in that space made another single wedge. "This one"—he pointed to the mark on the right—"is still one. But this one"—he tapped the mark on the left—"the same mark, now means sixty. Because of where it sits."
+"Ah, but this is the new trick." Sin-leqi drew the wedge for one again — 𒁹 — and then left a finger's space to its left, and in that space made another vertical wedge: 𒁹  𒁹. "This one"—he pointed to the mark on the right—"is still one. But this one"—he tapped the mark on the left—"the same mark, now means sixty. Because of where it sits. The number you are reading is sixty-and-one. Sixty-one."
 
 Enki, who had been listening from the drying rack, came closer. "But... it is the same mark. How can it be two different numbers?"
 
@@ -880,7 +1160,7 @@ But Enki was still standing over the marks. He had the look on his face that he 
 
 "Master," he said after a long while. "May I?"
 
-He knelt and drew in the dust beside Sin-leqi's marks. He drew three positions—hundreds on the left, tens in the middle, ones on the right. (He drew them in the old circles he knew, because the wedges were still new to him.) He wrote a number: *one, and one sixty, and one three-thousand-six-hundred.* Three marks, one in each position.
+He knelt and drew in the dust beside Sin-leqi's marks. He drew <span class="gloss cuneiform" data-tip="three (3) positions">𒐈</span> positions—hundreds on the left, tens in the middle, ones on the right. (He drew them in the old circles he knew, because the wedges were still new to him.) He wrote a number: <em><span class="gloss cuneiform" data-tip="one (1) — in the ones column">𒁹</span>, and <span class="gloss cuneiform" data-tip="one in the sixties column = 60">𒁹</span> sixty, and <span class="gloss cuneiform" data-tip="one in the 3600s column = 3600">𒁹</span> three-thousand-six-hundred.</em> <span class="gloss cuneiform" data-tip="three (3) marks">𒐈</span> marks, one in each position.
 
 "Good," Nabu said. "You have understood him."
 
@@ -900,9 +1180,12 @@ There was a long silence. A donkey brayed somewhere beyond the compound wall. Ik
 
 "It will not," Nabu agreed, quietly.
 
-Enki reached for a fresh shard. He drew the number again. In the empty middle position he pressed a small slash—a single short mark, nothing like a wedge, nothing like a ten. It was clearly not a number. It was a marker that said *here, there is no number.*
+Enki reached for a fresh shard. He drew the number again. In the empty middle position he pressed a small pair of slanted strokes — 𒑊 — nothing like a vertical wedge, nothing like a corner wedge for ten. It was clearly not a number. It was a marker that said *here, there is no number.*
 
-"This," he said, "is *nothing*. But it is a *nothing that is written down.* A gap is an absence. This is a *presence of absence.* The reader will know I meant it, because I made a mark."
+"This," he said, "is *nothing*. But it is a *nothing that is written down.* A gap is an absence. This is a *presence of absence.* The reader will know I meant it, because I made a mark." He set the shard down and traced the three positions with his fingertip: 𒁹  𒑊  𒁹. "Three thousand six hundred. And nothing in the sixties. And one. Three thousand six hundred and one."
+
+![Enki's mark for nothing]({{ site.baseurl }}/assets/math-origins/06-zero-placeholder.png)
+*Placeholder. Generation prompt: "A small fragment of damp grey clay (a shard, roughly thumb-sized), seen close up under warm lamplight. Three cuneiform marks pressed into the clay in a single row: a vertical wedge on the left, a pair of small slanted wedges in the middle (a Babylonian placeholder), a vertical wedge on the right. Reed-stylus tool laid alongside. Photorealistic, museum quality."*
 
 Nabu picked up the shard. He looked at it for a long time.
 
@@ -928,7 +1211,7 @@ Later that evening, when the market had closed and the lamps were being lit, Ikr
 
 A pebble dropped at the head of a canal, some miles downstream, arrives as a flood.
 
-### **Chapter 15: The Master of Tricks**
+### **Chapter 16: The Master of Tricks**
 
 The gate warden's horn sounded a deep resonant blast—the signal of a major caravan. Soon the western road was choked with a river of dust, donkeys, and tired men. It was the largest caravan of the season from the Zagros highlands, laden with wool, timber, and copper ore. At its head rode its master, a man whose face was a map of the harsh trade-routes he travelled.
 
@@ -936,7 +1219,7 @@ He found Ikram and Nabu in their compound, which now resembled a small self-cont
 
 "Welcome, Puzur." Ikram gestured for a servant to bring water. "Your journey was good, I hope." He turned to Enki, who stood ready with a large well-organised tablet. "Forty donkeys. Eight bales each."
 
-Enki did not reach for the old leather grid that hung on the north wall. He stood a moment with his eyes half-closed and ran the doubling-line under his breath. *One eight is eight. Two eights are sixteen. Four eights, thirty-two. Eight eights, sixty-four. Sixteen eights, one hundred twenty-eight. Thirty-two eights, two hundred fifty-six.* He stopped at thirty-two because thirty-two and eight were forty, and forty was what he wanted. *So forty eights are thirty-two eights and eight eights; which is two hundred fifty-six and sixty-four; which is three hundred twenty.*
+Enki did not reach for the old leather grid that hung on the north wall. He stood a moment with his eyes half-closed and ran the doubling-line under his breath. <em><span class="gloss cuneiform" data-tip="one (1)">𒁹</span> eight is <span class="gloss cuneiform" data-tip="eight (8)">𒐍</span>. <span class="gloss cuneiform" data-tip="two (2)">𒈫</span> eights are <span class="gloss cuneiform" data-tip="sixteen (16) — 2 × 8">𒌋𒐋</span>. <span class="gloss cuneiform" data-tip="four (4)">𒐉</span> eights, <span class="gloss cuneiform" data-tip="thirty-two (32) — 4 × 8">𒌍𒈫</span>. <span class="gloss cuneiform" data-tip="eight (8)">𒐍</span> eights, <span class="gloss cuneiform" data-tip="sixty-four (64) — 8 × 8; in sexagesimal 1·60 + 4">𒁹  𒐉</span>. <span class="gloss cuneiform" data-tip="sixteen (16)">𒌋𒐋</span> eights, <span class="gloss cuneiform" data-tip="one hundred and twenty-eight (128) — 16 × 8; in sexagesimal 2·60 + 8">𒈫  𒐍</span>. <span class="gloss cuneiform" data-tip="thirty-two (32)">𒌍𒈫</span> eights, <span class="gloss cuneiform" data-tip="two hundred and fifty-six (256) — 32 × 8; in sexagesimal 4·60 + 16">𒐉  𒌋𒐋</span>.</em> He stopped at <span class="gloss cuneiform" data-tip="thirty-two (32)">𒌍𒈫</span> because <span class="gloss cuneiform" data-tip="thirty-two (32)">𒌍𒈫</span> and <span class="gloss cuneiform" data-tip="eight (8)">𒐍</span> were <span class="gloss cuneiform" data-tip="forty (40)">𒐏</span>, and <span class="gloss cuneiform" data-tip="forty (40) — the donkey count">𒐏</span> was what he wanted. <em>So <span class="gloss cuneiform" data-tip="forty (40)">𒐏</span> eights are <span class="gloss cuneiform" data-tip="thirty-two (32)">𒌍𒈫</span> eights and <span class="gloss cuneiform" data-tip="eight (8)">𒐍</span> eights; which is <span class="gloss cuneiform" data-tip="two hundred and fifty-six (256)">𒐉  𒌋𒐋</span> and <span class="gloss cuneiform" data-tip="sixty-four (64)">𒁹  𒐉</span>; which is <span class="gloss cuneiform" data-tip="three hundred and twenty (320) — 40 × 8; in sexagesimal 5·60 + 20">𒐊  𒎙</span>.</em>
 
 "Three hundred and twenty bales, master."
 
@@ -946,11 +1229,11 @@ Puzur, who had just raised a cup to his lips, paused. "You have not counted them
 
 Puzur looked from Ikram's calm face to the boy. A flicker of disbelief. He grunted. "As you say. Now—to the matter of payment. I owe you for the fifty shekels of grain and supplies you advanced me for the journey."
 
-"I have the record." Ikram did not reach for two separate tablets. He picked up a single large one marked with Puzur's merchant sign. On it were a series of marks. He showed it. "Fifty shekels owed to me," he said, pointing to five circles, each with the sharp wedge of debt pressed beside it.
+"I have the record." Ikram did not reach for two separate tablets. He picked up a single large one marked with Puzur's merchant sign. On it were a series of marks. He showed it. "Fifty shekels owed to me," he said, pointing to <span class="gloss cuneiform" data-tip="five (5) circles — one per ten shekels of debt">𒐊</span> circles, each with the sharp wedge of debt pressed beside it.
 
-Ikram took his stylus. "The value of the wool is four hundred shekels." He made four large circles for the hundreds, clean and unmarked. He held the tablet out.
+Ikram took his stylus. "The value of the wool is four hundred shekels." He made <span class="gloss cuneiform" data-tip="four (4) large circles — one per hundred shekels of credit">𒐉</span> large circles for the hundreds, clean and unmarked. He held the tablet out.
 
-The entire transaction was laid bare. Debt and credit, side by side on one surface. Puzur stared at the clay, his tired mind easily grasping the visual math. Four hundred in credit, fifty in debt. The balance was obvious.
+The entire transaction was laid bare. Debt and credit, side by side on one surface. Puzur stared at the clay, his tired mind easily grasping the visual math. <span class="gloss cuneiform" data-tip="four hundred (400) in credit; in sexagesimal 6·60 + 40">𒐋  𒐏</span> in credit, <span class="gloss cuneiform" data-tip="fifty (50) in debt">𒐐</span> in debt. The balance was obvious.
 
 "Three hundred and fifty shekels owed to me," Puzur said, a note of wonder in his voice. The usual half-hour of confusing reconciliation had been done in a moment.
 
@@ -962,13 +1245,13 @@ Ikram surveyed the compound. The existing storage was nearly full. He turned and
 
 He gave no further instructions. He did not need to.
 
-Enki nodded once. He walked to the tool shed and retrieved the coiled palm-fibre rope with its twelve heavy knots, a mallet, and three wooden pegs. He strode to the empty plot and began his work with a practiced efficiency that mirrored Ikram's own. He drove a peg for the first corner, looped the rope, began pacing out the lengths. The rope sang softly as he unspooled it.
+Enki nodded once. He walked to the tool shed and retrieved the coiled palm-fibre rope with its <span class="gloss cuneiform" data-tip="twelve (12) knots — the architect's rope">𒌋𒈫</span> heavy knots, a mallet, and <span class="gloss cuneiform" data-tip="three (3) pegs">𒐈</span> wooden pegs. He strode to the empty plot and began his work with a practiced efficiency that mirrored Ikram's own. He drove a peg for the first corner, looped the rope, began pacing out the lengths. The rope sang softly as he unspooled it.
 
 Puzur watched the boy work, then looked back at the swift orderly unloading, then at the single clear tablet in Ikram's hand. His own operation, which he had always considered a model of efficiency, felt like a child's clumsy game by comparison. The unloading and accounting—a process that on other routes could consume a whole afternoon in arguments and recounting—was being dispatched with the serene precision of a temple ritual.
 
 Ikram clapped Puzur on the shoulder. "Rest. Have some wine. Your goods are in good hands."
 
-He stood beside Nabu, the two of them watching the controlled purposeful activity. Men moved bales into a space being laid out with geometric perfection. A scribe—Enki's first apprentice, a quiet boy called Shu-ilishu whom Ikram had taken on three months before—was recording the incoming inventory. He was using the small slash Enki had invented, to mark an empty column when he totalled. His tablets, Ikram noticed with a small still pleasure, were ruled in sixties now, not tens. Enki had re-ruled them last winter, when the Babylonian sexagesimal had stopped feeling like rumour and started feeling like arithmetic; the old ten-by-ten grid had taken a sum through two languages before it reached the silver, and the new grid through only one. Ikram's father had not lived to see it. Ikram sometimes thought his father would only have said, *About time, boy.*
+He stood beside Nabu, the two of them watching the controlled purposeful activity. Men moved bales into a space being laid out with geometric perfection. A scribe—Enki's first apprentice, a quiet boy called Shu-ilishu whom Ikram had taken on <span class="gloss cuneiform" data-tip="three (3) months before">𒐈</span> months before—was recording the incoming inventory. He was using the small slash Enki had invented, to mark an empty column when he totalled. His tablets, Ikram noticed with a small still pleasure, were ruled in sixties now, not tens. Enki had re-ruled them last winter, when the Babylonian sexagesimal had stopped feeling like rumour and started feeling like arithmetic; the old ten-by-ten grid had taken a sum through two languages before it reached the silver, and the new grid through only one. Ikram's father had not lived to see it. Ikram sometimes thought his father would only have said, *About time, boy.*
 
 "This is the culmination," Nabu said, "of every trick."
 
@@ -990,15 +1273,15 @@ Puzur nodded, and did not ask further, because there was nothing further to ask.
 
 ### **Epilogue: The Second Threshing Floor**
 
-Many years later—more than Ikram was in the habit of counting—he travelled to Susa to visit the grave of his father and to settle a small piece of family business that could have been settled by letter but that he wanted to see to in person. Enki was with him, now a man with silver beginning at his temples and two children of his own at home in Nippur. They travelled in a comfortable carriage, with two guards and a cook, and they stopped at a village half a day outside Susa for water.
+Many years later—more than Ikram was in the habit of counting—he travelled to Susa to visit the grave of his father and to settle a small piece of family business that could have been settled by letter but that he wanted to see to in person. Enki was with him, now a man with silver beginning at his temples and <span class="gloss cuneiform" data-tip="two (2) children">𒈫</span> children of his own at home in Nippur. They travelled in a comfortable carriage, with <span class="gloss cuneiform" data-tip="two (2) guards">𒈫</span> guards and a cook, and they stopped at a village half a day outside Susa for water.
 
-The village lay beside a threshing floor. The season was late summer and the floor was in use. Oxen plodded in their circle. Straw heaped to the west. A temple scribe had just finished his tally and was being helped into a wicker chair by two thin men, much as they had always been helped. The tenant farmer stood to the side, wiping his hands on his tunic.
+The village lay beside a threshing floor. The season was late summer and the floor was in use. Oxen plodded in their circle. Straw heaped to the west. A temple scribe had just finished his tally and was being helped into a wicker chair by <span class="gloss cuneiform" data-tip="two (2) thin men — as always">𒈫</span> thin men, much as they had always been helped. The tenant farmer stood to the side, wiping his hands on his tunic.
 
-It was as if thirty years had not passed.
+It was as if <span class="gloss cuneiform" data-tip="thirty (30) years — half a long lifetime; the gap between Ikram's father and the boy on the floor">𒌍</span> years had not passed.
 
 Ikram stepped down from the carriage. He walked to the threshing floor. The scribe, seeing a well-dressed man from a caravan with guards, bowed shallowly and waited—no doubt expecting a question about grain prices or directions.
 
-Ikram ignored him. He walked past him to the tenant, who was younger than Ikram had been expecting—a boy of perhaps fifteen, with the thin arms and hollow eyes of a child who has recently inherited a field he did not yet know how to work.
+Ikram ignored him. He walked past him to the tenant, who was younger than Ikram had been expecting—a boy of perhaps <span class="gloss cuneiform" data-tip="fifteen (15) — barely old enough to inherit a field">𒌋𒐊</span>, with the thin arms and hollow eyes of a child who has recently inherited a field he did not yet know how to work.
 
 "Your father?" Ikram asked.
 
@@ -1010,7 +1293,7 @@ The boy glanced nervously at the scribe. "The temple receives eighteen *gur.* Th
 
 "And what did you count?"
 
-The boy hesitated. He reached into his tunic and pulled out a small potsherd. On it, in wavering scratches, were his tick marks. Ikram took the shard and counted silently.
+The boy hesitated. He reached into his tunic and pulled out a small potsherd. On it, in wavering scratches, were his tick marks. Ikram took the shard and counted silently. <span class="gloss cuneiform" data-tip="twenty-two (22) — the true count">𒎙𒈫</span>.
 
 "Twenty-two," he said.
 
@@ -1036,7 +1319,7 @@ Ikram knelt in the dust. He took the boy's potsherd. He drew a horizontal line o
 
 "You have been counting in ticks. Your count is right. But there is a way to count that is less work, and that the scribes cannot easily confuse. Watch."
 
-He drew ten ticks in a row.
+He drew <span class="gloss cuneiform" data-tip="ten (10) ticks in a row">𒌋</span> ticks in a row.
 
 "Instead of ten ticks, I draw one circle." He drew a circle.
 
@@ -1076,4 +1359,62 @@ Enki was silent for a while. The road unrolled before them.
 
 "Among other reasons," Enki agreed. And he smiled, because the reasons were old and good, and they both knew them without needing to say.
 
-The carriage rolled on. Behind them, a boy on a threshing floor stood holding a potsherd with ten scratches, one circle, and a horizontal line. He was the first person in his village to own a thing like that. He would not be the last.
+The carriage rolled on. Behind them, a boy on a threshing floor stood holding a potsherd with <span class="gloss cuneiform" data-tip="ten (10) scratches — what his father had taught him, by hand">𒌋</span> scratches, <span class="gloss cuneiform" data-tip="one (1) circle — what Ikram had taught him, a few moments before">𒁹</span> circle, and a horizontal line. He was the first person in his village to own a thing like that. He would not be the last.
+
+---
+
+### **Glossary**
+
+*A short reference for the terms, units, gods, and signs used in the tale. Mesopotamian measures were not standardised across cities and periods; the values below are typical of the late third / early second millennium BCE.*
+
+**People & titles**
+- *dam-gàr* — Sumerian for "merchant"; the freelance commercial class who traded across the river systems and into the Zagros and Elam.
+- *sanga* — a temple accountant: a senior scribe in charge of one god's storehouse books.
+- *šatammu* — chief temple administrator. Held the seal that authenticated tablets; outranked an ordinary scribe by a long way.
+
+**Places**
+- *Susa* — capital of Elam, in what is today southwestern Iran. A gateway between Mesopotamia and the Iranian plateau.
+- *Nippur* — the holy city of Sumer, central Iraq, seat of Enlil. Not a political capital, but a cultural and scribal hub — the closest the ancient world had to a university town.
+- *Ekur* — "Mountain House"; Enlil's great ziggurat-temple at Nippur.
+- *Lagash, Eridu, Ur, Akkad, Babylon* — other major Mesopotamian cities; mentioned in passing.
+
+**Gods**
+- *Enlil* — chief god of the Sumerian pantheon, lord of wind, decrees, and the political order. Patron of Nippur. Often depicted holding the rod and ring (see Ch 14).
+- *Inshushinak* — patron god of Susa and the Elamites; also a judge of the dead.
+- *Nanshe* — goddess of social justice, of fair weights and measures, and of advocacy for widows, orphans, and the poor.
+- *Sin* — the moon god; the moon's slow turn was the basic calendar unit.
+- *Shamash / Utu* — the sun god, lord of justice and of the law. Frequently shown handing the rod and ring to kings.
+
+**Units of measure**
+- *qa* — about one litre; the small everyday dry/liquid measure.
+- *gur* — a large dry measure for grain; on the order of 300 *qa* (~300 litres), but varied by city.
+- *kurru* — the standard grain basket. Different cities kept different *kurru* — the source of Ch 10's quarrel.
+- *sar* — a unit of area, roughly 36 m². Šubultum's field is 60 *sar* (about 0.2 hectare).
+- *kùš* / cubit — a length of about half a metre.
+- *qanû* / reed — the surveyor's standard length, six cubits, about three metres. The literal "rod" of the rod-and-ring.
+- *danna* — a long-distance measure, about 11 km.
+
+**Silver weights** (sexagesimal — base 60)
+- *shekel* (*šiqlu*) — about 8.3 g of silver; the everyday unit of value.
+- *mina* — 60 shekels, about 500 g of silver. A "mina-ring" is a roughly palm-sized circle of cast silver.
+- *talent* — 60 minas; a porter's load. Rarely changes hands in a single transaction.
+
+**Calendar months mentioned**
+- *Nisannu* — first month, early spring; planting and the Akitu festival.
+- *Simanu* — third month, early summer.
+- *Abu* — fifth month, the hottest; barley harvest.
+- *Akitu* — the New Year festival at Nisannu; for one week the temples bought and sold at festival prices.
+
+**Numerical conventions**
+- *Base 10 ("merchant tens")* — counted on fingers; the older village and inland-merchant tradition. Tally tablets often ruled ten-by-ten.
+- *Base 60 ("temple sixties", sexagesimal)* — used for silver weights, time, area, and (by the Old Babylonian period) all scribal arithmetic. Our own divisions of the hour into 60 minutes, of the minute into 60 seconds, and of the circle into 360 (= 60 × 6) degrees are direct inheritances from this system. The same scribes invented the placeholder mark Enki finds in Ch 15 — the first written zero.
+
+**Cuneiform signs glimpsed in the tale**
+- 𒁹 — *DIŠ*, a single vertical wedge. Counts as "one"; in sexagesimal positional notation it can stand for one, sixty, or 3,600 depending on its column.
+- 𒌋 — *U*, a corner wedge. Counts as "ten."
+- 𒊺 — *ŠE*, the sign for barley.
+- 𒀭 — *DINGIR*, the determinative for "god"; placed before divine names so the reader knows the word that follows is the name of a deity.
+- 𒀭𒂗𒆤 — *DINGIR.EN.LÍL*, "the god Enlil."
+- 𒑊 — the Babylonian placeholder for an empty sexagesimal column: Enki's "presence of absence" from Ch 15.
+
+So 23 in pure counting wedges is 𒌋𒌋𒁹𒁹𒁹 (two tens, three ones); 339 shekels is 𒐊𒌋𒌋𒌋𒁹𒁹𒁹𒁹𒁹𒁹𒁹𒁹𒁹 — three hundreds, three tens, nine ones — which is exactly the figure Ikram has to convert into five minas and thirty-nine shekels because the silver on the balance is weighed in sixties, not tens. The whole arc of the story is, in a sense, the slow discovery that the right way to draw 339 is *not* the merchant's columns of hundreds-tens-ones at all, but the temple's columns of sixties — 𒐊 𒌋𒌋𒌋𒁹𒁹𒁹𒁹𒁹𒁹𒁹𒁹𒁹 read as *5, 39* in two sexagesimal places — and that, with Enki's small mark for nothing, you can write any number, of any size, in only two kinds of stroke.
