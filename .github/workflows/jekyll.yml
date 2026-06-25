@@ -61,3 +61,27 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Notify IndexNow-participating search engines (Bing, Yandex, Seznam, ...)
+  # that content changed, so they recrawl without waiting for a scheduled crawl.
+  # Google does NOT use IndexNow — it relies on the sitemap submitted in Search Console.
+  indexnow:
+    runs-on: ubuntu-22.04
+    needs: deploy
+    steps:
+      - name: Submit URLs to IndexNow
+        run: |
+          set -euo pipefail
+          HOST="act65.github.io"
+          KEY="224b6197a0a3c71a18fc361fc2e0e99c"
+          # Give the new deploy a moment to go live so the key file and URLs resolve.
+          sleep 20
+          URLS=$(curl -sf "https://${HOST}/sitemap.xml" | grep -oP '(?<=<loc>)[^<]+')
+          COUNT=$(printf '%s\n' "$URLS" | grep -c . || true)
+          echo "Submitting ${COUNT} URLs to IndexNow"
+          BODY=$(printf '%s\n' "$URLS" | jq -R . | jq -s \
+            --arg host "$HOST" --arg key "$KEY" \
+            '{host: $host, key: $key, keyLocation: ("https://" + $host + "/" + $key + ".txt"), urlList: .}')
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$BODY" -o /dev/null -w "IndexNow responded HTTP %{http_code}\n"

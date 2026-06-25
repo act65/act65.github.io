@@ -1,6 +1,7 @@
 ---
 layout: default
 last_modified_at: 2025-07-19T05:00:00+00:00
+description: "My blog on computer science and cognitive science — probably focused on machine learning, computational complexity, brains, neuroscience, languages, and more."
 ---
 
 Welcome to my blog.
