@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="1200" height="1500" viewBox="0 0 1200 1500">
+  <title>Ghost pipe (Monotropa uniflora), black on black</title>
+
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.45" r="0.85">
+      <stop offset="0" stop-color="#0c0c11"/>
+      <stop offset="0.5" stop-color="#060609"/>
+      <stop offset="1" stop-color="#020203"/>
+    </radialGradient>
+    <radialGradient id="aura" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#15151c" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#15151c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.72">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.7"/>
+    </radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="1"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.04 0"/>
+    </filter>
+
+    <!-- the pipe bowl: a near-cylindrical hanging tube, open at the mouth,
+         axis pointing down (+y) from the attachment at the origin -->
+    <g id="bell">
+      <path d="M 0,0 C -19,5 -29,28 -30,62 C -31,100 -27,130 -17,148 Q -10,158 0,157 Q 10,158 17,148 C 27,130 31,100 30,62 C 29,28 19,5 0,0 Z" fill="#1c1c24"/>
+      <path d="M -3,3 C -13,8 -19,30 -20,62 C -21,96 -18,124 -10,146 L 2,147 C 6,120 6,50 3,8 Z" fill="#24242d"/>
+      <path d="M 10,6 C 18,14 24,34 24,62 C 24,94 21,120 13,143 L 17,147 C 25,130 29,100 28,62 C 27,30 18,8 3,1 C 6,2 8,4 10,6 Z" fill="#15151c"/>
+      <ellipse cx="0" cy="152" rx="14" ry="4.5" fill="#0b0b10" opacity="0.85"/>
+      <path d="M 3,8 C 6,50 6,120 2,147" stroke="#101015" stroke-width="1.5" fill="none" opacity="0.8"/>
+      <path d="M -4,4 C -15,10 -22,32 -23,62 C -24,98 -20,128 -11,148" stroke="#34343f" stroke-width="2.5" fill="none" opacity="0.85"/>
+      <path d="M -11,5 C -3,-1 6,-1 13,7" stroke="#3d3d49" stroke-width="2" fill="none" opacity="0.5"/>
+      <path d="M -15,149 Q 0,160 15,149" stroke="#2c2c36" stroke-width="2" fill="none" opacity="0.7"/>
+      <path d="M -3,-1 q -11,9 -8,24 q 9,-5 12,-22 z" fill="#202028" stroke="#2e2e38" stroke-width="1"/>
+      <path d="M 5,0 q 12,8 10,24 q -10,-4 -13,-22 z" fill="#1d1d25" stroke="#2b2b35" stroke-width="1"/>
+    </g>
+  </defs>
+
+  <g inkscape:groupmode="layer" inkscape:label="background" id="layer-bg">
+    <rect width="1200" height="1500" fill="url(#bg)"/>
+    <ellipse cx="620" cy="780" rx="300" ry="470" fill="url(#aura)" opacity="0.6"/>
+  </g>
+
+  <g inkscape:groupmode="layer" inkscape:label="ground" id="layer-ground">
+    <path d="M 0,1500 L 0,1450 C 250,1430 500,1415 700,1412 C 900,1410 1050,1430 1200,1455 L 1200,1500 Z" fill="#040405" filter="url(#blur6)"/>
+    <path d="M 300,1500 C 350,1400 460,1330 580,1315 C 700,1305 800,1330 870,1380 C 920,1420 950,1460 960,1500 Z" fill="#050506" filter="url(#blur6)"/>
+    <g stroke="#101016" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#blur1)">
+      <path d="M 440,1330 q 30,-12 58,-6"/>
+      <path d="M 680,1330 q 26,-10 50,-2"/>
+    </g>
+  </g>
+
+  <g inkscape:groupmode="layer" inkscape:label="ghost-pipe" id="layer-pipe">
+    <!-- single stem, rising then crooking over into the bowl -->
+    <path d="M 558,1335 C 538,1180 554,1020 548,878 C 543,758 556,674 585,617 C 600,588 631,577 660,599"
+          fill="none" stroke="#15151b" stroke-width="18" stroke-linecap="round" filter="url(#blur2)"/>
+    <path d="M 558,1335 C 538,1180 554,1020 548,878 C 543,758 556,674 585,617 C 600,588 631,577 660,599"
+          fill="none" stroke="#1f1f27" stroke-width="10" stroke-linecap="round" filter="url(#blur1)"/>
+    <path d="M 554,1335 C 534,1180 550,1020 544,878 C 539,758 552,674 581,619"
+          fill="none" stroke="#30303b" stroke-width="3.5" stroke-linecap="round" opacity="0.8"/>
+    <use xlink:href="#bell" transform="translate(660,599) rotate(-50) scale(0.95,1.12)" filter="url(#blur1)"/>
+    <!-- scale-like bracts clasping the stem -->
+    <g fill="#1d1d25" stroke="#2b2b35" stroke-width="1">
+      <path d="M 546,1160 q -16,10 -8,28 q 14,-8 12,-26 z"/>
+      <path d="M 549,990 q 15,12 5,29 q -15,-8 -11,-27 z"/>
+      <path d="M 545,840 q -16,9 -9,27 q 14,-7 12,-25 z"/>
+      <path d="M 562,700 q 14,11 5,27 q -14,-7 -10,-25 z"/>
+      <path d="M 576,634 q -14,8 -8,24 q 12,-6 11,-22 z"/>
+    </g>
+  </g>
+
+  <g inkscape:groupmode="layer" inkscape:label="atmosphere" id="layer-atmo">
+    <rect width="1200" height="1500" fill="url(#vignette)"/>
+    <rect width="1200" height="1500" filter="url(#grain)"/>
+  </g>
+</svg>
