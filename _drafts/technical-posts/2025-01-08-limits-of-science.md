@@ -2,7 +2,6 @@
 layout: post
 title: "Three Kinds of Unknowable"
 subtitle: "What the aleatoric/epistemic split looks like at the limits of science"
-date: 2026-06-15
 ---
 
 There is a tidy story machine-learning people tell about uncertainty. You split
@@ -23,6 +22,11 @@ chunk of plastic obeying Newtonian mechanics. Given the initial position,
 velocity, spin, the table's restitution, the air — the outcome is *determined*.
 The randomness isn't in the die; it's in my ignorance of the initial
 conditions. So the die is epistemic after all.
+
+<!-- it's not the die that's epistemic?!
+rather it's about the result of rolling the die!?
+our uncertainty is over the outcome!?
+ -->
 
 Which is it? The honest answer is that it depends on what you allow yourself to
 model and what you allow yourself to measure. Fix the hypothesis space to
@@ -221,10 +225,3 @@ remains when it is done is not a single aleatoric floor. It is a *stratified*
 unknowable — irreducibly random in one place, determinate-but-locked in another,
 formally undecidable in a third — and the borders between those strata are
 themselves, sometimes, among the things we cannot know.
-
----
-
-*This grew out of a conversation about why the aleatoric/epistemic split in
-machine-learning uncertainty quantification is a modelling choice rather than a
-fact about the world. The short version: it's relative to your model — and at the
-limit, even the relativity runs out.*

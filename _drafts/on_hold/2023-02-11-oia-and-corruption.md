@@ -1,6 +1,0 @@
----
-title: OIA
-layout: post
----
-
- 
