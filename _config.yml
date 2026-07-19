@@ -80,6 +80,13 @@ exclude:
   - vendor/
   # - archive
   # - images
+  # hexboard is a git submodule (act65/isokeys); serve only the web app, not its
+  # dev files (old prototype, build tools, docs)
+  - hexboard/archive
+  - hexboard/tools
+  - hexboard/README.md
+  - hexboard/deploy.sh
+  - hexboard/.gitignore
 
 defaults:
   -

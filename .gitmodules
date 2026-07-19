@@ -1,0 +1,3 @@
+[submodule "hexboard"]
+	path = hexboard
+	url = https://github.com/act65/isokeys.git
