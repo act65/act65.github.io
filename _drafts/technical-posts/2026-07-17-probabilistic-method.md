@@ -18,9 +18,37 @@ Erdős made this into an industry. Let me show you the trick on something small,
 
 Take any graph with $m$ edges. Claim: you can split its vertices into two groups so that at least $m/2$ of the edges go *between* the groups (a "cut").
 
-Proof: flip a coin for each vertex — heads left, tails right. Any given edge is cut exactly when its two endpoints land on opposite sides, which happens with probability $1/2$. So the expected number of cut edges is $m/2$. A random variable cannot always be below its own mean — so *some* coin-flip outcome gives a cut of size at least $m/2$. Done. We never found the cut. We proved it exists by averaging.
+Proof: flip a coin for each vertex — heads left, tails right. Any given edge is cut exactly when its two endpoints land on opposite sides, which happens with probability $1/2$. So the expected number of cut edges is $m/2$. 
+<!-- 
+i dont understand this step, m/2 edges cut in expectation.
+this seems wrong, or at least non trivial?!
+ -->
+A random variable cannot always be below its own mean — so *some* coin-flip outcome gives a cut of size at least $m/2$. Done. We never found the cut. We proved it exists by averaging.
 
 > This still feels like cheating, and it is worth being clear about why it isn't. Averaging gives a *lower bound on the maximum*: if the mean is $m/2$, the best case is at least $m/2$. The method only ever proves *existence*. It will never hand you the object, never tell you it is unique, never tell you how to find it. It cleanly separates *is there one?* from *find me one* — two questions we usually smear together without noticing.
+
+<!-- 
+this final statement; 
+- existence (is there one) vs construction (show me one)
+this seems like the KEY insight.
+existence is strictly easier than construction?!
+but how can you know something exists without having seen/constructed it?
+ -->
+
+<!-- 
+the argument above is actually stronger than just p>0?
+or that there exists a cut st >= m/2 edges go between groups.
+rather this proves > m/2 edges go between groups?!
+(assuming variance greater than zero)
+
+ah wait, we are dealing with discrete variables / integers.
+ -->
+
+<!-- 
+other thoughts 
+
+are there other non-constructive proof strategies?
+-->
 
 ### The deep one: Ramsey numbers
 

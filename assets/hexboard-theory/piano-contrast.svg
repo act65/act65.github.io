@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 654 176" width="654" font-family="Georgia, serif">
+<rect x="12" y="14" width="30" height="128" rx="3" fill="#c8683c" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="42" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="72" y="14" width="30" height="128" rx="3" fill="#c8683c" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="102" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="132" y="14" width="30" height="128" rx="3" fill="#c8683c" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="162" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="192" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="222" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="252" y="14" width="30" height="128" rx="3" fill="#5f7d4f" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="282" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="312" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="342" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="372" y="14" width="30" height="128" rx="3" fill="#5f7d4f" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="402" y="14" width="30" height="128" rx="3" fill="#fdfbf6" stroke="#b9b2a4" stroke-width="1.5"/>
+<rect x="32.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<rect x="62.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<rect x="122.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<rect x="152.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<rect x="182.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<rect x="242.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<rect x="272.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<rect x="332.5" y="14" width="19" height="80" rx="2.5" fill="#5f7d4f" stroke="#000" stroke-width="1"/>
+<rect x="362.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<rect x="392.5" y="14" width="19" height="80" rx="2.5" fill="#2b2b2b" stroke="#000" stroke-width="1"/>
+<text x="72.0" y="162.0" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#c8683c" dominant-baseline="central">C major</text>
+<text x="312.0" y="162.0" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#5f7d4f" dominant-baseline="central">D major</text>
+</svg>
