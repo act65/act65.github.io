@@ -4,6 +4,9 @@ title: "Three Kinds of Unknowable"
 subtitle: "What the aleatoric/epistemic split looks like at the limits of science"
 ---
 
+<!-- the title is three kinds?
+there's AU, EU and what's the other one?  -->
+
 There is a tidy story machine-learning people tell about uncertainty. You split
 it in two. *Aleatoric* uncertainty is the irreducible noise in the world — the
 randomness you'd still face even with a perfect model. *Epistemic* uncertainty
@@ -63,8 +66,9 @@ metaphysical wager, not a theorem.
 
 **Two: that the fine-grained model is accessible.** Even granting determinism,
 you have to be able to *acquire* the initial conditions and *run* the model.
-Dice are chaotic; the measurement precision you'd need grows exponentially with
-how far ahead you want to predict. There is a horizon past which the information
+Dice are chaotic; the measurement precision you'd need grows exponentially with how far ahead you want to predict.
+ <!--interesting statement. in what case/sense is it true?  -->
+There is a horizon past which the information
 isn't merely expensive but physically out of reach.
 
 Drop either premise and a genuine, irreducible floor survives. So the

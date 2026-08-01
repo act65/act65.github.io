@@ -25,6 +25,11 @@ Here are some links to help you navigate:
     - [play]({{site.baseurl}}/play/)
     - and [more]({{site.baseurl}}/technical/)
 
+<!-- - Other
+    - [games]()
+    - [sites]() 
+-->
+
 
 The more [support](https://ko-fi.com/act65) I have, the more time I can spend;
 

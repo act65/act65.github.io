@@ -165,10 +165,11 @@ def svg(board, groups, extras='', label_all=False, legend=False):
         for k in g['cells']:
             c = board.cells[k]
             parts.append(poly(board.hexpts(c['cx'], c['cy'], 0.94), g['fill'], g.get('stroke', '#00000022'), 2))
+            lc = g.get('labelcolor', '#fff')
             if g.get('labels') == 'note':
-                parts.append(text(c['cx'], c['cy'], nm(c['note']), '#fff', 15, '700'))
+                parts.append(text(c['cx'], c['cy'], nm(c['note']), lc, 15, '700'))
             elif g.get('labels') == 'noteoct':
-                parts.append(text(c['cx'], c['cy'], nm_oct(c['note']), '#fff', 13, '700'))
+                parts.append(text(c['cx'], c['cy'], nm_oct(c['note']), lc, 13, '700'))
     parts.append(extras)
     if legend:
         parts.append('</g>')
@@ -314,6 +315,115 @@ def d_negative_harmony_inv():
         {'cells': refl, 'fill': ACCENT2, 'labels': 'noteoct'},
     ]
     write('negative-harmony-inv.svg', svg(b, groups, extras, legend=True))
+
+
+def d_circle_of_fifths():
+    """The circle of fifths, with the C-major window highlighted as one 7-note arc.
+    Clockwise = sharpward (the grid's ↗ diagonal), counter-clockwise = flatward (↖).
+    The fifths diagonal on the hex grid is this circle unrolled into a line."""
+    W = H = 560
+    CX, CY, R = W / 2, H / 2 + 6, 158
+    NR = 22                                   # node radius
+    pos = {}                                  # i (circle slot) -> (x, y, angle°)
+    for i in range(12):
+        a = math.radians(-90 + 30 * i)        # C at 12 o'clock, clockwise by fifths
+        pos[i] = (CX + R * math.cos(a), CY + R * math.sin(a), -90 + 30 * i)
+    pc_at = lambda i: (7 * i) % 12            # slot -> pitch class
+    window = [11, 0, 1, 2, 3, 4, 5]           # F C G D A E B = C major
+
+    def arc(radius, a1, a2, sweep):
+        x1, y1 = CX + radius * math.cos(math.radians(a1)), CY + radius * math.sin(math.radians(a1))
+        x2, y2 = CX + radius * math.cos(math.radians(a2)), CY + radius * math.sin(math.radians(a2))
+        return f'M {x1:.1f} {y1:.1f} A {radius:.1f} {radius:.1f} 0 0 {sweep} {x2:.1f} {y2:.1f}'
+
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
+             f'font-family="Georgia, serif" role="img">',
+             f'<defs>'
+             f'<marker id="ab" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">'
+             f'<path d="M0,0 L9,4.5 L0,9 z" fill="{BLUE}"/></marker>'
+             f'<marker id="ag" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">'
+             f'<path d="M0,0 L9,4.5 L0,9 z" fill="{GOLD}"/></marker>'
+             f'</defs>']
+    # faint full ring, then the C-major window as a soft band (F round to B, clockwise)
+    parts.append(f'<circle cx="{CX}" cy="{CY}" r="{R}" fill="none" stroke="{GRID_STROKE}" stroke-width="2"/>')
+    parts.append(f'<path d="{arc(R, 240, 60, 1)}" fill="none" stroke="#8a9a6a" stroke-width="{NR * 2.4:.0f}" '
+                 f'stroke-linecap="round" opacity="0.30"/>')
+    # direction arrows: clockwise = sharpward (blue, matches ↗), ccw = flatward (gold, ↖)
+    parts.append(f'<path d="{arc(R + 52, -70, -20, 1)}" fill="none" stroke="{BLUE}" stroke-width="3" marker-end="url(#ab)"/>')
+    parts.append(f'<path d="{arc(R + 52, 250, 200, 0)}" fill="none" stroke="{GOLD}" stroke-width="3" marker-end="url(#ag)"/>')
+    parts.append(text(CX + (R + 98) * math.cos(math.radians(-45)),
+                      CY + (R + 98) * math.sin(math.radians(-45)), 'sharpward · brighter', BLUE, 14, '700'))
+    parts.append(text(CX + (R + 98) * math.cos(math.radians(225)),
+                      CY + (R + 98) * math.sin(math.radians(225)), 'flatward · darker', GOLD, 14, '700'))
+    # nodes
+    for i in range(12):
+        x, y, _ = pos[i]
+        pc = pc_at(i)
+        if pc == 0:
+            fill, tcol = ACCENT, '#fff'
+        elif i in window:
+            fill, tcol = '#6b7280', '#fff'
+        else:
+            fill, tcol = GRID_FILL, MUTED
+        parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{NR}" fill="{fill}" stroke="{GRID_STROKE}" stroke-width="1.5"/>')
+        parts.append(text(x, y, nm(pc), tcol, 15, '700'))
+    # centre annotation: the window IS the major scale
+    parts.append(text(CX, CY - 12, 'C major', ACCENT, 19, '800'))
+    parts.append(text(CX, CY + 14, 'seven consecutive fifths', MUTED, 13, '600'))
+    parts.append('</svg>')
+    write('circle-of-fifths.svg', '\n'.join(parts))
+
+
+def _check_negative(b, orig, refl):
+    """Every reflected cell must hold exactly (tonic+dominant)-note = 127 - note (about C4–G4)."""
+    for o, r in zip(orig, refl):
+        want = 127 - b.cells[o]['note']
+        got = b.cells[r]['note']
+        assert got == want, f'reflection landed on {got}, wanted {want}'
+
+
+def d_negative_harmony_7ths():
+    """The half-turn on seventh chords. (1) maj7 is a palindromic stack (M3–m3–M3), so it
+    turns over onto another maj7: Cmaj7 -> A♭maj7. (2) dom7 (M3–m3–m3) turns over onto a
+    half-diminished (m3–m3–M3): G7 -> Dm7♭5 — the ii and V of a ii–V are each other's
+    negatives."""
+    # -- Cmaj7 -> A♭maj7 (shares C and G with its negative, like the triad did) --
+    b = wicki(cols=9, rows=6, base=47)
+    ref = b.cell_for_note(60, (3, 3))
+    orig = [b.cell_for_note(n, ref) for n in [60, 64, 67, 71]]      # C4 E4 G4 B4
+    refl, (Px, Py) = _neg_reflect(b, orig, ref)                     # G4 E♭4 C4 A♭3
+    _check_negative(b, orig, refl)
+    C, E, G, B = orig
+    Eb, Ab = refl[1], refl[3]
+    extras = _centre(Px, Py, [(E, Eb), (B, Ab)], b)
+    extras += text(b.cells[B]['cx'] + b.s * 1.2, b.cells[B]['cy'] - b.s * 0.9, 'C maj7', ACCENT, 14, '800')
+    extras += text(b.cells[Ab]['cx'] - b.s * 1.2, b.cells[Ab]['cy'] + b.s * 0.95, 'A♭ maj7', ACCENT2, 14, '800')
+    groups = [
+        # soft hull bands first (drawn under the labelled cells)
+        {'cells': orig, 'fill': 'none', 'stroke': 'none', 'outline': ACCENT},
+        {'cells': refl, 'fill': 'none', 'stroke': 'none', 'outline': ACCENT2},
+        {'cells': [C, G], 'fill': '#6b7280', 'labels': 'note'},     # shared by both chords
+        {'cells': [E, B], 'fill': ACCENT, 'labels': 'note'},        # C maj7 only
+        {'cells': [Eb, Ab], 'fill': ACCENT2, 'labels': 'note'},     # A♭ maj7 only
+    ]
+    write('negative-harmony-maj7.svg', svg(b, groups, extras, legend=True))
+
+    # -- G7 -> Dm7♭5 (no shared notes; the ii–V pair) --
+    b = wicki(cols=9, rows=6, base=47)
+    ref = b.cell_for_note(60, (3, 3))
+    orig = [b.cell_for_note(n, ref) for n in [67, 71, 74, 65]]      # G4 B4 D5 F4
+    refl, (Px, Py) = _neg_reflect(b, orig, ref)                     # C4 A♭3 F3 D4
+    _check_negative(b, orig, refl)
+    extras = _centre(Px, Py, list(zip(orig, refl)), b)
+    top = max(orig, key=lambda k: -b.cells[k]['cy'])
+    bot = max(refl, key=lambda k: b.cells[k]['cy'])
+    extras += text(b.cells[top]['cx'] + b.s * 1.3, b.cells[top]['cy'] - b.s * 0.8, 'G7', ACCENT, 14, '800')
+    extras += text(b.cells[bot]['cx'] - b.s * 1.3, b.cells[bot]['cy'] + b.s * 0.9, 'Dm7♭5', ACCENT2, 14, '800')
+    groups = [
+        {'cells': orig, 'fill': ACCENT, 'labels': 'note', 'outline': ACCENT},
+        {'cells': refl, 'fill': ACCENT2, 'labels': 'note', 'outline': ACCENT2},
+    ]
+    write('negative-harmony-dom7.svg', svg(b, groups, extras, legend=True))
 
 
 def d_symmetric():
@@ -520,29 +630,418 @@ def d_key_region():
 
 def d_progression():
     """Root motion by fifths — the engine of tonal harmony — is a straight line. A
-    vi–ii–V–I turnaround (A→D→G→C) walks down the up-right (fifths) axis onto the tonic."""
+    vi–ii–V–I turnaround (Am→Dm→G→C) walks down the up-right (fifths) axis onto the
+    tonic: one colour per CHORD (full triads), with the note each pair of neighbouring
+    chords shares drawn as a split-coloured hex."""
     b = wicki(cols=8, rows=6, base=48, s=32)
-    C = b.cell_for_note(60, (1, 3))
-    cells = [C]
-    for _ in range(3):
+    minor3, major3 = b.offsets([0, 3, 7]), b.offsets([0, 4, 7])
+    rA = b.cell_for_note(69, (3, 2))
+    rD = b.cell_for_note(62, rA)
+    rG = b.cell_for_note(55, rD)
+    rC = b.cell_for_note(48, rG)
+    chords = [('vi', 'Am', rA, minor3, GOLD),
+              ('ii', 'Dm', rD, minor3, GREEN),
+              ('V',  'G',  rG, major3, BLUE),
+              ('I',  'C',  rC, major3, ACCENT)]
+    stamps = [b.place(r, off) for _, _, r, off, _ in chords]
+    # consecutive chords share exactly one cell — the common tone handed along
+    shared = {}
+    for i in range(len(stamps) - 1):
+        common = set(stamps[i]) & set(stamps[i + 1])
+        assert len(common) == 1, (i, sorted(common))
+        shared[common.pop()] = (chords[i][4], chords[i + 1][4])
+    groups, extras = [], ''
+    for (_, _, _, _, col), cells in zip(chords, stamps):
+        groups.append({'cells': [k for k in cells if k not in shared],
+                       'fill': col, 'labels': 'note'})
+    for i, (cell, (c_prev, c_next)) in enumerate(shared.items()):
+        # hard vertical split: earlier (upper-right) chord's colour on the right
+        extras += (f'<defs><linearGradient id="gsh{i}" x1="0" y1="0" x2="1" y2="0">'
+                   f'<stop offset="0.5" stop-color="{c_next}"/>'
+                   f'<stop offset="0.5" stop-color="{c_prev}"/></linearGradient></defs>')
+        groups.append({'cells': [cell], 'fill': f'url(#gsh{i})', 'labels': 'note'})
+    for (_, _, _, _, col), cells in zip(chords, stamps):
+        extras += _blob(b, cells, col)
+    for (rom, name, _, _, col), cells in zip(chords, stamps):
+        mc = b.cells[max(cells, key=lambda k: b.cells[k]['cx'])]
+        extras += text(mc['cx'] + b.s * 1.3, mc['cy'], f'{rom} · {name}',
+                       col, 13.5, '800', anchor='start')
+    # step order along the bottom so the walk reads at a glance
+    o = b.cells[rC]
+    x0, y0 = o['cx'] - b.s * 1.6, o['cy'] + b.s * 2.2
+    for j, (tok, col) in enumerate([('vi', GOLD), ('→', INK), ('ii', GREEN), ('→', INK),
+                                    ('V', BLUE), ('→', INK), ('I', ACCENT)]):
+        extras += text(x0 + j * 26, y0, tok, col, 13.5, '800')
+    write('progression-fifths.svg', svg(b, groups, extras, legend=True))
+
+
+# ---------------------------------------------------------------------------
+# Post-1 additions: rows, pentatonic, third-side, sequences, chromatic path
+# ---------------------------------------------------------------------------
+
+def d_wholetone_rows():
+    """Every row IS a whole-tone scale; the two collections alternate rows. Bonus:
+    the augmented triad is every-other-button in a row, the tritone is 3 steps."""
+    b = wicki(cols=9, rows=5, base=47, s=32)
+    TINT_A, TINT_B = '#e4e8d4', '#dde1eb'      # the two whole-tone collections
+    LAB_A, LAB_B = '#77824f', '#5f6b8c'
+    groups = []
+    for r in range(b.rows):
+        cells = [(c, r) for c in range(b.cols)]
+        even = (b.cells[(0, r)]['note'] % 2 == 0)
+        groups.append({'cells': cells, 'fill': TINT_A if even else TINT_B, 'stroke': GRID_STROKE})
+    # feature row: the even collection row holding C4 (52 + 2c)
+    frow = next(r for r in range(b.rows) if b.cells[(0, r)]['note'] == 52)
+    aug = [(4, frow), (6, frow), (8, frow)]    # C E G# — every other button
+    groups.append({'cells': aug, 'fill': ACCENT, 'labels': 'note'})
+    extras = ''
+    for c in range(b.cols):                    # ink labels for the feature row
+        if (c, frow) in [tuple(a) for a in aug]:
+            continue
+        cc = b.cells[(c, frow)]
+        extras += text(cc['cx'], cc['cy'], nm(cc['note']), '#6d6455', 13, '600')
+    # tritone arc: C (col 4) to F# (col 7) = 3 steps
+    cC, cF = b.cells[(4, frow)], b.cells[(7, frow)]
+    y0 = cC['cy'] - b.s * 1.0
+    extras += (f'<path d="M {cC["cx"]:.1f} {y0:.1f} Q {(cC["cx"] + cF["cx"]) / 2:.1f} '
+               f'{y0 - 46:.1f} {cF["cx"]:.1f} {y0:.1f}" fill="none" stroke="#333" '
+               f'stroke-width="2.5" marker-end="url(#arrow)"/>')
+    extras += text((cC['cx'] + cF['cx']) / 2, y0 - 40, 'tritone = 3 steps', INK, 12.5, '700')
+    augc = b.cells[aug[1]]
+    extras += text(augc['cx'], augc['cy'] + b.s * 1.35, 'augmented triad = every other button', ACCENT, 12.5, '700')
+    # collection tags at row ends
+    for r in range(b.rows):
+        cc = b.cells[(b.cols - 1, r)]
+        even = (b.cells[(0, r)]['note'] % 2 == 0)
+        extras += text(cc['cx'] + b.s * 1.5, cc['cy'], 'A' if even else 'B',
+                       LAB_A if even else LAB_B, 13, '800', anchor='start')
+    write('wholetone-rows.svg', svg(b, groups, extras, legend=True))
+
+
+def d_french_sixth():
+    """The French sixth (A♭ C D F♯) lies in ONE row and maps onto itself under a
+    3-step (tritone) shift — it is literally its own tritone substitution."""
+    b = wicki(cols=9, rows=5, base=47, s=34)
+    frow = next(r for r in range(b.rows) if b.cells[(0, r)]['note'] == 52)
+    row_cells = [(c, frow) for c in range(b.cols)]
+    fr6 = [(2, frow), (4, frow), (5, frow), (7, frow)]     # A♭ C D F♯
+    groups = [
+        {'cells': row_cells, 'fill': '#e4e8d4', 'stroke': GRID_STROKE},
+        {'cells': fr6, 'fill': ACCENT, 'labels': 'note'},
+    ]
+    extras = ''
+    for c in range(b.cols):
+        if (c, frow) in fr6:
+            continue
+        cc = b.cells[(c, frow)]
+        extras += text(cc['cx'], cc['cy'], nm(cc['note']), '#6d6455', 13, '600')
+    # two +tritone arcs: A♭ -> D and C -> F♯ (3 steps right each)
+    def arc_above(c1, c2, h):
+        p, q = b.cells[c1], b.cells[c2]
+        y0 = p['cy'] - b.s * 1.05
+        return (f'<path d="M {p["cx"]:.1f} {y0:.1f} Q {(p["cx"] + q["cx"]) / 2:.1f} '
+                f'{y0 - h:.1f} {q["cx"]:.1f} {y0:.1f}" fill="none" stroke="#333" '
+                f'stroke-width="2.5" marker-end="url(#arrow)"/>')
+    extras += arc_above((2, frow), (5, frow), 34)
+    extras += arc_above((4, frow), (7, frow), 58)
+    mid = b.cells[(4, frow)]
+    extras += text(mid['cx'] + b.s * 0.9, mid['cy'] - b.s * 2.6, '+ tritone (3 steps)', INK, 13, '700')
+    lo = b.cells[(4, frow)]
+    extras += text(lo['cx'] + b.s * 0.5, lo['cy'] + b.s * 1.45, 'French sixth on C: A♭ C D F♯', ACCENT, 13.5, '700')
+    write('french-sixth.svg', svg(b, groups, extras, legend=True))
+
+
+def d_pentatonic():
+    """The major pentatonic is 5 consecutive fifths — the scale-line with its two
+    ends (the tritone pair F–B) trimmed off."""
+    b = wicki(cols=8, rows=7, base=53, s=30)
+    start = (0, 6)
+    cells = [start]
+    for _ in range(6):
         nxt = b.cell_for_note(b.cells[cells[-1]]['note'] + 7, cells[-1])
         if nxt and nxt not in cells:
-            cells.append(nxt)          # C(I) G(V) D(ii) A(vi) up the fifths line
-    roman = ['I', 'V', 'ii', 'vi']
-    groups = [{'cells': [cells[0]], 'fill': ACCENT, 'labels': 'note'},          # tonic = home
-              {'cells': cells[1:], 'fill': BLUE, 'labels': 'note'}]
+            cells.append(nxt)                  # F C G D A E B
+    pent, ends = cells[1:6], [cells[0], cells[-1]]
+    F, B = b.cells[ends[0]], b.cells[ends[1]]
+    # tritone connector bows out to the right so it doesn't ride the scale line
+    mx, my = (F['cx'] + B['cx']) / 2 + b.s * 4.4, (F['cy'] + B['cy']) / 2
+    extras = (f'<path d="M {F["cx"] + b.s * 0.8:.1f} {F["cy"]:.1f} Q {mx:.1f} {my:.1f} '
+              f'{B["cx"] + b.s * 0.9:.1f} {B["cy"] + b.s * 0.3:.1f}" fill="none" '
+              f'stroke="#333" stroke-width="2.5" stroke-dasharray="4 4"/>')
+    extras += text(mx - b.s * 1.1, my, 'the scale’s only tritone', '#555', 12.5, '700', anchor='start')
+    mid = b.cells[pent[2]]
+    extras += text(mid['cx'] - b.s * 1.5, mid['cy'] - b.s * 1.1, 'major pentatonic', ACCENT, 13.5, '800', anchor='end')
+    groups = [
+        {'cells': pent, 'fill': ACCENT, 'labels': 'note', 'outline': ACCENT},
+        {'cells': ends, 'fill': '#6b7280', 'labels': 'note'},
+    ]
+    write('pentatonic-line.svg', svg(b, groups, extras, legend=True))
+
+
+def d_third_side():
+    """Chord quality = which side of the brightness axis the third sits on: the
+    major third leans sharpward of the root–fifth spine, the minor third flatward."""
+    b = wicki(cols=10, rows=6, base=45, s=32)
+    # C major rooted on C4 (far left), C minor rooted on C5 (right)
+    CM = b.cell_for_note(60, (0, 2))
+    EM, GM = b.cell_for_note(64, CM), b.cell_for_note(67, CM)
+    Cm = b.cell_for_note(72, (7, 2))
+    Em, Gm = b.cell_for_note(75, Cm), b.cell_for_note(79, Cm)
     extras = ''
-    for i in range(len(cells) - 1, 0, -1):     # arrows point toward the tonic
-        p, q = b.cells[cells[i]], b.cells[cells[i - 1]]
+    def harrow(c1, c2, col):
+        p, q = b.cells[c1], b.cells[c2]
+        sgn = 1 if q['cx'] > p['cx'] else -1
+        return line(p['cx'] + sgn * b.s * 0.95, p['cy'], q['cx'] - sgn * b.s * 0.95, q['cy'], col, 3, arrow=True)
+    extras += harrow(CM, EM, BLUE)             # root -> major third: 2 steps right (sharp side)
+    extras += harrow(Gm, Em, GOLD)             # fifth -> minor third: 2 steps left (flat side)
+    cm, cn = b.cells[EM], b.cells[Em]
+    extras += text(cm['cx'], cm['cy'] + b.s * 1.4, 'third leans right (sharp side)', BLUE, 12.5, '700')
+    extras += text(cn['cx'], cn['cy'] - b.s * 1.5, 'third leans left (flat side)', GOLD, 12.5, '700')
+    lM, lm = b.cells[CM], b.cells[Cm]
+    extras += text(lM['cx'], lM['cy'] + b.s * 1.55, 'C major', INK, 14, '800')
+    extras += text(lm['cx'], lm['cy'] + b.s * 1.55, 'C minor', INK, 14, '800')
+    groups = [
+        {'cells': [Cm, Gm], 'fill': '#6b7280', 'labels': 'note'},
+        {'cells': [CM, GM], 'fill': '#6b7280', 'labels': 'note'},
+        {'cells': [EM], 'fill': BLUE, 'labels': 'note'},
+        {'cells': [Em], 'fill': GOLD, 'labels': 'note'},
+    ]
+    write('third-side.svg', svg(b, groups, extras, legend=True))
+
+
+def _blob(b, cells, col, sw=3):
+    """Outline hugging the OUTER boundary of a set of hexes (hull of their corner
+    points) — unlike _outline it never strikes through cell labels."""
+    pts = []
+    for k in cells:
+        c = b.cells[k]
+        pts.extend(b.hexpts(c['cx'], c['cy'], 1.04))
+    h = hull([(round(x, 1), round(y, 1)) for x, y in pts])
+    d = ' '.join(f'{x:.1f},{y:.1f}' for x, y in h)
+    return (f'<polygon points="{d}" fill="none" stroke="{col}" stroke-width="{sw}" '
+            f'stroke-linejoin="round" opacity="0.85"/>')
+
+
+def d_dominant_chain():
+    """A chain of applied dominants is one dom7 shape rubber-stamped down the fifths
+    axis into the tonic: A7 -> D7 -> G7 -> C."""
+    b = wicki(cols=8, rows=6, base=48, s=32)
+    roots = [b.cell_for_note(n, (3, 2)) for n in [69, 62, 55]]   # A4 D4 G3
+    Croot = b.cell_for_note(48, roots[-1])
+    dom = b.offsets([0, 4, 7, 10])
+    maj = b.offsets([0, 4, 7])
+    stamps = [b.place(rc, dom) for rc in roots] + [b.place(Croot, maj)]
+    labels = ['A7 = V/V/V', 'D7 = V/V', 'G7 = V', 'C = I']
+    cols = [GOLD, GREEN, BLUE, ACCENT]         # same colour language as d_progression
+    # consecutive stamps share exactly one cell — the common tone handed along
+    shared = {}
+    for i in range(len(stamps) - 1):
+        common = set(stamps[i]) & set(stamps[i + 1])
+        assert len(common) == 1, (i, sorted(common))
+        shared[common.pop()] = (cols[i], cols[i + 1])
+    groups, extras = [], ''
+    for col, cells in zip(cols, stamps):
+        groups.append({'cells': [k for k in cells if k not in shared],
+                       'fill': col, 'labels': 'note'})
+    for i, (cell, (c_prev, c_next)) in enumerate(shared.items()):
+        extras += (f'<defs><linearGradient id="gdc{i}" x1="0" y1="0" x2="1" y2="0">'
+                   f'<stop offset="0.5" stop-color="{c_next}"/>'
+                   f'<stop offset="0.5" stop-color="{c_prev}"/></linearGradient></defs>')
+        groups.append({'cells': [cell], 'fill': f'url(#gdc{i})', 'labels': 'note'})
+    for col, cells in zip(cols, stamps):
+        extras += _blob(b, cells, col)
+    # chord tags to the right of each stamp, where the grid is empty
+    for col, cells, lab in zip(cols[:3], stamps[:3], labels[:3]):
+        c = b.cells[max(cells, key=lambda k: b.cells[k]['cx'])]
+        extras += text(c['cx'] + b.s * 1.3, c['cy'], lab, col, 12.5, '800', anchor='start')
+    cc = b.cells[Croot]
+    extras += text(cc['cx'], cc['cy'] + b.s * 1.5, labels[3], ACCENT, 13, '800')
+    write('dominant-chain.svg', svg(b, groups, extras, legend=True))
+
+
+def d_chromatic_path():
+    """The chromatic scale is the LONG way round: each semitone is a big zigzag,
+    because the grid sorts notes by harmonic kinship, not by pitch."""
+    b = wicki(cols=9, rows=6, base=47, s=32)
+    cells = [b.cell_for_note(60, (4, 4))]
+    for n in range(61, 73):
+        cells.append(b.cell_for_note(n, cells[-1]))
+    groups = [
+        {'cells': cells[1:-1], 'fill': GOLD, 'labels': 'note'},
+        {'cells': [cells[0], cells[-1]], 'fill': ACCENT, 'labels': 'noteoct'},
+    ]
+    extras = ''
+    for i in range(len(cells) - 1):
+        p, q = b.cells[cells[i]], b.cells[cells[i + 1]]
         dx, dy = q['cx'] - p['cx'], q['cy'] - p['cy']
         L = math.hypot(dx, dy) or 1
         ux, uy = dx / L, dy / L
-        extras += line(p['cx'] + ux * b.s * 0.98, p['cy'] + uy * b.s * 0.98,
-                       q['cx'] - ux * b.s * 0.98, q['cy'] - uy * b.s * 0.98, '#333', 3, arrow=True)
-    for i, cell in enumerate(cells):
-        c = b.cells[cell]
-        extras += text(c['cx'] - b.s * 1.15, c['cy'], roman[i], INK, 15, '800', anchor='end')
-    write('progression-fifths.svg', svg(b, groups, extras, legend=True))
+        extras += line(p['cx'] + ux * b.s * 0.9, p['cy'] + uy * b.s * 0.9,
+                       q['cx'] - ux * b.s * 0.9, q['cy'] - uy * b.s * 0.9, '#33333388', 2, arrow=True)
+    write('chromatic-path.svg', svg(b, groups, extras, legend=True))
+
+
+# ---------------------------------------------------------------------------
+# Post-3 figures: evenness, Euclidean rhythms, Bresenham, the spiral of fifths
+# ---------------------------------------------------------------------------
+
+def _clock(cx, cy, R, NR, chosen, labels, fill_on, ring=None, necklace=True):
+    """One 12-slot clock face. chosen = set of slots; labels[i] = text per slot."""
+    s = ''
+    if necklace:
+        pts = []
+        for i in sorted(chosen):
+            a = math.radians(-90 + 30 * i)
+            pts.append((cx + R * math.cos(a), cy + R * math.sin(a)))
+        d = ' '.join(f'{x:.1f},{y:.1f}' for x, y in pts)
+        s += f'<polygon points="{d}" fill="{fill_on}18" stroke="{fill_on}" stroke-width="2"/>'
+    for i in range(12):
+        a = math.radians(-90 + 30 * i)
+        x, y = cx + R * math.cos(a), cy + R * math.sin(a)
+        on = i in chosen
+        fill = fill_on if on else GRID_FILL
+        tcol = '#fff' if on else MUTED
+        rr = NR + 2 if (ring is not None and i == ring) else NR
+        stroke = INK if (ring is not None and i == ring) else GRID_STROKE
+        s += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{rr}" fill="{fill}" stroke="{stroke}" stroke-width="1.6"/>'
+        s += text(x, y, labels[i], tcol, 13, '700')
+    return s
+
+
+def d_evenness_clock():
+    """Pick 7 of 12 as evenly as possible (on the chromatic clock) and you are forced
+    into the major scale; the 5 left over are the black-key pentatonic."""
+    W, H = 560, 560
+    CX, CY, R, NR = W / 2, H / 2, 165, 21
+    scale = {0, 2, 4, 5, 7, 9, 11}
+    labels = [nm(i) for i in range(12)]
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
+             f'font-family="Georgia, serif" role="img">']
+    parts.append(f'<circle cx="{CX}" cy="{CY}" r="{R}" fill="none" stroke="{GRID_STROKE}" stroke-width="2"/>')
+    parts.append(_clock(CX, CY, R, NR, scale, labels, ACCENT, ring=0))
+    # complement drawn as filled dark nodes (the black keys) — overdraw those slots
+    for i in [1, 3, 6, 8, 10]:
+        a = math.radians(-90 + 30 * i)
+        x, y = CX + R * math.cos(a), CY + R * math.sin(a)
+        parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{NR}" fill="#3a3a42" stroke="{GRID_STROKE}" stroke-width="1.6"/>')
+        parts.append(text(x, y, labels[i], '#fff', 12, '700'))
+    # step-size letters between consecutive scale notes
+    ordered = sorted(scale) + [12]
+    for a0, a1 in zip(ordered[:-1], ordered[1:]):
+        gap = a1 - a0
+        amid = math.radians(-90 + 30 * (a0 + a1) / 2)
+        x, y = CX + (R + 40) * math.cos(amid), CY + (R + 40) * math.sin(amid)
+        parts.append(text(x, y, 'L' if gap == 2 else 's', ACCENT if gap == 2 else GOLD, 15, '800'))
+    parts.append(text(CX, CY - 14, 'most even 7 of 12', ACCENT, 18, '800'))
+    parts.append(text(CX, CY + 12, '= the major scale', INK, 15, '700'))
+    parts.append(text(CX, CY + 36, 'leftovers = the black keys', '#3a3a42', 13, '700'))
+    parts.append('</svg>')
+    write('evenness-clock.svg', '\n'.join(parts))
+
+
+def d_euclid_pair():
+    """The same necklace twice: as a 12-pulse bell rhythm (time) and as the major
+    scale (pitch). E(7,12) — Euclid's algorithm output — is both."""
+    W, H = 900, 480
+    R, NR = 150, 20
+    cy = H / 2 + 14
+    scale = {0, 2, 4, 5, 7, 9, 11}
+    beat_labels = [str(i + 1) for i in range(12)]
+    note_labels = [nm(i) for i in range(12)]
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
+             f'font-family="Georgia, serif" role="img">']
+    lx, rx = W * 0.26, W * 0.74
+    for cx, chosen, labels, col, title in [
+        (lx, scale, beat_labels, ACCENT2, 'a 12-pulse bell rhythm · E(7,12)'),
+        (rx, scale, note_labels, ACCENT, 'the major scale · 7 of 12'),
+    ]:
+        parts.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="{GRID_STROKE}" stroke-width="2"/>')
+        parts.append(_clock(cx, cy, R, NR, chosen, labels, col))
+        parts.append(text(cx, 30, title, col, 16, '800'))
+    parts.append(text(W / 2, cy, '=', INK, 44, '800'))
+    parts.append(text(W / 2, cy + 36, 'same necklace', MUTED, 13, '600'))
+    parts.append('</svg>')
+    write('euclid-pair.svg', '\n'.join(parts))
+
+
+def d_bresenham():
+    """The major scale as a pixelated straight line: climb 12 semitones in 7 steps
+    and the evenest staircase you can draw has risers 2,2,1,2,2,2,1 — LLsLLLs."""
+    cw, ch = 46, 26                       # cell width/height of the grid paper
+    x0, y0 = 70, 30                       # top-left of plot area
+    steps = [0, 2, 4, 5, 7, 9, 11, 12]
+    names = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
+    Wp, Hp = 7 * cw, 12 * ch
+    W, H = x0 + Wp + 120, y0 + Hp + 60
+    X = lambda k: x0 + k * cw
+    Y = lambda semi: y0 + Hp - semi * ch
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
+             f'font-family="Georgia, serif" role="img">']
+    for k in range(8):                    # grid paper
+        parts.append(line(X(k), Y(0), X(k), Y(12), GRID_STROKE, 1))
+    for s_ in range(13):
+        parts.append(line(X(0), Y(s_), X(7), Y(s_), GRID_STROKE, 1))
+    # the ideal line: slope 12 semitones / 7 steps
+    parts.append(line(X(0), Y(0), X(7), Y(12), MUTED, 2.5, dash='6 5'))
+    # the staircase
+    path = [f'M {X(0):.1f} {Y(0):.1f}']
+    for k in range(1, 8):
+        path.append(f'L {X(k):.1f} {Y(steps[k - 1]):.1f} L {X(k):.1f} {Y(steps[k]):.1f}')
+    parts.append(f'<path d="{" ".join(path)}" fill="none" stroke="{ACCENT}" stroke-width="4" '
+                 f'stroke-linejoin="round"/>')
+    for k in range(8):                    # note dots + names at each landing
+        x, y = X(k), Y(steps[k])
+        parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="6" fill="{ACCENT}" stroke="#fff" stroke-width="2"/>')
+        parts.append(text(x - 14, y - 10, names[k], INK, 14, '700'))
+    for k in range(1, 8):                 # riser sizes: L or s
+        gap = steps[k] - steps[k - 1]
+        parts.append(text(X(k) + 13, (Y(steps[k - 1]) + Y(steps[k])) / 2,
+                          'L' if gap == 2 else 's', ACCENT if gap == 2 else GOLD, 14, '800'))
+    parts.append(text(x0 + Wp / 2, y0 + Hp + 34, '7 scale steps →', MUTED, 13, '600'))
+    parts.append(text(x0 - 42, y0 + Hp / 2, '12 semitones ↑', MUTED, 13, '600'))
+    parts.append(text(X(4) + 30, Y(3.6), 'the ideal line: slope 12/7', MUTED, 12.5, '600', anchor='start'))
+    parts.append('</svg>')
+    write('bresenham-line.svg', '\n'.join(parts))
+
+
+def d_spiral():
+    """Twelve PURE fifths overshoot seven octaves: the circle of fifths is really a
+    spiral that misses closure by the Pythagorean comma (~23.5 cents)."""
+    W = H = 600
+    CX, CY, R = W / 2, H / 2 + 8, 175
+    FIFTH_DEG = 701.955 / 1200 * 360      # a pure 3:2 fifth, as arc around the octave
+    names = ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯', 'B♯']
+    pts = []
+    for k in range(13):
+        a = math.radians(-90 + k * FIFTH_DEG)
+        pts.append((CX + R * math.cos(a), CY + R * math.sin(a), a))
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
+             f'font-family="Georgia, serif" role="img">',
+             '<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">'
+             f'<path d="M0,0 L9,4.5 L0,9 z" fill="{ACCENT}"/></marker></defs>',
+             f'<circle cx="{CX}" cy="{CY}" r="{R}" fill="none" stroke="{GRID_STROKE}" stroke-width="1.5"/>']
+    for i in range(12):                   # hops
+        (x1, y1, _), (x2, y2, _) = pts[i], pts[i + 1]
+        parts.append(line(x1, y1, x2, y2, BLUE + '77', 2))
+    for k, (x, y, a) in enumerate(pts):   # nodes; B# drawn hollow, slightly out
+        last = (k == 12)
+        rr = 15 if not last else 15
+        off = 0 if not last else 26       # push B# outward so the near-miss reads
+        xx, yy = CX + (R + off) * math.cos(a), CY + (R + off) * math.sin(a)
+        fill = ACCENT if k in (0, 12) else '#6b7280'
+        parts.append(f'<circle cx="{xx:.1f}" cy="{yy:.1f}" r="{rr}" fill="{fill}" '
+                     f'stroke="{"#fff" if not last else INK}" stroke-width="1.6"/>')
+        parts.append(text(xx, yy, names[k], '#fff', 12, '700'))
+    # the gap: arc from C to B#'s angle
+    aC, aB = math.radians(-90), math.radians(-90 + 12 * FIFTH_DEG)
+    gx1, gy1 = CX + (R + 52) * math.cos(aC), CY + (R + 52) * math.sin(aC)
+    gx2, gy2 = CX + (R + 52) * math.cos(aB), CY + (R + 52) * math.sin(aB)
+    parts.append(f'<path d="M {gx1:.1f} {gy1:.1f} A {R + 52:.0f} {R + 52:.0f} 0 0 1 {gx2:.1f} {gy2:.1f}" '
+                 f'fill="none" stroke="{ACCENT}" stroke-width="3" marker-end="url(#arr)"/>')
+    parts.append(text(CX, CY - R - 76, 'the Pythagorean comma ≈ 23.5¢', ACCENT, 14, '800'))
+    parts.append(text(CX, CY + R + 44, '12 pure fifths overshoot 7 octaves — B♯ lands just past C', INK, 14.5, '700'))
+    parts.append('</svg>')
+    write('spiral-fifths.svg', '\n'.join(parts))
 
 
 if __name__ == '__main__':
@@ -557,7 +1056,19 @@ if __name__ == '__main__':
     d_scale_modes()
     d_negative_harmony()
     d_negative_harmony_inv()
+    d_negative_harmony_7ths()
+    d_circle_of_fifths()
     d_tonnetz_intro()
     d_symmetric()
     d_tonnetz_plr()
+    d_wholetone_rows()
+    d_french_sixth()
+    d_pentatonic()
+    d_third_side()
+    d_dominant_chain()
+    d_chromatic_path()
+    d_evenness_clock()
+    d_euclid_pair()
+    d_bresenham()
+    d_spiral()
     print('done ->', OUT)

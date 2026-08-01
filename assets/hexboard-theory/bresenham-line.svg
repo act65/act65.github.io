@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 402" width="512" font-family="Georgia, serif" role="img">
+<line x1="70.0" y1="342.0" x2="70.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="116.0" y1="342.0" x2="116.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="162.0" y1="342.0" x2="162.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="208.0" y1="342.0" x2="208.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="254.0" y1="342.0" x2="254.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="300.0" y1="342.0" x2="300.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="346.0" y1="342.0" x2="346.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="392.0" y1="342.0" x2="392.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="342.0" x2="392.0" y2="342.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="316.0" x2="392.0" y2="316.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="290.0" x2="392.0" y2="290.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="264.0" x2="392.0" y2="264.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="238.0" x2="392.0" y2="238.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="212.0" x2="392.0" y2="212.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="186.0" x2="392.0" y2="186.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="160.0" x2="392.0" y2="160.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="134.0" x2="392.0" y2="134.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="108.0" x2="392.0" y2="108.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="82.0" x2="392.0" y2="82.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="56.0" x2="392.0" y2="56.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="30.0" x2="392.0" y2="30.0" stroke="#d6cfc0" stroke-width="1"/>
+<line x1="70.0" y1="342.0" x2="392.0" y2="30.0" stroke="#9c9384" stroke-width="2.5" stroke-dasharray="6 5"/>
+<path d="M 70.0 342.0 L 116.0 342.0 L 116.0 290.0 L 162.0 290.0 L 162.0 238.0 L 208.0 238.0 L 208.0 212.0 L 254.0 212.0 L 254.0 160.0 L 300.0 160.0 L 300.0 108.0 L 346.0 108.0 L 346.0 56.0 L 392.0 56.0 L 392.0 30.0" fill="none" stroke="#c8683c" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="70.0" cy="342.0" r="6" fill="#c8683c" stroke="#fff" stroke-width="2"/>
+<text x="56.0" y="332.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#3b342b" dominant-baseline="central">C</text>
+<circle cx="116.0" cy="290.0" r="6" fill="#c8683c" stroke="#fff" stroke-width="2"/>
+<text x="102.0" y="280.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#3b342b" dominant-baseline="central">D</text>
+<circle cx="162.0" cy="238.0" r="6" fill="#c8683c" stroke="#fff" stroke-width="2"/>
+<text x="148.0" y="228.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#3b342b" dominant-baseline="central">E</text>
+<circle cx="208.0" cy="212.0" r="6" fill="#c8683c" stroke="#fff" stroke-width="2"/>
+<text x="194.0" y="202.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#3b342b" dominant-baseline="central">F</text>
+<circle cx="254.0" cy="160.0" r="6" fill="#c8683c" stroke="#fff" stroke-width="2"/>
+<text x="240.0" y="150.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#3b342b" dominant-baseline="central">G</text>
+<circle cx="300.0" cy="108.0" r="6" fill="#c8683c" stroke="#fff" stroke-width="2"/>
+<text x="286.0" y="98.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#3b342b" dominant-baseline="central">A</text>
+<circle cx="346.0" cy="56.0" r="6" fill="#c8683c" stroke="#fff" stroke-width="2"/>
+<text x="332.0" y="46.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#3b342b" dominant-baseline="central">B</text>
+<circle cx="392.0" cy="30.0" r="6" fill="#c8683c" stroke="#fff" stroke-width="2"/>
+<text x="378.0" y="20.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#3b342b" dominant-baseline="central">C</text>
+<text x="129.0" y="316.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="800" fill="#c8683c" dominant-baseline="central">L</text>
+<text x="175.0" y="264.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="800" fill="#c8683c" dominant-baseline="central">L</text>
+<text x="221.0" y="225.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="800" fill="#c99a2e" dominant-baseline="central">s</text>
+<text x="267.0" y="186.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="800" fill="#c8683c" dominant-baseline="central">L</text>
+<text x="313.0" y="134.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="800" fill="#c8683c" dominant-baseline="central">L</text>
+<text x="359.0" y="82.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="800" fill="#c8683c" dominant-baseline="central">L</text>
+<text x="405.0" y="43.0" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="800" fill="#c99a2e" dominant-baseline="central">s</text>
+<text x="231.0" y="376.0" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="600" fill="#9c9384" dominant-baseline="central">7 scale steps →</text>
+<text x="28.0" y="186.0" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="600" fill="#9c9384" dominant-baseline="central">12 semitones ↑</text>
+<text x="284.0" y="248.4" text-anchor="start" font-family="Georgia, serif" font-size="12.5" font-weight="600" fill="#9c9384" dominant-baseline="central">the ideal line: slope 12/7</text>
+</svg>

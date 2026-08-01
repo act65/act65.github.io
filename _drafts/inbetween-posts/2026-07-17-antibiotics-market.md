@@ -41,3 +41,8 @@ The UK did this first, and it is the part of the story that gives me hope. In 20
 And notice what makes the fix hard, because it is the throughline of half of what I write: you can only pay for the option if you can *value* the option — put a number on the pandemic that didn't happen. That is the same measurement problem as pricing [avoided carbon]({{ site.baseurl }}/the-future-of-environmental-sciences), avoided extinction, avoided kleptocracy. The value lives entirely in a counterfactual, and markets are blind to counterfactuals until a mechanism drags the number into the daylight.
 
 We have decided — not through any vote, but through the plain structure of the market — that we would rather have a fourth statin than a new antibiotic. Nobody chose that. It fell out of the incentives, the way water finds the low ground. And the bacteria are counting on us not noticing in time.
+
+
+<!-- thoughts
+- https://press.asimov.com/articles/antibiotics-failure
+ -->
