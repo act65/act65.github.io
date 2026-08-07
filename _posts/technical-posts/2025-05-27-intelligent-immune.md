@@ -4,6 +4,8 @@ layout: post
 subtitle: What if intelligence evolved within the immune system?
 categories:
     - play
+revisions:
+  - "2026-05-15"
 ---
 
 ## I. The immune system is already an information system

@@ -5,6 +5,8 @@ subtitle: The orderly enumeration of graphs
 permalink: graph-enumeration
 categories: 
   - "tutorial"
+revisions:
+  - "2024-10-05"
 ---
 
 Our goal is to generate all graphs with $n$ nodes.

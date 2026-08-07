@@ -6,6 +6,8 @@ layout: post
 permalink: /karma-and-merit/
 categories: 
   - "philosophy"
+revisions:
+  - "2024-10-05"
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

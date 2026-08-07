@@ -5,6 +5,9 @@ subtitle: Minimizing Surprise Leads to Bayes' Rule
 permalink: bayes-optimal
 categories:
     - tutorial
+revisions:
+  - "2025-07-04"
+  - "2025-07-24"
 ---
 
 <!-- When updating your beliefs in light of new data, you should choose the new belief system that satisfies the data constraints while being as "close" as possible to your original beliefs. You should not add any extra information or assumptions beyond what the data forces you to conclude. -->

@@ -4,6 +4,9 @@ title: Causal calculus
 subtitle: A connection between causal inference and gradients?
 categories:
     - tutorial
+revisions:
+  - "2023-01-16"
+  - "2025-07-22"
 ---
 
 _updated (22/07/25). Added refs, made assumption of linear model clearer_

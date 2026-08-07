@@ -5,6 +5,9 @@ subtitle: The classical alternative to quantum mechanics?
 categories:
     - proposal
 permalink: pilot-waves
+revisions:
+  - "2024-12-30"
+  - "2025-06-13"
 ---
 
 **The Big Idea: Can the Mysteries of Quantum Mechanics Ride on a Classical Wave?**

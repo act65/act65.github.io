@@ -5,6 +5,9 @@ permalink: math-origins
 layout: post
 categories: 
   - fiction
+revisions:
+  - "2026-05-15"
+  - "2026-06-11"
 ---
 
 <style>

@@ -5,6 +5,8 @@ layout: post
 permalink: brand-new-world
 categories: 
   - "fiction"
+revisions:
+  - "2025-07-22"
 ---
 
 # Foreword: Unsolicited Praise, Paid in Kind

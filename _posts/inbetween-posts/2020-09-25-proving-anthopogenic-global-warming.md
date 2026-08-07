@@ -5,6 +5,9 @@ layout: post
 subtitle: An individual cannot.
 categories:
   - "science"
+revisions:
+  - "2024-01-17"
+  - "2025-06-07"
 ---
 
 ![]({{site.baseurl}}/assets/proving-anthopogenic-global-warming/{{page.coverImage}})

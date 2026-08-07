@@ -5,6 +5,8 @@ categories:
 coverImage: "ircn.png"
 layout: post
 subtitle: I visited IRCN.
+revisions:
+  - "2024-01-17"
 ---
 
 ![]({{site.baseurl}}/assets/neuro-inspired-computation-course/{{page.coverImage}})

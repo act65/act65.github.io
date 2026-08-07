@@ -8,6 +8,8 @@ categories:
     - "proposal"
 scholar:
   bibliography: "automated-science.bib"
+revisions:
+  - "2024-10-05"
 ---
 
 ![]({{site.baseurl}}/assets/another-proposal-science/{{page.coverImage}})

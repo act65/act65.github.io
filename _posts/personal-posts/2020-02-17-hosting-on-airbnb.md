@@ -5,6 +5,9 @@ categories:
 coverImage: "airbnb.jpeg"
 layout: post
 subtitle: The lives of others
+revisions:
+  - "2024-01-17"
+  - "2024-10-05"
 ---
 
 ![]({{site.baseurl}}/assets/hosting-on-airbnb/{{page.coverImage}})

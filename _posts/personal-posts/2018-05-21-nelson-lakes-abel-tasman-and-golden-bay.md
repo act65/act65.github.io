@@ -4,6 +4,8 @@ layout: post
 categories: 
   - "experience"
 subtitle: Photos from a holiday.
+revisions:
+  - "2024-01-17"
 ---
 
 ![]({{site.baseurl}}/assets/nelson-lakes-abel-tasman-and-golden-bay/{{page.coverImage}})

@@ -5,6 +5,8 @@ layout: post
 subtitle: The hidden dangers of delegating life's 'trivial' tasks to technology
 categories: 
   - "fiction"
+revisions:
+  - "2024-01-17"
 ---
 
 ![]({{site.baseurl}}/assets/outsourced/{{page.coverImage}})
