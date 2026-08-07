@@ -19,6 +19,13 @@ layout: default
     {% endif %}
     {% comment %} Displays the publication date of the post, formatted. {% endcomment %}
     <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+    {% comment %}
+      Milestone revision dates, written into frontmatter by
+      scripts/mark_revisions.py from the post's git history.
+    {% endcomment %}
+    {% if page.revisions and page.revisions.size > 0 %}
+      <p class="post-revisions">Revised {% for revision in page.revisions %}{{ revision | date: "%-d %b %Y" }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    {% endif %}
   </header>
   <hr>
 
