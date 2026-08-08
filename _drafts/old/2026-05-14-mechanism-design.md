@@ -7,11 +7,11 @@ categories:
 permalink: /governance-mechanisms/mechanism-design/
 ---
 
-[Post 0](/governance-mechanisms/) and [Post 1](/governance-mechanisms/agency/) set the stage: design a *procedure* that aggregates preferences, and aim that procedure at *agency* — the system's capacity to enable its members to pursue their goals. This post takes up the next question: what mechanism produces aggregation that approximates that target, under realistic conditions of scale, capture, and adversarial behaviour?
+Suppose you have settled on designing a *procedure* that aggregates preferences rather than specifying outcomes directly, and you have some target the procedure should serve. This post takes up the next question: what mechanism actually produces aggregation approximating such a target, under realistic conditions of scale, capture and adversarial behaviour?
 
-The argument has four parts. First, why preference aggregation is hard at scale — small-group mechanisms don't generalise. Second, the mechanism-design move: every set of rules implicitly optimises for something, whether anyone designed it to or not. Third, two case studies of captured aggregation — capitalism and democracy — and the structural reason both failed in similar ways. Fourth, a conjecture: something democracy-shaped, but not contemporary parliamentary democracy, emerges from the procedural desiderata laid out in Post 0.
+The argument has four parts. First, why preference aggregation is hard at scale — small-group mechanisms don't generalise. Second, the mechanism-design move: every set of rules implicitly optimises for something, whether anyone designed it to or not. Third, two case studies of captured aggregation — capitalism and democracy — and the structural reason both failed in similar ways. Fourth, a conjecture: something democracy-shaped, but not contemporary parliamentary democracy, emerges from the procedural desiderata.
 
-The [why-care](/governance-mechanisms/why-care/) sibling post covers the historical case for why this matters — Acemoglu and Robinson, inclusive vs extractive institutions, the cost in human welfare of getting collective decision-making wrong. This post assumes you're convinced and works the *how*.
+The historical case for why this matters — inclusive versus extractive institutions, and the cost in human welfare of getting collective decision-making wrong — is made in the [why-care](/governance-mechanisms/why-care/) companion. This post assumes you're convinced and works the *how*.
 
 ## 1. The problem of scale
 
@@ -88,7 +88,7 @@ If the corporate analogy holds, the long-run outcome of current AI development i
 
 The sharper version of the worry: an AGI developed inside a corporation under shareholder primacy will inherit shareholder preferences as its specified objective, faithfully. Shareholders have a poor historical record of choosing for the broader public good — that's the lesson of §3. There is no current mechanism through which the broader public's preferences enter the AGI's specification, and no current force compelling lab leadership to install one. The corporate alignment problem is the engine that is actively building the AI alignment problem. (Earlier post: [*The Alignment Problem: Future AI Overlords vs. Present Corporate Greed*](/the-alignment-problem/).)
 
-The pursuit half of this — what happens once the goal is specified — is the topic of [Post 3](/governance-mechanisms/alignment/). For now the relevant point is that preference aggregation is *upstream* of AI alignment, because the AI inherits whatever goal-specification procedure produces its objective. If the procedure is captured, the AI faithfully serves the captor.
+The pursuit half of this — what happens once the goal is specified — is the better-known half of the alignment problem and is not this series' subject; the point here is that specification is upstream of it. For now the relevant point is that preference aggregation is *upstream* of AI alignment, because the AI inherits whatever goal-specification procedure produces its objective. If the procedure is captured, the AI faithfully serves the captor.
 
 ## 6. The design space
 
@@ -106,9 +106,9 @@ None of these is *the* answer. Each is a hypothesis about which combination of r
 
 ## 7. Conjecture: something democracy-shaped emerges
 
-The desiderata from Post 0 — pluralism, updatability, robustness, transparency, computability, non-domination — appear to constrain the design space toward certain structural features. The following is offered as a *conjecture* to be tested by the research program above, not a theorem.
+A short list of procedural desiderata — pluralism, updatability, robustness, transparency, computability, non-domination — appears to constrain the design space toward certain structural features. The following is offered as a *conjecture* to be tested by the research program above, not a theorem.
 
-**Conjecture.** A mechanism that satisfies the Post 0 desiderata simultaneously has roughly the following structural features:
+**Conjecture.** A mechanism satisfying those desiderata simultaneously has roughly the following structural features:
 
 - **Broad input.** Pluralism plus non-domination forbid narrow input sets. Mechanisms that aggregate preferences from only a small group fail the floor on whose interests count.
 - **Periodic re-specification.** Updatability forbids one-shot oracular specifications. The mechanism must include its own revision procedure.
@@ -118,22 +118,22 @@ The desiderata from Post 0 — pluralism, updatability, robustness, transparency
 
 If the conjecture holds, what's left in the design space *looks* democracy-shaped: broadly inclusive input, periodic revision, separated powers, contestable rules. The caveat is important: democracy-shaped *does not* mean contemporary parliamentary democracy. The design space includes mechanisms we haven't yet tried — hybrids of representative and sortition, cardinal voting at scale, decision rules with explicit non-domination floors — and excludes monarchy, single-party rule, technocracy-without-contest, and rule-by-private-corporation. The conjecture does not single out any specific existing democracy as $m^*$.
 
-The conjecture is testable in the same sense the candidate mechanisms above are: pick a structural feature, formalise it as a constraint on the rule set, simulate the induced game, evaluate the resulting Nash equilibrium against $K_{system}$, vary the desiderata weights, observe which features hold up.
+The conjecture is testable in the same sense the candidate mechanisms above are: pick a structural feature, formalise it as a constraint on the rule set, simulate the induced game, evaluate the resulting Nash equilibrium against the target, vary the desiderata weights, observe which features hold up.
 
 ## 8. Open research questions
 
 - What is the right aggregation rule under cardinal preferences? Range voting, quadratic voting, score voting, and Harsanyi's social aggregation theorem all give different answers. None is dominant.
 - How robust is each candidate mechanism to capture? Formal models of capture are sparse; most existing analyses are post-hoc.
 - When do Arrow / Gibbard-Satterthwaite / Sen's liberal paradox bite, and where can their assumptions be relaxed?
-- How does the mechanism couple back to $K_{system}$? Designing $m$ to maximise $K_{system}(m)$ may not converge — the mechanism that produces good aggregation under one preference distribution may produce poor aggregation when the distribution shifts.
+- How does the mechanism couple back to the target? Designing $m$ to maximise a fixed objective may not converge — the mechanism that produces good aggregation under one preference distribution may produce poor aggregation when the distribution shifts.
 - Can candidate mechanisms be run in DAOs or small-scale governance experiments? The DAO proving ground post takes a first cut.
 - What's the relationship between preference *formation* (adaptive preferences, education, free press) and preference *aggregation*? The two are not separable — the same institutional choices condition both.
 
 ## 9. Closing
 
-A mechanism that specifies a goal still needs machinery to *pursue* it. A perfectly designed aggregation procedure that produces $m^*$ but whose outputs are then ignored, drift away, or are overridden by the entity running the mechanism, is no better than no procedure at all. The pursuit half — corporate audits, political watchdogs, AI interpretability — is the topic of [Post 3](/governance-mechanisms/alignment/).
+A mechanism that specifies a goal still needs machinery to *pursue* it. A perfectly designed aggregation procedure that produces $m^*$ but whose outputs are then ignored, drift away, or are overridden by the entity running the mechanism, is no better than no procedure at all. The pursuit half — corporate audits, political watchdogs, AI interpretability — is comparatively well covered elsewhere; this series works the specification half.
 
-The argument so far: collective decision-making at scale is an algorithm; its properties are formally analysable; the algorithm currently in use across capitalism, democracy, and AI is captured in characteristically similar ways; and the research program is to design uncaptured mechanisms whose stable behaviour approximates the procedural desiderata of Post 0. Whether that program succeeds depends in part on questions that have been worked on for seventy years under the name *social choice theory*, and in part on questions that are new because the substrate — machine-speed optimisation — is new.
+The argument so far: collective decision-making at scale is an algorithm; its properties are formally analysable; the algorithm currently in use across capitalism, democracy, and AI is captured in characteristically similar ways; and the research program is to design uncaptured mechanisms whose stable behaviour approximates those procedural desiderata. Whether that program succeeds depends in part on questions that have been worked on for seventy years under the name *social choice theory*, and in part on questions that are new because the substrate — machine-speed optimisation — is new.
 
 ---
 
@@ -144,3 +144,7 @@ The argument so far: collective decision-making at scale is an algorithm; its pr
 [^stake]: German *Mitbestimmungsgesetz* (1976) as the canonical statutory codetermination model; Edmans (2020), *Grow the Pie*, for a contemporary defence.
 [^cf]: Lessig (2011), *Republic, Lost: How Money Corrupts Congress — and a Plan to Stop It*.
 [^anti]: Khan (2017), *Amazon's Antitrust Paradox*, Yale Law Journal 126(3); Wu (2018), *The Curse of Bigness: Antitrust in the New Gilded Age*.
+
+---
+
+*This post is part of a series on [governance mechanisms](/governance-mechanisms/). The candidate target it takes as given is developed in the post on [agency](/governance-mechanisms/agency/); why an objective is needed at all, in [from objective to mechanism](/governance-mechanisms/suf-to-mechanism/).*
