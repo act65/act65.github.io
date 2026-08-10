@@ -4,6 +4,7 @@ subtitle: From uncertainty over constraints to uncertainty over graphs
 categories:
     - research
 layout: post
+description: "From uncertainty over constraints to uncertainty over graphs. Imagine solving a Sudoku puzzle where some of the given numbers are smudged and illegible."
 ---
 
 _(edited 22/07/25: Used LLM to rewrite and add some refs.)_

@@ -5,6 +5,7 @@ layout: post
 permalink: /pits/arbitrary-typical-proof
 scholar:
   bibliography: "pits.bib"
+description: "Proving that the image of the typical set is the typical set of the image. Question: Given a flow, is the image of the typical set (in X) the same as the..."
 ---
 
 Question:

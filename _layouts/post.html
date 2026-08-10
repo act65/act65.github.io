@@ -11,8 +11,12 @@ layout: default
 
   {% comment %} Header section for the post, containing metadata like title, subtitle, and date. {% endcomment %}
   <header class="post-header">
-    {% comment %} Displays the main title of the post. {% endcomment %}
-    <u class="post-title">{{ page.title }}</u>
+    {% comment %}
+      Displays the main title of the post. This is the page's <h1>: it must be
+      a heading, not styled text, so the title is the document's top-level
+      heading rather than the site name in the masthead.
+    {% endcomment %}
+    <h1 class="post-title">{{ page.title }}</h1>
     {% comment %} Displays the subtitle, if provided in the post's frontmatter. {% endcomment %}
     {% if page.subtitle %}
       <p class="post-subtitle">{{ page.subtitle }}</p>

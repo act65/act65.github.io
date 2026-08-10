@@ -5,6 +5,7 @@ layout: post
 categories:
     - economic
 permalink: /governance-mechanisms/human-nature/
+description: "Every political philosophy is a bet on it — and its width matters more than its centre. Anyone designing an institution has to make an assumption about..."
 ---
 
 Anyone designing an institution has to make an assumption about what the people inside it are like. You cannot avoid it: a rule is a prediction about how people will respond to that rule, and predictions require a model.

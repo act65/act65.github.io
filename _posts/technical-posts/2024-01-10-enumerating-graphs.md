@@ -7,6 +7,7 @@ categories:
   - "tutorial"
 revisions:
   - "2024-10-05"
+description: "The orderly enumeration of graphs. Our goal is to generate all graphs with n nodes. Let's start with a simple example, generating all graphs with 4 nodes."
 ---
 
 Our goal is to generate all graphs with $n$ nodes.

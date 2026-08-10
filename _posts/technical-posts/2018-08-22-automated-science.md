@@ -10,6 +10,7 @@ scholar:
   bibliography: "automated-science.bib"
 revisions:
   - "2024-10-05"
+description: "Model-based reinforcement learning, symbolic AI, and the limits of efficient learning. (Wrote this for an application, which didn't end up working out."
 ---
 
 ![]({{site.baseurl}}/assets/another-proposal-science/{{page.coverImage}})

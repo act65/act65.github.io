@@ -6,6 +6,7 @@ categories:
 coverImage: "download-1.jpeg"
 layout: post
 subtitle: A letter to Fonterra.
+description: "A letter to Fonterra. Yeast bacteria can be programmed to produce milk proteins. I think that this method of milk production will become cheaper than..."
 ---
 
 ![]({{site.baseurl}}/assets/divest-milk-and-the-nz-economy/{{page.coverImage}})

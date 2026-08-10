@@ -4,6 +4,7 @@ title: The Unfair Lottery
 subtitle: and the Duty to Spend Your Luck
 categories:
     - philosophy
+description: "and the Duty to Spend Your Luck. This is not a statement of cynicism, but a simple observation of fact. None of us chose our winning numbers."
 ---
 
 Life is a lottery.

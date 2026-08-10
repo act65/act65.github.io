@@ -6,6 +6,7 @@ layout: post
 subtitle: tldr; cows are fed palm kernel.
 categories: 
   - "economic"
+description: "tldr; cows are fed palm kernel. It turns out that palm trees are an important part of our (NZ's) diary industry."
 ---
 
 ![]({{site.baseurl}}/assets/palm-oil-in-nzs-dairy/{{page.coverImage}})

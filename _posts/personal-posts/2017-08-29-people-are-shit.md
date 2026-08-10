@@ -4,6 +4,7 @@ subtitle: I am a person.
 date: "2017-08-29"
 coverImage: "pot-and-kettle-350x166.jpg"
 layout: post
+description: "I am a person. Lately I have been struggling with a kind of contradiction and it has been effecting my mental health."
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

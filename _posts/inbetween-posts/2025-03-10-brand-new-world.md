@@ -7,9 +7,10 @@ categories:
   - "fiction"
 revisions:
   - "2025-07-22"
+description: "A advertisement dystopia. The story you're about to read explores a not-so-distant future where the lines between authentic expression and advertising have..."
 ---
 
-# Foreword: Unsolicited Praise, Paid in Kind
+## Foreword: Unsolicited Praise, Paid in Kind
 
 The story you're about to read explores a not-so-distant future where the lines between authentic expression and advertising have been completely erased. It's a world built on a simple, yet profoundly disruptive, idea: what if brands could find and reward their most genuine fans?
 
@@ -24,7 +25,7 @@ This story isn't just about a "what if" scenario. It's a cautionary tale about t
 ***
 ***
 
-# The ROI of Breathing
+## The ROI of Breathing
 
 Finn Evans wakes up to the muted gray light of another Wellington morning filtering through his apartment's lone window. Before his eyes fully open, his "WellBeing+" bed sensor has already detected his consciousness and activated the apartment's integrated marketing system.
 

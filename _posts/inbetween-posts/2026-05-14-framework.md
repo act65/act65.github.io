@@ -5,6 +5,7 @@ layout: post
 categories:
     - economic
 permalink: /governance-mechanisms/
+description: "How to choose institutions when you don't know what people will want. Every answer anyone has given to \"what should society maximise\" was written by..."
 ---
 
 Every answer anyone has given to "what should society maximise" was written by someone who then turned out to be in it. Salvation of souls, the workers' paradise, aggregate happiness, the coherent extrapolated volition of humanity — each was proposed by people whose own preferences the answer conspicuously served, and each has aged badly in a characteristic way.

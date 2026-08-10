@@ -6,6 +6,7 @@ layout: post
 subtitle: What if we could accurately measure {INSERT}?
 categories: 
   - "speculation"
+description: "What if we could accurately measure {INSERT}. Imagine if we have an accurate and precise measure for; empathy, mood, consciousness, self-control."
 ---
 
 ![]({{site.baseurl}}/assets/measuring-people/{{page.coverImage}})

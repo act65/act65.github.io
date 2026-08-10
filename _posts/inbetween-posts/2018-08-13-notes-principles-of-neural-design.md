@@ -4,6 +4,7 @@ date: "2018-08-13"
 coverImage: "pond.jpg"
 layout: post
 subtitle: Note from reading the book.
+description: "Note from reading the book. The books starts with some great questions:"
 ---
 
 ![]({{site.baseurl}}/assets/notes-principles-of-neural-design/{{page.coverImage}})

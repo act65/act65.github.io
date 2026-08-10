@@ -188,6 +188,20 @@ lside {
   max-width: none; // Overrides global img max-width for this specific case
 }
 
+// The <h1> of a post or a listing page. Sized up from the base h1 (20px) so
+// that the page's own title still reads as the largest thing on the page now
+// that it, rather than the masthead site name, is the top-level heading.
+.post-title,
+.page-title {
+  margin: 0 0 10px;
+  font-size: 26px;
+  line-height: 1.3;
+
+  @include mobile {
+    font-size: 22px;
+  }
+}
+
 // General styling for date displays
 .date {
   font-style: italic;

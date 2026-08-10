@@ -4,6 +4,7 @@ subtitle: The Universe's Burning Ambition
 layout: post
 categories:
     - philosophy
+description: "The Universe's Burning Ambition. I want to propose a philosophy, a way of seeing our place in the cosmos."
 ---
 
 ![]({{site.baseurl}}/assets/candle.png)

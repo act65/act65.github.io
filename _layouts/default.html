@@ -36,7 +36,12 @@
           <!-- <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a> -->
 
           <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            {% comment %}
+              Deliberately not an <h1>: the masthead repeats on every page, so
+              using a heading here made the site name the top-level heading of
+              all 119 pages. Each page's own <h1> now lives in its layout.
+            {% endcomment %}
+            <p class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></p>
             <p class="site-description">{{ site.description }}</p>
           </div>
 

@@ -10,9 +10,8 @@ revisions:
   - "2024-08-31"
   - "2024-10-05"
   - "2025-11-16"
+description: "How does deductive truth (ie math) relate to inductive truth (ie science). Mathematics can derive the truth, trustworthy proof."
 ---
-
-# What makes something true?
 
 > Mathematics can derive the truth,\
 trustworthy proof.\

@@ -4,6 +4,7 @@ subtitle: Deriving Probability from Rationality
 layout: post
 categories:
     - play
+description: "Deriving Probability from Rationality. We are often told that probabilities are one of two things: 1."
 ---
 
 We are often told that probabilities are one of two things:

@@ -2,6 +2,7 @@
 title: "Future Telf, 2016"
 layout: post
 subtitle: Dreaming about projects
+description: "Dreaming about projects. I am half way through building an chemical process and assembly line to etch and fabricate SMARTYPANTS processors (my own design..."
 ---
 
 ![]({{site.baseurl}}/assets/future-smarter-telf/{{page.coverImage}})

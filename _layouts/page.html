@@ -10,10 +10,17 @@ layout: default
 <article class="page">
 
   {% comment %}
-    The main content container for the page.
-    The page's title is typically rendered by the 'default' layout via {{ page.title }}
-    or by the content itself if this layout is used by 'category_listing.html' that has its own header.
+    The page's <h1>. The masthead site name is deliberately not a heading, so
+    without this a generic page would have no top-level heading at all.
+    'category_listing.html' renders its own header and does not use this.
   {% endcomment %}
+  {% if page.title %}
+    <header class="page-header">
+      <h1 class="page-title">{{ page.title }}</h1>
+    </header>
+  {% endif %}
+
+  {% comment %} The main content container for the page. {% endcomment %}
   <div class="entry">
     {% comment %}
       Display either the publication date or the last modified date, if available in frontmatter.

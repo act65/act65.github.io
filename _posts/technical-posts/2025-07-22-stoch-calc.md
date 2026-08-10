@@ -4,6 +4,7 @@ subtitle: A Tutorial on Itô's Lemma
 layout: post
 categories:
     - tutorial
+description: "A Tutorial on Itô's Lemma. In the world of deterministic calculus, the chain rule is a cornerstone for differentiating composite functions."
 ---
 
 In the world of deterministic calculus, the chain rule is a cornerstone for differentiating composite functions. However, when we step into the realm of stochastic processes, particularly those involving Brownian motion (or Wiener processes), the familiar rules of calculus need a significant adjustment. This tutorial will guide you through why the standard chain rule isn't sufficient for Stochastic Differential Equations (SDEs) and introduce Itô's Lemma, the stochastic counterpart, along with derivations of common differentiation rules.[^1]

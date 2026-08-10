@@ -8,6 +8,7 @@ categories:
 revisions:
   - "2025-02-02"
   - "2025-03-11"
+description: "Why does poker have many rounds. Imagine that the World series of Poker (with potential winnings of ~$8 million) only had 1 round."
 ---
 
 Imagine that the [World series of Poker](https://www.wsop.com/) (with potential winnings of ~\\$8 million) only had 1 round.

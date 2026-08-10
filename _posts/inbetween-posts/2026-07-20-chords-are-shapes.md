@@ -4,6 +4,7 @@ subtitle: What an isomorphic keyboard makes visible about harmony
 layout: post
 categories:
   - play
+description: "What an isomorphic keyboard makes visible about harmony. On a piano, C major and D major are played with different hand-shapes: a different mix of black..."
 ---
 
 On a piano, C major and D major are played with different hand-shapes: a different mix of

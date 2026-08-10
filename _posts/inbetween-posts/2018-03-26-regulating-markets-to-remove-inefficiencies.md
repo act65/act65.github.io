@@ -5,6 +5,7 @@ layout: post
 subtitle: An example of how to regulate markets to remove inefficiencies.
 categories: 
   - "economic"
+description: "An example of how to regulate markets to remove inefficiencies. I stumbled across an interesting perspective on the regulation of markets in a report by..."
 ---
 
 ![]({{site.baseurl}}/assets/regulating-markets-to-remove-inefficiencies/{{page.coverImage}})

@@ -5,6 +5,7 @@ subtitle: "Why 'Flaws' in Thinking Might Be Optimal Strategies for Incomplete Mo
 permalink: approximate-reasoning
 categories:
   - "play"
+description: "Why 'Flaws' in Thinking Might Be Optimal Strategies for Incomplete Models. This post argues that many so-called human cognitive 'flaws' are not errors but..."
 ---
 
 This post argues that many so-called human cognitive 'flaws' are not errors but computationally rational adaptations to a world of incomplete information and limited processing power. We will explore ten such strategies, demonstrating their computational benefits and drawing striking parallels to the behaviors of Large Language Models (LLMs). When we reason, we make mistakes. We use stereotypes, fall for logical fallacies, remember events that never happened, and maintain contradictory beliefs. Traditionally, these errors have been viewed as flaws in human cognition—imperfections to be corrected through better education or more careful thinking.

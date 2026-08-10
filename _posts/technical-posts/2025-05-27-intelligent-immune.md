@@ -6,6 +6,7 @@ categories:
     - play
 revisions:
   - "2026-05-15"
+description: "What if intelligence evolved within the immune system. Like the nervous system, the immune system runs its own transport infrastructure through the body —..."
 ---
 
 ## I. The immune system is already an information system

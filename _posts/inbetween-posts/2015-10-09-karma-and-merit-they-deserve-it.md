@@ -8,6 +8,7 @@ categories:
   - "philosophy"
 revisions:
   - "2024-10-05"
+description: "They deserve it. I think that both Karma and a Meritism common view both have a sort of moral elitism, where the unfortunate deserve the little they have..."
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

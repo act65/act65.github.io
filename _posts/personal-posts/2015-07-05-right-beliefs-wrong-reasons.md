@@ -5,6 +5,7 @@ categories:
 coverImage: "download-2.jpeg"
 layout: post
 subtitle: It occured to me that my belief in evolution was just as illogical as others belief in god.
+description: "It occured to me that my belief in evolution was just as illogical as others belief in god. It occurred to me that the reasons many people believe in..."
 ---
 
 ![]({{site.baseurl}}/assets/right-beliefs-wrong-reasons/{{page.coverImage}})

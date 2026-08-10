@@ -7,6 +7,7 @@ categories:
   - "fiction"
 revisions:
   - "2024-01-17"
+description: "The hidden dangers of delegating life's 'trivial' tasks to technology. Tried of your unpredictable metabolism with a mind of its own?"
 ---
 
 ![]({{site.baseurl}}/assets/outsourced/{{page.coverImage}})

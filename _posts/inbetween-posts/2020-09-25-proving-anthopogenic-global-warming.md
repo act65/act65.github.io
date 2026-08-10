@@ -8,6 +8,7 @@ categories:
 revisions:
   - "2024-01-17"
   - "2025-06-07"
+description: "An individual cannot. What experiments could I do at home that would prove (to even the most skeptical) that our actions are causing a change in climate?"
 ---
 
 ![]({{site.baseurl}}/assets/proving-anthopogenic-global-warming/{{page.coverImage}})

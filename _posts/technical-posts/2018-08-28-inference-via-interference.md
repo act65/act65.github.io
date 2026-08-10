@@ -5,6 +5,7 @@ layout: post
 subtitle: Learning by controlling the propagation speed of signals.
 categories: 
   - "proposal"
+description: "Learning by controlling the propagation speed of signals. Myelin makes up 50% of the brains mass. This is a large investment for us to make!"
 ---
 
 ![]({{site.baseurl}}/assets/inference-via-interference/{{page.coverImage}})

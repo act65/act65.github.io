@@ -6,6 +6,7 @@ categories:
 coverImage: "dscn0737.jpg"
 layout: post
 subtitle: Volunteering at an orphanage.
+description: "Volunteering at an orphanage. I recently spent 3 months teaching and helping at the House of Hope in Senjeri, Perambalur, Tamil Nadu."
 ---
 
 ![]({{site.baseurl}}/assets/the-house-of-hope/{{page.coverImage}})

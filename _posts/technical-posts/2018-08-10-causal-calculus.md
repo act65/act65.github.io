@@ -7,11 +7,12 @@ categories:
 revisions:
   - "2023-01-16"
   - "2025-07-22"
+description: "A connection between causal inference and gradients. I recently read Judea Pearl's The Book of Why, and it clarified many intuitions about causal..."
 ---
 
 _updated (22/07/25). Added refs, made assumption of linear model clearer_
 
-# Causal Calculus: A Gradient-Based Interpretation
+## Causal Calculus: A Gradient-Based Interpretation
 
 I recently read Judea Pearl's *The Book of Why*[^1], and it clarified many intuitions about causal inference. It also let me to wonder: is there a connection between the *do*-calculus of causal inference and the familiar gradients of machine learning?
 

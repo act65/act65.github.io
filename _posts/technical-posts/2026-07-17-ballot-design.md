@@ -4,6 +4,7 @@ subtitle: Which questions should a ballot ask together? The votes can tell us.
 layout: post
 categories:
   - research
+description: "Which questions should a ballot ask together? The votes can tell us. A ballot is a design. It fixes which issues are decided together, which separately..."
 ---
 
 A ballot is a design. It fixes which issues are decided together, which separately, and what each question may be contingent on. Yet nearly every voting system picks one of two extremes without asking: direct democracy decides every issue on its own; party or platform voting bundles everything into a few take-it-or-leave-it packages.

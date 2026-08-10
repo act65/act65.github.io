@@ -5,6 +5,7 @@ categories:
   - "introspection"
 layout: post
 subtitle: Don't be lazy...
+description: "Don't be lazy. We let boredom, ignorance and distraction shatter our dreams and our potential future (scientist, smartist, a better Alex)."
 ---
 
 ![]({{site.baseurl}}/assets/letter-from-my-future-self-a-failure/{{page.coverImage}})

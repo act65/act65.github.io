@@ -6,6 +6,7 @@ layout: post
 subtitle: A fusion of confusion.
 categories: 
   - "fiction"
+description: "A fusion of confusion. We achieve an astonishing fusion reaction output of 30:1 output to input, named BARY (after the center of the mass of -say- the..."
 ---
 
 ![]({{site.baseurl}}/assets/fusion-pollution/{{page.coverImage}})

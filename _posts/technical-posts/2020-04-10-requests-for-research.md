@@ -5,14 +5,13 @@ subtitle: Some ideas from my masters.
 permalink: /requests-for-research/01
 categories: 
   - "research"
+description: "Some ideas from my masters. To stay sane I needed to write down some of the actionable ideas that occur to me. Otherwise I have the tendency to hoard them."
 ---
 
 To stay sane I needed to write down some of the _actionable_ ideas that occur to me.
 Otherwise I have the tendency to hoard them.
 So, these are the questions I am not going to answer (argh it hurts!).
 They appear to be perfectly good research directions, but "you need to focus" (says pretty much everyone I meet).
-
-# Requests for research
 
 _(the number of stars reflects how open the problem is:, 1 star means little room for interpretation, 3 stars mean that there are some complex choices to be made)_
 

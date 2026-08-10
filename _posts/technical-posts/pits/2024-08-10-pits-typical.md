@@ -7,6 +7,7 @@ categories:
   - "tutorial"
 scholar:
   bibliography: "pits.bib"
+description: "In high dimensions, typical is unintuitive. What is likely is not (necessarily) typical."
 ---
 
 > What is likely is not (necessarily) typical.

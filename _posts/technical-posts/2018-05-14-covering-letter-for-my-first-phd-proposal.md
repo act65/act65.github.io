@@ -5,6 +5,7 @@ layout: post
 subtitle: Principles of neural design, automated science, general reinforcement learning
 categories: 
   - "proposal"
+description: "Principles of neural design, automated science, general reinforcement learning. Phew, I just submitted my first PhD application, with many more to go..."
 ---
 
 ![]({{site.baseurl}}/assets/covering-letter-for-my-first-phd-proposal/{{page.coverImage}})

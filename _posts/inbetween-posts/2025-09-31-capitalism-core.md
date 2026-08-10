@@ -4,6 +4,7 @@ subtitle: A Steelman of the Four Beliefs That Shape Our World
 categories:
     - economic
 layout: post
+description: "A Steelman of the Four Beliefs That Shape Our World. Capitalism is more than just an economic system; it's a philosophy built on a powerful set of..."
 ---
 
 Capitalism is more than just an economic system; it's a philosophy built on a powerful set of assumptions about human nature, progress, and justice. We often argue about its effects—inequality, innovation, environmental impact—but rarely do we examine the foundational beliefs that drive it. This post puts the heart of "capitalism" under the microscope. We will try to "steelman" its core principles, presenting them in their most robust and persuasive form.

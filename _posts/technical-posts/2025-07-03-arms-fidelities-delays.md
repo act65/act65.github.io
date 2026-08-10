@@ -3,6 +3,7 @@ layout: post
 title: Committed to Fidelity
 subtitle: A Unified Model for Multi-Fidelity Bandits
 categories: research
+description: "A Unified Model for Multi-Fidelity Bandits. This post introduces the Commited-Fidelity Bandit, a framework that extends the classic Multi-Armed Bandit..."
 ---
 
 This post introduces the Commited-Fidelity Bandit, a framework that extends the classic Multi-Armed Bandit (MAB) problem. The standard MAB model helps us with the exploration-exploitation trade-off. The Multi-Fidelity MAB (MF-MAB) adds another layer: the choice of how much information to purchase, trading cost for accuracy. [^1] [^2] We propose to take this one step further by introducing a new strategic dimension: commitment. This allows us to bring the exploration-exploitation trade-off back into the fold, as the MF-MAB setting deals with it awkwardly.

@@ -8,6 +8,7 @@ subtitle: The lives of others
 revisions:
   - "2024-01-17"
   - "2024-10-05"
+description: "The lives of others. For two years I hosted a room on AirBnB. I hosted a range of personalities; quiet and reserved, chatty and friendly, ... activist, ..."
 ---
 
 ![]({{site.baseurl}}/assets/hosting-on-airbnb/{{page.coverImage}})

@@ -6,6 +6,7 @@ layout: post
 subtitle: A fun intro to my masters topic; abstraction for efficient reinforcment learning.
 categories: 
   - "tutorial"
+description: "A fun intro to my masters topic; abstraction for efficient reinforcment learning. (This is my current focus - kinda - for my masters."
 ---
 
 (This is my current focus - kinda - for my masters. The (art)work was done in prep for a conference poster)

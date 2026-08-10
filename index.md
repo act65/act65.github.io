@@ -1,10 +1,14 @@
 ---
 layout: default
 last_modified_at: 2025-07-19T05:00:00+00:00
-description: "My blog on computer science and cognitive science — probably focused on machine learning, computational complexity, brains, neuroscience, languages, and more."
+description: "Alexander Telfar's blog: machine learning and probability, mechanism design, economics and politics, philosophy, and the occasional piece of science fiction."
 ---
 
-Welcome to my blog.
+# Writing on machine learning, economics and politics, and philosophy
+
+Welcome to my blog. I write about machine learning and probability, mechanism
+design, economics and politics, philosophy, and the occasional piece of science
+fiction.
 
 Here are some links to help you navigate:
 

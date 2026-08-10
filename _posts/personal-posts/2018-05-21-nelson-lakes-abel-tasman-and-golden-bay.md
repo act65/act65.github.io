@@ -6,6 +6,7 @@ categories:
 subtitle: Photos from a holiday.
 revisions:
   - "2024-01-17"
+description: "Photos from a holiday. I spent January 2018 travelling around the top of New Zealand's South Island. It was nice. Here are some photos..."
 ---
 
 ![]({{site.baseurl}}/assets/nelson-lakes-abel-tasman-and-golden-bay/{{page.coverImage}})

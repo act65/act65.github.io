@@ -4,6 +4,7 @@ date: "2019-04-10"
 coverImage: "600px-cmglee_cambridge_trinity_college_great_court.jpg"
 layout: post
 subtitle: I am struggling with my masters.
+description: "I am struggling with my masters. (I wrote most of this near the start of my masters)"
 ---
 
 ![]({{site.baseurl}}/assets/grassy-dreams/{{page.coverImage}})

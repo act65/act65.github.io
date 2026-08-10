@@ -9,6 +9,7 @@ revisions:
   - "2020-09-14"
   - "2022-12-22"
   - "2024-11-20"
+description: "A new perspective on tax law. Have you ever wondered how Artificial Intelligence (AI) could be used to improve tax laws?"
 ---
 
 ## Introduction

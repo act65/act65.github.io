@@ -4,6 +4,7 @@ subtitle: A story on independence
 layout: post
 categories: 
   - "fiction"
+description: "A story on independence. Sarah Albright moved through the world with a precision that bordered on surgical."
 ---
 
 Sarah Albright moved through the world with a precision that bordered on surgical. Her tech consultancy, a sleek engine of her own design, was a testament to this unwavering focus. During the tense, final stages of the Chengsen merger, Mark, a junior partner, had nervously floated the idea of a small, community-focused tech education initiative – a "softener" for their aggressive acquisition. Sarah’s gaze, cool and direct, had met his. "Our impact, Mark, is measured in market share and innovation. Quantifiable results. Let’s maintain that clarity." Mark’s proposal had retreated. Sarah had already pivoted to the next data point, sentimentality efficiently excised.

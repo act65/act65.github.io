@@ -4,6 +4,7 @@ title: Representations within linear algebra
 subtitle: We can use linear algebra to represent; linear operators, algebras, computations, symmetry and more.
 categories:
   - "play"
+description: "We can use linear algebra to represent; linear operators, algebras, computations, symmetry and more. Linear algebra is a powerful language!"
 ---
 
 Linear algebra is a powerful language! It turns out you can do some strange and fun things with it.

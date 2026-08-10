@@ -4,6 +4,7 @@ title: Deep learning
 subtitle: An intro to deep learining for COMP421.
 categories: 
   - "tutorial"
+description: "An intro to deep learining for COMP421. An introduction to deep learning that builds a framework for arbitrary feedforward neural networks."
 ---
 
 An introduction to deep learning that builds a framework for arbitrary feedforward neural networks. Implements layer-wise automatic differentiation and uses this for efficient optimisation.

@@ -5,6 +5,7 @@ layout: post
 subtitle: Let's have a tolerant debate
 categories:
     - "interact"
+description: "Let's have a tolerant debate. Scott Alexander holds a yearly Adversarial collaboration contest."
 ---
 
 ![]({{site.baseurl}}/assets/adversarial-collaboration-contest/{{page.coverImage}})

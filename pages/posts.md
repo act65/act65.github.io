@@ -2,6 +2,7 @@
 layout: page
 title: Posts
 permalink: /posts/
+description: "Every post on the blog, newest first — machine learning, mathematics, economics and politics, philosophy and fiction."
 ---
 
 <div class="posts">

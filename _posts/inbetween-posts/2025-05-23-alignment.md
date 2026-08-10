@@ -4,6 +4,7 @@ subtitle: Future AI Overlords vs. Present Corporate Greed
 layout: post
 categories:
     - economic
+description: "Future AI Overlords vs. Present Corporate Greed. Headlines about Artificial Intelligence often paint a picture of a distant, sci-fi threat: killer robots..."
 ---
 
 <!-- <p align="center" width="100%">
