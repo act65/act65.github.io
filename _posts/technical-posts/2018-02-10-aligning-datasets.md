@@ -5,6 +5,10 @@ subtitle: Dataset alignment represented as tensor networks
 categories: 
   - "research"
 description: "Dataset alignment represented as tensor networks. I want to know how a someone's education level correlates with their income."
+tags:
+  - research
+  - probability
+  - mathematics
 ---
 
 I want to know how a someone's education level correlates with their income. But I don't have that dataset. I have datasets relating income to people and people to their eduction, it should be a simple job to align these datasets to find what I am looking for. And it is, if you are familiar with matrix operations, some light coding, ...

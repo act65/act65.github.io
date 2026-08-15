@@ -6,7 +6,7 @@ categories:
   - "research"
 scholar:
   bibliography: "auto-int.bib"
-permalink: /autoint/lit-review
+permalink: /autoint/lit-review/
 ---
 
 In depth look at papers;

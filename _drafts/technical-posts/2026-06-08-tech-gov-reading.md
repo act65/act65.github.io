@@ -1,7 +1,7 @@
 ---
 title: Technical governance
 subtitle: Reading course
-permalink: tech-gov-reading
+permalink: /tech-gov-reading/
 layout: post
 categories: 
   - research

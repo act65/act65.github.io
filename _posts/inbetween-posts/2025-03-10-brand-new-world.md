@@ -2,12 +2,16 @@
 title: Brand new world
 subtitle: A advertisement dystopia
 layout: post
-permalink: brand-new-world
+permalink: /brand-new-world/
 categories: 
   - "fiction"
 revisions:
   - "2025-07-22"
 description: "A advertisement dystopia. The story you're about to read explores a not-so-distant future where the lines between authentic expression and advertising have..."
+tags:
+  - fiction
+  - economics
+  - society
 ---
 
 ## Foreword: Unsolicited Praise, Paid in Kind

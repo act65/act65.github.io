@@ -3,6 +3,11 @@ title: The Offline Economy
 subtitle: Why financial tools for the unconnected are a genuinely hard problem
 layout: post
 description: "Why financial tools for the unconnected are a genuinely hard problem. In southeastern Bangladesh lies Kutupalong, the largest refugee camp in the world."
+tags:
+  - essay
+  - economics
+  - technology
+  - society
 ---
 
 ![Kutupalong refugee camp, Bangladesh]({{ site.baseurl }}/assets/offline-economy/kutupalong.jpg)

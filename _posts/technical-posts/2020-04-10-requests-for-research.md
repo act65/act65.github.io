@@ -2,10 +2,14 @@
 layout: post
 title: Requests for research
 subtitle: Some ideas from my masters.
-permalink: /requests-for-research/01
+permalink: /requests-for-research/01/
 categories: 
   - "research"
 description: "Some ideas from my masters. To stay sane I needed to write down some of the actionable ideas that occur to me. Otherwise I have the tendency to hoard them."
+tags:
+  - notes
+  - machine-learning
+  - open-question
 ---
 
 To stay sane I needed to write down some of the _actionable_ ideas that occur to me.

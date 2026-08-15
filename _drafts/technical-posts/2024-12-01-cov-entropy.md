@@ -2,7 +2,7 @@
 title: A change of variables formula for entropy
 subtitle: The propagation of uncertainty
 layout: post
-permalink: cov-entropy
+permalink: /cov-entropy/
 categories:
     - "technical"
 ---

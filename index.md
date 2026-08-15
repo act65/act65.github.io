@@ -1,33 +1,35 @@
 ---
 layout: default
-last_modified_at: 2025-07-19T05:00:00+00:00
+last_modified_at: 2026-08-15T05:00:00+00:00
 description: "Alexander Telfar's blog: machine learning and probability, mechanism design, economics and politics, philosophy, and the occasional piece of science fiction."
 ---
 
-# Writing on machine learning, economics and politics, and philosophy
+<blockquote class="epigraph">
+  <p>I would rather have questions that can't be answered than answers that can't be questioned.</p>
+  <cite>Richard Feynman</cite>
+</blockquote>
 
-Welcome to my blog. I write about machine learning and probability, mechanism
-design, economics and politics, philosophy, and the occasional piece of science
-fiction.
-
+Welcome to my blog.
 Here are some links to help you navigate:
 
-- Personal
-    - my [experiences]({{site.baseurl}}/experiences/)
-    - invitations for [interaction]({{site.baseurl}}/interact/)
-    - and [more]({{site.baseurl}}/personal/)
-- Opinions and thoughts
-    - [economics and politics]({{site.baseurl}}/economics-politics/)
-    - [philosophising about ...]({{site.baseurl}}/philosophy/)
-    - [speculation]({{site.baseurl}}/speculation/)
-    - [fiction]({{site.baseurl}}/fiction/)
-    - and [more]({{site.baseurl}}/inbetween/)
-- Technical
-    - [proposals]({{site.baseurl}}/proposals/)
-    - [research]({{site.baseurl}}/research/)
+- What kind of thing it is
+    - [opinions and thoughts]({{site.baseurl}}/opinions/)
     - [tutorials]({{site.baseurl}}/tutorials/)
-    - [play]({{site.baseurl}}/play/)
-    - and [more]({{site.baseurl}}/technical/)
+    - [research]({{site.baseurl}}/research/)
+    - [proposals and speculation]({{site.baseurl}}/proposals/)
+    - [fiction]({{site.baseurl}}/fiction/)
+    - [personal]({{site.baseurl}}/personal/)
+- What it is about
+    - [institutions and voting]({{site.baseurl}}/institutions/)
+    - [economics]({{site.baseurl}}/economics/)
+    - [society]({{site.baseurl}}/society/)
+    - [ethics and philosophy]({{site.baseurl}}/philosophy/)
+    - [probability and inference]({{site.baseurl}}/probability/)
+    - [machine learning]({{site.baseurl}}/machine-learning/)
+    - [mathematics and computation]({{site.baseurl}}/mathematics/)
+    - [science and technology]({{site.baseurl}}/science/)
+
+Or [everything, newest first]({{site.baseurl}}/posts/).
 
 <!-- - Other
     - [games]()

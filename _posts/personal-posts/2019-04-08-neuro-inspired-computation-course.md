@@ -8,6 +8,10 @@ subtitle: I visited IRCN.
 revisions:
   - "2024-01-17"
 description: "I visited IRCN. I was lucky enough to be invited to IRCN's neuro-inspired computation course in Tokyo."
+tags:
+  - personal
+  - biology
+  - computation
 ---
 
 ![]({{site.baseurl}}/assets/neuro-inspired-computation-course/{{page.coverImage}})

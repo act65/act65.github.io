@@ -5,6 +5,10 @@ subtitle: and the limits of our imagination
 categories:
     - fiction
 description: "and the limits of our imagination. I believe our ability to imagine is fundamentally limited. Our capacity for empathy is constrained by the experiences..."
+tags:
+  - essay
+  - philosophy
+  - meta
 ---
 
 I believe our ability to imagine is fundamentally limited. Our capacity for empathy is constrained by the experiences we've had, and our vision for our own future is often just an interpolation between the lives of the people we know. This isn't a failing, but a feature of how we learn; psychological frameworks like Social Learning Theory suggest we build our sense of self and possibility by observing and imitating the models around us. [^1]

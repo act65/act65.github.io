@@ -3,6 +3,9 @@ title: "Needing purpose"
 date: "2017-12-15"
 layout: post
 description: "In the last couple of years I have lost a few friends. And I think I understand the reason for this."
+tags:
+  - personal
+  - ethics
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

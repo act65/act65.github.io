@@ -7,6 +7,10 @@ subtitle: I tripped over and have something to say about it.
 categories:
     - "economic"
 description: "I tripped over and have something to say about it. What is the value of good infrastructure? Or, conversly, how much does poor infrastructure cost?"
+tags:
+  - essay
+  - economics
+  - society
 ---
 
 ![]({{site.baseurl}}/assets/a-tripping-point/{{page.coverImage}})

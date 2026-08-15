@@ -1,7 +1,9 @@
 ---
 layout: category_listing
-title: Economics and politics
-permalink: /economics-politics/
-filter_category: "economic"
-description: "Posts on economics and politics: market design, regulation, tax, illicit finance, voting systems, and what governments are actually for."
+title: Economics
+permalink: /economics/
+filter_tags: [economics, finance]
+description: "Economics: market design, the efficient market hypothesis, capitalism, tax, UBI, attention markets, illicit financial flows and externalities."
 ---
+
+Markets, prices, and the places where both stop working.

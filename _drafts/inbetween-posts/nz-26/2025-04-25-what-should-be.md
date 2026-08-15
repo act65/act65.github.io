@@ -2,7 +2,7 @@
 title: "Politics in NZ: What should be"
 subtitle: ""
 layout: post
-permalink: nz26-what-should-be
+permalink: /nz26-what-should-be/
 ---
 
 ## Part 2: What Should Be? A Vision for Aotearoa New Zealand

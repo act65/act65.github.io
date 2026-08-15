@@ -5,6 +5,10 @@ layout: post
 categories:
     - proposal
 description: "The fundamental operations that define the practice of Bayesian inference. This is a list of the core quantities and operations that form the toolkit of a..."
+tags:
+  - notes
+  - probability
+  - machine-learning
 ---
 
 This is a list of the core quantities and operations that form the toolkit of a Bayesian practitioner. It's a "wishlist" because, while these operations are what we *want* to do, performing them directly is often computationally intractable. The story of modern Bayesian methods is the story of finding clever ways to approximate these fundamental goals.

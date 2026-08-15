@@ -7,6 +7,11 @@ subtitle: What could the profession of environmental engineering look like?
 categories: 
   - "speculation"
 description: "What could the profession of environmental engineering look like. We are getting better at predicting the weather."
+tags:
+  - essay
+  - environment
+  - technology
+  - speculation
 ---
 
 ![]({{site.baseurl}}/assets/the-future-of-environmental-sciences/{{page.coverImage}})

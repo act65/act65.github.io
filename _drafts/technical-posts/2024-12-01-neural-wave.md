@@ -2,7 +2,7 @@
 title: Neural wave functions
 subtitle: A lit review
 layout: post
-permalink: neural-wave
+permalink: /neural-wave/
 categories:
     - "technical"
 ---

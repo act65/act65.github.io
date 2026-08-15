@@ -5,6 +5,10 @@ subtitle: A colony of White Supremacists on Mars.
 categories: 
   - "fiction"
 description: "A colony of White Supremacists on Mars. A wealthy group of White Supremacists have finally gathered enough funds to colonise Mars."
+tags:
+  - fiction
+  - society
+  - biology
 ---
 
 <!-- ![]({{site.baseurl}}/assets/mars.jpeg) -->

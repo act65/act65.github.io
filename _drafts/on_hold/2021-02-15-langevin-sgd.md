@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Langevin SGD
-permalink: langevin-sgd
+permalink: /langevin-sgd/
 ---
 
 

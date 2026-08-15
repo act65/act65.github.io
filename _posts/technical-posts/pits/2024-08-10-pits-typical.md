@@ -2,12 +2,16 @@
 title: "Typicality"
 subtitle: "In high dimensions, typical is unintuitive"
 layout: post
-permalink: /pits/typical
+permalink: /pits/typical/
 categories: 
   - "tutorial"
 scholar:
   bibliography: "pits.bib"
 description: "In high dimensions, typical is unintuitive. What is likely is not (necessarily) typical."
+tags:
+  - tutorial
+  - probability
+  - information-theory
 ---
 
 > What is likely is not (necessarily) typical.

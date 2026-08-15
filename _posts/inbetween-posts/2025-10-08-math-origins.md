@@ -1,7 +1,7 @@
 ---
 title: Ikram and his tricks
 subtitle: A Tale of Clay and Calculation
-permalink: math-origins
+permalink: /math-origins/
 layout: post
 categories: 
   - fiction
@@ -9,6 +9,9 @@ revisions:
   - "2026-05-15"
   - "2026-06-11"
 description: "A Tale of Clay and Calculation. A reader's note: words and numbers underlined in dotted ochre carry a hover-tip — pause over them (or tap on mobile) to see..."
+tags:
+  - fiction
+  - mathematics
 ---
 
 <style>

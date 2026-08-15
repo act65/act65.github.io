@@ -4,8 +4,12 @@ subtitle: How much of an action set should be foreclosed before you can learn?
 layout: post
 categories:
     - economic
-permalink: minimality-from-uncertainty
+permalink: /minimality-from-uncertainty/
 description: "How much of an action set should be foreclosed before you can learn. Here is a problem that shows up whenever a rule has to be written before the thing it..."
+tags:
+  - research
+  - mechanism-design
+  - probability
 ---
 
 Here is a problem that shows up whenever a rule has to be written before the thing it governs can be observed.

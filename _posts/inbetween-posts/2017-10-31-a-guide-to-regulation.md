@@ -6,6 +6,10 @@ subtitle: If we measure things, we can regulate them, fairly.
 categories: 
   - "economic"
 description: "If we measure things, we can regulate them, fairly. In my mind, regulation is the solution to externalised costs."
+tags:
+  - essay
+  - economics
+  - mechanism-design
 ---
 
 (Disclaimer: I have no experience in regulating anything other than the amount of time I spend on youtube - and I almost never meet my targets...)

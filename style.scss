@@ -123,6 +123,50 @@ em, i {
   font-style: italic;
 }
 
+// Tables — the reset zeroes these out, so they need styling back in.
+table {
+  width: 100%;
+  max-width: 100%;
+  margin: 25px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+table th,
+table td {
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid $lightGray;
+}
+
+table th {
+  font-family: $helveticaNeue;
+  font-weight: bold;
+  color: $darkGray;
+  border-bottom: 2px solid $gray;
+}
+
+table tbody tr:last-child td {
+  border-bottom: 1px solid $gray;
+}
+
+table code {
+  font-size: 13px;
+}
+
+@include mobile {
+  table {
+    font-size: 13px;
+  }
+
+  table th,
+  table td {
+    padding: 6px 8px;
+  }
+}
+
 strong, b {
   font-weight: bold;
 }
@@ -444,4 +488,29 @@ pre {
     border: 1px solid #ccc; /* A light border */
     white-space: pre-wrap; /* Ensures long lines wrap instead of causing horizontal scroll */
     overflow-x: auto; /* Add scrollbar if content is too wide, even with pre-wrap */
+}
+// Epigraph on the front page. Matches the blockquote styling used inside posts
+// (see '.post blockquote'), which is scoped to .post and so does not reach here.
+.epigraph {
+  margin: 1.5em .8em 2.5em;
+  border-left: 2px solid $gray;
+  padding: 0.1em 1em;
+  color: $gray;
+  font-size: 18px;
+  font-style: italic;
+
+  p {
+    margin: 0;
+  }
+
+  cite {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 15px;
+    font-style: normal;
+
+    &:before {
+      content: "\2014\00a0"; // em dash
+    }
+  }
 }

@@ -3,6 +3,11 @@ title: "What Makes a Good Politician?"
 subtitle: "The one standard we can all agree on, and how our MPs score against it"
 layout: post
 description: "The one standard we can all agree on, and how our MPs score against it. Here is a New Zealand Cabinet minister, in the House, on the record, describing..."
+tags:
+  - essay
+  - politics
+  - new-zealand
+  - mechanism-design
 ---
 
 Here is a New Zealand Cabinet minister, in the House, on the record, describing another member:

@@ -8,6 +8,10 @@ revisions:
   - "2026-05-25"
   - "2026-08-07"
 description: "Why AI Robustness is a Necessary Condition for AI Alignment. How can we ever hope to build an Artificial General Intelligence (AGI) that won't outsmart..."
+tags:
+  - essay
+  - ai-safety
+  - reinforcement-learning
 ---
 
 How can we ever hope to build an Artificial General Intelligence (AGI) that won't outsmart humanity to our detriment, if we can't even build a narrow AI that a clever human can't trick?

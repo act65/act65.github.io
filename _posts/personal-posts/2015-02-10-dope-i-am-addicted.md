@@ -4,6 +4,9 @@ title: Dope, I am addicted?
 date: "2015-02-10"
 coverImage: "dope.jpg"
 description: "We are all addicted to dopamine (dopamine is the main neurotransmitter active in our brains reward system - see the 'mesolimbic dopamine system' for more..."
+tags:
+  - personal
+  - biology
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

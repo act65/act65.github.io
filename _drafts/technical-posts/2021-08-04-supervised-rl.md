@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Supervised learning is* all you need (for RL)
-permalink: supervised-rl
+permalink: /supervised-rl/
 ---
 
 # Supervised learning is* all you need (for RL)

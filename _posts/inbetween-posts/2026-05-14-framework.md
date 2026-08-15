@@ -6,6 +6,11 @@ categories:
     - economic
 permalink: /governance-mechanisms/
 description: "How to choose institutions when you don't know what people will want. Every answer anyone has given to \"what should society maximise\" was written by..."
+tags:
+  - essay
+  - mechanism-design
+  - politics
+  - philosophy
 ---
 
 Every answer anyone has given to "what should society maximise" was written by someone who then turned out to be in it. Salvation of souls, the workers' paradise, aggregate happiness, the coherent extrapolated volition of humanity — each was proposed by people whose own preferences the answer conspicuously served, and each has aged badly in a characteristic way.
@@ -22,13 +27,16 @@ Note what the target is not. It is not what people currently report wanting — 
 
 This post is the narrative front door and is deliberately informal. Each move below is worked out properly in a companion post, linked as it comes up. The historical case for why any of it matters is in [why care](/governance-mechanisms/why-care/).
 
-## The argument in five moves
+## The argument in six moves
 
 1. Betting on substantive goal-specification is a bad bet.
 2. Every proxy for "what the public wants" has failed in a characteristic way, so preferences must be read from the population — through a channel that distorts them, in a population whose preferences the institutions themselves formed. That is three problems, not one.
 3. Therefore: design a procedure, not a goal.
 4. The decision is *nested*: pick a **social utility function (SUF)** — a design-time target you can actually evaluate — then pick a **mechanism** whose stable behaviour it scores.
-5. Since we cannot know what people will want, the target must be something *every* set of preferences has use for — which in turn bounds how much a design may settle in advance.
+5. *Which* SUF depends on what people are like — and it is the **width** of that distribution, not its centre, that decides the design.
+6. Width forces **minimal settling**: the wider the range of things people might turn out to want, the less a design may fix in advance. And what survives minimal settling is a target useful across the whole range rather than at any point in it — which is **capacity**, not outcome.
+
+Moves 5 and 6 are the spine, and the direction matters: the target is not chosen and then hedged, it is what remains once you accept how little you may settle.
 
 ## 1. Betting on substantive goal-specification is a bad bet
 
@@ -96,15 +104,15 @@ The subtlety is that the SUF and the regret are *different objects*, deliberatel
 
 It also lowers the stakes of the objective-choosing argument, correctly I think. No candidate SUF is being offered as the true theory of the good. The claim is only that among functions we can evaluate at design time, this one picks the best institution actually available. That is a smaller claim, and a checkable one.
 
-## 5. Aim at what every preference has use for — and settle no more than you must
+## 5. Width forces minimal settling — and minimal settling picks the target
 
-Now the constraint that does the real work.
+Now the constraint that does the real work, and the step the rest of the series hangs from.
 
-We do not know what people want, and we know that what they want will change. So the target cannot be *any particular thing people might want* — every such choice is a bet, and §1 says the bet loses. **The only targets available are the ones we believe are useful across the whole range of things people might want.**
+We do not know what people want, and we know that what they want will change. That is a claim about the *width* of $\mathcal{H}$ — the range of things a population might turn out to want — and [a model of human nature](/governance-mechanisms/human-nature/) argues it is the width, rather than where the distribution is centred, that decides an institutional design. The tradition has spent four centuries arguing about the centre.
 
-This is not a compromise or a hedge in the pejorative sense. It is the only kind of answer the epistemic situation permits. Rawls' primary goods are one instance. Money is another, more mundane one: it is not what anybody ultimately wants, which is exactly why it is useful to everybody. The pattern generalises — under uncertainty about ends, you accumulate means.
+Take the width seriously and one thing follows immediately: **the wider the range, the less a design may settle in advance.** Every restriction written into a durable institution is a bet that the thing being foreclosed was not the thing worth having, and the wider the distribution of what people might want, the worse that bet gets. So before asking what to aim at, we have to ask how much we are entitled to fix at all.
 
-But "aim at means, not ends" is a slogan until you can say *how much* to leave open. That question has a real answer, and it is worth stating because it turns out to explain something about constitutions that is otherwise just a curiosity.
+That question has a real answer, and it is worth stating because it turns out to explain something about constitutions that is otherwise just a curiosity.
 
 Think of a society as facing a set of possible arrangements it might adopt. It cannot try them all, and before it tries any it must fix which ones remain permissible — that is what a constitution does. Leaving an arrangement available is costly, because a society that keeps its options open has to spend real time and real damage discovering which are bad. Removing one is also costly, because you might be deleting the best arrangement before anyone found out it was the best.
 
@@ -114,11 +122,19 @@ That is why constitutions are lists of **prohibitions** rather than prescription
 
 Two consequences worth carrying. **The longer a rule will bind, the less it should foreclose** — the cost of exploring an option is paid once and amortises over the life of an institution, while a wrongly excluded option costs proportionally to that life, forever. (That holds if the cost of keeping an option open is one-off; if it recurs every period, the horizon washes out.) And **restraint is not a virtue to be maximised**: the optimal amount of foreclosure is strictly positive, so a design that forbids nothing is making the same kind of error as one that forbids everything. The argument from uncertainty locates a line; it does not point in a direction.
 
+### What survives minimal settling
+
+Now the target follows, rather than being chosen. If a design may fix only what it is confident about, it cannot fix an *end* — every particular thing people might want is exactly the kind of claim §1 says we cannot be confident about. So the target has to be something that survives not knowing: **useful across the whole range of things people might want, rather than at any point in it.**
+
+This is not a compromise or a hedge in the pejorative sense. It is the only kind of answer the epistemic situation permits. Rawls' primary goods are one instance. Money is another, more mundane one: it is not what anybody ultimately wants, which is exactly why it is useful to everybody. The pattern generalises — under uncertainty about ends, you accumulate means.
+
 What such a target looks like when written down carefully is the subject of [agency](/governance-mechanisms/agency/): the capacity to achieve one's goals, whatever those goals happen to be. It is derived there from a handful of small worlds rather than proposed and defended, and the derivation constrains the functional form much more tightly than one might expect.
+
+So the chain is: the range of what people might want is wide → a design may therefore settle very little → and what is left to aim at, once you have settled that little, is capacity rather than outcome.
 
 ## 6. The argument, end to end
 
-We cannot write down what a society should aim at, because whoever writes it writes themselves into it. So the aim has to be read off the population instead. But we never see what people want — only what they report, through channels that distort, in a population whose wants the institutions already shaped. So we stop specifying the outcome and specify the procedure. A procedure still has to be chosen against something, and that something cannot be a guess about what people want, because the guess is precisely what we just gave up on. What survives are the targets that serve every want rather than any particular one: means, capacity, room to act.
+We cannot write down what a society should aim at, because whoever writes it writes themselves into it. So the aim has to be read off the population instead. But we never see what people want — only what they report, through channels that distort, in a population whose wants the institutions already shaped. So we stop specifying the outcome and specify the procedure. A procedure still has to be chosen against something, and that something cannot be a guess about what people want, because the guess is precisely what we just gave up on. How much a design may fix in advance is then set by how wide that uncertainty is, and it is not much. What survives being settled that lightly are the targets that serve every want rather than any particular one: means, capacity, room to act.
 
 So the framework is one long argument for aiming at means rather than ends — not because ends don't matter, but because we don't know them, won't be told, and will be wrong about them by the time the institution matures. Rawls reached the same place through fairness. This route reaches it through ignorance, which is a weaker premise and therefore a stronger argument: you do not have to accept anything about justice to accept that you cannot predict what your grandchildren will want.
 

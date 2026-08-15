@@ -2,10 +2,14 @@
 title: "Typical set of arbitrary distributions"
 subtitle: "Constructing the typical set for arbitrary distributions"
 layout: post
-permalink: /pits/arbitrary-typical
+permalink: /pits/arbitrary-typical/
 scholar:
   bibliography: "pits.bib"
 description: "Constructing the typical set for arbitrary distributions. In general, the typical set, \\mathcal T_{p(x)}^{\\epsilon}, is intractable to compute for..."
+tags:
+  - research
+  - probability
+  - information-theory
 ---
 
 <!-- % TODO in which cases does $x - f^{-1}(\alpha f(x))$ approximate $\nabla_x p_f(x)$?? -->

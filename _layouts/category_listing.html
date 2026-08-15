@@ -35,6 +35,12 @@ layout: default
       {% endcomment %}
       {% assign filter_category = page.filter_category %}
       {% assign filter_path_contains = page.filter_path_contains %}
+      {% comment %}
+        - page.filter_tags: a list of tags; a post is shown if it carries ANY of them.
+          This is the mechanism the current listing pages use. Unlike 'categories',
+          every post carries tags, so these pages between them reach all of them.
+      {% endcomment %}
+      {% assign filter_tags = page.filter_tags %}
 
       {% comment %} Iterate through all posts on the site. {% endcomment %}
       {% for post in site.posts %}
@@ -44,7 +50,15 @@ layout: default
           Determine if the current post should be displayed based on the filters.
           Only one type of filter (category or path) is expected to be active at a time for a given listing page.
         {% endcomment %}
-        {% if filter_category %}
+        {% if filter_tags %}
+          {% comment %} Show the post if it carries any one of the page's tags. {% endcomment %}
+          {% for tag in filter_tags %}
+            {% if post.tags contains tag %}
+              {% assign display_post = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% elsif filter_category %}
           {% comment %} Check if the post's categories array contains the specified filter_category. {% endcomment %}
           {% if post.categories contains filter_category %}
             {% assign display_post = true %}

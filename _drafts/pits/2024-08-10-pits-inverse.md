@@ -2,7 +2,7 @@
 title: "PITS for solving inverse problems"
 subtitle: "Using a flow to correct for noise"
 layout: post
-permalink: /pits/inverse
+permalink: /pits/inverse/
 scholar:
   bibliography: "pits.bib"
 ---

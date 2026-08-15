@@ -2,13 +2,17 @@
 layout: post
 title: In what sense is Bayesian updating optimal?
 subtitle: Minimizing Surprise Leads to Bayes' Rule
-permalink: bayes-optimal
+permalink: /bayes-optimal/
 categories:
     - tutorial
 revisions:
   - "2025-07-04"
   - "2025-07-24"
 description: "Minimizing Surprise Leads to Bayes' Rule. You may have heard of Bayesian updating. We start with some prior beliefs, p(\\theta), we observe some data D..."
+tags:
+  - tutorial
+  - probability
+  - information-theory
 ---
 
 <!-- When updating your beliefs in light of new data, you should choose the new belief system that satisfies the data constraints while being as "close" as possible to your original beliefs. You should not add any extra information or assumptions beyond what the data forces you to conclude. -->

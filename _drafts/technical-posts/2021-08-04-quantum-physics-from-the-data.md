@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Quantum physics from the data
-permalink: qm-from-data
+permalink: /qm-from-data/
 ---
 
 Many approaches to physics come from 'first principles'.

@@ -7,6 +7,10 @@ subtitle: Let's take turns reading books
 categories: 
   - "interact"
 description: "Let's take turns reading books. I have glimpsed a distant feeling, one that worries me. I might not be open minded as I think."
+tags:
+  - personal
+  - meta
+  - epistemology
 ---
 
 ![]({{site.baseurl}}/assets/open-minded-a-game/{{page.coverImage}})

@@ -3,6 +3,11 @@ title: Freedom-Adjusted Life Years
 subtitle: Are We Solving the Right Problems?
 layout: post
 description: "Are We Solving the Right Problems. We live in a world of finite resources. Every dollar spent on one problem is a dollar not spent on another."
+tags:
+  - proposal
+  - ethics
+  - mechanism-design
+  - politics
 ---
 
 ![]({{ site.baseurl }}/assets/freedom.png)

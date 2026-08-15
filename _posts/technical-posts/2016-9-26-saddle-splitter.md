@@ -5,6 +5,10 @@ layout: post
 categories:
     - research
 description: "Dynamically Growing Neural Networks. A common heuristic in both human and machine learning is to build incrementally from the simple to the complex."
+tags:
+  - research
+  - machine-learning
+  - mathematics
 ---
 
 (updated with the help of a LLM 21/03/26)

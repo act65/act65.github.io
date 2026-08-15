@@ -2,7 +2,7 @@
 title: Introduction to Numerical integration
 subtitle: "A review of Numerical integration"
 layout: post
-permalink: /autoint/numerical-int
+permalink: /autoint/numerical-int/
 categories:
     - "tutorial"
 scholar:

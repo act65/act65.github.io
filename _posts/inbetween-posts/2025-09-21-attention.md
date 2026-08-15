@@ -5,6 +5,10 @@ layout: post
 categories:
     - economic
 description: "Who's Cashing In. Every time you walk through a city, wait for a bus, or glance up from the petrol pump, you are participating in a global market that will..."
+tags:
+  - essay
+  - economics
+  - society
 ---
 
 Every time you walk through a city, wait for a bus, or glance up from the petrol pump, you are participating in a global market that will generate over $46 billion this year. You provide the essential raw material that fuels this industry, yet you will never see a penny of the profit.

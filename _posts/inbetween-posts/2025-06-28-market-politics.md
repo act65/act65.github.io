@@ -3,6 +3,11 @@ title: A Market for 'Truth'
 subtitle: Using Bets to Find a Shared Truth 
 layout: post
 description: "Using Bets to Find a Shared Truth. One of the most frustrating features of modern politics is that we can no longer seem to agree on basic facts."
+tags:
+  - proposal
+  - mechanism-design
+  - epistemology
+  - politics
 ---
 
 One of the most frustrating features of modern politics is that we can no longer seem to agree on basic facts. Before we can even begin to debate where we should go (the "What Should Be"), we get stuck in fruitless arguments about where we are right now (the "What Is?"). It's like two people trying to navigate a city while arguing over which of their completely different maps is correct. No progress is possible.

@@ -2,11 +2,13 @@
 layout: category_listing
 title: Research
 permalink: /research/
-filter_category: "research"
-description: "Research notes and write-ups on machine learning, probability and inference — including work you are welcome to cite."
+filter_tags: [research, notes]
+description: "Research notes and write-ups on machine learning, probability, inference, reinforcement learning and voting theory — including work you are welcome to cite."
 ---
 
-<!-- In the unlikely case you want to cite the ideas there you can use;
+New claims and the notes behind them. Some of this is wrong; I would like to know which.
+
+<!-- In the unlikely case you want to cite the ideas here you can use;
 
 ```
 @article{,
@@ -14,5 +16,6 @@ description: "Research notes and write-ups on machine learning, probability and 
   title   = {???},
   year    = {2020},
   month   = {May},
-  url     = {http://jmlr.org/papers/v21/19-346.html}
-} -->
+  url     = {}
+}
+-->

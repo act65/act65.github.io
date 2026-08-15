@@ -9,6 +9,11 @@ revisions:
   - "2026-05-25"
   - "2026-08-07"
 description: "Voting as a compression problem, and the right to be heard. We often talk about politics in terms of ideology, history, or tribalism."
+tags:
+  - research
+  - mechanism-design
+  - mathematics
+  - politics
 ---
 
 We often talk about politics in terms of ideology, history, or tribalism. But at its core, governance faces a **compression problem**: before you can aggregate preferences you have to *record* them, and the ballot is the recording device. This post is about the recording step — how much of a voter's preference a ballot can physically carry, and who gets truncated when it can't carry enough.

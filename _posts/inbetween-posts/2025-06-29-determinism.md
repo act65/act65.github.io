@@ -5,6 +5,10 @@ layout: post
 categories:
     - philosophy
 description: "The strange paradox of free-will. We feel like the authors of our lives. Each choice—from the coffee we order to the career we pursue—feels like a sentence..."
+tags:
+  - essay
+  - philosophy
+  - epistemology
 ---
 
 ![]({{site.baseurl}}/assets/conductor.png)

@@ -6,6 +6,11 @@ permalink: /alien-treaty/
 categories:
     - fiction
 description: "A Story of First Contact, Good Intentions, Discrimination and Lost Heritage. In Aotearoa New Zealand, the Treaty of Waitangi (Te Tiriti o Waitangi), signed..."
+tags:
+  - fiction
+  - politics
+  - new-zealand
+  - society
 ---
 
 ## Foreword

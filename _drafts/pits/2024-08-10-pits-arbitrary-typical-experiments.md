@@ -2,7 +2,7 @@
 title: "Typical set of arbitrary distributions"
 subtitle: "Exploring the flow-based typical set approximation"
 layout: post
-permalink: /pits/arbitrary-typical-experiments
+permalink: /pits/arbitrary-typical-experiments/
 scholar:
   bibliography: "pits.bib"
 ---

@@ -4,6 +4,9 @@ subtitle: Stories of who I want to be
 coverImage: "deepdream.png"
 layout: post
 description: "Stories of who I want to be. (I felt a bit down and lost recently; questioning whether my dreams are really achievable."
+tags:
+  - personal
+  - meta
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

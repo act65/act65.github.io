@@ -1,7 +1,11 @@
 ---
 layout: category_listing
-title: Personal posts
+title: Personal
 permalink: /personal/
-filter_path_contains: "personal-posts"
-description: "Personal writing: what I was thinking at the time, what I got wrong, and the occasional letter to my future self."
+filter_tags: [personal]
+description: "Personal writing: travel, a meditation retreat, conferences, an orphanage in Tamil Nadu, iGEM, and letters to and from my future self."
 ---
+
+Things I did and things I was thinking at the time, including the travel and conference
+writing that used to live under 'experiences'. Kept because I said it, not because I would
+still say it.

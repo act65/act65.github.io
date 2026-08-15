@@ -6,6 +6,10 @@ categories:
     - economic
 permalink: /governance-mechanisms/agency/
 description: "Deriving a social utility function from four toy worlds. Two drivers want the last parking space."
+tags:
+  - research
+  - mechanism-design
+  - philosophy
 ---
 
 Two drivers want the last parking space. Whatever rule the car park runs, one of them will not get it — and how the rule distributes that disappointment is the entire content of "the car park should serve its users well." A lottery and first-come-first-served produce identical totals and different societies.

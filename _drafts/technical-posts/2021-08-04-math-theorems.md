@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 100 (math) definitions and theorems
-permalink: math-theorems
+permalink: /math-theorems/
 ---
 
 <!-- memory craft. want to remember 100 theorems / definitions -->

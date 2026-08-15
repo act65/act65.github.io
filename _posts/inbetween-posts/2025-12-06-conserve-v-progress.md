@@ -5,6 +5,10 @@ layout: post
 categories:
     - economic
 description: "Why We Need Both Conservatism and Progressiveness. In the public sphere, \"conservatism\" and \"progressiveness\" are viewed as warring tribes—mutually..."
+tags:
+  - essay
+  - politics
+  - philosophy
 ---
 
 In the public sphere, "conservatism" and "progressiveness" are viewed as warring tribes—mutually exclusive identities defined by opposing lists of policy preferences. You are either for the status quo, or you are for change.

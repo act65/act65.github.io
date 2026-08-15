@@ -5,6 +5,10 @@ subtitle: A Bayesian Derivation of Discounting
 categories:
     - research
 description: "A Bayesian Derivation of Discounting. In reinforcement learning, the discount factor, γ, is one of the first things we learn."
+tags:
+  - research
+  - reinforcement-learning
+  - probability
 ---
 
 In reinforcement learning, the discount factor, γ, is one of the first things we learn. It's the knob we turn to tell our agent how much it should care about future rewards. We're often given two primary justifications for its existence:

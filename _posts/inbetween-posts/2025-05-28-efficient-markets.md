@@ -5,6 +5,10 @@ layout: post
 categories:
     - economic
 description: "Linearity, Non-Linearity, and a Confounding Conjunction. The Efficient Market Hypothesis (EMH) has been a cornerstone of financial theory for decades..."
+tags:
+  - essay
+  - economics
+  - probability
 ---
 
 The Efficient Market Hypothesis (EMH) has been a cornerstone of financial theory for decades, asserting that market prices fully reflect all available information. It's practically dogma in some circles. But is it "true"?

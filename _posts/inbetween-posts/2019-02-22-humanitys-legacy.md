@@ -6,6 +6,9 @@ subtitle: What will be left over after humanity? Plastic...
 categories: 
   - "fiction"
 description: "What will be left over after humanity? Plastic. Intrepid aliens discover Earth. They find an uninhabited planet, with unusual yet magnificent formations."
+tags:
+  - fiction
+  - environment
 ---
 
 ![]({{site.baseurl}}/assets/humanitys-legacy/{{page.coverImage}})

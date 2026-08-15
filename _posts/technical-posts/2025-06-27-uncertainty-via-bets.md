@@ -5,6 +5,10 @@ layout: post
 categories:
     - play
 description: "Deriving Probability from Rationality. We are often told that probabilities are one of two things: 1."
+tags:
+  - tutorial
+  - probability
+  - philosophy
 ---
 
 We are often told that probabilities are one of two things:

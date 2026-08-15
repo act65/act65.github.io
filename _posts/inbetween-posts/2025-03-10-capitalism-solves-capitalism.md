@@ -6,6 +6,10 @@ permalink: /capitalism-capitalism/
 categories: 
   - "economic"
 description: "More capitalism. The fundamental premise of capitalism is that self-interest channeled through markets creates optimal outcomes."
+tags:
+  - essay
+  - economics
+  - mechanism-design
 ---
 
 ## When markets fail, build new markets

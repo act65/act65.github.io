@@ -2,7 +2,7 @@
 layout: post
 title: Structure elucidation
 subtitle: COnstrained generation of small molecules
-permalink: molecule-generation
+permalink: /molecule-generation/
 ---
 
 Structure elucidation is the problem of determining the structure of a molecule given some analytical data.

@@ -7,6 +7,9 @@ coverImage: "nirvana-via-vipassana-1.jpg"
 layout: post
 subtitle: I tried doing vipassana meditation for 10 days.
 description: "I tried doing vipassana meditation for 10 days. As I arrived at the bus stop, I wondered whether it was possible to identify a meditator by certain..."
+tags:
+  - personal
+  - travel
 ---
 
 ![]({{site.baseurl}}/assets/meditation-retreat/{{page.coverImage}})

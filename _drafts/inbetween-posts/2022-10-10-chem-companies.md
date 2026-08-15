@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The economics of sensing companies
-permalink: chem-analytics
+permalink: /chem-analytics/
 ---
 
 Business models?

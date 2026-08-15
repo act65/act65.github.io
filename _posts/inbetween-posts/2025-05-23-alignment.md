@@ -5,6 +5,10 @@ layout: post
 categories:
     - economic
 description: "Future AI Overlords vs. Present Corporate Greed. Headlines about Artificial Intelligence often paint a picture of a distant, sci-fi threat: killer robots..."
+tags:
+  - essay
+  - ai-safety
+  - economics
 ---
 
 <!-- <p align="center" width="100%">

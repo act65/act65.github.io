@@ -18,3 +18,31 @@ ideas:
     - (when) would it make sense to start a recycling company? (let's track the price of materials, and understand how to break down / seperate efficiently)
     - follow up on approximate reasoning. take the idea further. turn into proper research!?
     - the Worgl miracle (1932): demurrage / money-that-rots as a mechanism-design story. Gesell's Freigeld, stamp-scrip, velocity exploded, unemployment fell, banned by the national bank for working. Liquidity trap + Pigouvian tax on hoarding cash.
+
+
+Topics to expose (exposition)
+
+- [ ] Schur complement and linalg
+- [ ] Homomorphic encryption
+- [ ] Harmonic functions and elliptic operators
+- [ ] Matrix multiplication computational compexity
+- [ ] Optimal transport (and Wasserstein distance)
+- [ ] Fisher information metric
+- [ ] Boosting
+- [ ] Bregman and Legendre (and convexity)
+- [ ] Rational decision making (explore vs exploit)
+
+Ideas to grow
+
+- [ ] Lower bound on the ability to a (physical) agent to adapt to its environment. Because memory (/knowledge) must be distributed, there is a fundamental limit on how quickly an intelligent agent can react to some thing unexpected.
+- [ ]
+
+New posts
+
+-  [ ] similar to the Bayesian wishlist. Let's do one for Riemann manifolds / info geometry. And another for RL+causal modelling!?
+
+Needs LLM review
+
+- [ ] discounting-via-uncertainty
+- [ ] luck-morality
+- [ ] 

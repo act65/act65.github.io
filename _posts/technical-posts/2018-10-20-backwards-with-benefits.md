@@ -5,6 +5,10 @@ subtitle: A simple exploration of what can be gained by reasoning backwards from
 categories: 
   - "research"
 description: "A simple exploration of what can be gained by reasoning backwards from your goal. What can I gain if, rather than planning into the future, I can plan..."
+tags:
+  - research
+  - reinforcement-learning
+  - computation
 ---
 
 What can I gain if, rather than planning into the future, I can plan backwards from my goals (or both)?

@@ -5,6 +5,10 @@ layout: post
 categories:
     - research
 description: "How Intrinsic Motivation Can Derail Goal-Directed Behavior. In Reinforcement Learning, we model an agent's task within a Markov Decision Process (MDP)..."
+tags:
+  - research
+  - reinforcement-learning
+  - ai-safety
 ---
 
 ### The Optimization Problem: A Composite Reward
