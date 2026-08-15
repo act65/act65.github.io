@@ -41,6 +41,19 @@ layout: default
           every post carries tags, so these pages between them reach all of them.
       {% endcomment %}
       {% assign filter_tags = page.filter_tags %}
+      {% comment %}
+        - page.filter_tags_all: a list of tags a post must carry ALL of. Use this
+          when one tag is too broad on its own — e.g. [new-zealand, politics] to
+          keep holiday photos off a page about New Zealand politics.
+      {% endcomment %}
+      {% assign filter_tags_all = page.filter_tags_all %}
+      {% comment %}
+        - page.filter_tags_none: a list of tags that exclude a post. Applied on top
+          of whichever inclusion filter above ran, so it composes with all of them —
+          e.g. filter_tags: [essay] with filter_tags_none: [sketch] gives the
+          finished essays without deleting the short ones from the site.
+      {% endcomment %}
+      {% assign filter_tags_none = page.filter_tags_none %}
 
       {% comment %} Iterate through all posts on the site. {% endcomment %}
       {% for post in site.posts %}
@@ -50,7 +63,16 @@ layout: default
           Determine if the current post should be displayed based on the filters.
           Only one type of filter (category or path) is expected to be active at a time for a given listing page.
         {% endcomment %}
-        {% if filter_tags %}
+        {% if filter_tags_all %}
+          {% comment %} Show the post only if it carries every one of the page's tags. {% endcomment %}
+          {% assign display_post = true %}
+          {% for tag in filter_tags_all %}
+            {% unless post.tags contains tag %}
+              {% assign display_post = false %}
+              {% break %}
+            {% endunless %}
+          {% endfor %}
+        {% elsif filter_tags %}
           {% comment %} Show the post if it carries any one of the page's tags. {% endcomment %}
           {% for tag in filter_tags %}
             {% if post.tags contains tag %}
@@ -68,6 +90,16 @@ layout: default
           {% if post.path contains filter_path_contains %}
             {% assign display_post = true %}
           {% endif %}
+        {% endif %}
+
+        {% comment %} Exclusions, applied last so they override every filter above. {% endcomment %}
+        {% if display_post and filter_tags_none %}
+          {% for tag in filter_tags_none %}
+            {% if post.tags contains tag %}
+              {% assign display_post = false %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
         {% endif %}
 
         {% comment %} If the post matches the filter criteria, display its details. {% endcomment %}

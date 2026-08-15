@@ -10,7 +10,23 @@ description: "Alexander Telfar's blog: machine learning and probability, mechani
 </blockquote>
 
 Welcome to my blog.
-Here are some links to help you navigate:
+Some ways in. These are hand-picked and overlapping, and they are not trying to cover
+everything:
+
+- [things I built]({{site.baseurl}}/built/) — a card game, a graph enumerator, a keyboard, a scorecard for our MPs
+- stories — [historical science fiction]({{site.baseurl}}/historical-fiction/), [the characters]({{site.baseurl}}/story-utility/), or [all of it]({{site.baseurl}}/fiction/)
+- things I keep circling back to
+    - [measuring things]({{site.baseurl}}/measurement/) — what would change if we could measure it
+    - [power and capture]({{site.baseurl}}/power/) — who writes the rules, and who didn't
+    - [abstraction and compression]({{site.baseurl}}/abstraction/) — throwing away the right detail
+    - [luck and desert]({{site.baseurl}}/luck/) — whether anyone deserves what they have
+    - [how we know things]({{site.baseurl}}/knowing/)
+    - [designing institutions]({{site.baseurl}}/governance-mechanisms/)
+    - [AI safety]({{site.baseurl}}/ai-safety/)
+    - [mathematical curiosities]({{site.baseurl}}/curiosities/)
+- [New Zealand politics]({{site.baseurl}}/new-zealand/), and [the personal ones]({{site.baseurl}}/personal/)
+
+Or, if you would rather have all of it, sorted:
 
 - What kind of thing it is
     - [opinions and thoughts]({{site.baseurl}}/opinions/)

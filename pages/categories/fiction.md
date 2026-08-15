@@ -2,7 +2,7 @@
 layout: category_listing
 title: Fiction
 permalink: /fiction/
-filter_tags: [fiction]
+filter_tags: [fiction, story-prompt]
 description: "Short science fiction and story prompts: first contact, cargo cults, advertising dystopias, colonies that deserve to fail, and a handful of characters."
 ---
 

@@ -2,7 +2,7 @@
 layout: category_listing
 title: Personal
 permalink: /personal/
-filter_tags: [personal]
+filter_tags: [personal, lyrics]
 description: "Personal writing: travel, a meditation retreat, conferences, an orphanage in Tamil Nadu, iGEM, and letters to and from my future self."
 ---
 
