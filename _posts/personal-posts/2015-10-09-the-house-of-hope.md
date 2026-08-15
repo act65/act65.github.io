@@ -9,6 +9,8 @@ subtitle: Volunteering at an orphanage.
 description: "Volunteering at an orphanage. I recently spent 3 months teaching and helping at the House of Hope in Senjeri, Perambalur, Tamil Nadu."
 tags:
   - personal
+  - inequality
+  - luck
   - travel
   - society
 ---

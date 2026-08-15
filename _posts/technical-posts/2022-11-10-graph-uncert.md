@@ -7,6 +7,8 @@ layout: post
 description: "From uncertainty over constraints to uncertainty over graphs. Imagine solving a Sudoku puzzle where some of the given numbers are smudged and illegible."
 tags:
   - research
+  - formalised
+  - uncertainty
   - probability
   - mathematics
 ---

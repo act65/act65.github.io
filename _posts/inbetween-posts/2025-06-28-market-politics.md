@@ -5,6 +5,8 @@ layout: post
 description: "Using Bets to Find a Shared Truth. One of the most frustrating features of modern politics is that we can no longer seem to agree on basic facts."
 tags:
   - proposal
+  - aggregation
+  - incentives
   - mechanism-design
   - epistemology
   - politics

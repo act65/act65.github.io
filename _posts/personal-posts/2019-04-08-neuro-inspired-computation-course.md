@@ -10,6 +10,7 @@ revisions:
 description: "I visited IRCN. I was lucky enough to be invited to IRCN's neuro-inspired computation course in Tokyo."
 tags:
   - personal
+  - travel
   - biology
   - computation
 ---

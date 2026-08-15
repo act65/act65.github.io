@@ -7,6 +7,7 @@ layout: post
 description: "I am a person. Lately I have been struggling with a kind of contradiction and it has been effecting my mental health."
 tags:
   - personal
+  - sketch
   - ethics
   - society
 ---

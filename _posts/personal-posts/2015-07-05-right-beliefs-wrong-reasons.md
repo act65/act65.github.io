@@ -8,6 +8,8 @@ subtitle: It occured to me that my belief in evolution was just as illogical as 
 description: "It occured to me that my belief in evolution was just as illogical as others belief in god. It occurred to me that the reasons many people believe in..."
 tags:
   - personal
+  - sketch
+  - introspection
   - epistemology
 ---
 

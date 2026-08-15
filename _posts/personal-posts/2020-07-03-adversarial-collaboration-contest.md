@@ -8,6 +8,8 @@ categories:
 description: "Let's have a tolerant debate. Scott Alexander holds a yearly Adversarial collaboration contest."
 tags:
   - personal
+  - sketch
+  - introspection
   - meta
   - epistemology
 ---

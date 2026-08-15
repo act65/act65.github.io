@@ -8,6 +8,8 @@ subtitle: Don't be lazy...
 description: "Don't be lazy. We let boredom, ignorance and distraction shatter our dreams and our potential future (scientist, smartist, a better Alex)."
 tags:
   - personal
+  - sketch
+  - introspection
   - meta
 ---
 

@@ -9,9 +9,12 @@ revisions:
 description: "A conservation law for algorithms. What if there was a measure of complexity that was conserved over optimal solutions to the same problem?"
 tags:
   - research
+  - sketch
+  - speculation
+  - open-question
+  - abstraction
   - computation
   - information-theory
-  - speculation
 ---
 
 What if there was a measure of complexity that was conserved over optimal solutions to the same problem? I am imagining that there is a fundamental complexity to a problem (such as sorting), and the set of optimal solutions lie in a set that conserves the underlying complexity.

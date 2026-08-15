@@ -9,6 +9,7 @@ categories:
 description: "A fun intro to my masters topic; abstraction for efficient reinforcment learning. (This is my current focus - kinda - for my masters."
 tags:
   - tutorial
+  - abstraction
   - reinforcement-learning
 ---
 

@@ -8,6 +8,7 @@ categories:
 description: "Principles of neural design, automated science, general reinforcement learning. Phew, I just submitted my first PhD application, with many more to go..."
 tags:
   - personal
+  - introspection
   - machine-learning
   - meta
 ---

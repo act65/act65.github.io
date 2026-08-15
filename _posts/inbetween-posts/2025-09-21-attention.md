@@ -7,6 +7,9 @@ categories:
 description: "Who's Cashing In. Every time you walk through a city, wait for a bus, or glance up from the petrol pump, you are participating in a global market that will..."
 tags:
   - essay
+  - data
+  - measurement
+  - power
   - economics
   - society
 ---

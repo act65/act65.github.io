@@ -10,6 +10,7 @@ revisions:
 description: "A connection between causal inference and gradients. I recently read Judea Pearl's The Book of Why, and it clarified many intuitions about causal..."
 tags:
   - tutorial
+  - formalised
   - probability
   - mathematics
 ---

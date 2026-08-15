@@ -4,6 +4,10 @@ layout: post
 description: "John is a wealthy, white male. In a world where wealth, race, and gender often dictate privilege and power, this trifecta positions John as a member of a..."
 tags:
   - essay
+  - sketch
+  - luck
+  - inequality
+  - rights
   - society
   - ethics
 ---

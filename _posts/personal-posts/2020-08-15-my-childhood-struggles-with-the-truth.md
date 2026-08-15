@@ -8,6 +8,7 @@ subtitle: I struggled with 'reality'...
 description: "I struggled with 'reality'. I am realising that I may not have the background of a 'typical' scientist. (Not that I think of myself as an outsider)"
 tags:
   - personal
+  - introspection
   - epistemology
 ---
 

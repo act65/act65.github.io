@@ -8,8 +8,10 @@ scholar:
 description: "In high dimensions, typical is unintuitive. What is likely is not necessarily typical, and the mode of a distribution can be a thing you never see."
 tags:
   - tutorial
+  - formalised
   - probability
   - information-theory
+  - curiosity
 ---
 
 > What is likely is not (necessarily) typical.

@@ -7,6 +7,9 @@ categories:
 description: "Future AI Overlords vs. Present Corporate Greed. Headlines about Artificial Intelligence often paint a picture of a distant, sci-fi threat: killer robots..."
 tags:
   - essay
+  - alignment
+  - incentives
+  - power
   - ai-safety
   - economics
 ---

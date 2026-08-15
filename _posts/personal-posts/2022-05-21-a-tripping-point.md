@@ -9,6 +9,10 @@ categories:
 description: "I tripped over and have something to say about it. What is the value of good infrastructure? Or, conversly, how much does poor infrastructure cost?"
 tags:
   - essay
+  - sketch
+  - data
+  - formalised
+  - measurement
   - economics
   - society
 ---

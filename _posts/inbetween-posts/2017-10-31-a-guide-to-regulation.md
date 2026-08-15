@@ -8,6 +8,9 @@ categories:
 description: "If we measure things, we can regulate them, fairly. In my mind, regulation is the solution to externalised costs."
 tags:
   - essay
+  - sketch
+  - measurement
+  - incentives
   - economics
   - mechanism-design
 ---

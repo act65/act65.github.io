@@ -5,7 +5,11 @@ subtitle: Dreaming about projects
 description: "Dreaming about projects. I am half way through building an chemical process and assembly line to etch and fabricate SMARTYPANTS processors (my own design..."
 tags:
   - personal
+  - sketch
+  - speculation
+  - introspection
   - meta
+  - technology
 ---
 
 ![]({{site.baseurl}}/assets/future-smarter-telf/{{page.coverImage}})

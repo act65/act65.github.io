@@ -8,6 +8,10 @@ categories:
 description: "An example of how to regulate markets to remove inefficiencies. I stumbled across an interesting perspective on the regulation of markets in a report by..."
 tags:
   - essay
+  - sketch
+  - data
+  - incentives
+  - measurement
   - economics
   - mechanism-design
 ---

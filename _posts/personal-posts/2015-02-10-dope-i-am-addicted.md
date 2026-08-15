@@ -6,7 +6,9 @@ coverImage: "dope.jpg"
 description: "We are all addicted to dopamine (dopamine is the main neurotransmitter active in our brains reward system - see the 'mesolimbic dopamine system' for more..."
 tags:
   - personal
+  - sketch
   - biology
+  - ethics
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

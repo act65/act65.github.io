@@ -10,6 +10,9 @@ revisions:
 description: "Why AI Robustness is a Necessary Condition for AI Alignment. How can we ever hope to build an Artificial General Intelligence (AGI) that won't outsmart..."
 tags:
   - essay
+  - formalised
+  - alignment
+  - uncertainty
   - ai-safety
   - reinforcement-learning
 ---

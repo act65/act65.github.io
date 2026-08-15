@@ -8,8 +8,8 @@ categories:
 description: "Some ideas from my masters. To stay sane I needed to write down some of the actionable ideas that occur to me. Otherwise I have the tendency to hoard them."
 tags:
   - notes
-  - machine-learning
   - open-question
+  - machine-learning
 ---
 
 To stay sane I needed to write down some of the _actionable_ ideas that occur to me.

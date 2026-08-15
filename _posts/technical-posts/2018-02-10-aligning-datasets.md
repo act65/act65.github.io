@@ -7,6 +7,8 @@ categories:
 description: "Dataset alignment represented as tensor networks. I want to know how a someone's education level correlates with their income."
 tags:
   - research
+  - formalised
+  - abstraction
   - probability
   - mathematics
 ---

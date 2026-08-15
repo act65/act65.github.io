@@ -7,6 +7,9 @@ categories:
 description: "How Intrinsic Motivation Can Derail Goal-Directed Behavior. In Reinforcement Learning, we model an agent's task within a Markov Decision Process (MDP)..."
 tags:
   - research
+  - formalised
+  - alignment
+  - incentives
   - reinforcement-learning
   - ai-safety
 ---

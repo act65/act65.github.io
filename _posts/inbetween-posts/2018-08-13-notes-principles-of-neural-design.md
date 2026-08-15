@@ -7,6 +7,7 @@ subtitle: Note from reading the book.
 description: "Note from reading the book. The books starts with some great questions:"
 tags:
   - notes
+  - abstraction
   - biology
   - computation
 ---

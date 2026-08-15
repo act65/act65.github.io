@@ -7,6 +7,9 @@ categories:
 description: "A simple exploration of what can be gained by reasoning backwards from your goal. What can I gain if, rather than planning into the future, I can plan..."
 tags:
   - research
+  - sketch
+  - open-question
+  - abstraction
   - reinforcement-learning
   - computation
 ---

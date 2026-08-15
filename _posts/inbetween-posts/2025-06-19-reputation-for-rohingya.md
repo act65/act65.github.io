@@ -5,6 +5,9 @@ layout: post
 description: "Why financial tools for the unconnected are a genuinely hard problem. In southeastern Bangladesh lies Kutupalong, the largest refugee camp in the world."
 tags:
   - essay
+  - trust
+  - coordination
+  - inequality
   - economics
   - technology
   - society
@@ -77,7 +80,7 @@ But a cost to *what*, exactly? Money can be cashed out and walked away from. Wha
 
 That something is **reputation**. A system that records your past actions to determine your future privileges is, almost by definition, a reputation system — and it turns out to be the natural answer to the constraints the CAP theorem hands us. It doesn't "solve" CAP; nothing does. Instead it makes living in the AP world safe, by ensuring that the value of a good standing always exceeds the one-time payoff of betraying it.
 
-How you actually build such a thing — how reputation is earned, how it's slashed, how you give it tangible value so the threat of losing it bites, and how all of this composes into loans, insurance, and offline trade — is the subject of a separate piece: [the Rain protocol]({% post_url technical-posts/2025-06-26-rain %}).
+How you actually build such a thing — how reputation is earned, how it's slashed, how you give it tangible value so the threat of losing it bites, and how all of this composes into loans, insurance, and offline trade — is the subject of a separate piece: [the Rain protocol]({{site.baseurl}}/rain/).
 
 The Rohingya camps are an extreme case, but the underlying problem is general. Wherever connectivity is unreliable, contested, or simply absent, the same trade-off appears. Getting it right matters far beyond one camp in Bangladesh.
 

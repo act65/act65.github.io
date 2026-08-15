@@ -11,6 +11,9 @@ revisions:
 description: "Why does poker have many rounds. Imagine that the World series of Poker (with potential winnings of ~$8 million) only had 1 round."
 tags:
   - essay
+  - formalised
+  - luck
+  - measurement
   - probability
   - ethics
 ---

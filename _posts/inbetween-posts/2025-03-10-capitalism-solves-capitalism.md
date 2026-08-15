@@ -8,6 +8,8 @@ categories:
 description: "More capitalism. The fundamental premise of capitalism is that self-interest channeled through markets creates optimal outcomes."
 tags:
   - essay
+  - incentives
+  - power
   - economics
   - mechanism-design
 ---

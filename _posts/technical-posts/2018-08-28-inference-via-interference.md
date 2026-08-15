@@ -8,9 +8,11 @@ categories:
 description: "Learning by controlling the propagation speed of signals. Myelin makes up 50% of the brains mass. This is a large investment for us to make!"
 tags:
   - proposal
+  - sketch
+  - speculation
+  - open-question
   - biology
   - computation
-  - speculation
 ---
 
 ![]({{site.baseurl}}/assets/inference-via-interference/{{page.coverImage}})

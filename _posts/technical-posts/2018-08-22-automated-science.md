@@ -13,6 +13,7 @@ revisions:
 description: "Model-based reinforcement learning, symbolic AI, and the limits of efficient learning. (Wrote this for an application, which didn't end up working out."
 tags:
   - proposal
+  - abstraction
   - machine-learning
   - reinforcement-learning
   - epistemology

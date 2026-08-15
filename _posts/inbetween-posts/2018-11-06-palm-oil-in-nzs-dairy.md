@@ -9,6 +9,8 @@ categories:
 description: "tldr; cows are fed palm kernel. It turns out that palm trees are an important part of our (NZ's) diary industry."
 tags:
   - essay
+  - sketch
+  - data
   - environment
   - economics
   - new-zealand

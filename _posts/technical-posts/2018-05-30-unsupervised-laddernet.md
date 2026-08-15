@@ -9,6 +9,9 @@ revisions:
 description: "How can we use ladder nets in the unsupervised setting. Ladder nets (aka Unets) are currently achieving state-of-the art results on image to image..."
 tags:
   - proposal
+  - sketch
+  - open-question
+  - abstraction
   - machine-learning
 ---
 

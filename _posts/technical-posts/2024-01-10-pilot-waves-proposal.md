@@ -11,8 +11,9 @@ revisions:
 description: "The classical alternative to quantum mechanics. The Big Idea: Can the Mysteries of Quantum Mechanics Ride on a Classical Wave?"
 tags:
   - proposal
-  - physics
   - speculation
+  - open-question
+  - physics
 ---
 
 **The Big Idea: Can the Mysteries of Quantum Mechanics Ride on a Classical Wave?**

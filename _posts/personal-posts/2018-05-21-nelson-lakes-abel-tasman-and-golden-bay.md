@@ -9,6 +9,7 @@ revisions:
 description: "Photos from a holiday. I spent January 2018 travelling around the top of New Zealand's South Island. It was nice. Here are some photos..."
 tags:
   - personal
+  - sketch
   - travel
   - new-zealand
 ---

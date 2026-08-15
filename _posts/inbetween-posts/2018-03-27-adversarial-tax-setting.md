@@ -12,6 +12,8 @@ revisions:
 description: "A new perspective on tax law. Have you ever wondered how Artificial Intelligence (AI) could be used to improve tax laws?"
 tags:
   - proposal
+  - incentives
+  - power
   - economics
   - mechanism-design
   - machine-learning

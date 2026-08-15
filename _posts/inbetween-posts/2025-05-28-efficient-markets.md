@@ -7,6 +7,9 @@ categories:
 description: "Linearity, Non-Linearity, and a Confounding Conjunction. The Efficient Market Hypothesis (EMH) has been a cornerstone of financial theory for decades..."
 tags:
   - essay
+  - formalised
+  - aggregation
+  - uncertainty
   - economics
   - probability
 ---
