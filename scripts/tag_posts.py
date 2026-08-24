@@ -98,6 +98,7 @@ TAGS = {
  "alignment": "essay alignment incentives power ai-safety economics",
  "agi-game": "essay formalised coordination alignment incentives ai-safety economics politics",
  "align-dao": "proposal formalised aggregation alignment incentives mechanism-design ai-safety economics",
+ "measure-it": "essay historical open-question measurement epistemology meta",
  "measuring-people": "essay sketch speculation measurement society technology",
  "policy-search-engine": "proposal sketch speculation measurement politics technology",
  "the-future-of-environmental-sciences": "essay sketch speculation measurement environment technology",
