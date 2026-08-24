@@ -5,8 +5,6 @@ subtitle: The orderly enumeration of graphs
 permalink: /graph-enumeration/
 categories: 
   - "tutorial"
-revisions:
-  - "2024-10-05"
 description: "The orderly enumeration of graphs. Our goal is to generate all graphs with n nodes. Let's start with a simple example, generating all graphs with 4 nodes."
 tags:
   - tutorial
@@ -16,6 +14,8 @@ tags:
   - computation
   - built
   - curiosity
+revisions:
+  - "2024-10-05"
 ---
 
 Our goal is to generate all graphs with $n$ nodes.

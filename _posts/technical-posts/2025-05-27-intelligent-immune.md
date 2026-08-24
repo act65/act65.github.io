@@ -4,8 +4,6 @@ layout: post
 subtitle: What if intelligence evolved within the immune system?
 categories:
     - play
-revisions:
-  - "2026-05-15"
 description: "What if intelligence evolved within the immune system. Like the nervous system, the immune system runs its own transport infrastructure through the body —..."
 tags:
   - essay
@@ -13,6 +11,8 @@ tags:
   - abstraction
   - biology
   - computation
+revisions:
+  - "2026-05-15"
 ---
 
 ## I. The immune system is already an information system

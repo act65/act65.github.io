@@ -5,16 +5,16 @@ layout: post
 subtitle: How does deductive truth (ie math) relate to inductive truth (ie science)?
 categories:
     - "philosophy"
-revisions:
-  - "2023-01-12"
-  - "2024-08-31"
-  - "2024-10-05"
-  - "2025-11-16"
 description: "How does deductive truth (ie math) relate to inductive truth (ie science). Mathematics can derive the truth, trustworthy proof."
 tags:
   - essay
   - epistemology
   - mathematics
+revisions:
+  - "2023-01-12"
+  - "2024-08-31"
+  - "2024-10-05"
+  - "2025-11-16"
 ---
 
 > Mathematics can derive the truth,\

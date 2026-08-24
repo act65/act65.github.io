@@ -6,8 +6,6 @@ layout: post
 permalink: /karma-and-merit/
 categories: 
   - "philosophy"
-revisions:
-  - "2024-10-05"
 description: "They deserve it. I think that both Karma and a Meritism common view both have a sort of moral elitism, where the unfortunate deserve the little they have..."
 tags:
   - essay
@@ -16,6 +14,8 @@ tags:
   - inequality
   - ethics
   - society
+revisions:
+  - "2024-10-05"
 ---
 
 ![]({{site.baseurl}}/images/{{page.coverImage}})

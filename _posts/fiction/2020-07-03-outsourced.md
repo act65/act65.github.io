@@ -5,8 +5,6 @@ layout: post
 subtitle: The hidden dangers of delegating life's 'trivial' tasks to technology
 categories: 
   - "fiction"
-revisions:
-  - "2024-01-17"
 description: "The hidden dangers of delegating life's 'trivial' tasks to technology. Tried of your unpredictable metabolism with a mind of its own?"
 tags:
   - fiction
@@ -14,6 +12,8 @@ tags:
   - incentives
   - technology
   - society
+revisions:
+  - "2024-01-17"
 ---
 
 ![]({{site.baseurl}}/assets/outsourced/{{page.coverImage}})

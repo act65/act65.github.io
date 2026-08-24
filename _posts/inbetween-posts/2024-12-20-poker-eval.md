@@ -5,9 +5,6 @@ subtitle: Why does poker have many rounds?
 permalink: /poker-eval/
 categories: 
   - "philosophy"
-revisions:
-  - "2025-02-02"
-  - "2025-03-11"
 description: "Why does poker have many rounds. Imagine that the World series of Poker (with potential winnings of ~$8 million) only had 1 round."
 tags:
   - essay
@@ -16,6 +13,9 @@ tags:
   - measurement
   - probability
   - ethics
+revisions:
+  - "2025-02-02"
+  - "2025-03-11"
 ---
 
 Imagine that the [World series of Poker](https://www.wsop.com/) (with potential winnings of ~\\$8 million) only had 1 round.

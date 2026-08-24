@@ -14,6 +14,8 @@ tags:
   - probability
   - computation
   - epistemology
+revisions:
+  - "2026-08-15"
 ---
 
 Reasoning is expensive. A system with finite memory, finite time, and finite data cannot compute the right answer to every question, so it computes something cheaper instead. Every cheap method is exact on some inputs and wrong on others, and *which* inputs it fails on is not arbitrary — it is determined by the method.
