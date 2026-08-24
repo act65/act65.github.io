@@ -14,7 +14,7 @@ Some ways in. These are hand-picked and overlapping, and they are not trying to 
 everything:
 
 - [things I built]({{site.baseurl}}/built/) — a card game, a graph enumerator, a keyboard, a scorecard for our MPs
-- stories — [historical science fiction]({{site.baseurl}}/historical-fiction/), [the characters]({{site.baseurl}}/story-utility/), or [all of it]({{site.baseurl}}/fiction/)
+- stories — [historical (science) fiction]({{site.baseurl}}/historical-fiction/), [the characters]({{site.baseurl}}/story-utility/), or [all of it]({{site.baseurl}}/fiction/)
 - things I keep circling back to
     - [measuring things]({{site.baseurl}}/measurement/) — what would change if we could measure it
     - [power and capture]({{site.baseurl}}/power/) — who writes the rules, and who didn't
@@ -24,7 +24,6 @@ everything:
     - [designing institutions]({{site.baseurl}}/governance-mechanisms/)
     - [AI safety]({{site.baseurl}}/ai-safety/)
     - [mathematical curiosities]({{site.baseurl}}/curiosities/)
-- [New Zealand politics]({{site.baseurl}}/new-zealand/), and [the personal ones]({{site.baseurl}}/personal/)
 
 Or, if you would rather have all of it, sorted:
 
@@ -46,11 +45,6 @@ Or, if you would rather have all of it, sorted:
     - [science and technology]({{site.baseurl}}/science/)
 
 Or [everything, newest first]({{site.baseurl}}/posts/).
-
-<!-- - Other
-    - [games]()
-    - [sites]() 
--->
 
 
 The more [support](https://ko-fi.com/act65) I have, the more time I can spend;

@@ -6,4 +6,4 @@ filter_tags: [built]
 description: "Posts where something got made: a card game, a graph enumerator, an isomorphic keyboard, a reputation protocol, a scorecard for New Zealand MPs."
 ---
 
-These ones have an artefact attached — a game, a tool, a dataset — rather than just words.
+These ones have an artefact attached — a game, a tool, a dataset, a site — rather than just words.
