@@ -42,3 +42,9 @@ layout: default
   </div>
 
 </article>
+
+{% comment %}
+  Comment thread for this post. Rendered outside <article> because the
+  discussion is about the post, not part of it.
+{% endcomment %}
+{% include comments.html %}

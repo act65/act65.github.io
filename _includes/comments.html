@@ -1,0 +1,37 @@
+{% comment %}
+  Comments, powered by giscus (https://giscus.app) — a widget that stores every
+  thread as a GitHub Discussion on this repo. No server, no database.
+
+  Configured under `giscus:` in _config.yml. The block is skipped entirely
+  unless both `repo_id` and `category_id` are set, so an unconfigured site
+  simply renders no comments rather than a broken widget.
+
+  Opt a single post out with `comments: false` in its frontmatter.
+{% endcomment %}
+{% if site.giscus.repo_id and site.giscus.category_id %}
+  {% unless page.comments == false %}
+<section class="post-comments">
+  <h2>Comments</h2>
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ site.giscus.repo }}"
+          data-repo-id="{{ site.giscus.repo_id }}"
+          data-category="{{ site.giscus.category }}"
+          data-category-id="{{ site.giscus.category_id }}"
+          data-mapping="{{ site.giscus.mapping | default: 'pathname' }}"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="{{ site.giscus.input_position | default: 'bottom' }}"
+          data-theme="{{ site.giscus.theme | default: 'light' }}"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>
+    <p>Comments need JavaScript. You can also read and reply to them
+    <a href="https://github.com/{{ site.giscus.repo }}/discussions">on GitHub</a>.</p>
+  </noscript>
+</section>
+  {% endunless %}
+{% endif %}

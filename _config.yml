@@ -19,7 +19,18 @@ footer-links:
   googleplus: # anything in your profile username that comes after plus.google.com/
 
 
-disqus: act65com
+# Comments, via giscus (https://giscus.app): each post's thread is a GitHub
+# Discussion in this repo's "Comments" category, created on first comment.
+# The ids come from giscus.app; blanking either one disables comments
+# site-wide. Opt a single post out with `comments: false` in its frontmatter.
+giscus:
+  repo: act65/act65.github.io
+  repo_id: "MDEwOlJlcG9zaXRvcnk1NTc2NTIzNQ=="
+  category: Comments
+  category_id: "DIC_kwDOA1Lo884DEgUr"
+  mapping: pathname
+  input_position: bottom
+  theme: light
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: G-2PW3CJ9BE1

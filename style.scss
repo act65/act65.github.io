@@ -514,3 +514,18 @@ pre {
     }
   }
 }
+
+// Comment thread below each post (see _includes/comments.html). The giscus
+// iframe styles itself; this only handles the separation from the post body.
+.post-comments {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid $lightGray;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 20px;
+    color: $gray;
+  }
+}
