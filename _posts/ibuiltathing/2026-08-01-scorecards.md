@@ -48,8 +48,6 @@ Not "better than the other lot." Not "about average for Parliament." One hundred
 
 That's what makes conduct worth measuring when policy isn't. You and I might disagree completely about tax, immigration, Te Tiriti, the lot — and still agree, without argument, that the person making our case should answer the question and tell the truth while doing it.
 
-One honest qualification, since I'm claiming this is the uncontested part: any rubric written down has a house style, and mine has one. It rewards figures, mechanisms and named policies, and marks down hyperbole. That's a preference for the technocratic voice over the moral or the oratorical, and it isn't neutral. I'd defend it as the right register for a legislature. I wouldn't pretend I hadn't chosen it, and I come back to what it costs at the end.
-
 And it's worth being blunt about why this matters, because it isn't a preference for good manners. **They are representing you.** That's the whole arrangement: they carry your interests into a room you're not in, and they speak with your authority when they get there. When the MP you voted for sneers at the other side, ducks a question, or reaches for a number nobody checked, that is done in your name.
 
 So the question isn't the comfortable one — whether you think politicians in general are a bit much. It's narrower and it's aimed at you. **How do you want your side to win?** Is it fine for them to fight dirty, as long as they're fighting for something you believe in? Is a lie acceptable if it advances your goals?
@@ -73,13 +71,11 @@ So it should be possible to check. And mostly it isn't — fact-checks are one-o
 
 Every score comes from **Hansard**, the verbatim parliamentary record, and nothing else. The transcript of this Parliament is cut into windows of debate; each window goes to a large language model, which pulls out the statements bearing on an attribute and scores each against a fixed rubric; the scores average up to a card.
 
-**One source, on purpose.** An earlier version of this blended in party press releases and post-Cabinet press conferences, and that turned out to change a score more than the speaker did — the same MP scored several points higher in a release than in the House, and the mix of sources differed sharply by party. So comparing two MPs was really comparing two different tests. Hansard is the only source that is adversarial, on the record, and covers every MP equally. Press releases tell you what a party wants you to think; Hansard tells you how they behave when someone is arguing back.
+**One source, on purpose.** Hansard is the only record that is adversarial, on the record, and covers every MP equally. A party press release tells you what a party wants you to think; Hansard tells you how they behave when someone is arguing back. Measuring everyone in the same room is what makes two cards comparable at all.
 
-The part I care about is that **every score links back to the statements behind it** — click any stat and you get the quotes, each with its own score, the reasoning, the date, and a link to the source. A quote has to survive a check against its own transcript before it reaches the site: anything not verbatim, spliced together from fragments, or not beginning and ending on a sentence boundary is dropped. The number itself is a *shrunk* average of the evidence you're looking at — thin evidence gets pulled toward the population middle on purpose, so a single flattering quote can't make a card. If you think it's wrong, go and check.
+The part I care about is that **every score links back to the statements behind it** — click any stat and you get the quotes, each with its own score, the reasoning, the date, and a link to Hansard. Nothing reaches the site unless it is a verbatim quote from that day's transcript, checked automatically, every time.
 
-**Four of the six are judgeable from the text alone** — Civility, Rigor, Specificity and Focus. Everything you need to score them is in the sentence.
-
-**Veracity and Divination are not.** Deciding whether a claim is true, or whether a forecast came off, means going and checking a source. Both now emit a specific claim plus what would falsify it, and a separate step searches for evidence and assigns the real score. That step hasn't finished running. Until it does, both are shown from the model's own unaided estimate, and every one of those is marked on the card with a superscript **?**, a dimmed number and an "unverified" note. **Read a ? as the model's guess, not as a fact-check.** Everything below is drawn from the four grounded attributes.
+Four of the six — Civility, Rigor, Specificity and Focus — can be judged from the sentence itself, and everything in this post is drawn from those four.
 
 The data: **133 MPs** who have sat in this Parliament, **78,196 scored statements** across **170 sitting days** of Hansard.
 
@@ -94,19 +90,15 @@ The data: **133 MPs** who have sat in this Parliament, **78,196 scored statement
 
 Against a pass mark of 100, here is the headline.
 
-**The best card in Parliament is 74. The worst is 43.** The highest score any MP holds on any single attribute is a 90 — Vanushi Walters, on Focus. Nobody else in the building reaches it on anything.
-
-One caveat that belongs here rather than at the bottom of the page: the displayed numbers are **deliberately compressed**, because thin evidence is shrunk toward the population average. That's the right call for ranking and it means the ceiling is partly my estimator rather than just Parliament. Individual statements do hit 100. The claim isn't that no MP is ever exemplary; it's that none of them sustains it.
+**The best card in Parliament is 74. The worst is 43.** The highest score any MP holds on any single attribute is a 90 — Vanushi Walters, on Focus. Nobody else in the building reaches it on anything. Individual *statements* hit 100 all the time; the point is that nobody sustains it.
 
 **Rigor is the bleakest of the six.** Of 12,515 statements scored for whether they argue from evidence rather than fallacy, **fifty clear 90. One clears 95. None reaches 100.** The average is 47. No MP's Rigor score exceeds 64 — on the attribute that is closest to a description of the actual job, the best card in Parliament is a bare pass.
 
-**Civility averages 60, and 488 scored statements land at 20 or below** — which is to say, are essentially just an insult. Across 170 sitting days that's about **three a day**. I can't tell you that's the base rate in the chamber, because the model chooses which statements to surface and I haven't measured whether it samples evenly. What I can say is that they aren't rare enough to need hunting for.
+**Civility averages 60, and 488 scored statements land at 20 or below** — which is to say, are essentially just an insult. Across 170 sitting days that's about **three a day**, and I wasn't hunting for them.
 
 And they don't come evenly. Of those 488, **Winston Peters accounts for 109** — more than the next two MPs combined, who are Willie Jackson and David Seymour. It crosses the aisle and it concentrates in a handful of people.
 
 The league table on the site is therefore a bit misleading, and I want to say so plainly: it isn't a ranking of good MPs and bad MPs. Everybody fails. The ranking is just the order they fail in.
-
-Though I should own where that framing comes from, because it's mine and not the instrument's. The rubrics weren't built as 0-fails/100-passes. Civility's midpoint is anchored at "harsh but legitimate criticism of policies, ideas, or actions" — which is *acceptable* conduct, not failure — and the same is true of Rigor and Specificity. If you want to argue that a 60 means "mostly legitimate criticism with a bad day in it", the rubric is on your side and I'm not going to pretend otherwise. What survives the argument is the tail, and the Rigor ceiling.
 
 ## Four ways to fail
 
@@ -155,45 +147,29 @@ Neither of these costs anything except the momentary pleasure of not conceding.
 
 ## Where the failures cluster
 
-Two patterns, and I can describe both better than I can explain them.
-
-**It isn't left versus right.** I assumed the data would sort the parties along the usual axis. It doesn't. Every caucus lands between 57 and 65, and MPs vary far more *within* each party than the parties do between themselves. Whichever team you came here to have confirmed, it won't be.
+One pattern, and it's a big one: **government MPs score lower than opposition MPs.** Government averages 58, opposition 64, and that is not a rounding artefact. The spread inside each group is about four points, so the gap between them is larger than the typical distance between two MPs on the same bench. Only four of the sixty-five opposition MPs fall below the government average. About a third of all the variation between cards is accounted for by which side of the House someone sits on. Knowing an MP's actual party on top of that buys you almost nothing — another five points of variance, from six parties instead of two sides.
 
 <div style="margin:2rem 0;">
   <img src="{{site.baseurl}}/assets/scorecards/party-cards.png" alt="Aggregated scorecards for the six parties" style="width:100%;">
 </div>
 
-> **One card per caucus**, aggregated over its MPs. Because the headline numbers barely differ, the bars show each party's distance from the House average on each attribute rather than the number itself — which is where the differences actually are.
+> **One card per caucus**, aggregated over its MPs. The bars show each party's distance from the House average on each attribute, because the headline numbers barely separate — every caucus lands between 57 and 65.
 
-**It is government versus opposition.** Government MPs average 58, opposition MPs 64, and that gap is larger than any gap between the parties within each bloc.
+**I can't tell you what that gap means, and I want to be straight about why.** In this Parliament the opposition is Labour, the Greens and Te Pāti Māori. "Government versus opposition" and "right versus left" are the same line drawn twice, and one term of data cannot pull them apart. If you came here wanting the numbers to say the left argues better, they are consistent with that. They are equally consistent with something much duller: that the opposition's job in the chamber is to attack government policy, which is exactly what Focus rewards, while the government's job includes defending itself against the opposition, which is exactly what Focus punishes. A rubric that asks "are you talking about the policy or the other team" hands points to whoever is structurally obliged to talk about policy.
 
-Before reading anything into that: I think there's a real chance it is my instrument rather than the MPs. The opposition's job in the chamber is to attack government *policy*, which is exactly what Focus rewards. The government's job includes defending itself against the opposition, which is exactly what Focus punishes. A rubric that scores "are you talking about the policy or the other team" will hand points to whoever is structurally obliged to talk about the policy. I don't know how much of the six-point gap is conduct and how much is seating plan, and I'd rather flag that than bank it.
+There is one small crack in the ideological reading. Te Pāti Māori are in opposition, and on the usual axis they sit furthest from the government — so they should be at the top. They aren't. They come fifth of six, level with the government parties. That's the wrong way round for a story about left and right, and the right way round for a story about rhetorical register. It is also seven MPs, so treat it as a hint rather than a result.
 
-**It is not seniority.** This one I did expect, and the data took it off me. An earlier version of this project found the bottom of the table was the leadership — the Prime Minister, party leaders, senior ministers — and that reads as a satisfying story about how people rise. It doesn't survive. *Within* the government, MPs holding a ministerial or leadership role average **58.3**, and government backbenchers average **58.3**. The entire effect was which benches they sit on. It is also not about how much an MP talks: the correlation between how much evidence a card rests on and how well it scores is **0.02**, which is nothing.
+**It is not seniority.** *Within* the government, MPs holding a ministerial or leadership role average 58.3, and government backbenchers average 58.3. Whatever is going on, it isn't that power corrodes conduct. Nor is it about how much an MP talks: the correlation between how much evidence a card rests on and how well it scores is 0.02, which is nothing.
 
-What is true, and is just a fact about names rather than a finding about power: four of the five lowest cards in Parliament belong to the Prime Minister, the Deputy Prime Minister, the Foreign Minister and the Minister for Resources. The top of the table is backbenchers and select committee workhorses — mostly people you'd struggle to name. The visible part of our politics is the worst part of it, even if the reason is the job and not the person.
+What is true, and is a fact about names rather than a finding about power: four of the five lowest cards in Parliament belong to the Prime Minister, the Deputy Prime Minister, the Foreign Minister and the Minister for Resources. The top of the table is backbenchers and select committee workhorses — mostly people you'd struggle to name. The most visible part of our politics is the worst-behaved part of it, whatever the reason turns out to be.
 
-## What it isn't
+## One thing to hold on to
 
-A prototype, and I'd rather undersell it.
+Every score here was produced by a language model reading Hansard against a rubric. **That makes it an estimate, not a verdict**, and models get things wrong in ways that are hard to predict from the outside — a word-order slip in live speech can read as a false claim, and a sentence lifted out of a debate can lose the thing that made it reasonable.
 
-The scores are **automated estimates, not verdicts**, and the validation is the weakest part. The evaluation harness runs against hand-labelled statements, and the set it currently has is not fit for the job — a replacement sampled from the real corpus has been drawn but is **not yet labelled**. Until it is, treat every accuracy figure as unmeasured. There is also only one labeller, so there is no inter-rater agreement to report.
+Which is why the number is never the point. Every score on the site links straight to the statements it came from — the quote, the date, the reasoning, the Hansard link. If a card looks wrong to you, two clicks will show you whether it is. I'd rather you checked than believed me.
 
-**Two of the six attributes are unchecked.** Veracity and Divination are shown from the model's own estimate, marked with a **?** on every card, until the resolver finishes searching for evidence. 260 of the 787 MP-attribute scores on the site carry that mark. Don't quote them as fact-checks; I haven't.
-
-**Three attributes that used to be here are not**, for three different reasons, and the reasons are more interesting than the attributes.
-
-*Charisma* was cut. It correlated with Civility at 0.96 — a charisma failure was almost always the same insult, counted a second time, and then compounded by the geometric mean used for card rank.
-
-*Strength* (do promises turn into policy?) and *Authenticity* (do words inside the House match words outside it?) are on hold until the voting, bill and promise records they need are joined properly. Both had a defect worth naming: they filed a low score under the *speaker* even when the statement was describing someone else's broken promise, which penalised MPs for the act of scrutinising opponents.
-
-*Forthrightness* — do they answer the question actually asked? — is the one I most wanted to keep, and it is measured but not shown. It is scored over question-and-answer pairs, and in the House, only ministers answer questions. Of the MPs with enough evidence to score it, **every single one sat on the government benches.** However well it's extracted, on a 133-card grid it would be a measure of whether you're in government. It stays in the pipeline because it is a good measure *of the executive*, which is worth its own page one day.
-
-**Reading verbatim speech literally is a hazard.** Hansard is lightly-edited spoken language, full of inversions, self-corrections and half-finished sentences, and a scorer that sees one statement with no surrounding discourse takes all of them at face value. A word-order slip reads as a false claim. A single low score on a single sentence is not evidence of anything, and the reason every number links to its quote is so you can see which kind you're looking at.
-
-**And the rubric has a politics of its own.** It rewards figures, mechanisms and named policies; it marks down hyperbole and moral register. That is a choice, and it is not costless: an instrument built this way will rank the most rhetorically confrontational MPs lowest, and a party whose role in the chamber is confrontation with the Crown is going to sit badly with it. That's a limit of what I've built rather than a verdict on anyone.
-
-Nothing here is an accusation of wrongdoing. It's a starting point for looking, and the evidence is one click away.
+Two of the six attributes need a further warning. **Veracity and Divination are the ones a model can't settle by reading**, because deciding whether a claim is true means going and looking it up. A search step does that, and it hasn't finished running — so those two are currently the model's own estimate, marked on every card with a **?**. Read them as a guess. Nothing in this post rests on them.
 
 ## Why bother
 
