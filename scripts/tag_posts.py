@@ -53,6 +53,7 @@ TAGS = {
  "howard": "fiction coordination ethics society",
  "julian": "fiction luck ethics philosophy",
  "lyra": "fiction music ethics",
+ "ten-sacks": "fiction luck inequality coordination ethics",
  "story-utility": "essay introspection philosophy meta",
  # ------------------------------------------------- governance mechanisms --
  "framework": "essay uncertainty rights power aggregation mechanism-design politics philosophy",
@@ -85,7 +86,6 @@ TAGS = {
  "affirm-ml": "essay formalised data measurement inequality rights society ethics machine-learning",
  "life-as-a-minority": "essay sketch luck inequality rights society ethics",
  "karma-and-merit-they-deserve-it": "essay sketch luck inequality ethics society",
- "luck-morality": "essay luck inequality ethics philosophy",
  "poker-eval": "essay formalised luck measurement probability ethics",
  "determinism": "essay luck philosophy epistemology",
  "humble": "essay sketch introspection epistemology philosophy",

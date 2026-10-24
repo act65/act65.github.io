@@ -136,7 +136,7 @@ $$
 The denominator is the definition of the marginal likelihood, or evidence, $p(D)$. Substituting this back in, we arrive at our final result:
 
 $$
-q(\theta) = \frac{p(D\mid\theta) p(\theta)^{-\lambda_2}}{p(D)}
+q(\theta) = \frac{p(D\mid\theta)^{-\lambda_2} p(\theta)}{\int p(D\mid\theta')^{-\lambda_2} p(\theta') d\theta'}
 $$
 
 <!-- *[Image Description: A graph with three curves. The first, labeled 'Prior', is a flat horizontal line, representing uniform belief. The second, labeled 'Likelihood', is a curve that starts at zero, peaks at θ=0.75, and goes back to zero, representing the evidence from the data. The third, labeled 'Posterior', is a curve identical in shape to the likelihood (since the prior was flat), representing our new, updated beliefs.]* -->
@@ -147,9 +147,9 @@ We've arrived at a family of update rules parameterized by $\lambda_2$:
 
 $$q(\theta) \propto p(\theta)p(D\mid \theta)^{-\lambda_2}$$
 
-To pin down the specific value, we need one more principle. The most compelling is **coherence** or **consistency under sequential updating**.
+To pin down the specific value, we need one more principle. The obvious candidate is **coherence**, or consistency under sequential updating. It turns out not to do the job, and seeing why points at what does.
 
-#### The Coherence Requirement
+#### Coherence isn't enough
 
 Imagine we observe data in two batches: first $D_1$, then $D_2$. We should get the same final beliefs whether we:
 1. Update on $D_1$ to get $q_1(\theta)$, then update on $D_2$ to get $q_{final}(\theta)$
@@ -171,11 +171,25 @@ If the data observations are conditionally independent given $\theta$ (a standar
 
 $$p(D_1\mid\theta)^{-\lambda_2}p(D_2\mid\theta)^{-\lambda_2} = [p(D_1\mid\theta)p(D_2\mid\theta)]^{-\lambda_2}$$
 
-This equality holds for all possible data and parameters only when $\lambda_2 = -1$.
+But this holds for *every* value of $\lambda_2$, since $(ab)^k = a^k b^k$. Tempered and sharpened updates are just as coherent as Bayes: whatever $\lambda_2$ is, updating in batches or all at once lands in the same place. Coherence rules out plenty of update rules, but not any member of this family.
 
-Therefore, **coherence uniquely determines that $\lambda_2 = -1$**, giving us Bayes' rule:
+#### Being certain of what you saw
 
-$$q(\theta) = \frac{p(D\mid\theta)p(\theta)}{p(D)}$$
+The free parameter comes from the second constraint. It only asks that the *average* log-likelihood under $q$ hit some target $L_D$, and nothing in the setup says what $L_D$ should be. Each choice of $L_D$ gives a different $\lambda_2$. The constraint is too weak.
+
+A stronger version: hold beliefs about the parameters and the data *jointly*. Before observing anything, that joint belief is $p(\theta, D) = p(\theta)p(D\mid\theta)$. After observing $D_{obs}$, the new joint belief $q(\theta, D)$ should be certain of what was seen, $q(D_{obs}) = 1$ (taking the data to be discrete, to keep things clean). Now minimise $D_{KL}(q(\theta, D) \parallel p(\theta, D))$ subject to that. The chain rule for KL splits the objective in two:
+
+$$
+D_{KL}(q(\theta, D) \parallel p(\theta, D)) = D_{KL}(q(D) \parallel p(D)) + \mathbb{E}_{q(D)}\left[D_{KL}(q(\theta\mid D) \parallel p(\theta\mid D))\right]
+$$
+
+The first term is fixed by the constraint, so there is nothing to choose there. The second is never negative, and is zero exactly when $q(\theta\mid D_{obs}) = p(\theta\mid D_{obs})$. So the minimum is
+
+$$q(\theta) = \frac{p(D_{obs}\mid\theta)p(\theta)}{p(D_{obs})}$$
+
+which is Bayes' rule, with no free parameter left over. [^3][^4]
+
+So the sense in which Bayes is optimal: it is the smallest change, measured by KL, to your joint beliefs about parameters and data that makes you certain of what you observed. The $\lambda_2 \neq -1$ rules come from the weaker constraint, which only asks you to agree with the data on average.
 
 <!-- thus we have arrived at Bayes updating!! -->
 
@@ -217,3 +231,5 @@ Bayesian inference isn't just a useful formula; it's the unique, mathematically 
 #### References
 [^1]: Ho, J., & Salimans, T. (2022). Classifier-Free Diffusion Guidance. *arXiv preprint arXiv:2207.12598*.
 [^2]: Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E., ... & Norouzi, M. (2022). Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding. *arXiv preprint arXiv:2205.11487*.
+[^3]: Williams, P. M. (1980). Bayesian conditionalisation and the principle of minimum information. *The British Journal for the Philosophy of Science*, 31(2), 131–144.
+[^4]: Caticha, A., & Giffin, A. (2006). Updating probabilities. *AIP Conference Proceedings*, 872, 31–42. arXiv:physics/0608185.
