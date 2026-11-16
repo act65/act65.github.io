@@ -6,6 +6,10 @@ subtitle: How does deductive truth (ie math) relate to inductive truth (ie scien
 categories:
     - "philosophy"
 description: "How does deductive truth (ie math) relate to inductive truth (ie science). Mathematics can derive the truth, trustworthy proof."
+takeaways:
+  - "Deductive truths follow from agreed starting points and rules and never change, though bounded resources mean some true statements remain unproven."
+  - "Science cannot establish truth: it rests on unprovable assumptions and an imperfect view of the world, so it only reduces uncertainty."
+  - "The best science can answer is: given what we have observed and the answers we have imagined, what is most likely to be true?"
 tags:
   - essay
   - epistemology

@@ -5,6 +5,10 @@ subtitle: We can use linear algebra to represent; linear operators, algebras, co
 categories:
   - "play"
 description: "We can use linear algebra to represent; linear operators, algebras, computations, symmetry and more. Linear algebra is a powerful language!"
+takeaways:
+  - "Linear functions can be written as arrays and applied to arrays, so operators can be treated as operands, echoing Turing's duality between program and data."
+  - "Differentiation, integration, matrix multiplication, the determinant, convolution and the Laplacian are all linear and can be written as matrices or tensors."
+  - "Dual numbers, complex numbers and quaternions have matrix representations; dual numbers track derivatives, and quaternions are two layers of nested complex numbers."
 tags:
   - tutorial
   - formalised

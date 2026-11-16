@@ -6,6 +6,10 @@ permalink: /capitalism-capitalism/
 categories: 
   - "economic"
 description: "More capitalism. The fundamental premise of capitalism is that self-interest channeled through markets creates optimal outcomes."
+takeaways:
+  - "When enforcement falters against concentrated wealth and power, creating markets for enforcement, such as litigation finance, can help restore balance."
+  - "Proposal: 'tax evasion finance', where private firms fund tax investigations for a share of recovered revenue, extending whistleblower and qui tam precedents."
+  - "The cure for capitalism's failures may be more capitalism, deliberately designed, though such markets risk cherry-picking, due-process harms and harassment."
 tags:
   - essay
   - incentives

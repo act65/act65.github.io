@@ -6,6 +6,9 @@ permalink: /brand-new-world/
 categories: 
   - "fiction"
 description: "A advertisement dystopia. The story you're about to read explores a not-so-distant future where the lines between authentic expression and advertising have..."
+takeaways:
+  - "A satire imagining AdVocate, a service that pays people for unsolicited product praise, until authentic expression and advertising become indistinguishable."
+  - "Monetising authenticity destroys it: when every word can earn money everyone performs, and silence becomes a costly luxury."
 tags:
   - fiction
   - incentives

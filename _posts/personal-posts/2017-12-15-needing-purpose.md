@@ -3,6 +3,10 @@ title: "Needing purpose"
 date: "2017-12-15"
 layout: post
 description: "In the last couple of years I have lost a few friends. And I think I understand the reason for this."
+takeaways:
+  - "Small kindnesses like warm smiles do not make someone a good person when they have a large ability to help others and ignore it."
+  - "Taking up AI as a purpose was a way through depression after seeing poverty in India, and it led the author to preach and rant at friends."
+  - "Someone convinced their decisions are right may have got there through a similar need, which is worth remembering before judging them."
 tags:
   - personal
   - sketch

@@ -5,6 +5,10 @@ subtitle: Dataset alignment represented as tensor networks
 categories: 
   - "research"
 description: "Dataset alignment represented as tensor networks. I want to know how a someone's education level correlates with their income."
+takeaways:
+  - "Aligning siloed datasets can be drawn as a graph with columns as nodes and datasets as edges, the dual of a tensor network."
+  - "Horizontally aligning datasets on a shared key lets you marginalise it out, e.g. getting income x education from name x income and name x education."
+  - "Correlations between any two connected columns could be found by traversing the graph; open question how to choose between or marginalise over paths."
 tags:
   - research
   - formalised

@@ -6,6 +6,10 @@ categories:
     - economic
 permalink: /governance-mechanisms/human-nature/
 description: "Every political philosophy is a bet on it — and its width matters more than its centre. Anyone designing an institution has to make an assumption about..."
+takeaways:
+  - "Political philosophies mostly disagree about human nature, not ethics, and their institutional prescriptions follow almost mechanically from their assumed model of it."
+  - "For typical institutional loss structures, the width of the distribution over what people might want matters more than its centre; cross-cultural evidence says it is wide."
+  - "Because institutions shape preferences, design is a fixed-point problem, and an institution that homogenises its population would by this criterion earn the right to be more prescriptive, an unresolved problem."
 tags:
   - essay
   - historical

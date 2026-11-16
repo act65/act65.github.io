@@ -6,6 +6,10 @@ subtitle: An example of how to regulate markets to remove inefficiencies.
 categories: 
   - "economic"
 description: "An example of how to regulate markets to remove inefficiencies. I stumbled across an interesting perspective on the regulation of markets in a report by..."
+takeaways:
+  - "Price-comparison nudges assume dollars per unit of energy is all that matters, but providers bundle many kinds of value that cannot currently be fairly compared."
+  - "An intermediary that moves customers to the cheapest provider for a commission may already supply the incentive these regulations aim for."
+  - "Open question: if markets should reward the most efficient firm, what stops that ending in monopoly?"
 tags:
   - essay
   - sketch

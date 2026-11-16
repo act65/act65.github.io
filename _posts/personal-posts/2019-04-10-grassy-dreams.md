@@ -5,6 +5,9 @@ coverImage: "600px-cmglee_cambridge_trinity_college_great_court.jpg"
 layout: post
 subtitle: I am struggling with my masters.
 description: "I am struggling with my masters. (I wrote most of this near the start of my masters)"
+takeaways:
+  - "Dreams of greener grass at a world-class university like Cambridge crowd out happier thoughts and make the current masters feel like mission impossible."
+  - "On reflection there is a lot to be happy about: a comfortable life, much learnt, and a paid chance to contribute to science, which was once the dream itself."
 tags:
   - personal
   - sketch

@@ -6,6 +6,10 @@ subtitle: Let's have a tolerant debate
 categories:
     - "interact"
 description: "Let's have a tolerant debate. Scott Alexander holds a yearly Adversarial collaboration contest."
+takeaways:
+  - "Adversarial collaboration, where opponents investigate a disputed question together, beats treating a position as the hill you die on."
+  - "Positions offered for collaboration include: testing on bonobos and chimpanzees is (currently) a necessary evil, and prisons should only hold likely physical dangers to society."
+  - "Further positions: anyone without a mental handicap can learn calculus, and most voters cannot list more than 3 of their party's policies in non-trivial detail."
 tags:
   - personal
   - sketch

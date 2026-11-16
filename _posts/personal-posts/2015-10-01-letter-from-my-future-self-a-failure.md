@@ -6,6 +6,9 @@ categories:
 layout: post
 subtitle: Don't be lazy...
 description: "Don't be lazy. We let boredom, ignorance and distraction shatter our dreams and our potential future (scientist, smartist, a better Alex)."
+takeaways:
+  - "Dreams are lost not by consciously choosing to settle but through small everyday choices of the easiest option, like 'just 5 more minutes'."
+  - "You give up a dream the moment you make an excuse not to be working on it right now."
 tags:
   - personal
   - sketch

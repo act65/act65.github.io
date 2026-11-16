@@ -5,6 +5,10 @@ layout: post
 categories:
     - research
 description: "Why AI Robustness is a Necessary Condition for AI Alignment. How can we ever hope to build an Artificial General Intelligence (AGI) that won't outsmart..."
+takeaways:
+  - "Wireheading and reward poisoning are the identical-interest and zero-sum extremes of one reward-perturbation game, so maximin robustness does not transfer: it bounds the worst case while wireheading lives at the best case."
+  - "Making the policy invariant to the reward channel does not stop wireheading; it is the agent's objective that must be invariant to tampering."
+  - "Robustness research supplies implementation and verification machinery for an alignment idea it did not generate; whether robustness is strictly necessary for alignment is doubtful."
 tags:
   - essay
   - formalised

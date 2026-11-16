@@ -5,6 +5,10 @@ categories:
     - research
 layout: post
 description: "From uncertainty over constraints to uncertainty over graphs. Imagine solving a Sudoku puzzle where some of the given numbers are smudged and illegible."
+takeaways:
+  - "Rather than committing to one set of constraints, uncertain evidence (e.g. noisy NMR) can be modelled as a distribution over constraints, giving p(g|D) = sum over c of p(g|c) p(c|D)."
+  - "With a uniform (maximum-entropy) p(g|c) this requires counting graphs that satisfy each constraint set, which is #P-hard, and the constraint space grows superexponentially."
+  - "Sparsity in p(c|D), MCMC sampling and decomposing constraints into modular parts may make it tractable."
 tags:
   - research
   - formalised

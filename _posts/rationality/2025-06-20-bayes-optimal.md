@@ -6,6 +6,10 @@ permalink: /bayes-optimal/
 categories:
     - tutorial
 description: "Minimizing Surprise Leads to Bayes' Rule. You may have heard of Bayesian updating. We start with some prior beliefs, p(\\theta), we observe some data D..."
+takeaways:
+  - "Bayes' rule is the smallest KL change to your joint beliefs over parameters and data that makes you certain of what you observed."
+  - "Constraining only the average log-likelihood yields a family of tempered updates, all equally coherent under sequential updating, so coherence alone does not pick out Bayes."
+  - "Deliberately deviating from Bayes is useful: guidance scale above 1 (classifier-free guidance) sharpens toward the condition; below 1 tempers untrusted or misspecified data."
 tags:
   - tutorial
   - formalised

@@ -5,6 +5,10 @@ layout: post
 categories:
   - play
 description: "What an isomorphic keyboard makes visible about harmony. On a piano, C major and D major are played with different hand-shapes: a different mix of black..."
+takeaways:
+  - "On an isomorphic (Wicki-Hayden) grid transposition is translation, so a chord type is one shape at every root and a major scale is seven fifths in a straight line."
+  - "Key, mode, brightness and progressions become geometry: sliding a seven-note window along the fifths axis, and chord walks like ii-V-I down that axis."
+  - "Major and minor are related by a half-turn (negative harmony is a 180-degree rotation on the lattice, not a mirror), and the tritone sub is two dominants sharing one tritone edge."
 tags:
   - essay
   - abstraction

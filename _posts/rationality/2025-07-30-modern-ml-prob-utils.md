@@ -5,6 +5,10 @@ layout: post
 categories:
     - proposal
 description: "The core quantities and operations that form the toolkit of a Bayesian practitioner, organised by what actually makes them hard: two primitives, one intractable integral, and a sharp line between what samples give you for free and what they never will."
+takeaways:
+  - "Bayesian reasoning is close to non-optional: Wald's complete class theorem says every admissible decision rule is Bayes for some prior (Cox's theorem is suggestive, with known gaps)."
+  - "Expectations of known functions are cheap given posterior samples; entropy, KL, Bayes factors and expected information gain need the normalised log-density, so samples alone don't deliver them."
+  - "Expected information gain is the most valuable and hardest quantity, a nested integral; MAP is the cheapest summary but the least trustworthy in high dimensions."
 tags:
   - notes
   - formalised

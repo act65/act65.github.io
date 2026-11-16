@@ -4,6 +4,10 @@ title: Committed to Fidelity
 subtitle: A Unified Model for Multi-Fidelity Bandits
 categories: research
 description: "A Unified Model for Multi-Fidelity Bandits. This post introduces the Commited-Fidelity Bandit, a framework that extends the classic Multi-Armed Bandit..."
+takeaways:
+  - "Adding commitment length (a chosen delay during which the agent is busy) to arm and fidelity choices unifies probing and deployment in one action space, dissolving the explore-then-exploit split."
+  - "The opportunity cost of being locked in fixes the cost-in-regret paradox where an agent pulls cheap low-fidelity probes forever; best arm identification reappears as a restricted special case."
+  - "With a single arm, the cost-optimal fidelity minimises (variance at that fidelity) times (cost per sample), neither the cheapest nor the most accurate probe."
 tags:
   - research
   - formalised

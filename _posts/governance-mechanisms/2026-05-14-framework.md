@@ -6,6 +6,10 @@ categories:
     - economic
 permalink: /governance-mechanisms/
 description: "How to choose institutions when you don't know what people will want. Every answer anyone has given to \"what should society maximise\" was written by..."
+takeaways:
+  - "Betting a durable institution on a substantive conception of the good is a bad bet, mainly because whoever writes the specification writes their own preferences into it."
+  - "Design a procedure, not a goal: the target is an aggregation of what people might turn out to want, with the social utility function as a design-time surrogate for regret."
+  - "The wider the range of possible wants, the less a design may settle; options should be foreclosed only when confidently bad, which leaves capacity rather than outcomes as the target."
 tags:
   - essay
   - uncertainty

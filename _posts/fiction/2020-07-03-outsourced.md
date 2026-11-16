@@ -6,6 +6,10 @@ subtitle: The hidden dangers of delegating life's 'trivial' tasks to technology
 categories: 
   - "fiction"
 description: "The hidden dangers of delegating life's 'trivial' tasks to technology. Tried of your unpredictable metabolism with a mind of its own?"
+takeaways:
+  - "Fictional adverts for products that outsource digestion, movement, learning and emotion, asking whether every convenience gives away a piece of our humanity."
+  - "As with IBM handing software to Microsoft or US firms outsourcing manufacturing, giving away the 'trivial' parts can mean giving away the important ones without noticing until too late."
+  - "Open question: which everyday struggles (losing weight, being confused, feeling hurt) are the parts of life we should keep?"
 tags:
   - fiction
   - trust

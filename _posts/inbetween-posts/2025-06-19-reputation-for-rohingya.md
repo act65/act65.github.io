@@ -3,6 +3,10 @@ title: The Offline Economy
 subtitle: Why financial tools for the unconnected are a genuinely hard problem
 layout: post
 description: "Why financial tools for the unconnected are a genuinely hard problem. In southeastern Bangladesh lies Kutupalong, the largest refugee camp in the world."
+takeaways:
+  - "People in places like the Rohingya camps need financial tools, not just handouts; their informal economies are already active and heavily credit-based."
+  - "By the CAP theorem, an offline payment system must favour availability over consistency, so a double-spend cannot be technically prevented when it happens."
+  - "Maybe reputation can solve this: shift from prevention to deterrence by making good standing worth more than any one-off fraud."
 tags:
   - essay
   - trust

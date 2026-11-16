@@ -5,6 +5,10 @@ layout: post
 categories:
     - philosophy
 description: "The strange paradox of free-will. We feel like the authors of our lives. Each choice—from the coffee we order to the career we pursue—feels like a sentence..."
+takeaways:
+  - "The mind is part of a deterministic machine, and the feeling of free will is a product of the brain's predictive machinery, not a contradiction of it."
+  - "Determinism implies forward-looking justice, seeing success as largely luck, compassion over blame, and regulating addictive products; the real locus of control is curating your inputs."
+  - "Paradoxically, because belief in free will improves behaviour, we should adopt agency as a working hypothesis while accepting it is an illusion."
 tags:
   - essay
   - luck

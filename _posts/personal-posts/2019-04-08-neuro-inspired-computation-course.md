@@ -6,6 +6,9 @@ coverImage: "ircn.png"
 layout: post
 subtitle: I visited IRCN.
 description: "I visited IRCN. I was lucky enough to be invited to IRCN's neuro-inspired computation course in Tokyo."
+takeaways:
+  - "The course content was ok: many lectures were detail-free career tours or ignored the interdisciplinary audience, but a few talks were pleasant surprises."
+  - "People from prestigious universities did not seem so different on average, though few students (the author included) were asking fundamental questions."
 tags:
   - personal
   - travel

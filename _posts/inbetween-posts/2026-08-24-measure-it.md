@@ -4,6 +4,10 @@ permalink: /measurement/
 title: "Go and look"
 subtitle: Almost everything we argue about has a number in it; almost every number we have is a proxy
 description: "Almost everything we argue about has a number in it; almost every number we have is a proxy. Most arguments I get into have, somewhere inside them, a claim that could be checked — and nobody asks what number would settle it, who would collect it, or what we would do differently if it came back the other way."
+takeaways:
+  - "Where a claim is testable, debating it is close to the worst use of time and going to look is close to the best."
+  - "Real decisions rest on proxies, and a bad metric is often worse than none because it ends the argument and launders value judgements into arithmetic."
+  - "Where only a proxy exists, the number should inform the argument rather than end it, and the choice of what to count is the part to argue about."
 tags:
   - essay
   - historical

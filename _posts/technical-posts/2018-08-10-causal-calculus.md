@@ -5,6 +5,10 @@ subtitle: A connection between causal inference and gradients?
 categories:
     - tutorial
 description: "A connection between causal inference and gradients. I recently read Judea Pearl's The Book of Why, and it clarified many intuitions about causal..."
+takeaways:
+  - "Assuming locally linear relationships, a causal effect can be read as an expected gradient."
+  - "The back-door adjustment becomes a confounder-averaged expected gradient, and the front-door adjustment becomes the chain rule averaged over the mediator."
+  - "A normalised expected gradient magnitude could serve as a bounded measure of how much x_i causes y relative to its other causes."
 tags:
   - tutorial
   - formalised

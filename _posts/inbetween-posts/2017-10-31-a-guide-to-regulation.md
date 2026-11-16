@@ -6,6 +6,10 @@ subtitle: If we measure things, we can regulate them, fairly.
 categories: 
   - "economic"
 description: "If we measure things, we can regulate them, fairly. In my mind, regulation is the solution to externalised costs."
+takeaways:
+  - "Regulation should price externalised costs into products, and doing so fairly requires measuring those costs, since data is harder to argue with than lobbying."
+  - "Government could tax pessimistically by default and let producers prove lower impact, or use machine learning to measure cheaply what was previously unmeasured."
+  - "Possibly, recording all transactions on a blockchain would allow retrospective taxes once external costs, like those of fossil fuels, become known."
 tags:
   - essay
   - sketch

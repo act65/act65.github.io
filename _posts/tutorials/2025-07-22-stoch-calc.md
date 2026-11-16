@@ -5,6 +5,10 @@ layout: post
 categories:
     - tutorial
 description: "A Tutorial on Itô's Lemma. In the world of deterministic calculus, the chain rule is a cornerstone for differentiating composite functions."
+takeaways:
+  - "The ordinary chain rule fails for SDEs because squared Brownian increments do not vanish: (dB)^2 = dt, so second-order Taylor terms survive."
+  - "Ito's lemma is the ordinary chain rule plus a correction term (1/2) b^2 f'' dt; products and quotients pick up quadratic-covariation terms, while sums do not."
+  - "For geometric Brownian motion, d(ln S) has drift mu - sigma^2/2, a term the naive chain rule misses."
 tags:
   - tutorial
   - formalised

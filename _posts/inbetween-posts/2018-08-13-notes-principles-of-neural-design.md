@@ -5,6 +5,10 @@ coverImage: "pond.jpg"
 layout: post
 subtitle: Note from reading the book.
 description: "Note from reading the book. The books starts with some great questions:"
+takeaways:
+  - "Brains are not primarily for learning but for fast communication from sensors to actuators across a multicellular body."
+  - "Because higher information rates cost disproportionately more, neural design follows: send only what is needed, at the lowest acceptable rate, with minimal wire."
+  - "Brain layouts that look like evolutionary quirks, such as the cerebellum's layering, turn out to minimise wiring cost."
 tags:
   - notes
   - abstraction

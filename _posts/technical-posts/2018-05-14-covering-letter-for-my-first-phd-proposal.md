@@ -6,6 +6,10 @@ subtitle: Principles of neural design, automated science, general reinforcement 
 categories: 
   - "proposal"
 description: "Principles of neural design, automated science, general reinforcement learning. Phew, I just submitted my first PhD application, with many more to go..."
+takeaways:
+  - "The aim is to understand intelligence from a computational perspective (cognitive science via computer science), via neural design, automated science and general intelligence."
+  - "Science is society's learning algorithm, and as its problems grow more complex scientists need automated tools to keep up."
+  - "Current reinforcement learning algorithms are profoundly dumb, close to random search with poor memory."
 tags:
   - personal
   - introspection

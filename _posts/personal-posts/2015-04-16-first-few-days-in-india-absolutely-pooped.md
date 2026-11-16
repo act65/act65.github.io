@@ -6,6 +6,8 @@ categories:
   - "experiences"
 layout: post
 description: "Absolutely pooped. When I first arrived I felt pretty uncomfortable, but I guess 24 hours travelling, eating new foods and at irregular times will do that."
+takeaways:
+  - "The seemingly ordinary account of settling into India is a running pun about being constipated for the first few days."
 tags:
   - personal
   - sketch

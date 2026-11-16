@@ -3,6 +3,10 @@ title: Freedom-Adjusted Life Years
 subtitle: Are We Solving the Right Problems?
 layout: post
 description: "Are We Solving the Right Problems. We live in a world of finite resources. Every dollar spent on one problem is a dollar not spent on another."
+takeaways:
+  - "DALYs miss the suffering of lost freedom; a Freedom-Year Lost (FYL) metric, (10 - HFI score)/10 times affected population, puts it on a comparable scale."
+  - "By rough estimates, solution-oriented funding per unit of burden is far lower for freedom loss (~$0.94/FYL North Korea, ~$3 modern slavery) than for disease (~$45/DALY diabetes)."
+  - "The imbalance likely reflects biases: perceived tractability, no obvious recipient, weak constituencies, and freedom work being seen as a fragile rather than cumulative investment."
 tags:
   - proposal
   - formalised

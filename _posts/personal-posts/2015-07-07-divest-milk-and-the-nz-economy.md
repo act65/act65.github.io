@@ -7,6 +7,10 @@ coverImage: "download-1.jpeg"
 layout: post
 subtitle: A letter to Fonterra.
 description: "A letter to Fonterra. Yeast bacteria can be programmed to produce milk proteins. I think that this method of milk production will become cheaper than..."
+takeaways:
+  - "Yeast-produced milk proteins will likely become cheaper than cow milk because they cut out the cow, threatening NZ's dairy-dependent economy."
+  - "Fonterra should pivot to synthetic milk; a smear campaign is unlikely to work since its own products rely on genetically modified bacteria."
+  - "There is no future in dairy farming and NZ should divest as soon as possible."
 tags:
   - essay
   - sketch

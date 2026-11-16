@@ -6,6 +6,9 @@ permalink: /graph-enumeration/
 categories: 
   - "tutorial"
 description: "The orderly enumeration of graphs. Our goal is to generate all graphs with n nodes. Let's start with a simple example, generating all graphs with 4 nodes."
+takeaways:
+  - "Generating graphs in a canonical order avoids checking each new graph for isomorphism against every graph generated so far."
+  - "Because every minimal (canonical) graph has a minimal subgraph with one fewer edge, the enumeration need only extend minimal graphs and can prune the rest; implemented in Rust."
 tags:
   - tutorial
   - formalised

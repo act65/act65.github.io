@@ -6,6 +6,10 @@ layout: post
 categories: 
   - fiction
 description: "A Tale of Clay and Calculation. A reader's note: words and numbers underlined in dotted ochre carry a hover-tip — pause over them (or tap on mobile) to see..."
+takeaways:
+  - "A story imagining early arithmetic (tallies, multiplication by doubling, debt and credit on one tablet, a written zero in place value) as practical tricks invented to speed trade and settle disputes."
+  - "The marks are power: whoever can read the records can cheat those who cannot, so teaching the marks takes that power away from the scribes."
+  - "Honest measure and procedures like cut-and-choose put fairness in the shape of the process, 'the shape that makes the liar unnecessary'."
 tags:
   - fiction
   - historical

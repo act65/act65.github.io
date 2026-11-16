@@ -6,6 +6,10 @@ permalink: /approximate-reasoning/
 categories:
   - "play"
 description: "Cognitive biases and LLM failures are the characteristic error patterns of specific approximation algorithms. From the errors you can infer the algorithm."
+takeaways:
+  - "Bounded reasoners can be cheap in three places (representation, inference, evidence), and each cut leaves a characteristic error: rate-distortion loss, geometric truncation error, or Monte Carlo error."
+  - "Prediction: more thinking time should melt inference biases like anchoring, leave representation biases like typicality untouched, and not fix (possibly sharpen) availability-type biases from a biased sampler."
+  - "Whether shared human and LLM biases are convergent or inherited from text is testable: selected traits track budget and survive data filtering."
 tags:
   - essay
   - formalised

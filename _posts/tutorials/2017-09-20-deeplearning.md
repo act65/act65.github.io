@@ -5,6 +5,8 @@ subtitle: An intro to deep learining for COMP421.
 categories: 
   - "tutorial"
 description: "An intro to deep learining for COMP421. An introduction to deep learning that builds a framework for arbitrary feedforward neural networks."
+takeaways:
+  - "Arbitrary feedforward networks can be built and trained from layers that each supply their own local gradient, so layer-wise automatic differentiation is all the optimiser needs."
 tags:
   - tutorial
   - sketch

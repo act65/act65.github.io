@@ -6,6 +6,10 @@ permalink: /typicality/
 scholar:
   bibliography: "typicality.bib"
 description: "In high dimensions, typical is unintuitive. What is likely is not necessarily typical, and the mode of a distribution can be a thing you never see."
+takeaways:
+  - "What is most likely is not typical: in high dimensions the mode is almost never observed, and samples land in a typical set, such as a thin shell of radius sqrt(d) sigma for a Gaussian."
+  - "'Typical set' can mean a level set of the density or a high-probability set; they coincide for i.i.d. sequences, but a diffeomorphism such as a normalising flow preserves only the second."
+  - "Beyond i.i.d. sequences, typicality rests on the empirical claim that per-dimension log density concentrates, which can be checked on held-out data."
 tags:
   - tutorial
   - formalised

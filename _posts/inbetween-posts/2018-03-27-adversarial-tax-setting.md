@@ -5,6 +5,10 @@ subtitle: A new perspective on tax law
 categories: 
   - "economic"
 description: "A new perspective on tax law. Have you ever wondered how Artificial Intelligence (AI) could be used to improve tax laws?"
+takeaways:
+  - "Tax optimisation can be framed as an adversarial game: the tax authority writes incomplete law, taxpayers exploit loopholes, and courts act as a costly oracle."
+  - "The game is asymmetric: taxpayers need one legal strategy while the authority must close every loophole, and taxpayers track law changes more easily."
+  - "Open question: can un-exploitable (complete) tax law be designed, and can 'gameability' be measured?"
 tags:
   - proposal
   - incentives

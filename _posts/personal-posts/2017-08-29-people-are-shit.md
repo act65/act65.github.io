@@ -5,6 +5,9 @@ date: "2017-08-29"
 coverImage: "pot-and-kettle-350x166.jpg"
 layout: post
 description: "I am a person. Lately I have been struggling with a kind of contradiction and it has been effecting my mental health."
+takeaways:
+  - "People seem myopic, selfish and wilfully ignorant, hardwired by evolution, and are unlikely to change this themselves; brain-uploading might eventually let us edit it."
+  - "Disliking the way humans think drives the wish to improve us, but also means disliking oneself, since the author is no better."
 tags:
   - personal
   - sketch

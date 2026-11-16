@@ -5,6 +5,8 @@ categories:
   - "experience"
 subtitle: Photos from a holiday.
 description: "Photos from a holiday. I spent January 2018 travelling around the top of New Zealand's South Island. It was nice. Here are some photos..."
+takeaways:
+  - "The trip was neither particularly relaxing nor exciting, partly because of guilt and stress about lounging around instead of studying."
 tags:
   - personal
   - sketch

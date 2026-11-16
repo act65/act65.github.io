@@ -6,6 +6,9 @@ categories:
     - proposal
 permalink: /pilot-waves/
 description: "The classical alternative to quantum mechanics. The Big Idea: Can the Mysteries of Quantum Mechanics Ride on a Classical Wave?"
+takeaways:
+  - "Open question: can the Schrodinger wave function emerge as a statistical property of individual particles guided by their own wakes (pilot waves)?"
+  - "Pilot-wave theories form a family with many possible particle-wave coupling rules, worth exploring systematically for novel dynamics, not just for mimicking known quantum effects."
 tags:
   - proposal
   - speculation

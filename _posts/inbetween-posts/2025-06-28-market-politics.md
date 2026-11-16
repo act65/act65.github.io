@@ -3,6 +3,9 @@ title: A Market for 'Truth'
 subtitle: Using Bets to Find a Shared Truth 
 layout: post
 description: "Using Bets to Find a Shared Truth. One of the most frustrating features of modern politics is that we can no longer seem to agree on basic facts."
+takeaways:
+  - "Bets put a cost on misinformation: they force people to quantify belief, reward accuracy over rhetoric, and demand a clear question with a neutral oracle."
+  - "Prediction markets on contested national statistics, resolved by official sources like Stats NZ, could build a shared map of 'What Is' and act as a public BS detector."
 tags:
   - proposal
   - aggregation

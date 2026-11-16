@@ -5,6 +5,10 @@ layout: post
 categories:
     - economic
 description: "A ballot is a recording device, and most ballots are too narrow to record what voters want. The opinions lost are those of small groups whose views cut across the main dividing line."
+takeaways:
+  - "A ballot can only record so much: with three yes/no issues there are eight positions, and a two-party ballot names two of them."
+  - "Neither two parties nor issue-by-issue voting is universally right: the ballot should bundle issues that travel together and separate those that don't."
+  - "The voters a narrow ballot fails to record are predictably the small groups whose mix of views cuts across the main dividing line."
 tags:
   - essay
   - aggregation

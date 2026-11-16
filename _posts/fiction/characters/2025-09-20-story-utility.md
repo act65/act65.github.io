@@ -5,6 +5,10 @@ subtitle: and the limits of our imagination
 categories:
     - fiction
 description: "and the limits of our imagination. I believe our ability to imagine is fundamentally limited. Our capacity for empathy is constrained by the experiences..."
+takeaways:
+  - "Imagination and empathy are limited by the experiences we have had; our picture of possible futures is mostly an interpolation between the lives of people we know."
+  - "Stories expand that limited dataset, working as simulations of other minds and a catalogue of other possible lives and motivations."
+  - "Strange fiction is especially valuable because it offers motivations that history does not, giving imagination stranger material to work with."
 tags:
   - essay
   - introspection

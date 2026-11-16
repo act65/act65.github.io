@@ -7,6 +7,10 @@ subtitle: What could the profession of environmental engineering look like?
 categories: 
   - "speculation"
 description: "What could the profession of environmental engineering look like. We are getting better at predicting the weather."
+takeaways:
+  - "Better weather forecasting pays large dividends, and the same predictive approach could extend to measuring and forecasting ecosystems."
+  - "Simulating climate with and without human CO2 could attribute specific floods and hurricanes to emissions and so price climate damage."
+  - "Environmental engineering would need safety rules and a way to allocate ownership of rain, wind and currents; first we must master measuring the world."
 tags:
   - essay
   - sketch

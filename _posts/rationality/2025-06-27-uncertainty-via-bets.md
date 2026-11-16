@@ -5,6 +5,9 @@ layout: post
 categories:
     - play
 description: "Deriving Probability from Rationality. We are often told that probabilities are one of two things: 1."
+takeaways:
+  - "The probability axioms follow from one premise: a rational agent prices bets so that no bookie can guarantee them a loss (Dutch book immunity)."
+  - "Subjective probabilities are therefore not arbitrary: they are the necessary logic of coherent betting under uncertainty."
 tags:
   - tutorial
   - formalised

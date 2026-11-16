@@ -5,6 +5,10 @@ subtitle: What if intelligence evolved within the immune system?
 categories:
     - play
 description: "What if intelligence evolved within the immune system. Like the nervous system, the immune system runs its own transport infrastructure through the body —..."
+takeaways:
+  - "Neural and immune systems face the same computational needs, but physical budgets give each a different implementation: neurons win on speed and spatial precision, immune cells on molecular specificity, durability and freedom from wiring."
+  - "Autoimmunity is overfitting with the error-cost asymmetry inverted, so an immune-based intelligence could only grow by generalising safely."
+  - "Speculative: in a sessile, molecule-dominated niche an immune-branch intelligence could evolve; it would cultivate, synthesise and remember rather than dart, grab or flinch."
 tags:
   - essay
   - speculation

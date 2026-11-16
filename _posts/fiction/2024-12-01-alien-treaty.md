@@ -6,6 +6,10 @@ permalink: /alien-treaty/
 categories:
     - fiction
 description: "A Story of First Contact, Good Intentions, Discrimination and Lost Heritage. In Aotearoa New Zealand, the Treaty of Waitangi (Te Tiriti o Waitangi), signed..."
+takeaways:
+  - "A first-contact story modelled on Te Tiriti o Waitangi: when a treaty exists in two non-equivalent texts, the stronger party's version is the one that binds."
+  - "Well-meaning, paternalistic 'optimisation' can erase a culture without malice, through small helpful changes no one notices."
+  - "Preserving a culture as archived artifacts is not keeping it alive; culture is lived practice, not data."
 tags:
   - fiction
   - historical

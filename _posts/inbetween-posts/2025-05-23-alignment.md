@@ -5,6 +5,10 @@ layout: post
 categories:
     - economic
 description: "Future AI Overlords vs. Present Corporate Greed. Headlines about Artificial Intelligence often paint a picture of a distant, sci-fi threat: killer robots..."
+takeaways:
+  - "Our ongoing failure to align corporations with the public good is a live demonstration of our inability to solve alignment problems."
+  - "Corporate and AI alignment are the same problem, separated by time and intelligence; algorithmic trading bots are corporations stripped of human friction."
+  - "The most likely path to misaligned AGI is a profit-maximising public company, so solving corporate misalignment is a necessary first step."
 tags:
   - essay
   - alignment

@@ -6,6 +6,9 @@ permalink: /poker-eval/
 categories: 
   - "philosophy"
 description: "Why does poker have many rounds. Imagine that the World series of Poker (with potential winnings of ~$8 million) only had 1 round."
+takeaways:
+  - "Poker uses many rounds so skill beats luck; in a Kuhn poker toy, a 53.1% per-round edge needs about 1447 rounds to win with 99% confidence."
+  - "Life is one-round poker, so behind Rawls' veil we would choose systems that redistribute luck: progressive taxation, public education, healthcare and safety nets."
 tags:
   - essay
   - formalised

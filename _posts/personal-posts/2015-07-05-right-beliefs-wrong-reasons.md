@@ -6,6 +6,9 @@ coverImage: "download-2.jpeg"
 layout: post
 subtitle: It occured to me that my belief in evolution was just as illogical as others belief in god.
 description: "It occured to me that my belief in evolution was just as illogical as others belief in god. It occurred to me that the reasons many people believe in..."
+takeaways:
+  - "Believing in evolution without understanding the evidence can be as illogical as believing in creationism; belief without understanding or evidence is faith."
+  - "People should be called wrong for lacking a logical, rigorous thought process, not for believing the wrong thing."
 tags:
   - personal
   - sketch

@@ -6,6 +6,10 @@ permalink: /requests-for-research/01/
 categories: 
   - "research"
 description: "Some ideas from my masters. To stay sane I needed to write down some of the actionable ideas that occur to me. Otherwise I have the tendency to hoard them."
+takeaways:
+  - "Implicit quantile RL could be extended with control variates, and the Atari games could be organised into a taskonomy by similarity."
+  - "Open question: can the learning algorithm a player uses (e.g. PPO vs A2C) be identified just by watching it learn?"
+  - "Possibly, value functions fit to moving averages of reward at several time scales would give a hierarchy of meta-learners."
 tags:
   - notes
   - open-question

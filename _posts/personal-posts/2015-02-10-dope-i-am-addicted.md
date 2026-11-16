@@ -4,6 +4,9 @@ title: Dope, I am addicted?
 date: "2015-02-10"
 coverImage: "dope.jpg"
 description: "We are all addicted to dopamine (dopamine is the main neurotransmitter active in our brains reward system - see the 'mesolimbic dopamine system' for more..."
+takeaways:
+  - "Pleasure and fulfillment stimulate the same dopamine reward system, so the brain makes no moral distinction between them; fulfillment may just last longer."
+  - "Open questions: is designing addictive products with negative consequences criminal, and does a product past some threshold of addictiveness violate free will?"
 tags:
   - personal
   - sketch
