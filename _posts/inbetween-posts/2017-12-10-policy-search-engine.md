@@ -5,6 +5,9 @@ subtitle: Motivating a tool for tracking the effects of policies.
 categories: 
   - "speculation"
 description: "Motivating a tool for tracking the effects of policies. Typical smart city solutions seem to focus on gathering evidence for/of problems, i.e."
+takeaways:
+  - "Smart-city data provides evidence of problems, but solving them needs evidence of solutions: which past policies worked."
+  - "A search engine indexing policies by location, date, problem, solution type, cost and success would enable cross-city comparison and meta-analysis of policies."
 tags:
   - proposal
   - sketch

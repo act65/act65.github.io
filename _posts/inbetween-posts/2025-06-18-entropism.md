@@ -5,6 +5,9 @@ layout: post
 categories:
     - philosophy
 description: "The Universe's Burning Ambition. I want to propose a philosophy, a way of seeing our place in the cosmos."
+takeaways:
+  - "Proposed philosophy: the universe relentlessly maximises entropy, and intelligence is its most powerful engine for turning ordered energy into disordered heat."
+  - "On this view our purpose is to learn, build and collaborate so the 'fire' burns as brightly as possible, with AI as the next stage of the flame."
 tags:
   - essay
   - speculation

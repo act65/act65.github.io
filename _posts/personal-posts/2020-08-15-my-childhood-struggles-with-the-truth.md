@@ -6,6 +6,10 @@ coverImage: "chakras2.png"
 layout: post
 subtitle: I struggled with 'reality'...
 description: "I struggled with 'reality'. I am realising that I may not have the background of a 'typical' scientist. (Not that I think of myself as an outsider)"
+takeaways:
+  - "Growing up with auras, Reiki, horoscopes, homeopathy and the author's own lying taught the author to value the truth."
+  - "The Secret's belief that negative thoughts cause illness harmed the author's mother, who came to blame herself for her cancer."
+  - "An irrational household was not a bad one: it was built on foundations of warmth, love and support."
 tags:
   - personal
   - introspection

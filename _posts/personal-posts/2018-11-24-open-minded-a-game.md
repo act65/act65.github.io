@@ -7,6 +7,9 @@ subtitle: Let's take turns reading books
 categories: 
   - "interact"
 description: "Let's take turns reading books. I have glimpsed a distant feeling, one that worries me. I might not be open minded as I think."
+takeaways:
+  - "We tend to pick books that agree with us; open-mindedness, 'the willingness to take a novel viewpoint seriously', may be a defence against confirmation bias."
+  - "A proposed game: players take turns assigning each other a book they have read, so you read someone's favourite stories rather than what they think you would like."
 tags:
   - personal
   - sketch

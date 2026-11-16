@@ -6,6 +6,9 @@ subtitle: Learning by controlling the propagation speed of signals.
 categories: 
   - "proposal"
 description: "Learning by controlling the propagation speed of signals. Myelin makes up 50% of the brains mass. This is a large investment for us to make!"
+takeaways:
+  - "Speculative: myelin may do more than speed signals; by tuning relative spike timing on a fixed connectome it could make signals interfere constructively or destructively, and so learn patterns."
+  - "Open questions: the representational power of adaptive timing, and how myelination relates to controlling travelling waves."
 tags:
   - proposal
   - sketch

@@ -7,6 +7,10 @@ coverImage: "dscn0737.jpg"
 layout: post
 subtitle: Volunteering at an orphanage.
 description: "Volunteering at an orphanage. I recently spent 3 months teaching and helping at the House of Hope in Senjeri, Perambalur, Tamil Nadu."
+takeaways:
+  - "To help others, focus where your marginal utility is greatest; the author should have worked on engineering problems like water and power rather than teaching."
+  - "People who seem incapable of intelligent thought in India face barriers to thinking such as malnutrition, heat, poor education and subsistence labour."
+  - "Most of the orphanage's problems are financial, but changing staff practices like corporal punishment proved close to impossible."
 tags:
   - personal
   - inequality

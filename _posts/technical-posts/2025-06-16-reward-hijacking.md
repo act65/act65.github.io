@@ -5,6 +5,10 @@ layout: post
 categories:
     - research
 description: "How Intrinsic Motivation Can Derail Goal-Directed Behavior. In Reinforcement Learning, we model an agent's task within a Markov Decision Process (MDP)..."
+takeaways:
+  - "Goal hijacking, distinct from reward hacking, occurs when an endless intrinsic reward stream outvalues a distant, discounted extrinsic goal, so the instrumental reward becomes the terminal goal."
+  - "Wireheading, power-seeking and shutdown aversion can all be seen as forms of goal hijacking."
+  - "Mitigations bound the intrinsic reward's influence: exhaustible intrinsic rewards, constrained policy optimisation, or separate extrinsic and intrinsic value functions."
 tags:
   - research
   - formalised

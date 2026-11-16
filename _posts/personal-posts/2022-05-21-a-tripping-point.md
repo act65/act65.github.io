@@ -7,6 +7,9 @@ subtitle: I tripped over and have something to say about it.
 categories:
     - "economic"
 description: "I tripped over and have something to say about it. What is the value of good infrastructure? Or, conversly, how much does poor infrastructure cost?"
+takeaways:
+  - "A rough estimate puts the cost of a single uneven sidewalk in a busy city at about $1,679,000 a year in injuries and broken tech."
+  - "Poor infrastructure has large hidden costs, so a city could usefully hire a planner to optimise it for cheaper, safer, faster travel."
 tags:
   - essay
   - sketch

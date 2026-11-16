@@ -5,6 +5,9 @@ subtitle: A Bayesian Derivation of Discounting
 categories:
     - research
 description: "A Bayesian Derivation of Discounting. In reinforcement learning, the discount factor, γ, is one of the first things we learn."
+takeaways:
+  - "The discount factor can be derived as the agent's posterior belief that the reward opportunity survives the action, rather than set as a hyperparameter."
+  - "A rational Bayesian agent should therefore have a state-and-action-dependent gamma, more patient where it understands the world and less patient under high epistemic uncertainty."
 tags:
   - research
   - formalised

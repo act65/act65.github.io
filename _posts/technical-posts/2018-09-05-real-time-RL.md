@@ -5,6 +5,10 @@ subtitle: Rewarding a twitter bot is more complicated than I imagined.
 categories:
     - play
 description: "Rewarding a twitter bot is more complicated than I imagined. Imagine you want to make a twitter bot that is rewarded by likes, it adapts it's tweets in..."
+takeaways:
+  - "When rewards for past actions keep arriving indefinitely (e.g. likes on tweets) there is no efficient unbiased return estimate, and without strong priors learning is very hard."
+  - "An agent must tell a bad action from one whose payoff is still in the future, and will tend to be myopic because short-term rewards have more data."
+  - "If current actions can raise the rewards of past actions, an agent can reward itself (like self-citation), which is dangerous."
 tags:
   - research
   - formalised

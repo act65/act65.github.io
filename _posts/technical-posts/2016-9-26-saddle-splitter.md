@@ -5,6 +5,10 @@ layout: post
 categories:
     - research
 description: "Dynamically Growing Neural Networks. A common heuristic in both human and machine learning is to build incrementally from the simple to the complex."
+takeaways:
+  - "Networks can be grown by function-preserving splits of layers when gradients stagnate, adding capacity only where it is needed."
+  - "Splitting helps optimisation because a local minimum in a lower-dimensional parameterisation can become a saddle in the higher-dimensional one (saddle breaking)."
+  - "Adding width mainly smooths the loss landscape; adding depth mainly adds expressivity but needs skip connections to stay easy to optimise."
 tags:
   - research
   - formalised

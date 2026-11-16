@@ -3,6 +3,8 @@ title: "Future Telf, 2016"
 layout: post
 subtitle: Dreaming about projects
 description: "Dreaming about projects. I am half way through building an chemical process and assembly line to etch and fabricate SMARTYPANTS processors (my own design..."
+takeaways:
+  - "Dreams can come true: an imagined year of self-directed tinkering yields home-made AI processors, full-brain monitoring, a self-sequenced genome and open-source programmable biology."
 tags:
   - personal
   - sketch

@@ -5,6 +5,9 @@ layout: post
 categories:
     - economic
 description: "Who's Cashing In. Every time you walk through a city, wait for a bus, or glance up from the petrol pump, you are participating in a global market that will..."
+takeaways:
+  - "Out-of-home advertising takes public attention without consent: unlike online services there is no bargain, no exchange of value and no way to opt out."
+  - "Collective attention is a valuable shared public resource, worth roughly $9 per adult per year in OOH revenue, harvested with zero compensation to the public."
 tags:
   - essay
   - data

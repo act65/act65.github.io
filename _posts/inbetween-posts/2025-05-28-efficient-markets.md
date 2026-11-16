@@ -5,6 +5,10 @@ layout: post
 categories:
     - economic
 description: "Linearity, Non-Linearity, and a Confounding Conjunction. The Efficient Market Hypothesis (EMH) has been a cornerstone of financial theory for decades..."
+takeaways:
+  - "Markets aggregate beliefs roughly linearly, so prices can fail to reflect value that depends on a non-linear conjunction of widely dispersed information."
+  - "Unlike boosting, which learns non-linear combinations of weak learners, markets use a fixed capital-weighted sum; intermediaries or AI might capture what prices miss."
+  - "Perhaps the EMH is a powerful approximation: beating the market isn't impossible, just infeasibly hard for computationally bounded agents."
 tags:
   - essay
   - formalised

@@ -4,6 +4,9 @@ subtitle: Stories of who I want to be
 coverImage: "deepdream.png"
 layout: post
 description: "Stories of who I want to be. (I felt a bit down and lost recently; questioning whether my dreams are really achievable."
+takeaways:
+  - "Reaffirming a concrete story of the life you want is what gives purpose and keeps you going when dreams feel hazy and far away."
+  - "The dream splits time between research on the physical limits of intelligence, using AI to regulate markets and track financial crime, and a neuro-tech startup building BCIs."
 tags:
   - personal
   - sketch

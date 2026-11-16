@@ -5,6 +5,10 @@ subtitle: How can we use ladder nets in the unsupervised setting?
 categories: 
   - "research"
 description: "How can we use ladder nets in the unsupervised setting. Ladder nets (aka Unets) are currently achieving state-of-the art results on image to image..."
+takeaways:
+  - "A naive autoencoder with U-net skip connections cheats, since skips pass information straight to the output, so skip capacity must be constrained."
+  - "Proposed fix: low/high-pass filter the skips so early skips carry only high-frequency content and deeper layers must carry low-frequency content."
+  - "'High-level' content can be read as low-frequency content; the idea is untested at scale."
 tags:
   - proposal
   - sketch

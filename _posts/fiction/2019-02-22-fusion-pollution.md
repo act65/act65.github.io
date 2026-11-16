@@ -7,6 +7,9 @@ subtitle: A fusion of confusion.
 categories: 
   - "fiction"
 description: "A fusion of confusion. We achieve an astonishing fusion reaction output of 30:1 output to input, named BARY (after the center of the mass of -say- the..."
+takeaways:
+  - "A story prompt in which a cheap-energy fusion breakthrough produces lithium waste that slowly lowers atmospheric oxygen while people debate whether it is man-made."
+  - "Same idiots, different physics: a new energy source would likely repeat the overuse, slow-dawning harm and denial of the fossil-fuel era."
 tags:
   - story-prompt
   - sketch

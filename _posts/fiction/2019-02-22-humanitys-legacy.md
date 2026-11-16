@@ -6,6 +6,8 @@ subtitle: What will be left over after humanity? Plastic...
 categories: 
   - "fiction"
 description: "What will be left over after humanity? Plastic. Intrepid aliens discover Earth. They find an uninhabited planet, with unusual yet magnificent formations."
+takeaways:
+  - "A story prompt asking what aliens would make of an empty Earth full of plastic, suggesting humanity's lasting legacy will be landfill and plastic."
 tags:
   - story-prompt
   - sketch

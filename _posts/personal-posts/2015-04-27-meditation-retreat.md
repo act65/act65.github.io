@@ -7,6 +7,10 @@ coverImage: "nirvana-via-vipassana-1.jpg"
 layout: post
 subtitle: I tried doing vipassana meditation for 10 days.
 description: "I tried doing vipassana meditation for 10 days. As I arrived at the bus stop, I wondered whether it was possible to identify a meditator by certain..."
+takeaways:
+  - "Vipassana's claim not to be blind faith is undercut by enforced silence and philosophical questions answered only with 'you must understand it through experience'."
+  - "Its popularity may come from vague teachings that let willing participants convince themselves they are doing it right."
+  - "Despite the criticism, the retreat left the author calmer, better at filtering out everyday life and more focused on what they wanted."
 tags:
   - personal
   - introspection

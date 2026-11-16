@@ -9,6 +9,10 @@ categories:
 scholar:
   bibliography: "automated-science.bib"
 description: "Model-based reinforcement learning, symbolic AI, and the limits of efficient learning. (Wrote this for an application, which didn't end up working out."
+takeaways:
+  - "The proposed research question is the limits on efficiently learning an accurate, exploitable model of an agent's environment, viewed through computational complexity."
+  - "An agent should only model the details likely to influence or be influenced by its actions, not everything about its environment."
+  - "The more a representation compresses while keeping predictive power, the closer it is to the truth, and simple parts can be exploited for efficient learning."
 tags:
   - proposal
   - abstraction

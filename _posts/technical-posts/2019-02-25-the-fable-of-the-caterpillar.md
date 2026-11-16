@@ -7,6 +7,10 @@ subtitle: A fun intro to my masters topic; abstraction for efficient reinforcmen
 categories: 
   - "tutorial"
 description: "A fun intro to my masters topic; abstraction for efficient reinforcment learning. (This is my current focus - kinda - for my masters."
+takeaways:
+  - "A small abstract action space (e.g. 'forward' instead of commanding each leg) makes planning and credit assignment cheaper because there are fewer actions."
+  - "Many different low-level actions giving similar results hints at underlying structure that abstraction can exploit."
+  - "Open question: which properties of abstract action spaces (disentangled, regular, composable, efficient, expressive) give faster learning and better generalisation."
 tags:
   - tutorial
   - abstraction

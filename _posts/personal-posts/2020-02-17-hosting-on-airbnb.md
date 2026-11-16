@@ -6,6 +6,10 @@ coverImage: "airbnb.jpeg"
 layout: post
 subtitle: The lives of others
 description: "The lives of others. For two years I hosted a room on AirBnB. I hosted a range of personalities; quiet and reserved, chatty and friendly, ... activist, ..."
+takeaways:
+  - "Hosting dozens of guests showed the author has very little insight into most people's cares and fears."
+  - "Everyone seems to have their own 'pet-theory' of intelligence."
+  - "A guest changed the author's mind on animal rights: some animals are more or less likely to suffer, so we should minimise the risk that other life suffers."
 tags:
   - personal
   - society

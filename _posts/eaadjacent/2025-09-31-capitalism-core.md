@@ -5,6 +5,10 @@ categories:
     - economic
 layout: post
 description: "A Steelman of the Four Beliefs That Shape Our World. Capitalism is more than just an economic system; it's a philosophy built on a powerful set of..."
+takeaways:
+  - "Capitalism's philosophical core is four beliefs: secure private property, self-interested individuals who best judge their own needs, competition as discovery, and prices as decentralised information."
+  - "Its steelman: financial self-interest is the one motivator everyone cares about enough to build a scalable system on, so capitalism harnesses human nature rather than changing it."
+  - "These are beliefs, not facts; there may be other ways to organise, motivate and solve allocation."
 tags:
   - essay
   - power

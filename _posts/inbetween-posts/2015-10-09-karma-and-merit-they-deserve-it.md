@@ -7,6 +7,9 @@ permalink: /karma-and-merit/
 categories: 
   - "philosophy"
 description: "They deserve it. I think that both Karma and a Meritism common view both have a sort of moral elitism, where the unfortunate deserve the little they have..."
+takeaways:
+  - "Karma and meritism share a moral elitism in which the unfortunate deserve their suffering and the fortunate deserve their success."
+  - "People are products of their environment, so we cannot blame them for who they are; with the same experiences, the author would likely have turned out the same."
 tags:
   - essay
   - sketch

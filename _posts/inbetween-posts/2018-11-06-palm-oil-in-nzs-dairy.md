@@ -7,6 +7,9 @@ subtitle: tldr; cows are fed palm kernel.
 categories: 
   - "economic"
 description: "tldr; cows are fed palm kernel. It turns out that palm trees are an important part of our (NZ's) diary industry."
+takeaways:
+  - "NZ dairy relies heavily on imported palm kernel feed, which never appears on labels because ingredient lists omit inputs used only in production."
+  - "Whether palm kernel is bad for the environment is left uncertain; possibly the farming practices are bad, which shouldn't condemn the product itself."
 tags:
   - essay
   - sketch

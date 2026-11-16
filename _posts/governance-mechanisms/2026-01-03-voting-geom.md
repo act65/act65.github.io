@@ -5,6 +5,10 @@ layout: post
 categories:
     - economic
 description: "Voting as a compression problem, and the right to be heard. We often talk about politics in terms of ideology, history, or tribalism."
+takeaways:
+  - "A k-party ballot carries log2(k) bits; representing every voter exactly needs log2 of the number of preference profiles actually held, not just the entropy, which drops the tail."
+  - "Neither two parties nor issue-by-issue voting is universally right: the ballot should bundle issues that travel together and separate those that don't."
+  - "Voters silenced by a few-party system are predictably the small, off-axis clusters whose bundle of concerns cuts across the dominant cleavage."
 tags:
   - research
   - formalised

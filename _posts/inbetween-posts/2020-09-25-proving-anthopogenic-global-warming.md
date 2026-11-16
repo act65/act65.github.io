@@ -6,6 +6,10 @@ subtitle: An individual cannot.
 categories:
   - "science"
 description: "An individual cannot. What experiments could I do at home that would prove (to even the most skeptical) that our actions are causing a change in climate?"
+takeaways:
+  - "An individual cannot prove anthropogenic global warming with home experiments; the global scale, feedbacks and timescales put it out of reach."
+  - "The asymmetry cuts the other way: a rigorous experiment overturning the underlying physics could disprove it, though that is highly improbable."
+  - "The case for AGW rests on many independent lines of global evidence, models and attribution studies that individual effort cannot replicate."
 tags:
   - essay
   - trust

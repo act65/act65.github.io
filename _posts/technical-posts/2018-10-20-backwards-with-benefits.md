@@ -5,6 +5,10 @@ subtitle: A simple exploration of what can be gained by reasoning backwards from
 categories: 
   - "research"
 description: "A simple exploration of what can be gained by reasoning backwards from your goal. What can I gain if, rather than planning into the future, I can plan..."
+takeaways:
+  - "Searching from both the start and the goal shrinks the search space, e.g. from 2^6 to 2 x 2^3 states in a binary tree search."
+  - "Planning backwards from the goal can escape traps like the U-problem, where a shaped reward traps forward search."
+  - "The gain relies on path symmetry and adds the possibly expensive cost of checking whether the two searches have met."
 tags:
   - research
   - sketch

@@ -6,6 +6,10 @@ categories:
     - economic
 permalink: /governance-mechanisms/agency/
 description: "Deriving a social utility function from four toy worlds. Two drivers want the last parking space."
+takeaways:
+  - "Anonymity, monotonicity, continuity, separability, Pigou-Dalton and difficulty invariance force the social objective to be a sum of log ratios of goal-achievement probability versus a no-institution baseline."
+  - "Goals must be drawn from a hyperprior over what people might want, not reported preferences, or wireheading and contented slaves score as optimal."
+  - "The result gives strong but bounded protection against domination, and is a fixed-population mechanism-ranking objective, not a population axiology; it lands on the repugnant conclusion."
 tags:
   - research
   - formalised

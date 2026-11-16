@@ -5,6 +5,10 @@ layout: post
 categories:
   - research
 description: "Which questions should a ballot ask together? The votes can tell us. A ballot is a design. It fixes which issues are decided together, which separately..."
+takeaways:
+  - "Issue-by-issue voting is optimal only when preferences are independent across issues; bundling respects coupling but forces a short menu that leaves preferred combinations unexpressed."
+  - "A ballot loses welfare only through couplings its questions fail to cover, and contingent questions decide chain- and tree-structured coupling exactly at cost linear in the number of issues."
+  - "The preference-dependency graph can be estimated from Polis-style agree/disagree votes, so the ballot structure can be read off the votes themselves."
 tags:
   - research
   - formalised

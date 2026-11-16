@@ -5,6 +5,10 @@ subtitle: A conservation law for algorithms?
 categories:
     - research
 description: "A conservation law for algorithms. What if there was a measure of complexity that was conserved over optimal solutions to the same problem?"
+takeaways:
+  - "Speculative: there may be a complexity measure conserved across all optimal solutions to a problem, so they can only trade time, memory, energy and parallelism against each other."
+  - "Such a measure would belong to the problem itself, independent of any solution, and might be proportional to the entropy produced by running an algorithm."
+  - "Possibly this definition is trivial, since the lower bound is itself defined by the measure."
 tags:
   - research
   - sketch

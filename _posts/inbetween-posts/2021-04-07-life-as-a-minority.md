@@ -2,6 +2,10 @@
 title: "Life as a minority"
 layout: post
 description: "John is a wealthy, white male. In a world where wealth, race, and gender often dictate privilege and power, this trifecta positions John as a member of a..."
+takeaways:
+  - "Being a minority is not solely about numerical representation; it is about power dynamics, systemic biases and historical privilege."
+  - "A wealthy white man is numerically a minority on several axes, yet benefits from systemic advantages that often go unnoticed."
+  - "Those who appear to be in the majority may still experience marginalization and discrimination in some contexts."
 tags:
   - essay
   - sketch

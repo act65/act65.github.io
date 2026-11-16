@@ -6,6 +6,10 @@ categories:
     - economic
 permalink: /minimality-from-uncertainty/
 description: "How much of an action set should be foreclosed before you can learn. Here is a problem that shows up whenever a rule has to be written before the thing it..."
+takeaways:
+  - "The marginal value of keeping an option in a pre-committed permitted set is its expected improvement over the best option already kept."
+  - "Uncertainty about an option strictly increases the cost of removing it, whatever its expected value; you may prune only what you are confident is bad (weakened to raising the bar if values are bounded)."
+  - "The longer a commitment binds, the less it should foreclose, but the optimal amount of foreclosure is strictly positive: leaving everything open is also an error."
 tags:
   - research
   - formalised

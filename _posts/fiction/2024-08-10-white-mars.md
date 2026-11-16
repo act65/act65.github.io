@@ -5,6 +5,9 @@ subtitle: A colony of White Supremacists on Mars.
 categories: 
   - "fiction"
 description: "A colony of White Supremacists on Mars. A wealthy group of White Supremacists have finally gathered enough funds to colonise Mars."
+takeaways:
+  - "A story prompt in which a Mars colony selected for racial 'purity' is wiped out by a virus, because its lack of MHC diversity leaves no immune system able to adapt."
+  - "Genetic diversity is a survival necessity; selecting for purity is self-defeating."
 tags:
   - story-prompt
   - sketch
