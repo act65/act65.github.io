@@ -61,7 +61,7 @@ TAGS = {
  "human-nature": "essay historical uncertainty power mechanism-design philosophy",
  "agency-definition": "research formalised rights aggregation uncertainty mechanism-design philosophy",
  "minimality": "research formalised uncertainty rights mechanism-design probability",
- "voting-geom": "research formalised aggregation abstraction rights mechanism-design mathematics politics information-theory",
+ "voting-geom": "essay aggregation abstraction rights mechanism-design politics",
  "ballot-design": "research formalised aggregation measurement mechanism-design mathematics politics",
  # ------------------------------------------------------------ built ------
  "tvs": "game computation machine-learning built",
