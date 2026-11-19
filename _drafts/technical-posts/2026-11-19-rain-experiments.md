@@ -166,6 +166,10 @@ The derivations behind this section are in [Reputation as a belief]({{ site.base
 - Each of the rule's three parts is needed. Dropping one costs the lender up to {{ n.graduation_control_loss }}.
 - An honest newcomer borrowing 10,000 a cycle needs no guarantor from loan {{ n.graduation_cycles }}.
 - To a lender who knows nothing else, a point of reputation is worth {{ n.credit_per_point }} DMD of unsecured credit. Beside a share of fees and a standing to lose, reputation is a receipt for cost.
+- The rule assumes a ring is no more patient than the lender. Fees return over time as dividends, so a ring that discounts at 4% where the lender assumed 5% gains {{ n.patient_gain_4 }} of the fees it pays, and one that does not discount at all gains {{ n.patient_gain_0 }}. Crediting nothing for fees is safe against any ring; each loan then grows only by the interest rate, and the newcomer needs the guarantor for {{ n.graduation_cycles_zero }} loans.
+- A lender gives something up by letting the guarantor go: {{ n.lender_loss_from_graduating }} of what the newcomer is worth to it, at equal interest. At {{ n.unsecured_rate_lender }} on the unsecured part it is indifferent, and the borrower prefers graduating up to {{ n.unsecured_rate_borrower }}.
+
+**Where thresholds come from.** The lender's model above takes it as given that a borrower repays up to a private threshold. A borrower who weighs repaying against keeping the money produces the same behaviour. They repay a loan that will be offered again when their net return on it is at least {{ n.return_threshold }}, whatever its size, and their threshold is their capacity to use the money, scaled ({{ n.capacity_ratio_15 }} times it at a 15% return). Those below that return are the ones who vanish. The borrowers assumed in the ladder section, at 3% and 6%, are all below it, which is why they default when the ladder stops growing.
 
 ## One more: the oracle
 
@@ -179,8 +183,8 @@ The experiment also found a rule nobody had designed. A reward was refused if it
 - **Activity is exogenous.** Nobody in the simulations borrows more because they hold reputation, and no lender rations credit by it. If they did, arriving early could matter again.
 - **Shocks are steps.** Gradual growth in activity was not tested; it should be easier than a step.
 - **Identity is assumed away or assumed free.** The truth is in between and outside the protocol.
-- **The lender's model is assumed.** That borrowers repay up to a private threshold, and how those thresholds are spread, are inputs to everything in aim 6 except the last rule, which needs neither.
-- **Lenders are not shown to want any of this.** A lender who drops a guarantor takes on the risk the guarantor carried. One lender is modelled, with no competition.
+- **How borrowers differ is assumed.** How capacities and returns are spread among borrowers is an input to everything in aim 6 except the last rule, which needs neither.
+- **One lender, no competition.** A rival could wait for the first lender to pay for the information and then poach the survivors. How the gain from graduating is split is not determined either.
 - **Settlement after default is not modelled.** A defaulter who pays the debt and returns as themselves is treated as never returning.
 - **The dividend to defaulters.** A default costs the bond and a mark on a second counter that readers can see. It no longer takes any other reputation, so a defaulter keeps the dividends on what was not bonded.
 

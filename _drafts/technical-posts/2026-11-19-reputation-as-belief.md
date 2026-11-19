@@ -106,7 +106,27 @@ The borrower's side gives two more bounds on a step $k$.
   which is {{ n.k_stay }} with $\sigma$ = 3%. The loan size cancels.
 - **Climbing in order to default must not pay.** A borrower who repays every loan and defaults on the last has, when each loan is $1 + i$ times the one before, received nothing along the way: each new loan exactly repays the old. Their whole take is the first loan. So $k \le 1 + i$, and the first loan is the whole exposure.
 
-These come from two models that have not been joined. In the first a threshold is given; in the second it is chosen. That a borrower wants loans to grow and a lender has no reason to raise them is the gap between the two.
+These come from two models: in the first a threshold is given, and in the second the borrower chooses. The next section derives the first from the second.
+
+## Where the threshold comes from
+
+Give a borrower a *capacity* $K$, the amount of borrowed money they can put to use, and a net return $\sigma$ on it per loan (what it earns beyond the interest). Each period they either repay or keep the principal and are shut out.
+
+Offered the same loan again each period, a borrower within their capacity repays when
+
+$$ \sigma \;\ge\; \sigma^* \approx r + q , $$
+
+their discount rate plus the chance that a shock ends the relationship anyway. With fees and interest it is {{ n.return_threshold }} here, against {{ n.discount_plus_shock }} for $r + q$. The size of the loan cancels: whether such a loan is repaid depends on the borrower's return, not on the amount.
+
+Lent more than they can use, they keep repaying up to a principal of
+
+$$ c \;=\; K\,\frac{\sigma + i}{\sigma^* + i} , $$
+
+which is {{ n.capacity_ratio_15 }} times capacity at a return of 15%. So the threshold is capacity, scaled, and has the same tail.
+
+- **The borrowers who "take the first loan and vanish" in the next section are those with a return below $\sigma^*$.** Their share is a property of the applicants, not a free input.
+- **Growth holds a low-return borrower only while it lasts.** While each loan is larger than the last they repay, and when growth stops they default. A lender has no reason to want them, which is why it is no contradiction that borrowers want growth and lenders do not offer it.
+- **A higher interest rate does not help.** The net return needed barely moves with the rate, so the gross return needed rises one for one: {{ n.gross_needed_5 }} at 5% interest and {{ n.gross_needed_10 }} at 10%. Raising the rate turns more borrowers into defaulters.
 
 ## The first loan is a purchase of information
 
@@ -165,6 +185,11 @@ The argument is about cash, not probability. A ring is free to manufacture any r
 
 A newcomer who borrows 10,000 a cycle under a guarantee is offered 100 unsecured at first, {{ n.graduation_offer_40 }} by the fortieth loan, and needs no guarantor from loan {{ n.graduation_cycles }}. To a lender who knows nothing else, a point of reputation is worth {{ n.credit_per_point }} of unsecured credit.
 
+Two qualifications.
+
+- **How much of a fee is sunk depends on who paid it.** A fee returns over time as dividends, so to someone who discounts at $r$ the sunk share is $r/(r+\delta)$, and a ring more patient than the lender assumed is credited too much. With the share set for 5%, a ring that discounts at 4% gains {{ n.patient_gain_4 }} of the fees it pays, and one that does not discount at all gains {{ n.patient_gain_0 }}. The safe setting is the rate of the most patient attacker allowed for. Zero is always safe, and the rule still works: each loan may grow by the interest rate up to the evidence, which needs no assumption about anyone. The newcomer then needs the guarantor for {{ n.graduation_cycles_zero }} loans instead of {{ n.graduation_cycles }}. So the guarantee supplies the evidence at once, and the fees only set the speed.
+- **A lender will not drop a guarantor for nothing.** The guarantor was carrying the risk of a shock. At the same interest the lender is {{ n.lender_loss_from_graduating }} worse off letting the borrower graduate. Paid for the risk, at {{ n.unsecured_rate_lender }} on the unsecured part, it is indifferent, and the borrower is still better off up to {{ n.unsecured_rate_borrower }}: the guarantor's fee no longer has to be sunk by anyone. At the higher rate each loan may also grow faster, and the guarantee is gone in {{ n.graduation_cycles_premium }} loans.
+
 ## What this says about Rain's score
 
 - **It fades.** Rain multiplies every score by a fixed fraction each period.
@@ -186,8 +211,10 @@ A newcomer who borrows 10,000 a cycle under a guarantee is offered 100 unsecured
 | The belief under partial trust; the bounds on what a ring can take | Derived; checked by Monte Carlo and against a model of the contracts. |
 | The margin of safe trust, {{ n.safe_trust_ratio }} times the fee rate | Computed after the experiment was run; no prediction was made. |
 | Guarantees: what a guarantor can lose a lender, what a vouch costs | Derived; checked against a model of the contracts, which is checked against the contracts. |
-| A record is worth what it cost; no ring profits | A cash-flow argument; no profitable strategy among {{ n.graduation_strategies }} searched. |
+| A record is worth what it cost; no ring profits | A cash-flow argument; no profitable strategy among {{ n.graduation_strategies }} searched, for a ring no more patient than assumed. |
+| The threshold is capacity, scaled; repaying depends on return and not on size | Derived; confirmed by comparing the two strategies directly. |
+| A lender and a borrower both prefer graduation over a range of rates | Derived; the lender's side confirmed by simulating borrowers with shocks. |
 
-Not established: whether real borrowers have thresholds, what their tail is, or how often people change. Every rate above is assumed. Still open are a decay rate per person, a single model in which thresholds are chosen and drift, and a version of *evidence* that adds up loans carried at once.
+Not established: how capacities and returns are spread among real borrowers, or how often people change. Every rate above is assumed. Still open are a decay rate per person, borrowers who can start again under a new name in the model of the last few sections, a lender choosing its policy against borrowers who choose theirs, and a version of *evidence* that adds up loans carried at once.
 
-The code is in [`rain/belief.py`, `rain/ladder.py` and `rain/record.py`](https://github.com/act65/rain/tree/main/rain), and the experiments in [`experiments/`](https://github.com/act65/rain/tree/main/experiments) (`bayes_decay`, `first_loan`, `collusion`, `vouching`, `graduation`).
+The code is in [`rain/belief.py`, `rain/ladder.py` and `rain/record.py`](https://github.com/act65/rain/tree/main/rain), and the experiments in [`experiments/`](https://github.com/act65/rain/tree/main/experiments) (`bayes_decay`, `strategic_borrower`, `first_loan`, `collusion`, `vouching`, `graduation`, `guarantor_exit`, `patient_ring`).
