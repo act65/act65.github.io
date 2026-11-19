@@ -10,6 +10,7 @@ takeaways:
   - "Reputation valued by its dividends cannot be good collateral: it must be worth less than it costs or it can be farmed, and the two are the same ratio."
   - "What deters default is losing your place on a ladder of loans you would have to climb again. Dividends are a small part of the cost that is occasionally decisive."
   - "Three rules give reputation a stable value below its cost at all times: a fixed price per point, decay, and fees paid out at the decay rate."
+  - "A record is cheap to fake, so it is worth what the reader's trust makes it, and to a stranger what it cost in fees. A newcomer starts on a guarantor's standing and outgrows it."
 tags:
   - research
   - trust
@@ -21,7 +22,7 @@ tags:
 
 [Rain]({{ site.baseurl }}/rain/) is a public log of promises and a reputation earned by keeping them. This post is about whether it works: what we want from it, how each aim was turned into something that could fail, and what happened. The code, with every experiment's predictions and outcomes, is [here](https://github.com/act65/rain/tree/main/experiments).
 
-The result to remember is this. **Reputation that is valued by the fee income it earns cannot be good collateral, and should not be. What deters default is losing a place on a ladder of loans that would have to be climbed again.** The protocol's job is to keep the record honest and expensive to fake.
+The result to remember is this. **Reputation that is valued by the fee income it earns cannot be good collateral, and should not be. What deters default is losing a place on a ladder of loans that would have to be climbed again.** The protocol's job is to keep the record true and to make every line of it cost something. What a line is worth as evidence depends on who is reading: a lender who trusts the counterparty can take it at face value, and one who trusts nobody can take it for what it cost.
 
 {% assign n = site.data.rain %}
 
@@ -34,6 +35,7 @@ Five properties, each stated so that an experiment could contradict it.
 3. **Defaulting costs more than it gains,** at loan sizes people would want.
 4. **A new identity gets nothing for free,** so that walking away from a bad record is not costless.
 5. **Reputation follows what people do,** not how early they arrived or how large they are.
+6. **A record cannot be manufactured at a profit,** and a newcomer still has somewhere to start.
 
 ## How we tested
 
@@ -113,7 +115,7 @@ How much a lender should advance is the lender's business, and none of this is b
 
 Under the first design every new identity was given starting reputation. An identity created to attack extracted {{ n.free_identity_naive }} DMD from a lender lending against the score, and {{ n.free_identity_careful }} DMD even from a careful one. Now an identity starts with nothing and can bond nothing. The fee is the price of an identity's record, and the only one.
 
-That leaves the first rung. The ladder chart shows the first loans are unprotected whenever a defaulter can start again. Those loans have to be small, or secured some other way: a voucher who stakes their own standing, or ordinary collateral. How expensive it is to obtain a second identity sits outside Rain, and the chart is the measure of how much depends on it.
+That leaves the first rung. The ladder chart shows the first loans are unprotected whenever a defaulter can start again. Aim 6, below, is about what can be done there.
 
 ## Aim 5: who ends up holding reputation
 
@@ -132,6 +134,39 @@ Two hundred agents, with loan sizes spread over two orders of magnitude, half of
 - **Behaviour is what separates people.** An agent who defaults one time in ten gets {{ n.unreliable_dividends_over_fees }} of their fees back in dividends. A reliable one gets {{ n.reliable_dividends_over_fees }}: for them the fee is close to a deposit, returned as their reputation fades.
 - **The decay rate is also the forgiveness rate.** Slower decay makes a bad record last, which is a reason not to make it very slow.
 
+## Aim 6: the record, and where a newcomer starts
+
+The derivations behind this section are in [Reputation as a belief]({{ site.baseurl }}/reputation-as-belief/). Here are the tests.
+
+**Faking a record.** Two colluding accounts pass a loan back and forth. Each round costs {{ n.wash_cost }} of the amount: the fee, less the part that returns as dividends. A lender who reads the whole log as evidence is robbed without limit. After one wash of 10,000 it accepts {{ n.naive_bank_due }} and loses it. The control (a lender that believes everything must lose) failed as it should.
+
+**Reading a record.** A reader weighs each kept promise by its trust that the counterparty was independent of the promisor.
+
+- With no trust in counterparties it does not know, a lender gains the attacker nothing; their best move is not to bother.
+- Partial trust is worth little in either direction. One half-trusted confederate raises the loan by a factor of {{ n.half_trust_multiple }} at most. And an honest borrower who repaid 10,000 to another lender is offered {{ n.portable_99 }} by a lender who trusts that one at 99%, against {{ n.portable_full }} at full trust.
+- Many identities are the danger. Twenty, each half-trusted, take {{ n.sybil20_multiple }} times a stranger's loan, unless the lender knows they are one group.
+- The fee buys a margin. We predicted that any trust in unknown counterparties could be exploited with enough identities. It cannot: below about {{ n.safe_trust_ratio }} times the fee rate, the fees on the fake loans exceed the take.
+
+**The first loan.** A search over every sequence of loan sizes, for a lender facing strangers of whom some take the first loan and vanish.
+
+- The first loan is made at an expected loss. With 20% vanishing, the best first loan is {{ n.first_due_20 }} where everyone genuine is good for 100. It expects to lose {{ n.first_alone_20 }}, and the stranger is worth {{ n.first_value_20 }} overall.
+- The lender then raises each loan by the interest rate until it reaches what the borrower is known to be good for, and not beyond. The ladder of the earlier section is such a climb.
+- A lender that accepts a fixed 10% risk on every loan, which earlier experiments here assumed, loses {{ n.risk_ladder_value }} per stranger. Their conclusions concern the borrower and do not depend on it.
+- If those who vanish can return under a new name, the first loan is at most what a new identity costs. With free identities it is nothing.
+
+**A guarantor.** So a newcomer needs someone to answer for them. A second reference script records a guaranteed loan as two promises, the borrower's to the guarantor and the guarantor's to the lender. If the borrower defaults, the claim on them passes to the guarantor, who pays the lender or becomes its defaulter. The newcomer borrows 10,000 on the first day.
+
+- A guarantee counts against the guarantor's own credit. Then a guarantor who lets twenty guaranteed loans default takes {{ n.vouch_burn_loss }}, one loan's worth. Without that rule it is {{ n.vouch_burn_loss_uncounted }}.
+- A guaranteed repayment is a promise kept *to the guarantor*, so a lender who trusts only its own dealings learns nothing about the borrower from it. A lender who counts it loses {{ n.vouch_naive_gain }} per fake borrower.
+- A vouch for 10,000 costs the guarantor {{ n.vouch_cost_sure }} if they are sure of the borrower and {{ n.vouch_cost_10 }} if they think there is a one in ten chance of an opportunist.
+
+**Outgrowing the guarantor.** A lender who trusts nobody can still use a record, for what it cost. It accepts, unsecured, the smaller of the largest amount the borrower has repaid to anyone, and `(1 + interest) × the largest repaid to itself + fees sunk since`.
+
+- Of {{ n.graduation_strategies }} strategies for a ring (guaranteed loans or washes, of three sizes, once or every cycle, defaulting on any of the first 61 loans), none beats simply taking a stranger's loan.
+- Each of the rule's three parts is needed. Dropping one costs the lender up to {{ n.graduation_control_loss }}.
+- An honest newcomer borrowing 10,000 a cycle needs no guarantor from loan {{ n.graduation_cycles }}.
+- To a lender who knows nothing else, a point of reputation is worth {{ n.credit_per_point }} DMD of unsecured credit. Beside a share of fees and a standing to lose, reputation is a receipt for cost.
+
 ## One more: the oracle
 
 Reputation is computed off-chain by an oracle that reads the log. If it runs `L` periods late, established honest users are unaffected and newcomers receive everything they earn `L` periods late, a loss of {{ n.lag1_newcomer }} per period of lag at these rates.
@@ -144,7 +179,10 @@ The experiment also found a rule nobody had designed. A reward was refused if it
 - **Activity is exogenous.** Nobody in the simulations borrows more because they hold reputation, and no lender rations credit by it. If they did, arriving early could matter again.
 - **Shocks are steps.** Gradual growth in activity was not tested; it should be easier than a step.
 - **Identity is assumed away or assumed free.** The truth is in between and outside the protocol.
+- **The lender's model is assumed.** That borrowers repay up to a private threshold, and how those thresholds are spread, are inputs to everything in aim 6 except the last rule, which needs neither.
+- **Lenders are not shown to want any of this.** A lender who drops a guarantor takes on the risk the guarantor carried. One lender is modelled, with no competition.
 - **Settlement after default is not modelled.** A defaulter who pays the debt and returns as themselves is treated as never returning.
+- **The dividend to defaulters.** A default costs the bond and a mark on a second counter that readers can see. It no longer takes any other reputation, so a defaulter keeps the dividends on what was not bonded.
 
 ## Reproducing it
 

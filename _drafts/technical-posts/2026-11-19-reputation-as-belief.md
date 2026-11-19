@@ -1,15 +1,16 @@
 ---
 title: Reputation as a belief
-subtitle: A Bayesian reading of decay, loan size and what a score should be
+subtitle: A Bayesian reading of decay, loan size, trust and vouching
 layout: post
 permalink: /reputation-as-belief/
 categories:
     - research
-description: "Starting from one question, how likely is this person to keep their next promise, and deriving why reputation should decay and how large the next loan can be."
+description: "Starting from one question, how likely is this person to keep their next promise, and deriving why reputation should decay, whose evidence counts, what a first loan is for, and how a newcomer can start."
 takeaways:
-  - "If people can change, old evidence about them survives with a probability that shrinks with its age, so an estimate of their reliability regresses to the prior. Decay is derived, not chosen."
+  - "If people can change, old evidence about them survives with a probability that shrinks with its age, so an estimate of their reliability regresses to the prior at the rate people change."
   - "Two decaying counters recover most of what the exact Bayesian filter knows, but they should forget several times faster than people change."
-  - "If repaying reveals a threshold, the largest amount repaid is the statistic that matters, and a risk tolerance fixes how fast a ladder of loans may grow."
+  - "A kept promise is evidence only to a reader who trusts that the counterparty was independent. An extraordinary record needs extraordinary trust."
+  - "To a reader who trusts nobody, a record is worth what it cost in fees. That is enough for a newcomer with a guarantor to outgrow them."
 tags:
   - research
   - formalised
@@ -19,13 +20,11 @@ tags:
   - mechanism-design
 ---
 
-A reputation score is usually designed: add some points for good behaviour, remove more for bad, tune until it feels right. [Rain]({{ site.baseurl }}/rain/) started that way too, with 25 points for a kept promise and 100 off for a broken one.
-
-This post starts somewhere else, with the question a lender actually has:
+A lender deciding whether to trust someone wants to know one thing:
 
 > How likely is this person to keep their next promise?
 
-and asks what a rational answer looks like. Two features of Rain that could have been design choices turn out to be consequences: that reputation fades, and that credit should grow step by step. The argument for the first is the one in [Why are future rewards worth less than present rewards?]({{ site.baseurl }}/discounting-via-uncertainty/), pointed at the past instead of the future.
+This post works out a rational answer and compares it with the rules of [Rain]({{ site.baseurl }}/rain/). The main result is that if people can change, the estimate of their reliability drifts back to what we believe about a stranger, at the rate people change. So reputation should fade, and how fast is a statement about people. The argument is the one in [Why are future rewards worth less than present rewards?]({{ site.baseurl }}/discounting-via-uncertainty/), applied to the past. A second model, in which the size of a promise matters, makes the largest amount repaid the quantity to track. From it follow what a first loan to a stranger is for, whose evidence a reader should count, how one person can vouch for another, and what a record is worth to a reader who trusts nobody.
 
 {% assign n = site.data.rain %}
 
@@ -49,7 +48,7 @@ and the mean obeys
 
 $$ \hat p_{t+1} = \gamma\, \hat p_t + (1 - \gamma)\, p_0 . $$
 
-**With no new evidence, the estimate drifts back to what we would believe about a stranger, geometrically.** This step is exact. The decay rate is not a knob; it is a belief about how fast people change.
+**With no new evidence, the estimate drifts back to what we would believe about a stranger, geometrically.** The step is exact, and the rate of decay, $1 - \gamma$, is the probability $h$ that a person changes.
 
 ## What a contract can afford
 
@@ -59,7 +58,7 @@ A contract can store two counters per person and shrink both each step:
 
 $$ K \leftarrow \gamma K, \qquad B \leftarrow \gamma B . $$
 
-This is a different pooling of posterior and prior from the one above. It is their geometric mean, $p(\theta \mid \text{data})^{\gamma}\,\pi(\theta)^{1-\gamma}$, where the exact step is their arithmetic mean. Equivalently it is the distribution closest, in a weighted Kullback-Leibler sense, to both what the data said and to knowing nothing. Both versions regress to the prior. They differ in how.
+This is a different pooling of posterior and prior from the one above. It is their geometric mean, $p(\theta \mid \text{data})^{\gamma}\,\pi(\theta)^{1-\gamma}$, where the exact step is their arithmetic mean. Equivalently it is the distribution closest, in a weighted Kullback-Leibler sense, to both what the data said and to knowing nothing. Both regress to the prior.
 
 How much does the cheap version lose? On data simulated from the model, scored by how well each method predicts the next outcome:
 
@@ -73,65 +72,106 @@ How much does the cheap version lose? On data simulated from the model, scored b
 
 ![Prediction error against forgetting rate, for three rates of change]({{ site.baseurl }}/assets/rain/forgetting-rate.svg)
 
-Two things follow.
-
 - **Two decaying counters are enough**, provided the decay rate is chosen well.
-- **The right decay rate is not the rate of change.** I expected $\gamma = 1 - h$ to be best, and it was not: the counters should forget two to six times faster than people change. The reason is a trade-off. Forgetting faster makes the estimate noisier, in proportion to $1 - \gamma$. Forgetting slower leaves in evidence about someone who no longer exists, in proportion to $h/(1-\gamma)$. The sum is smallest when $1 - \gamma$ is proportional to $\sqrt{h}$, and the three optima sit close to $0.42\sqrt{h}$. That explanation came after the result, and the constant is fitted to three points.
+- **The best decay rate is faster than the rate of change.** The counters should forget two to six times faster than people change. Forgetting faster makes the estimate noisier, in proportion to $1 - \gamma$. Forgetting slower leaves in evidence about someone who no longer exists, in proportion to $h/(1-\gamma)$. The sum is smallest when $1 - \gamma$ is proportional to $\sqrt{h}$, and the three optima sit close to $0.42\sqrt{h}$. The trade-off is a heuristic argument, and the constant is fitted to three points.
 
-So is decay slow? It is as slow as people are stable. If someone's reliability changes about once in 200 promises, the best memory is about 33 promises. With real data the rate should be fitted by asking which $\gamma$ predicts best. And never forgetting is close to useless once people change at all: at $h = 0.05$ it predicts barely better than ignoring the person's history ({{ n.static_loss_h05 }} against {{ n.prior_loss_h05 }}).
+Decay is as slow as people are stable. If someone's reliability changes about once in 200 promises, the best memory is about 33 promises. With real data the rate should be fitted by asking which $\gamma$ predicts best. And never forgetting is close to useless once people change at all: at $h = 0.05$ it predicts barely better than ignoring the person's history ({{ n.static_loss_h05 }} against {{ n.prior_loss_h05 }}).
 
 ## Size
 
 The model so far treats a promise to repay 10 and a promise to repay 10,000 as the same kind of evidence. They are not, and treating them alike is how a long record of small kept promises becomes the cheapest preparation for one large default.
 
-Here is a model in which size matters. Each borrower has a private cost of defaulting, $c$: what their standing is worth to them. They repay when the amount due is at most $c$, apart from a small probability $q$ of a shock that makes them default regardless. Then repaying an amount $M$ reveals that $c \ge M$, and what a clean record tells you is not how many promises were kept but **the largest amount repaid**.
+Suppose each borrower has a private cost of defaulting, $c$: what their standing is worth to them. They repay when the amount due is at most $c$, apart from a small probability $q$ of a shock that makes them default regardless. Then repaying an amount $M$ reveals that $c \ge M$, and a clean record is summarised by **the largest amount repaid**.
 
 Let $c$ follow a Pareto distribution across borrowers, $P(c > x) = (x_{\min}/x)^{a}$, which has no built-in scale. Then for $X \ge M$
 
 $$ P(\text{repay } X \mid \text{largest repaid } M) \;=\; (1 - q)\left(\frac{M}{X}\right)^{a} . $$
 
-## How big can the next loan be?
+## When should the next loan be larger?
 
-A lender who accepts a probability $\rho$ of default on each loan can let the amount due grow to
+Take the lender's side. It earns interest $i$ on a loan that is repaid and loses the principal otherwise, and discounts at $r$ per loan. A borrower known to repay an amount is then worth, per unit of that amount,
 
-$$ k_{\text{screen}} = \left(\frac{1 - q}{1 - \rho}\right)^{1/a} $$
+$$ v = \frac{(1-q)\,i - q}{(1+i)\left(1 - \frac{1-q}{1+r}\right)} , $$
 
-times the largest amount repaid. This is lending on a ladder, with the size of the step derived from a risk tolerance. With $q$ = 2%, $\rho$ = 10% and $a$ = 1 it is {{ n.k_screen }}: nine percent a step. Doubling each time, with the same $q$ and $a$, means accepting a {{ n.doubling_risk }} chance of default.
+which is {{ n.repeat_value }} with $i = r$ = 5% and $q$ = 2%. Raising the loan from $M$ to $kM$ multiplies the chance of repayment by $k^{-a}$ and the principal at risk by $k$. With $a = 1$ the expected amount repaid does not change and the amount at risk grows, so **a lender who maximises profit never raises a loan above what the borrower has shown**. Raising pays only when thresholds are heavy-tailed,
 
-That is the lender's side. The borrower's side bounds the step from below and above.
+$$ (1-q)(1-a)(1+i)\left(1 + \frac{v}{1+r}\right) > 1 , $$
 
-- **Honest borrowers must want to stay.** With interest $i$, a gain of $\sigma$ per unit borrowed and discount rate $r$, repaying is better than leaving when
-  $$ k \;\ge\; \frac{(1+i)(1+r)}{1 + i + \sigma} . $$
-  The loan size cancels, which is why this deterrent scales.
-- **Climbing in order to default must not pay.** Someone with no use for the money who repays every rung and defaults on the last has paid interest on the way up. For a long ladder the interest exceeds the take when $k \le 1 + i$. At exactly $k = 1 + i$ the profit is the first loan, whatever the length: the first rung is the whole exposure.
+which at 5% interest means a tail index below {{ n.growth_tail_5 }}. A search over every sequence of loan sizes agrees. A lender who accepts a fixed 10% risk on each loan, raising it {{ n.k_screen }} times each step, loses {{ n.risk_ladder_value }} per stranger where repeating the same loan earns {{ n.repeat_floor_value }}.
 
-With $i = r = 5\%$ and $\sigma = 3\%$ the step must lie between {{ n.k_stay }} and 1.05. Such a step exists exactly when
+The borrower's side gives two more bounds on a step $k$.
 
-$$ \sigma + i \;\ge\; r , $$
+- **Honest borrowers must want to stay.** With a gain of $\sigma$ per unit borrowed, repaying is better than leaving when
+  $$ k \;\ge\; \frac{(1+i)(1+r)}{1 + i + \sigma} , $$
+  which is {{ n.k_stay }} with $\sigma$ = 3%. The loan size cancels.
+- **Climbing in order to default must not pay.** A borrower who repays every loan and defaults on the last has, when each loan is $1 + i$ times the one before, received nothing along the way: each new loan exactly repays the old. Their whole take is the first loan. So $k \le 1 + i$, and the first loan is the whole exposure.
 
-that is, when what a borrower earns on borrowed money covers their own discount rate.
+These come from two models that have not been joined. In the first a threshold is given; in the second it is chosen. That a borrower wants loans to grow and a lender has no reason to raise them is the gap between the two.
 
-None of this is part of Rain. The log records the amount, deadline and outcome of every promise, and each lender can read $K$, $B$ and $M$ from it and apply whatever rule they like. This is one rule with its reasoning shown.
+## The first loan is a purchase of information
+
+A lender learns about a stranger only by lending. Suppose a share $\pi_0$ of strangers take the first loan and vanish, and the rest are good for at least a floor amount. Lending the floor is expected to lose money by itself once $\pi_0$ exceeds $m/(1+m)$, with $m = (1-q)i - q$: {{ n.first_loan_loses_above }} here. It is still worth doing, because a survivor is worth $v$ per unit from then on.
+
+How large should it be? Smaller screens more cheaply. But the lender can then raise the loan by at most $1 + i$ each time (the bound above), so a smaller start takes longer to reach the floor. The best first loan, as a share of the floor:
+
+| Strangers who vanish | Best first loan (floor = 100) |
+|---|---|
+| 10% | {{ n.first_due_10 }} |
+| 20% | {{ n.first_due_20 }} |
+| 30% | {{ n.first_due_30 }} |
+
+At 20% the first loan is expected to lose {{ n.first_alone_20 }} and the stranger is worth {{ n.first_value_20 }} overall. **The expected loss on the first loan is the price of learning who is genuine.** After it the lender raises each loan by exactly $1 + i$ until the floor and never after.
+
+If those who vanish can return under a new name, they will, for as long as the first loan exceeds what a new identity costs. The first loan is then bounded by the price of an identity, and with free identities a stranger can be lent nothing.
+
+## Whose evidence?
+
+Two people can pass a loan back and forth. Each round costs {{ n.wash_cost }} of the amount (the fee, less what returns as dividends) and puts a kept promise on the log. So a kept promise is evidence about the promisor only if the counterparty was independent of them, and that is something each reader has to judge.
+
+Let $t$ be a reader's probability that a counterparty is independent. A repayment of $M$ to them then says "the threshold is at least $M$" with probability $t$ and nothing otherwise, so it multiplies the likelihood of every threshold below $M$ by $1 - t$. With prior survival $S(x) = P(c \ge x)$, for an amount $X \le M$:
+
+$$ P(c \ge X \mid \text{repaid } M) \;=\; \frac{(1-t)\,\big(S(X) - S(M)\big) + S(M)}{(1-t)\,\big(1 - S(M)\big) + S(M)} . $$
+
+With $t = 1$ this is 1, and with $t = 0$ it is the prior. In between it stays close to the prior whenever $S(M)$ is small. **An extraordinary record needs extraordinary trust.** A repayment a hundred times what a stranger is thought good for moves a reader who trusts the counterparty at 99% from 109 to {{ n.portable_99 }}; at 99.9%, to {{ n.portable_999 }}; full trust gives {{ n.portable_full }}.
+
+- **A ring with one half-trusted member gains little**: at most {{ n.half_trust_multiple }} times a stranger's loan, by claiming about that much and no more.
+- **An honest record is portable only along trust.** A new lender can use a history made elsewhere only if it trusts the counterparties in it almost completely.
+- **Independence is the assumption that matters.** Witnesses multiply: with $n$ independent counterparties the doubt is $(1-t)^n$. Twenty half-trusted identities take {{ n.sybil20_multiple }} times a stranger's loan, unless the reader knows they are one group, in which case they count as one.
+- **The fee buys a margin.** Each fake witness costs a fee. No ring of any size profits while a reader's trust in unknown counterparties is below about {{ n.safe_trust_ratio }} times the fee rate. At 1% trust, reaching a hundred times a stranger's loan takes {{ n.small_trust_confederates }} confederates and loses {{ n.small_trust_loss }}.
+
+## Vouching
+
+If a stranger can be lent nothing, a newcomer needs someone to answer for them. A guarantee is two promises of the same amount: the borrower's to the guarantor, and the guarantor's to the lender. If the borrower defaults, the guarantor pays or becomes the lender's defaulter.
+
+The lender now needs no belief about the newcomer. It needs one about the guarantor, and it has one. What the guarantor believes shows in their price. They pay when the borrower does not, so for an amount $X$ the least they can charge is
+
+$$ \big(\pi + (1-\pi)\,q\big)\,X \;+\; \text{the fee they sink} , $$
+
+where $\pi$ is their own probability that the borrower will vanish: {{ n.vouch_cost_sure }} on 10,000 if they are sure of the borrower, {{ n.vouch_cost_10 }} at 10%, {{ n.vouch_cost_50 }} at 50%. A vouch is evidence because the person giving it bears the cost of being wrong.
+
+The reading above applies without change. The guarantee is the guarantor's own promise, so it counts against what the lender will let the guarantor owe. And the borrower's kept promise was to the guarantor, so a lender who trusts only its own dealings gives it no weight as evidence about the borrower.
+
+## A record is worth what it cost
+
+That last point leaves the newcomer needing the guarantor for ever. The way out does not use belief at all.
+
+A lender can accept from a borrower, unsecured, up to
+
+$$ \min\Big(\; \text{evidence},\;\; (1+i) \times \text{own} \;+\; \text{fees sunk since} \;\Big) , $$
+
+where *evidence* is the largest amount they have repaid to anyone, *own* the largest they have repaid to this lender, and *fees sunk since* the fees on promises they have kept since that loan was made, less the share that returns as dividends ({{ n.sunk_fee_share }} is sunk).
+
+The argument is about cash, not probability. A ring is free to manufacture any record. Under this rule each unit of credit it gains has cost it a unit of fees, and each repayment to the lender buys a next loan that just repays it. So being fake does not pay, and a record's holder is either genuine, in which case *evidence* is what they are good for, or losing money. An honest borrower pays the same fees as a by-product of loans that are worth having.
+
+A newcomer who borrows 10,000 a cycle under a guarantee is offered 100 unsecured at first, {{ n.graduation_offer_40 }} by the fortieth loan, and needs no guarantor from loan {{ n.graduation_cycles }}. To a lender who knows nothing else, a point of reputation is worth {{ n.credit_per_point }} of unsecured credit.
 
 ## What this says about Rain's score
 
-- **It fades, and that is right.** Rain multiplies every score by a fixed fraction each period.
-- **It is weighted by size, roughly.** A kept promise earns reputation in proportion to the fee paid on it, and the fee is a percentage of the amount. That is a sum, where the argument above wants a maximum; a lender can compute the maximum from the log.
-- **It is one number where two are wanted.** A single score cannot tell a stranger from someone with a long mixed record. Rain's on-chain score counts kept promises only; broken ones are in the log.
-- **The harsher penalty for a broken promise has no place in the belief.** A broken promise is one observation, as a kept one is. A lender who loses more from a default than they gain from a repayment should say so in the risk $\rho$ they accept.
-
-## What else might follow from the same question
-
-These are directions, not results. None has been derived or tested.
-
-| Feature | The Bayesian reading it might have |
-|---|---|
-| The first loan to a stranger | Its expected loss is the price of information: what a lender should be willing to pay to learn which side of a threshold a borrower is on. That would fix the size of the first rung. |
-| Vouching | A sponsor staking their own standing is evidence, with a likelihood ratio that depends on how much they stake and how good their own judgement has been. |
-| Fees | A record is only as informative as it is costly to fake. The fee bounds how cheaply a false history can be manufactured, and so how much weight each entry can bear. |
-| Who the promise was to | Promises kept to people you trust are better evidence than promises kept to strangers, who may be confederates. Each reader of the log could weigh it differently. |
-| A decay rate per person | Some people's circumstances are more stable than others'. The rate of change could itself be inferred, person by person. |
-| One model, not two | The first half of this post models unreliable people and the second half strategic ones. A threshold that drifts, with shocks, would be both. |
+- **It fades.** Rain multiplies every score by a fixed fraction each period.
+- **It is two numbers.** Each account has a counter for promises kept and one for promises broken, in the same unit and fading together. The contract returns the posterior mean for whatever prior the reader supplies.
+- **A broken promise is one observation.** There is no extra penalty. A lender who loses more from a default than it gains from a repayment says so in the risk it accepts.
+- **It is weighted by size, roughly.** A promise counts in proportion to its fee, which is a percentage of the amount. That is a sum, where the threshold model wants a maximum; a reader can compute the maximum from the log.
+- **It is a count of fees, and says so.** The counters treat every counterparty alike, so they are what a reader who trusts everyone would compute. To anyone else they are a receipt for cost, which the last section shows how to use.
 
 ## What is established
 
@@ -139,8 +179,15 @@ These are directions, not results. None has been derived or tested.
 |---|---|
 | If people change with probability $h$, the estimate regresses to the prior at rate $1 - h$ | Derived; exact for the mean. |
 | Decayed counts are the geometric pooling of posterior and prior | Derived; exact for the Beta family. |
-| Decayed counts predict nearly as well as the exact filter | Measured on data simulated from the model. |
-| The best decay is faster than $h$, roughly as $\sqrt{h}$ | Observed at three values; explained afterwards. |
-| Largest amount repaid is the statistic; the three bounds on the step | Derived from the threshold model and checked against it. Whether real borrowers have such thresholds is not known. |
+| Decayed counts predict nearly as well as the exact filter; the best decay is faster than $h$, roughly as $\sqrt{h}$ | Measured on data simulated from the model, at three values of $h$. |
+| Largest amount repaid is the statistic; the two bounds on a step | Derived from the threshold model and checked against it. |
+| A lender never raises a loan above the evidence unless the tail index is small | Derived; confirmed by a search over all loan sequences. |
+| The first loan's size and expected loss | Computed by that search and confirmed by simulating borrowers. The share of strangers who vanish is an input. |
+| The belief under partial trust; the bounds on what a ring can take | Derived; checked by Monte Carlo and against a model of the contracts. |
+| The margin of safe trust, {{ n.safe_trust_ratio }} times the fee rate | Computed after the experiment was run; no prediction was made. |
+| Guarantees: what a guarantor can lose a lender, what a vouch costs | Derived; checked against a model of the contracts, which is checked against the contracts. |
+| A record is worth what it cost; no ring profits | A cash-flow argument; no profitable strategy among {{ n.graduation_strategies }} searched. |
 
-The code is in [`rain/belief.py` and `rain/ladder.py`](https://github.com/act65/rain/tree/main/rain), and the experiment in [`experiments/bayes_decay`](https://github.com/act65/rain/tree/main/experiments/bayes_decay).
+Not established: whether real borrowers have thresholds, what their tail is, or how often people change. Every rate above is assumed. Still open are a decay rate per person, a single model in which thresholds are chosen and drift, and a version of *evidence* that adds up loans carried at once.
+
+The code is in [`rain/belief.py`, `rain/ladder.py` and `rain/record.py`](https://github.com/act65/rain/tree/main/rain), and the experiments in [`experiments/`](https://github.com/act65/rain/tree/main/experiments) (`bayes_decay`, `first_loan`, `collusion`, `vouching`, `graduation`).
