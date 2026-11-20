@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="561.6pt" height="208.8pt" viewBox="0 0 561.6 208.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 208.8 
+L 561.6 208.8 
+L 561.6 0 
+L 0 0 
+z
+" style="fill: #fcfcfb"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 47.607885 138.486316 
+L 135.304065 138.486316 
+Q 141.28335 138.486316 141.28335 132.642947 
+L 141.28335 90.765474 
+Q 141.28335 84.922105 135.304065 84.922105 
+L 47.607885 84.922105 
+Q 41.6286 84.922105 41.6286 90.765474 
+L 41.6286 132.642947 
+Q 41.6286 138.486316 47.607885 138.486316 
+z
+" clip-path="url(#pc125ab23b8)" style="fill: #f3f2ee; stroke: #52514e; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 236.95191 138.486316 
+L 324.64809 138.486316 
+Q 330.627375 138.486316 330.627375 132.642947 
+L 330.627375 90.765474 
+Q 330.627375 84.922105 324.64809 84.922105 
+L 236.95191 84.922105 
+Q 230.972625 84.922105 230.972625 90.765474 
+L 230.972625 132.642947 
+Q 230.972625 138.486316 236.95191 138.486316 
+z
+" clip-path="url(#pc125ab23b8)" style="fill: #fdeee7; stroke: #eb6834; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 426.295935 138.486316 
+L 513.992115 138.486316 
+Q 519.9714 138.486316 519.9714 132.642947 
+L 519.9714 90.765474 
+Q 519.9714 84.922105 513.992115 84.922105 
+L 426.295935 84.922105 
+Q 420.31665 84.922105 420.31665 90.765474 
+L 420.31665 132.642947 
+Q 420.31665 138.486316 426.295935 138.486316 
+z
+" clip-path="url(#pc125ab23b8)" style="fill: #f3f2ee; stroke: #52514e; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="91.455975" y="106.802877" transform="rotate(-0 91.455975 106.802877)">Borrower</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #52514e" x="91.455975" y="125.696677" transform="rotate(-0 91.455975 125.696677)">no record yet</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="280.8" y="106.802877" transform="rotate(-0 280.8 106.802877)">Guarantor</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #52514e" x="280.8" y="125.696677" transform="rotate(-0 280.8 125.696677)">has a record</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="470.144025" y="114.302257" transform="rotate(-0 470.144025 114.302257)">Lender</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 143.28417 111.704211 
+Q 186.128897 111.704211 227.520179 111.704211 
+" style="fill: none; stroke: #52514e; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 223.120179 109.504211 
+L 227.520179 111.704211 
+L 223.120179 113.904211 
+z
+" style="fill: #52514e; stroke: #52514e; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <g id="patch_6">
+     <path d="M 161.538417 94.219693 
+L 210.717558 94.219693 
+L 210.717558 70.755044 
+L 161.538417 70.755044 
+z
+" style="fill: #fcfcfb"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(163.539902 79.594546)">promise 1:</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(163.068417 89.79687)">I will repay</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 332.628195 111.704211 
+Q 375.472922 111.704211 416.864204 111.704211 
+" style="fill: none; stroke: #52514e; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 412.464204 109.504211 
+L 416.864204 111.704211 
+L 412.464204 113.904211 
+z
+" style="fill: #52514e; stroke: #52514e; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <g id="patch_8">
+     <path d="M 336.485567 94.219693 
+L 414.458458 94.219693 
+L 414.458458 70.755044 
+L 336.485567 70.755044 
+z
+" style="fill: #fcfcfb"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(338.015567 79.594546)">promise 2: if they</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0b0b" transform="translate(349.539044 89.79687)">do not, I will</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 468.309408 139.289636 
+Q 280.798431 220.99505 94.619895 139.868873 
+" style="fill: none; stroke: #52514e; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 97.774757 143.643373 
+L 94.619895 139.868873 
+L 99.532412 139.609684 
+z
+" style="fill: #52514e; stroke: #52514e; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <g id="patch_10">
+     <path d="M 252.624492 185.657174 
+L 308.975508 185.657174 
+L 308.975508 174.09651 
+L 252.624492 174.09651 
+z
+" style="fill: #fcfcfb"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0b0b" x="280.8" y="182.085182" transform="rotate(-0 280.8 182.085182)">the principal</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #52514e" x="280.8" y="28.696761" transform="rotate(-0 280.8 28.696761)">The lender relies on the guarantor's record. The guarantor bears the cost of being wrong about the borrower.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc125ab23b8">
+   <rect x="31.663125" y="11.88" width="498.27375" height="185.04"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -27,7 +27,11 @@ A lender deciding whether to trust someone wants to know one thing:
 
 Trust is what the lender does with the answer: the amount they are willing to put at risk on it. Someone about whom nothing can be predicted cannot be trusted with much. Prediction alone is not enough, though, because someone certain to default is perfectly predictable. The lender needs a confident prediction that the promise will be kept, and there are two ways to come by one. Evidence narrows down what kind of person this is. Incentives make keeping the promise the better choice whatever kind they are. Both appear below, and for the size of a loan they describe the same behaviour.
 
-This post works out a rational answer and compares it with the rules of [Rain]({{ site.baseurl }}/rain/). The main result is that if people can change, the estimate of their reliability drifts back to what we believe about a stranger, at the rate people change. So reputation should fade, and how fast is a statement about people. A second model, in which the size of a promise matters, makes the largest amount repaid the quantity to track. From it follow what a first loan to a stranger is for, whose evidence a reader should count, how one person can vouch for another, what a record is worth to a reader who trusts nobody, and how much to accept from a payer who cannot be checked.
+This post works out a rational answer and compares it with the rules of [Rain]({{ site.baseurl }}/rain/). It has two parts, because the question has two.
+
+**Will they keep it?** If people can change, an estimate of their reliability drifts back to what we believe about a stranger, at the rate people change. So reputation should fade, and how fast it fades is a statement about people.
+
+**How much can they be trusted with?** Someone who always repays 100 may not repay 10,000. A record answers this with a credit limit, a little above the largest amount the person has repaid. The second half of the post is about that limit: when a lender should raise it, what a first loan to a stranger is for, whose word counts as evidence, how one person can vouch for another, and what happens when several creditors cannot see each other.
 
 {% assign n = site.data.rain %}
 
@@ -80,17 +84,39 @@ How much does the cheap version lose? On data simulated from the model, scored b
 
 Decay is as slow as people are stable. If someone's reliability changes about once in 200 promises, the best memory is about 33 promises. With real data the rate should be fitted by asking which $\gamma$ predicts best. And never forgetting is close to useless once people change at all: at $h = 0.05$ it predicts barely better than ignoring the person's history ({{ n.static_loss_h05 }} against {{ n.prior_loss_h05 }}).
 
-## Size
+## How much? The size of a promise
 
-The model so far treats a promise to repay 10 and a promise to repay 10,000 as the same kind of evidence. They are not, and treating them alike is how a long record of small kept promises becomes the cheapest preparation for one large default.
+The model so far treats a promise to repay 10 and a promise to repay 10,000 as the same kind of evidence. They are not, and treating them alike is how a long record of small kept promises becomes the cheapest preparation for one large default. So the question changes from *will they keep it?* to *how much will they keep?*
 
-Suppose each borrower has a private cost of defaulting, $c$: what their standing is worth to them. They repay when the amount due is at most $c$, apart from a small probability $q$ of a shock that makes them default regardless. Then repaying an amount $M$ reveals that $c \ge M$, and a clean record is summarised by **the largest amount repaid**.
+**The model.** Each borrower has a private threshold $c$: the most they would repay sooner than lose their standing. They repay any amount up to $c$ and default on anything above it, apart from a small probability $q$ of a shock that makes them default regardless. The lender does not know $c$.
 
-Let $c$ follow a Pareto distribution across borrowers, $P(c > x) = (x_{\min}/x)^{a}$, which has no built-in scale. Then for $X \ge M$
+**What a repayment shows.** Repaying an amount $M$ shows that $c \ge M$. Nothing else in a clean record matters, so the record is summarised by one number: **the largest amount repaid**.
+
+**What the lender believes about the rest.** Thresholds differ between people. Let them follow a Pareto distribution, $P(c > x) = (x_{\min}/x)^{a}$, which has no built-in scale: someone good for 1,000 is as likely to be good for 2,000 as someone good for 10 is to be good for 20. Then for an amount $X \ge M$
 
 $$ P(\text{repay } X \mid \text{largest repaid } M) \;=\; (1 - q)\left(\frac{M}{X}\right)^{a} . $$
 
-The threshold is on everything a borrower owes at once. One lender sees all of it. Where several creditors cannot see each other, each sees a part, and that is the situation of shops accepting payments with no connection: a payment that cannot be checked is a loan, and a double spend is a default. If each of $m$ shops accepts the whole of what the formula allows, the borrower can owe $m$ times it. With two shops the chance of default the shops meant to hold at 10% is {{ n.off_default_2 }}, and with five it is {{ n.off_default_5 }}. Each should accept a share $1/m$, or all should ask one local hub that sees the total. For the same reason, amounts that were owed at once and all paid are evidence of their total, to a reader who believes every one of them: after {{ n.off_windows }} rounds a payer spending at five shops has a limit of {{ n.off_growth_concurrent }} if the shops count totals and trust each other fully, and {{ n.off_growth_default }}, a stranger's, if they count only the largest note.
+**An example.** Take $a = 1$ and $q$ = 2%, and someone who has repaid 1,000. Asked for 1,000 again they repay with probability 98%. Asked for 2,000, {{ n.size_example_double }}. A lender who accepts a 10% chance of default can let them owe {{ n.size_example_limit }}, which is {{ n.k_screen }} times what they have shown. A stranger, about whom the lender knows only that people are good for at least 100, gets {{ n.off_stranger_limit }}.
+
+![Chance of repayment against the amount due, for a stranger and for someone who has repaid 1,000]({{ site.baseurl }}/assets/rain/belief-by-size.svg)
+
+*The belief as a curve. Up to the largest amount repaid, only a shock stops repayment. Above it the chance falls in proportion. The credit limit is where the curve crosses the risk the lender accepts, and each repayment moves the whole curve to the right.*
+
+Everything after this section is a question about that curve: when to move along it, where a stranger's curve comes from, and whose reports are allowed to move it.
+
+## Several creditors at once
+
+The threshold is on everything a borrower owes at once. One lender sees all of it. Where several creditors cannot see each other, each sees a part.
+
+That is the situation of shops accepting payments with no connection. A payment that cannot be checked is a loan, and a double spend is a default. If each of $m$ shops accepts the whole limit, the payer can owe $m$ times it.
+
+![Default rate against the number of shops, with and without dividing the limit]({{ site.baseurl }}/assets/rain/offline-exposure.svg)
+
+*Payers drawn from the model, each taking everything on offer. Shops that each accept the whole limit meant to accept a 10% chance of default; with two shops it is {{ n.off_default_2 }} and with five {{ n.off_default_5 }}. Shops that each accept a fifth are back at {{ n.off_split_default_all }} when the payer visits five.*
+
+So each shop should accept a share $1/m$, or all should ask one local hub that sees the total.
+
+The same fact runs the other way. Amounts that were owed at once and all paid are evidence of their total, to a reader who believes every one of them. After {{ n.off_windows }} rounds, a payer spending at five shops has a limit of {{ n.off_growth_concurrent }} if the shops count totals and trust each other fully. If they count only the largest note it is {{ n.off_growth_default }}, a stranger's.
 
 ## When should the next loan be larger?
 
@@ -157,6 +183,10 @@ Let $t$ be a reader's probability that a counterparty is independent. A repaymen
 
 $$ P(c \ge X \mid \text{repaid } M) \;=\; \frac{(1-t)\,\big(S(X) - S(M)\big) + S(M)}{(1-t)\,\big(1 - S(M)\big) + S(M)} . $$
 
+![Chance of repayment against the amount due, for one record seen by readers with different trust in the counterparty]({{ site.baseurl }}/assets/rain/belief-by-trust.svg)
+
+*One record, 10,000 repaid to one counterparty. A reader who trusts that counterparty fully lends up to {{ n.portable_full }}. At 99.9% trust the limit is {{ n.portable_999 }}, and at 99% it is {{ n.portable_99 }}, close to a stranger's.*
+
 With $t = 1$ this is 1, and with $t = 0$ it is the prior. In between it stays close to the prior whenever $S(M)$ is small. **An extraordinary record needs extraordinary trust.** A repayment a hundred times what a stranger is thought good for moves a reader who trusts the counterparty at 99% from 109 to {{ n.portable_99 }}; at 99.9%, to {{ n.portable_999 }}; full trust gives {{ n.portable_full }}.
 
 - **A ring with one half-trusted member gains little**: at most {{ n.half_trust_multiple }} times a stranger's loan, by claiming about that much and no more.
@@ -167,6 +197,8 @@ With $t = 1$ this is 1, and with $t = 0$ it is the prior. In between it stays cl
 ## Vouching
 
 If a stranger can be lent nothing, a newcomer needs someone to answer for them. A guarantee is two promises of the same amount: the borrower's to the guarantor, and the guarantor's to the lender. If the borrower defaults, the guarantor pays or becomes the lender's defaulter.
+
+![A guaranteed loan is two promises]({{ site.baseurl }}/assets/rain/rain-guarantee.svg)
 
 The lender now needs no belief about the newcomer. It needs one about the guarantor, and it has one. What the guarantor believes shows in their price. They pay when the borrower does not, so for an amount $X$ the least they can charge is
 
@@ -189,6 +221,10 @@ where *evidence* is the largest amount they have repaid to anyone, *own* the lar
 The argument is about cash, not probability. A ring is free to manufacture any record. Under this rule each unit of credit it gains has cost it a unit of fees, and each repayment to the lender buys a next loan that just repays it. So being fake does not pay, and a record's holder is either genuine, in which case *evidence* is what they are good for, or losing money. An honest borrower pays the same fees as a by-product of loans that are worth having.
 
 A newcomer who borrows 10,000 a cycle under a guarantee is offered 100 unsecured at first, {{ n.graduation_offer_40 }} by the fortieth loan, and needs no guarantor from loan {{ n.graduation_cycles }}. To a lender who knows nothing else, a point of reputation is worth {{ n.credit_per_point }} of unsecured credit.
+
+![Unsecured credit offered to a newcomer by loan number]({{ site.baseurl }}/assets/rain/graduation.svg)
+
+*The unsecured credit offered to a newcomer who borrows 10,000 a cycle under a guarantee. The guarantee supplies the evidence at once; each loan repaid adds the fees sunk in it. Without a guarantor the same newcomer is offered 100 and stays there.*
 
 Two qualifications.
 
