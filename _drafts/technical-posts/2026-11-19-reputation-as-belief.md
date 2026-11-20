@@ -11,6 +11,7 @@ takeaways:
   - "Two decaying counters recover most of what the exact Bayesian filter knows, but they should forget several times faster than people change."
   - "A kept promise is evidence only to a reader who trusts that the counterparty was independent. An extraordinary record needs extraordinary trust."
   - "To a reader who trusts nobody, a record is worth what it cost in fees. That is enough for a newcomer with a guarantor to outgrow them."
+  - "Trust is the amount put at risk on a belief. A confident belief comes from evidence about the person or from incentives that bind anyone; for loan size the two describe the same behaviour."
 tags:
   - research
   - formalised
@@ -24,7 +25,9 @@ A lender deciding whether to trust someone wants to know one thing:
 
 > How likely is this person to keep their next promise?
 
-This post works out a rational answer and compares it with the rules of [Rain]({{ site.baseurl }}/rain/). The main result is that if people can change, the estimate of their reliability drifts back to what we believe about a stranger, at the rate people change. So reputation should fade, and how fast is a statement about people. The argument is the one in [Why are future rewards worth less than present rewards?]({{ site.baseurl }}/discounting-via-uncertainty/), applied to the past. A second model, in which the size of a promise matters, makes the largest amount repaid the quantity to track. From it follow what a first loan to a stranger is for, whose evidence a reader should count, how one person can vouch for another, and what a record is worth to a reader who trusts nobody.
+Trust is what the lender does with the answer: the amount they are willing to put at risk on it. Someone about whom nothing can be predicted cannot be trusted with much. Prediction alone is not enough, though, because someone certain to default is perfectly predictable. The lender needs a confident prediction that the promise will be kept, and there are two ways to come by one. Evidence narrows down what kind of person this is. Incentives make keeping the promise the better choice whatever kind they are. Both appear below, and for the size of a loan they describe the same behaviour.
+
+This post works out a rational answer and compares it with the rules of [Rain]({{ site.baseurl }}/rain/). The main result is that if people can change, the estimate of their reliability drifts back to what we believe about a stranger, at the rate people change. So reputation should fade, and how fast is a statement about people. A second model, in which the size of a promise matters, makes the largest amount repaid the quantity to track. From it follow what a first loan to a stranger is for, whose evidence a reader should count, how one person can vouch for another, what a record is worth to a reader who trusts nobody, and how much to accept from a payer who cannot be checked.
 
 {% assign n = site.data.rain %}
 
@@ -40,7 +43,7 @@ So reputation is two counts and a prior. Nothing fades: a promise kept ten years
 
 Suppose that between any two promises, with a small probability $h$, a person's circumstances change and their $\theta$ is drawn afresh from the population. A promise kept $\tau$ steps ago is then evidence about the person in front of you only if no change has happened since, which has probability $\gamma^{\tau}$ with $\gamma = 1 - h$.
 
-In the discounting post the possible worlds were split into those where a future reward survives an action and those where it does not, and the discount factor was the belief in the first set. Here the split is between worlds where this is still the person the evidence describes and worlds where it is not. In the first we have the posterior. In the second we have only the prior. So before the next promise
+Split the possible worlds into those where this is still the person the evidence describes and worlds where it is not. In the first we have the posterior. In the second we have only the prior. So before the next promise
 
 $$ p(\theta_{t+1} \mid \text{data}) \;=\; \gamma \, p(\theta_t \mid \text{data}) \;+\; (1-\gamma)\, \pi(\theta), $$
 
@@ -86,6 +89,8 @@ Suppose each borrower has a private cost of defaulting, $c$: what their standing
 Let $c$ follow a Pareto distribution across borrowers, $P(c > x) = (x_{\min}/x)^{a}$, which has no built-in scale. Then for $X \ge M$
 
 $$ P(\text{repay } X \mid \text{largest repaid } M) \;=\; (1 - q)\left(\frac{M}{X}\right)^{a} . $$
+
+The threshold is on everything a borrower owes at once. One lender sees all of it. Where several creditors cannot see each other, each sees a part, and that is the situation of shops accepting payments with no connection: a payment that cannot be checked is a loan, and a double spend is a default. If each of $m$ shops accepts the whole of what the formula allows, the borrower can owe $m$ times it. With two shops the chance of default the shops meant to hold at 10% is {{ n.off_default_2 }}, and with five it is {{ n.off_default_5 }}. Each should accept a share $1/m$, or all should ask one local hub that sees the total. For the same reason, amounts that were owed at once and all paid are evidence of their total, to a reader who believes every one of them: after {{ n.off_windows }} rounds a payer spending at five shops has a limit of {{ n.off_growth_concurrent }} if the shops count totals and trust each other fully, and {{ n.off_growth_default }}, a stranger's, if they count only the largest note.
 
 ## When should the next loan be larger?
 
@@ -196,6 +201,7 @@ Two qualifications.
 - **It is two numbers.** Each account has a counter for promises kept and one for promises broken, in the same unit and fading together. The contract returns the posterior mean for whatever prior the reader supplies.
 - **A broken promise is one observation.** There is no extra penalty. A lender who loses more from a default than it gains from a repayment says so in the risk it accepts.
 - **It is weighted by size, roughly.** A promise counts in proportion to its fee, which is a percentage of the amount. That is a sum, where the threshold model wants a maximum; a reader can compute the maximum from the log.
+- **It does not turn strangers into trusted parties.** A stranger starts at the floor, with a first loan that is a purchase of information. What the record changes is the cost of building trust from there, and the cost of faking it.
 - **It is a count of fees, and says so.** The counters treat every counterparty alike, so they are what a reader who trusts everyone would compute. To anyone else they are a receipt for cost, which the last section shows how to use.
 
 ## What is established
@@ -213,6 +219,7 @@ Two qualifications.
 | Guarantees: what a guarantor can lose a lender, what a vouch costs | Derived; checked against a model of the contracts, which is checked against the contracts. |
 | A record is worth what it cost; no ring profits | A cash-flow argument; no profitable strategy among {{ n.graduation_strategies }} searched, for a ring no more patient than assumed. |
 | The threshold is capacity, scaled; repaying depends on return and not on size | Derived; confirmed by comparing the two strategies directly. |
+| Creditors who cannot see each other multiply the exposure; dividing the limit restores it; amounts owed at once count for their total | Derived; checked on payers drawn from the model and against a model of the contracts. One prediction was wrong: partial trust between shops caps the growth of credit, where we expected it to slow it. |
 | A lender and a borrower both prefer graduation over a range of rates | Derived; the lender's side confirmed by simulating borrowers with shocks. |
 
 Not established: how capacities and returns are spread among real borrowers, or how often people change. Every rate above is assumed. Still open are a decay rate per person, borrowers who can start again under a new name in the model of the last few sections, a lender choosing its policy against borrowers who choose theirs, and a version of *evidence* that adds up loans carried at once.

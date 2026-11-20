@@ -11,6 +11,8 @@ takeaways:
   - "What deters default is losing your place on a ladder of loans you would have to climb again. Dividends are a small part of the cost that is occasionally decisive."
   - "Three rules give reputation a stable value below its cost at all times: a fixed price per point, decay, and fees paid out at the decay rate."
   - "A record is cheap to fake, so it is worth what the reader's trust makes it, and to a stranger what it cost in fees. A newcomer starts on a guarantor's standing and outgrows it."
+  - "Offline, a double spend is a default. Exposure multiplies with the number of shops that cannot see each other, and dividing the limit, or a local hub, restores it."
+  - "No use of the fee revenue makes faking dearer than honest use. The dividend is the least harmful way to give the revenue back."
 tags:
   - research
   - trust
@@ -22,13 +24,13 @@ tags:
 
 [Rain]({{ site.baseurl }}/rain/) is a public log of promises and a reputation earned by keeping them. This post is about whether it works: what we want from it, how each aim was turned into something that could fail, and what happened. The code, with every experiment's predictions and outcomes, is [here](https://github.com/act65/rain/tree/main/experiments).
 
-The result to remember is this. **Reputation that is valued by the fee income it earns cannot be good collateral, and should not be. What deters default is losing a place on a ladder of loans that would have to be climbed again.** The protocol's job is to keep the record true and to make every line of it cost something. What a line is worth as evidence depends on who is reading: a lender who trusts the counterparty can take it at face value, and one who trusts nobody can take it for what it cost.
+The result to remember is this. **Reputation that is valued by the fee income it earns cannot be good collateral. What deters default is losing a place on a ladder of loans that would have to be climbed again.** The protocol's job is to keep the record true and to make every line of it cost something. What a line is worth as evidence depends on who is reading: a lender who trusts the counterparty can take it at face value, and one who trusts nobody can take it for what it cost. The same reading tells a shop with no connection how much to accept from a payer it cannot check.
 
 {% assign n = site.data.rain %}
 
 ## What we are aiming for
 
-Five properties, each stated so that an experiment could contradict it.
+Seven properties, each stated so that an experiment could contradict it.
 
 1. **Reputation cannot be bought at a profit.** Two colluding accounts can trade empty promises. The reputation they earn must be worth less than the fees they pay, always.
 2. **Reputation has a stable value.** If nobody can say what a point is worth, losing it is no threat.
@@ -36,6 +38,7 @@ Five properties, each stated so that an experiment could contradict it.
 4. **A new identity gets nothing for free,** so that walking away from a bad record is not costless.
 5. **Reputation follows what people do,** not how early they arrived or how large they are.
 6. **A record cannot be manufactured at a profit,** and a newcomer still has somewhere to start.
+7. **It works without a connection.** A payment that cannot be checked when it is made is bounded by the payer's standing.
 
 ## How we tested
 
@@ -171,6 +174,35 @@ The derivations behind this section are in [Reputation as a belief]({{ site.base
 
 **Where thresholds come from.** The lender's model above takes it as given that a borrower repays up to a private threshold. A borrower who weighs repaying against keeping the money produces the same behaviour. They repay a loan that will be offered again when their net return on it is at least {{ n.return_threshold }}, whatever its size, and their threshold is their capacity to use the money, scaled ({{ n.capacity_ratio_15 }} times it at a 15% return). Those below that return are the ones who vanish. The borrowers assumed in the ladder section, at 3% and 6%, are all below it, which is why they default when the ladder stops growing.
 
+## Aim 7: without a connection
+
+Rain [started]({{ site.baseurl }}/reputation-for-rohingya/) with a market that has no internet. A payer there signs a note, the shop accepts it unchecked, and the note reaches the chain later. The payer can sign more than they hold, and no system that stays available while it is cut off can prevent that. In Rain the note is a promise. The engine records a promise that its promisor signed, whenever it arrives and whatever the payer has done to their account since, and a note unpaid at its deadline is a broken promise.
+
+A shop accepting a note is a lender, so it reads the payer's record and has a limit. The lender's belief was always about everything a person owes at once, and offline no shop sees that.
+
+- **Exposure multiplies with the number of shops.** If each accepts the whole limit, a payer who visits two is over it. The default rate the shops meant to hold at 10% is {{ n.off_default_2 }} with two shops, {{ n.off_default_5 }} with five and {{ n.off_default_10 }} with ten. This is the control, and it has to fail.
+- **Dividing the limit restores it.** Shops that each accept a fifth, because a payer could reach {{ n.off_places }} of them between syncs, see {{ n.off_split_default_few }} defaults from payers who visit four and {{ n.off_split_default_all }} from payers who visit all five. If there were really ten, {{ n.off_split_default_double }}.
+- **A stale log is one more place.** A payer who defaults on a lender on the chain, and then spends at five shops that have not seen it, takes {{ n.off_stale_total }} limits.
+- **A local hub removes the factor.** If every shop in a market asks one hub over a local network, the hub sees the whole payer and the limit need not be divided. A double spend is then possible only between hubs.
+- **Offline, standing is spent and hardly built.** A stranger's limit is {{ n.off_stranger_limit }}. Divided among five shops, no note is as large as what the payer has already shown, and after {{ n.off_windows }} rounds the limit is still {{ n.off_growth_default }}. Reading notes that were owed at once as their total fixes this where shops trust each other fully or share a hub: the limit reaches {{ n.off_growth_concurrent }}, the same climb as a ladder of loans. Where they trust each other at 90% it stops at {{ n.off_cap_09 }}. We predicted a slower climb. It is a ceiling, for the reason an extraordinary record needs extraordinary trust.
+- **Reading totals gives a ring nothing.** Splitting a wash among confederates costs the same fees and is believed less: {{ n.off_wash_concurrent }} times a stranger's offer, against {{ n.off_wash_default }} for one confederate, from a bank that trusts strangers at 90%.
+
+The design this points to for a market without a connection is a hub that answers for the notes it allows, which is the guarantor above in another role. It has not been built.
+
+## What the fees should pay for
+
+Fees were meant to give reputation a value that a defaulter would lose. Aim 3 shows they cannot. So we compared seven uses of the revenue by what each does to the cost of faking a record, the cost of honest use, and what a ring that produces nothing can take.
+
+- **No use makes faking dearer than honest use.** A payout is computed from the log, and on the log a wash and a kept promise are the same thing. Whatever is returned to honest users is returned to rings.
+- Burning the fee makes a wash cost {{ n.fu_wash_burn }} of its amount, against {{ n.fu_wash_dividend }} with the dividend, which returns {{ n.fu_rebate }} of each fee. The trust in strangers that no ring can exploit rises from {{ n.fu_safe_dividend }} to {{ n.fu_safe_burn }}. Neither is enough to help an honest borrower whose record is with another lender, so the dividend gives up little.
+- Paying the fee to the counterparty makes a record free.
+- An insurance pool for broken promises is drained. A ring whose fake defaults are ten times the honest ones takes {{ n.fu_insurance_ring_share }} of it, and honest lenders recover {{ n.fu_insurance_recover }} of their losses where they recovered {{ n.fu_insurance_recover_before }}.
+- Paying every identity equally pays whoever makes identities: {{ n.fu_identity_share }} goes to a ring with ten for each honest one.
+- Paying whoever carries a promise to the chain is a fee cut for anyone who can carry their own, and a ring can.
+- Making a defaulter forfeit the dividend adds {{ n.fu_forfeit }} of the amount due to the cost of defaulting. (We predicted a little more, having counted the fee on the loan that is defaulted on.)
+
+The dividend stays, with a different description. The revenue has to go somewhere. A recipient outside the system collects a rent on every promise, washes included, and a fee returned on demand is no cost at all. The dividend returns the revenue to the people who paid it, slowly, in proportion to promises kept, and never more than was paid.
+
 ## One more: the oracle
 
 Reputation is computed off-chain by an oracle that reads the log. If it runs `L` periods late, established honest users are unaffected and newcomers receive everything they earn `L` periods late, a loss of {{ n.lag1_newcomer }} per period of lag at these rates.
@@ -185,6 +217,7 @@ The experiment also found a rule nobody had designed. A reward was refused if it
 - **Identity is assumed away or assumed free.** The truth is in between and outside the protocol.
 - **How borrowers differ is assumed.** How capacities and returns are spread among borrowers is an input to everything in aim 6 except the last rule, which needs neither.
 - **One lender, no competition.** A rival could wait for the first lender to pay for the information and then poach the survivors. How the gain from graduating is split is not determined either.
+- **Offline, the shops know how many places a payer can be.** How they would estimate it is not modelled, and the hub is assumed honest.
 - **Settlement after default is not modelled.** A defaulter who pays the debt and returns as themselves is treated as never returning.
 - **The dividend to defaulters.** A default costs the bond and a mark on a second counter that readers can see. It no longer takes any other reputation, so a defaulter keeps the dividends on what was not bonded.
 
