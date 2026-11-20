@@ -529,3 +529,17 @@ pre {
     color: $gray;
   }
 }
+
+// Phone receipts in fiction (e.g. "Standard Terms"). Written as raw
+// <pre class="receipt"> so kramdown keeps the line breaks and rouge adds no
+// .highlight wrapper (whose nested boxes each grew their own scrollbar).
+pre.receipt {
+  max-width: 30em;
+  margin: 1.5em auto;
+  font-size: 0.8em;
+  line-height: 1.5;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: visible;
+}
