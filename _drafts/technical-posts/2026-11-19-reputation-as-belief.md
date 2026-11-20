@@ -114,7 +114,7 @@ That is the situation of shops accepting payments with no connection. A payment 
 
 *Payers drawn from the model, each taking everything on offer. Shops that each accept the whole limit meant to accept a 10% chance of default; with two shops it is {{ n.off_default_2 }} and with five {{ n.off_default_5 }}. Shops that each accept a fifth are back at {{ n.off_split_default_all }} when the payer visits five.*
 
-So each shop should accept a share $1/m$, or all should ask one local hub that sees the total.
+So each shop should accept a share $1/m$, or all should ask one local hub that sees the total. A payer who has the money can also remove the question, by locking it before they go offline and carrying a certificate of the amount: within that amount there is nothing left to believe.
 
 The same fact runs the other way. Amounts that were owed at once and all paid are evidence of their total, to a reader who believes every one of them. After {{ n.off_windows }} rounds, a payer spending at five shops has a limit of {{ n.off_growth_concurrent }} if the shops count totals and trust each other fully. If they count only the largest note it is {{ n.off_growth_default }}, a stranger's.
 
